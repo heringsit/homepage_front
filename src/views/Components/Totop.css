@@ -1,0 +1,19 @@
+.bottom-totop {
+  display: none;
+  width: 86px;
+  height: 86px;
+  position: fixed;
+  z-index: 99;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+}
+.bottom-totop-div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+}

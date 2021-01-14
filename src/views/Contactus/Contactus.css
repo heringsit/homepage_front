@@ -1,0 +1,213 @@
+.subTitleDiv {
+  margin-bottom: 37px;
+}
+.contactusSubTitle {
+  margin: 1% 0;
+  text-align: center;
+  color: #808988;
+}
+.contactusContentsDiv {
+  display: flex;
+  flex-direction: column;
+}
+.contactusInputDiv {
+  width: 100%;
+  padding: 1% 0;
+}
+.contactusInputForm {
+  display: flex;
+  flex-direction: column;
+}
+.contactusInputForm > input {
+  margin: 10px 0;
+  height: 45.9px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  border: solid 1px #94c0d8;
+  background-color: #ffffff;
+  padding: 1%;
+  font-size: 16px;
+}
+.contactusInputForm > textarea {
+  margin: 10px 0;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  border: solid 1px #94c0d8;
+  background-color: #ffffff;
+  padding: 1%;
+  font-size: 16px;
+}
+.contractusMapWrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 1% 0;
+}
+.contractusMap {
+  width: 100%;
+  max-width: 1100px;
+  min-height: 450px;
+}
+.maps {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/************square***************************/
+.squareDiv {
+  width: 100%;
+  min-height: 180px;
+  position: relative;
+  background-image: linear-gradient(140deg, #2258b8, #06ad8e);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3% 0;
+}
+
+.squareDiv:before,
+.squareDiv:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-top: 25px solid #fff;
+  border-right: 25px solid #fff;
+  border-left: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+}
+
+.squareDiv > div {
+  width: 90%;
+}
+.squareDiv > hr {
+  width: 90%;
+  border: 0.5px solid #2ca0b7;
+}
+.squareDiv > div > .tcgreen3 {
+  margin-right: 8px;
+}
+.squareDiv .tcgreen3:last-child {
+  margin-left: 24px;
+}
+/* 
+.squareDiv:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 46px solid transparent;
+	border-top-color: #00aabb;
+	border-bottom: 0;
+	margin-left: -46px;
+	margin-bottom: -46px;
+} */
+/************square***************************/
+
+.contactSquareButtonContain {
+  /* padding: 3%; */
+}
+.contactSquareButton {
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  background-color: #4a4a4a;
+  width: 50%;
+  height: 3em;
+  margin: 5px 0;
+  float: right;
+  border-radius: 5px;
+}
+.contactSquareButtonDisable {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c1c1c1;
+  width: 50%;
+  height: 3em;
+  margin: 5px 0;
+  float: right;
+  border-radius: 5px;
+}
+.ContactButtonLink {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1em;
+}
+.ContactButtonLinkDisable {
+  text-decoration: none;
+  color: rgb(150, 150, 150);
+  font-size: 1em;
+}
+
+.check-val {
+  border: solid 1px rgb(60, 225, 25) !important;
+}
+.check-inval {
+  border: solid 1px rgb(220, 40, 40) !important;
+}
+
+@media screen and (max-width: 480px) {
+  .contactusTitle > span {
+    font-size: 1em;
+  }
+  .contactusSubTitle {
+    font-size: 0.75em;
+  }
+  .contactusContentsDiv {
+    flex-direction: column;
+  }
+  .contactusInputDiv,
+  .contractusMap {
+    width: 100%;
+  }
+  .ContactButtonLink,
+  .ContactButtonLinkDisable {
+    font-size: 0.75em;
+  }
+  .maps {
+    min-height: 250px;
+  }
+
+  .contactSquareButton {
+    width: 80%;
+    margin: 5px auto;
+    float: none;
+  }
+  .contactSquareButtonDisable {
+    width: 80%;
+    margin: 5px auto;
+    float: none;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .contactusContentsDiv {
+    flex-direction: column;
+  }
+  .contactusInputDiv,
+  .contractusMap {
+    width: 100%;
+  }
+  .ContactButtonLink,
+  .ContactButtonLinkDisable {
+    font-size: 0.75em;
+  }
+  .maps {
+    min-height: 350px;
+  }
+  .contactSquareButton {
+    width: 80%;
+    margin: 5px auto;
+    float: none;
+  }
+  .contactSquareButtonDisable {
+    width: 80%;
+    margin: 5px auto;
+    float: none;
+  }
+}
+@media screen and (min-width: 769px) {
+}

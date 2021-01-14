@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="27px" viewBox="0 0 20 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>map-marker-alt</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M8.97229167,28.1286458 C1.4046875,17.1578646 0,16.0319271 0,12 C0,6.47713542 4.47713542,2 10,2 C15.5228646,2 20,6.47713542 20,12 C20,16.0319271 18.5953125,17.1578646 11.0277083,28.1286458 C10.5310938,28.8460417 9.46885417,28.8459896 8.97229167,28.1286458 Z M10,16.1666667 C12.3011979,16.1666667 14.1666667,14.3011979 14.1666667,12 C14.1666667,9.69880208 12.3011979,7.83333333 10,7.83333333 C7.69880208,7.83333333 5.83333333,9.69880208 5.83333333,12 C5.83333333,14.3011979 7.69880208,16.1666667 10,16.1666667 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.main" transform="translate(-196.000000, -8253.000000)">
+            <g id="footer" transform="translate(-78.000000, 8099.000000)">
+                <g id="company_info">
+                    <g id="주소" transform="translate(274.000000, 152.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="map-marker-alt" fill="#E39650" fill-rule="nonzero" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
