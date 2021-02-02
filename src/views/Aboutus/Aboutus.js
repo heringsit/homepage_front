@@ -48,7 +48,8 @@ const useStyles = makeStyles((theme) =>
       alignItems: "center",
       justifyContent: "center",
 
-      width: "55%",
+      width: '30%',
+      height: "439px",
       maxHeight: "85vh",
       overflow: "auto",
       boxShadow: "0 0 100px 20px rgba(0, 0, 0, 0.7)",
@@ -167,10 +168,11 @@ export default function Aboutus({ match }) {
         //   timeout: 500,
         // }}
       >
+      
         <Fade in={openNotice}>
-          <div className={classes.paper}>
-            <h2 id="transition-modal-title">헤링스 COVID 광폭 TF 임상</h2>
-            <p id="transition-modal-description">헤링스와 한미사이언스가 COVID 백신 및 치료제 개발의 광폭TF팀 개발에 JOINT 되었습니다.</p>
+          <div style={{}} className={classes.paper}>
+            <h2 style={{ }}>헤링스 COVID 광폭 TF 임상</h2>
+            <p >헤링스와 한미사이언스가 COVID 백신 및 치료제 개발의 광폭TF팀 개발에 JOINT 되었습니다.</p>
           </div>
         </Fade>
       </Modal>
@@ -200,7 +202,7 @@ export default function Aboutus({ match }) {
     <div id="content" style={{ position: "relative" }}>
       <Menubar slideIndex={slideIndex} />
       <Totop />
-      {openInitialNotice()}
+      {/* {openInitialNotice()} */}
       <div>
         <Maintop matches={matches} setSlideIndex={setSlideIndex} />
         <Whoweare matches={matches} />
