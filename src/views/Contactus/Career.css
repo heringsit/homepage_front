@@ -128,8 +128,8 @@
 .careerContainListHeader {
   display: flex;
   flex-direction: row;
-  border-top: 1px solid #07a990;
-  border-bottom: 1px solid #262626;
+  border-top: 3px solid #232323;
+  border-bottom: 1px solid #232323;
 }
 .careerContainListHeaderCol {
   margin: 10px 0;

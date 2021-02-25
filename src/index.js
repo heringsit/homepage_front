@@ -17,6 +17,7 @@ import Pipelines from "./views/Pipeline/Pipeline";
 import News from "./views/News/News";
 import Contactus from "./views/Contactus/Contactus";
 import "./index.css";
+import DetailPage from "./views/News/Sections/detail/DetailPage";
 
 const App = () => {
   // console.log("index.js!");
@@ -41,6 +42,7 @@ const App = () => {
         {/* Career */}
         <Route path={`/contactus/:submenu`} component={Contactus} />
         <Route path={`/contactus`} component={Contactus} />
+        <Route path={`/news/:submenu/detail/:id`} component={DetailPage} />
         <Route path={`/news/:submenu`} component={News} />
         <Route path={`/news`} component={News} />
         <Route path="*" component={Aboutus} />

@@ -17,15 +17,15 @@ export default function NewsRelease() {
             <hr></hr>
           </div>
         </div>
-        <div className="careerContainList">
-          <div className="careerContainListHeader FontNL">
-            <div className="careerContainListHeaderCol col1 textF16 korFonts">
+        <div className="newsContainList">
+          <div className="newsContainListHeader FontNL">
+            <div className="newsContainListHeaderCol ncol1 textF16 korFonts">
               제목
             </div>
-            <div className="careerContainListHeaderCol col2 textF16 korFonts">
+            <div className="newsContainListHeaderCol ncol3 textF16 korFonts">
               첨부파일
             </div>
-            <div className="careerContainListHeaderCol col2 textF16 korFonts">
+            <div className="newsContainListHeaderCol ncol2 textF16 korFonts">
               등록일
             </div>
           </div>
