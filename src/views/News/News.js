@@ -13,6 +13,7 @@ import IRInformation from "../News/Sections/IRInformation";
 import NewsRelease from "./Sections/NewsRelease";
 import "./News.css";
 import ContentsTitle from "../Components/ContentsTitle";
+import "./Sections/detail/DetailPage";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
