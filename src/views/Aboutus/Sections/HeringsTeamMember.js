@@ -4,7 +4,7 @@
 import icon1_1 from "../../../assets/images/02about_herings_team/new200527/1_1nam.png";
 import icon1_2 from "../../../assets/images/02about_herings_team/new200527/1_2song.png";
 import icon1_3 from "../../../assets/images/02about_herings_team/new200527/1_3ahn.png";
-import icon1_4 from "../../../assets/images/02about_herings_team/new200527/1_4bae.png";
+import icon1_4 from "../../../assets/images/02about_herings_team/new200527/1_4park.jpg";
 import icon2_1 from "../../../assets/images/02about_herings_team/new200527/2_1yang.png";
 import icon2_2 from "../../../assets/images/02about_herings_team/new200527/2_2kim.png";
 import icon2_3 from "../../../assets/images/02about_herings_team/new200527/2_3hong.png";
@@ -39,20 +39,20 @@ export const Executive_Leadership = [
   {
     name: "Taejin Ahn",
     jobs: "PhD",
-    positions: "CSO",
+    positions: "CTO",
     background: icon1_3,
     modalimg: icon1_3,
     detail:
       "Taejin Ahn is a professor at Handong Global University School of Life Science. Prior to his academic career, he was a technical researcher at Samsung Advanced Institute of Technology and a principal engineer in IVD Sales at Samsung Electronics Health and Medical Equipment. His main interests of research focus on Bioinformatics, Personalized Medicine, and Smart Healthcare.\n\nHe holds a BS from Handong Global University, an MA from Pohang University of Science and Technology, and a PhD in bioinformatics from Seoul National University.",
   },
   {
-    name: "Jinsup Bae",
-    jobs: "CPA",
-    positions: "COO",
+    name: "Kyounghoon Park",
+    jobs: "MD,PhD",
+    positions: "CSO",
     background: icon1_4,
     modalimg: icon1_4,
     detail:
-      "Jinsub Bae is the COO of HERINGS. He started his career at Samjung KPMG as an auditor and corporate tax advisor. Subsequently, he experienced listing in the KOSDAQ market and inviting investment in the bio and healthcare industry. As the team leader of the finance and disclosure team at Sillagen(KOSDAQ listed company), he was in charge of listing on the KOSDAQ market. At Rocket Healthcare, he was responsible for investment attraction and business management as CFO. \n\nHe graduated from the Department of History at Sogang University and obtained a CPA certification in 2008.",
+      "Kyounghoon Park is a medical doctor with preventive medicine specialty. He majored in pharmaepidemiolgy and performed various big data analysis and medical research. He is interested in establishing evidence-based clinical preventive medicine.  He graduated from the School of Medicine at Pusan National University and trained resident course in the Department of Preventive Medicine at Seoul National University. He also achieved a Ph D in medicine from Seoul National University.",
   },
 ];
 
@@ -86,7 +86,7 @@ export const Research_Leadership = [
   },
   {
     name: "Hyun-Joo Kang",
-    jobs: "PhD",
+    jobs: "None",
     positions: "Collaborating Leader",
     background: icon2_4,
     modalimg: icon2_4,

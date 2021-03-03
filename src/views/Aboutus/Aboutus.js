@@ -44,12 +44,12 @@ const useStyles = makeStyles((theme) =>
     },
     paper: {
       display: "flex",
-      flexDirection:'column',
-      alignItems: "center",
-      justifyContent: "center",
+      // flexDirection:'column',
+      // alignItems: "center",
+      // justifyContent: "center",
 
-      width: '30%',
-      height: "439px",
+      width: '55%',
+      // height: "439px",
       maxHeight: "85vh",
       overflow: "auto",
       boxShadow: "0 0 100px 20px rgba(0, 0, 0, 0.7)",
@@ -138,51 +138,51 @@ const useStyles = makeStyles((theme) =>
 export default function Aboutus({ match }) {
   const matches = useMediaQuery("(max-width:600px)");
   const [open, setOpen] = useState(false);
-  const [openNotice, setOpenNotice] = useState(false);
-  const [startingPage, setStartingPage] = useState(true);
+  // const [openNotice, setOpenNotice] = useState(false);
+  // const [startingPage, setStartingPage] = useState(true);
   const [modalObj, setModalObj] = useState({});
   const [slideIndex, setSlideIndex] = useState(0);
 
-  useEffect(() =>{
-    if(startingPage){
-      setTimeout(() => {
-        setOpenNotice(true);
-      },1000)
-    }
-  },[])
+  // useEffect(() =>{
+  //   if(startingPage){
+  //     setTimeout(() => {
+  //       setOpenNotice(true);
+  //     },1000)
+  //   }
+  // },[])
   
-  const openInitialNotice = () => {
-    return (
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        className={classes.modal}
-        open={openNotice}
-        onClose={handleNoticeClose}
-        hideBackdrop={false}
-        onBackdropClick={()=>{
-          setOpenNotice(false);
-        }}
-        // BackdropComponent={Backdrop}
-        // BackdropProps={{
-        //   timeout: 500,
-        // }}
-      >
+  // const openInitialNotice = () => {
+  //   return (
+  //     <Modal
+  //       aria-labelledby="transition-modal-title"
+  //       aria-describedby="transition-modal-description"
+  //       className={classes.modal}
+  //       open={openNotice}
+  //       onClose={handleNoticeClose}
+  //       hideBackdrop={false}
+  //       onBackdropClick={()=>{
+  //         setOpenNotice(false);
+  //       }}
+  //       // BackdropComponent={Backdrop}
+  //       // BackdropProps={{
+  //       //   timeout: 500,
+  //       // }}
+  //     >
       
-        <Fade in={openNotice}>
-          <div style={{}} className={classes.paper}>
-            <h2 style={{ }}>헤링스 COVID 광폭 TF 임상</h2>
-            <p >헤링스와 한미사이언스가 COVID 백신 및 치료제 개발의 광폭TF팀 개발에 JOINT 되었습니다.</p>
-          </div>
-        </Fade>
-      </Modal>
-    )
-  };
+  //       <Fade in={openNotice}>
+  //         <div style={{}} className={classes.paper}>
+  //           <h2 style={{ }}>헤링스 COVID 광폭 TF 임상</h2>
+  //           <p >헤링스와 한미사이언스가 COVID 백신 및 치료제 개발의 광폭TF팀 개발에 JOINT 되었습니다.</p>
+  //         </div>
+  //       </Fade>
+  //     </Modal>
+  //   )
+  // };
 
-  const handleNoticeClose = () => {
-    console.log(" close modal!");
-    setStartingPage(false);
-  };
+  // const handleNoticeClose = () => {
+  //   console.log(" close modal!");
+  //   setStartingPage(false);
+  // };
 
   const handleOpen = (obj) => {
     if (JSON.stringify({}) !== obj) {

@@ -849,6 +849,10 @@ html[data-agent*="Trident"] .each-slide .blur-mask .blur-ie {
   margin: 0 auto;
 }
 
+.teamDivWrapNone {
+  display: none;
+}
+
 .heringsTeamWrap {
   outline: none;
   width: 92%;
