@@ -11,6 +11,7 @@ import Totop from "../Components/Totop";
 import Footer from "../Components/Footer";
 import Maintop from "./Sections/Maintop";
 import Whoweare from "./Sections/whoweare";
+import Certificates from "./Sections/certificates";
 import PAI from "./Sections/PartnersAInvestors";
 import TeamList from "./Sections/TeamList";
 import "./Aboutus.css";
@@ -157,6 +158,7 @@ export default function Aboutus({ match }) {
         <Whoweare matches={matches} />
         <TeamList handleOpen={handleOpen} matches={matches} />
         <PAI matches={matches} />
+        <Certificates match={matches} />
         <Footer />
       </div>
       <Modal
