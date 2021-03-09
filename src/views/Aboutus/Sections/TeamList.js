@@ -118,7 +118,11 @@ export default class TeamList extends Component {
               return (
                 <div key={index} className="teamDivWrap">
                   <div
-                    className="heringsTeamWrap"
+                    className={` ${
+                      team.jobs === "None"
+                        ? "teamDivWrapNone"
+                        : "heringsTeamWrap"
+                    }`}
                     onClick={() => {
                       this.props.handleOpen(team);
                     }}

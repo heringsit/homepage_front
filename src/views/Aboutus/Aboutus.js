@@ -158,7 +158,7 @@ export default function Aboutus({ match }) {
         <Whoweare matches={matches} />
         <TeamList handleOpen={handleOpen} matches={matches} />
         <PAI matches={matches} />
-        <Certificates match={matches} />
+        {/* <Certificates match={matches} /> */}
         <Footer />
       </div>
       <Modal
