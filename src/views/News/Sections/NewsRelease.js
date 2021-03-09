@@ -67,7 +67,8 @@ const useStyles = makeStyles((theme) =>
 );
 
 export default function NewsRelease({ match }) {
-  const imsi = process.env.PUBLIC_URL;
+  // const imsi = process.env.PUBLIC_URL;
+  const imsi = `http://52.79.120.20:9099`;
   const matches = useMediaQuery("(max-width:600px)");
   const [isDataReady, setIsDataReady] = useState(false);
   const [paginginfo, setPaginginfo] = useState([]);
@@ -89,40 +90,68 @@ export default function NewsRelease({ match }) {
       return isEnd;
     }
   };
-  const [dataList] = useState([
-    {
-      id: 1,
-      name: "gg",
-      title: "gg",
-      regiDate: "2021-03-02",
-    },
-    {
-      id: 2,
-      name: "gg",
-      title: "gg",
-      regiDate: "2021-03-02",
-    },
-    {
-      id: 3,
-      name: "gg",
-      title: "gg",
-      regiDate: "2021-03-02",
-    },
-  ]);
+  const [countList, setCountList] = useState([]);
+  const [listData, setListData] = useState([]);
+
+  const getdata = (tab) => {
+    let today = new Date();
+    // let selectedTab = tab !== undefined ? tab : careerTab;
+    // console.log("getdata tab->" + selectedTab);
+    let sendingDateFormat =
+      today.getFullYear() +
+      "-" +
+      (today.getMonth() + 1).toString().padStart(2, "0") +
+      "-" +
+      today.getDate().toString().padStart(2, "0");
+    axios
+      .get(`${imsi}/api/boardListCnt`, {
+        //
+        params: {
+          type: "News",
+          date: sendingDateFormat,
+        },
+      })
+      .then((response) => {
+        //
+        console.log(response.data.boardCnt);
+        setCountList([
+          response.data.boardCnt[0].cnt,
+          response.data.boardCnt[0].newcnt,
+          response.data.boardCnt[0].expcnt,
+        ]);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    axios
+      .get(`${imsi}/api/boardList`, {
+        params: {
+          type: "News",
+          page: 1,
+        },
+      })
+      .then((response) => {
+        console.log(response.data.paginginfo);
+        setListData(response.data.board_data);
+        setIsDataReady(true);
+        setPaginginfo(response.data.paginginfo);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+  // 52.79.120.20:9099/api/boardList?type=News&page=1
   const handleOpen = (obj, isEnd) => {
-    if (!isEnd) {
-      alert("마감된 공고 입니다.");
-    } else {
-      if (JSON.stringify({}) !== obj) {
-        setModalObj(obj);
-        //console.log(window.pageYOffset);
-        setOpen(true);
-      }
+    if (JSON.stringify({}) !== obj) {
+      setModalObj(obj);
+      setOpen(true);
     }
   };
   const handleClose = () => {
     setOpen(false);
   };
+  useEffect(getdata, []);
   return (
     <div id="content" style={{ position: "relative" }}>
       <div className="SectionDivNews" id="newsrelease">
@@ -144,7 +173,7 @@ export default function NewsRelease({ match }) {
             </div>
           </div>
           <div className="nodatasWrap">
-            {dataList.map((data, index) => {
+            {listData.map((data, index) => {
               return (
                 <div key={index} className="careerListRow FontNR">
                   <div className="newsContainListCol ncol1 newsListTitle">

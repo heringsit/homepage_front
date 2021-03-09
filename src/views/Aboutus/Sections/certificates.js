@@ -3,6 +3,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 import moment from "moment";
 import "../../News/News.css";
+// import { CommonBoard } from "./components/CommonBoard";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -81,7 +82,7 @@ export default function Certificates(props) {
       return isEnd;
     }
   };
-  const [dataList] = useState([
+  const [cDataList] = useState([
     {
       id: "국내특허",
       content: "사용자의 생활습관 관리 방법 및 장치",
@@ -93,8 +94,57 @@ export default function Certificates(props) {
       number: "제10-2020-0038253호",
     },
   ]);
+  const [cpDataList] = useState([
+    {
+      id: "저작권 ",
+      content:
+        "STATA(스타타, 통계소프트웨어)를 활용한 임상시험에서의 Form Missing (양식 누락) 확인 프로그램",
+      number: "제C-2017-008136호",
+    },
+    {
+      id: "저작권 ",
+      content:
+        "STATA(스타타, 통계소프트웨어)를 활용한 임상시험에서의 Study Drug(연구 약물) 데이터 검증 프로그램",
+      number: "제C-2017-008137호",
+    },
+    {
+      id: "저작권 ",
+      content:
+        "STATA(스타타, 통계소프트웨어)를 활용한 임상시험에서의 Laboratory Values Grading(실험실 가치 평가) 프로그램",
+      number: "제C-2017-008138호",
+    },
+    {
+      id: "저작권 ",
+      content:
+        "STATA(스타타, 통계소프트웨어)를 활용한 임상시험에서의 Tumor Evaluation(종양 평가) 검증 프로그램",
+      number: "제C-2017-008139호",
+    },
+    {
+      id: "저작권 ",
+      content:
+        "JAVA Script(자바스크립트)를 이용한 EDC(Electronic Data Capture, 전자 데이터 수집 프로그램)의 구현",
+      number: "제C-2017-008140호",
+    },
+    {
+      id: "저작권 ",
+      content: "프로그램 명칭 R(알, 통계 소프트웨어)을 활용한 프로그램",
+      number: "제C-2017-008141호",
+    },
+  ]);
+  const [tDataList] = useState([
+    { id: "상표권", content: "Rhexium", number: "제40-2020-0058730호" },
+  ]);
+  const [aDataList] = useState([
+    { id: "ISO9001", content: "품질경영시스템인증서", number: "2020.09.09" },
+    {
+      id: "ISO27001",
+      content: "정보보호경영시스템인증서",
+      number: "2020.09.09",
+    },
+  ]);
+
   return (
-    <div id="aboutus" style={{ position: "relative" }}>
+    <div id="certificates" style={{ position: "relative" }}>
       <div className="SectionDivNews" id="certificates">
         <div className="SectionDivNT ">
           <div className="titleDiv">
@@ -104,39 +154,15 @@ export default function Certificates(props) {
             <hr></hr>
           </div>
         </div>
-        <div className="newsContainList">
-          <div className="newsContainListHeader FontNL">
-            <div className="newsContainListHeaderCol ccol1 textF16 korFonts">
-              특허
-            </div>
-            <div className="leftContainListHeaderCol ccol2 textF16 korFonts">
-              내용
-            </div>
-            <div className="leftContainListHeaderCol ccol1 textF16 korFonts">
-              출원번호
-            </div>
-          </div>
-          <div className="nodatasWrap">
-            {dataList.map((data, index) => {
-              return (
-                <div key={index} className="certificatesListRow FontNR">
-                  <div className="newsContainListCol newsListTitle">
-                    {/* <Link to={`${imsi}/news/#newsrelease/detail/${data.id}`}> */}
-                  </div>
-                  <div className="newsContainListCol tcol1 textF16">
-                    {data.id}
-                  </div>
-                  <div className="contentContainListCol  tcol2 textF16">
-                    {data.content}
-                  </div>
-                  <div className="numberContainListCol tcol3 textF16">
-                    {data.number}
-                  </div>
-                </div>
-              );
-            })}
-            {/* <div className="nodatas FontB">등록된 게시물이 습니다!</div> */}
-          </div>
+        <div>
+          {/* <CommonBoard dataList={cDataList} title="특허" numName="출원번호" />
+          <CommonBoard
+            dataList={cpDataList}
+            title="저작권"
+            numName="출원번호"
+          />
+          <CommonBoard dataList={tDataList} title="상표" numName="출원번호" />
+          <CommonBoard dataList={aDataList} title="인증" numName="인증일" /> */}
         </div>
       </div>
     </div>

@@ -432,6 +432,15 @@ export default function Menubar(props) {
                     <span className="textF15 tcg">Partners & Invenstors</span>
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    smooth
+                    to={`${imsi}/aboutus/#certificates`}
+                    onClick={menuclick}
+                  >
+                    <span className="textF15 tcg">Certificates</span>
+                  </Link>
+                </li>
               </ul>
             </div>
 
