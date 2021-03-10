@@ -9,6 +9,11 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import { ReactComponent as IconClose } from "../../../assets/images/05career/close.svg";
+import {saveAs} from 'file-saver'; 
+import { imsi } from "../../..";
+
+
+
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -66,8 +71,7 @@ const useStyles = makeStyles((theme) =>
 );
 
 export default function NewsRelease({ match }) {
-  // const imsi = process.env.PUBLIC_URL;
-  const imsi = `http://52.79.120.20:9099`;
+
   // const matches = useMediaQuery("(max-width:600px)");
   const [, setIsDataReady] = useState(false);
   const [, setPaginginfo] = useState([]);
@@ -140,17 +144,28 @@ export default function NewsRelease({ match }) {
         console.log(error);
       });
   };
-  // 52.79.120.20:9099/api/boardList?type=News&page=1
+
   const handleOpen = (obj, isEnd) => {
     if (JSON.stringify({}) !== obj) {
       setModalObj(obj);
       setOpen(true);
     }
   };
+
   const handleClose = () => {
     setOpen(false);
   };
+
+  const onDownLoad = async (file) => {
+    const downloadResult = await fetch(
+      `${imsi}/upimg/${file}`
+    );
+    const blob = await downloadResult.blob();
+    saveAs(blob, "file");
+  };
+
   useEffect(getdata, []);
+
   return (
     <div id="content" style={{ position: "relative" }}>
       <div className="SectionDivNews" id="newsrelease">
@@ -168,7 +183,7 @@ export default function NewsRelease({ match }) {
               제목
             </div>
             <div className="newsContainListHeaderCol ncol2 textF16 korFonts">
-              등록일
+              게시일
             </div>
           </div>
           <div className="nodatasWrap">
@@ -176,7 +191,6 @@ export default function NewsRelease({ match }) {
               return (
                 <div key={index} className="careerListRow FontNR">
                   <div className="newsContainListCol ncol1 newsListTitle">
-                    {/* <Link to={`${imsi}/news/#newsrelease/detail/${data.id}`}> */}
                     <div
                       onClick={(e) => {
                         handleOpen(data, checkDate(data.regiDate, "E"));
@@ -230,79 +244,27 @@ export default function NewsRelease({ match }) {
                     <div className="readContentsCareerCategory">
                       <div className="readContentsRow ">
                         <div className="tbContentsB FontNB textF16">제목</div>
-                        <div className="tbContents tcb FontNR textF16 ">
-                          {(() => {
-                            switch (modalObj.education) {
-                              case "E1":
-                                return "학력무관";
-                              case "E2":
-                                return "전문학사 이상";
-                              case "E3":
-                                return "학사 이상";
-                              case "E4":
-                                return "석사 이상";
-                              case "E5":
-                                return "박사 이상";
-                              default:
-                                return modalObj.education;
-                            }
-                          })()}
-                        </div>
+                        {modalObj?.link && <div className="tbContents tcb FontNR textF16 ">
+                           <div style={{cursor:"pointer"}} onClick={() => window.open(`${modalObj.link}`, '_blank')}>[자세히 보기]</div>
+                        </div>}
                       </div>
-                      <div className="readContentsRow ">
+                      {modalObj?.img && <div className="readContentsRow ">
                         <div className="tbContentsB FontNB textF16">
                           첨부파일
                         </div>
-                        <div className="tbContents tcb FontNR textF16 ">
-                          {(() => {
-                            var career_text = "";
-                            if (modalObj.check_career_new)
-                              career_text += "신입 ";
-                            if (
-                              modalObj.check_career_new &&
-                              modalObj.check_career_experienced
-                            )
-                              career_text += "및 ";
-                            if (modalObj.check_career_experienced)
-                              career_text += "경력 ";
-                            if (
-                              modalObj.check_career_experienced &&
-                              modalObj.check_career_exp_year > 0
-                            )
-                              career_text +=
-                                modalObj.check_career_exp_year + "년 이상";
-                            return career_text;
-                          })()}
+                        <div className="tbContents tcb FontNR textF16" onClick={() => onDownLoad(modalObj.img)}>
+                          {modalObj.img}
                         </div>
-                      </div>
+                      </div>}
                       <div className="readContentsRow ">
                         <div className="tbContentsB FontNB textF16">
-                          등록일자
+                          게시일자
                         </div>
                         <div className="tbContents tcb FontNR textF16 ">
-                          {(() => {
-                            switch (modalObj.emp_form) {
-                              case "FullTimer":
-                                return "정규직";
-                              case "ContractWorker":
-                                return "계약직";
-                              case "FreeLancer":
-                                return "프리랜서";
-                              case "PartTimer":
-                                return "아르바이트";
-                              case "Etc":
-                                return "기타";
-                              default:
-                                return modalObj.emp_form;
-                            }
-                          })()}
+                          {modalObj.reg_datetime}
                         </div>
                       </div>
                       <div className="readContentsRow ">
-                        {/* <div className="tbContentsB FontNB textF16">
-                          {" "}
-                          채용분야
-                        </div> */}
                         <div className="tbContents tcb FontNR textF16 ">
                           {modalObj.recruitment}
                         </div>

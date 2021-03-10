@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="86" height="86" viewBox="0 0 86 86">
+  <defs>
+    <rect id="top-b" width="50" height="50" x="0" y="0"/>
+    <filter id="top-a" width="208%" height="208%" x="-54%" y="-54%" filterUnits="objectBoundingBox">
+      <feMorphology in="SourceAlpha" radius="1" result="shadowSpreadOuter1"/>
+      <feOffset in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="10"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(18 18)">
+    <use fill="#000" filter="url(#top-a)" xlink:href="#top-b"/>
+    <use fill="#FFF" xlink:href="#top-b"/>
+    <path fill="#000" d="M22.1265184,12.6456858 L26.5770949,8.19533832 C26.791666,7.98076717 27.139743,7.98076717 27.3543142,8.19533832 L27.8734527,8.71447683 C28.0877948,8.92881897 28.0880238,9.27597997 27.8743687,9.49078011 L24.3471122,13.0342955 L27.8741397,16.5780398 C28.0880238,16.7928399 28.0875658,17.1400009 27.8732237,17.3543431 L27.3540852,17.8734816 C27.139514,18.0880527 26.791437,18.0880527 26.5768659,17.8734816 L22.1265184,13.4229051 C21.9119473,13.208334 21.9119473,12.860257 22.1265184,12.6456858 Z" transform="rotate(90 25 13.034)"/>
+    <path fill="#000" d="M22.1265184,16.6456858 L26.5770949,12.1953383 C26.791666,11.9807672 27.139743,11.9807672 27.3543142,12.1953383 L27.8734527,12.7144768 C28.0877948,12.928819 28.0880238,13.27598 27.8743687,13.4907801 L24.3471122,17.0342955 L27.8741397,20.5780398 C28.0880238,20.7928399 28.0875658,21.1400009 27.8732237,21.3543431 L27.3540852,21.8734816 C27.139514,22.0880527 26.791437,22.0880527 26.5768659,21.8734816 L22.1265184,17.4229051 C21.9119473,17.208334 21.9119473,16.860257 22.1265184,16.6456858 Z" transform="rotate(90 25 17.034)"/>
+    <text fill="#000" font-family="Montserrat-Medium, Montserrat" font-size="14" font-weight="400">
+      <tspan x="10.457" y="36">TOP</tspan>
+    </text>
+  </g>
+</svg>
