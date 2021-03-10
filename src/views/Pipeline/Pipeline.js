@@ -269,7 +269,10 @@ export default function Pipeline() {
               <div className="div-table-col textF16 FontB">
                 <div>TARGET DISEASE</div>
               </div>
-              <div className="div-table-col textF16 FontB">SEGMENT</div>
+              <div className="div-table-col textF16 FontB">
+                <div>DISCOVERY &</div>
+                <div>TRANSLATION</div>
+              </div>
               <div className="div-table-col textF16 FontB">
                 <div>DISCOVERY &</div>
                 <div>TRANSLATION</div>
@@ -292,7 +295,7 @@ export default function Pipeline() {
               <div
                 className="div-table-col-head"
                 style={{
-                  background: `url(${rhexiumbg})`,
+                  // background: `url(${rhexiumbg})`,
                   backgroundOrigin: "content-box",
                   backgroundSize: "contain",
                   backgroundPosition: "center",
@@ -334,7 +337,7 @@ export default function Pipeline() {
               <div
                 className="div-table-col-head"
                 style={{
-                  background: `url(${rhexiumbg})`,
+                  // background: `url(${rhexiumbg})`,
                   backgroundOrigin: "content-box",
                   backgroundSize: "contain",
                   backgroundPosition: "center",
@@ -376,7 +379,7 @@ export default function Pipeline() {
               <div
                 className="div-table-col-head"
                 style={{
-                  background: `url(${rhexiumbg})`,
+                  // background: `url(${rhexiumbg})`,
                   backgroundOrigin: "content-box",
                   backgroundSize: "contain",
                   backgroundPosition: "center",
@@ -405,7 +408,7 @@ export default function Pipeline() {
               <div
                 className="div-table-col"
                 style={{
-                  background: `url(${sev})`,
+                  // background: `url(${sev})`,
                   backgroundSize: "contain",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
@@ -418,7 +421,7 @@ export default function Pipeline() {
               <div
                 className="div-table-col-head"
                 style={{
-                  background: `url(${rhexiumbg})`,
+                  // background: `url(${rhexiumbg})`,
                   backgroundOrigin: "content-box",
                   backgroundSize: "contain",
                   backgroundPosition: "center",
@@ -447,7 +450,7 @@ export default function Pipeline() {
               <div
                 className="div-table-col"
                 style={{
-                  background: `url(${sev})`,
+                  // background: `url(${sev})`,
                   backgroundSize: "contain",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
@@ -460,7 +463,7 @@ export default function Pipeline() {
               <div
                 className="div-table-col-head"
                 style={{
-                  background: `url(${rhexiumbg})`,
+                  // background: `url(${rhexiumbg})`,
                   backgroundOrigin: "content-box",
                   backgroundSize: "contain",
                   backgroundPosition: "center",

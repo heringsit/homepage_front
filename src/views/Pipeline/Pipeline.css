@@ -85,7 +85,7 @@
   align-items: center;
 }
 .fillLine {
-  height: 100%;
+  height: 31%;
   background-color: #04c6a2;
   border-right: 4px solid #04c6a2;
   border-top: 3px solid transparent;
@@ -96,10 +96,10 @@
 }
 .fillPointer {
   width: 0;
-  height: 50%;
-  border-top: 25px solid transparent;
-  border-bottom: 25px solid transparent;
-  border-left: 25px solid #04c6a2;
+  height: 16%;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #04c6a2;
 }
 .filePointerNone {
   position: relative;
