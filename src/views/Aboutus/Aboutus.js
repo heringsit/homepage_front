@@ -11,7 +11,7 @@ import Totop from "../Components/Totop";
 import Footer from "../Components/Footer";
 import Maintop from "./Sections/Maintop";
 import Whoweare from "./Sections/whoweare";
-import Certificates from "./Sections/Certificates";
+// import Certificates from "./Sections/Certificates";
 import PAI from "./Sections/PartnersAInvestors";
 import TeamList from "./Sections/TeamList";
 import "./Aboutus.css";
