@@ -122,6 +122,8 @@ export default function ContactUs() {
           setIscMessageValid(true);
         }
         break;
+      default:
+        return "";
     }
   };
 

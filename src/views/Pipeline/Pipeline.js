@@ -6,8 +6,8 @@ import Totop from "../Components/Totop";
 import Footer from "../Components/Footer";
 import ContentsTitle from "../Components/ContentsTitle";
 
-import craimonbg from "../../assets/images/04pipeline/Craimon_candidate";
-import rhexiumbg from "../../assets/images/04pipeline/Rhexium_candidate";
+// import craimonbg from "../../assets/images/04pipeline/Craimon_candidate";
+// import rhexiumbg from "../../assets/images/04pipeline/Rhexium_candidate";
 
 import sev from "../../assets/images/04pipeline/sev.png";
 import snuh from "../../assets/images/04pipeline/snuh.png";

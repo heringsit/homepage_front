@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+import React from "react";
+// import useMediaQuery from "@material-ui/core/useMediaQuery";
 import "../News.css";
 
 export default function NewsRelease() {
-  const matches = useMediaQuery("(max-width:600px)");
-  const [isDataReady, setIsDataReady] = useState(false);
-  const [paginginfo, setPaginginfo] = useState([]);
+  // const matches = useMediaQuery("(max-width:600px)");
+  // const [isDataReady, setIsDataReady] = useState(false);
+  // const [paginginfo, setPaginginfo] = useState([]);
   return (
     <div id="content" style={{ position: "relative" }}>
       <div className="SectionDivNews" id="irinformation">

@@ -4,11 +4,10 @@ import axios from "axios";
 import moment from "moment";
 import parse from "html-react-parser";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+// import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-import { Link } from "react-router-dom";
 import { ReactComponent as IconClose } from "../../../assets/images/05career/close.svg";
 
 const useStyles = makeStyles((theme) =>
@@ -69,9 +68,9 @@ const useStyles = makeStyles((theme) =>
 export default function NewsRelease({ match }) {
   // const imsi = process.env.PUBLIC_URL;
   const imsi = `http://52.79.120.20:9099`;
-  const matches = useMediaQuery("(max-width:600px)");
-  const [isDataReady, setIsDataReady] = useState(false);
-  const [paginginfo, setPaginginfo] = useState([]);
+  // const matches = useMediaQuery("(max-width:600px)");
+  const [, setIsDataReady] = useState(false);
+  const [, setPaginginfo] = useState([]);
   const classes = useStyles();
   const [modalObj, setModalObj] = useState({});
   const [open, setOpen] = useState(false);
@@ -90,7 +89,7 @@ export default function NewsRelease({ match }) {
       return isEnd;
     }
   };
-  const [countList, setCountList] = useState([]);
+  const [, setCountList] = useState([]);
   const [listData, setListData] = useState([]);
 
   const getdata = (tab) => {

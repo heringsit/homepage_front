@@ -1,14 +1,8 @@
 import "react-app-polyfill/ie9";
 import "react-app-polyfill/stable";
-import React, { useEffect } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import {
-  BrowserRouter,
-  Redirect,
-  Route,
-  Switch,
-  useHistory,
-} from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
 import Aboutus from "./views/Aboutus/Aboutus";
 import Platforms from "./views/Platforms/Platforms";

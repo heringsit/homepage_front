@@ -9,12 +9,7 @@ import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 
 import { ReactComponent as IconClose } from "../../assets/images/05career/close.svg";
-import Menubar from "../Components/Menubar";
-import Totop from "../Components/Totop";
-import ContentsTitle from "../Components/ContentsTitle";
-import Footer from "../Components/Footer";
 import "./Career.css";
-import ContactUs from "./Contactus";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
