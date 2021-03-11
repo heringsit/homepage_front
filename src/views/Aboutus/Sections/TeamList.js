@@ -97,11 +97,7 @@ export default class TeamList extends Component {
                       </div>
                       <div>
                         {/* 여기 index === 4 */}
-                        <span
-                          className={` ${
-                            index === 4 ? "textF15 tcw" : "textF15 tco"
-                          }`}
-                        >
+                        <span className="textF15 tco">
                           {team.jobs}
                         </span>
                       </div>

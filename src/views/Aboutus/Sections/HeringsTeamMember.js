@@ -58,7 +58,7 @@ export const Executive_Leadership = [
   {
     name: "Seongae Ahn",
     jobs: `RN`,
-    positions: "Director of  Clinical Development",
+    positions: "CTM",
     background: icon1_4,
     modalimg: icon1_5,
     detail:
