@@ -9,11 +9,6 @@ import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 
 import { ReactComponent as IconClose } from "../../assets/images/05career/close.svg";
-import Menubar from "../Components/Menubar";
-import Totop from "../Components/Totop";
-import ContentsTitle from "../Components/ContentsTitle";
-import Footer from "../Components/Footer";
-
 import "./Career.css";
 
 const useStyles = makeStyles((theme) =>
@@ -303,11 +298,12 @@ export default function Career({ match }) {
   useEffect(getdata, []);
   return (
     <div id="content" style={{ position: "relative" }}>
-      <Menubar slideIndex={0} />
-      <Totop />
-      <div>
-        <ContentsTitle matches={matches} title={"CAREERS"} />
-        <div className="SectionDivCareer">
+      {/* <Menubar slideIndex={0} />
+      <Totop /> */}
+      <div id="cotactus">
+        {/* <ContentsTitle matches={matches} title={"CONTACT US"} /> */}
+        {/* id 를 추가해야 이동한다 ; scroll focusing 스크롤 포커싱 */}
+        <div className="SectionDivCareer" id="career">
           <div className="titleDiv">
             <div className="textT22 FontEB">
               <span>HERINGS CAREERS</span>
@@ -450,7 +446,6 @@ export default function Career({ match }) {
             ) : (
               <div></div>
             )}
-
             {paginginfo.totalPage > 1 ? (
               <div
                 className="pagingDiv"
@@ -463,7 +458,7 @@ export default function Career({ match }) {
             )}
           </div>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
       <Modal
         aria-labelledby="transition-modal-title"

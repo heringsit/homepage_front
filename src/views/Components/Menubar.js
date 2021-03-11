@@ -302,6 +302,8 @@ export default function Menubar(props) {
                 />
               </div>
             </NavLink>
+
+            {/* GNB 대메뉴 */}
           </div>
           <div className="menusAfterLogo">
             <div className="menudiv">
@@ -358,7 +360,7 @@ export default function Menubar(props) {
               </Link>
             </div>
             <div className="menudiv">
-              <Link smooth to={`${imsi}/career`} onClick={menuclick}>
+              <Link smooth to={`${imsi}/news/#news`} onClick={menuclick}>
                 <span
                   className={`textF18 FontR ${
                     props.slideIndex === 0
@@ -368,12 +370,16 @@ export default function Menubar(props) {
                       : "tcb"
                   }`}
                 >
-                  CAREER
+                  NEWS & IR
                 </span>
               </Link>
             </div>
             <div className="menudiv">
-              <Link smooth to={`${imsi}/contactus`} onClick={menuclick}>
+              <Link
+                smooth
+                to={`${imsi}/contactus/#contactus`}
+                onClick={menuclick}
+              >
                 <span
                   className={`textF18 FontR ${
                     props.slideIndex === 0
@@ -389,6 +395,9 @@ export default function Menubar(props) {
             </div>
           </div>
         </div>
+
+        {/* ABOUT US 하단 메뉴 */}
+
         <div className={`menuDetail ${isOver ? "part" : "partHide"}`}>
           <div className="menuDetailRow">
             <div className="menuDetailDiv">
@@ -423,8 +432,19 @@ export default function Menubar(props) {
                     <span className="textF15 tcg">Partners & Invenstors</span>
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    smooth
+                    to={`${imsi}/aboutus/#certificates`}
+                    onClick={menuclick}
+                  >
+                    <span className="textF15 tcg">Certificates</span>
+                  </Link>
+                </li>
               </ul>
             </div>
+
+            {/* PLATFORMS 하단 메뉴 */}
             <div className="menuDetailDiv">
               <Link
                 smooth
@@ -454,6 +474,8 @@ export default function Menubar(props) {
                 </li>
               </ul>
             </div>
+
+            {/* PIPELINE 하단 메뉴 */}
             <div className="menuDetailDiv">
               <Link
                 smooth
@@ -483,26 +505,58 @@ export default function Menubar(props) {
                 </li>
               </ul>
             </div>
+
+            {/* NEWS 하단 메뉴 */}
             <div className="menuDetailDiv">
-              <Link smooth to={`${imsi}/career`} onClick={menuclick}>
-                <span className="textF18 tcb">CAREER</span>
+              <Link smooth to={`${imsi}/news/#news`} onClick={menuclick}>
+                <span className="textF18 tcb">NEWS & IR</span>
               </Link>
               <ul className="menuul">
+                <Link
+                  smooth
+                  to={`${imsi}/news/#newsrelease`}
+                  onClick={menuclick}
+                >
+                  <span className="textF15 tcg">News Release</span>
+                </Link>
                 <li>
-                  <Link smooth to={`${imsi}/career/`} onClick={menuclick}>
-                    <span className="textF15 tcg">Career</span>
+                  <Link
+                    smooth
+                    to={`${imsi}/news/#irinformation`}
+                    onClick={menuclick}
+                  >
+                    <span className="textF15 tcg">IR Information</span>
                   </Link>
                 </li>
               </ul>
             </div>
+
+            {/* CONTACT US 하단 메뉴 */}
             <div className="menuDetailDiv">
-              <Link smooth to={`${imsi}/contactus`} onClick={menuclick}>
+              <Link
+                smooth
+                to={`${imsi}/contactus/#contactus`}
+                onClick={menuclick}
+              >
                 <span className="textF18 tcb">CONTACT US</span>
               </Link>
               <ul className="menuul">
                 <li>
-                  <Link smooth to={`${imsi}/contactus`} onClick={menuclick}>
-                    <span className="textF15 tcg">Contact Us</span>
+                  <Link
+                    smooth
+                    to={`${imsi}/contactus/#career`}
+                    onClick={menuclick}
+                  >
+                    <span className="textF15 tcg">Career</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    smooth
+                    to={`${imsi}/contactus/#contact`}
+                    onClick={menuclick}
+                  >
+                    <span className="textF15 tcg">Contact </span>
                   </Link>
                 </li>
               </ul>

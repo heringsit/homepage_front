@@ -128,8 +128,8 @@
 .careerContainListHeader {
   display: flex;
   flex-direction: row;
-  border-top: 1px solid #07a990;
-  border-bottom: 1px solid #262626;
+  border-top: 3px solid #232323;
+  border-bottom: 1px solid #232323;
 }
 .careerContainListHeaderCol {
   margin: 10px 0;
@@ -146,6 +146,13 @@
   flex-direction: row;
   align-items: center;
   cursor: pointer;
+}
+.certificatesListRow {
+  border-top: 0.5px solid #e5e5e5;
+  border-bottom: 0.5px solid #e5e5e5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .careerContainListCol {
   margin: 10px 0;
@@ -451,7 +458,7 @@
 .tbContentsB {
   min-width: 90px;
   padding: 5px;
-  color: #fd8d27;
+  color: #1e1e1e;
 }
 .tbContents {
   width: 100%;

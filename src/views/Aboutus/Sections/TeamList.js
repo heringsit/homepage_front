@@ -96,7 +96,14 @@ export default class TeamList extends Component {
                         <span className="FontB textF18 tcb">{team.name}</span>
                       </div>
                       <div>
-                        <span className="textF15 tco">{team.jobs}</span>
+                        {/* 여기 index === 4 */}
+                        <span
+                          className={` ${
+                            index === 4 ? "textF15 tcw" : "textF15 tco"
+                          }`}
+                        >
+                          {team.jobs}
+                        </span>
                       </div>
                       <div>
                         <span className="textF15 tcg">{team.positions}</span>
@@ -118,7 +125,11 @@ export default class TeamList extends Component {
               return (
                 <div key={index} className="teamDivWrap">
                   <div
-                    className={` ${team.jobs === "None" ? "teamDivWrapNone" : "heringsTeamWrap"}`}
+                    className={` ${
+                      team.jobs === "None"
+                        ? "teamDivWrapNone"
+                        : "heringsTeamWrap"
+                    }`}
                     onClick={() => {
                       this.props.handleOpen(team);
                     }}

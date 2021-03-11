@@ -1,16 +1,21 @@
 import "react-app-polyfill/ie9";
 import "react-app-polyfill/stable";
-import React, { useEffect } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
 import Aboutus from "./views/Aboutus/Aboutus";
 import Platforms from "./views/Platforms/Platforms";
 import Pipelines from "./views/Pipeline/Pipeline";
-import Career from "./views/Career/Career";
-// import News from "./views/News/News";
+// import Career from "./views/Contactus/Career"; // 경로 수정
+import News from "./views/News/News";
 import Contactus from "./views/Contactus/Contactus";
 import "./index.css";
+import DetailPage from "./views/News/Sections/detail/DetailPage";
+
+// export const imsi = process.env.PUBLIC_URL; // 운영계
+export const imsi = `http://52.79.120.20:9099`; // 개발계
+// export const imsi = `http://localhost:9099`; // local
 
 const App = () => {
   // console.log("index.js!");
@@ -32,11 +37,14 @@ const App = () => {
         <Route path={`/platforms/:submenu`} component={Platforms} />
         <Route path={`/platforms`} component={Platforms} />
         <Route path={`/pipeline`} component={Pipelines} />
-        <Route path={`/career`} component={Career} />
+        {/* Career */}
+        <Route path={`/contactus/:submenu`} component={Contactus} />
         <Route path={`/contactus`} component={Contactus} />
+        <Route path={`/news/:submenu/detail/:id`} component={DetailPage} />
+        <Route path={`/news/:submenu`} component={News} />
+        <Route path={`/news`} component={News} />
         <Route path="*" component={Aboutus} />
-        {/* <Route path={`/news`} component={News} />*/}
-        {/* <Redirect exact from={`/`} to={"/aboutus"} /> */}
+        <Redirect exact from={`/`} to={"/aboutus"} />
       </Switch>
     </BrowserRouter>
   );

@@ -6,6 +6,7 @@ import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
 import ContentsTitle from "../Components/ContentsTitle";
 import Footer from "../Components/Footer";
+import Career from "./Career";
 
 import "./Contactus.css";
 
@@ -121,6 +122,8 @@ export default function ContactUs() {
           setIscMessageValid(true);
         }
         break;
+      default:
+        return "";
     }
   };
 
@@ -164,13 +167,13 @@ export default function ContactUs() {
     <div id="content" style={{ position: "relative" }}>
       <Menubar slideIndex={0} />
       <Totop />
-      <div>
+      <div id="contactus">
         <ContentsTitle matches={matches} title={"CONTACT US"} />
-
-        <div className="SectionDiv">
+        <Career matches={matches} />
+        <div className="SectionDiv" id="contact">
           <div className="titleDiv">
             <div className="textT22 FontEB">
-              <span>CONTACT US</span>
+              <span>CONTACT</span>
             </div>
             <hr></hr>
           </div>

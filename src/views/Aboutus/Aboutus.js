@@ -11,9 +11,9 @@ import Totop from "../Components/Totop";
 import Footer from "../Components/Footer";
 import Maintop from "./Sections/Maintop";
 import Whoweare from "./Sections/whoweare";
+// import Certificates from "./Sections/Certificates";
 import PAI from "./Sections/PartnersAInvestors";
 import TeamList from "./Sections/TeamList";
-
 import "./Aboutus.css";
 
 const useStyles = makeStyles((theme) =>
@@ -196,18 +196,19 @@ export default function Aboutus({ match }) {
     // }, 2000);
     setOpen(false);
   };
-
   const classes = useStyles();
   return (
-    <div id="content" style={{ position: "relative" }}>
+    <div id="aboutus" style={{ position: "relative" }}>
       <Menubar slideIndex={slideIndex} />
       <Totop />
       {/* {openInitialNotice()} */}
       <div>
+        {/* 배너 */}
         <Maintop matches={matches} setSlideIndex={setSlideIndex} />
         <Whoweare matches={matches} />
         <TeamList handleOpen={handleOpen} matches={matches} />
         <PAI matches={matches} />
+        {/* <Certificates match={matches} /> */}
         <Footer />
       </div>
       <Modal

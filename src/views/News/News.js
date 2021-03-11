@@ -1,327 +1,159 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import moment from "moment";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import Grid, { GridSpacing } from "@material-ui/core/Grid";
-import Modal from "@material-ui/core/Modal";
-import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
+import React, { useState } from "react";
+// import { makeStyles, createStyles } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+
 import Menubar from "../Components/Menubar";
+import Totop from "../Components/Totop";
 import Footer from "../Components/Footer";
+import IRInformation from "../News/Sections/IRInformation";
+import NewsRelease from "./Sections/NewsRelease";
 import "./News.css";
-import headerBg from "../../assets/images/05career/news_header_image.png";
+import ContentsTitle from "../Components/ContentsTitle";
+import "./Sections/detail/DetailPage";
 
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-    },
-    control: {
-      padding: theme.spacing(2),
-    },
-    ieAlignCenter: {
-      //display: "-webkit-box",
-      //display: "-moz-box",
-      //display: "box",
-      //display: "-webkit-flex",
-      //display: "-moz-flex",
-      //display: "-ms-flexbox",
-      display: "flex",
-    },
-    section2Height: {
-      //minHeight: 680
-    },
-    modal: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    },
-    paper: {
-      width: "50%",
-      minHeight: 600,
-      boxShadow: "0 0 100px 20px rgba(0, 0, 0, 0.7)",
-      backgroundColor: "#FFF",
-      [theme.breakpoints.down("xs")]: {
-        width: "80%",
-        minHeight: 400,
-      },
-    },
+// const useStyles = makeStyles((theme) =>
+//   createStyles({
+//     root: {
+//       flexGrow: 1,
+//     },
+//     control: {
+//       padding: theme.spacing(2),
+//     },
+//     header: {
+//       height: "100%",
+//     },
+//     ieAlignCenter: {
+//       display: "flex",
+//     },
+//     longheigntContent: {
+//       height: "100%",
+//       overflow: "visible",
+//     },
+//     section2Height: {
+//       //minHeight: 680
+//     },
+//     modal: {
+//       display: "flex",
+//       alignItems: "center",
+//       justifyContent: "center",
+//     },
+//     paper: {
+//       width: "65%",
+//       maxHeight: "85vh",
+//       overflow: "auto",
+//       boxShadow: "0 0 100px 20px rgba(0, 0, 0, 0.7)",
+//       backgroundColor: "#FFF",
+//       [theme.breakpoints.down("xs")]: {
+//         width: "80%",
+//         // minHeight: 400,
+//         // maxHeight: 500,
+//       },
+//     },
+//     modalContent: {
+//       height: "auto",
+//       maxHeight: 750,
+//       padding: 40,
+//       textAlign: "center",
+//       [theme.breakpoints.down("xs")]: {
+//         paddingTop: 25,
+//         paddingBottom: 25,
+//         paddingLeft: 10,
+//         paddingRight: 10,
+//       },
+//     },
+//     modalCloseWrap: {
+//       position: "relative",
+//     },
+//     modalCloseDiv: {
+//       position: "absolute",
+//       top: "-40px",
+//       right: "-40px",
+//       display: "flex",
+//       width: "100%",
+//       justifyContent: "flex-end",
+//       outline: "none",
+//       [theme.breakpoints.down("xs")]: {
+//         top: "-25px",
+//         right: "-10px",
+//       },
+//     },
+//     modalClose: {
+//       maxWidth: 70,
+//       padding: 20,
+//       cursor: "pointer",
+//       outline: "none",
+//       [theme.breakpoints.down("xs")]: {
+//         maxWidth: 50,
+//         padding: 12.5,
+//       },
+//     },
+//     modalimgaeWrap: {
+//       display: "flex",
+//       justifyContent: "center",
+//       alignItems: "center",
+//     },
+//     modalimage: {
+//       width: "35%",
+//       maxWidth: "35%",
+//       height: "auto",
+//     },
+//     modalTitle: {
+//       marginTop: 20,
+//       marginBottom: 20,
+//       display: "flex",
+//       flexDirection: "column",
+//       justifyContent: "center",
+//       alignItems: "center",
+//       flexWrap: "wrap",
+//       color: "#4a4a4a",
+//     },
+//     modalContentText: {
+//       borderTop: "1px solid #ddd",
+//       textAlign: "left",
+//       whiteSpace: "pre-wrap",
+//       color: "#4a4a4a",
+//       padding: "25px",
+//       lineHeight: "160%",
+//       [theme.breakpoints.down("xs")]: {
+//         paddingTop: "25px",
+//         paddingBottom: "25px",
+//         paddingLeft: "10px",
+//         paddingRight: "10px",
+//       },
+//     },
+//   })
+// );
 
-    modalContent: {
-      display: "flex",
-      padding: 20,
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-    },
-    modalCloseWrap: {
-      display: "flex",
-      width: "100%",
-      justifyContent: "flex-end",
-    },
-    modalClose: {
-      maxWidth: 30,
-      cursor: "pointer",
-    },
-    modalimgaeWrap: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-    },
-    modalimage: {
-      maxWidth: "35%",
-      height: "auto",
-    },
-    modalTitle: {
-      marginTop: 20,
-      marginBottom: 20,
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      color: "#4a4a4a",
-    },
-    modalContentText: {
-      whiteSpace: "pre-wrap",
-      color: "#4a4a4a",
-    },
-  })
-);
+export default function News({ match }) {
+  const matches = useMediaQuery("(max-width:600px)");
+  // const [open, setOpen] = useState(false);
+  // const [modalObj, setModalObj] = useState({});
+  const [slideIndex] = useState(0);
 
-export default function Career({ match }) {
-  const classes = useStyles();
-  const [open, setOpen] = useState(false);
-  const [modalObj, setModalObj] = useState({});
-  const [listData, setListData] = useState([]);
-  const [paginginfo, setPaginginfo] = useState([]);
-  const [isDataReady, setIsDataReady] = useState(false);
-
-  const handleOpen = (obj) => {
-    if (JSON.stringify({}) !== obj) {
-      setModalObj(obj);
-      setOpen(true);
-    }
-  };
-  const handleClose = () => {
-    // setTimeout(function () {
-    //   !open ? setModalObj({}) : null;
-    // }, 2000);
-    setOpen(false);
-  };
-
-  const getdata = () => {
-    axios
-      .get("/api/boardList", {
-        params: {
-          type: "News",
-          page: 1,
-        },
-      })
-      .then((response) => {
-        setListData(response.data.board_data);
-        setIsDataReady(true);
-        setPaginginfo(response.data.paginginfo);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
-
-  const loadMore = (e) => {
-    e.preventDefault();
-    if (paginginfo.totalPage >= parseInt(paginginfo.curPage) + 1) {
-      axios
-        .get("/api/boardList", {
-          params: {
-            type: "News",
-            page: parseInt(paginginfo.curPage) + 1,
-          },
-        })
-        .then((response) => {
-          setPaginginfo(response.data.paginginfo);
-          setIsDataReady(true);
-          let newlistData = [...listData];
-          response.data.board_data.map((data) => {
-            newlistData.push(data);
-          });
-          setListData(newlistData);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    } else {
-      alert("더 이상 데이터가 없습니다.");
-    }
-  };
-
-  useEffect(getdata, []);
+  // const handleOpen = (obj) => {
+  //   if (JSON.stringify({}) !== obj) {
+  //     setModalObj(obj);
+  //     setOpen(true);
+  //   }
+  // };
+  // const handleClose = () => {
+  //   // setTimeout(function () {
+  //   //   !open ? setModalObj({}) : null;
+  //   // }, 2000);
+  //   setOpen(false);
+  // };
+  // const classes = useStyles();
   return (
-    <div>
-      <Grid container justify="center" className={classes.root}>
-        <Grid item align="center" xs={12} className={classes.header}>
-          <Menubar />
-        </Grid>
-        <Grid item xs={12} className={`${classes.ieAlignCenter}`}>
-          <div className="newsWrap">
-            <div className="contentsTopDiv">
-              <img src={headerBg} className="contentsTopImage" />
-            </div>
-            <div className="newsContainList">
-              {isDataReady ? (
-                listData.length > 0 ? (
-                  listData.map((data, index) => {
-                    return (
-                      <div key={index} className="newsContain">
-                        {data.img !== "" ? (
-                          <div className="newsContentsImgContain">
-                            <div className="newsContentsImgContainCenter">
-                              <img
-                                className="newsContentsImg"
-                                src={data.img}
-                                alt="News"
-                              />
-                            </div>
-                          </div>
-                        ) : null}
-
-                        <div
-                          className={`newsContentsTextContain ${
-                            data.img !== "" ? "" : "noImage"
-                          }`}
-                        >
-                          <div className="newsContentsTopBar">
-                            <span className={`FontB textF12 ${data.category}`}>
-                              {data.category}
-                            </span>
-                            <span className="FontR textF12 newsDate">
-                              {moment(data.reg_datetime).format(
-                                "MMMM.DD, YYYY"
-                              )}
-                            </span>
-                          </div>
-                          <div className="newsContentsTitleBar FontR textF26">
-                            {data.title}
-                          </div>
-                          <div className="newsContentsBar FontR">
-                            {data.content.replace(/<br>/g, "\n")}
-                          </div>
-                          <div className="newsContentsBottomBar FontB textF14">
-                            <hr className="listBottomLine" />
-                            <p
-                              key={data.no}
-                              onClick={(e) => {
-                                handleOpen(data);
-                              }}
-                            >
-                              DETAIL VIEW
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })
-                ) : (
-                  <div className="nodatasWrap">
-                    <div className="nodatas FontB">
-                      등록된 게시물이 없습니다!
-                    </div>
-                  </div>
-                )
-              ) : (
-                <div></div>
-              )}
-              {paginginfo.totalPage > 1 ? (
-                <div
-                  className="newsSquareButtonContain"
-                  onClick={(e) => loadMore(e)}
-                >
-                  <div className="newsSquareButton">
-                    <span className="newsButtonLink">More article</span>
-                  </div>
-                </div>
-              ) : (
-                <div></div>
-              )}
-            </div>
-          </div>
-        </Grid>
-        <Grid item xs={12} className={classes.footer}>
-          <Footer />
-        </Grid>
-      </Grid>
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        className={classes.modal}
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
-      >
-        <Fade in={open}>
-          <div className={classes.paper}>
-            {modalObj !== JSON.stringify({}) ? (
-              <div className={classes.modalContent}>
-                <div className="layerPopup">
-                  <div className="layerPopupInner">
-                    <div className="newsContentsTopBar">
-                      <span className={`FontB textF16 ${modalObj.category}`}>
-                        {modalObj.category}
-                      </span>
-                      <span className="FontR textF16 newsDate">
-                        {moment(modalObj.reg_datetime).format("MMMM.DD, YYYY")}
-                      </span>
-                    </div>
-                    <div className="newsPopContentsTitleBar FontR textF26">
-                      {modalObj.title}
-                    </div>
-                    {modalObj.img !== "" ? (
-                      <div className="newsPopImg">
-                        <img src={`/upimg/${modalObj.img}`} alt="News" />
-                      </div>
-                    ) : (
-                      <div className="newsPopNoImg"></div>
-                    )}
-                    <div className="newsPopContentsBar FontR textF18">
-                      {(() => {
-                        if (modalObj.content) {
-                          return modalObj.content
-                            .split("<br>")
-                            .map((line, index) => {
-                              return (
-                                <span key={index}>
-                                  {line}
-                                  <br />
-                                </span>
-                              );
-                            });
-                        } else {
-                          return "";
-                        }
-                      })()}
-                    </div>
-                    <div
-                      className="newsSquarePopButtonContain FontR textF14"
-                      onClick={handleClose}
-                    >
-                      <div className="newsSquareButton" onClick={handleClose}>
-                        <span className="newsButtonLink" onClick={handleClose}>
-                          Close
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <div> no info</div>
-            )}
-          </div>
-        </Fade>
-      </Modal>
+    <div id="content" style={{ position: "relative" }}>
+      <Menubar slideIndex={slideIndex} />
+      <Totop />
+      <div id="news">
+        <ContentsTitle matches={matches} title={"News & IR"} />
+        {/* 배너 */}
+        <NewsRelease matches={matches} />
+        <IRInformation matches={matches} />
+        <Footer />
+      </div>
     </div>
   );
 }
