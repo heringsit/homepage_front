@@ -9,11 +9,9 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import { ReactComponent as IconClose } from "../../../assets/images/05career/close.svg";
-import {saveAs} from 'file-saver'; 
+import { saveAs } from "file-saver";
 import { imsi } from "../../..";
-
-
-
+import search from "../../../assets/images/etc/search.png";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -71,7 +69,6 @@ const useStyles = makeStyles((theme) =>
 );
 
 export default function NewsRelease({ match }) {
-
   // const matches = useMediaQuery("(max-width:600px)");
   const [, setIsDataReady] = useState(false);
   const [, setPaginginfo] = useState([]);
@@ -157,9 +154,7 @@ export default function NewsRelease({ match }) {
   };
 
   const onDownLoad = async (file) => {
-    const downloadResult = await fetch(
-      `${imsi}/upimg/${file}`
-    );
+    const downloadResult = await fetch(`${imsi}/upimg/${file}`);
     const blob = await downloadResult.blob();
     saveAs(blob, "file");
   };
@@ -183,7 +178,7 @@ export default function NewsRelease({ match }) {
               제목
             </div>
             <div className="newsContainListHeaderCol ncol2 textF16 korFonts">
-              게시일
+              등록일
             </div>
           </div>
           <div className="nodatasWrap">
@@ -228,7 +223,9 @@ export default function NewsRelease({ match }) {
               <div className={classes.modalContent}>
                 <div className="careerModalTitle">
                   <div className="careerModalTitleSection">
-                    <span className="FontNB textF26">{modalObj.title}</span>
+                    <span className="FontNB textF26" style={{ marginLeft: 45 }}>
+                      NEWS
+                    </span>
                   </div>
                   <IconClose
                     onClick={handleClose}
@@ -236,47 +233,70 @@ export default function NewsRelease({ match }) {
                   />
                 </div>
 
-                <div className="careerModalContent">
-                  {/* <div className="careerModalContentCaption tcw FontB textF16">
-                    HERINGS Career
-                  </div> */}
-                  <div className="readContentsCareerCategoryWrap borderBottom">
-                    <div className="readContentsCareerCategory">
-                      <div className="readContentsRow ">
-                        <div className="tbContentsB FontNB textF16">제목</div>
-                        {modalObj?.link && <div className="tbContents tcb FontNR textF16 ">
-                           <div style={{cursor:"pointer"}} onClick={() => window.open(`${modalObj.link}`, '_blank')}>[자세히 보기]</div>
-                        </div>}
+                <div className="careerModalContent" style={{ paddingTop: 10 }}>
+                  <div
+                    className="FontB textF18"
+                    style={{
+                      textAlign: "center",
+                      paddingBottom: 30,
+                      paddingTop: 20,
+                    }}
+                  >
+                    {modalObj.title}
+                  </div>
+
+                  <div className="filecol">
+                    <div className="readContentsNewsCategoryWrap borderBottom  borderTop">
+                      <div className="readContentsNewsCategory">
+                        {modalObj?.img && (
+                          <div className="readContentsRow ">
+                            <div
+                              className="tbContentsB FontNB textF16"
+                              style={{ color: "#fd8d27" }}
+                            >
+                              첨부파일
+                            </div>
+                            <div
+                              className="tbContents tcb FontNR textF16"
+                              style={{ cursor: "pointer", color: "#666666" }}
+                              onClick={() => onDownLoad(modalObj.img)}
+                            >
+                              {modalObj.img}
+                            </div>
+                          </div>
+                        )}
                       </div>
-                      {modalObj?.img && <div className="readContentsRow ">
-                        <div className="tbContentsB FontNB textF16">
-                          첨부파일
+
+                      <div>
+                        <div className="readContentsRow ">
+                          <div
+                            className="tbContentsB FontNB textF16"
+                            style={{ color: "#fd8d27" }}
+                          >
+                            등록일
+                          </div>
+                          <div
+                            className="tbContents tcb FontNR textF16 "
+                            style={{ color: "#666666" }}
+                          >
+                            {modalObj.reg_datetime}
+                          </div>
                         </div>
-                        <div className="tbContents tcb FontNR textF16" onClick={() => onDownLoad(modalObj.img)}>
-                          {modalObj.img}
-                        </div>
-                      </div>}
-                      <div className="readContentsRow ">
-                        <div className="tbContentsB FontNB textF16">
-                          게시일자
-                        </div>
-                        <div className="tbContents tcb FontNR textF16 ">
-                          {modalObj.reg_datetime}
-                        </div>
-                      </div>
-                      <div className="readContentsRow ">
-                        <div className="tbContents tcb FontNR textF16 ">
-                          {modalObj.recruitment}
+                        <div className="readContentsRow ">
+                          <div className="tbContents tcb FontNR textF16 ">
+                            {modalObj.recruitment}
+                          </div>
                         </div>
                       </div>
                     </div>
+
                     {/* <div className="readContentsTableButtonTd">
                       <div className="readContentsTableButton FontNR textF16">
                         {modalObj.closing_date}
                       </div>
                     </div> */}
                   </div>
-                  <div className="careerContents FontNR textF16">
+                  <div className="careerContents FontNR textF16 borderBottom">
                     {(() => {
                       if (
                         modalObj.content !== undefined &&
@@ -302,9 +322,35 @@ export default function NewsRelease({ match }) {
                       }
                     })()} */}
                   </div>
+                  {modalObj?.link && (
+                    <div
+                      className="tbContents tcb FontNR textF24 "
+                      style={{ textAlign: "center" }}
+                    >
+                      {/* <img src={search} /> */}
+                      <button
+                        style={{
+                          cursor: "pointer",
+                          padding: 10,
+                          background: "none",
+                          border: "none",
+                          fontSize: 17,
+                        }}
+                        onClick={() =>
+                          window.open(`${modalObj.link}`, "_blank")
+                        }
+                      >
+                        <img
+                          src={search}
+                          style={{ marginRight: 9, marginBottom: -4 }}
+                        />
+                        자세히 보기
+                      </button>
+                    </div>
+                  )}
                   <div className="careerModalBottom">
                     <div
-                      className="careerModalClose FontR textF14"
+                      className="careerModalClose FontR textF16"
                       onClick={handleClose}
                     >
                       <span className="newsButtonLink" onClick={handleClose}>

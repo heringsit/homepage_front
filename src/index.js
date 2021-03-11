@@ -13,10 +13,9 @@ import Contactus from "./views/Contactus/Contactus";
 import "./index.css";
 import DetailPage from "./views/News/Sections/detail/DetailPage";
 
-
-  // export const imsi = process.env.PUBLIC_URL; // 운영계
-  export const imsi = `http://52.79.120.20:9099`; // 개발계
-  // export const imsi = `http://localhost:9099`; // local
+// export const imsi = process.env.PUBLIC_URL; // 운영계
+export const imsi = `http://52.79.120.20:9099`; // 개발계
+// export const imsi = `http://localhost:9099`; // local
 
 const App = () => {
   // console.log("index.js!");
