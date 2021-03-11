@@ -12,7 +12,6 @@ import { ReactComponent as IconClose } from "../../../assets/images/05career/clo
 import { saveAs } from "file-saver";
 import { imsi } from "../../..";
 import search from "../../../assets/images/etc/search.png";
-
 const useStyles = makeStyles((theme) =>
   createStyles({
     modal: {
@@ -160,7 +159,6 @@ export default function NewsRelease({ match }) {
   };
 
   useEffect(getdata, []);
-
   return (
     <div id="content" style={{ position: "relative" }}>
       <div className="SectionDivNews" id="newsrelease">
@@ -195,12 +193,14 @@ export default function NewsRelease({ match }) {
                     </div>
                   </div>
                   <div className="newsContainListCol ncol2 textF16">
-                    {data.regiDate}
+                    {moment(data.reg_datetime).format("YYYY-MM-DD")}
                   </div>
                 </div>
               );
             })}
-            {/* <div className="nodatas FontB">등록된 게시물이 습니다!</div> */}
+            {/* <div className="nodatasWrap">
+              <div className="nodatas FontB">등록된 게시물이 없습니다!</div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -279,7 +279,7 @@ export default function NewsRelease({ match }) {
                             className="tbContents tcb FontNR textF16 "
                             style={{ color: "#666666" }}
                           >
-                            {modalObj.reg_datetime}
+                            {moment(modalObj.reg_datetime).format("YYYY-MM-DD")}
                           </div>
                         </div>
                         <div className="readContentsRow ">
@@ -305,29 +305,12 @@ export default function NewsRelease({ match }) {
                         return parse(modalObj.content);
                       }
                     })()}
-                    {/* {(() => {
-                      if (modalObj.content) {
-                        return modalObj.content
-                          .split("<br>")
-                          .map((line, index) => {
-                            return (
-                              <span key={index}>
-                                {line}
-                                <br />
-                              </span>
-                            );
-                          });
-                      } else {
-                        return "";
-                      }
-                    })()} */}
                   </div>
                   {modalObj?.link && (
                     <div
                       className="tbContents tcb FontNR textF24 "
                       style={{ textAlign: "center" }}
                     >
-                      {/* <img src={search} /> */}
                       <button
                         style={{
                           cursor: "pointer",
