@@ -324,6 +324,7 @@ export default function NewsRelease({ match }) {
                         }
                       >
                         <img
+                          alt="img"
                           src={search}
                           style={{ marginRight: 9, marginBottom: -4 }}
                         />

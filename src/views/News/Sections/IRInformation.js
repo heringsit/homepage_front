@@ -89,19 +89,19 @@ export default function NewsRelease() {
       return isEnd;
     }
   };
-  const [, setCountList] = useState([]);
+  // const [, setCountList] = useState([]);
   const [listData, setListData] = useState([]);
 
   const getdata = (tab) => {
-    let today = new Date();
+    // let today = new Date();
     // let selectedTab = tab !== undefined ? tab : careerTab;
     // console.log("getdata tab->" + selectedTab);
-    let sendingDateFormat =
-      today.getFullYear() +
-      "-" +
-      (today.getMonth() + 1).toString().padStart(2, "0") +
-      "-" +
-      today.getDate().toString().padStart(2, "0");
+    // let sendingDateFormat =
+    //   today.getFullYear() +
+    //   "-" +
+    //   (today.getMonth() + 1).toString().padStart(2, "0") +
+    //   "-" +
+    //   today.getDate().toString().padStart(2, "0");
 
     axios
       .get(`${imsi}/api/boardList`, {
@@ -188,6 +188,7 @@ export default function NewsRelease() {
                     >
                       다운로드{" "}
                       <img
+                        alt="img"
                         src={downLoad}
                         style={{ width: 15, height: 15, marginLeft: 8 }}
                       />
@@ -325,6 +326,7 @@ export default function NewsRelease() {
                         }
                       >
                         <img
+                          alt="img"
                           src={search}
                           style={{ marginRight: 9, marginBottom: -4 }}
                         />
