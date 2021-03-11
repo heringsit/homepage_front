@@ -5,6 +5,7 @@ import icon1_1 from "../../../assets/images/02about_herings_team/new200527/1_1na
 import icon1_2 from "../../../assets/images/02about_herings_team/new200527/1_2song.png";
 import icon1_3 from "../../../assets/images/02about_herings_team/new200527/1_3ahn.png";
 import icon1_4 from "../../../assets/images/02about_herings_team/new200527/1_4park.jpg";
+import icon1_5 from "../../../assets/images/02about_herings_team/new200527/1_5an.png";
 import icon2_1 from "../../../assets/images/02about_herings_team/new200527/2_1yang.png";
 import icon2_2 from "../../../assets/images/02about_herings_team/new200527/2_2kim.png";
 import icon2_3 from "../../../assets/images/02about_herings_team/new200527/2_3hong.png";
@@ -53,6 +54,15 @@ export const Executive_Leadership = [
     modalimg: icon1_4,
     detail:
       "Kyounghoon Park is a medical doctor with preventive medicine specialty. He majored in pharmaepidemiolgy and performed various big data analysis and medical research. He is interested in establishing evidence-based clinical preventive medicine.  He graduated from the School of Medicine at Pusan National University and trained resident course in the Department of Preventive Medicine at Seoul National University. He also achieved a Ph D in medicine from Seoul National University.",
+  },
+  {
+    name: "Seongae Ahn",
+    jobs: `CSO`,
+    positions: "Director of  Clinical Development",
+    background: icon1_4,
+    modalimg: icon1_5,
+    detail:
+      "Seongae Ahn is a registered nurse. She graduated from the School of Nursing at Hallym University. She has about 15 years of clinical trial experience in various therapeutic areas. She is interested in Digital Therapeutics for enhancing quality of life of patients. Prior to her career in clinical trial, she worked at university hospital as a Nurse.",
   },
 ];
 
