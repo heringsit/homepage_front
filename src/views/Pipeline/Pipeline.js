@@ -533,7 +533,7 @@ export default function Pipeline() {
                   backgroundRepeat: "no-repeat",
                 }}
               >
-                &nbsp;
+                &nbsp;&nbsp;
               </div>
             </div>
             <div className="div-table-cell-row textF16 FontR">
