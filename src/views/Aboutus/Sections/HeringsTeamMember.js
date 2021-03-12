@@ -53,7 +53,7 @@ export const Executive_Leadership = [
     background: icon1_4,
     modalimg: icon1_4,
     detail:
-      "Kyounghoon Park is a medical doctor with preventive medicine specialty. He majored in pharmaepidemiolgy and performed various big data analysis and medical research. He is interested in establishing evidence-based clinical preventive medicine.  He graduated from the School of Medicine at Pusan National University and trained resident course in the Department of Preventive Medicine at Seoul National University. He also achieved a Ph D in medicine from Seoul National University.",
+      "Kyounghoon Park is a medical doctor with preventive medicine specialty. He majored in pharmacoepidemiology and performed various big data analysis and medical research. He is interested in establishing evidence-based clinical preventive medicine.  He graduated from the School of Medicine at Pusan National University and trained resident course in the Department of Preventive Medicine at Seoul National University. He also achieved a Ph D in medicine from Seoul National University.",
   },
   {
     name: "Seongae Ahn",
@@ -169,15 +169,15 @@ export const Advisory_Board = [
     detail:
       "Yongdai Kim is a professor of the Department of Statistics at Seoul National University since 2004. Prior to his academic career at Seoul National University, he worked as an assistant professor at Ewha Woman's University and Hankuk University of Foreign Studies and researched in the National Institutes of Health, USA.\n\nHe holds a BS and MS from Seoul National University and holds his PhD in Statistics at Ohio State University.",
   },
-  {
-    name: "Soo-Yong Shin",
-    jobs: "PhD",
-    positions: "",
-    background: icon3_5,
-    modalimg: icon3_5,
-    detail:
-      "Soo-Yong Shin is a professor in the Department of Samsung Advanced Institute for Health Sciences and Technology at Sungkyunkwan University. His main research interest is how to handle biomedical data themselves. Prior to his career at Sungkyunkwan University, he worked in the field of Bioinformatics at Kyung Hee University, Asan Medical Center, and Samsung SDS as an assistant professor and a researcher.\n\nProfessor Shin received a BS, MS, and PhD in computer engineering at Seoul National University in 1998, 2000, and 2005.",
-  },
+  // {
+  //   name: "Soo-Yong Shin",
+  //   jobs: "PhD",
+  //   positions: "",
+  //   background: icon3_5,
+  //   modalimg: icon3_5,
+  //   detail:
+  //     "Soo-Yong Shin is a professor in the Department of Samsung Advanced Institute for Health Sciences and Technology at Sungkyunkwan University. His main research interest is how to handle biomedical data themselves. Prior to his career at Sungkyunkwan University, he worked in the field of Bioinformatics at Kyung Hee University, Asan Medical Center, and Samsung SDS as an assistant professor and a researcher.\n\nProfessor Shin received a BS, MS, and PhD in computer engineering at Seoul National University in 1998, 2000, and 2005.",
+  // },
   {
     name: "John Crowley",
     jobs: "PhD",
