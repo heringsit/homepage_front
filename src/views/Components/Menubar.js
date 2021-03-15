@@ -432,7 +432,7 @@ export default function Menubar(props) {
                     <span className="textF15 tcg">Partners & Invenstors</span>
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     smooth
                     to={`${imsi}/aboutus/#certificates`}
@@ -440,7 +440,7 @@ export default function Menubar(props) {
                   >
                     <span className="textF15 tcg">Certificates</span>
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
 
@@ -485,7 +485,7 @@ export default function Menubar(props) {
                 <span className="textF18 tcb">PIPELINE</span>
               </Link>
               <ul className="menuul">
-                <li>
+                {/* <li>
                   <Link
                     smooth
                     to={`${imsi}/pipeline/#craimon`}
@@ -493,14 +493,14 @@ export default function Menubar(props) {
                   >
                     <span className="textF15 tcg"> Craimon Pipeline</span>
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link
                     smooth
-                    to={`${imsi}/pipeline/#rhexium`}
+                    to={`${imsi}/pipeline/#DTx PIPELINES`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg"> Rhexium Pipeline</span>
+                    <span className="textF15 tcg"> DTx Pipelines</span>
                   </Link>
                 </li>
               </ul>
