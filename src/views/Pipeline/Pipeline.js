@@ -309,7 +309,7 @@ export default function Pipeline() {
                   className="div-table-col textF16 FontB"
                   style={{ color: "#008b71" }}
                 >
-                  <div>Module</div>
+                  <div>MODULE</div>
                 </div>
                 <div className="div-table-col textF16 FontB">
                   <div>STUDY</div>
