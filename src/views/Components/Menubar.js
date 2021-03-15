@@ -48,6 +48,7 @@ export default function Menubar(props) {
     setIsOver(false);
   };
 
+  // 모바일 메뉴
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -430,6 +431,15 @@ export default function Menubar(props) {
                     onClick={menuclick}
                   >
                     <span className="textF15 tcg">Partners & Invenstors</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    smooth
+                    to={`${imsi}/aboutus/#qualitymanagement`}
+                    onClick={menuclick}
+                  >
+                    <span className="textF15 tcg">QualityManagement</span>
                   </Link>
                 </li>
                 {/* <li>

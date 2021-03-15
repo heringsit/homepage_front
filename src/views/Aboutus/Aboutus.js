@@ -14,6 +14,7 @@ import Whoweare from "./Sections/whoweare";
 // import Certificates from "./Sections/Certificates";
 import PAI from "./Sections/PartnersAInvestors";
 import TeamList from "./Sections/TeamList";
+import QM from "./Sections/QualityManagement";
 import "./Aboutus.css";
 
 const useStyles = makeStyles((theme) =>
@@ -48,7 +49,7 @@ const useStyles = makeStyles((theme) =>
       // alignItems: "center",
       // justifyContent: "center",
 
-      width: '55%',
+      width: "55%",
       // height: "439px",
       maxHeight: "85vh",
       overflow: "auto",
@@ -150,7 +151,7 @@ export default function Aboutus({ match }) {
   //     },1000)
   //   }
   // },[])
-  
+
   // const openInitialNotice = () => {
   //   return (
   //     <Modal
@@ -168,7 +169,7 @@ export default function Aboutus({ match }) {
   //       //   timeout: 500,
   //       // }}
   //     >
-      
+
   //       <Fade in={openNotice}>
   //         <div style={{}} className={classes.paper}>
   //           <h2 style={{ }}>헤링스 COVID 광폭 TF 임상</h2>
@@ -208,6 +209,7 @@ export default function Aboutus({ match }) {
         <Whoweare matches={matches} />
         <TeamList handleOpen={handleOpen} matches={matches} />
         <PAI matches={matches} />
+        <QM matches={matches} />
         {/* <Certificates match={matches} /> */}
         <Footer />
       </div>
@@ -268,7 +270,6 @@ export default function Aboutus({ match }) {
           </div>
         </Fade>
       </Modal>
-      
     </div>
   );
 }
