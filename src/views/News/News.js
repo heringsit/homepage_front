@@ -129,7 +129,6 @@ export default function News({ match }) {
   // const [open, setOpen] = useState(false);
   // const [modalObj, setModalObj] = useState({});
   const [slideIndex] = useState(0);
-
   // const handleOpen = (obj) => {
   //   if (JSON.stringify({}) !== obj) {
   //     setModalObj(obj);

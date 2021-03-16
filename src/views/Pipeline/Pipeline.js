@@ -482,7 +482,8 @@ export default function Pipeline() {
                   </div>
                 </div>
                 <div className="div-table-col">
-                  <div>Drug compliance</div>
+                  <div>Drug</div>
+                  <div> compliance</div>
                 </div>
                 <div
                   className="div-table-col"
