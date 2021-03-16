@@ -140,8 +140,20 @@ export default function Menubar(props) {
                     </span>
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    smooth
+                    to={`${imsi}/aboutus/#qualitymanagement`}
+                    onClick={menuclick}
+                  >
+                    <span className="menuText FontB textF18">
+                      QUALITY MANAGEMENT
+                    </span>
+                  </Link>
+                </li>
               </ul>
             </div>
+
             <div className="mobileMenudiv">
               <Link
                 smooth
@@ -225,40 +237,117 @@ export default function Menubar(props) {
                 <li>
                   <Link
                     smooth
-                    to={`${imsi}/pipeline/#craimon`}
+                    to={`${imsi}/pipeline/#DTx PIPELINES`}
                     onClick={menuclick}
                   >
                     <span className="menuText FontB textF18">
-                      CRAIMON PIPELINE
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth
-                    to={`${imsi}/pipeline/#rhexium`}
-                    onClick={menuclick}
-                  >
-                    <span className="menuText FontB textF18">
-                      RHEXIUM PIPELINE
+                      DTx PIPELINES
                     </span>
                   </Link>
                 </li>
               </ul>
             </div>
             <div className="mobileMenudiv">
-              <Link smooth to={`${imsi}/career`} onClick={menuclick}>
+              <Link
+                smooth
+                to={`${imsi}/platforms/#platforms`}
+                onClick={(e) => {
+                  mobilemenuclick(e, 3);
+                }}
+              >
                 <div className="mobileMenuRow">
-                  <span className={`FontEB textF22 menuText`}>CAREER</span>
+                  <span
+                    className={`FontEB textF22 menuText ${
+                      mobileSelected === 3 ? "mobilemenusactive" : ""
+                    }`}
+                  >
+                    NEW & IR
+                  </span>
+                  {mobileSelected === 3 ? (
+                    <Icon style={{ color: "#E78510" }}>expand_less</Icon>
+                  ) : (
+                    <Icon>expand_more</Icon>
+                  )}
                 </div>
               </Link>
+              <ul
+                className={`mobileMenuul ${
+                  mobileSelected === 3
+                    ? "mobilemenuslider"
+                    : "mobilemenuslideroff"
+                }`}
+              >
+                <li>
+                  <Link
+                    smooth
+                    to={`${imsi}/news/#newsrelease`}
+                    onClick={menuclick}
+                  >
+                    <span className="menuText FontB textF18">NEWS RELEASE</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    smooth
+                    to={`${imsi}/news/#irinformation`}
+                    onClick={menuclick}
+                  >
+                    <span className="menuText FontB textF18">
+                      IR INFORMATION
+                    </span>
+                  </Link>
+                </li>
+              </ul>
             </div>
             <div className="mobileMenudiv">
-              <Link smooth to={`${imsi}/contactus`} onClick={menuclick}>
+              <Link
+                smooth
+                to={`${imsi}/platforms/#platforms`}
+                onClick={(e) => {
+                  mobilemenuclick(e, 4);
+                }}
+              >
                 <div className="mobileMenuRow">
-                  <span className={`FontEB textF22 menuText`}>CONTACT US</span>
+                  <span
+                    className={`FontEB textF22 menuText ${
+                      mobileSelected === 4 ? "mobilemenusactive" : ""
+                    }`}
+                  >
+                    CONTACT US
+                  </span>
+                  {mobileSelected === 4 ? (
+                    <Icon style={{ color: "#E78510" }}>expand_less</Icon>
+                  ) : (
+                    <Icon>expand_more</Icon>
+                  )}
                 </div>
               </Link>
+              <ul
+                className={`mobileMenuul ${
+                  mobileSelected === 4
+                    ? "mobilemenuslider"
+                    : "mobilemenuslideroff"
+                }`}
+              >
+                <li>
+                  <Link
+                    smooth
+                    to={`${imsi}/contactus/#career`}
+                    onClick={menuclick}
+                  >
+                    <span className="menuText FontB textF18">CAREER</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    smooth
+                    to={`${imsi}/contactus/#contact`}
+                    onClick={menuclick}
+                  >
+                    <span className="menuText FontB textF18">CONTACT</span>
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -439,7 +528,7 @@ export default function Menubar(props) {
                     to={`${imsi}/aboutus/#qualitymanagement`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">QualityManagement</span>
+                    <span className="textF15 tcg">Quality Management</span>
                   </Link>
                 </li>
                 {/* <li>

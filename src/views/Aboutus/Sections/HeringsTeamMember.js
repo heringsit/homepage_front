@@ -14,7 +14,7 @@ import icon3_1 from "../../../assets/images/02about_herings_team/new200527/3_1pa
 import icon3_2 from "../../../assets/images/02about_herings_team/new200527/3_2kimdc.png";
 import icon3_3 from "../../../assets/images/02about_herings_team/new200527/3_3lee.png";
 import icon3_4 from "../../../assets/images/02about_herings_team/new200527/3_4kimyd.png";
-import icon3_5 from "../../../assets/images/02about_herings_team/new200527/3_5shin.png";
+// import icon3_5 from "../../../assets/images/02about_herings_team/new200527/3_5shin.png";
 import icon3_6 from "../../../assets/images/02about_herings_team/new200527/3_6John.png";
 import icon3_7 from "../../../assets/images/02about_herings_team/new200527/3_7choi.png";
 
