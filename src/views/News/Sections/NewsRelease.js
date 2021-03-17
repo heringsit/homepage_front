@@ -12,6 +12,7 @@ import { ReactComponent as IconClose } from "../../../assets/images/05career/clo
 import { saveAs } from "file-saver";
 import { imsi } from "../../..";
 import search from "../../../assets/images/etc/search.png";
+
 const useStyles = makeStyles((theme) =>
   createStyles({
     modal: {

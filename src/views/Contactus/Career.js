@@ -7,6 +7,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
+import { imsi } from "../../index";
 
 import { ReactComponent as IconClose } from "../../assets/images/05career/close.svg";
 import "./Career.css";
@@ -67,8 +68,6 @@ const useStyles = makeStyles((theme) =>
 );
 
 export default function Career({ match }) {
-  const imsi = process.env.PUBLIC_URL; //demo
-  //const imsi = ""; //dev
   const matches = useMediaQuery("(max-width:600px)");
   const classes = useStyles();
   const [open, setOpen] = useState(false);
@@ -296,6 +295,7 @@ export default function Career({ match }) {
   };
 
   useEffect(getdata, []);
+  console.log("listData::", listData);
   return (
     <div id="content" style={{ position: "relative" }}>
       {/* <Menubar slideIndex={0} />
