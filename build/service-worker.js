@@ -13,15 +13,12 @@
  * See https://goo.gl/2aRDsh
  */
 
-// eslint-disable-next-line no-undef
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
-// eslint-disable-next-line no-undef
 importScripts(
-  "/precache-manifest.5e7772a7b9d83e8f5cc2017c9c8fe657.js"
+  "/precache-manifest.09540e85a8c80584e9d196b41dfc6962.js"
 );
 
-// eslint-disable-next-line no-restricted-globals
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
