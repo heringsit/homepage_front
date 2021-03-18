@@ -22,6 +22,7 @@ import './Aboutus.css';
 import { useEffect } from 'react';
 import { imsi } from '../../index';
 import search from "../../assets/images/etc/search.png";
+import { Checkbox } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) =>
 	createStyles({
@@ -150,7 +151,7 @@ export default function Aboutus({ match }) {
 	const [ modalObj, setModalObj ] = useState({});
 	const [ slideIndex, setSlideIndex ] = useState(0);
 
-	const getdata = (tab) => {
+	const getdata = async (tab) => {
 		// let today = new Date();
 		
 		// let sendingDateFormat =
@@ -160,7 +161,7 @@ export default function Aboutus({ match }) {
 		// 	'-' +
 		// 	today.getDate().toString().padStart(2, '0');
 
-		axios
+	 await axios
 			.get(`${imsi}/api/boardList`, {
 				params: {
 					type: 'Popup',
@@ -176,11 +177,7 @@ export default function Aboutus({ match }) {
 			});
 	};
 	useEffect(() => {
-		 {
-			setTimeout(() => {
-				setOpenNotice(true);
-			}, 1000);
-		}
+    setOpenNotice(true);
 	}, [startingPage]);
 
 
@@ -274,15 +271,16 @@ export default function Aboutus({ match }) {
                         />
                         자세히 보기
                       </button>
-                      {/* <button style={{
+                      <Checkbox style={{
                           cursor: "pointer",
                           padding: 10,
                           background: "none",
                           border: "none",
                           fontSize: 17,
                         }}>
-                        오늘 하루 보지않기
-                      </button> */}
+                        
+                      </Checkbox>
+                      오늘 하루 보지않기
                       </div>
                     </div>
                   )}
