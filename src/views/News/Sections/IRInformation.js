@@ -102,7 +102,6 @@ export default function NewsRelease() {
     //   (today.getMonth() + 1).toString().padStart(2, "0") +
     //   "-" +
     //   today.getDate().toString().padStart(2, "0");
-
     axios
       .get(`${imsi}/api/boardList`, {
         params: {
@@ -113,6 +112,7 @@ export default function NewsRelease() {
       .then((response) => {
         console.log(response.data.paginginfo);
         setListData(response.data.board_data);
+        console.log(response.data.board_data);
         setIsDataReady(true);
         setPaginginfo(response.data.paginginfo);
       })
@@ -226,7 +226,7 @@ export default function NewsRelease() {
                 <div className="careerModalTitle">
                   <div className="careerModalTitleSection">
                     <span className="FontNB textF26" style={{ marginLeft: 45 }}>
-                      NEWS
+                      IR
                     </span>
                   </div>
                   <IconClose

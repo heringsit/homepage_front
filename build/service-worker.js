@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-undef */
 /**
  * Welcome to your Workbox-powered service worker!
  *
@@ -11,12 +13,15 @@
  * See https://goo.gl/2aRDsh
  */
 
+// eslint-disable-next-line no-undef
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
+// eslint-disable-next-line no-undef
 importScripts(
-  "/precache-manifest.fd2e5031d3ae11de493abe61d8d3cfd0.js"
+  "/precache-manifest.5e7772a7b9d83e8f5cc2017c9c8fe657.js"
 );
 
+// eslint-disable-next-line no-restricted-globals
 self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
