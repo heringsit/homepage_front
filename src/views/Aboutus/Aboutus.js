@@ -151,7 +151,7 @@ export default function Aboutus({ match }) {
 	const [ modalObj, setModalObj ] = useState({});
 	const [ slideIndex, setSlideIndex ] = useState(0);
 
-	const getdata = async (tab) => {
+	const getdata =  (tab) => {
 		// let today = new Date();
 		
 		// let sendingDateFormat =
@@ -161,7 +161,7 @@ export default function Aboutus({ match }) {
 		// 	'-' +
 		// 	today.getDate().toString().padStart(2, '0');
 
-	 await axios
+	  axios
 			.get(`${imsi}/api/boardList`, {
 				params: {
 					type: 'Popup',
@@ -177,7 +177,10 @@ export default function Aboutus({ match }) {
 			});
 	};
 	useEffect(() => {
-    setOpenNotice(true);
+    setTimeout(() => {
+      getdata();
+      setOpenNotice(true);
+    },2000)
 	}, [startingPage]);
 
 
@@ -200,7 +203,7 @@ export default function Aboutus({ match }) {
     window.setTimeout(handleShowModal, 1000);
   }, [HAS_VISITED_BEFORE]);
 
-	useEffect(getdata, []);
+	// useEffect(, []);
 	const openInitialNotice = () => {
 		return (
 			<Modal
