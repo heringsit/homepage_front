@@ -149,8 +149,10 @@ export default function Aboutus({ match }) {
   const [open, setOpen] = useState(false);
   const [openNotice, setOpenNotice] = useState(false);
   const [modalObj, setModalObj] = useState({});
+  const [modalPopObj, setmodalPopObj] = useState({});
   const [slideIndex, setSlideIndex] = useState(0);
   const [watchToday, setWatchToday] = useState(false);
+
   const getdata = (tab) => {
     axios
       .get(`${imsi}/api/boardList`, {
@@ -161,7 +163,13 @@ export default function Aboutus({ match }) {
       })
       .then((response) => {
         console.log("response.data.paginginfo", response.data.board_data[0]);
-        setModalObj(response.data.board_data[0]);
+        if(response.data?.board_data.length !== 0) {
+            setmodalPopObj(response.data?.board_data[0]);
+            return setOpenNotice(true);
+        } else {
+            setmodalPopObj(undefined)
+            return setOpenNotice(false);
+        }
       })
       .catch(function (error) {
         console.log(error);
@@ -176,6 +184,7 @@ export default function Aboutus({ match }) {
       localStorage.setItem("hasVisitedBefore", expires);
     }
   };
+
   const handleNoticeClose = () => {
     if (watchToday) {
       handleShowModal();
@@ -186,9 +195,9 @@ export default function Aboutus({ match }) {
   useEffect(() => {
     if (HAS_VISITED_BEFORE && HAS_VISITED_BEFORE > new Date()) {
       return;
+    } else {
+      getdata();
     }
-    getdata();
-    setOpenNotice(true);
   }, [HAS_VISITED_BEFORE]);
 
   const onCheckChange = () => {
@@ -212,12 +221,12 @@ export default function Aboutus({ match }) {
       >
         <Fade in={openNotice}>
           <div className={classes.paper}>
-            {modalObj !== JSON.stringify({}) ? (
+            {modalPopObj !== undefined && (
               <div style={{ width: "100%" }}>
                 <div className="careerModalTitle">
                   <div className="careerModalTitleSection">
                     <span className="FontNB textF26" style={{ marginLeft: 45 }}>
-                      {modalObj.title}
+                      {modalPopObj.title}
                     </span>
                   </div>
                   <IconClose
@@ -240,7 +249,7 @@ export default function Aboutus({ match }) {
                       className="tbContents tcb FontNR textF16 "
                       style={{ borderBottom: "solid 0.5px #bebebe" }}
                     >
-                      {modalObj.recruitment}
+                      {modalPopObj.recruitment}
                       <div
                         style={{
                           textAlign: "center",
@@ -248,16 +257,16 @@ export default function Aboutus({ match }) {
                       >
                         {(() => {
                           if (
-                            modalObj.content !== undefined &&
-                            modalObj.content !== ""
+                            modalPopObj.content !== undefined &&
+                            modalPopObj.content !== ""
                           ) {
-                            return parse(modalObj.content);
+                            return parse(modalPopObj.content);
                           }
                         })()}
                       </div>
                     </div>
                   </div>
-                  {modalObj?.link && (
+                  {modalPopObj?.link && (
                     <div
                       className="tcb FontNR textF17"
                       style={{
@@ -275,7 +284,7 @@ export default function Aboutus({ match }) {
                             fontSize: 17,
                           }}
                           onClick={() =>
-                            window.open(`${modalObj.link}`, "_blank")
+                            window.open(`${modalPopObj.link}`, "_blank")
                           }
                         >
                           <img
@@ -309,9 +318,7 @@ export default function Aboutus({ match }) {
                   )}
                 </div>
               </div>
-            ) : (
-              <div> no info</div>
-            )}
+            ) }
           </div>
         </Fade>
       </Modal>
@@ -327,12 +334,20 @@ export default function Aboutus({ match }) {
   const handleClose = () => {
     setOpen(false);
   };
+  const openerModalNoti = () => {
+    if(modalObj) {
+      return  openInitialNotice();
+    } 
+    return null;
+
+  }
   const classes = useStyles();
   return (
     <div id="aboutus" style={{ position: "relative" }}>
       <Menubar slideIndex={slideIndex} />
       <Totop />
-      {openInitialNotice()}
+      {openerModalNoti()}
+      {/* { modalObj !== null ? openInitialNotice() : null} */}
       <div>
         {/* 배너 */}
         <Maintop matches={matches} setSlideIndex={setSlideIndex} />
@@ -370,8 +385,8 @@ export default function Aboutus({ match }) {
                 </div>
                 <div className={classes.modalimgaeWrap}>
                   <img
-                    src={modalObj.modalimg}
-                    alt={modalObj.name}
+                    src={modalObj?.modalimg}
+                    alt={modalObj?.name}
                     className={classes.modalimage}
                   />
                 </div>
@@ -380,17 +395,17 @@ export default function Aboutus({ match }) {
                     className="teamModalName textF22 FontB"
                     id="transition-modal-title"
                   >
-                    {modalObj.name}
+                    {modalObj?.name}
                   </span>
                   <span className="teamModalPosition textF16 FontB">
-                    {modalObj.positions}
+                    {modalObj?.positions}
                   </span>
                 </div>
                 <div
                   id="transition-modal-description"
                   className={`textF16 FontR ${classes.modalContentText}`}
                 >
-                  {modalObj.detail}
+                  {modalObj?.detail}
                 </div>
               </div>
             ) : (
