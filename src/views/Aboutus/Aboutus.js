@@ -191,6 +191,12 @@ export default function Aboutus({ match }) {
     setOpenNotice(true);
   }, [HAS_VISITED_BEFORE]);
 
+  const onCheckChange = () => {
+    if (watchToday) {
+      return setWatchToday(false);
+    }
+    return setWatchToday(true);
+  };
   const openInitialNotice = () => {
     return (
       <Modal
@@ -295,7 +301,7 @@ export default function Aboutus({ match }) {
                             border: "none",
                             fontSize: 17,
                           }}
-                          onClick={() => setWatchToday(true)}
+                          onChange={onCheckChange}
                         ></Checkbox>
                         오늘 하루 보지않기
                       </div>
@@ -319,9 +325,6 @@ export default function Aboutus({ match }) {
     }
   };
   const handleClose = () => {
-    // setTimeout(function () {
-    //   !open ? setModalObj({}) : null;
-    // }, 2000);
     setOpen(false);
   };
   const classes = useStyles();
@@ -337,7 +340,6 @@ export default function Aboutus({ match }) {
         <TeamList handleOpen={handleOpen} matches={matches} />
         <PAI matches={matches} />
         <QM matches={matches} />
-        {/* <Certificates match={matches} /> */}
         <Footer />
       </div>
       <Modal
