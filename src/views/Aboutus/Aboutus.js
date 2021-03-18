@@ -147,20 +147,10 @@ export default function Aboutus({ match }) {
   const matches = useMediaQuery("(max-width:600px)");
   const [open, setOpen] = useState(false);
   const [openNotice, setOpenNotice] = useState(false);
-  const [startingPage, setStartingPage] = useState(true);
   const [modalObj, setModalObj] = useState({});
   const [slideIndex, setSlideIndex] = useState(0);
-
+  const [watchToday, setWatchToday] = useState(false);
   const getdata = (tab) => {
-    // let today = new Date();
-
-    // let sendingDateFormat =
-    // 	today.getFullYear() +
-    // 	'-' +
-    // 	(today.getMonth() + 1).toString().padStart(2, '0') +
-    // 	'-' +
-    // 	today.getDate().toString().padStart(2, '0');
-
     axios
       .get(`${imsi}/api/boardList`, {
         params: {
@@ -176,33 +166,31 @@ export default function Aboutus({ match }) {
         console.log(error);
       });
   };
-  useEffect(() => {
-    setTimeout(() => {
-      getdata();
-      setOpenNotice(true);
-    }, 2000);
-  }, [startingPage]);
 
   const HAS_VISITED_BEFORE = localStorage.getItem("hasVisitedBefore");
+  const handleShowModal = () => {
+    if (!HAS_VISITED_BEFORE) {
+      setOpenNotice(true);
+      let expires = new Date();
+      expires = expires.setHours(expires.getHours() + 24);
+      localStorage.setItem("hasVisitedBefore", expires);
+    }
+  };
+  const handleNoticeClose = () => {
+    if (watchToday) {
+      handleShowModal();
+    }
+    setOpenNotice(false);
+  };
 
   useEffect(() => {
-    const handleShowModal = () => {
-      if (HAS_VISITED_BEFORE && HAS_VISITED_BEFORE > new Date()) {
-        return;
-      }
-
-      if (!HAS_VISITED_BEFORE) {
-        setOpenNotice(true);
-        let expires = new Date();
-        expires = expires.setHours(expires.getHours() + 24);
-        localStorage.setItem("hasVisitedBefore", expires);
-      }
-    };
-
-    window.setTimeout(handleShowModal, 1000);
+    if (HAS_VISITED_BEFORE && HAS_VISITED_BEFORE > new Date()) {
+      return;
+    }
+    getdata();
+    setOpenNotice(true);
   }, [HAS_VISITED_BEFORE]);
 
-  // useEffect(, []);
   const openInitialNotice = () => {
     return (
       <Modal
@@ -215,10 +203,6 @@ export default function Aboutus({ match }) {
         onBackdropClick={() => {
           setOpenNotice(false);
         }}
-        // BackdropComponent={Backdrop}
-        // BackdropProps={{
-        //   timeout: 500,
-        // }}
       >
         <Fade in={openNotice}>
           <div className={classes.paper}>
@@ -231,9 +215,7 @@ export default function Aboutus({ match }) {
                     </span>
                   </div>
                   <IconClose
-                    onClick={() => {
-                      setOpenNotice(false);
-                    }}
+                    onClick={handleNoticeClose}
                     className="careerModalIconSection"
                   />
                 </div>
@@ -313,6 +295,7 @@ export default function Aboutus({ match }) {
                             border: "none",
                             fontSize: 17,
                           }}
+                          onClick={() => setWatchToday(true)}
                         ></Checkbox>
                         오늘 하루 보지않기
                       </div>
@@ -327,11 +310,6 @@ export default function Aboutus({ match }) {
         </Fade>
       </Modal>
     );
-  };
-
-  const handleNoticeClose = () => {
-    console.log(" close modal!");
-    setStartingPage(false);
   };
 
   const handleOpen = (obj) => {
