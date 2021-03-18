@@ -284,7 +284,7 @@ export default function Aboutus({ match }) {
                             fontSize: 17,
                           }}
                           onClick={() =>
-                            window.open(`${modalPopObj.link}`, "_blank")
+                            window.open(`${modalPopObj.link}`, "_self")
                           }
                         >
                           <img
