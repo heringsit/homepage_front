@@ -144,6 +144,7 @@ const useStyles = makeStyles((theme) =>
 );
 
 export default function Aboutus({ match }) {
+  const HAS_VISITED_BEFORE = localStorage.getItem("hasVisitedBefore");
   const matches = useMediaQuery("(max-width:600px)");
   const [open, setOpen] = useState(false);
   const [openNotice, setOpenNotice] = useState(false);
@@ -167,7 +168,6 @@ export default function Aboutus({ match }) {
       });
   };
 
-  const HAS_VISITED_BEFORE = localStorage.getItem("hasVisitedBefore");
   const handleShowModal = () => {
     if (!HAS_VISITED_BEFORE) {
       setOpenNotice(true);
