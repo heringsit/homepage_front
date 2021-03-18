@@ -1,5 +1,3 @@
-/* eslint-disable no-restricted-globals */
-/* eslint-disable no-undef */
 /**
  * Welcome to your Workbox-powered service worker!
  *
@@ -16,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.09540e85a8c80584e9d196b41dfc6962.js"
+  "/precache-manifest.7ab1c8250ef451034ebbadfba03e7b0c.js"
 );
 
 self.addEventListener('message', (event) => {
