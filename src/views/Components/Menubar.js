@@ -261,7 +261,7 @@ export default function Menubar(props) {
                       mobileSelected === 3 ? "mobilemenusactive" : ""
                     }`}
                   >
-                    NEW & IR
+                    NEWS & IR
                   </span>
                   {mobileSelected === 3 ? (
                     <Icon style={{ color: "#E78510" }}>expand_less</Icon>
