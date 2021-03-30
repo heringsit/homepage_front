@@ -48,7 +48,7 @@ export const Executive_Leadership = [
   },
   {
     name: "Kyounghoon Park",
-    jobs: "MD,PhD",
+    jobs: "MD, PhD",
     positions: "CSO",
     background: icon1_4,
     modalimg: icon1_4,
