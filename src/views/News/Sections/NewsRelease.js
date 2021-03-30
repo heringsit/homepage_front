@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) =>
 export default function NewsRelease({ match }) {
   // const matches = useMediaQuery("(max-width:600px)");
   const [, setIsDataReady] = useState(false);
-  const [, setPaginginfo] = useState([]);
+  const [paginginfo, setPaginginfo] = useState([]);
   const classes = useStyles();
   const [modalObj, setModalObj] = useState({});
   const [open, setOpen] = useState(false);
@@ -113,7 +113,6 @@ export default function NewsRelease({ match }) {
       })
       .then((response) => {
         //
-        console.log(response.data.boardCnt);
         setCountList([
           response.data.boardCnt[0].cnt,
           response.data.boardCnt[0].newcnt,
@@ -132,7 +131,6 @@ export default function NewsRelease({ match }) {
         },
       })
       .then((response) => {
-        console.log(response.data.paginginfo);
         setListData(response.data.board_data);
         setIsDataReady(true);
         setPaginginfo(response.data.paginginfo);
@@ -152,13 +150,79 @@ export default function NewsRelease({ match }) {
   const handleClose = () => {
     setOpen(false);
   };
+  const page = (e, page) => {
+    e.preventDefault();
 
+    axios
+      .get(`${imsi}/api/boardList`, {
+        params: {
+          type: "News",
+          page: parseInt(page),
+        },
+      })
+      .then((response) => {
+        setPaginginfo(response.data.paginginfo);
+        setIsDataReady(true);
+        setListData(response.data.board_data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
   const onDownLoad = async (file) => {
     const downloadResult = await fetch(`${imsi}/upimg/${file}`);
     const blob = await downloadResult.blob();
     saveAs(blob, "file");
   };
-
+  const pageingFn = (paging) => {
+    let jsxpaging = [];
+    for (let index = paging.startPage; index <= paging.endPage; index++) {
+      if (index > paging.totalPage) {
+        break;
+      }
+      jsxpaging.push(index);
+    }
+    return (
+      <ul className="pager">
+        {paging.curSet > 1 ? (
+          <li
+            value={paging.startPage - 1}
+            className="previous"
+            onClick={(e) => {
+              page(e, paging.startPage - 1);
+            }}
+          >
+            &lt;
+          </li>
+        ) : null}
+        {jsxpaging.map((data, i) => (
+          <li
+            key={i}
+            value={data}
+            onClick={(e) => {
+              page(e, data);
+            }}
+            className={`${
+              parseInt(data) === parseInt(paging.curPage) ? "pagingActive" : ""
+            }`}
+          >
+            {data}
+          </li>
+        ))}
+        {paging.curSet < paging.totalSet ? (
+          <li
+            value={paging.endPage + 1}
+            className="next"
+            onClick={(e) => {
+              page(e, paging.endPage + 1);
+            }}
+          >
+            &gt;
+          </li>
+        ) : null}
+      </ul>
+    );
+  };
   useEffect(getdata, []);
   return (
     <div id="content" style={{ position: "relative" }}>
@@ -202,6 +266,16 @@ export default function NewsRelease({ match }) {
             {/* <div className="nodatasWrap">
               <div className="nodatas FontB">등록된 게시물이 없습니다!</div>
             </div> */}
+            {paginginfo.totalPage > 1 ? (
+              <div
+                className="pagingDiv"
+                // onClick={(e) => loadMore(e)}
+              >
+                {pageingFn(paginginfo)}
+              </div>
+            ) : (
+              <div></div>
+            )}
           </div>
         </div>
       </div>
