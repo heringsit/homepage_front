@@ -23,6 +23,7 @@ import { useEffect } from "react";
 import { imsi } from "../../index";
 import search from "../../assets/images/etc/search.png";
 import { Checkbox } from "@material-ui/core";
+import moment from "moment";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -162,9 +163,12 @@ export default function Aboutus({ match }) {
         },
       })
       .then((response) => {
-        console.log("response.data.paginginfo", response.data.board_data[0]);
         if(response.data?.board_data.length !== 0) {
             setmodalPopObj(response.data?.board_data[0]);
+            let toDates = moment(new Date()).format("YYYY-MM-DD")
+            if(response.data.board_data[0].closing_date < toDates) {
+              return setOpenNotice(false);
+            } 
             return setOpenNotice(true);
         } else {
             setmodalPopObj(undefined)
