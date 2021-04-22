@@ -166,10 +166,12 @@ export default function Aboutus({ match }) {
         if(response.data?.board_data.length !== 0) {
             setmodalPopObj(response.data?.board_data[0]);
             let toDates = moment(new Date()).format("YYYY-MM-DD")
-            if(response.data.board_data[0].closing_date <= toDates) {
-              return setOpenNotice(false);
+            console.log(response.data.board_data[0].closing_date)
+            console.log(response.data.board_data[0].closing_date >= toDates)
+            if(response.data.board_data[0].closing_date >= toDates) {
+              return setOpenNotice(true);
             } 
-            return setOpenNotice(true);
+            return setOpenNotice(false);
         } else {
             setmodalPopObj(undefined)
             return setOpenNotice(false);
