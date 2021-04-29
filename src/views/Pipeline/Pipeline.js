@@ -9,8 +9,9 @@ import ContentsTitle from "../Components/ContentsTitle";
 // import craimonbg from "../../assets/images/04pipeline/Craimon_candidate";
 // import rhexiumbg from "../../assets/images/04pipeline/Rhexium_candidate";
 
-import sev from "../../assets/images/04pipeline/sev.png";
+import snuh from "../../assets/images/04pipeline/snuh.png";
 import sam from "../../assets/images/04pipeline/sam.png";
+import sev from "../../assets/images/04pipeline/sev.png";
 // import snuh from "../../assets/images/04pipeline/snuh.png";
 import bg from "../../assets/images/04pipeline/background.png";
 
@@ -367,7 +368,7 @@ export default function Pipeline() {
                 <div
                   className="div-table-col"
                   style={{
-                    // background: `url(${sev})`,
+                    background: `url(${sev})`,
                     backgroundSize: "contain",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
@@ -427,7 +428,7 @@ export default function Pipeline() {
                 <div
                   className="div-table-col"
                   style={{
-                    background: `url(${sev})`,
+                    background: `url(${snuh})`,
                     backgroundSize: "contain",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
