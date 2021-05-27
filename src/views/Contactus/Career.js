@@ -272,9 +272,8 @@ export default function Career({ match }) {
             onClick={(e) => {
               page(e, data);
             }}
-            className={`${
-              parseInt(data) === parseInt(paging.curPage) ? "pagingActive" : ""
-            }`}
+            className={`${parseInt(data) === parseInt(paging.curPage) ? "pagingActive" : ""
+              }`}
           >
             {data}
           </li>
@@ -306,15 +305,14 @@ export default function Career({ match }) {
         <div className="SectionDivCareer" id="career">
           <div className="titleDiv">
             <div className="textT22 FontEB">
-              <span>HERINGS CAREERS</span>
+              <span>HERINGS CAREERS.</span>
             </div>
             <hr></hr>
           </div>
           <div className="listCnt">
             <div
-              className={`${
-                careerTab === "A" ? "squareCareerSelected" : "squareCareer"
-              }`}
+              className={`${careerTab === "A" ? "squareCareerSelected" : "squareCareer"
+                }`}
               onClick={(e) => {
                 tabClick(e, "A");
               }}
@@ -323,17 +321,15 @@ export default function Career({ match }) {
                 {countList[0]}
               </span>
               <div
-                className={`FontNR textF18 korFonts ${
-                  careerTab === "A" ? "tcw" : "tcb"
-                }`}
+                className={`FontNR textF18 korFonts ${careerTab === "A" ? "tcw" : "tcb"
+                  }`}
               >
                 {matches ? "진행중인 채용" : "현재 진행중인 채용"}
               </div>
             </div>
             <div
-              className={`${
-                careerTab === "B" ? "squareCareerSelected" : "squareCareer"
-              }`}
+              className={`${careerTab === "B" ? "squareCareerSelected" : "squareCareer"
+                }`}
               onClick={(e) => {
                 tabClick(e, "B");
               }}
@@ -342,17 +338,15 @@ export default function Career({ match }) {
                 {countList[1]}
               </span>
               <div
-                className={`FontNR textF18 korFonts ${
-                  careerTab === "B" ? "tcw" : "tcb"
-                }`}
+                className={`FontNR textF18 korFonts ${careerTab === "B" ? "tcw" : "tcb"
+                  }`}
               >
                 신입 / 인턴
               </div>
             </div>
             <div
-              className={`${
-                careerTab === "C" ? "squareCareerSelected" : "squareCareer"
-              }`}
+              className={`${careerTab === "C" ? "squareCareerSelected" : "squareCareer"
+                }`}
               onClick={(e) => {
                 tabClick(e, "C");
               }}
@@ -361,9 +355,8 @@ export default function Career({ match }) {
                 {countList[2]}
               </span>
               <div
-                className={`FontNR textF18 korFonts ${
-                  careerTab === "C" ? "tcw" : "tcb"
-                }`}
+                className={`FontNR textF18 korFonts ${careerTab === "C" ? "tcw" : "tcb"
+                  }`}
               >
                 경력
               </div>
@@ -398,10 +391,10 @@ export default function Career({ match }) {
                       <div className="careerContainListCol col1 textF16 korFonts">
                         {convertData(
                           data.check_career_new +
-                            "/" +
-                            data.check_career_experienced +
-                            "/" +
-                            data.check_career_exp_year,
+                          "/" +
+                          data.check_career_experienced +
+                          "/" +
+                          data.check_career_exp_year,
                           "career"
                         )}
                       </div>
@@ -424,11 +417,10 @@ export default function Career({ match }) {
                       </div>
                       <div className="careerContainListCol col4 textF16 listBtn">
                         <div
-                          className={`careerBtn ${
-                            checkDate(data.closing_date, "E")
+                          className={`careerBtn ${checkDate(data.closing_date, "E")
                               ? "careerBtnIng"
                               : "careerBtnEnd"
-                          }`}
+                            }`}
                         >
                           {checkDate(data.closing_date, "E")
                             ? "채용중"
@@ -449,7 +441,7 @@ export default function Career({ match }) {
             {paginginfo.totalPage > 1 ? (
               <div
                 className="pagingDiv"
-                // onClick={(e) => loadMore(e)}
+              // onClick={(e) => loadMore(e)}
               >
                 {pageingFn(paginginfo)}
               </div>
