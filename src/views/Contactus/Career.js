@@ -305,7 +305,7 @@ export default function Career({ match }) {
         <div className="SectionDivCareer" id="career">
           <div className="titleDiv">
             <div className="textT22 FontEB">
-              <span>HERINGS CAREERS.</span>
+              <span>HERINGS CAREERS</span>
             </div>
             <hr></hr>
           </div>
@@ -418,8 +418,8 @@ export default function Career({ match }) {
                       <div className="careerContainListCol col4 textF16 listBtn">
                         <div
                           className={`careerBtn ${checkDate(data.closing_date, "E")
-                              ? "careerBtnIng"
-                              : "careerBtnEnd"
+                            ? "careerBtnIng"
+                            : "careerBtnEnd"
                             }`}
                         >
                           {checkDate(data.closing_date, "E")
