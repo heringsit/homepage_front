@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) =>
       alignItems: "center",
       justifyContent: "center",
       outline: "none",
+      //
     },
     paper: {
       width: "65%",
