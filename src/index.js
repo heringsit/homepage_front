@@ -18,6 +18,8 @@ export const imsi = process.env.PUBLIC_URL; // 운영계
 // export const imsi = `http://localhost:9099`; // local
 
 const App = () => {
+  console.log('this', process.env.PUBLIC_URL);
+  console.log('this2', imsi);
   // console.log("index.js!");
   // const his = useHistory();
   // useEffect(() => {

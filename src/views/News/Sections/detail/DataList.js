@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function DataList({ data }) {
   const imsi = process.env.PUBLIC_URL;
-  console.log(data);
+  //console.log(data);
   return (
     <>
       <div key={data.id} className="careerListRow FontNR">
