@@ -17,7 +17,7 @@ import Whoweare from "./Sections/whoweare";
 // import Certificates from "./Sections/Certificates";
 import PAI from "./Sections/PartnersAInvestors";
 import TeamList from "./Sections/TeamList";
-import QM from "./Sections/QualityManagement";
+//import QM from "./Sections/QualityManagement";
 import "./Aboutus.css";
 import { useEffect } from "react";
 import { imsi } from "../../index";
@@ -163,16 +163,16 @@ export default function Aboutus({ match }) {
         },
       })
       .then((response) => {
-        if(response.data?.board_data.length !== 0) {
-            setmodalPopObj(response.data?.board_data[0]);
-            let toDates = moment(new Date()).format("YYYY-MM-DD")
-            if(response.data.board_data[0].closing_date >= toDates) {
-              return setOpenNotice(true);
-            } 
-            return setOpenNotice(false);
+        if (response.data?.board_data.length !== 0) {
+          setmodalPopObj(response.data?.board_data[0]);
+          let toDates = moment(new Date()).format("YYYY-MM-DD")
+          if (response.data.board_data[0].closing_date >= toDates) {
+            return setOpenNotice(true);
+          }
+          return setOpenNotice(false);
         } else {
-            setmodalPopObj(undefined)
-            return setOpenNotice(false);
+          setmodalPopObj(undefined)
+          return setOpenNotice(false);
         }
       })
       .catch(function (error) {
@@ -322,7 +322,7 @@ export default function Aboutus({ match }) {
                   )}
                 </div>
               </div>
-            ) }
+            )}
           </div>
         </Fade>
       </Modal>
@@ -339,9 +339,9 @@ export default function Aboutus({ match }) {
     setOpen(false);
   };
   const openerModalNoti = () => {
-    if(modalObj) {
-      return  openInitialNotice();
-    } 
+    if (modalObj) {
+      return openInitialNotice();
+    }
     return null;
 
   }
@@ -358,7 +358,7 @@ export default function Aboutus({ match }) {
         <Whoweare matches={matches} />
         <TeamList handleOpen={handleOpen} matches={matches} />
         <PAI matches={matches} />
-        <QM matches={matches} />
+        {/* <QM matches={matches} /> */}
         <Footer />
       </div>
       <Modal
