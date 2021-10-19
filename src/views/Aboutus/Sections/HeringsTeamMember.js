@@ -3,7 +3,7 @@
 
 import icon1_1 from "../../../assets/images/02about_herings_team/new200527/1_1nam.png";
 import icon1_2 from "../../../assets/images/02about_herings_team/new200527/1_2song.png";
-import icon1_3 from "../../../assets/images/02about_herings_team/new200527/1_3ahn.png";
+//import icon1_3 from "../../../assets/images/02about_herings_team/new200527/1_3ahn.png";
 import icon1_4 from "../../../assets/images/02about_herings_team/new200527/1_4park.jpg";
 import icon1_5 from "../../../assets/images/02about_herings_team/new200527/1_5an.png";
 import icon2_1 from "../../../assets/images/02about_herings_team/new200527/2_1yang.png";
@@ -37,15 +37,15 @@ export const Executive_Leadership = [
     detail:
       "Yooin Song is the CFO/CSO of HERINGS. He is a business expert at life science and bio-industry, working over for 15 years. Previously Song was a private equity fund manager, mainly invested in biotech and life science companies. Also, he was a strategic consultant at Deloitte Consulting for Life Science and Healthcare division.\n\nMr. Song is a PhD Candidate in business administration, and he got an MBA degree from IE business school. He also studied at the University of Washington.",
   },
-  {
-    name: "Taejin Ahn",
-    jobs: "PhD",
-    positions: "CTO",
-    background: icon1_3,
-    modalimg: icon1_3,
-    detail:
-      "Taejin Ahn is a professor at Handong Global University School of Life Science. Prior to his academic career, he was a technical researcher at Samsung Advanced Institute of Technology and a principal engineer in IVD Sales at Samsung Electronics Health and Medical Equipment. His main interests of research focus on Bioinformatics, Personalized Medicine, and Smart Healthcare.\n\nHe holds a BS from Handong Global University, an MA from Pohang University of Science and Technology, and a PhD in bioinformatics from Seoul National University.",
-  },
+  // {
+  //   name: "Taejin Ahn",
+  //   jobs: "PhD",
+  //   positions: "CTO",
+  //   background: icon1_3,
+  //   modalimg: icon1_3,
+  //   detail:
+  //     "Taejin Ahn is a professor at Handong Global University School of Life Science. Prior to his academic career, he was a technical researcher at Samsung Advanced Institute of Technology and a principal engineer in IVD Sales at Samsung Electronics Health and Medical Equipment. His main interests of research focus on Bioinformatics, Personalized Medicine, and Smart Healthcare.\n\nHe holds a BS from Handong Global University, an MA from Pohang University of Science and Technology, and a PhD in bioinformatics from Seoul National University.",
+  // },
   {
     name: "Kyounghoon Park",
     jobs: "MD, PhD",
