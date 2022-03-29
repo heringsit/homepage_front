@@ -12,7 +12,7 @@ import Craimon from "./Sections/Craimon";
 import Rhexium from "./Sections/Rhexium";
 import RhexiumContents from "./Sections/RhexiumContents";
 import platformTopImage from "../../assets/images/03craimon/PLATFORMS_TOP.svg";
-
+import platformVideo from "../../assets/images/videos/platform.mp4"
 import "./Platforms.css";
 
 export default function Platforms({ match }) {
@@ -24,6 +24,13 @@ export default function Platforms({ match }) {
       <Totop />
       <div id="platforms">
         <ContentsTitle matches={matches} title={"PLATFORMS"} />
+        <div className="SectionDivNT SectionDivUpBlank">
+          <div className="platformVideoCont">
+            <video controls autoPlay loop playsInline className="platformVideo">
+              <source src={platformVideo} type="video/mp4" ></source>
+            </video>
+          </div>
+        </div>
         <div className="SectionDivNT SectionDivUpBlank">
           <div className="platformTopImage">
             <img
@@ -41,3 +48,4 @@ export default function Platforms({ match }) {
     </div>
   );
 }
+

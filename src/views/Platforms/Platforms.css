@@ -6,6 +6,7 @@
   position: absolute;
   top: 275px;
 }
+
 .platformContent {
   width: 100%;
   padding: 0 0 5%;
@@ -13,6 +14,7 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
 .platformContentR {
   width: 100%;
   padding: 0 0 5%;
@@ -20,6 +22,7 @@
   flex-direction: row;
   justify-content: space-between;
 }
+
 .platformContentRow {
   width: 100%;
   padding: 0 0 5%;
@@ -41,6 +44,7 @@
   display: flex;
   align-content: center;
 }
+
 .platformDescript {
   width: 37%;
   height: auto;
@@ -48,19 +52,23 @@
   background-image: linear-gradient(140deg, #2258b8, #06ad8e);
   box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.2);
 }
+
 .platformExplain {
   display: flex;
   flex-direction: column;
   padding: 2%;
 }
-.platformExplain > span {
+
+.platformExplain>span {
   margin: 5px 0;
 }
+
 .platformImg {
   width: 100%;
   max-width: 100%;
   height: auto;
 }
+
 .iconsDiv {
   display: flex;
   justify-content: space-around;
@@ -74,16 +82,19 @@
   position: relative;
   margin: 7px;
 }
+
 .rhexiumIconContain3 {
   width: 80px;
   height: 80px;
   position: relative;
   margin: 10px 5px 0;
 }
+
 .rhexiumIconMobile {
   display: flex;
   justify-content: center;
 }
+
 .rhexiumIconCircle {
   width: 175px;
   height: 175px;
@@ -98,6 +109,7 @@
 .circleSelected {
   opacity: 1;
 }
+
 .bottomIconOpacity {
   opacity: 0.2;
 }
@@ -114,6 +126,7 @@
   padding-left: 20px;
   overflow-wrap: break-word;
 }
+
 .rhexiumContentsDetailL {
   width: 42%;
   overflow-wrap: break-word;
@@ -123,24 +136,39 @@
   font-size: 48px;
 }
 
+.platformVideoCont {
+  text-align: center;
+}
+
+.platformVideo {
+  width: 80%;
+}
+
 @media (max-width: 1240px) {
   .textF48F {
     font-size: 40px;
   }
 }
+
 @media (max-width: 1024px) {
   .textF48F {
     font-size: 36px;
   }
 }
+
 @media (max-width: 992px) {
   .textF48F {
     font-size: 30px;
   }
 }
+
 @media (max-width: 768px) {
   .textF48F {
     font-size: 24px;
+  }
+
+  .platformVideo {
+    width: 10 0%;
   }
 }
 
@@ -155,18 +183,21 @@
   max-width: 80%;
   max-height: 80%;
 }
+
 .rhexiumIconText {
   width: 80%;
   text-align: center;
   letter-spacing: 1px;
   color: #000;
 }
+
 .iconDots {
   width: 45px;
   height: 45px;
   text-align: center;
   font-size: 45px;
 }
+
 .platformMobile {
   outline: none;
 }
@@ -175,12 +206,15 @@
   .platformContent {
     flex-direction: column;
   }
+
   .platformContentR {
     flex-direction: column-reverse;
   }
+
   .platformContentBackLine {
     display: none;
   }
+
   .platformDescript {
     width: 95%;
     height: 300px;
@@ -190,20 +224,24 @@
     flex-direction: column;
     justify-content: center;
   }
+
   .platformImage {
     width: 100%;
     height: auto;
     margin: 5% 0;
   }
+
   .platformExplain {
     padding: 2% 0;
   }
 }
+
 @media screen and (max-width: 600px) {
   .rhexiumContents {
     padding: 25px 34.1px;
     flex-direction: column;
   }
+
   .rhexiumIconCircle {
     border-radius: 86.5px;
     box-shadow: 0 0 20px 3px rgba(220, 220, 220, 0.5);
@@ -212,23 +250,29 @@
     justify-content: center;
     opacity: 1;
   }
+
   .rhexiumIconText {
     color: #04c6a2;
   }
+
   .slick-dots {
     margin: 5px 0;
   }
+
   .slick-dots li {
     width: 25px;
     height: 25px;
   }
+
   .slick-dots li.slick-active button:before {
     opacity: 0.75;
     color: #04c6a2;
   }
+
   .slick-dots li button:before {
     font-size: 30px;
   }
+
   .slick-dots li button:hover:before {
     color: #04c6a2;
   }

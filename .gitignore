@@ -157,6 +157,10 @@ psd
 thumb
 sketch
 
+video
+
+*.mp4
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
