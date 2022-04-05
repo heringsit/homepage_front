@@ -4,6 +4,7 @@
 import icon1_1 from "../../../assets/images/02about_herings_team/new200527/1_1nam.png";
 import icon1_2 from "../../../assets/images/02about_herings_team/new200527/1_2song.png";
 //import icon1_3 from "../../../assets/images/02about_herings_team/new200527/1_3ahn.png";
+import icon1_3 from "../../../assets/images/02about_herings_team/new200527/1_3lee.png";
 import icon1_4 from "../../../assets/images/02about_herings_team/new200527/1_4park.jpg";
 import icon1_5 from "../../../assets/images/02about_herings_team/new200527/1_5an.png";
 import icon2_1 from "../../../assets/images/02about_herings_team/new200527/2_1yang.png";
@@ -21,7 +22,7 @@ import icon3_7 from "../../../assets/images/02about_herings_team/new200527/3_7ch
 export const Executive_Leadership = [
   {
     name: "Byung-Ho Nam",
-    jobs: "PhD, MBA ",
+    jobs: "PhD, MBA",
     positions: "CEO & FOUNDER",
     background: icon1_1,
     modalimg: icon1_1,
@@ -31,11 +32,20 @@ export const Executive_Leadership = [
   {
     name: "Yooin Song",
     jobs: "MBA",
-    positions: "CFO",
+    positions: "COO",
     background: icon1_2,
     modalimg: icon1_2,
     detail:
-      "Yooin Song is the CFO/CSO of HERINGS. He is a business expert at life science and bio-industry, working over for 15 years. Previously Song was a private equity fund manager, mainly invested in biotech and life science companies. Also, he was a strategic consultant at Deloitte Consulting for Life Science and Healthcare division.\n\nMr. Song is a PhD Candidate in business administration, and he got an MBA degree from IE business school. He also studied at the University of Washington.",
+      "Yooin Song is the COO of HERINGS. He is a business expert at life science and bio-industry, working over for 15 years. Previously Song was a private equity fund manager, mainly invested in biotech and life science companies. Also, he was a strategic consultant at Deloitte Consulting for Life Science and Healthcare division.\n\nMr. Song is a PhD Candidate in business administration, and he got an MBA degree from IE business school. He also studied at the University of Washington.",
+  },
+  {
+    name: "Jaeho Lee",
+    jobs: "MS",
+    positions: "CFO",
+    background: icon1_3,
+    modalimg: icon1_3,
+    detail:
+      "Mr. Jaeho Lee has over 12 years of investment banking experiences in Korea. He has provided various capital raising solution and worked in execution of a variety of equity capital market transactions; IPOs, follow-on offerings, convertible bonds, bond with warrants and block trades. He is presently a CFO of Herings. Prior to joining Herings, he worked at investment banking division of Tong Yang Securities and Eugene Investment & Securities. Also, he worked as a head of corporate development for US pharmaceutical CRO company, WCCT Global.\n\nPreviously, he worked at Tong Yang Group, a diversified financial group which provides various financial services such as investment banking, life insurance and venture capital. In addition, he was also served as a chief of staff of APEC Business Advisory Council for the year of 2005.\n\nMr. Lee is licensed as a Certified Public Accountant in Washington and he received his bachelor’s degree in management & computer science from Boston College in US and master’s degree in corporate finance from University of Reading in UK.",
   },
   // {
   //   name: "Taejin Ahn",
