@@ -32,7 +32,7 @@ export default function Service({ match }) {
           <div className="servicecontent">
             {/* ostomy */}
             <CommonCardFrameLeft
-              subTitle={"Digital Care Service"}
+              // subTitle={"Digital Care Service"}
               Title={"Ostomy Care"}
               content1={"Monitoring Tools to Facilitate Care."}
               content2={
@@ -55,7 +55,7 @@ export default function Service({ match }) {
 
             {/* healiary */}
             <CommonCardFrameRight
-              subTitle={"Digital Care Service"}
+              // subTitle={"Digital Care Service"}
               Title={"Healiary"}
               content1={"Patient Engagement Mobile Application."}
               content2={

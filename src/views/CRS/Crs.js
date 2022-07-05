@@ -56,7 +56,7 @@ export default function Crs() {
               allowFullScreen
             ></iframe>
             <CommonCardFrameLeft
-              subTitle={"PRO · PRE Platform"}
+              // subTitle={"PRO · PRE Platform"}
               Title={"Atti"}
               content1={"Real-time, clinical decision support tool to"}
               content2={

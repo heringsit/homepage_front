@@ -49,7 +49,7 @@ export default function Main() {
           <div className="mainimagetext">
             <span className="block Font_Mont_600">HERINGS</span>
             <span className="block Font_Mont_400">
-              Our whole new degital care service
+              Our whole new digital care service
             </span>
             <span className="block Font_Mont_400">
               for you is ready to be discovered.

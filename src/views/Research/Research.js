@@ -58,7 +58,7 @@ export default function Research() {
           >
             <CommonCardTitle title={"Nutrition in Cancer Care"} />
             <CommonCardFrameLeft
-              subTitle={"Nutrition in Cancer Care"}
+              // subTitle={"Nutrition in Cancer Care"}
               Title={"Rhexiumonco Nutrition"}
               content1={"Clinical Content Library – Real-time, "}
               content2={
@@ -74,8 +74,8 @@ export default function Research() {
           <div className="SectionDivNT SectionDivUpBlank" id="drugadverseevent">
             <CommonCardTitle title={"Drug Adverse Event"} />
             <CommonCardFrameRight
-              subTitle={"Nutrition in Cancer Care"}
-              Title={"Drug adverse event reporting system"}
+              // subTitle={"Nutrition in Cancer Care"}
+              Title={"Drug Adverse Event reporting system"}
               content1={"Platform that can be immediately "}
               content2={
                 "reported as a national drug adverse event reporting system when drug adverse events occur. This work was supported by the Bio Industry Technology Development Program(No. 20015086) By the Ministry of Trade, Industry & Energy(MOTIE, Korea)."
@@ -116,7 +116,7 @@ export default function Research() {
             className="SectionDivNT SectionDivUpBlank"
             id="aibasedostomyconditioncheck"
           >
-            <CommonCardTitle title={"AI-based ostomy condition check"} />
+            <CommonCardTitle title={"AI-based Ostomy Condition Check"} />
             <CommonCardFrameCenter
               content={
                 "We are collecting ostomy photos containing status information using our digital platform. We research an algorithm that automatically determines the condition of the ostomy by learning it through artificial intelligence."
@@ -130,7 +130,7 @@ export default function Research() {
             className="SectionDivNT SectionDivUpBlank"
             id="adherenceofhormonetherapy"
           >
-            <CommonCardTitle title={"Adherence of hormone therapy"} />
+            <CommonCardTitle title={"Adherence of Hormone Therapy"} />
 
             <CommonCardFrameCenter
               content={

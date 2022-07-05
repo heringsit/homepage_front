@@ -174,11 +174,11 @@ export default function Menubar(props) {
                 <li>
                   <Link
                     smooth="true"
-                    to={`${imsi}/service/#degitalcareservice`}
+                    to={`${imsi}/service/#digitalcareservice`}
                     onClick={menuclick}
                   >
                     <span className="menuText FontB textF18">
-                      Degital Care Service
+                      Digital Care Service
                     </span>
                   </Link>
                 </li>
@@ -274,7 +274,7 @@ export default function Menubar(props) {
                     onClick={menuclick}
                   >
                     <span className="menuText FontB textF18">
-                      Adherence of hormone therapy
+                      Adherence of Hormone Therapy
                     </span>
                   </Link>
                 </li>
@@ -661,7 +661,7 @@ export default function Menubar(props) {
                     to={`${imsi}/service/#digitalcareservice`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">Degital Care Service</span>
+                    <span className="textF15 tcg">Digital Care Service</span>
                   </Link>
                 </li>
               </ul>
@@ -703,7 +703,7 @@ export default function Menubar(props) {
                     to={`${imsi}/research/#recurrenceprediction`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">Recurrence prediction</span>
+                    <span className="textF15 tcg">Recurrence Prediction</span>
                   </Link>
                 </li>
                 <li>
@@ -722,7 +722,7 @@ export default function Menubar(props) {
                     onClick={menuclick}
                   >
                     <span className=" textF15 tcg" style={{ display: "block" }}>
-                      Ai-based ostomy
+                      AI-based Ostomy
                     </span>
                     <span className=" textF15 tcg" style={{ display: "block" }}>
                       condition check
@@ -736,10 +736,10 @@ export default function Menubar(props) {
                     onClick={menuclick}
                   >
                     <span className="textF15 tcg" style={{ display: "block" }}>
-                      Adherence of hormone
+                      Adherence of Hormone
                     </span>
                     <span className="textF15 tcg" style={{ display: "block" }}>
-                      therapy
+                      Therapy
                     </span>
                   </Link>
                 </li>

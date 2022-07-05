@@ -548,9 +548,9 @@ body {
 
 .card_between {
   /*position relative는 commonCardFrameRight 사진위치 하단으로 옮기기 위해 추가*/
-
   display: flex;
   justify-content: space-between;
+  column-gap: 35px;
 }
 
 .card_flexcolumn {

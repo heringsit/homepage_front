@@ -117,9 +117,9 @@ export default function TabClick({ isScroll }) {
                         : tab === "exercise"
                         ? "Exercise"
                         : tab === "aibasedostomyconditioncheck"
-                        ? "Ai-based ostomy condition check"
+                        ? "AI-based Ostomy Condition Check"
                         : tab === "adherenceofhormonetherapy"
-                        ? "Adherence of hormone therapy"
+                        ? "Adherence of Hormone Therapy"
                         : "";
 
                     if (e.target.innerText === transformTab) {
@@ -135,15 +135,15 @@ export default function TabClick({ isScroll }) {
                   {tab === "nutritionincancercare"
                     ? "Nutrition in Cancer Care"
                     : tab === "drugadverseevent"
-                    ? "Drug Adverse Event"
+                    ? "Drug Adverse Event reporting system"
                     : tab === "recurrenceprediction"
                     ? "Recurrence Prediction"
                     : tab === "exercise"
                     ? "Exercise"
                     : tab === "aibasedostomyconditioncheck"
-                    ? "Ai-based ostomy condition check"
+                    ? "AI-based Ostomy Condition Check"
                     : tab === "adherenceofhormonetherapy"
-                    ? "Adherence of hormone therapy"
+                    ? "Adherence of Hormone Therapy"
                     : ""}
                 </a>
               </div>
