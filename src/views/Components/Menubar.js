@@ -2,20 +2,16 @@ import React, { useEffect, useState } from "react";
 import smoothscroll from "smoothscroll-polyfill";
 import Icon from "@material-ui/core/Icon";
 import { HamburgerSqueeze } from "react-animated-burgers";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-
 import herings_logo_b from "../../assets/images/etc/heringsLOGO_black.svg";
-//import herings_logo_w from "../../assets/images/etc/heringsLOGO_white.svg";
+// import heringsLOGO_white from "../../assets/images/etc/heringsLOGO_white.svg";
 import { ReactComponent as HeringsLogo } from "../../assets/images/etc/heringsLOGO.svg";
-
-// import herings_ci_s from "../../assets/images/etc/logo_s";
-// import herings_ci_l from "../../assets/images/etc/logo_l";
-
 import "./Menubar.css";
 
 export default function Menubar(props) {
+  const pathname = useLocation().pathname;
   const imsi = process.env.PUBLIC_URL;
   smoothscroll.polyfill();
   const matches = useMediaQuery("(max-width:1260px)");
@@ -23,7 +19,7 @@ export default function Menubar(props) {
   const [isMActive, setIsMActive] = useState(false);
   const [mobileSelected, setMobileSelected] = useState(null);
   const [isScroll, setIsScroll] = useState(false);
-
+  console.log(pathname === "/", ">pathname");
   const mobilemenuclick = (e, val) => {
     e.preventDefault();
     val === mobileSelected ? setMobileSelected(null) : setMobileSelected(val);
@@ -66,7 +62,9 @@ export default function Menubar(props) {
             <NavLink to={`${imsi}/`}>
               <div
                 className="logoImgContainCenterM"
-                style={{ backgroundImage: "url('" + herings_logo_b + "')" }}
+                style={{
+                  backgroundImage: "url('" + herings_logo_b + "')"
+                }}
               ></div>
             </NavLink>
             <div className="mobileBtn">
@@ -83,7 +81,7 @@ export default function Menubar(props) {
           <div className={`mobileMenus ${isMActive ? "slider" : "slideroff"}`}>
             <div className="mobileMenudiv">
               <Link
-                smooth
+                smooth="true"
                 to={`${imsi}/aboutus/#aboutus`}
                 onClick={(e) => {
                   mobilemenuclick(e, 0);
@@ -113,7 +111,7 @@ export default function Menubar(props) {
               >
                 <li>
                   <Link
-                    smooth
+                    smooth="true"
                     to={`${imsi}/aboutus/#whoweare`}
                     onClick={menuclick}
                   >
@@ -122,7 +120,7 @@ export default function Menubar(props) {
                 </li>
                 <li>
                   <Link
-                    smooth
+                    smooth="true"
                     to={`${imsi}/aboutus/#heringsteam`}
                     onClick={menuclick}
                   >
@@ -131,7 +129,7 @@ export default function Menubar(props) {
                 </li>
                 <li>
                   <Link
-                    smooth
+                    smooth="true"
                     to={`${imsi}/aboutus/#researchpartners`}
                     onClick={menuclick}
                   >
@@ -140,24 +138,13 @@ export default function Menubar(props) {
                     </span>
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    smooth
-                    to={`${imsi}/aboutus/#qualitymanagement`}
-                    onClick={menuclick}
-                  >
-                    <span className="menuText FontB textF18">
-                      QUALITY MANAGEMENT
-                    </span>
-                  </Link>
-                </li>
               </ul>
             </div>
 
             <div className="mobileMenudiv">
               <Link
-                smooth
-                to={`${imsi}/platforms/#platforms`}
+                smooth="true"
+                to={`${imsi}/service/#service`}
                 onClick={(e) => {
                   mobilemenuclick(e, 1);
                 }}
@@ -168,7 +155,7 @@ export default function Menubar(props) {
                       mobileSelected === 1 ? "mobilemenusactive" : ""
                     }`}
                   >
-                    PLATFORMS
+                    SERVICE
                   </span>
                   {mobileSelected === 1 ? (
                     <Icon style={{ color: "#E78510" }}>expand_less</Icon>
@@ -186,28 +173,21 @@ export default function Menubar(props) {
               >
                 <li>
                   <Link
-                    smooth
-                    to={`${imsi}/platforms/#craimon`}
+                    smooth="true"
+                    to={`${imsi}/service/#degitalcareservice`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">CRAIMON</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth
-                    to={`${imsi}/platforms/#rhexium`}
-                    onClick={menuclick}
-                  >
-                    <span className="menuText FontB textF18">RHEXIUM</span>
+                    <span className="menuText FontB textF18">
+                      Degital Care Service
+                    </span>
                   </Link>
                 </li>
               </ul>
             </div>
             <div className="mobileMenudiv">
               <Link
-                smooth
-                to={`${imsi}/pipeline/#pipeline`}
+                smooth="true"
+                to={`${imsi}/research/#research`}
                 onClick={(e) => {
                   mobilemenuclick(e, 2);
                 }}
@@ -218,7 +198,7 @@ export default function Menubar(props) {
                       mobileSelected === 2 ? "mobilemenusactive" : ""
                     }`}
                   >
-                    PIPELINE
+                    RESEARCH
                   </span>
                   {mobileSelected === 2 ? (
                     <Icon style={{ color: "#E78510" }}>expand_less</Icon>
@@ -236,12 +216,65 @@ export default function Menubar(props) {
               >
                 <li>
                   <Link
-                    smooth
-                    to={`${imsi}/pipeline/#DTx PIPELINES`}
+                    smooth="true"
+                    to={`${imsi}/research/#nutritionincancercare`}
                     onClick={menuclick}
                   >
                     <span className="menuText FontB textF18">
-                      DTx PIPELINES
+                      Nutrition in Cancer Care
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    smooth="true"
+                    to={`${imsi}/research/#drugadverseevent`}
+                    onClick={menuclick}
+                  >
+                    <span className="menuText FontB textF18">
+                      Drug Adverse Event
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    smooth="true"
+                    to={`${imsi}/research/#recurrenceprediction`}
+                    onClick={menuclick}
+                  >
+                    <span className="menuText FontB textF18">
+                      Recurrence Prediction
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    smooth="true"
+                    to={`${imsi}/research/#exercise`}
+                    onClick={menuclick}
+                  >
+                    <span className="menuText FontB textF18">Excercise</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    smooth="true"
+                    to={`${imsi}/research/#aibasedostomyconditioncheck`}
+                    onClick={menuclick}
+                  >
+                    <span className="menuText FontB textF18">
+                      Ai Based ostomy condition check
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    smooth="true"
+                    to={`${imsi}/research/#adherenceofhormonetherapy`}
+                    onClick={menuclick}
+                  >
+                    <span className="menuText FontB textF18">
+                      Adherence of hormone therapy
                     </span>
                   </Link>
                 </li>
@@ -249,8 +282,8 @@ export default function Menubar(props) {
             </div>
             <div className="mobileMenudiv">
               <Link
-                smooth
-                to={`${imsi}/platforms/#platforms`}
+                smooth="true"
+                to={`${imsi}/crs/#crs`}
                 onClick={(e) => {
                   mobilemenuclick(e, 3);
                 }}
@@ -261,7 +294,7 @@ export default function Menubar(props) {
                       mobileSelected === 3 ? "mobilemenusactive" : ""
                     }`}
                   >
-                    NEWS & IR
+                    CRS
                   </span>
                   {mobileSelected === 3 ? (
                     <Icon style={{ color: "#E78510" }}>expand_less</Icon>
@@ -279,21 +312,45 @@ export default function Menubar(props) {
               >
                 <li>
                   <Link
-                    smooth
-                    to={`${imsi}/news/#newsrelease`}
+                    smooth="true"
+                    to={`${imsi}/crs/#propreplatform`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">NEWS RELEASE</span>
+                    <span className="menuText FontB textF18">
+                      Pro-Pre Platform
+                    </span>
                   </Link>
                 </li>
                 <li>
                   <Link
-                    smooth
-                    to={`${imsi}/news/#irinformation`}
+                    smooth="true"
+                    to={`${imsi}/crs/#datamanagement`}
                     onClick={menuclick}
                   >
                     <span className="menuText FontB textF18">
-                      IR INFORMATION
+                      Data Management
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    smooth="true"
+                    to={`${imsi}/crs/#biostatistics`}
+                    onClick={menuclick}
+                  >
+                    <span className="menuText FontB textF18">
+                      Bio Statistics
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    smooth="true"
+                    to={`${imsi}/crs/#clinicaloperation`}
+                    onClick={menuclick}
+                  >
+                    <span className="menuText FontB textF18">
+                      Clinical Operation
                     </span>
                   </Link>
                 </li>
@@ -301,8 +358,8 @@ export default function Menubar(props) {
             </div>
             <div className="mobileMenudiv">
               <Link
-                smooth
-                to={`${imsi}/platforms/#platforms`}
+                smooth="true"
+                to={`${imsi}/news/#news`}
                 onClick={(e) => {
                   mobilemenuclick(e, 4);
                 }}
@@ -313,7 +370,7 @@ export default function Menubar(props) {
                       mobileSelected === 4 ? "mobilemenusactive" : ""
                     }`}
                   >
-                    CONTACT US
+                    NEWS & IR
                   </span>
                   {mobileSelected === 4 ? (
                     <Icon style={{ color: "#E78510" }}>expand_less</Icon>
@@ -331,7 +388,60 @@ export default function Menubar(props) {
               >
                 <li>
                   <Link
-                    smooth
+                    smooth="true"
+                    to={`${imsi}/news/#newsrelease`}
+                    onClick={menuclick}
+                  >
+                    <span className="menuText FontB textF18">NEWS RELEASE</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    smooth="true"
+                    to={`${imsi}/news/#irinformation`}
+                    onClick={menuclick}
+                  >
+                    <span className="menuText FontB textF18">
+                      IR INFORMATION
+                    </span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div className="mobileMenudiv">
+              <Link
+                smooth="true"
+                to={`${imsi}/contactus/#contactus`}
+                onClick={(e) => {
+                  mobilemenuclick(e, 5);
+                }}
+              >
+                <div className="mobileMenuRow">
+                  <span
+                    className={`FontEB textF22 menuText ${
+                      mobileSelected === 5 ? "mobilemenusactive" : ""
+                    }`}
+                  >
+                    CONTACT US
+                  </span>
+                  {mobileSelected === 5 ? (
+                    <Icon style={{ color: "#E78510" }}>expand_less</Icon>
+                  ) : (
+                    <Icon>expand_more</Icon>
+                  )}
+                </div>
+              </Link>
+              <ul
+                className={`mobileMenuul ${
+                  mobileSelected === 5
+                    ? "mobilemenuslider"
+                    : "mobilemenuslideroff"
+                }`}
+              >
+                <li>
+                  <Link
+                    smooth="true"
                     to={`${imsi}/contactus/#career`}
                     onClick={menuclick}
                   >
@@ -340,7 +450,7 @@ export default function Menubar(props) {
                 </li>
                 <li>
                   <Link
-                    smooth
+                    smooth="true"
                     to={`${imsi}/contactus/#contact`}
                     onClick={menuclick}
                   >
@@ -365,29 +475,15 @@ export default function Menubar(props) {
         <div className="mewnuWrap">
           <div className="menulogo">
             <NavLink to={`${imsi}/`}>
-              <div
-                className="logoImgContainCenter"
-                // style={{
-                //   // animationName:
-                //   //   props.slideIndex === 0 ? changeBgbw : changeBgwb,
-                //   // animationDuration: "1s",
-
-                //   backgroundImage:
-                //     props.slideIndex === 0
-                //       ? isScroll || isOver
-                //         ? "url('" + herings_logo_b + "')"
-                //         : "url('" + herings_logo_w + "')"
-                //       : "url('" + herings_logo_b + "')",
-                // }}
-              >
+              <div className="logoImgContainCenter">
                 <HeringsLogo
                   style={{
                     fill:
-                      props.slideIndex === 0
+                      props.slideIndex === 0 && pathname === "/"
                         ? isScroll || isOver
                           ? "#000"
-                          : "#FFF"
-                        : "#000",
+                          : "#fff"
+                        : "#000"
                   }}
                 />
               </div>
@@ -397,13 +493,17 @@ export default function Menubar(props) {
           </div>
           <div className="menusAfterLogo">
             <div className="menudiv">
-              <Link smooth to={`${imsi}/aboutus/#aboutus`} onClick={menuclick}>
+              <Link
+                smooth="true"
+                to={`${imsi}/aboutus/#aboutus`}
+                onClick={menuclick}
+              >
                 <span
                   className={`textF18 FontR ${
                     props.slideIndex === 0
                       ? isScroll || isOver
                         ? "tcb"
-                        : "tcw"
+                        : "tcb"
                       : "tcb"
                   }`}
                 >
@@ -413,8 +513,8 @@ export default function Menubar(props) {
             </div>
             <div className="menudiv">
               <Link
-                smooth
-                to={`${imsi}/platforms/#platforms`}
+                smooth="true"
+                to={`${imsi}/service/#service`}
                 onClick={menuclick}
               >
                 <span
@@ -422,18 +522,18 @@ export default function Menubar(props) {
                     props.slideIndex === 0
                       ? isScroll || isOver
                         ? "tcb"
-                        : "tcw"
+                        : "tcb"
                       : "tcb"
                   }`}
                 >
-                  PLATFORMS
+                  SERVICE
                 </span>
               </Link>
             </div>
             <div className="menudiv">
               <Link
-                smooth
-                to={`${imsi}/pipeline/#pipeline`}
+                smooth="true"
+                to={`${imsi}/research/#research`}
                 onClick={menuclick}
               >
                 <span
@@ -441,22 +541,37 @@ export default function Menubar(props) {
                     props.slideIndex === 0
                       ? isScroll || isOver
                         ? "tcb"
-                        : "tcw"
+                        : "tcb"
                       : "tcb"
                   }`}
                 >
-                  PIPELINE
+                  RESEARCH
                 </span>
               </Link>
             </div>
             <div className="menudiv">
-              <Link smooth to={`${imsi}/news/#news`} onClick={menuclick}>
+              <Link smooth="true" to={`${imsi}/crs/#crs`} onClick={menuclick}>
                 <span
                   className={`textF18 FontR ${
                     props.slideIndex === 0
                       ? isScroll || isOver
                         ? "tcb"
-                        : "tcw"
+                        : "tcb"
+                      : "tcb"
+                  }`}
+                >
+                  CRS
+                </span>
+              </Link>
+            </div>
+            <div className="menudiv">
+              <Link smooth="true" to={`${imsi}/news/#news`} onClick={menuclick}>
+                <span
+                  className={`textF18 FontR ${
+                    props.slideIndex === 0
+                      ? isScroll || isOver
+                        ? "tcb"
+                        : "tcb"
                       : "tcb"
                   }`}
                 >
@@ -464,9 +579,10 @@ export default function Menubar(props) {
                 </span>
               </Link>
             </div>
+
             <div className="menudiv">
               <Link
-                smooth
+                smooth="true"
                 to={`${imsi}/contactus/#contactus`}
                 onClick={menuclick}
               >
@@ -475,7 +591,7 @@ export default function Menubar(props) {
                     props.slideIndex === 0
                       ? isScroll || isOver
                         ? "tcb"
-                        : "tcw"
+                        : "tcb"
                       : "tcb"
                   }`}
                 >
@@ -491,13 +607,17 @@ export default function Menubar(props) {
         <div className={`menuDetail ${isOver ? "part" : "partHide"}`}>
           <div className="menuDetailRow">
             <div className="menuDetailDiv">
-              <Link smooth to={`${imsi}/aboutus/#aboutus`} onClick={menuclick}>
+              <Link
+                smooth="true"
+                to={`${imsi}/aboutus/#aboutus`}
+                onClick={menuclick}
+              >
                 <span className="textF18 tcb">ABOUT US</span>
               </Link>
               <ul className="menuul">
                 <li>
                   <Link
-                    smooth
+                    smooth="true"
                     to={`${imsi}/aboutus/#whoweare`}
                     onClick={menuclick}
                   >
@@ -506,7 +626,7 @@ export default function Menubar(props) {
                 </li>
                 <li>
                   <Link
-                    smooth
+                    smooth="true"
                     to={`${imsi}/aboutus/#heringsteam`}
                     onClick={menuclick}
                   >
@@ -515,104 +635,166 @@ export default function Menubar(props) {
                 </li>
                 <li>
                   <Link
-                    smooth
+                    smooth="true"
                     to={`${imsi}/aboutus/#researchpartners`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">Partners & Invenstors</span>
+                    <span className="textF15 tcg">Partners&Investors</span>
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    smooth
-                    to={`${imsi}/aboutus/#qualitymanagement`}
-                    onClick={menuclick}
-                  >
-                    <span className="textF15 tcg">Quality Management</span>
-                  </Link>
-                </li>
-                {/* <li>
-                  <Link
-                    smooth
-                    to={`${imsi}/aboutus/#certificates`}
-                    onClick={menuclick}
-                  >
-                    <span className="textF15 tcg">Certificates</span>
-                  </Link>
-                </li> */}
               </ul>
             </div>
 
-            {/* PLATFORMS 하단 메뉴 */}
+            {/* SERVICE 하단 메뉴 */}
             <div className="menuDetailDiv">
               <Link
-                smooth
-                to={`${imsi}/platforms/#platforms`}
+                smooth="true"
+                to={`${imsi}/service/#service`}
                 onClick={menuclick}
               >
-                <span className="textF18 tcb">PLATFORMS</span>
+                <span className="textF18 tcb">SERVICE</span>
               </Link>
               <ul className="menuul">
                 <li>
                   <Link
-                    smooth
-                    to={`${imsi}/platforms/#craimon`}
+                    smooth="true"
+                    to={`${imsi}/service/#digitalcareservice`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">Craimon</span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth
-                    to={`${imsi}/platforms/#rhexium`}
-                    onClick={menuclick}
-                  >
-                    <span className="textF15 tcg"> Rhexium </span>
+                    <span className="textF15 tcg">Degital Care Service</span>
                   </Link>
                 </li>
               </ul>
             </div>
 
-            {/* PIPELINE 하단 메뉴 */}
+            {/* RESEARCH 하단 메뉴 */}
             <div className="menuDetailDiv">
               <Link
-                smooth
-                to={`${imsi}/pipeline/#pipeline`}
+                smooth="true"
+                to={`${imsi}/research/#research`}
                 onClick={menuclick}
               >
-                <span className="textF18 tcb">PIPELINE</span>
+                <span className="textF18 tcb">RESEARCH</span>
               </Link>
               <ul className="menuul">
-                {/* <li>
-                  <Link
-                    smooth
-                    to={`${imsi}/pipeline/#craimon`}
-                    onClick={menuclick}
-                  >
-                    <span className="textF15 tcg"> Craimon Pipeline</span>
-                  </Link>
-                </li> */}
                 <li>
                   <Link
-                    smooth
-                    to={`${imsi}/pipeline/#DTx PIPELINES`}
+                    smooth="true"
+                    to={`${imsi}/research/#nutritionincancercare`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg"> DTx Pipelines</span>
+                    <span className="textF15 tcg">
+                      Nutrition in Cancer Care
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    smooth="true"
+                    to={`${imsi}/research/#drugadverseevent`}
+                    onClick={menuclick}
+                  >
+                    <span className="textF15 tcg">Drug Adverse Event</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    smooth="true"
+                    to={`${imsi}/research/#recurrenceprediction`}
+                    onClick={menuclick}
+                  >
+                    <span className="textF15 tcg">Recurrence prediction</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    smooth="true"
+                    to={`${imsi}/research/#exercise`}
+                    onClick={menuclick}
+                  >
+                    <span className="textF15 tcg">Excercise</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    smooth="true"
+                    to={`${imsi}/research/#aibasedostomyconditioncheck`}
+                    onClick={menuclick}
+                  >
+                    <span className=" textF15 tcg" style={{ display: "block" }}>
+                      Ai-based ostomy
+                    </span>
+                    <span className=" textF15 tcg" style={{ display: "block" }}>
+                      condition check
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    smooth="true"
+                    to={`${imsi}/research/#adherenceofhormonetherapy`}
+                    onClick={menuclick}
+                  >
+                    <span className="textF15 tcg" style={{ display: "block" }}>
+                      Adherence of hormone
+                    </span>
+                    <span className="textF15 tcg" style={{ display: "block" }}>
+                      therapy
+                    </span>
                   </Link>
                 </li>
               </ul>
             </div>
-
+            {/* CRS 하단 메뉴 */}
+            <div className="menuDetailDiv">
+              <Link smooth="true" to={`${imsi}/crs/#crs`} onClick={menuclick}>
+                <span className="textF18 tcb">CRS</span>
+              </Link>
+              <ul className="menuul">
+                <Link
+                  smooth="true"
+                  to={`${imsi}/crs/#propreplatform`}
+                  onClick={menuclick}
+                >
+                  <span className="textF15 tcg">Pro-Pre Platform</span>
+                </Link>
+                <li>
+                  <Link
+                    smooth="true"
+                    to={`${imsi}/crs/#datamanagement`}
+                    onClick={menuclick}
+                  >
+                    <span className="textF15 tcg">Data Management</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    smooth="true"
+                    to={`${imsi}/crs/#biostatistics`}
+                    onClick={menuclick}
+                  >
+                    <span className="textF15 tcg">Bio-Statistics</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    smooth="true"
+                    to={`${imsi}/crs/#clinicaloperation`}
+                    onClick={menuclick}
+                  >
+                    <span className="textF15 tcg">Clinical Operation</span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
             {/* NEWS 하단 메뉴 */}
             <div className="menuDetailDiv">
-              <Link smooth to={`${imsi}/news/#news`} onClick={menuclick}>
+              <Link smooth="true" to={`${imsi}/news/#news`} onClick={menuclick}>
                 <span className="textF18 tcb">NEWS & IR</span>
               </Link>
               <ul className="menuul">
                 <Link
-                  smooth
+                  smooth="true"
                   to={`${imsi}/news/#newsrelease`}
                   onClick={menuclick}
                 >
@@ -620,7 +802,7 @@ export default function Menubar(props) {
                 </Link>
                 <li>
                   <Link
-                    smooth
+                    smooth="true"
                     to={`${imsi}/news/#irinformation`}
                     onClick={menuclick}
                   >
@@ -633,7 +815,7 @@ export default function Menubar(props) {
             {/* CONTACT US 하단 메뉴 */}
             <div className="menuDetailDiv">
               <Link
-                smooth
+                smooth="true"
                 to={`${imsi}/contactus/#contactus`}
                 onClick={menuclick}
               >
@@ -642,7 +824,7 @@ export default function Menubar(props) {
               <ul className="menuul">
                 <li>
                   <Link
-                    smooth
+                    smooth="true"
                     to={`${imsi}/contactus/#career`}
                     onClick={menuclick}
                   >
@@ -651,7 +833,7 @@ export default function Menubar(props) {
                 </li>
                 <li>
                   <Link
-                    smooth
+                    smooth="true"
                     to={`${imsi}/contactus/#contact`}
                     onClick={menuclick}
                   >

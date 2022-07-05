@@ -143,7 +143,7 @@ export default function News({ match }) {
   // };
   // const classes = useStyles();
   return (
-    <div id="content" style={{ position: "relative" }}>
+    <div id="content" className="content">
       <Menubar slideIndex={slideIndex} />
       <Totop />
       <div id="news">

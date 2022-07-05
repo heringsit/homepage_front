@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) =>
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      outline: "none",
+      outline: "none"
     },
     paper: {
       width: "65%",
@@ -29,10 +29,10 @@ const useStyles = makeStyles((theme) =>
       backgroundColor: "#FFF",
       outline: "none",
       [theme.breakpoints.down("xs")]: {
-        width: "80%",
+        width: "80%"
         // minHeight: 400,
         // maxHeight: 500,
-      },
+      }
     },
 
     modalContent: {
@@ -40,16 +40,16 @@ const useStyles = makeStyles((theme) =>
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      overflow: "auto",
+      overflow: "auto"
     },
     modalimgaeWrap: {
       display: "flex",
       justifyContent: "center",
-      alignItems: "center",
+      alignItems: "center"
     },
     modalimage: {
       maxWidth: "35%",
-      height: "auto",
+      height: "auto"
     },
     modalTitle: {
       marginTop: 20,
@@ -58,12 +58,12 @@ const useStyles = makeStyles((theme) =>
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      color: "#4a4a4a",
+      color: "#4a4a4a"
     },
     modalContentText: {
       whiteSpace: "pre-wrap",
-      color: "#4a4a4a",
-    },
+      color: "#4a4a4a"
+    }
   })
 );
 
@@ -112,15 +112,15 @@ export default function Career({ match }) {
       .get(`${imsi}/api/boardListCnt`, {
         params: {
           type: "Career",
-          date: sendingDateFormat,
-        },
+          date: sendingDateFormat
+        }
       })
       .then((response) => {
         console.log(response.data.boardCnt);
         setCountList([
           response.data.boardCnt[0].cnt,
           response.data.boardCnt[0].newcnt,
-          response.data.boardCnt[0].expcnt,
+          response.data.boardCnt[0].expcnt
         ]);
       })
       .catch(function (error) {
@@ -132,8 +132,8 @@ export default function Career({ match }) {
         params: {
           type: "Career",
           tab: selectedTab,
-          page: 1,
-        },
+          page: 1
+        }
       })
       .then((response) => {
         console.log(response.data.paginginfo);
@@ -154,8 +154,8 @@ export default function Career({ match }) {
         params: {
           type: "Career",
           tab: careerTab,
-          page: parseInt(page),
-        },
+          page: parseInt(page)
+        }
       })
       .then((response) => {
         setPaginginfo(response.data.paginginfo);
@@ -272,8 +272,9 @@ export default function Career({ match }) {
             onClick={(e) => {
               page(e, data);
             }}
-            className={`${parseInt(data) === parseInt(paging.curPage) ? "pagingActive" : ""
-              }`}
+            className={`${
+              parseInt(data) === parseInt(paging.curPage) ? "pagingActive" : ""
+            }`}
           >
             {data}
           </li>
@@ -296,7 +297,7 @@ export default function Career({ match }) {
   useEffect(getdata, []);
   console.log("listData::", listData);
   return (
-    <div id="content" style={{ position: "relative" }}>
+    <div id="content" className="content">
       {/* <Menubar slideIndex={0} />
       <Totop /> */}
       <div id="cotactus">
@@ -311,8 +312,9 @@ export default function Career({ match }) {
           </div>
           <div className="listCnt">
             <div
-              className={`${careerTab === "A" ? "squareCareerSelected" : "squareCareer"
-                }`}
+              className={`${
+                careerTab === "A" ? "squareCareerSelected" : "squareCareer"
+              }`}
               onClick={(e) => {
                 tabClick(e, "A");
               }}
@@ -321,15 +323,17 @@ export default function Career({ match }) {
                 {countList[0]}
               </span>
               <div
-                className={`FontNR textF18 korFonts ${careerTab === "A" ? "tcw" : "tcb"
-                  }`}
+                className={`FontNR textF18 korFonts ${
+                  careerTab === "A" ? "tcw" : "tcb"
+                }`}
               >
                 {matches ? "진행중인 채용" : "현재 진행중인 채용"}
               </div>
             </div>
             <div
-              className={`${careerTab === "B" ? "squareCareerSelected" : "squareCareer"
-                }`}
+              className={`${
+                careerTab === "B" ? "squareCareerSelected" : "squareCareer"
+              }`}
               onClick={(e) => {
                 tabClick(e, "B");
               }}
@@ -338,15 +342,17 @@ export default function Career({ match }) {
                 {countList[1]}
               </span>
               <div
-                className={`FontNR textF18 korFonts ${careerTab === "B" ? "tcw" : "tcb"
-                  }`}
+                className={`FontNR textF18 korFonts ${
+                  careerTab === "B" ? "tcw" : "tcb"
+                }`}
               >
                 신입 / 인턴
               </div>
             </div>
             <div
-              className={`${careerTab === "C" ? "squareCareerSelected" : "squareCareer"
-                }`}
+              className={`${
+                careerTab === "C" ? "squareCareerSelected" : "squareCareer"
+              }`}
               onClick={(e) => {
                 tabClick(e, "C");
               }}
@@ -355,8 +361,9 @@ export default function Career({ match }) {
                 {countList[2]}
               </span>
               <div
-                className={`FontNR textF18 korFonts ${careerTab === "C" ? "tcw" : "tcb"
-                  }`}
+                className={`FontNR textF18 korFonts ${
+                  careerTab === "C" ? "tcw" : "tcb"
+                }`}
               >
                 경력
               </div>
@@ -391,10 +398,10 @@ export default function Career({ match }) {
                       <div className="careerContainListCol col1 textF16 korFonts">
                         {convertData(
                           data.check_career_new +
-                          "/" +
-                          data.check_career_experienced +
-                          "/" +
-                          data.check_career_exp_year,
+                            "/" +
+                            data.check_career_experienced +
+                            "/" +
+                            data.check_career_exp_year,
                           "career"
                         )}
                       </div>
@@ -417,10 +424,11 @@ export default function Career({ match }) {
                       </div>
                       <div className="careerContainListCol col4 textF16 listBtn">
                         <div
-                          className={`careerBtn ${checkDate(data.closing_date, "E")
-                            ? "careerBtnIng"
-                            : "careerBtnEnd"
-                            }`}
+                          className={`careerBtn ${
+                            checkDate(data.closing_date, "E")
+                              ? "careerBtnIng"
+                              : "careerBtnEnd"
+                          }`}
                         >
                           {checkDate(data.closing_date, "E")
                             ? "채용중"
@@ -441,7 +449,7 @@ export default function Career({ match }) {
             {paginginfo.totalPage > 1 ? (
               <div
                 className="pagingDiv"
-              // onClick={(e) => loadMore(e)}
+                // onClick={(e) => loadMore(e)}
               >
                 {pageingFn(paginginfo)}
               </div>
@@ -462,7 +470,7 @@ export default function Career({ match }) {
         disableScrollLock={true}
         BackdropComponent={Backdrop}
         BackdropProps={{
-          timeout: 500,
+          timeout: 500
         }}
       >
         <Fade in={open}>

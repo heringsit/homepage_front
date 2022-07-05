@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) =>
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      outline: "none",
+      outline: "none"
     },
     paper: {
       width: "65%",
@@ -30,10 +30,10 @@ const useStyles = makeStyles((theme) =>
       backgroundColor: "#FFF",
       outline: "none",
       [theme.breakpoints.down("xs")]: {
-        width: "80%",
+        width: "80%"
         // minHeight: 400,
         // maxHeight: 500,
-      },
+      }
     },
 
     modalContent: {
@@ -41,16 +41,16 @@ const useStyles = makeStyles((theme) =>
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      overflow: "auto",
+      overflow: "auto"
     },
     modalimgaeWrap: {
       display: "flex",
       justifyContent: "center",
-      alignItems: "center",
+      alignItems: "center"
     },
     modalimage: {
       maxWidth: "35%",
-      height: "auto",
+      height: "auto"
     },
     modalTitle: {
       marginTop: 20,
@@ -59,12 +59,12 @@ const useStyles = makeStyles((theme) =>
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      color: "#4a4a4a",
+      color: "#4a4a4a"
     },
     modalContentText: {
       whiteSpace: "pre-wrap",
-      color: "#4a4a4a",
-    },
+      color: "#4a4a4a"
+    }
   })
 );
 
@@ -106,8 +106,8 @@ export default function NewsRelease() {
       .get(`${imsi}/api/boardList`, {
         params: {
           type: "IR",
-          page: 1,
-        },
+          page: 1
+        }
       })
       .then((response) => {
         setListData(response.data.board_data);
@@ -142,8 +142,8 @@ export default function NewsRelease() {
       .get(`${imsi}/api/boardList`, {
         params: {
           type: "IR",
-          page: parseInt(page),
-        },
+          page: parseInt(page)
+        }
       })
       .then((response) => {
         setPaginginfo(response.data.paginginfo);
@@ -205,7 +205,7 @@ export default function NewsRelease() {
   };
   useEffect(getdata, []);
   return (
-    <div id="content" style={{ position: "relative" }}>
+    <div id="content" className="content">
       <div className="SectionDivNews" id="irinformation">
         <div className="SectionDivNT ">
           <div className="titleDiv">
@@ -246,7 +246,7 @@ export default function NewsRelease() {
                         border: "solid 1px",
                         width: 204,
                         height: 34,
-                        paddingTop: 4,
+                        paddingTop: 4
                       }}
                       onClick={() => onDownLoad(data.img)}
                     >
@@ -290,7 +290,7 @@ export default function NewsRelease() {
         disableScrollLock={true}
         BackdropComponent={Backdrop}
         BackdropProps={{
-          timeout: 500,
+          timeout: 500
         }}
       >
         <Fade in={open}>
@@ -315,7 +315,7 @@ export default function NewsRelease() {
                     style={{
                       textAlign: "center",
                       paddingBottom: 30,
-                      paddingTop: 20,
+                      paddingTop: 20
                     }}
                   >
                     {modalObj.title}
@@ -393,7 +393,7 @@ export default function NewsRelease() {
                           padding: 10,
                           background: "none",
                           border: "none",
-                          fontSize: 17,
+                          fontSize: 17
                         }}
                         onClick={() =>
                           window.open(`${modalObj.link}`, "_blank")

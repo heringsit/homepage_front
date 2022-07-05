@@ -1,7 +1,10 @@
+import { useMediaQuery } from "@material-ui/core";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Footer.css";
 function Footer() {
+  const matches = useMediaQuery("(max-width:480px)");
+
   return (
     <footer className="footer textF12">
       <div className="footerRowa">
@@ -34,6 +37,13 @@ function Footer() {
           Copyright © {new Date().getFullYear()} HERINGS. All rights reserved.
         </div>
       </div>
+      {matches && (
+        <div
+          style={{
+            height: "110px"
+          }}
+        ></div>
+      )}
     </footer>
   );
 }

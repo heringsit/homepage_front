@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Modal from "@material-ui/core/Modal";
@@ -12,36 +12,34 @@ import { ReactComponent as IconClose } from "../../assets/images/05career/close.
 import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
 import Footer from "../Components/Footer";
-import Maintop from "./Sections/Maintop";
 import Whoweare from "./Sections/whoweare";
-// import Certificates from "./Sections/Certificates";
 import PAI from "./Sections/PartnersAInvestors";
 import TeamList from "./Sections/TeamList";
-//import QM from "./Sections/QualityManagement";
 import "./Aboutus.css";
-import { useEffect } from "react";
 import { imsi } from "../../index";
 import search from "../../assets/images/etc/search.png";
 import { Checkbox } from "@material-ui/core";
 import moment from "moment";
+import TabClick from "../common/TabClick";
+import ContentsTitle from "../Components/ContentsTitle";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
-      flexGrow: 1,
+      flexGrow: 1
     },
     control: {
-      padding: theme.spacing(2),
+      padding: theme.spacing(2)
     },
     header: {
-      height: "100%",
+      height: "100%"
     },
     ieAlignCenter: {
-      display: "flex",
+      display: "flex"
     },
     longheigntContent: {
       height: "100%",
-      overflow: "visible",
+      overflow: "visible"
     },
     section2Height: {
       //minHeight: 680
@@ -49,7 +47,7 @@ const useStyles = makeStyles((theme) =>
     modal: {
       display: "flex",
       alignItems: "center",
-      justifyContent: "center",
+      justifyContent: "center"
     },
     paper: {
       display: "flex",
@@ -64,10 +62,10 @@ const useStyles = makeStyles((theme) =>
       boxShadow: "0 0 100px 20px rgba(0, 0, 0, 0.7)",
       backgroundColor: "#FFF",
       [theme.breakpoints.down("xs")]: {
-        width: "80%",
+        width: "80%"
         // minHeight: 400,
         // maxHeight: 500,
-      },
+      }
     },
     modalContent: {
       height: "auto",
@@ -78,11 +76,11 @@ const useStyles = makeStyles((theme) =>
         paddingTop: 25,
         paddingBottom: 25,
         paddingLeft: 10,
-        paddingRight: 10,
-      },
+        paddingRight: 10
+      }
     },
     modalCloseWrap: {
-      position: "relative",
+      position: "relative"
     },
     modalCloseDiv: {
       position: "absolute",
@@ -94,8 +92,8 @@ const useStyles = makeStyles((theme) =>
       outline: "none",
       [theme.breakpoints.down("xs")]: {
         top: "-25px",
-        right: "-10px",
-      },
+        right: "-10px"
+      }
     },
     modalClose: {
       maxWidth: 70,
@@ -104,18 +102,18 @@ const useStyles = makeStyles((theme) =>
       outline: "none",
       [theme.breakpoints.down("xs")]: {
         maxWidth: 50,
-        padding: 12.5,
-      },
+        padding: 12.5
+      }
     },
     modalimgaeWrap: {
       display: "flex",
       justifyContent: "center",
-      alignItems: "center",
+      alignItems: "center"
     },
     modalimage: {
       width: "35%",
       maxWidth: "35%",
-      height: "auto",
+      height: "auto"
     },
     modalTitle: {
       marginTop: 20,
@@ -125,7 +123,7 @@ const useStyles = makeStyles((theme) =>
       justifyContent: "center",
       alignItems: "center",
       flexWrap: "wrap",
-      color: "#4a4a4a",
+      color: "#4a4a4a"
     },
     modalContentText: {
       borderTop: "1px solid #ddd",
@@ -138,15 +136,16 @@ const useStyles = makeStyles((theme) =>
         paddingTop: "25px",
         paddingBottom: "25px",
         paddingLeft: "10px",
-        paddingRight: "10px",
-      },
-    },
+        paddingRight: "10px"
+      }
+    }
   })
 );
 
 export default function Aboutus({ match }) {
   const HAS_VISITED_BEFORE = localStorage.getItem("hasVisitedBefore");
   const matches = useMediaQuery("(max-width:600px)");
+  const [isScroll, setIsScroll] = useState(false);
   const [open, setOpen] = useState(false);
   const [openNotice, setOpenNotice] = useState(false);
   const [modalObj, setModalObj] = useState({});
@@ -154,24 +153,36 @@ export default function Aboutus({ match }) {
   const [slideIndex, setSlideIndex] = useState(0);
   const [watchToday, setWatchToday] = useState(false);
 
+  const onScroll = () => {
+    if (window.scrollY > 238 || window.pageYOffset > 238) {
+      setIsScroll(true);
+    } else {
+      setIsScroll(false);
+    }
+  };
+  // 모바일 메뉴
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isScroll]);
   const getdata = (tab) => {
     axios
       .get(`${imsi}/api/boardList`, {
         params: {
           type: "Popup",
-          page: 1,
-        },
+          page: 1
+        }
       })
       .then((response) => {
         if (response.data?.board_data.length !== 0) {
           setmodalPopObj(response.data?.board_data[0]);
-          let toDates = moment(new Date()).format("YYYY-MM-DD")
+          let toDates = moment(new Date()).format("YYYY-MM-DD");
           if (response.data.board_data[0].closing_date >= toDates) {
             return setOpenNotice(true);
           }
           return setOpenNotice(false);
         } else {
-          setmodalPopObj(undefined)
+          setmodalPopObj(undefined);
           return setOpenNotice(false);
         }
       })
@@ -246,7 +257,7 @@ export default function Aboutus({ match }) {
                       overflowY: "auto",
                       overflowX: "hidden",
                       width: "100%",
-                      height: "auto",
+                      height: "auto"
                     }}
                   >
                     <div
@@ -256,7 +267,7 @@ export default function Aboutus({ match }) {
                       {modalPopObj.recruitment}
                       <div
                         style={{
-                          textAlign: "center",
+                          textAlign: "center"
                         }}
                       >
                         {(() => {
@@ -275,7 +286,7 @@ export default function Aboutus({ match }) {
                       className="tcb FontNR textF17"
                       style={{
                         textAlign: "center",
-                        paddingTop: 4,
+                        paddingTop: 4
                       }}
                     >
                       <div style={{ paddingBottom: 8 }}>
@@ -285,7 +296,7 @@ export default function Aboutus({ match }) {
                             padding: 10,
                             background: "none",
                             border: "none",
-                            fontSize: 17,
+                            fontSize: 17
                           }}
                           onClick={() =>
                             window.open(`${modalPopObj.link}`, "_self")
@@ -303,7 +314,7 @@ export default function Aboutus({ match }) {
                         style={{
                           textAlign: "right",
                           paddingTop: 20,
-                          borderTop: "solid 0.5px #bebebe",
+                          borderTop: "solid 0.5px #bebebe"
                         }}
                       >
                         <Checkbox
@@ -312,7 +323,7 @@ export default function Aboutus({ match }) {
                             padding: 5,
                             background: "none",
                             border: "none",
-                            fontSize: 17,
+                            fontSize: 17
                           }}
                           onChange={onCheckChange}
                         ></Checkbox>
@@ -343,8 +354,7 @@ export default function Aboutus({ match }) {
       return openInitialNotice();
     }
     return null;
-
-  }
+  };
   const classes = useStyles();
   return (
     <div id="aboutus" style={{ position: "relative" }}>
@@ -353,8 +363,9 @@ export default function Aboutus({ match }) {
       {openerModalNoti()}
       {/* { modalObj !== null ? openInitialNotice() : null} */}
       <div>
-        {/* 배너 */}
-        <Maintop matches={matches} setSlideIndex={setSlideIndex} />
+        <ContentsTitle title={"ABOUT US"} />
+        <TabClick isScroll={isScroll} />
+
         <Whoweare matches={matches} />
         <TeamList handleOpen={handleOpen} matches={matches} />
         <PAI matches={matches} />
@@ -371,7 +382,7 @@ export default function Aboutus({ match }) {
         disableScrollLock={true}
         BackdropComponent={Backdrop}
         BackdropProps={{
-          timeout: 500,
+          timeout: 500
         }}
       >
         <Fade in={open}>

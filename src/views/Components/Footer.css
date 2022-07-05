@@ -5,6 +5,11 @@
   justify-content: center;
   clear: both;
   background-color: #222;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
 }
 .footerRowa {
   display: flex;
@@ -50,5 +55,20 @@
   .footerContent {
     margin-right: 0;
     margin-left: 0;
+  }
+}
+@media screen and (max-width: 428px) {
+  .footer {
+    display: flex;
+    padding: 33px 10%;
+    flex-direction: column;
+    justify-content: center;
+    clear: both;
+    background-color: #222;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
   }
 }

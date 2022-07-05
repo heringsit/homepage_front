@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import {
   Executive_Leadership,
   Research_Leadership,
-  Advisory_Board,
+  Advisory_Board
 } from "./HeringsTeamMember";
 
 // import TeamListArrowPrev from "../../../assets/images/etc/team_left.svg";
@@ -55,147 +55,163 @@ export default class TeamList extends Component {
       autoplaySpeed: 3000,
       //arrows: this.props.matches ? false : true,
       nextArrow: <NextArrow matches={this.props.matches} />,
-      prevArrow: <PrevArrow matches={this.props.matches} />,
+      prevArrow: <PrevArrow matches={this.props.matches} />
     };
     return (
-      <div className="SectionDiv SectionColorGray" id="heringsteam">
-        <div className="titleDiv">
-          <div className="textT22 FontEB">
-            <span>HERINGS TEAM</span>
+      <div className="addPadding " id="heringsteam">
+        <div className="SectionDiv  ">
+          <div className="titleDiv">
+            <div className="textT22 FontEB">
+              <span>HERINGS TEAM</span>
+            </div>
+            <hr></hr>
           </div>
-          <hr></hr>
-        </div>
-        <div className="TeamListWrap">
-          <div className="textT18 Subtitle">
-            <span className="FontB">EXECUTIVE</span>
-            <span className="FontR">LEADERSHIP</span>
+          <div className="SectionColorGray" style={{ padding: "16px 0" }}>
+            <div className="TeamListWrap  ">
+              <div className="textT18 Subtitle">
+                <span className="FontB">EXECUTIVE</span>
+                <span className="FontR">LEADERSHIP</span>
+              </div>
+              <Slider {...LeaderShipSettings} className="listWrap">
+                {Executive_Leadership.map((team, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className={`teamDivWrap ${
+                        index === 0 ? "wrapFirst" : ""
+                      }`}
+                    >
+                      <div
+                        className="heringsTeamWrap"
+                        onClick={() => {
+                          this.props.handleOpen(team);
+                        }}
+                      >
+                        <hr />
+                        <div className="listImgWrap">
+                          <img
+                            className="listImg"
+                            src={team.modalimg}
+                            alt={team.name}
+                          />
+                        </div>
+                        <div className="heringsTeamContentText">
+                          <div>
+                            <span className="FontB textF18 tcb">
+                              {team.name}
+                            </span>
+                          </div>
+                          <div>
+                            {/* 여기 index === 4 */}
+                            <span className="textF15 tco">{team.jobs}</span>
+                          </div>
+                          <div>
+                            <span className="textF15 tcg">
+                              {team.positions}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </Slider>
+            </div>
+            <div className="TeamListWrap">
+              <div className="textT18 Subtitle">
+                <span className="FontB">RESEARCH</span>
+                <span className="FontR">LEADERSHIP</span>
+              </div>
+              <Slider {...LeaderShipSettings} className="listWrap">
+                {Research_Leadership.map((team, index) => {
+                  return (
+                    <div key={index} className="teamDivWrap">
+                      <div
+                        className={` ${
+                          team.jobs === "None"
+                            ? "teamDivWrapNone"
+                            : "heringsTeamWrap"
+                        }`}
+                        onClick={() => {
+                          this.props.handleOpen(team);
+                        }}
+                      >
+                        <hr />
+                        <div className="listImgWrap">
+                          <img
+                            src={team.modalimg}
+                            alt={team.name}
+                            className="listImg"
+                          />
+                        </div>
+                        <div className="heringsTeamContentText">
+                          <div>
+                            <span className="FontB textF18 tcb">
+                              {team.name}
+                            </span>
+                          </div>
+                          <div>
+                            <span className="textF15 tco">{team.jobs}</span>
+                          </div>
+                          <div>
+                            <span className="textF15 tcg">
+                              {team.positions}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </Slider>
+            </div>
+            <div className="TeamListWrap">
+              <div className="textT18 Subtitle">
+                <span className="FontB">ADVISORY</span>
+                <span className="FontR">BOARD</span>
+              </div>
+              <Slider {...LeaderShipSettings} className="listWrap">
+                {Advisory_Board.map((team, index) => {
+                  return (
+                    <div key={index} className="teamDivWrap">
+                      <div
+                        className="heringsTeamWrap"
+                        onClick={() => {
+                          this.props.handleOpen(team);
+                        }}
+                      >
+                        <hr />
+                        <div className="listImgWrap">
+                          <img
+                            src={team.modalimg}
+                            alt={team.name}
+                            className="listImg"
+                          />
+                        </div>
+                        <div className="heringsTeamContentText">
+                          <div>
+                            <span className="FontB textF18 tcb">
+                              {team.name}
+                            </span>
+                          </div>
+                          <div>
+                            <span className="textF15 tco">{team.jobs}</span>
+                          </div>
+                          <div>
+                            <span className="textF15 tcg">
+                              {team.positions !== ""
+                                ? team.positions
+                                : "\u00A0"}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </Slider>
+            </div>
           </div>
-          <Slider {...LeaderShipSettings} className="listWrap">
-            {Executive_Leadership.map((team, index) => {
-              return (
-                <div
-                  key={index}
-                  className={`teamDivWrap ${index === 0 ? "wrapFirst" : ""}`}
-                >
-                  <div
-                    className="heringsTeamWrap"
-                    onClick={() => {
-                      this.props.handleOpen(team);
-                    }}
-                  >
-                    <hr />
-                    <div className="listImgWrap">
-                      <img
-                        className="listImg"
-                        src={team.modalimg}
-                        alt={team.name}
-                      />
-                    </div>
-                    <div className="heringsTeamContentText">
-                      <div>
-                        <span className="FontB textF18 tcb">{team.name}</span>
-                      </div>
-                      <div>
-                        {/* 여기 index === 4 */}
-                        <span className="textF15 tco">
-                          {team.jobs}
-                        </span>
-                      </div>
-                      <div>
-                        <span className="textF15 tcg">{team.positions}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </Slider>
-        </div>
-        <div className="TeamListWrap">
-          <div className="textT18 Subtitle">
-            <span className="FontB">RESEARCH</span>
-            <span className="FontR">LEADERSHIP</span>
-          </div>
-          <Slider {...LeaderShipSettings} className="listWrap">
-            {Research_Leadership.map((team, index) => {
-              return (
-                <div key={index} className="teamDivWrap">
-                  <div
-                    className={` ${
-                      team.jobs === "None"
-                        ? "teamDivWrapNone"
-                        : "heringsTeamWrap"
-                    }`}
-                    onClick={() => {
-                      this.props.handleOpen(team);
-                    }}
-                  >
-                    <hr />
-                    <div className="listImgWrap">
-                      <img
-                        src={team.modalimg}
-                        alt={team.name}
-                        className="listImg"
-                      />
-                    </div>
-                    <div className="heringsTeamContentText">
-                      <div>
-                        <span className="FontB textF18 tcb">{team.name}</span>
-                      </div>
-                      <div>
-                        <span className="textF15 tco">{team.jobs}</span>
-                      </div>
-                      <div>
-                        <span className="textF15 tcg">{team.positions}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </Slider>
-        </div>
-        <div className="TeamListWrap">
-          <div className="textT18 Subtitle">
-            <span className="FontB">ADVISORY</span>
-            <span className="FontR">BOARD</span>
-          </div>
-          <Slider {...LeaderShipSettings} className="listWrap">
-            {Advisory_Board.map((team, index) => {
-              return (
-                <div key={index} className="teamDivWrap">
-                  <div
-                    className="heringsTeamWrap"
-                    onClick={() => {
-                      this.props.handleOpen(team);
-                    }}
-                  >
-                    <hr />
-                    <div className="listImgWrap">
-                      <img
-                        src={team.modalimg}
-                        alt={team.name}
-                        className="listImg"
-                      />
-                    </div>
-                    <div className="heringsTeamContentText">
-                      <div>
-                        <span className="FontB textF18 tcb">{team.name}</span>
-                      </div>
-                      <div>
-                        <span className="textF15 tco">{team.jobs}</span>
-                      </div>
-                      <div>
-                        <span className="textF15 tcg">
-                          {team.positions !== "" ? team.positions : "\u00A0"}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </Slider>
         </div>
       </div>
     );

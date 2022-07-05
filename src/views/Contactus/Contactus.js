@@ -81,7 +81,8 @@ export default function ContactUs() {
   };
 
   const onChange = (e) => {
-    const emailRegExp = /^[\w-]+(\.[\w-]+)*@([a-z0-9-]+(\.[a-z0-9-]+)*?\.[a-z]{2,6}|(\d{1,3}\.){3}\d{1,3})(:\d{4})?$/;
+    const emailRegExp =
+      /^[\w-]+(\.[\w-]+)*@([a-z0-9-]+(\.[a-z0-9-]+)*?\.[a-z]{2,6}|(\d{1,3}\.){3}\d{1,3})(:\d{4})?$/;
     const phoneNumberRegExp = /^\d{3}-\d{3,4}-\d{4}$/;
     const phoneNumberRegExp2 = /^\d{3}\d{3,4}\d{4}$/;
     switch (e.target.name) {
@@ -140,15 +141,15 @@ export default function ContactUs() {
       cName: cName,
       cEmail: cEmail,
       cPhone: cPhone,
-      cMessage: cMessage,
+      cMessage: cMessage
     };
 
     fetch("/api/contactus", {
       method: "POST",
       headers: {
-        "Content-type": "application/json",
+        "Content-type": "application/json"
       },
-      body: JSON.stringify(sendobj),
+      body: JSON.stringify(sendobj)
     })
       .then((response) => response.json())
       .then((result) => {
@@ -164,7 +165,7 @@ export default function ContactUs() {
   };
 
   return (
-    <div id="content" style={{ position: "relative" }}>
+    <div id="content" className="content">
       <Menubar slideIndex={0} />
       <Totop />
       <div id="contactus">
@@ -243,7 +244,7 @@ export default function ContactUs() {
                   style={{
                     height: "123px",
                     resize: "none",
-                    overflow: "auto",
+                    overflow: "auto"
                   }}
                   name="cMessage"
                   className={`FontR textF14 ${inputClassNameHelper(

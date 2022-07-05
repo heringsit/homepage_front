@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 /* @font-face {
   font-family: "NanumSquareL";
   font-style: normal;
@@ -166,7 +169,8 @@
     /* Safari, Android, iOS */
       url("./assets/fonts/roboto-v20-latin-900.svg#Roboto") format("svg"); /* Legacy iOS */
 }
-
+/*montserrat alternates*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700&display=swap");
 .FontL {
   font-family: "Roboto300", sans-serif;
 }
@@ -192,15 +196,36 @@
 .FontNEB {
   font-family: "NotoSansKoreanEB", sans-serif;
 }
+.Font_Mont_600 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
 
+  font-size: 48px;
+  color: #fff;
+  line-height: 58.51px;
+}
+.Font_Mont_400 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+
+  font-size: 20px;
+  color: #fff;
+  line-height: 24.38px;
+}
 .tcb {
   color: #1e1e1e;
 }
 .tco {
   color: #ff622b;
 }
+.tco2 {
+  color: #f37f31;
+}
 .tcg {
   color: #666666;
+}
+.tcg2 {
+  color: #a0a0a0;
 }
 .tcgreen1 {
   color: #07a990;
@@ -248,21 +273,6 @@ body {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-}
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
 }
 
 .textF70 {
@@ -362,107 +372,424 @@ body {
   font-size: 12px;
 }
 
-@media screen and (max-width: 1024px) {
-  .textF70 {
-    font-size: 64px;
-  }
-  .textF53 {
-    font-size: 50px;
-  }
-  .textF48 {
-    font-size: 45px;
-  }
-  .textF40 {
-    font-size: 38px;
-  }
-  .textF39 {
-    font-size: 37px;
-  }
-  .textF38 {
-    font-size: 36px;
-  }
-  .textF37 {
-    font-size: 35px;
-  }
-  .textF36 {
-    font-size: 34px;
-  }
-  .textF35 {
-    font-size: 33px;
-  }
-  .textF34 {
-    font-size: 32px;
-  }
-  .textF33 {
-    font-size: 31px;
-  }
-  .textF32 {
-    font-size: 30px;
-  }
-  .textF31 {
-    font-size: 29px;
-  }
-  .textF30 {
-    font-size: 28px;
-  }
-  .textF29 {
-    font-size: 27px;
-  }
-  .textF28 {
-    font-size: 26px;
-  }
-  .textF27 {
-    font-size: 25px;
-  }
-  .textF26 {
-    font-size: 24px;
-  }
-  .textF25 {
-    font-size: 23px;
-  }
-  .textF24 {
-    font-size: 22px;
-  }
-  .textF23 {
-    font-size: 21px;
-  }
-  .textF22 {
-    font-size: 20px;
-  }
-  .textF21 {
-    font-size: 19px;
-  }
-  .textF20 {
-    font-size: 18px;
-  }
-  .textF19 {
-    font-size: 17px;
-  }
-  .textF18 {
-    font-size: 16px;
-  }
-  .textF17 {
-    font-size: 15px;
-  }
-  .textF16 {
-    font-size: 14px;
-  }
-  .textF15 {
-    font-size: 13px;
-  }
-  .textF14 {
-    font-size: 12px;
-  }
-  .textF13 {
-    font-size: 12px;
+.textT22 {
+  font-size: 22px;
+}
+.textT18 {
+  font-size: 18px;
+}
+/*relative*/
+.relative {
+  position: relative;
+}
+
+/*SectionDiv*/
+.SectionDiv {
+  width: 100%;
+  height: 100%;
+  padding: 150px 10%;
+}
+.addPadding {
+  padding-top: 50px;
+}
+.SectionDivNP {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.SectionDivNT {
+  width: 100%;
+  height: 100%;
+  padding: 0 10%;
+}
+
+.SectionTitle {
+  width: 100%;
+  height: 170px;
+}
+.SectionDivTail {
+  width: 100%;
+  height: 100%;
+  padding-top: 2%;
+  position: relative;
+}
+.SectionDivTailContent {
+  width: 100%;
+  padding: 0 5%;
+}
+.SectionDivTailFooter {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.SectionColorGray {
+  background-color: #f6f8fb;
+}
+
+.SectionDivUpBlank {
+  padding-top: 200px;
+}
+.menuTitleDiv {
+  padding-top: 40px;
+}
+
+/*기본 css*/
+.flex {
+  display: flex;
+}
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.break-keepall {
+  word-break: keep-all;
+}
+.w-full {
+  width: 100%;
+}
+.w-screen {
+  width: 100vw;
+}
+.h-full {
+  height: 100%;
+}
+.w-screen {
+  height: 100vh;
+}
+/*tab*/
+.tagAPadding {
+  padding: 25px 20px;
+}
+.tagADefault {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #a0a0a0;
+}
+.tabATag {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #a0a0a0;
+}
+.tabATagTab {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #000000;
+  border-bottom: 2px solid #000000;
+}
+.TABS_layout {
+  display: flex;
+  /* justify-content: space-between; */
+}
+.TABS_layout_padding {
+  padding: 0 8%;
+  height: 100px;
+}
+
+.TABS_tab {
+  width: 33.333%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #a0a0a0;
+  border-bottom: 1px solid #c9c7c7;
+}
+
+.TABS_sticky {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  align-items: flex-end;
+  background-color: white;
+}
+.sticky_padding {
+  width: 100%;
+  height: 89px;
+}
+@media screen and (max-width: 1258px) {
+  .sticky_padding {
+    width: 100%;
+    height: 56px;
   }
 }
-@media screen and (max-width: 768px) {
+/*card 공통*/
+.card_titleDiv {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+.card_titleDiv_padding_b {
+  padding-bottom: 16px;
+}
+.card_titleDiv_bold {
+  font-family: "Roboto500", sans-serif;
+}
+
+.card_between {
+  /*position relative는 commonCardFrameRight 사진위치 하단으로 옮기기 위해 추가*/
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.card_flexcolumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.card_content_block {
+  display: block;
+}
+.card_MinWidth {
+  padding-top: 48px;
+  min-width: 360px;
+  max-width: 480px;
+}
+
+.img_trans {
+  display: flex;
+  column-gap: 48px;
+}
+.card_middlebar {
+  display: block;
+  height: 2px;
+  width: 100px;
+  background: #aaaaaa;
+  margin: 52px 0;
+}
+
+/*image shadow*/
+.image_shadow {
+  border-radius: 48px;
+  background: linear-gradient(242.33deg, #555555 10.43%, #111111 33.54%);
+  box-shadow: 4px 4px 32px rgba(0, 0, 0, 0.24);
+}
+/*banner_default*/
+.banner_layout {
+  width: 100%;
+  height: 220px;
+}
+.banner_default {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.banner_gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+}
+#aboutus .banner_img {
+  background: url("../src/assets/images/02about_who_we_are/about_banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#service .banner_img {
+  background: url("../src/assets/images/07service/service_banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#research .banner_img {
+  background: url("../src/assets/images/09research/research_full.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#crs .banner_img {
+  background: url("../src/assets/images/08crs/crs_banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#news .banner_img {
+  background: url("../src/assets/images/10newsir/newsir_banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#contactus .banner_img {
+  background: url("../src/assets/images/06contactus/contactus_banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/*title_default*/
+.title_default {
+  width: 100%;
+  text-align: center;
+  z-index: 30;
+  position: absolute;
+  bottom: 0;
+}
+/* media screen */
+/* media-font trans */
+@media screen and (max-width: 428px) {
+  .textF70 {
+    font-size: 40px;
+  }
+  .textF53 {
+    font-size: 26px;
+  }
+  .textF48 {
+    font-size: 36px;
+  }
+  .textF40 {
+    font-size: 32px;
+  }
+  .textF39 {
+    font-size: 31px;
+  }
+  .textF38 {
+    font-size: 30px;
+  }
+  .textF37 {
+    font-size: 29px;
+  }
+  .textF36 {
+    font-size: 28px;
+  }
+  .textF35 {
+    font-size: 27px;
+  }
+  .textF34 {
+    font-size: 26px;
+  }
+  .textF33 {
+    font-size: 25px;
+  }
+  .textF32 {
+    font-size: 20px;
+  }
+  .textF31 {
+    font-size: 23px;
+  }
+  .textF30 {
+    font-size: 22px;
+  }
+  .textF29 {
+    font-size: 21px;
+  }
+  .textF28 {
+    font-size: 20px;
+  }
+  .textF27 {
+    font-size: 19px;
+  }
+  .textF26 {
+    font-size: 16px;
+  }
+  .textF25 {
+    font-size: 17px;
+  }
+  .textF24 {
+    font-size: 16px;
+  }
+  .textF23 {
+    font-size: 15px;
+  }
+  .textF22 {
+    font-size: 12px;
+  }
+  .textF21 {
+    font-size: 13px;
+  }
+  .textF20 {
+    font-size: 12px;
+  }
+  .textF19 {
+    font-size: 12px;
+  }
+  .content {
+    position: relative;
+    padding-bottom: 100px;
+  }
+  .card_MinWidth {
+    padding-top: 12px;
+    padding-bottom: 48px;
+    min-width: 280px;
+    max-width: 100%;
+  }
+  .SectionDivUpBlank {
+    padding-top: 0;
+  }
+  .SectionDivUpBlank {
+    padding: 0px 0px 0px 0px;
+  }
+  .banner_default {
+    height: 240px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card_middlebar {
+    display: block;
+    height: 1px;
+    width: 50px;
+    background: #aaaaaa;
+    margin: 40px 0;
+  }
+  .title_default {
+    width: 70%;
+    text-align: center;
+  }
+  #crs .textF53 {
+    font-size: 22px;
+  }
+  #crs .textF28 {
+    font-size: 10px;
+  }
+  .card_titleDiv_padding_b {
+    padding-bottom: 0;
+  }
+  .card_titleDiv_bold {
+    font-family: "Roboto300", sans-serif;
+  }
+  .newcard_mp4_padding_b {
+    padding-bottom: 40px;
+  }
+  #research .banner_img {
+    background: url("../src/assets/images/09research/research_full.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+  }
+}
+@media (min-width: 428px) and (max-width: 768px) {
   .textF70 {
     font-size: 60px;
   }
   .textF53 {
-    font-size: 47px;
+    font-size: 38px;
   }
   .textF48 {
     font-size: 42px;
@@ -510,7 +837,7 @@ body {
     font-size: 23px;
   }
   .textF26 {
-    font-size: 22px;
+    font-size: 18px;
   }
   .textF25 {
     font-size: 21px;
@@ -534,7 +861,7 @@ body {
     font-size: 15px;
   }
   .textF18 {
-    font-size: 14px;
+    font-size: 12px;
   }
   .textF17 {
     font-size: 13px;
@@ -545,221 +872,16 @@ body {
   .textF15 {
     font-size: 12px;
   }
+  .content {
+    position: relative;
+    padding-bottom: 100px;
+  }
 }
 
-@media screen and (max-width: 600px) {
-  .textF70 {
-    font-size: 54px;
-  }
-  .textF53 {
-    font-size: 44px;
-  }
-  .textF48 {
-    font-size: 39px;
-  }
-  .textF40 {
-    font-size: 34px;
-  }
-  .textF39 {
-    font-size: 33px;
-  }
-  .textF38 {
-    font-size: 32px;
-  }
-  .textF37 {
-    font-size: 31px;
-  }
-  .textF36 {
-    font-size: 30px;
-  }
-  .textF35 {
-    font-size: 29px;
-  }
-  .textF34 {
-    font-size: 28px;
-  }
-  .textF33 {
-    font-size: 27px;
-  }
-  .textF32 {
-    font-size: 26px;
-  }
-  .textF31 {
-    font-size: 25px;
-  }
-  .textF30 {
-    font-size: 24px;
-  }
-  .textF29 {
-    font-size: 23px;
-  }
-  .textF28 {
-    font-size: 22px;
-  }
-  .textF27 {
-    font-size: 21px;
-  }
-  .textF26 {
-    font-size: 20px;
-  }
-  .textF25 {
-    font-size: 19px;
-  }
-  .textF24 {
-    font-size: 18px;
-  }
-  .textF23 {
-    font-size: 17px;
-  }
-  .textF22 {
-    font-size: 16px;
-  }
-  .textF21 {
-    font-size: 15px;
-  }
-  .textF20 {
-    font-size: 14px;
-  }
-  .textF19 {
-    font-size: 13px;
-  }
-  .textF18 {
-    font-size: 12px;
-  }
-  .textF17 {
-    font-size: 12px;
-  }
-}
+/* media-other */
 @media screen and (max-width: 480px) {
-  .textF70 {
-    font-size: 40px;
-  }
-  .textF53 {
-    font-size: 40px;
-  }
-  .textF48 {
-    font-size: 36px;
-  }
-  .textF40 {
-    font-size: 32px;
-  }
-  .textF39 {
-    font-size: 31px;
-  }
-  .textF38 {
-    font-size: 30px;
-  }
-  .textF37 {
-    font-size: 29px;
-  }
-  .textF36 {
-    font-size: 28px;
-  }
-  .textF35 {
-    font-size: 27px;
-  }
-  .textF34 {
-    font-size: 26px;
-  }
-  .textF33 {
-    font-size: 25px;
-  }
-  .textF32 {
-    font-size: 24px;
-  }
-  .textF31 {
-    font-size: 23px;
-  }
-  .textF30 {
-    font-size: 22px;
-  }
-  .textF29 {
-    font-size: 21px;
-  }
-  .textF28 {
-    font-size: 20px;
-  }
-  .textF27 {
-    font-size: 19px;
-  }
-  .textF26 {
-    font-size: 18px;
-  }
-  .textF25 {
-    font-size: 17px;
-  }
-  .textF24 {
-    font-size: 16px;
-  }
-  .textF23 {
-    font-size: 15px;
-  }
-  .textF22 {
-    font-size: 14px;
-  }
-  .textF21 {
-    font-size: 13px;
-  }
-  .textF20 {
-    font-size: 12px;
-  }
-  .textF19 {
-    font-size: 12px;
-  }
 }
 
-.textT22 {
-  font-size: 22px;
-}
-.textT18 {
-  font-size: 18px;
-}
-
-.SectionDiv {
-  width: 100%;
-  height: 100%;
-  padding: 110px 10%;
-}
-.SectionDivNP {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-.SectionDivNT {
-  width: 100%;
-  height: 100%;
-  padding: 0 10%;
-}
-
-.SectionTitle {
-  width: 100%;
-  height: 170px;
-}
-.SectionDivTail {
-  width: 100%;
-  height: 100%;
-  padding-top: 2%;
-  position: relative;
-}
-.SectionDivTailContent {
-  width: 100%;
-  padding: 0 5%;
-}
-.SectionDivTailFooter {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
-.SectionColorGray {
-  background-color: #f6f8fb;
-}
-
-.SectionDivUpBlank {
-  padding-top: 110px;
-}
-.menuTitleDiv {
-  padding-top: 40px;
-}
 @media screen and (max-width: 600px) {
   .SectionDiv {
     padding: 55px 5%;
@@ -768,4 +890,147 @@ body {
     padding-left: 5%;
     padding-right: 5%;
   }
+}
+@media screen and (max-width: 700px) {
+  .TABS_sticky {
+    display: none;
+  }
+  .SectionDivUpBlank {
+    padding-top: 48px;
+  }
+  .SectionDivNT {
+    padding: 48px 30px 0 30px;
+  }
+  .img_trans img:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 35%;
+    width: 200px;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  .img_trans > img:nth-child(2) {
+    position: absolute;
+    top: 8%;
+    left: 72%;
+    width: 170px;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  .img_trans > img:nth-child(1).image_shadow,
+  .img_trans > img:nth-child(2).image_shadow {
+    border-radius: 32px;
+    background: linear-gradient(242.33deg, #555555 10.43%, #111111 33.54%);
+    box-shadow: 4px 4px 32px rgb(0 0 0 / 24%);
+  }
+  .img_trans {
+    position: relative;
+    display: flex;
+    column-gap: 48px;
+    justify-content: center;
+    height: 410px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .TABS_layout_padding {
+    padding: 0 0;
+    height: 70px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1260px) {
+  .TABS_layout_padding {
+    height: 100px;
+    padding: 0 0;
+  }
+}
+@media screen and (max-width: 1024px) {
+}
+@media (min-width: 428px) and (max-width: 1100px) {
+  .card_MinWidth {
+    padding-top: 48px;
+    padding-bottom: 72px;
+    min-width: 360px;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .card_between {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  .card_content_block {
+    display: inline;
+  }
+
+  .img_trans {
+    position: relative;
+    display: flex;
+    column-gap: 48px;
+    justify-content: center;
+  }
+  .cardRight.card_between {
+    flex-direction: column-reverse;
+  }
+}
+@media (min-width: 428px) and (max-width: 1260px) {
+  .SectionDivNT {
+    padding: 176px 48px 0 48px;
+  }
+  .SectionDivUpBlank {
+    padding-top: 190px;
+  }
+}
+@media screen and (max-width: 1260px) {
+  .tagAPadding {
+    padding: 25px 0px;
+  }
+}
+@media screen and (min-width: 1260px) {
+  .TABS_layout_padding {
+    height: 100px;
+    padding: 0 8%;
+  }
+}
+/* media-container */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+.tabdown {
+  animation: godown 1s 1 forwards;
+}
+@keyframes godown {
+  from {
+    width: 100%;
+    height: 0px;
+  }
+  to {
+    width: 100%;
+    height: 90px;
+  }
+}
+.tabtrans {
+  width: 100%;
+  height: 90px;
+  transition: all 1s linear;
+}
+.tabnotrans {
+  width: 100%;
+  height: 0px;
+  transition: all 1s linear;
 }
