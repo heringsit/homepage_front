@@ -69,7 +69,7 @@ export default function TabClick({ isScroll }) {
                   onClick={(e) => {
                     const transformTab =
                       tab === "propreplatform"
-                        ? "PRO Platform"
+                        ? "PRO · PRE Platform"
                         : tab === "datamanagement"
                         ? "Data management"
                         : tab === "biostatistics"
@@ -89,7 +89,7 @@ export default function TabClick({ isScroll }) {
                   }}
                 >
                   {tab === "propreplatform"
-                    ? "PRO Platform"
+                    ? "PRO · PRE Platform"
                     : tab === "datamanagement"
                     ? "Data management"
                     : tab === "biostatistics"

@@ -44,7 +44,7 @@ export default function Crs() {
           }}
         >
           <TabClick isScroll={isScroll} />
-          {/* Pro-Pre Platform */}
+          {/* PRO · PRE Platform*/}
           <div className="SectionDivNT SectionDivUpBlank" id="propreplatform">
             <ProPrePlatformTitle />
             <CommonCardFrameLeft

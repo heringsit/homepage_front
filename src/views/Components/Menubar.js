@@ -317,7 +317,7 @@ export default function Menubar(props) {
                     onClick={menuclick}
                   >
                     <span className="menuText FontB textF18">
-                      Pro-Pre Platform
+                      PRO · PRE Platform
                     </span>
                   </Link>
                 </li>
@@ -758,7 +758,7 @@ export default function Menubar(props) {
                   to={`${imsi}/crs/#propreplatform`}
                   onClick={menuclick}
                 >
-                  <span className="textF15 tcg">Pro-Pre Platform</span>
+                  <span className="textF15 tcg">PRO · PRE Platform</span>
                 </Link>
                 <li>
                   <Link
