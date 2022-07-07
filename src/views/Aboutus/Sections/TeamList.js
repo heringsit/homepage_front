@@ -47,6 +47,7 @@ export default class TeamList extends Component {
     const LeaderShipSettings = {
       dots: false,
       infinite: true,
+      adaptiveHeight: true,
       speed: 500,
       slidesToShow: this.props.matches ? 2 : 4,
       // slidesToScroll: this.props.matches ? 1 : 4,
@@ -62,7 +63,7 @@ export default class TeamList extends Component {
         <div className="SectionDiv  ">
           <div className="titleDiv">
             <div className="textT22 FontEB">
-              <span>HERINGS TEAM</span>
+              <span>Herings Team</span>
             </div>
             <hr></hr>
           </div>

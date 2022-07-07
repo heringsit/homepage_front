@@ -115,7 +115,7 @@ export default function Menubar(props) {
                     to={`${imsi}/aboutus/#whoweare`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">WHO WE ARE</span>
+                    <span className="menuText FontB textF18">Who We Are</span>
                   </Link>
                 </li>
                 <li>
@@ -124,7 +124,7 @@ export default function Menubar(props) {
                     to={`${imsi}/aboutus/#heringsteam`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">HERINGS TEAM</span>
+                    <span className="menuText FontB textF18">Herings Team</span>
                   </Link>
                 </li>
                 <li>
@@ -621,7 +621,7 @@ export default function Menubar(props) {
                     to={`${imsi}/aboutus/#whoweare`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg"> Who We Are </span>
+                    <span className="textF15 tcg">Who We Are</span>
                   </Link>
                 </li>
                 <li>
@@ -630,7 +630,7 @@ export default function Menubar(props) {
                     to={`${imsi}/aboutus/#heringsteam`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg"> HERINGS Team </span>
+                    <span className="textF15 tcg"> Herings Team </span>
                   </Link>
                 </li>
                 <li>
@@ -639,7 +639,9 @@ export default function Menubar(props) {
                     to={`${imsi}/aboutus/#researchpartners`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">Partners&Investors</span>
+                    <span className="textF15 tcg">
+                      Partners &amp; Investors
+                    </span>
                   </Link>
                 </li>
               </ul>

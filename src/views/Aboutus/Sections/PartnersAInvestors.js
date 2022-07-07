@@ -9,7 +9,7 @@ import p_logo_06 from "../../../assets/images/02about_partners/06gudh.png";
 import p_logo_07 from "../../../assets/images/02about_partners/07ssh.png";
 import p_logo_08 from "../../../assets/images/02about_partners/08kcsg1.png";
 import p_logo_09 from "../../../assets/images/02about_partners/09hu.png";
-
+import p_logo_10 from "../../../assets/images/02about_partners/KGOG.png";
 import i_logo_01 from "../../../assets/images/02about_investors/01alpen_n.svg";
 import i_logo_02 from "../../../assets/images/02about_investors/02korea_n.svg";
 import i_logo_03 from "../../../assets/images/02about_investors/03venture_n.svg";
@@ -23,7 +23,7 @@ export default function PartnersAInvestors(props) {
         {!props.matches ? (
           <div className="titleDiv">
             <div className="textT22 FontEB">
-              <span>RESEARCH PARTNERS & INVESTORS </span>
+              <span>Partners & Investors </span>
             </div>
             <hr></hr>
           </div>
@@ -69,6 +69,9 @@ export default function PartnersAInvestors(props) {
                 <img src={p_logo_08} alt="KCSG" />
               </div>
               <div className="partner__image__container">
+                <img src={p_logo_10} alt="KGOG" />
+              </div>
+              <div className="partner__image__container">
                 <img src={p_logo_09} alt="HGU" />
               </div>
             </div>
@@ -88,19 +91,19 @@ export default function PartnersAInvestors(props) {
             )}
             <div className="PAIDiv">
               <div className="inventors__image__container">
-                <img src={i_logo_01} alt="alpen" />
-              </div>
-              <div className="inventors__image__container">
                 <img src={i_logo_02} alt="korea" />
               </div>
               <div className="inventors__image__container">
-                <img src={i_logo_03} alt="venture" />
+                <img src={i_logo_05} alt="coree" />
               </div>
               <div className="inventors__image__container">
                 <img src={i_logo_04} alt="cap" />
               </div>
               <div className="inventors__image__container">
-                <img src={i_logo_05} alt="coree" />
+                <img src={i_logo_03} alt="venture" />
+              </div>
+              <div className="inventors__image__container">
+                <img src={i_logo_01} alt="alpen" />
               </div>
             </div>
           </div>

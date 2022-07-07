@@ -43,16 +43,11 @@ export default function Service({ match }) {
               image1alt={"ostomy_main"}
               image2alt={"osstomy_popup"}
             />
-
-            <iframe
-              id="healiarymp4"
-              src="https://www.youtube.com/embed/_d_OvUMhbho?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-
+            <div
+              style={{
+                height: "180px"
+              }}
+            ></div>
             {/* healiary */}
             <CommonCardFrameRight
               // subTitle={"Digital Care Service"}
@@ -66,6 +61,14 @@ export default function Service({ match }) {
               image1alt={"healiary_main"}
               image2alt={"healiary_kitchen"}
             />
+            <iframe
+              id="healiarymp4"
+              src="https://www.youtube.com/embed/_d_OvUMhbho?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
 

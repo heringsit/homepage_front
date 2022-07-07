@@ -4,26 +4,28 @@
 import icon1_1 from "../../../assets/images/02about_herings_team/new200527/1_1nam.png";
 import icon1_2 from "../../../assets/images/02about_herings_team/new200527/1_2song.png";
 //import icon1_3 from "../../../assets/images/02about_herings_team/new200527/1_3ahn.png";
-import icon1_3 from "../../../assets/images/02about_herings_team/new200527/1_3lee.png";
+//import icon1_3 from "../../../assets/images/02about_herings_team/new200527/1_3lee.png";
 import icon1_4 from "../../../assets/images/02about_herings_team/new200527/1_4park.jpg";
 import icon1_5 from "../../../assets/images/02about_herings_team/new200527/1_5an.png";
 import icon2_1 from "../../../assets/images/02about_herings_team/new200527/2_1yang.png";
 import icon2_2 from "../../../assets/images/02about_herings_team/new200527/2_2kim.png";
 import icon2_3 from "../../../assets/images/02about_herings_team/new200527/2_3hong.png";
-import icon2_4 from "../../../assets/images/02about_herings_team/new200527/2_4kang.png";
+//import icon2_4 from "../../../assets/images/02about_herings_team/new200527/2_4kang.png";
+import icon2_5 from "../../../assets/images/02about_herings_team/new220707/2_5ahn.png";
 import icon3_1 from "../../../assets/images/02about_herings_team/new200527/3_1park.png";
-import icon3_2 from "../../../assets/images/02about_herings_team/new200527/3_2kimdc.png";
+//import icon3_2 from "../../../assets/images/02about_herings_team/new200527/3_2kimdc.png";
 import icon3_3 from "../../../assets/images/02about_herings_team/new200527/3_3lee.png";
 import icon3_4 from "../../../assets/images/02about_herings_team/new200527/3_4kimyd.png";
 // import icon3_5 from "../../../assets/images/02about_herings_team/new200527/3_5shin.png";
 import icon3_6 from "../../../assets/images/02about_herings_team/new200527/3_6John.png";
 import icon3_7 from "../../../assets/images/02about_herings_team/new200527/3_7choi.png";
+import icon3_8 from "../../../assets/images/02about_herings_team/new220707/3_7Kang.png";
 
 export const Executive_Leadership = [
   {
     name: "Byung-Ho Nam",
-    jobs: "PhD, MBA",
-    positions: "CEO & FOUNDER",
+    jobs: "CEO & FOUNDER",
+    // positions: "CEO & FOUNDER",
     background: icon1_1,
     modalimg: icon1_1,
     detail:
@@ -31,8 +33,8 @@ export const Executive_Leadership = [
   },
   {
     name: "Yooin Song",
-    jobs: "MBA",
-    positions: "COO",
+    jobs: "COO",
+    // positions: "COO",
     background: icon1_2,
     modalimg: icon1_2,
     detail:
@@ -58,8 +60,8 @@ export const Executive_Leadership = [
   // },
   {
     name: "Kyounghoon Park",
-    jobs: "MD, PhD",
-    positions: "CSO",
+    jobs: "CSO",
+    // positions: "CSO",
     background: icon1_4,
     modalimg: icon1_4,
     detail:
@@ -67,8 +69,8 @@ export const Executive_Leadership = [
   },
   {
     name: "Seongae Ahn",
-    jobs: `RN`,
-    positions: "CTM",
+    jobs: `CTM`,
+    // positions: "CTM",
     background: icon1_4,
     modalimg: icon1_5,
     detail:
@@ -87,15 +89,6 @@ export const Research_Leadership = [
       "Han-Kwang Yang is the Chief of the Gastric Cancer Center Department and Gastrointestinal Surgery Department of Seoul National University Hospital.\nWhile being a professor of Gastrointestinal surgery at Seoul National University Hospital, MD PhD Yang also has become editor of the Journal of Gastric Cancer since 2009.\n\nHe holds an MD and a PhD from Seoul National University College of Medicine."
   },
   {
-    name: "Jae-Hoon Kim",
-    jobs: "MD, PhD",
-    positions: "Collaborating Leader",
-    background: icon2_2,
-    modalimg: icon2_2,
-    detail:
-      "Jae-Hoon Kim is the Gynecologic Cancer Clinic's team leader at Yonsei University and Head of the Department of Obstetrics and Gynecology at Gangnam Severance Hospital, Yonsei University. MD PhD Kim also has been appointed as Secretary-General of the Korean Gynecologic Oncology Group.\n\nHe holds an MD and a PhD from the Catholic University of Korea School of Medicine. He also studied the latest technology related to gynecologic oncology at Brigham and Women's Hospital, affiliated with Harvard University."
-  },
-  {
     name: "Charmgil Hong",
     jobs: "PhD",
     positions: "Collaborating Leader",
@@ -105,56 +98,76 @@ export const Research_Leadership = [
       "Charmgil Hong is an assistant professor in the School of Computer Science and Electrical Engineering at Handong Global University.\nPrior to his professor career, he was a part of a research team with the University of Pittsburgh and UPMC, involved in the development of technologies and systems for analyzing electronic health records, predicting diagnostics, and detecting potential medical mistakes.\nHis main interests of research focus on Machine Learning, Artificial Intelligence, Outlier Detection, and their applications.\nHe holds a PhD in computer science from the University of Pittsburgh."
   },
   {
-    name: "Hyun-Joo Kang",
-    jobs: "None",
+    name: "Myunju Ahn",
+    jobs: "MD PhD",
     positions: "Collaborating Leader",
-    background: icon2_4,
-    modalimg: icon2_4,
+    background: icon2_5,
+    modalimg: icon2_5,
     detail:
-      "Hyun-Joo Kang is a professor and chairman of the Department of Sports Medicine at Soonchunhyang University. PhD Kang actively has been involved in scholarly activity, resulting in a variety of products such as numerous peer-reviewed journal article publications, successful research grant applications, and book publications.\n\nPhD Kang is interested in researching the process of exploring clinically-relevant problems and constructing an exercise intervention protocol.She holds a BS in Physical Education from Soonchunhyang University and an MA and PhD in Exercise Physiology from Seoul National University."
+      "Myungju Ahn is Professor of Hemato-Oncology at the Department of Medicine, Sungkyunkwan University School of Medicine, Seoul. She is a member of numerous research associations and societies, including the ISLAC, AACR, and ASCO and is currently Chief of the Executive Committee and Chairperson of Lung Cancer Disease Committee of the KCSG. She is the current president of the KSMO and was chairperson of the multidisciplinary Immuno-oncology Study Group (2017–2018). She is a board member for the KCA, KSMO and KALC, and is on the editorial board of Journal of Thoracic Oncology. Prof Ahn received her medical and doctoral degrees from Hanyang University College of Medicine, Seoul and completed her residency training at Hanyang University Hospital. "
   }
+  // ,
+  // {
+  //   name: "Jae-Hoon Kim",
+  //   jobs: "None",
+  //   positions: "Collaborating Leader",
+  //   background: icon2_2,
+  //   modalimg: icon2_2,
+  //   detail:
+  //     "Jae-Hoon Kim is the Gynecologic Cancer Clinic's team leader at Yonsei University and Head of the Department of Obstetrics and Gynecology at Gangnam Severance Hospital, Yonsei University. MD PhD Kim also has been appointed as Secretary-General of the Korean Gynecologic Oncology Group.\n\nHe holds an MD and a PhD from the Catholic University of Korea School of Medicine. He also studied the latest technology related to gynecologic oncology at Brigham and Women's Hospital, affiliated with Harvard University."
+  // },
+
+  // {
+  //   name: "Hyun-Joo Kang",
+  //   jobs: "None",
+  //   positions: "Collaborating Leader",
+  //   background: icon2_4,
+  //   modalimg: icon2_4,
+  //   detail:
+  //     "Hyun-Joo Kang is a professor and chairman of the Department of Sports Medicine at Soonchunhyang University. PhD Kang actively has been involved in scholarly activity, resulting in a variety of products such as numerous peer-reviewed journal article publications, successful research grant applications, and book publications.\n\nPhD Kang is interested in researching the process of exploring clinically-relevant problems and constructing an exercise intervention protocol.She holds a BS in Physical Education from Soonchunhyang University and an MA and PhD in Exercise Physiology from Seoul National University."
+  // }
 ];
 
 export const Advisory_Board = [
+  // {
+  //   name: "Han-Kwang Yang",
+  //   jobs: "MD, PhD",
+  //   positions: "Collaborating Leader",
+  //   background: icon2_1,
+  //   modalimg: icon2_1,
+  //   detail:
+  //     "Han-Kwang Yang is the Chief of the Gastric Cancer Center Department and Gastrointestinal Surgery Department of Seoul National University Hospital.\nWhile being a professor of Gastrointestinal surgery at Seoul National University Hospital, MD PhD Yang also has become editor of the Journal of Gastric Cancer since 2009.\n\nHe holds an MD and a PhD from Seoul National University College of Medicine."
+  // },
   {
-    name: "Han-Kwang Yang",
-    jobs: "MD, PhD",
-    positions: "Collaborating Leader",
-    background: icon2_1,
-    modalimg: icon2_1,
-    detail:
-      "Han-Kwang Yang is the Chief of the Gastric Cancer Center Department and Gastrointestinal Surgery Department of Seoul National University Hospital.\nWhile being a professor of Gastrointestinal surgery at Seoul National University Hospital, MD PhD Yang also has become editor of the Journal of Gastric Cancer since 2009.\n\nHe holds an MD and a PhD from Seoul National University College of Medicine."
-  },
-  {
-    name: "Jae-Hoon Kim",
-    jobs: "MD, PhD",
-    positions: "Collaborating Leader",
+    name: "Jae-Hoon Kim MD, PhD",
+    // jobs: "MD, PhD",
+    // positions: "Collaborating Leader",
     background: icon2_2,
     modalimg: icon2_2,
     detail:
       "Jae-Hoon Kim is the Gynecologic Cancer Clinic's team leader at Yonsei University and Head of the Department of Obstetrics and Gynecology at Gangnam Severance Hospital, Yonsei University. MD PhD Kim also has been appointed as Secretary-General of the Korean Gynecologic Oncology Group.\n\nHe holds an MD and a PhD from the Catholic University of Korea School of Medicine. He also studied the latest technology related to gynecologic oncology at Brigham and Women's Hospital, affiliated with Harvard University."
   },
   {
-    name: "Young-Suk Park",
-    jobs: "MD, PhD",
+    name: "Young-Suk Park MD, PhD",
+    // jobs: "MD, PhD",
     positions: "",
     background: icon3_1,
     modalimg: icon3_1,
     detail:
       "Young-Suk Park is a professor of the Department of Hematology and Oncology at Samsung Medical Center. While he was Head of Clinical Trial Center of Samsung Medical Center, MD PhD Park also led the Department of Hematology and Oncology.\n\nHe holds an MD from Seoul National University College of Medicine and a PhD from Korea University College of Medicine. He studied as Clinical Fellow at Fred Hutchinson Cancer Research Center and worked as Consultant at University of Pittsburgh, National Surgical Adjuvant Breast and Bowel Project.\n"
   },
+  // {
+  //   name: "Dae-Cheol Kim",
+  //   jobs: "MD, PhD",
+  //   positions: "",
+  //   background: icon3_2,
+  //   modalimg: icon3_2,
+  //   detail:
+  //     "Dae-Cheol Kim is a professor in the Pathology Department of Dong-A University College of Medicine. Being the first official to be nominated through a national recommendation system, MD PhD Kim worked as Head of Biopharmaceuticals and Herbal Medicine Bureau of Ministry of Food and Drug Safety, Korea.\n\nHe holds an MD and a PhD from Dong-A University College of Medicine. He also studied as an exchange professor at Queen Mary's University Hospital."
+  // },
   {
-    name: "Dae-Cheol Kim",
-    jobs: "MD, PhD",
-    positions: "",
-    background: icon3_2,
-    modalimg: icon3_2,
-    detail:
-      "Dae-Cheol Kim is a professor in the Pathology Department of Dong-A University College of Medicine. Being the first official to be nominated through a national recommendation system, MD PhD Kim worked as Head of Biopharmaceuticals and Herbal Medicine Bureau of Ministry of Food and Drug Safety, Korea.\n\nHe holds an MD and a PhD from Dong-A University College of Medicine. He also studied as an exchange professor at Queen Mary's University Hospital."
-  },
-  {
-    name: "Jae Won Lee",
-    jobs: "PhD",
+    name: "Jae Won Lee PhD",
+    // jobs: "PhD",
     positions: "",
     background: icon3_3,
     modalimg: icon3_3,
@@ -171,8 +184,8 @@ export const Advisory_Board = [
   //     "Jin-Suk Kim is a professor of the Computer Science Department at the University of Seoul since 1999. His main interests of research focus on distributed computing. Prior to his academic career, he was associated with the Laboratory for Computer Science, Massachusetts Institute of Technology, as Postdoc Fellow.\n\nProfessor Kim received a BA, MS, and PhD in Computer Science at KAIST in 1990, 1992, and 1997.",
   // },
   {
-    name: "Yongdai Kim",
-    jobs: "PhD",
+    name: "Yongdai Kim PhD",
+    // jobs: "PhD",
     positions: "",
     background: icon3_4,
     modalimg: icon3_4,
@@ -189,8 +202,8 @@ export const Advisory_Board = [
   //     "Soo-Yong Shin is a professor in the Department of Samsung Advanced Institute for Health Sciences and Technology at Sungkyunkwan University. His main research interest is how to handle biomedical data themselves. Prior to his career at Sungkyunkwan University, he worked in the field of Bioinformatics at Kyung Hee University, Asan Medical Center, and Samsung SDS as an assistant professor and a researcher.\n\nProfessor Shin received a BS, MS, and PhD in computer engineering at Seoul National University in 1998, 2000, and 2005.",
   // },
   {
-    name: "John Crowley",
-    jobs: "PhD",
+    name: "John Crowley PhD",
+    // jobs: "PhD",
     positions: "",
     background: icon3_6,
     modalimg: icon3_6,
@@ -198,12 +211,21 @@ export const Advisory_Board = [
       "John Crowley, who is the Chief of Strategic Alliances at Cancer Research and Biostatistics. He founded CRAB in 1997 and served as President and CEO until 2014. Dr. Crowley was the Director of the Statistical Center for SWOG, co-located at CRAB and the Fred Hutchinson Cancer Research Center, from 1984 to 2012. He is the author or co-author of over 400 scientific papers and books.\n\nHe holds an affiliate appointment at the School of Public Health at the Oregon Health and Science University. He received a BS in Mathematics at Pomona College, and MS and PhD in Biomathematics at the University of Washington in 1968, 1970, and 1973, respectively.\n"
   },
   {
-    name: "Kyu-Jin Choi",
-    jobs: "Lawyer, Pharmacist",
+    name: "Kyu-Jin Choi Lawyer, Pharmacist",
+    // jobs: "Lawyer, Pharmacist",
     positions: "",
     background: icon3_7,
     modalimg: icon3_7,
     detail:
       "Kyu-Jin Choi is a chief lawyer and Patent Attorney at CnP law firm. He also serves as an expert on the appointment of a Central Pharmacological Review Committee of the Korea Food and Drug Administration and a legal advisor of the Pharmaceutical Society of Korea. He is also a member of the Ethics committee in the Korean Society of Medical Informatics and a professor at CHA university.\n\nHe received a BS in Pharmaceutical Sciences at Seoul National University and a BA in Business Administration at Seoul National Open University. He also received MS in the Intellectual Property Law at Korea University School of Law."
+  },
+  {
+    name: "Daehee Kang MD, Ph.D",
+    // jobs: "Lawyer, Pharmacist",
+    positions: "",
+    background: icon3_8,
+    modalimg: icon3_8,
+    detail:
+      "Daehee Kang, chairman, board of directors, Korean Association of Medical Colleges, and dean, Seoul National University College of Medicine, South Korea, is an eminent doctor and an administrator based in Seoul. He graduated from Seoul National University College of Medicine, South Korea, with a major in preventive medicine and has a PhD in environmental health sciences from Johns Hopkins University, US. His research interests include discovering the biomarkers about the cancer occurrence and the therapeutic effect. He has conducted the high-throughput and genome-wide cancer molecular epidemiological approaches about the breast cancer, childhood leukemia, stomach cancer and bladder cancer."
   }
 ];

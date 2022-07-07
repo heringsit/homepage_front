@@ -6,7 +6,7 @@ export default function Whoweare(props) {
       <div className="SectionDiv ">
         <div className="titleDiv">
           <div className="textT22 FontB tcb">
-            <span>WHO WE ARE</span>
+            <span>Who We Are</span>
           </div>
           <hr></hr>
         </div>

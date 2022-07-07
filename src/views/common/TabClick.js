@@ -37,10 +37,9 @@ export default function TabClick({ isScroll }) {
                         : tab === "heringsteam"
                         ? "Herings Team"
                         : tab === "researchpartners"
-                        ? "Partners&Investors"
+                        ? "Partners & Investors"
                         : "";
 
-                    console.log("Partners&Investors" === transformTab, ">>");
                     if (e.target.innerText === transformTab) {
                       for (let i = 0; allATag.length > i; i++) {
                         allATag[i].classList.remove("tabATagTab");
@@ -56,7 +55,7 @@ export default function TabClick({ isScroll }) {
                     : tab === "heringsteam"
                     ? "Herings Team"
                     : tab === "researchpartners"
-                    ? "Partners&Investors"
+                    ? "Partners & Investors"
                     : ""}
                 </a>
               </div>
