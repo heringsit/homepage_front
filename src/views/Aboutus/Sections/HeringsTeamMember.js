@@ -98,7 +98,7 @@ export const Research_Leadership = [
       "Charmgil Hong is an assistant professor in the School of Computer Science and Electrical Engineering at Handong Global University.\nPrior to his professor career, he was a part of a research team with the University of Pittsburgh and UPMC, involved in the development of technologies and systems for analyzing electronic health records, predicting diagnostics, and detecting potential medical mistakes.\nHis main interests of research focus on Machine Learning, Artificial Intelligence, Outlier Detection, and their applications.\nHe holds a Ph.D in computer science from the University of Pittsburgh."
   },
   {
-    name: "Myunju Ahn MD, Ph.D",
+    name: "Myungju Ahn MD, Ph.D",
     // jobs: "MD Ph.D",
     // positions: "Collaborating Leader",
     background: icon2_5,
