@@ -52,18 +52,24 @@ export default class TeamList extends Component {
       slidesToShow: this.props.matches ? 2 : 4,
       // slidesToScroll: this.props.matches ? 1 : 4,
       slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 3000,
+      // autoplay: true,
+      // autoplaySpeed: 3000,
       //arrows: this.props.matches ? false : true,
       nextArrow: <NextArrow matches={this.props.matches} />,
       prevArrow: <PrevArrow matches={this.props.matches} />
     };
     return (
-      <div className="addPadding " id="heringsteam">
+      <div
+        className="addPadding "
+        id="heringsteam"
+        // style={{
+        //   wordBreak: "keep-all"
+        // }}
+      >
         <div className="SectionDiv  ">
           <div className="titleDiv">
             <div className="textT22 FontEB">
-              <span>Herings Team</span>
+              <span>HERINGS Team</span>
             </div>
             <hr></hr>
           </div>
@@ -98,19 +104,19 @@ export default class TeamList extends Component {
                         </div>
                         <div className="heringsTeamContentText">
                           <div>
-                            <span className="FontB textF18 tcb">
+                            <span className="FontB textF16 tcb">
                               {team.name}
                             </span>
                           </div>
                           <div>
                             {/* 여기 index === 4 */}
-                            <span className="textF15 tco">{team.jobs}</span>
+                            <span className="textF14 tco">{team.jobs}</span>
                           </div>
-                          <div>
-                            <span className="textF15 tcg">
+                          {/* <div>
+                            <span className="textF14 tcg">
                               {team.positions}
                             </span>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </div>
@@ -147,18 +153,18 @@ export default class TeamList extends Component {
                         </div>
                         <div className="heringsTeamContentText">
                           <div>
-                            <span className="FontB textF18 tcb">
+                            <span className="FontB textF16 tcb">
                               {team.name}
                             </span>
                           </div>
-                          <div>
-                            <span className="textF15 tco">{team.jobs}</span>
+                          {/* <div>
+                            <span className="textF14 tco">{team.jobs}</span>
                           </div>
                           <div>
-                            <span className="textF15 tcg">
+                            <span className="textF14 tcg">
                               {team.positions}
                             </span>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </div>
@@ -191,20 +197,20 @@ export default class TeamList extends Component {
                         </div>
                         <div className="heringsTeamContentText">
                           <div>
-                            <span className="FontB textF18 tcb">
+                            <span className="FontB textF16 tcb">
                               {team.name}
                             </span>
                           </div>
-                          <div>
-                            <span className="textF15 tco">{team.jobs}</span>
+                          {/* <div>
+                            <span className="textF14 tco">{team.jobs}</span>
                           </div>
                           <div>
-                            <span className="textF15 tcg">
+                            <span className="textF14 tcg">
                               {team.positions !== ""
                                 ? team.positions
                                 : "\u00A0"}
                             </span>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </div>

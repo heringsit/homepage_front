@@ -124,7 +124,7 @@ export default function Menubar(props) {
                     to={`${imsi}/aboutus/#heringsteam`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">Herings Team</span>
+                    <span className="menuText FontB textF18">HERINGS Team</span>
                   </Link>
                 </li>
                 <li>
@@ -630,7 +630,7 @@ export default function Menubar(props) {
                     to={`${imsi}/aboutus/#heringsteam`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg"> Herings Team </span>
+                    <span className="textF15 tcg">HERINGS Team</span>
                   </Link>
                 </li>
                 <li>

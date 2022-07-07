@@ -35,7 +35,7 @@ export default function TabClick({ isScroll }) {
                       tab === "whoweare"
                         ? "Who We Are"
                         : tab === "heringsteam"
-                        ? "Herings Team"
+                        ? "HERINGS Team"
                         : tab === "researchpartners"
                         ? "Partners & Investors"
                         : "";
@@ -53,7 +53,7 @@ export default function TabClick({ isScroll }) {
                   {tab === "whoweare"
                     ? "Who We Are"
                     : tab === "heringsteam"
-                    ? "Herings Team"
+                    ? "HERINGS Team"
                     : tab === "researchpartners"
                     ? "Partners & Investors"
                     : ""}

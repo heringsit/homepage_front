@@ -47,14 +47,6 @@ export default function Crs() {
           {/* Pro-Pre Platform */}
           <div className="SectionDivNT SectionDivUpBlank" id="propreplatform">
             <ProPrePlatformTitle />
-            <iframe
-              id="attimp4"
-              src="https://www.youtube.com/embed/Fp19GlDhVRE?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
             <CommonCardFrameLeft
               // subTitle={"PRO · PRE Platform"}
               Title={"Atti"}
@@ -67,6 +59,15 @@ export default function Crs() {
               image1alt={"atti_main"}
               image2alt={"atti_sub"}
             />
+
+            <iframe
+              id="attimp4"
+              src="https://www.youtube.com/embed/Fp19GlDhVRE?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
           {/* Data Management */}
           <div className="SectionDivNT SectionDivUpBlank" id="datamanagement">
