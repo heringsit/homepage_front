@@ -1,3 +1,6 @@
+#content {
+  position: relative;
+}
 .footer {
   display: flex;
   padding: 33px 10%;
@@ -41,6 +44,12 @@
 .footerRow > .footerContent:last-child {
   margin-right: 0;
 }
+/*footer media query*/
+@media (min-width: 1260px) {
+  #maincontent footer {
+    visibility: hidden;
+  }
+}
 
 @media screen and (max-width: 600px) {
   .footerRow {
@@ -57,7 +66,7 @@
     margin-left: 0;
   }
 }
-@media screen and (max-width: 428px) {
+@media screen and (min-width: 428px) {
   .footer {
     display: flex;
     padding: 33px 10%;

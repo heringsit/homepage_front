@@ -9,7 +9,7 @@ import project1_7 from "../../assets/videos/project1_7.mp4";
 export default function Main() {
   return (
     <div
-      id="content"
+      id="maincontent"
       className="content"
       style={{
         height: "100vh"

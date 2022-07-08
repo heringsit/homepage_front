@@ -44,12 +44,7 @@
     transform: translate(-50%, -50%);
   }
 }
-/*footer media query*/
-@media (min-width: 1260px) {
-  footer {
-    visibility: hidden;
-  }
-}
+
 @media (min-width: 780px) {
   #main {
     background-color: #222;
