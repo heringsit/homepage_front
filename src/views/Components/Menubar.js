@@ -727,7 +727,7 @@ export default function Menubar(props) {
                       AI-based Ostomy
                     </span>
                     <span className=" textF15 tcg" style={{ display: "block" }}>
-                      condition check
+                      Condition Check
                     </span>
                   </Link>
                 </li>

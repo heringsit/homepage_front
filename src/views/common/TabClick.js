@@ -134,7 +134,7 @@ export default function TabClick({ isScroll }) {
                   {tab === "nutritionincancercare"
                     ? "Nutrition in Cancer Care"
                     : tab === "drugadverseevent"
-                    ? "Drug Adverse Event reporting system"
+                    ? "Drug Adverse Event"
                     : tab === "recurrenceprediction"
                     ? "Recurrence Prediction"
                     : tab === "exercise"

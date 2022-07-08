@@ -75,7 +75,7 @@ export default function Research() {
             <CommonCardTitle title={"Drug Adverse Event"} />
             <CommonCardFrameRight
               // subTitle={"Nutrition in Cancer Care"}
-              Title={"Drug Adverse Event reporting system"}
+              Title={"Drug Adverse Event Reporting System"}
               content1={"Platform that can be immediately "}
               content2={
                 "reported as a national drug adverse event reporting system when drug adverse events occur. This work was supported by the Bio Industry Technology Development Program(No. 20015086) By the Ministry of Trade, Industry & Energy(MOTIE, Korea)."
@@ -111,7 +111,7 @@ export default function Research() {
               image1alt={"research_image2"}
             />
           </div>
-          {/* AI-based ostomy condition check */}
+          {/* AI-based Ostomy Condition Check */}
           <div
             className="SectionDivNT SectionDivUpBlank"
             id="aibasedostomyconditioncheck"
