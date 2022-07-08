@@ -52,8 +52,8 @@ export default class TeamList extends Component {
       slidesToShow: this.props.matches ? 2 : 4,
       // slidesToScroll: this.props.matches ? 1 : 4,
       slidesToScroll: 1,
-      // autoplay: true,
-      // autoplaySpeed: 3000,
+      autoplay: true,
+      autoplaySpeed: 3000,
       //arrows: this.props.matches ? false : true,
       nextArrow: <NextArrow matches={this.props.matches} />,
       prevArrow: <PrevArrow matches={this.props.matches} />
