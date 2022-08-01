@@ -694,8 +694,10 @@ html[data-agent*="Trident"] .each-slide .blur-mask .blur-ie {
 .titleDiv > hr {
   width: 60px;
   margin: 28px auto;
-  border: 1.5px solid #1e1e1e;
-  background-color: #1e1e1e;
+  /* border: 1.5px solid #1e1e1e;
+  background-color: #1e1e1e; <- original*/
+  border: 1.5px solid #ffffff;
+  background-color: #ffffff;
   height: 0;
 }
 .whoweareContent {
@@ -926,6 +928,9 @@ html[data-agent*="Trident"] .each-slide .blur-mask .blur-ie {
   line-height: 25px;
 }
 
+.whoweareLinePadding {
+  margin-top: 12px;
+}
 @media screen and (max-width: 600px) {
   .whoweareContentTitle {
     flex-direction: column;

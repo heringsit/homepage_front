@@ -1,7 +1,11 @@
+import { Box, Tab, Tabs } from "@material-ui/core";
 import React, { useState } from "react";
 import { useLocation } from "react-router";
+import { HashLink } from "react-router-hash-link";
 export default function TabClick({ isScroll }) {
   let pathname = useLocation().pathname;
+  let hashid = useLocation().hash;
+  console.log(typeof hashid, ">>pathname")
   const aboutustabs = ["whoweare", "heringsteam", "researchpartners"];
   const crstabs = [
     "propreplatform",
@@ -20,134 +24,72 @@ export default function TabClick({ isScroll }) {
 
   const allATag = document.querySelectorAll(".tagADefault");
 
+  const LinkTab = (props) => {
+    console.log(props.href, "props")
+    return (
+      <Tab 
+        style={{textTransform: 'none',}}
+        component="a"
+        to={props.href}
+        {...props}
+      />
+    );
+  }
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
+    <>
     <div className="TABS_sticky">
-      <div className="sticky_padding"></div>
-      <div className="TABS_layout TABS_layout_padding">
-        {pathname === "/aboutus/"
+      <Box style={{paddingTop:"100px"}} sx={{ width: '100%' }}>
+        <Tabs value={value} onChange={handleChange} aria-label="nav tabs example">
+        {
+        pathname === "/aboutus/"
           ? aboutustabs.map((tab, index) => (
-              <div className="TABS_tab tcg2 FontB textF18" key={index}>
-                <a
-                  href={`#${tab}`}
-                  className="w-full h-full block tabAPadding tagADefault"
-                  onClick={(e) => {
-                    const transformTab =
-                      tab === "whoweare"
-                        ? "Who We Are"
-                        : tab === "heringsteam"
-                        ? "HERINGS Team"
-                        : tab === "researchpartners"
-                        ? "Partners & Investors"
-                        : "";
-
-                    if (e.target.innerText === transformTab) {
-                      for (let i = 0; allATag.length > i; i++) {
-                        allATag[i].classList.remove("tabATagTab");
-                        allATag[i].classList.add("tabATag");
-                      }
-                      e.target.className =
-                        "w-full h-full block tabAPadding tagADefault tabATagTab";
-                    }
-                  }}
-                >
-                  {tab === "whoweare"
-                    ? "Who We Are"
-                    : tab === "heringsteam"
-                    ? "HERINGS Team"
-                    : tab === "researchpartners"
-                    ? "Partners & Investors"
-                    : ""}
-                </a>
-              </div>
+              <LinkTab key={index} label={tab === "whoweare" 
+                                ? "Who We Are"
+                                : tab === "heringsteam"
+                                ? "HERINGS Team"
+                                : tab === "researchpartners"
+                                ? "Partners & Investors" 
+                                : ""} href={`#${tab}`} />
             ))
-          : pathname === "/crs/"
+          : pathname === "/crs/" 
           ? crstabs.map((tab, index) => (
-              <div className="TABS_tab tcg2 FontB textF18" key={index}>
-                <a
-                  href={`#${tab}`}
-                  className="w-full h-full block tabAPadding tagADefault"
-                  onClick={(e) => {
-                    const transformTab =
-                      tab === "propreplatform"
-                        ? "PRO · PRE Platform"
-                        : tab === "datamanagement"
-                        ? "Data management"
-                        : tab === "biostatistics"
-                        ? "Bio-Statistics"
-                        : tab === "clinicaloperation"
-                        ? "Clinical Operation"
-                        : "";
-
-                    if (e.target.innerText === transformTab) {
-                      for (let i = 0; allATag.length > i; i++) {
-                        allATag[i].classList.remove("tabATagTab");
-                        allATag[i].classList.add("tabATag");
-                      }
-                      e.target.className =
-                        "w-full h-full block tabAPadding tagADefault tabATagTab";
-                    }
-                  }}
-                >
-                  {tab === "propreplatform"
-                    ? "PRO · PRE Platform"
-                    : tab === "datamanagement"
-                    ? "Data management"
-                    : tab === "biostatistics"
-                    ? "Bio-Statistics"
-                    : tab === "clinicaloperation"
-                    ? "Clinical Operation"
-                    : ""}
-                </a>
-              </div>
-            ))
+              <LinkTab key={index} label={tab === "propreplatform"
+                                ? "PRO · PRE Platform"
+                                : tab === "datamanagement"
+                                ? "Data management"
+                                : tab === "biostatistics"
+                                ? "Bio-Statistics"
+                                : tab === "clinicaloperation"
+                                ? "Clinical Operation"
+                                : ""} href={`#${tab}`} />
+          ))
           : researchtabs.map((tab, index) => (
-              <div className="TABS_tab tcg2 FontB textF18" key={index}>
-                <a
-                  href={`#${tab}`}
-                  className="w-full h-full block tabAPadding tagADefault"
-                  onClick={(e) => {
-                    const transformTab =
-                      tab === "nutritionincancercare"
-                        ? "Nutrition in Cancer Care"
-                        : tab === "drugadverseevent"
-                        ? "Drug Adverse Event"
-                        : tab === "recurrenceprediction"
-                        ? "Recurrence Prediction"
-                        : tab === "exercise"
-                        ? "Exercise"
-                        : tab === "aibasedostomyconditioncheck"
-                        ? "AI-based Ostomy Condition Check"
-                        : tab === "adherenceofhormonetherapy"
-                        ? "Adherence of Hormone Therapy"
-                        : "";
-
-                    if (e.target.innerText === transformTab) {
-                      for (let i = 0; allATag.length > i; i++) {
-                        allATag[i].classList.remove("tabATagTab");
-                        allATag[i].classList.add("tabATag");
-                      }
-                      e.target.className =
-                        "w-full h-full block tagADefault tabAPadding tabATagTab";
-                    }
-                  }}
-                >
-                  {tab === "nutritionincancercare"
-                    ? "Nutrition in Cancer Care"
-                    : tab === "drugadverseevent"
-                    ? "Drug Adverse Event"
-                    : tab === "recurrenceprediction"
-                    ? "Recurrence Prediction"
-                    : tab === "exercise"
-                    ? "Exercise"
-                    : tab === "aibasedostomyconditioncheck"
-                    ? "AI-based Ostomy Condition Check"
-                    : tab === "adherenceofhormonetherapy"
-                    ? "Adherence of Hormone Therapy"
-                    : ""}
-                </a>
-              </div>
-            ))}
+            <LinkTab key={index} label={tab === "nutritionincancercare"
+                              ? "Nutrition in Cancer Care"
+                              : tab === "drugadverseevent"
+                              ? "Drug Adverse Event"
+                              : tab === "recurrenceprediction"
+                              ? "Recurrence Prediction"
+                              : tab === "exercise"
+                              ? "Exercise"
+                              : tab === "aibasedostomyconditioncheck"
+                              ? "AI-based Ostomy Condition Check"
+                              : tab === "adherenceofhormonetherapy"
+                              ? "Adherence of Hormone Therapy"
+                              : ""} href={`#${tab}`}/>
+          ))
+        }
+        
+        </Tabs>
+      </Box>
       </div>
-    </div>
+   
+    </>
   );
 }

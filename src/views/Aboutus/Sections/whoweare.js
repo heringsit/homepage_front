@@ -1,33 +1,59 @@
 import React from "react";
 import "../Aboutus.css";
+import backgroundImg from "../../../assets/images/02about_who_we_are/about_banner_background.svg"
 export default function Whoweare(props) {
+  // addPadding <-> top badding of the img in about us
   return (
-    <div className="addPadding" id="whoweare">
-      <div className="SectionDiv ">
+    <div className="addPadding" id="">
+      <div style={{
+        backgroundImage: `url(${backgroundImg})`,
+        backgroundPosition: "center",
+      }} className="SectionDiv" >
         <div className="titleDiv">
-          <div className="textT22 FontB tcb">
-            <span>Who We Are</span>
+          <div className="textT22 FontB tcw">
+            <span>WHO WE ARE</span>
           </div>
           <hr></hr>
         </div>
         <div className="whoweareContent">
           <div className="whoweareContentTitle">
-            <span className="textF40 tcb">A personalized</span>
-            <span
-              className="textF40 FontB tcb"
-              style={{ marginRight: "7.5px" }}
-            >
-              Digital Care
+          <span className="textF32 FontB tcw">
+              HERINGS is personalized Digital Health Care Service Company
             </span>
-            <span className="textF40 FontB tcb">Service</span>
-            <span className="textF40 tcb">Company</span>
           </div>
-          <div className="whoweareContentsWrap" style={{ textAlign: "center" }}>
-            <span className="textF18 tcb">
+          <div className="whoweareContentsWrap">
+            <span className="textF20 tcw">
               We aim to be the best companion to cancer patients through their
-              long journey
+              long journey to overcome the disease.
             </span>
-            <span className="textF18 tcb">to overcome the disease.  </span>
+          </div>
+          <div className="whoweareContentsWrap">
+            <div className="addPaddingBig" />
+            <span className="whoweareLinePadding textF22 FontB tcw">We</span>
+            <div className="whoweareLinePadding">
+              <span className="textF22 FontB tcw">IDENTIFY </span>
+              <span className="textF22 tcw">
+                the exact pain points in current medical care system
+              </span>
+            </div>
+            <div className="whoweareLinePadding">
+              <span className="textF22 FontB tcw">PRIORITIZE </span>
+              <span className="textF22 tcw">
+                them according to their significance and clinical implication,
+              </span>
+            </div>
+            <div className="whoweareLinePadding">
+              <span className="textF22 FontB tcw">DEVELOP </span>
+              <span className="textF22 tcw">
+                evidence based, science embedded solution algorithms
+              </span>
+            </div>
+            <div className="whoweareLinePadding" >
+              <span className="textF22 FontB tcw">IMPLEMENT </span>
+              <span className="textF22 tcw">
+                them through our digital service platform.
+              </span>
+            </div>
           </div>
         </div>
       </div>
