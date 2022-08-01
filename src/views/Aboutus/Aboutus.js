@@ -361,7 +361,14 @@ export default function Aboutus({ match }) {
   };
   const classes = useStyles();
   return (
-    <div id="aboutus" style={{ position: "relative" }}>
+    <div
+      id="aboutus"
+      style={{
+        position: "relative",
+        backgroundColor: theme === "dark" && "#282828",
+        color: theme === "dark" && "#fff",
+      }}
+    >
       <Menubar slideIndex={slideIndex} />
       <Totop />
       {openerModalNoti()}
@@ -371,7 +378,7 @@ export default function Aboutus({ match }) {
         <div id="whoweare"></div>
         <TabClick isScroll={isScroll} />
         <Whoweare matches={matches} />
-        
+
         <TeamList handleOpen={handleOpen} matches={matches} />
         <PAI matches={matches} />
         {/* <QM matches={matches} /> */}

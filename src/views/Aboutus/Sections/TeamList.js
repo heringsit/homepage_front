@@ -15,7 +15,6 @@ import { ReactComponent as TeamListArrowNext } from "../../../assets/images/02ab
 
 import "../Aboutus.css";
 import "../slick.css";
-import { ThemeContext } from "../../../context";
 
 function PrevArrow(props) {
   const { className, style, onClick, matches } = props;
@@ -43,9 +42,8 @@ function NextArrow(props) {
   );
 }
 
-// dark mode 적용을 위한 contextApi 사용으로 class component에서 function component로 변경 (08.01)
+// class component에서 function component로 변경 (08.01)
 export default function TeamList(props) {
-  const { theme } = useContext(ThemeContext);
   const LeaderShipSettings = {
     dots: false,
     infinite: true,
@@ -62,13 +60,13 @@ export default function TeamList(props) {
   };
 
   return (
-    <div style={{ backgroundColor: theme === "dark" && "#282828" }}>
-      <div className="SectionDiv  ">
+    <div>
+      <div className="SectionDiv">
         <div className="titleDiv">
-          <div className={`textT22 FontB ${theme === "light" ? "tcb" : "tcw"}`}>
+          <div className="textT22 FontB">
             <span>HERINGS Team</span>
           </div>
-          <hr style={{ border: theme === "dark" && "solid 1px white" }}></hr>
+          <hr></hr>
         </div>
         <div className="SectionColorGray" style={{ padding: "16px 0" }}>
           <div className="TeamListWrap  ">
@@ -86,7 +84,7 @@ export default function TeamList(props) {
                     <div
                       className="heringsTeamWrap"
                       onClick={() => {
-                        this.props.handleOpen(team);
+                        props.handleOpen(team);
                       }}
                     >
                       <hr />
@@ -133,7 +131,7 @@ export default function TeamList(props) {
                           : "heringsTeamWrap"
                       }`}
                       onClick={() => {
-                        this.props.handleOpen(team);
+                        props.handleOpen(team);
                       }}
                     >
                       <hr />
@@ -175,7 +173,7 @@ export default function TeamList(props) {
                     <div
                       className="heringsTeamWrap"
                       onClick={() => {
-                        this.props.handleOpen(team);
+                        props.handleOpen(team);
                       }}
                     >
                       <hr />

@@ -274,7 +274,7 @@ export default function Menubar(props) {
                     onClick={menuclick}
                   >
                     <span className="menuText FontB textF18">
-                      Ai Based ostomy condition check
+                      AI Based Ostomy Condition Check
                     </span>
                   </Link>
                 </li>
@@ -480,20 +480,13 @@ export default function Menubar(props) {
     return (
       <div
         className={`menuWrapDiv ${
-          theme === "light"
-            ? isOver
-              ? "menuWrapOver"
-              : isScroll
-              ? "menuWrapOver isScrolledmenu"
-              : "menuWrapOver"
-            : theme === "dark"
-            ? isOver
-              ? "menuWrapOverDark"
-              : isScroll
-              ? "menuWrapOverDark isScrolledmenu"
-              : "menuWrapOverDark"
+          isOver
+            ? "menuWrapOver"
+            : isScroll
+            ? "menuWrapOver isScrolledmenu"
             : ""
         }`}
+        style={{ backgroundColor: theme === "dark" && "#282828" }}
         onMouseEnter={menuover}
         onMouseLeave={menuout}
       >
@@ -661,15 +654,28 @@ export default function Menubar(props) {
         </div>
 
         {/* ABOUT US 하단 메뉴 */}
-        <div className={`menuDetail ${isOver ? "part" : "partHide"}`}>
+        <div
+          className={`${theme === "light" ? "menuDetail" : "menuDetailDark"} ${
+            isOver ? "part" : "partHide"
+          }`}
+          style={{ backgroundColor: theme === "dark" && "#282828" }}
+        >
           <div className="menuDetailRow">
-            <div className="menuDetailDiv">
+            <div
+              className={`${
+                theme === "light" ? "menuDetailDiv" : "menuDetailDivDark"
+              }`}
+            >
               <Link
                 smooth="true"
                 to={`${imsi}/aboutus/#aboutus`}
                 onClick={menuclick}
               >
-                <span className="textF18 tcb">ABOUT US</span>
+                <span
+                  className={`textF18 ${theme === "light" ? "tcb" : "tcw"}`}
+                >
+                  ABOUT US
+                </span>
               </Link>
               <ul className="menuul">
                 <li>
@@ -678,7 +684,11 @@ export default function Menubar(props) {
                     to={`${imsi}/aboutus/#whoweare`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">Who We Are</span>
+                    <span
+                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                    >
+                      Who We Are
+                    </span>
                   </Link>
                 </li>
                 <li>
@@ -687,7 +697,11 @@ export default function Menubar(props) {
                     to={`${imsi}/aboutus/#heringsteam`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">HERINGS Team</span>
+                    <span
+                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                    >
+                      HERINGS Team
+                    </span>
                   </Link>
                 </li>
                 <li>
@@ -696,7 +710,9 @@ export default function Menubar(props) {
                     to={`${imsi}/aboutus/#researchpartners`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">
+                    <span
+                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                    >
                       Partners &amp; Investors
                     </span>
                   </Link>
@@ -705,13 +721,21 @@ export default function Menubar(props) {
             </div>
 
             {/* SERVICE 하단 메뉴 */}
-            <div className="menuDetailDiv">
+            <div
+              className={`${
+                theme === "light" ? "menuDetailDiv" : "menuDetailDivDark"
+              }`}
+            >
               <Link
                 smooth="true"
                 to={`${imsi}/service/#service`}
                 onClick={menuclick}
               >
-                <span className="textF18 tcb">SERVICE</span>
+                <span
+                  className={`textF18 ${theme === "light" ? "tcb" : "tcw"}`}
+                >
+                  SERVICE
+                </span>
               </Link>
               <ul className="menuul">
                 <li>
@@ -720,20 +744,32 @@ export default function Menubar(props) {
                     to={`${imsi}/service/#digitalcareservice`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">Digital Care Service</span>
+                    <span
+                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                    >
+                      Digital Care Service
+                    </span>
                   </Link>
                 </li>
               </ul>
             </div>
 
             {/* RESEARCH 하단 메뉴 */}
-            <div className="menuDetailDiv">
+            <div
+              className={`${
+                theme === "light" ? "menuDetailDiv" : "menuDetailDivDark"
+              }`}
+            >
               <Link
                 smooth="true"
                 to={`${imsi}/research/#research`}
                 onClick={menuclick}
               >
-                <span className="textF18 tcb">RESEARCH</span>
+                <span
+                  className={`textF18 ${theme === "light" ? "tcb" : "tcw"}`}
+                >
+                  RESEARCH
+                </span>
               </Link>
               <ul className="menuul">
                 <li>
@@ -742,7 +778,9 @@ export default function Menubar(props) {
                     to={`${imsi}/research/#nutritionincancercare`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">
+                    <span
+                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                    >
                       Nutrition in Cancer Care
                     </span>
                   </Link>
@@ -753,7 +791,11 @@ export default function Menubar(props) {
                     to={`${imsi}/research/#drugadverseevent`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">Drug Adverse Event</span>
+                    <span
+                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                    >
+                      Drug Adverse Event
+                    </span>
                   </Link>
                 </li>
                 <li>
@@ -762,7 +804,11 @@ export default function Menubar(props) {
                     to={`${imsi}/research/#recurrenceprediction`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">Recurrence Prediction</span>
+                    <span
+                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                    >
+                      Recurrence Prediction
+                    </span>
                   </Link>
                 </li>
                 <li>
@@ -771,7 +817,11 @@ export default function Menubar(props) {
                     to={`${imsi}/research/#exercise`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">Excercise</span>
+                    <span
+                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                    >
+                      Excercise
+                    </span>
                   </Link>
                 </li>
                 <li>
@@ -780,10 +830,10 @@ export default function Menubar(props) {
                     to={`${imsi}/research/#aibasedostomyconditioncheck`}
                     onClick={menuclick}
                   >
-                    <span className=" textF15 tcg" style={{ display: "block" }}>
-                      AI-based Ostomy
+                    <span className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`} style={{ display: "block" }}>
+                      AI-Based Ostomy
                     </span>
-                    <span className=" textF15 tcg" style={{ display: "block" }}>
+                    <span className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`} style={{ display: "block" }}>
                       Condition Check
                     </span>
                   </Link>
@@ -794,10 +844,16 @@ export default function Menubar(props) {
                     to={`${imsi}/research/#adherenceofhormonetherapy`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg" style={{ display: "block" }}>
+                    <span
+                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                      style={{ display: "block" }}
+                    >
                       Adherence of Hormone
                     </span>
-                    <span className="textF15 tcg" style={{ display: "block" }}>
+                    <span
+                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                      style={{ display: "block" }}
+                    >
                       Therapy
                     </span>
                   </Link>
@@ -805,9 +861,17 @@ export default function Menubar(props) {
               </ul>
             </div>
             {/* CRS 하단 메뉴 */}
-            <div className="menuDetailDiv">
+            <div
+              className={`${
+                theme === "light" ? "menuDetailDiv" : "menuDetailDivDark"
+              }`}
+            >
               <Link smooth="true" to={`${imsi}/crs/#crs`} onClick={menuclick}>
-                <span className="textF18 tcb">CRS</span>
+                <span
+                  className={`textF18 ${theme === "light" ? "tcb" : "tcw"}`}
+                >
+                  CRS
+                </span>
               </Link>
               <ul className="menuul">
                 <Link
@@ -815,7 +879,11 @@ export default function Menubar(props) {
                   to={`${imsi}/crs/#propreplatform`}
                   onClick={menuclick}
                 >
-                  <span className="textF15 tcg">PRO · PRE Platform</span>
+                  <span
+                    className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                  >
+                    PRO · PRE Platform
+                  </span>
                 </Link>
                 <li>
                   <Link
@@ -823,7 +891,11 @@ export default function Menubar(props) {
                     to={`${imsi}/crs/#datamanagement`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">Data Management</span>
+                    <span
+                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                    >
+                      Data Management
+                    </span>
                   </Link>
                 </li>
                 <li>
@@ -832,7 +904,11 @@ export default function Menubar(props) {
                     to={`${imsi}/crs/#biostatistics`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">Bio-Statistics</span>
+                    <span
+                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                    >
+                      Bio-Statistics
+                    </span>
                   </Link>
                 </li>
                 <li>
@@ -841,15 +917,27 @@ export default function Menubar(props) {
                     to={`${imsi}/crs/#clinicaloperation`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">Clinical Operation</span>
+                    <span
+                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                    >
+                      Clinical Operation
+                    </span>
                   </Link>
                 </li>
               </ul>
             </div>
             {/* NEWS 하단 메뉴 */}
-            <div className="menuDetailDiv">
+            <div
+              className={`${
+                theme === "light" ? "menuDetailDiv" : "menuDetailDivDark"
+              }`}
+            >
               <Link smooth="true" to={`${imsi}/news/#news`} onClick={menuclick}>
-                <span className="textF18 tcb">NEWS & IR</span>
+                <span
+                  className={`textF18 ${theme === "light" ? "tcb" : "tcw"}`}
+                >
+                  NEWS & IR
+                </span>
               </Link>
               <ul className="menuul">
                 <Link
@@ -857,7 +945,11 @@ export default function Menubar(props) {
                   to={`${imsi}/news/#newsrelease`}
                   onClick={menuclick}
                 >
-                  <span className="textF15 tcg">News Release</span>
+                  <span
+                    className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                  >
+                    News Release
+                  </span>
                 </Link>
                 <li>
                   <Link
@@ -865,20 +957,32 @@ export default function Menubar(props) {
                     to={`${imsi}/news/#irinformation`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">IR Information</span>
+                    <span
+                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                    >
+                      IR Information
+                    </span>
                   </Link>
                 </li>
               </ul>
             </div>
 
             {/* CONTACT US 하단 메뉴 */}
-            <div className="menuDetailDiv">
+            <div
+              className={`${
+                theme === "light" ? "menuDetailDiv" : "menuDetailDivDark"
+              }`}
+            >
               <Link
                 smooth="true"
                 to={`${imsi}/contactus/#contactus`}
                 onClick={menuclick}
               >
-                <span className="textF18 tcb">CONTACT US</span>
+                <span
+                  className={`textF18 ${theme === "light" ? "tcb" : "tcw"}`}
+                >
+                  CONTACT US
+                </span>
               </Link>
               <ul className="menuul">
                 <li>
@@ -887,7 +991,11 @@ export default function Menubar(props) {
                     to={`${imsi}/contactus/#career`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">Career</span>
+                    <span
+                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                    >
+                      Career
+                    </span>
                   </Link>
                 </li>
                 <li>
@@ -896,7 +1004,11 @@ export default function Menubar(props) {
                     to={`${imsi}/contactus/#contact`}
                     onClick={menuclick}
                   >
-                    <span className="textF15 tcg">Contact </span>
+                    <span
+                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                    >
+                      Contact{" "}
+                    </span>
                   </Link>
                 </li>
               </ul>
