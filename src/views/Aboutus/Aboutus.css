@@ -864,6 +864,17 @@ html[data-agent*="Trident"] .each-slide .blur-mask .blur-ie {
   flex-direction: column;
   margin: 0 5px;
 }
+.heringsTeamWrapDark {
+  word-break: keep-all;
+  outline: none;
+  width: 92%;
+  cursor: pointer;
+  background-color: #282828;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 5px;
+}
 .wrapFirst {
   margin-left: 0;
 }

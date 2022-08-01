@@ -57,7 +57,7 @@
 }
 @media (max-width: 780px) {
   .mainvideo {
-    visibility: hidden;
+    visibility: visible;
   }
 }
 /*video media query*/

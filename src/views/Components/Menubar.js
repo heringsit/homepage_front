@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import smoothscroll from "smoothscroll-polyfill";
 import Icon from "@material-ui/core/Icon";
 import { HamburgerSqueeze } from "react-animated-burgers";
@@ -8,7 +8,12 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import herings_logo_b from "../../assets/images/etc/heringsLOGO_black.svg";
 // import heringsLOGO_white from "../../assets/images/etc/heringsLOGO_white.svg";
 import { ReactComponent as HeringsLogo } from "../../assets/images/etc/heringsLOGO.svg";
+import { ReactComponent as HeringsLogoDark } from "../../assets/images/etc/heringsLOGO_dark.svg";
 import "./Menubar.css";
+import { Button } from "@material-ui/core";
+import DarkModeOnIcon from "../../assets/images/etc/icon_dark_on.svg";
+import DarkModeOffIcon from "../../assets/images/etc/icon_dark_off.svg";
+import { ThemeContext } from "../../context";
 
 export default function Menubar(props) {
   const pathname = useLocation().pathname;
@@ -19,7 +24,13 @@ export default function Menubar(props) {
   const [isMActive, setIsMActive] = useState(false);
   const [mobileSelected, setMobileSelected] = useState(null);
   const [isScroll, setIsScroll] = useState(false);
+  const { theme, changeTheme } = useContext(ThemeContext);
+  // const [mode, setMode] = useState(theme);
+
   console.log(pathname === "/", ">pathname");
+
+  const changeMode = () => changeTheme(theme === "light" ? "dark" : "light");
+
   const mobilemenuclick = (e, val) => {
     e.preventDefault();
     val === mobileSelected ? setMobileSelected(null) : setMobileSelected(val);
@@ -63,7 +74,7 @@ export default function Menubar(props) {
               <div
                 className="logoImgContainCenterM"
                 style={{
-                  backgroundImage: "url('" + herings_logo_b + "')"
+                  backgroundImage: "url('" + herings_logo_b + "')",
                 }}
               ></div>
             </NavLink>
@@ -280,6 +291,7 @@ export default function Menubar(props) {
                 </li>
               </ul>
             </div>
+
             <div className="mobileMenudiv">
               <Link
                 smooth="true"
@@ -356,6 +368,7 @@ export default function Menubar(props) {
                 </li>
               </ul>
             </div>
+
             <div className="mobileMenudiv">
               <Link
                 smooth="true"
@@ -466,8 +479,20 @@ export default function Menubar(props) {
   } else {
     return (
       <div
-        className={`menuWrapDiv ${isOver ? "menuWrapOver" : ""} ${
-          isScroll ? "menuWrapOver isScrolledmenu" : ""
+        className={`menuWrapDiv ${
+          theme === "light"
+            ? isOver
+              ? "menuWrapOver"
+              : isScroll
+              ? "menuWrapOver isScrolledmenu"
+              : "menuWrapOver"
+            : theme === "dark"
+            ? isOver
+              ? "menuWrapOverDark"
+              : isScroll
+              ? "menuWrapOverDark isScrolledmenu"
+              : "menuWrapOverDark"
+            : ""
         }`}
         onMouseEnter={menuover}
         onMouseLeave={menuout}
@@ -476,16 +501,25 @@ export default function Menubar(props) {
           <div className="menulogo">
             <NavLink to={`${imsi}/`}>
               <div className="logoImgContainCenter">
-                <HeringsLogo
-                  style={{
-                    fill:
-                      props.slideIndex === 0 && pathname === "/"
-                        ? isScroll || isOver
+                {theme === "light" ? (
+                  <HeringsLogo
+                    style={{
+                      fill:
+                        props.slideIndex === 0 && pathname === "/"
                           ? "#000"
-                          : "#fff"
-                        : "#000"
-                  }}
-                />
+                          : "",
+                    }}
+                  />
+                ) : (
+                  <HeringsLogoDark
+                    style={{
+                      fill:
+                        props.slideIndex === 0 && pathname === "/"
+                          ? "#fff"
+                          : "",
+                    }}
+                  />
+                )}
               </div>
             </NavLink>
 
@@ -501,9 +535,9 @@ export default function Menubar(props) {
                 <span
                   className={`textF18 FontR ${
                     props.slideIndex === 0
-                      ? isScroll || isOver
+                      ? theme === "light"
                         ? "tcb"
-                        : "tcb"
+                        : "tcw"
                       : "tcb"
                   }`}
                 >
@@ -520,9 +554,9 @@ export default function Menubar(props) {
                 <span
                   className={`textF18 FontR ${
                     props.slideIndex === 0
-                      ? isScroll || isOver
+                      ? theme === "light"
                         ? "tcb"
-                        : "tcb"
+                        : "tcw"
                       : "tcb"
                   }`}
                 >
@@ -539,9 +573,9 @@ export default function Menubar(props) {
                 <span
                   className={`textF18 FontR ${
                     props.slideIndex === 0
-                      ? isScroll || isOver
+                      ? theme === "light"
                         ? "tcb"
-                        : "tcb"
+                        : "tcw"
                       : "tcb"
                   }`}
                 >
@@ -554,9 +588,9 @@ export default function Menubar(props) {
                 <span
                   className={`textF18 FontR ${
                     props.slideIndex === 0
-                      ? isScroll || isOver
+                      ? theme === "light"
                         ? "tcb"
-                        : "tcb"
+                        : "tcw"
                       : "tcb"
                   }`}
                 >
@@ -569,9 +603,9 @@ export default function Menubar(props) {
                 <span
                   className={`textF18 FontR ${
                     props.slideIndex === 0
-                      ? isScroll || isOver
+                      ? theme === "light"
                         ? "tcb"
-                        : "tcb"
+                        : "tcw"
                       : "tcb"
                   }`}
                 >
@@ -589,9 +623,9 @@ export default function Menubar(props) {
                 <span
                   className={`textF18 FontR ${
                     props.slideIndex === 0
-                      ? isScroll || isOver
+                      ? theme === "light"
                         ? "tcb"
-                        : "tcb"
+                        : "tcw"
                       : "tcb"
                   }`}
                 >
@@ -600,10 +634,33 @@ export default function Menubar(props) {
               </Link>
             </div>
           </div>
+          {/* 다크모드 토글 */}
+          <div className="menudiv">
+            <Button className="modebutton" id="modebutton" onClick={changeMode}>
+              {theme === "dark" ? (
+                <label htmlFor="modebutton" className="lighttoggle">
+                  <img
+                    src={DarkModeOffIcon}
+                    alt="dark mode icon"
+                    className="lighticon"
+                  />
+                  <span className="lightmode">LIGHT MODE ON</span>
+                </label>
+              ) : (
+                <label htmlFor="modebutton" className="darktoggle">
+                  <img
+                    src={DarkModeOnIcon}
+                    alt="dark mode icon"
+                    className="darkicon"
+                  />
+                  <span className="darkmode">DARK MODE ON</span>
+                </label>
+              )}
+            </Button>
+          </div>
         </div>
 
         {/* ABOUT US 하단 메뉴 */}
-
         <div className={`menuDetail ${isOver ? "part" : "partHide"}`}>
           <div className="menuDetailRow">
             <div className="menuDetailDiv">

@@ -389,9 +389,13 @@ body {
   height: 100%;
   padding: 150px 10%;
 }
-.addPadding {
+/* .addPadding {
   padding-top: 50px;
 }
+.addPaddingDark {
+  padding-top: 50px;
+  
+} */
 .SectionDivNP {
   width: 100%;
   height: 100%;
@@ -520,6 +524,7 @@ body {
   align-items: flex-end;
   background-color: white;
 }
+
 .sticky_padding {
   width: 100%;
   height: 89px;
@@ -1033,4 +1038,74 @@ body {
   width: 100%;
   height: 0px;
   transition: all 1s linear;
+}
+
+/* Dark Mode */
+.modediv {
+  position: relative;
+  top: 10%;
+  left: 80%;
+  z-index: 10;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 182.6px;
+}
+
+.modebutton {
+  display: none;
+}
+
+.darktoggle {
+  width: 140px;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px 4px 8px;
+  gap: 4px;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 34px;
+}
+
+.lighttoggle {
+  width: 140px;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px 4px 8px;
+  gap: 4px;
+  background-color: #3c3c3c;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 34px;
+}
+
+.darkmode {
+  line-height: 137%;
+  font-size: 10px;
+  color: #3c3c3c;
+  transition-duration: .7s;
+}
+
+.lightmode {
+  line-height: 137%;
+  font-size: 10px;
+  color: #ffffff;
+  transform: translateX(-20px);
+  transition-duration: .7s;
+}
+
+.darkicon {
+  transform: translateX(-10px);
+  transition-duration: .7s;
+}
+
+.lighticon {
+  transform: translateX(100px);
+  transition-duration: .7s;
 }

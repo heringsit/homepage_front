@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 import Slider from "react-slick";
 import {
   Executive_Leadership,
   Research_Leadership,
-  Advisory_Board
+  Advisory_Board,
 } from "./HeringsTeamMember";
 
 // import TeamListArrowPrev from "../../../assets/images/etc/team_left.svg";
@@ -15,6 +15,7 @@ import { ReactComponent as TeamListArrowNext } from "../../../assets/images/02ab
 
 import "../Aboutus.css";
 import "../slick.css";
+import { ThemeContext } from "../../../context";
 
 function PrevArrow(props) {
   const { className, style, onClick, matches } = props;
@@ -42,122 +43,112 @@ function NextArrow(props) {
   );
 }
 
-export default class TeamList extends Component {
-  render() {
-    const LeaderShipSettings = {
-      dots: false,
-      infinite: true,
-      adaptiveHeight: true,
-      speed: 500,
-      slidesToShow: this.props.matches ? 2 : 4,
-      // slidesToScroll: this.props.matches ? 1 : 4,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 3000,
-      //arrows: this.props.matches ? false : true,
-      nextArrow: <NextArrow matches={this.props.matches} />,
-      prevArrow: <PrevArrow matches={this.props.matches} />
-    };
-    return (
-      <div
-        className="addPadding "
-        id="heringsteam"
-        // style={{
-        //   wordBreak: "keep-all"
-        // }}
-      >
-        <div className="SectionDiv  ">
-          <div className="titleDiv">
-            <div className="textT22 FontEB">
-              <span>HERINGS Team</span>
-            </div>
-            <hr></hr>
+// dark mode 적용을 위한 contextApi 사용으로 class component에서 function component로 변경 (08.01)
+export default function TeamList(props) {
+  const { theme } = useContext(ThemeContext);
+  const LeaderShipSettings = {
+    dots: false,
+    infinite: true,
+    adaptiveHeight: true,
+    speed: 500,
+    slidesToShow: props.matches ? 2 : 4,
+    // slidesToScroll: this.props.matches ? 1 : 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    //arrows: this.props.matches ? false : true,
+    nextArrow: <NextArrow matches={props.matches} />,
+    prevArrow: <PrevArrow matches={props.matches} />,
+  };
+
+  return (
+    <div style={{ backgroundColor: theme === "dark" && "#282828" }}>
+      <div className="SectionDiv  ">
+        <div className="titleDiv">
+          <div className={`textT22 FontB ${theme === "light" ? "tcb" : "tcw"}`}>
+            <span>HERINGS Team</span>
           </div>
-          <div className="SectionColorGray" style={{ padding: "16px 0" }}>
-            <div className="TeamListWrap  ">
-              <div className="textT18 Subtitle">
-                <span className="FontB">EXECUTIVE</span>
-                <span className="FontR">LEADERSHIP</span>
-              </div>
-              <Slider {...LeaderShipSettings} className="listWrap">
-                {Executive_Leadership.map((team, index) => {
-                  return (
+          <hr style={{ border: theme === "dark" && "solid 1px white" }}></hr>
+        </div>
+        <div className="SectionColorGray" style={{ padding: "16px 0" }}>
+          <div className="TeamListWrap  ">
+            <div className="textT18 Subtitle">
+              <span className="FontB">EXECUTIVE</span>
+              <span className="FontR">LEADERSHIP</span>
+            </div>
+            <Slider {...LeaderShipSettings} className="listWrap">
+              {Executive_Leadership.map((team, index) => {
+                return (
+                  <div
+                    key={index}
+                    className={`teamDivWrap ${index === 0 ? "wrapFirst" : ""}`}
+                  >
                     <div
-                      key={index}
-                      className={`teamDivWrap ${
-                        index === 0 ? "wrapFirst" : ""
-                      }`}
+                      className="heringsTeamWrap"
+                      onClick={() => {
+                        this.props.handleOpen(team);
+                      }}
                     >
-                      <div
-                        className="heringsTeamWrap"
-                        onClick={() => {
-                          this.props.handleOpen(team);
-                        }}
-                      >
-                        <hr />
-                        <div className="listImgWrap">
-                          <img
-                            className="listImg"
-                            src={team.modalimg}
-                            alt={team.name}
-                          />
+                      <hr />
+                      <div className="listImgWrap">
+                        <img
+                          className="listImg"
+                          src={team.modalimg}
+                          alt={team.name}
+                        />
+                      </div>
+                      <div className="heringsTeamContentText">
+                        <div>
+                          <span className="FontB textF16 tcb">{team.name}</span>
                         </div>
-                        <div className="heringsTeamContentText">
-                          <div>
-                            <span className="FontB textF16 tcb">
-                              {team.name}
-                            </span>
-                          </div>
-                          <div>
-                            {/* 여기 index === 4 */}
-                            <span className="textF14 tco">{team.jobs}</span>
-                          </div>
-                          {/* <div>
+                        <div>
+                          {/* 여기 index === 4 */}
+                          <span className="textF14 tco">{team.jobs}</span>
+                        </div>
+                        {/* <div>
                             <span className="textF14 tcg">
                               {team.positions}
                             </span>
                           </div> */}
-                        </div>
                       </div>
                     </div>
-                  );
-                })}
-              </Slider>
+                  </div>
+                );
+              })}
+            </Slider>
+          </div>
+          <div className="TeamListWrap">
+            <div className="textT18 Subtitle">
+              <span className="FontB">RESEARCH</span>
+              <span className="FontR">LEADERSHIP</span>
             </div>
-            <div className="TeamListWrap">
-              <div className="textT18 Subtitle">
-                <span className="FontB">RESEARCH</span>
-                <span className="FontR">LEADERSHIP</span>
-              </div>
-              <Slider {...LeaderShipSettings} className="listWrap">
-                {Research_Leadership.map((team, index) => {
-                  return (
-                    <div key={index} className="teamDivWrap">
-                      <div
-                        className={` ${
-                          team.jobs === "None"
-                            ? "teamDivWrapNone"
-                            : "heringsTeamWrap"
-                        }`}
-                        onClick={() => {
-                          this.props.handleOpen(team);
-                        }}
-                      >
-                        <hr />
-                        <div className="listImgWrap">
-                          <img
-                            src={team.modalimg}
-                            alt={team.name}
-                            className="listImg"
-                          />
+            <Slider {...LeaderShipSettings} className="listWrap">
+              {Research_Leadership.map((team, index) => {
+                return (
+                  <div key={index} className="teamDivWrap">
+                    <div
+                      className={` ${
+                        team.jobs === "None"
+                          ? "teamDivWrapNone"
+                          : "heringsTeamWrap"
+                      }`}
+                      onClick={() => {
+                        this.props.handleOpen(team);
+                      }}
+                    >
+                      <hr />
+                      <div className="listImgWrap">
+                        <img
+                          src={team.modalimg}
+                          alt={team.name}
+                          className="listImg"
+                        />
+                      </div>
+                      <div className="heringsTeamContentText">
+                        <div>
+                          <span className="FontB textF16 tcb">{team.name}</span>
                         </div>
-                        <div className="heringsTeamContentText">
-                          <div>
-                            <span className="FontB textF16 tcb">
-                              {team.name}
-                            </span>
-                          </div>
-                          {/* <div>
+                        {/* <div>
                             <span className="textF14 tco">{team.jobs}</span>
                           </div>
                           <div>
@@ -165,43 +156,41 @@ export default class TeamList extends Component {
                               {team.positions}
                             </span>
                           </div> */}
-                        </div>
                       </div>
                     </div>
-                  );
-                })}
-              </Slider>
+                  </div>
+                );
+              })}
+            </Slider>
+          </div>
+          <div className="TeamListWrap">
+            <div className="textT18 Subtitle">
+              <span className="FontB">ADVISORY</span>
+              <span className="FontR">BOARD</span>
             </div>
-            <div className="TeamListWrap">
-              <div className="textT18 Subtitle">
-                <span className="FontB">ADVISORY</span>
-                <span className="FontR">BOARD</span>
-              </div>
-              <Slider {...LeaderShipSettings} className="listWrap">
-                {Advisory_Board.map((team, index) => {
-                  return (
-                    <div key={index} className="teamDivWrap">
-                      <div
-                        className="heringsTeamWrap"
-                        onClick={() => {
-                          this.props.handleOpen(team);
-                        }}
-                      >
-                        <hr />
-                        <div className="listImgWrap">
-                          <img
-                            src={team.modalimg}
-                            alt={team.name}
-                            className="listImg"
-                          />
+            <Slider {...LeaderShipSettings} className="listWrap">
+              {Advisory_Board.map((team, index) => {
+                return (
+                  <div key={index} className="teamDivWrap">
+                    <div
+                      className="heringsTeamWrap"
+                      onClick={() => {
+                        this.props.handleOpen(team);
+                      }}
+                    >
+                      <hr />
+                      <div className="listImgWrap">
+                        <img
+                          src={team.modalimg}
+                          alt={team.name}
+                          className="listImg"
+                        />
+                      </div>
+                      <div className="heringsTeamContentText">
+                        <div>
+                          <span className="FontB textF16 tcb">{team.name}</span>
                         </div>
-                        <div className="heringsTeamContentText">
-                          <div>
-                            <span className="FontB textF16 tcb">
-                              {team.name}
-                            </span>
-                          </div>
-                          {/* <div>
+                        {/* <div>
                             <span className="textF14 tco">{team.jobs}</span>
                           </div>
                           <div>
@@ -211,16 +200,15 @@ export default class TeamList extends Component {
                                 : "\u00A0"}
                             </span>
                           </div> */}
-                        </div>
                       </div>
                     </div>
-                  );
-                })}
-              </Slider>
-            </div>
+                  </div>
+                );
+              })}
+            </Slider>
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }

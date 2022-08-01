@@ -12,6 +12,9 @@
 .menuWrapOver {
   background-color: #fff;
 }
+.menuWrapOverDark {
+  background-color: #282828;
+}
 .mewnuWrap {
   max-width: 1260px;
   min-width: 1260px;
@@ -68,6 +71,7 @@
 .menusAfterLogo {
   width: 60%;
   margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: row;
 }
@@ -123,6 +127,9 @@
 }
 .menuul li a {
   color: #000;
+}
+.menuuldark li a {
+  color: #fff;
 }
 .menuul * a {
   text-decoration: none;
