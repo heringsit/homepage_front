@@ -375,6 +375,9 @@ body {
 .textT22 {
   font-size: 22px;
 }
+.textT20 {
+  font-size: 20px;
+}
 .textT18 {
   font-size: 18px;
 }
@@ -387,15 +390,16 @@ body {
 .SectionDiv {
   width: 100%;
   height: 100%;
-  padding: 150px 10%;
+  /* padding: 150px 10%; <- the original */
+  padding: 100px 10%;
+  background-color: white;
 }
 /* .addPadding {
   padding-top: 50px;
 }
-.addPaddingDark {
-  padding-top: 50px;
-  
-} */
+.addPaddingBig {
+  padding-top: 150px;
+}
 .SectionDivNP {
   width: 100%;
   height: 100%;
@@ -483,13 +487,15 @@ body {
   color: #a0a0a0;
 }
 .tabATagTab {
-  width: 80%;
+  width: 100%; /* width: 80%; */
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: #000000;
-  border-bottom: 2px solid #000000;
+  /* color: #000000;
+  border-bottom: 2px solid #000000; <- the original */
+  color: #F37F31;
+  border-bottom: 2px solid #F37F31;
 }
 .TABS_layout {
   display: flex;
@@ -508,15 +514,19 @@ body {
   align-items: center;
   text-align: center;
   color: #a0a0a0;
-  border-bottom: 1px solid #c9c7c7;
 }
-
+.TABS_layout > .TABS_tab > a:not(:first-child) {
+  height: 24px;
+  margin: auto;
+  border-left: 1px solid #E1E1E1;
+}
 .TABS_sticky {
   position: -webkit-sticky;
   position: -moz-sticky;
   position: -ms-sticky;
   position: -o-sticky;
   position: sticky;
+  offset-position: 100px;
   top: 0;
   left: 0;
   z-index: 2;

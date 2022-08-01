@@ -368,9 +368,10 @@ export default function Aboutus({ match }) {
       {/* { modalObj !== null ? openInitialNotice() : null} */}
       <div>
         {/* <ContentsTitle title={"ABOUT US"} /> */}
+        <div id="whoweare"></div>
         <TabClick isScroll={isScroll} />
-
         <Whoweare matches={matches} />
+        
         <TeamList handleOpen={handleOpen} matches={matches} />
         <PAI matches={matches} />
         {/* <QM matches={matches} /> */}
