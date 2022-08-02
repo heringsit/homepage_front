@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../../context";
 
 export default function ProPrePlatformTitle() {
+  const { theme } = useContext(ThemeContext);
   return (
     <div className="card_titleDiv ">
-      <span className="textF53 FontB card_titleDiv_padding_b">
+      <span
+        className={`textF53 FontB card_titleDiv_padding_b ${
+          theme === "light" ? "tcb" : "tcw"
+        }`}
+      >
         PRO &middot; PRE Platform
       </span>
-      <div className="textF28 FontL">
+      <div className={`textF28 FontL ${theme === "light" ? "tcb" : "tcw"}`}>
         <span className="card_titleDiv_bold">P</span>
         <span>atient-</span>
         <span className="card_titleDiv_bold">R</span>

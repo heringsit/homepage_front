@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
@@ -19,9 +19,11 @@ import CommonCardFrameCenter from "../common/CommonCardFramCenter";
 import CommonCardTitle from "../common/CommonCardTitle";
 import TabClick from "../common/TabClick";
 import useOnScreen from "../Aboutus/hooks/objectObserver";
+import { ThemeContext } from "../../context";
 
 export default function Research() {
   const matches = useMediaQuery("(max-width:600px)");
+  const { theme } = useContext(ThemeContext);
   const [isScroll, setIsScroll] = useState(false);
   const onScroll = () => {
     // if (window.scrollY >= 0 || window.pageYOffset >= 0) {
@@ -55,7 +57,13 @@ export default function Research() {
   // does not work as it breaks hooks of rules
   // const visibleArray = scrollElem.map((key) => useOnScreen(refs.current[key]))
   return (
-    <div id="content" className="content">
+    <div
+      id="content"
+      className="content"
+      style={{
+        backgroundColor: theme === "dark" && "#282828",
+      }}
+    >
       <Menubar slideIndex={0} />
       <Totop />
       {/* <div ref={refs.current[0]}></div> */}

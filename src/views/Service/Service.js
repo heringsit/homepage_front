@@ -31,6 +31,7 @@ export default function Service({ match }) {
           paddingBottom: "500px",
           textAlign: "center",
           backgroundColor: theme === "dark" && "#282828",
+          color: theme === "dark" && "white",
         }}
       >
         <Menubar slideIndex={0} />
@@ -62,12 +63,8 @@ export default function Service({ match }) {
                 DIGITAL HEALTHCARE SERVICE PLATFORM
               </span>
             </div>
-            <p
-              className={`textT14 explanation ${
-                theme === "light" ? "tcb" : "tcw"
-              }`}
-            >
-              Patients get direct services everyday through this platform.{" "}
+            <p className="textT14 explanation">
+              Patients get direct services everyday through this platform.
               <br />
               Main services include nutrition, symptom management, drug
               adherence, exercise, and medication.
@@ -85,22 +82,13 @@ export default function Service({ match }) {
               <img src={healiary_application} alt="healiary application" />
               <div className="explanation">
                 <p className="tco2 textT18 FontB">Application</p>
-                <p
-                  className={`FontEB textT24 ${
-                    theme === "light" ? "tcb" : "tcw"
-                  }`}
-                >
-                  HEALIARY
-                </p>
-                <p
-                  className={`textT18 ${theme === "light" ? "tcb" : "tcw"}`}
-                  style={{ marginBottom: "60px" }}
-                >
+                <p className="FontEB textT24">HEALIARY</p>
+                <p className="textT18" style={{ marginBottom: "60px" }}>
                   The personalized companion digital platform that takes care of
                   cancer patients’ daily challenges including nutrition/food
                   intake, symptom management, and exercise.
                 </p>
-                <p className={`textT18 ${theme === "light" ? "tcb" : "tcw"}`}>
+                <p className="textT18">
                   Patient Engagement Mobile Application. It is a tool for cancer
                   patients to remain engaged and active throughout their therapy
                   with their care team.
@@ -130,20 +118,11 @@ export default function Service({ match }) {
             <div className="application">
               <div className="explanation">
                 <p className="tco2 textT18 FontB">Application</p>
-                <p
-                  className={`FontEB textT24 ${
-                    theme === "light" ? "tcb" : "tcw"
-                  }`}
-                >
-                  OSTOMY
-                </p>
-                <p
-                  className={`textT18 ${theme === "light" ? "tcb" : "tcw"}`}
-                  style={{ marginBottom: "60px" }}
-                >
+                <p className="FontEB textT24">OSTOMY</p>
+                <p className="textT18" style={{ marginBottom: "60px" }}>
                   Home Health Care Service Platform for Ostomy patients. ​
                 </p>
-                <p className={`textT18 ${theme === "light" ? "tcb" : "tcw"}`}>
+                <p className="textT18">
                   Medical care teams can directly communicate with their
                   patients in this platform. Patients inform their current
                   medical conditions including photos then care teams evaluate
@@ -204,6 +183,7 @@ export default function Service({ match }) {
           paddingBottom: "500px",
           textAlign: "center",
           backgroundColor: theme === "dark" && "#282828",
+          color: theme === "dark" && "white",
         }}
       >
         <Menubar slideIndex={0} />
@@ -235,12 +215,8 @@ export default function Service({ match }) {
                 DIGITAL HEALTHCARE SERVICE PLATFORM
               </span>
             </div>
-            <p
-              className={`textT18 explanation ${
-                theme === "light" ? "tcb" : "tcw"
-              }`}
-            >
-              Patients get direct services everyday through this platform.{" "}
+            <p className="textT18 explanation">
+              Patients get direct services everyday through this platform.
               <br />
               Main services include nutrition, symptom management, drug
               adherence, exercise, and medication.
@@ -258,22 +234,13 @@ export default function Service({ match }) {
               <img src={healiary_application} alt="healiary application" />
               <div className="explanation">
                 <p className="tco2 textT18 FontB">Application</p>
-                <p
-                  className={`FontEB textT24 ${
-                    theme === "light" ? "tcb" : "tcw"
-                  }`}
-                >
-                  HEALIARY
-                </p>
-                <p
-                  className={`textT18 ${theme === "light" ? "tcb" : "tcw"}`}
-                  style={{ marginBottom: "60px" }}
-                >
+                <p className="FontEB textT24">HEALIARY</p>
+                <p className="textT18" style={{ marginBottom: "60px" }}>
                   The personalized companion digital platform that takes care of
                   cancer patients’ daily challenges including nutrition/food
                   intake, symptom management, and exercise.
                 </p>
-                <p className={`textT18 ${theme === "light" ? "tcb" : "tcw"}`}>
+                <p className="textT18">
                   Patient Engagement Mobile Application. It is a tool for cancer
                   patients to remain engaged and active throughout their therapy
                   with their care team.
@@ -292,31 +259,18 @@ export default function Service({ match }) {
                 TELE-HEALTHCARE SERVICE PLATFORM
               </span>
             </div>
-            <p
-              className={`textT18 explanation ${
-                theme === "light" ? "tcb" : "tcw"
-              }`}
-            >
+            <p className="textT18">
               Gateway service platform between providers and patients for remote
               and home care management.​
             </p>
             <div className="application">
               <div className="explanation">
                 <p className="tco2 textT18 FontB">Application</p>
-                <p
-                  className={`FontEB textT24 ${
-                    theme === "light" ? "tcb" : "tcw"
-                  }`}
-                >
-                  OSTOMY
-                </p>
-                <p
-                  className={`textT18 ${theme === "light" ? "tcb" : "tcw"}`}
-                  style={{ marginBottom: "60px" }}
-                >
+                <p className="FontEB textT24">OSTOMY</p>
+                <p className="textT18" style={{ marginBottom: "60px" }}>
                   Home Health Care Service Platform for Ostomy patients. ​
                 </p>
-                <p className={`textT18 ${theme === "light" ? "tcb" : "tcw"}`}>
+                <p className="textT18">
                   Medical care teams can directly communicate with their
                   patients in this platform. Patients inform their current
                   medical conditions including photos then care teams evaluate

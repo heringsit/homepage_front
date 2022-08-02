@@ -20,7 +20,7 @@ export default function Menubar(props) {
   const imsi = process.env.PUBLIC_URL;
   smoothscroll.polyfill();
   const matches = useMediaQuery("(max-width:1260px)");
-  const mobile = useMediaQuery("(max-width:320px)");
+  const mobile = useMediaQuery("(max-width:425px)");
   const [isOver, setIsOver] = useState(false);
   const [isMActive, setIsMActive] = useState(false);
   const [mobileSelected, setMobileSelected] = useState(null);
@@ -123,8 +123,8 @@ export default function Menubar(props) {
                 isActive={isMActive}
                 toggleButton={menuclick}
                 buttonWidth={25}
-                buttonColor="#FFF"
-                barColor="black"
+                buttonColor={theme === "light" ? "#FFF" : "#282828"}
+                barColor={theme === "light" ? "black" : "white"}
               />
             </div>
           </div>
@@ -141,14 +141,17 @@ export default function Menubar(props) {
                   <span
                     className={`FontEB textF22 menuText ${
                       mobileSelected === 0 ? "mobilemenusactive" : ""
-                    }`}
+                    }
+                       ${theme === "light" ? "tcb" : "tcw"} `}
                   >
                     ABOUT US
                   </span>
                   {mobileSelected === 0 ? (
                     <Icon style={{ color: "#E78510" }}>expand_less</Icon>
                   ) : (
-                    <Icon>expand_more</Icon>
+                    <Icon style={{ color: theme === "dark" && "#fff" }}>
+                      expand_more
+                    </Icon>
                   )}
                 </div>
               </Link>
@@ -165,7 +168,13 @@ export default function Menubar(props) {
                     to={`${imsi}/aboutus/#whoweare`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">Who We Are</span>
+                    <span
+                      className={`menuText FontB textF18 ${
+                        theme === "light" ? "tcg" : "tcw"
+                      }`}
+                    >
+                      Who We Are
+                    </span>
                   </Link>
                 </li>
                 <li>
@@ -174,7 +183,13 @@ export default function Menubar(props) {
                     to={`${imsi}/aboutus/#heringsteam`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">HERINGS Team</span>
+                    <span
+                      className={`menuText FontB textF18 ${
+                        theme === "light" ? "tcg" : "tcw"
+                      }`}
+                    >
+                      HERINGS Team
+                    </span>
                   </Link>
                 </li>
                 <li>
@@ -183,7 +198,11 @@ export default function Menubar(props) {
                     to={`${imsi}/aboutus/#researchpartners`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">
+                    <span
+                      className={`menuText FontB textF18 ${
+                        theme === "light" ? "tcg" : "tcw"
+                      }`}
+                    >
                       PARTNERS & INVESTORS
                     </span>
                   </Link>
@@ -203,14 +222,16 @@ export default function Menubar(props) {
                   <span
                     className={`FontEB textF22 menuText ${
                       mobileSelected === 1 ? "mobilemenusactive" : ""
-                    }`}
+                    } ${theme === "light" ? "tcb" : "tcw"}`}
                   >
                     SERVICE
                   </span>
                   {mobileSelected === 1 ? (
                     <Icon style={{ color: "#E78510" }}>expand_less</Icon>
                   ) : (
-                    <Icon>expand_more</Icon>
+                    <Icon style={{ color: theme === "dark" && "#fff" }}>
+                      expand_more
+                    </Icon>
                   )}
                 </div>
               </Link>
@@ -227,7 +248,11 @@ export default function Menubar(props) {
                     to={`${imsi}/service/#digitalcareservice`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">
+                    <span
+                      className={`menuText FontB textF18 ${
+                        theme === "light" ? "tcg" : "tcw"
+                      }`}
+                    >
                       Digital Care Service
                     </span>
                   </Link>
@@ -246,14 +271,16 @@ export default function Menubar(props) {
                   <span
                     className={`FontEB textF22 menuText ${
                       mobileSelected === 2 ? "mobilemenusactive" : ""
-                    }`}
+                    } ${theme === "light" ? "tcb" : "tcw"}`}
                   >
                     RESEARCH
                   </span>
                   {mobileSelected === 2 ? (
                     <Icon style={{ color: "#E78510" }}>expand_less</Icon>
                   ) : (
-                    <Icon>expand_more</Icon>
+                    <Icon style={{ color: theme === "dark" && "#fff" }}>
+                      expand_more
+                    </Icon>
                   )}
                 </div>
               </Link>
@@ -270,7 +297,11 @@ export default function Menubar(props) {
                     to={`${imsi}/research/#nutritionincancercare`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">
+                    <span
+                      className={`menuText FontB textF18 ${
+                        theme === "light" ? "tcg" : "tcw"
+                      }`}
+                    >
                       Nutrition in Cancer Care
                     </span>
                   </Link>
@@ -281,7 +312,11 @@ export default function Menubar(props) {
                     to={`${imsi}/research/#drugadverseevent`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">
+                    <span
+                      className={`menuText FontB textF18 ${
+                        theme === "light" ? "tcg" : "tcw"
+                      }`}
+                    >
                       Drug Adverse Event
                     </span>
                   </Link>
@@ -292,7 +327,11 @@ export default function Menubar(props) {
                     to={`${imsi}/research/#recurrenceprediction`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">
+                    <span
+                      className={`menuText FontB textF18 ${
+                        theme === "light" ? "tcg" : "tcw"
+                      }`}
+                    >
                       Recurrence Prediction
                     </span>
                   </Link>
@@ -303,7 +342,13 @@ export default function Menubar(props) {
                     to={`${imsi}/research/#exercise`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">Excercise</span>
+                    <span
+                      className={`menuText FontB textF18 ${
+                        theme === "light" ? "tcg" : "tcw"
+                      }`}
+                    >
+                      Excercise
+                    </span>
                   </Link>
                 </li>
                 <li>
@@ -312,7 +357,11 @@ export default function Menubar(props) {
                     to={`${imsi}/research/#aibasedostomyconditioncheck`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">
+                    <span
+                      className={`menuText FontB textF18 ${
+                        theme === "light" ? "tcg" : "tcw"
+                      }`}
+                    >
                       AI Based Ostomy Condition Check
                     </span>
                   </Link>
@@ -323,7 +372,11 @@ export default function Menubar(props) {
                     to={`${imsi}/research/#adherenceofhormonetherapy`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">
+                    <span
+                      className={`menuText FontB textF18 ${
+                        theme === "light" ? "tcg" : "tcw"
+                      }`}
+                    >
                       Adherence of Hormone Therapy
                     </span>
                   </Link>
@@ -343,14 +396,16 @@ export default function Menubar(props) {
                   <span
                     className={`FontEB textF22 menuText ${
                       mobileSelected === 3 ? "mobilemenusactive" : ""
-                    }`}
+                    } ${theme === "light" ? "tcb" : "tcw"}`}
                   >
                     CRS
                   </span>
                   {mobileSelected === 3 ? (
                     <Icon style={{ color: "#E78510" }}>expand_less</Icon>
                   ) : (
-                    <Icon>expand_more</Icon>
+                    <Icon style={{ color: theme === "dark" && "#fff" }}>
+                      expand_more
+                    </Icon>
                   )}
                 </div>
               </Link>
@@ -367,7 +422,11 @@ export default function Menubar(props) {
                     to={`${imsi}/crs/#propreplatform`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">
+                    <span
+                      className={`menuText FontB textF18 ${
+                        theme === "light" ? "tcg" : "tcw"
+                      }`}
+                    >
                       PRO · PRE Platform
                     </span>
                   </Link>
@@ -378,7 +437,11 @@ export default function Menubar(props) {
                     to={`${imsi}/crs/#datamanagement`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">
+                    <span
+                      className={`menuText FontB textF18 ${
+                        theme === "light" ? "tcg" : "tcw"
+                      }`}
+                    >
                       Data Management
                     </span>
                   </Link>
@@ -389,7 +452,11 @@ export default function Menubar(props) {
                     to={`${imsi}/crs/#biostatistics`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">
+                    <span
+                      className={`menuText FontB textF18 ${
+                        theme === "light" ? "tcg" : "tcw"
+                      }`}
+                    >
                       Bio Statistics
                     </span>
                   </Link>
@@ -400,7 +467,11 @@ export default function Menubar(props) {
                     to={`${imsi}/crs/#clinicaloperation`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">
+                    <span
+                      className={`menuText FontB textF18 ${
+                        theme === "light" ? "tcg" : "tcw"
+                      }`}
+                    >
                       Clinical Operation
                     </span>
                   </Link>
@@ -420,14 +491,16 @@ export default function Menubar(props) {
                   <span
                     className={`FontEB textF22 menuText ${
                       mobileSelected === 4 ? "mobilemenusactive" : ""
-                    }`}
+                    } ${theme === "light" ? "tcb" : "tcw"}`}
                   >
                     NEWS & IR
                   </span>
                   {mobileSelected === 4 ? (
                     <Icon style={{ color: "#E78510" }}>expand_less</Icon>
                   ) : (
-                    <Icon>expand_more</Icon>
+                    <Icon style={{ color: theme === "dark" && "#fff" }}>
+                      expand_more
+                    </Icon>
                   )}
                 </div>
               </Link>
@@ -444,7 +517,13 @@ export default function Menubar(props) {
                     to={`${imsi}/news/#newsrelease`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">NEWS RELEASE</span>
+                    <span
+                      className={`menuText FontB textF18 ${
+                        theme === "light" ? "tcg" : "tcw"
+                      }`}
+                    >
+                      NEWS RELEASE
+                    </span>
                   </Link>
                 </li>
                 <li>
@@ -453,7 +532,11 @@ export default function Menubar(props) {
                     to={`${imsi}/news/#irinformation`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">
+                    <span
+                      className={`menuText FontB textF18 ${
+                        theme === "light" ? "tcg" : "tcw"
+                      }`}
+                    >
                       IR INFORMATION
                     </span>
                   </Link>
@@ -473,14 +556,16 @@ export default function Menubar(props) {
                   <span
                     className={`FontEB textF22 menuText ${
                       mobileSelected === 5 ? "mobilemenusactive" : ""
-                    }`}
+                    } ${theme === "light" ? "tcb" : "tcw"}`}
                   >
                     CONTACT US
                   </span>
                   {mobileSelected === 5 ? (
                     <Icon style={{ color: "#E78510" }}>expand_less</Icon>
                   ) : (
-                    <Icon>expand_more</Icon>
+                    <Icon style={{ color: theme === "dark" && "#fff" }}>
+                      expand_more
+                    </Icon>
                   )}
                 </div>
               </Link>
@@ -497,7 +582,13 @@ export default function Menubar(props) {
                     to={`${imsi}/contactus/#career`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">CAREER</span>
+                    <span
+                      className={`menuText FontB textF18 ${
+                        theme === "light" ? "tcg" : "tcw"
+                      }`}
+                    >
+                      CAREER
+                    </span>
                   </Link>
                 </li>
                 <li>
@@ -506,7 +597,13 @@ export default function Menubar(props) {
                     to={`${imsi}/contactus/#contact`}
                     onClick={menuclick}
                   >
-                    <span className="menuText FontB textF18">CONTACT</span>
+                    <span
+                      className={`menuText FontB textF18 ${
+                        theme === "light" ? "tcg" : "tcw"
+                      }`}
+                    >
+                      CONTACT
+                    </span>
                   </Link>
                 </li>
               </ul>

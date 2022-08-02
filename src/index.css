@@ -501,8 +501,8 @@ body {
   text-decoration: none;
   /* color: #000000;
   border-bottom: 2px solid #000000; <- the original */
-  color: #F37F31;
-  border-bottom: 4px solid #F37F31;
+  color: #f37f31;
+  border-bottom: 4px solid #f37f31;
 }
 .TABS_layout {
   display: flex;
@@ -1199,10 +1199,24 @@ body {
   }
 }
 
+@media screen and (max-width: 900px) {
+  .modediv {
+    position: relative;
+    right: -25vw;
+    margin-top: -0.5vh;
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 182.6px;
+  }
+}
+
 @media screen and (max-width: 720px) {
   .modediv {
     position: relative;
-    right: -20vw;
+    right: -23%;
     margin-top: -0.5vh;
     z-index: 10;
     text-align: center;
@@ -1270,11 +1284,78 @@ body {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .modediv {
+    position: relative;
+    margin-top: -0.7vh;
+    right: -12%;
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .modediv {
+    position: relative;
+    margin-top: -0.7vh;
+    right: -15%;
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modebutton {
+    display: none;
+  }
+
+  .darktoggle {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 4px;
+    gap: 4px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 34px;
+  }
+
+  .lighttoggle {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 4px;
+    gap: 4px;
+    background-color: #3c3c3c;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 34px;
+  }
+
+  .darkicon {
+    transform: translateX(0);
+    transition-duration: 0.7s;
+  }
+
+  .lighticon {
+    transform: translateX(0);
+    transition-duration: 0.7s;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .modediv {
     position: relative;
     margin-top: -0.7vh;
-    right: -8vw;
+    right: -10%;
     z-index: 10;
     text-align: center;
     display: flex;

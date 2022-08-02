@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../context";
 export default function CommonCardFrameLeft({
   subTitle,
   Title,
@@ -7,21 +8,26 @@ export default function CommonCardFrameLeft({
   image1src,
   image2src,
   image1alt,
-  image2alt
+  image2alt,
 }) {
+  const { theme } = useContext(ThemeContext);
   return (
     <div className="cardLeft card_between">
       <div className="card_flexcolumn">
-        <span className="tco2 FontEB textF22 block" style={{ width: "70%" }}>
+        {/* <span className="tco2 FontEB textF22 block" style={{ width: "70%" }}>
           {subTitle}
-        </span>
+        </span> */}
         <span
           style={{ paddingTop: "8px", width: "70%" }}
-          className="FontB textF32 block"
+          className={`FontB textF32 block ${theme === "light" ? "tcb" : "tcw"}`}
         >
           {Title}
         </span>
-        <div className="textF26 break-keepall card_MinWidth">
+        <div
+          className={`textF26 break-keepall card_MinWidth ${
+            theme === "light" ? "tcb" : "tcw"
+          }`}
+        >
           <span className="card_content_block ">{content1}</span>
           <span className="card_content_block ">{content2}</span>
         </div>
