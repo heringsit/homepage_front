@@ -6,14 +6,11 @@ export default function Whoweare(props) {
   const theme = useContext(ThemeContext);
   // addPadding <-> top badding of the img in about us
   return (
-    <div className="addPadding" id="">
-      <div
-        style={{
-          backgroundImage: `url(${backgroundImg})`,
-          backgroundPosition: "center",
-        }}
-        className="SectionDiv"
-      >
+    <div className="" id="" >
+      <div style={{
+        backgroundImage: `url(${backgroundImg})`,
+        backgroundPosition: "center",
+      }} className="SectionDiv" >
         <div className="titleDiv">
           <div className="textT22 FontB tcw">
             <span>WHO WE ARE</span>

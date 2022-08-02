@@ -227,6 +227,9 @@ html {
 .tcg2 {
   color: #a0a0a0;
 }
+.tcg3 {
+  color: #787878;
+}
 .tcgreen1 {
   color: #07a990;
 }
@@ -392,8 +395,14 @@ body {
   height: 100%;
   padding: 100px 10%;
 }
+.SectionDivNoBottom {
+  padding: 100px 10% 0px 10%;
+}
+.SectionDivBigBottom {
+  padding-bottom: 200px;
+}
 .addPadding {
-  padding-top: 50px;
+  padding-top: 48px;
 }
 .addPaddingBig {
   padding-top: 150px;
@@ -474,7 +483,7 @@ body {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: #a0a0a0;
+  /* color: #a0a0a0; */
 }
 .tabATag {
   width: 80%;
@@ -492,8 +501,8 @@ body {
   text-decoration: none;
   /* color: #000000;
   border-bottom: 2px solid #000000; <- the original */
-  color: #f37f31;
-  border-bottom: 2px solid #f37f31;
+  color: #F37F31;
+  border-bottom: 4px solid #F37F31;
 }
 .TABS_layout {
   display: flex;

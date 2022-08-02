@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Modal from "@material-ui/core/Modal";
@@ -22,6 +22,7 @@ import { Checkbox } from "@material-ui/core";
 import moment from "moment";
 import TabClick from "../common/TabClick";
 import ContentsTitle from "../Components/ContentsTitle";
+import useOnScreen from "./hooks/objectObserver";
 import { ThemeContext } from "../../context";
 
 const useStyles = makeStyles((theme) =>
@@ -360,6 +361,16 @@ export default function Aboutus({ match }) {
     return null;
   };
   const classes = useStyles();
+
+  // Scroll Tracker
+  const scrollElem = Array.from(Array(3).keys());
+  const refs = useRef(scrollElem.map(() => React.createRef()));
+  const visibleArray = Array(3).fill(true);
+  visibleArray[0] = useOnScreen(refs.current[0]);
+  visibleArray[1] = useOnScreen(refs.current[1]);
+  visibleArray[2] = useOnScreen(refs.current[2]);
+  // console.log(visibleArray, ">>visibleArray")
+  
   return (
     <div
       id="aboutus"
@@ -373,14 +384,31 @@ export default function Aboutus({ match }) {
       <Totop />
       {openerModalNoti()}
       {/* { modalObj !== null ? openInitialNotice() : null} */}
-      <div>
+      <div >
         {/* <ContentsTitle title={"ABOUT US"} /> */}
         <div id="whoweare"></div>
-        <TabClick isScroll={isScroll} />
-        <Whoweare matches={matches} />
-
-        <TeamList handleOpen={handleOpen} matches={matches} />
-        <PAI matches={matches} />
+        <TabClick visibleArray={visibleArray} isScroll={isScroll} />
+        
+        <div
+            ref={refs.current[0]}
+        >
+          <Whoweare matches={matches} />
+        </div>
+        <div
+            id="heringsteam"
+            ref={refs.current[1]}
+        >
+          <TeamList handleOpen={handleOpen} matches={matches} />
+        </div>
+        <div
+            id="researchpartners"
+            ref={refs.current[2]}
+        >
+          <PAI matches={matches} />
+          
+        </div>
+        
+        
         {/* <QM matches={matches} /> */}
         <Footer />
       </div>
