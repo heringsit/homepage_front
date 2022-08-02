@@ -15,7 +15,7 @@ export default function Whoweare(props) {
           <div className="textT22 FontB tcw">
             <span>WHO WE ARE</span>
           </div>
-          <hr style={{ border: theme === "dark" && "solid 1px white" }}></hr>
+          <hr style={{border: "1px solid " + (theme === "dark" ? "black" : "white")}}></hr>
         </div>
         <div className="whoweareContent">
           <div className="whoweareContentTitle">

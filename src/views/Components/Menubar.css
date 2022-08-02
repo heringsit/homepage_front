@@ -10,8 +10,11 @@
   align-items: center;
   justify-content: center;
 }
-.menuBorderBottom {
+.menuBorderBottomLight {
   border-bottom: 1px solid #E6E6E6;
+}
+.menuBorderBottomDark {
+  border-bottom: 1px solid #505050;
 }
 .menuWrapOver {
   background-color: #fff;

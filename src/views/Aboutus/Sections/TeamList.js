@@ -1,4 +1,5 @@
 import React, { Component, useContext } from "react";
+import { ThemeContext } from "../../../context"
 import Slider from "react-slick";
 import {
   Executive_Leadership,
@@ -58,6 +59,7 @@ export default function TeamList(props) {
     nextArrow: <NextArrow matches={props.matches} />,
     prevArrow: <PrevArrow matches={props.matches} />,
   };
+  const { theme } =useContext(ThemeContext);
 
   return (
     <div className="addPadding">
@@ -66,7 +68,7 @@ export default function TeamList(props) {
           <div className="textT22 FontB">
             <span>HERINGS Team</span>
           </div>
-          <hr></hr>
+          <hr style={{border: "1px solid " + (theme === "dark" ? "white" : "black")}}></hr>
         </div>
         <div className="SectionColorGray" style={{ padding: "16px 0" }}>
           <div className="TeamListWrap  ">

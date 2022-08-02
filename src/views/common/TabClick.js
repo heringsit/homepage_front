@@ -39,7 +39,12 @@ export default function TabClick({ visibleArray, isScroll }) {
       style={{ backgroundColor: theme === "dark" && "#282828" }}
     >
       <div className="sticky_padding" />
-      <div className="TABS_layout TABS_layout_padding menuBorderBottom">
+      <div
+        className={
+          "TABS_layout TABS_layout_padding " +
+          (theme === "dark" ? "menuBorderBottomDark" : "menuBorderBottomLight")
+        }
+      >
         {pathname === "/aboutus/"
           ? aboutustabs.map((tab, index) => (
               <React.Fragment key={index}>
@@ -51,7 +56,8 @@ export default function TabClick({ visibleArray, isScroll }) {
                     className={
                       index === visibleIndex
                         ? "w-full h-full block tagADefault tabATagTab FontEB"
-                        : "w-full h-full block tagADefault tcg3"
+                        : "w-full h-full block tagADefault " +
+                          (theme === "dark" ? "tcw" : "tcg3")
                     }
                   >
                     {tab === "whoweare"
@@ -81,7 +87,8 @@ export default function TabClick({ visibleArray, isScroll }) {
                     className={
                       index === visibleIndex
                         ? "w-full h-full block tagADefault tabATagTab FontEB"
-                        : "w-full h-full block tagADefault tcg3"
+                        : "w-full h-full block tagADefault " +
+                          (theme === "dark" ? "tcw" : "tcg3")
                     }
                   >
                     {tab === "propreplatform"
@@ -112,7 +119,8 @@ export default function TabClick({ visibleArray, isScroll }) {
                     className={
                       index === visibleIndex
                         ? "w-full h-full block tagADefault tabATagTab FontEB"
-                        : "w-full h-full block tagADefault tcg3"
+                        : "w-full h-full block tagADefault " +
+                          (theme === "dark" ? "tcw" : "tcg3")
                     }
                   >
                     {tab === "nutritionincancercare"

@@ -481,8 +481,12 @@ export default function Menubar(props) {
     return (
       <div
         className={`menuWrapDiv ${isOver ? "menuWrapOver " : ""} ${
-          isScroll ? "menuWrapOver menuBorderBottom " : ""
-        } ${pathname === "/aboutus/" ? "menuBorderBottom" : "" }`}
+          isScroll ? "menuWrapOver " + (theme === "dark" 
+          ? "menuBorderBottomDark "
+          : "menuBorderBottomLight ") : ""
+        } ${pathname === "/aboutus/" ? (theme === "dark" 
+        ? "menuBorderBottomDark"
+        : "menuBorderBottomLight") : "" }`}
         style={{ backgroundColor: theme === "dark" && "#282828" }}
         onMouseEnter={menuover}
         onMouseLeave={menuout}
