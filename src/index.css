@@ -395,8 +395,14 @@ body {
   height: 100%;
   padding: 100px 10%;
 }
+.SectionDivNoBottom {
+  padding: 100px 10% 0px 10%;
+}
+.SectionDivBigBottom {
+  padding-bottom: 200px;
+}
 .addPadding {
-  padding-top: 50px;
+  padding-top: 48px;
 }
 .addPaddingBig {
   padding-top: 150px;

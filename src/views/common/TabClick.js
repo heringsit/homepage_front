@@ -1,16 +1,15 @@
 import { HashLink as Link } from "react-router-hash-link";
 import React, { useState, useContext } from "react";
 import { useLocation } from "react-router";
-import "../Components/Menubar.css"
+import "../Components/Menubar.css";
 import { ThemeContext } from "../../context";
 
 export default function TabClick({ visibleArray, isScroll }) {
   let pathname = useLocation().pathname;
-  
+
   // ex: [true, false, false] -> [whoweare:Visible, teamList:not-Visible, pai:not-Visible]
   // const visibleCount = visibleArray?.filter(value => value===true).length; // check how many elements are visible in DOM
   const visibleIndex = visibleArray?.indexOf(true);
-  
 
   const aboutustabs = ["whoweare", "heringsteam", "researchpartners"];
   const crstabs = [
@@ -29,94 +28,119 @@ export default function TabClick({ visibleArray, isScroll }) {
   ];
   const scrollWithOffset = (el, yOffset = -80) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
-  }
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
+  };
 
   const { theme } = useContext(ThemeContext);
 
   return (
-
-    <div className="TABS_sticky" style={{ backgroundColor: theme === "dark" && "#282828" }}>
+    <div
+      className="TABS_sticky"
+      style={{ backgroundColor: theme === "dark" && "#282828" }}
+    >
       <div className="sticky_padding" />
       <div className="TABS_layout TABS_layout_padding menuBorderBottom">
         {pathname === "/aboutus/"
           ? aboutustabs.map((tab, index) => (
-              <div className={"TABS_tab FontR textF16"} key={index}>
-                <Link
-                  smooth
-                  to={`#${tab}`}
-                  className={index === visibleIndex 
-                              ? "w-full h-full block tagADefault tabATagTab FontEB"
-                              : "w-full h-full block tagADefault tcg3"    
-                  }
-                >
-                  {tab === "whoweare"
-                    ? "Who We Are"
-                    : tab === "heringsteam"
-                    ? "HERINGS Team"
-                    : tab === "researchpartners"
-                    ? "Partners & Investors"
-                    : ""}
-                </Link>
-        
-              </div>
+              <React.Fragment key={index}>
+                <div className={"TABS_tab FontR textF16"}>
+                  <Link
+                    smooth
+                    to={`#${tab}`}
+                    scroll={scrollWithOffset}
+                    className={
+                      index === visibleIndex
+                        ? "w-full h-full block tagADefault tabATagTab FontEB"
+                        : "w-full h-full block tagADefault tcg3"
+                    }
+                  >
+                    {tab === "whoweare"
+                      ? "Who We Are"
+                      : tab === "heringsteam"
+                      ? "HERINGS Team"
+                      : tab === "researchpartners"
+                      ? "Partners & Investors"
+                      : ""}
+                  </Link>
+                </div>
+                {index + 1 === aboutustabs.length ? null : (
+                  <span className="tcg3" style={{ margin: "auto" }}>
+                    |
+                  </span>
+                )}
+              </React.Fragment>
             ))
           : pathname === "/crs/"
           ? crstabs.map((tab, index) => (
-              <div className="TABS_tab FontR textF16" key={index}>
-                <Link
-                  smooth
-                  to={`#${tab}`}
-                  scroll={scrollWithOffset}
-                  className={index === visibleIndex 
-                    ? "w-full h-full block tagADefault tabATagTab FontEB"
-                    : "w-full h-full block tagADefault tcg3"    
-                }
-                >
-                  {tab === "propreplatform"
-                    ? "PRO · PRE Platform"
-                    : tab === "datamanagement"
-                    ? "Data management"
-                    : tab === "biostatistics"
-                    ? "Bio-Statistics"
-                    : tab === "clinicaloperation"
-                    ? "Clinical Operation"
-                    : ""}
-                </Link>
-              </div>
+              <React.Fragment key={index}>
+                <div className="TABS_tab FontR textF16">
+                  <Link
+                    smooth
+                    to={`#${tab}`}
+                    scroll={scrollWithOffset}
+                    className={
+                      index === visibleIndex
+                        ? "w-full h-full block tagADefault tabATagTab FontEB"
+                        : "w-full h-full block tagADefault tcg3"
+                    }
+                  >
+                    {tab === "propreplatform"
+                      ? "PRO · PRE Platform"
+                      : tab === "datamanagement"
+                      ? "Data management"
+                      : tab === "biostatistics"
+                      ? "Bio-Statistics"
+                      : tab === "clinicaloperation"
+                      ? "Clinical Operation"
+                      : ""}
+                  </Link>
+                </div>
+                {index + 1 === crstabs.length ? null : (
+                  <span className="tcg3" style={{ margin: "auto" }}>
+                    |
+                  </span>
+                )}
+              </React.Fragment>
             ))
           : researchtabs.map((tab, index) => (
-              <div className="TABS_tab FontR textF16" key={index}>
-                <Link
-                  smooth
-                  to={`#${tab}`}
-                  scroll={scrollWithOffset}
-                  className={index === visibleIndex 
-                    ? "w-full h-full block tagADefault tabATagTab FontEB"
-                    : "w-full h-full block tagADefault tcg3"    
-                  }
-                >
-                  {tab === "nutritionincancercare"
-                    ? "Nutrition in Cancer Care"
-                    : tab === "drugadverseevent"
-                    ? "Drug Adverse Event"
-                    : tab === "recurrenceprediction"
-                    ? "Recurrence Prediction"
-                    : tab === "exercise"
-                    ? "Exercise"
-                    : tab === "aibasedostomyconditioncheck"
-                    ? "AI-based Ostomy Condition Check"
-                    : tab === "adherenceofhormonetherapy"
-                    ? "Adherence of Hormone Therapy"
-                    : ""}
-                </Link>
-              </div>
+              <React.Fragment key={index}>
+                <div className="TABS_tab FontR textF16">
+                  <Link
+                    smooth
+                    to={`#${tab}`}
+                    scroll={scrollWithOffset}
+                    className={
+                      index === visibleIndex
+                        ? "w-full h-full block tagADefault tabATagTab FontEB"
+                        : "w-full h-full block tagADefault tcg3"
+                    }
+                  >
+                    {tab === "nutritionincancercare"
+                      ? "Nutrition in Cancer Care"
+                      : tab === "drugadverseevent"
+                      ? "Drug Adverse Event"
+                      : tab === "recurrenceprediction"
+                      ? "Recurrence Prediction"
+                      : tab === "exercise"
+                      ? "Exercise"
+                      : tab === "aibasedostomyconditioncheck"
+                      ? "AI-based Ostomy Condition Check"
+                      : tab === "adherenceofhormonetherapy"
+                      ? "Adherence of Hormone Therapy"
+                      : ""}
+                  </Link>
+                </div>
+                {index + 1 === researchtabs.length ? null : (
+                  <span className="tcg3" style={{ margin: "auto" }}>
+                    |
+                  </span>
+                )}
+              </React.Fragment>
             ))}
       </div>
     </div>
   );
 }
-
 
 // Reference:
 // onClick={(e) => {

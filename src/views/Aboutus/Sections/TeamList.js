@@ -60,7 +60,7 @@ export default function TeamList(props) {
   };
 
   return (
-    <div>
+    <div className="addPadding">
       <div className="SectionDiv">
         <div className="titleDiv">
           <div className="textT22 FontB">
