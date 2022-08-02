@@ -74,6 +74,7 @@
 .menusAfterLogo {
   width: 60%;
   margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: row;
 }
@@ -95,6 +96,11 @@
   border-top: 1px solid #f1f1f1;
   border-bottom: 1px solid #f1f1f1;
 }
+.menuDetailDark {
+  width: 100%;
+  border-top: 1px solid #505050;
+  border-bottom: 1px solid #505050;
+}
 
 .menuDetailRow {
   max-width: 1260px;
@@ -109,10 +115,23 @@
   width: 250px;
   text-align: center;
 }
+.menuDetailDivDark {
+  border-right: 1px solid #505050;
+  min-height: 255px;
+  padding: 25px 0;
+  width: 250px;
+  text-align: center;
+}
 .menuDetailDiv a {
   text-decoration: none;
 }
+.menuDetailDivDark a {
+  text-decoration: none;
+}
 .menuDetailDiv:last-child {
+  border-right: none;
+}
+.menuDetailDivDark:last-child {
   border-right: none;
 }
 

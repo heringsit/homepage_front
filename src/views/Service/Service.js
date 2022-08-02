@@ -13,6 +13,7 @@ import healiary_kitchen from "../../assets/images/07service/healiary_kitchen.png
 
 import CommonCardFrameLeft from "../common/CommonCardFrameLeft";
 import CommonCardFrameRight from "../common/CommonCardFrameRight";
+import ServiceTitleImage from "../../assets/images/07service/service_title.svg";
 
 export default function Service({ match }) {
   const matches = useMediaQuery("(max-width:600px)");
@@ -24,14 +25,25 @@ export default function Service({ match }) {
       <div
         id="service"
         style={{
-          paddingBottom: "200px"
+          paddingBottom: "200px",
         }}
       >
-        <ContentsTitle matches={matches} title={"DIGITAL CARE SERVICE"} />
-        <div className="SectionDivNT SectionDivUpBlank" id="digitalcareservice">
-          <div className="servicecontent">
-            {/* ostomy */}
-            <CommonCardFrameLeft
+        {/* <ContentsTitle matches={matches} title={"DIGITAL CARE SERVICE"} /> */}
+        <div className="servicetitle">
+          <img src={ServiceTitleImage} alt="service" />
+        </div>
+        <iframe
+          id="healiarymp4"
+          src="https://www.youtube.com/embed/_d_OvUMhbho?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+        {/* <div className="SectionDivNT SectionDivUpBlank" id="digitalcareservice">
+          <div className="servicecontent"> */}
+        {/* ostomy */}
+        {/* <CommonCardFrameLeft
               // subTitle={"Digital Care Service"}
               Title={"Ostomy Care"}
               content1={"Monitoring Tools to Facilitate Care."}
@@ -45,11 +57,11 @@ export default function Service({ match }) {
             />
             <div
               style={{
-                height: "180px"
+                height: "180px",
               }}
-            ></div>
-            {/* healiary */}
-            <CommonCardFrameRight
+            ></div> */}
+        {/* healiary */}
+        {/* <CommonCardFrameRight
               // subTitle={"Digital Care Service"}
               Title={"Healiary"}
               content1={"Patient Engagement Mobile Application."}
@@ -61,16 +73,8 @@ export default function Service({ match }) {
               image1alt={"healiary_main"}
               image2alt={"healiary_kitchen"}
             />
-            <iframe
-              id="healiarymp4"
-              src="https://www.youtube.com/embed/_d_OvUMhbho?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
           </div>
-        </div>
+        </div> */}
 
         <Footer />
       </div>

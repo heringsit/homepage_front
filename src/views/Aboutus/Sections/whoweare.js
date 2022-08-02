@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../../context";
 import "../Aboutus.css";
-import backgroundImg from "../../../assets/images/02about_who_we_are/about_banner_background.svg"
+import backgroundImg from "../../../assets/images/02about_who_we_are/about_banner_background.svg";
 export default function Whoweare(props) {
+  const theme = useContext(ThemeContext);
   // addPadding <-> top badding of the img in about us
   return (
     <div className="" id="" >
@@ -13,11 +15,11 @@ export default function Whoweare(props) {
           <div className="textT22 FontB tcw">
             <span>WHO WE ARE</span>
           </div>
-          <hr></hr>
+          <hr style={{ border: theme === "dark" && "solid 1px white" }}></hr>
         </div>
         <div className="whoweareContent">
           <div className="whoweareContentTitle">
-          <span className="textF32 FontB tcw">
+            <span className="textF32 FontB tcw">
               HERINGS is personalized Digital Health Care Service Company
             </span>
           </div>
@@ -48,7 +50,7 @@ export default function Whoweare(props) {
                 evidence based, science embedded solution algorithms
               </span>
             </div>
-            <div className="whoweareLinePadding" >
+            <div className="whoweareLinePadding">
               <span className="textF22 FontB tcw">IMPLEMENT </span>
               <span className="textF22 tcw">
                 them through our digital service platform.

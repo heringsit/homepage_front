@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useState, useEffect, useRef } from "react";
+=======
+import React, { useState, useEffect, useContext } from "react";
+>>>>>>> f4127537c4dbc238ad5ebc6bbe3c74b9e877866a
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Modal from "@material-ui/core/Modal";
@@ -22,25 +26,29 @@ import { Checkbox } from "@material-ui/core";
 import moment from "moment";
 import TabClick from "../common/TabClick";
 import ContentsTitle from "../Components/ContentsTitle";
+<<<<<<< HEAD
 import useOnScreen from "./hooks/objectObserver";
+=======
+import { ThemeContext } from "../../context";
+>>>>>>> f4127537c4dbc238ad5ebc6bbe3c74b9e877866a
 
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
-      flexGrow: 1
+      flexGrow: 1,
     },
     control: {
-      padding: theme.spacing(2)
+      padding: theme.spacing(2),
     },
     header: {
-      height: "100%"
+      height: "100%",
     },
     ieAlignCenter: {
-      display: "flex"
+      display: "flex",
     },
     longheigntContent: {
       height: "100%",
-      overflow: "visible"
+      overflow: "visible",
     },
     section2Height: {
       //minHeight: 680
@@ -48,7 +56,7 @@ const useStyles = makeStyles((theme) =>
     modal: {
       display: "flex",
       alignItems: "center",
-      justifyContent: "center"
+      justifyContent: "center",
     },
     paper: {
       display: "flex",
@@ -63,10 +71,10 @@ const useStyles = makeStyles((theme) =>
       boxShadow: "0 0 100px 20px rgba(0, 0, 0, 0.7)",
       backgroundColor: "#FFF",
       [theme.breakpoints.down("xs")]: {
-        width: "80%"
+        width: "80%",
         // minHeight: 400,
         // maxHeight: 500,
-      }
+      },
     },
     modalContent: {
       height: "auto",
@@ -77,11 +85,11 @@ const useStyles = makeStyles((theme) =>
         paddingTop: 25,
         paddingBottom: 25,
         paddingLeft: 10,
-        paddingRight: 10
-      }
+        paddingRight: 10,
+      },
     },
     modalCloseWrap: {
-      position: "relative"
+      position: "relative",
     },
     modalCloseDiv: {
       position: "absolute",
@@ -93,8 +101,8 @@ const useStyles = makeStyles((theme) =>
       outline: "none",
       [theme.breakpoints.down("xs")]: {
         top: "-25px",
-        right: "-10px"
-      }
+        right: "-10px",
+      },
     },
     modalClose: {
       maxWidth: 70,
@@ -103,18 +111,18 @@ const useStyles = makeStyles((theme) =>
       outline: "none",
       [theme.breakpoints.down("xs")]: {
         maxWidth: 50,
-        padding: 12.5
-      }
+        padding: 12.5,
+      },
     },
     modalimgaeWrap: {
       display: "flex",
       justifyContent: "center",
-      alignItems: "center"
+      alignItems: "center",
     },
     modalimage: {
       width: "35%",
       maxWidth: "35%",
-      height: "auto"
+      height: "auto",
     },
     modalTitle: {
       marginTop: 20,
@@ -124,7 +132,7 @@ const useStyles = makeStyles((theme) =>
       justifyContent: "center",
       alignItems: "center",
       flexWrap: "wrap",
-      color: "#4a4a4a"
+      color: "#4a4a4a",
     },
     modalContentText: {
       borderTop: "1px solid #ddd",
@@ -137,9 +145,9 @@ const useStyles = makeStyles((theme) =>
         paddingTop: "25px",
         paddingBottom: "25px",
         paddingLeft: "10px",
-        paddingRight: "10px"
-      }
-    }
+        paddingRight: "10px",
+      },
+    },
   })
 );
 
@@ -153,6 +161,9 @@ export default function Aboutus({ match }) {
   const [modalPopObj, setmodalPopObj] = useState({});
   const [slideIndex, setSlideIndex] = useState(0);
   const [watchToday, setWatchToday] = useState(false);
+  const { theme, changeTheme } = useContext(ThemeContext);
+
+  console.log("about us mode", theme);
 
   const onScroll = () => {
     if (window.scrollY > 238 || window.pageYOffset > 238) {
@@ -171,8 +182,8 @@ export default function Aboutus({ match }) {
       .get(`${imsi}/api/boardList`, {
         params: {
           type: "Popup",
-          page: 1
-        }
+          page: 1,
+        },
       })
       .then((response) => {
         if (response.data?.board_data.length !== 0) {
@@ -258,7 +269,7 @@ export default function Aboutus({ match }) {
                       overflowY: "auto",
                       overflowX: "hidden",
                       width: "100%",
-                      height: "auto"
+                      height: "auto",
                     }}
                   >
                     <div
@@ -268,7 +279,7 @@ export default function Aboutus({ match }) {
                       {modalPopObj.recruitment}
                       <div
                         style={{
-                          textAlign: "center"
+                          textAlign: "center",
                         }}
                       >
                         {(() => {
@@ -287,7 +298,7 @@ export default function Aboutus({ match }) {
                       className="tcb FontNR textF17"
                       style={{
                         textAlign: "center",
-                        paddingTop: 4
+                        paddingTop: 4,
                       }}
                     >
                       <div style={{ paddingBottom: 8 }}>
@@ -297,7 +308,7 @@ export default function Aboutus({ match }) {
                             padding: 10,
                             background: "none",
                             border: "none",
-                            fontSize: 17
+                            fontSize: 17,
                           }}
                           onClick={() =>
                             window.open(`${modalPopObj.link}`, "_self")
@@ -315,7 +326,7 @@ export default function Aboutus({ match }) {
                         style={{
                           textAlign: "right",
                           paddingTop: 20,
-                          borderTop: "solid 0.5px #bebebe"
+                          borderTop: "solid 0.5px #bebebe",
                         }}
                       >
                         <Checkbox
@@ -324,7 +335,7 @@ export default function Aboutus({ match }) {
                             padding: 5,
                             background: "none",
                             border: "none",
-                            fontSize: 17
+                            fontSize: 17,
                           }}
                           onChange={onCheckChange}
                         ></Checkbox>
@@ -368,7 +379,14 @@ export default function Aboutus({ match }) {
   // console.log(visibleArray, ">>visibleArray")
   
   return (
-    <div id="aboutus" style={{ position: "relative" }}>
+    <div
+      id="aboutus"
+      style={{
+        position: "relative",
+        backgroundColor: theme === "dark" && "#282828",
+        color: theme === "dark" && "#fff",
+      }}
+    >
       <Menubar slideIndex={slideIndex} />
       <Totop />
       {openerModalNoti()}
@@ -410,7 +428,7 @@ export default function Aboutus({ match }) {
         disableScrollLock={true}
         BackdropComponent={Backdrop}
         BackdropProps={{
-          timeout: 500
+          timeout: 500,
         }}
       >
         <Fade in={open}>

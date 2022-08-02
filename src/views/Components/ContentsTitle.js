@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router";
 import crs_banner from "../../assets/images/08crs/crs_banner.png";
-import service_banner from "../../assets/images/07service/service_banner.png";
+// import service_banner from "../../assets/images/07service/service_banner.png";
 import research_full from "../../assets/images/09research/research_full.png";
 
 import newsir_banner from "../../assets/images/10newsir/newsir_banner.png";

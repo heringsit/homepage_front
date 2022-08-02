@@ -797,6 +797,7 @@ html[data-agent*="Trident"] .each-slide .blur-mask .blur-ie {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
 .partner__image__container > img {
   height: auto;
@@ -813,6 +814,7 @@ html[data-agent*="Trident"] .each-slide .blur-mask .blur-ie {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: white;
 }
 .inventors__image__container > img {
   height: auto;
@@ -861,6 +863,17 @@ html[data-agent*="Trident"] .each-slide .blur-mask .blur-ie {
   width: 92%;
   cursor: pointer;
   background-color: #fff;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 5px;
+}
+.heringsTeamWrapDark {
+  word-break: keep-all;
+  outline: none;
+  width: 92%;
+  cursor: pointer;
+  background-color: #282828;
   border-radius: 25px;
   display: flex;
   flex-direction: column;

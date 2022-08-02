@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Box, Tab, Tabs } from "@material-ui/core";
 import { HashLink as Link } from "react-router-hash-link";
 import React, { useState } from "react";
@@ -11,12 +12,35 @@ export default function TabClick({ visibleArray, isScroll }) {
   const visibleIndex = visibleArray?.indexOf(true);
   
 
+=======
+import { Box, createStyles, makeStyles, Tab, Tabs } from "@material-ui/core";
+import React, { useContext } from "react";
+import { useLocation } from "react-router";
+import { ThemeContext } from "../../context";
+
+export default function TabClick({ isScroll }) {
+  const useStyles = makeStyles((theme) =>
+    createStyles({
+      text: {
+        color: "#787878",
+      },
+      indicator: {
+        color: "#787878",
+      },
+    })
+  );
+
+  const classes = useStyles();
+  let pathname = useLocation().pathname;
+  let hashid = useLocation().hash;
+  console.log(typeof hashid, ">>pathname");
+>>>>>>> f4127537c4dbc238ad5ebc6bbe3c74b9e877866a
   const aboutustabs = ["whoweare", "heringsteam", "researchpartners"];
   const crstabs = [
     "propreplatform",
     "datamanagement",
     "biostatistics",
-    "clinicaloperation"
+    "clinicaloperation",
   ];
   const researchtabs = [
     "nutritionincancercare",
@@ -24,16 +48,18 @@ export default function TabClick({ visibleArray, isScroll }) {
     "recurrenceprediction",
     "exercise",
     "aibasedostomyconditioncheck",
-    "adherenceofhormonetherapy"
+    "adherenceofhormonetherapy",
   ];
   const scrollWithOffset = (el, yOffset = -80) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
     window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
   }
 
+  const { theme } = useContext(ThemeContext);
+
   return (
 
-    <div className="TABS_sticky">
+    <div className="TABS_sticky" style={{ backgroundColor: theme === "dark" && "#282828" }}>
       <div className="sticky_padding" />
       <div className="TABS_layout TABS_layout_padding menuBorderBottom">
         {pathname === "/aboutus/"
