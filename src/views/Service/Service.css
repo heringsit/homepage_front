@@ -88,6 +88,19 @@
   height: 500px;
 }
 
+@media (max-width: 1260px) {
+  .mobile_servicecontents {
+    position: relative;
+    top: 120px;
+    width: 700px;
+    display: inline-block;
+  }
+
+  #healiarymp4 {
+    
+  }
+
+}
 
 /* .platformContentBackLine {
   background-color: #f8f8f8;
