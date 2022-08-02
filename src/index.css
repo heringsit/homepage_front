@@ -392,7 +392,7 @@ body {
   height: 100%;
   padding: 100px 10%;
 }
-/* .addPadding {
+.addPadding {
   padding-top: 50px;
 }
 .addPaddingBig {
@@ -492,8 +492,8 @@ body {
   text-decoration: none;
   /* color: #000000;
   border-bottom: 2px solid #000000; <- the original */
-  color: #F37F31;
-  border-bottom: 2px solid #F37F31;
+  color: #f37f31;
+  border-bottom: 2px solid #f37f31;
 }
 .TABS_layout {
   display: flex;
@@ -516,7 +516,7 @@ body {
 .TABS_layout > .TABS_tab > a:not(:first-child) {
   height: 24px;
   margin: auto;
-  border-left: 1px solid #E1E1E1;
+  border-left: 1px solid #e1e1e1;
 }
 .TABS_sticky {
   position: -webkit-sticky;
@@ -532,11 +532,16 @@ body {
   align-items: flex-end;
   background-color: white;
 }
-
 .sticky_padding {
   width: 100%;
   height: 89px;
 }
+.vertical_line {
+  height: 190px;
+  width: 1px;
+  color: #dcdcdc;
+}
+
 @media screen and (max-width: 1258px) {
   .sticky_padding {
     width: 100%;
@@ -625,12 +630,12 @@ body {
   background-size: cover;
   background-position: center;
 }
-/* #service .banner_img {
-  background: url("../src/assets/images/07service/service_banner.png");
+#service .banner_img {
+  background: url("../src/assets/images/07service/service_title.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-} */
+}
 #research .banner_img {
   background: url("../src/assets/images/09research/research_full.png");
   background-repeat: no-repeat;
@@ -662,6 +667,13 @@ body {
   z-index: 30;
   position: absolute;
   bottom: 0;
+}
+#service .title_default {
+  width: 100%;
+  z-index: 30;
+  position: absolute;
+  left: 0;
+  bottom: 119px;
 }
 /* media screen */
 /* media-font trans */
@@ -1048,19 +1060,7 @@ body {
   transition: all 1s linear;
 }
 
-/* Dark Mode */
-.modediv {
-  position: relative;
-  top: 10%;
-  left: 80%;
-  z-index: 10;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 182.6px;
-}
-
+/* DARK MODE */
 .modebutton {
   display: none;
 }
@@ -1097,7 +1097,7 @@ body {
   line-height: 137%;
   font-size: 10px;
   color: #3c3c3c;
-  transition-duration: .7s;
+  transition-duration: 0.7s;
 }
 
 .lightmode {
@@ -1105,15 +1105,213 @@ body {
   font-size: 10px;
   color: #ffffff;
   transform: translateX(-20px);
-  transition-duration: .7s;
+  transition-duration: 0.7s;
 }
 
 .darkicon {
   transform: translateX(-10px);
-  transition-duration: .7s;
+  transition-duration: 0.7s;
 }
 
 .lighticon {
   transform: translateX(100px);
-  transition-duration: .7s;
+  transition-duration: 0.7s;
+}
+
+/* MOBILE DARK MODE */
+@media screen and (max-width: 1260px) {
+  .modediv {
+    position: relative;
+    right: -30vw;
+    margin-top: -0.5vh;
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 182.6px;
+  }
+
+  .modebutton {
+    display: none;
+  }
+
+  .darktoggle {
+    width: 140px;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px 4px 8px;
+    gap: 4px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 34px;
+  }
+
+  .lighttoggle {
+    width: 140px;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px 4px 8px;
+    gap: 4px;
+    background-color: #3c3c3c;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 34px;
+  }
+
+  .darkmode {
+    line-height: 137%;
+    font-size: 10px;
+    color: #3c3c3c;
+    transition-duration: 0.7s;
+  }
+
+  .lightmode {
+    line-height: 137%;
+    font-size: 10px;
+    color: #ffffff;
+    transform: translateX(-20px);
+    transition-duration: 0.7s;
+  }
+
+  .darkicon {
+    transform: translateX(-10px);
+    transition-duration: 0.7s;
+  }
+
+  .lighticon {
+    transform: translateX(100px);
+    transition-duration: 0.7s;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .modediv {
+    position: relative;
+    right: -20vw;
+    margin-top: -0.5vh;
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 182.6px;
+  }
+
+  .modebutton {
+    display: none;
+  }
+
+  .darktoggle {
+    width: 140px;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px 4px 8px;
+    gap: 4px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 34px;
+  }
+
+  .lighttoggle {
+    width: 140px;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 8px 4px 8px;
+    gap: 4px;
+    background-color: #3c3c3c;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 34px;
+  }
+
+  .darkmode {
+    line-height: 137%;
+    font-size: 10px;
+    color: #3c3c3c;
+    transition-duration: 0.7s;
+  }
+
+  .lightmode {
+    line-height: 137%;
+    font-size: 10px;
+    color: #ffffff;
+    transform: translateX(-20px);
+    transition-duration: 0.7s;
+  }
+
+  .darkicon {
+    transform: translateX(-10px);
+    transition-duration: 0.7s;
+  }
+
+  .lighticon {
+    transform: translateX(100px);
+    transition-duration: 0.7s;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modediv {
+    position: relative;
+    margin-top: -0.7vh;
+    right: -8vw;
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modebutton {
+    display: none;
+  }
+
+  .darktoggle {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 4px;
+    gap: 4px;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 34px;
+  }
+
+  .lighttoggle {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 4px;
+    gap: 4px;
+    background-color: #3c3c3c;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 34px;
+  }
+
+  .darkicon {
+    transform: translateX(0);
+    transition-duration: 0.7s;
+  }
+
+  .lighticon {
+    transform: translateX(0);
+    transition-duration: 0.7s;
+  }
 }

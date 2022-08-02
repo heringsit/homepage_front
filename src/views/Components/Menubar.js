@@ -6,7 +6,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import herings_logo_b from "../../assets/images/etc/heringsLOGO_black.svg";
-// import heringsLOGO_white from "../../assets/images/etc/heringsLOGO_white.svg";
+import herings_logo_w from "../../assets/images/etc/heringsLOGO_white.svg";
 import { ReactComponent as HeringsLogo } from "../../assets/images/etc/heringsLOGO.svg";
 import { ReactComponent as HeringsLogoDark } from "../../assets/images/etc/heringsLOGO_dark.svg";
 import "./Menubar.css";
@@ -20,6 +20,7 @@ export default function Menubar(props) {
   const imsi = process.env.PUBLIC_URL;
   smoothscroll.polyfill();
   const matches = useMediaQuery("(max-width:1260px)");
+  const mobile = useMediaQuery("(max-width:320px)");
   const [isOver, setIsOver] = useState(false);
   const [isMActive, setIsMActive] = useState(false);
   const [mobileSelected, setMobileSelected] = useState(null);
@@ -66,18 +67,76 @@ export default function Menubar(props) {
       <div className="mobileMenuWrapDiv">
         <div
           className={`mobileMenuroot`}
+          style={{ backgroundColor: theme === "dark" && "#282828" }}
           onMouseEnter={menuover}
           onMouseLeave={menuout}
         >
+          {/* <div className="logoImgContainCenter">
+                {theme === "light" ? (
+                  <HeringsLogo
+                    style={{
+                      fill:
+                        props.slideIndex === 0 && pathname === "/"
+                          ? "#000"
+                          : "",
+                    }}
+                  />
+                ) : (
+                  <HeringsLogoDark
+                    style={{
+                      fill:
+                        props.slideIndex === 0 && pathname === "/"
+                          ? "#fff"
+                          : "",
+                    }}
+                  />
+                )}
+              </div> */}
           <div className="mobileMenulogo">
             <NavLink to={`${imsi}/`}>
               <div
                 className="logoImgContainCenterM"
-                style={{
-                  backgroundImage: "url('" + herings_logo_b + "')",
-                }}
+                style={
+                  theme === "light"
+                    ? {
+                        backgroundImage: "url('" + herings_logo_b + "')",
+                      }
+                    : {
+                        backgroundImage: "url('" + herings_logo_w + "')",
+                      }
+                }
               ></div>
             </NavLink>
+            {/* Dark Mode Toggle Mobile */}
+            <div className="modediv">
+              <Button
+                className="modebutton"
+                id="modebutton"
+                onClick={changeMode}
+              >
+                {theme === "dark" ? (
+                  <label htmlFor="modebutton" className="lighttoggle">
+                    <img
+                      src={DarkModeOffIcon}
+                      alt="dark mode icon"
+                      className="lighticon"
+                    />
+                    {!mobile && (
+                      <span className="lightmode">LIGHT MODE ON</span>
+                    )}
+                  </label>
+                ) : (
+                  <label htmlFor="modebutton" className="darktoggle">
+                    <img
+                      src={DarkModeOnIcon}
+                      alt="dark mode icon"
+                      className="darkicon"
+                    />
+                    {!mobile && <span className="darkmode">DARK MODE ON</span>}
+                  </label>
+                )}
+              </Button>
+            </div>
             <div className="mobileBtn">
               <HamburgerSqueeze
                 className="mobileBtnHambuger"
@@ -627,7 +686,7 @@ export default function Menubar(props) {
               </Link>
             </div>
           </div>
-          {/* 다크모드 토글 */}
+          {/* Dark Mode Toggle */}
           <div className="menudiv">
             <Button className="modebutton" id="modebutton" onClick={changeMode}>
               {theme === "dark" ? (
@@ -830,10 +889,16 @@ export default function Menubar(props) {
                     to={`${imsi}/research/#aibasedostomyconditioncheck`}
                     onClick={menuclick}
                   >
-                    <span className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`} style={{ display: "block" }}>
+                    <span
+                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                      style={{ display: "block" }}
+                    >
                       AI-Based Ostomy
                     </span>
-                    <span className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`} style={{ display: "block" }}>
+                    <span
+                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                      style={{ display: "block" }}
+                    >
                       Condition Check
                     </span>
                   </Link>
