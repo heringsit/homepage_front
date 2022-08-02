@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
 import Footer from "../Components/Footer";
@@ -16,8 +16,10 @@ import ProPrePlatformTitle from "./Sections/ProPrePlatformTitle";
 import CommonCardFrameCenter from "../common/CommonCardFramCenter";
 import TabClick from "../common/TabClick";
 import useOnScreen from "../Aboutus/hooks/objectObserver";
+import { ThemeContext } from "../../context";
 export default function Crs() {
   const matches = useMediaQuery("(max-width:600px)");
+  const { theme } = useContext(ThemeContext);
   const [isScroll, setIsScroll] = useState(false);
   const onScroll = () => {
     if (window.scrollY > 238 || window.pageYOffset > 238) {
@@ -44,7 +46,11 @@ export default function Crs() {
   console.log(visibleArray, ">>visibleArray");
 
   return (
-    <div id="content" className="content">
+    <div
+      id="content"
+      className="content"
+      style={{ backgroundColor: theme === "dark" && "#282828" }}
+    >
       <Menubar slideIndex={0} />
       <Totop />
 

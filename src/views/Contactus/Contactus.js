@@ -9,10 +9,13 @@ import Footer from "../Components/Footer";
 import Career from "./Career";
 
 import "./Contactus.css";
+import { useContext } from "react";
+import { ThemeContext } from "../../context";
 
 export default function ContactUs() {
   //const imsi = process.env.PUBLIC_URL;
   const matches = useMediaQuery("(max-width:600px)");
+  const { theme } = useContext(ThemeContext);
   const [cName, setCName] = useState("");
   const [cEmail, setCEmail] = useState("");
   const [cPhone, setCPhone] = useState("");
@@ -141,15 +144,15 @@ export default function ContactUs() {
       cName: cName,
       cEmail: cEmail,
       cPhone: cPhone,
-      cMessage: cMessage
+      cMessage: cMessage,
     };
 
     fetch("/api/contactus", {
       method: "POST",
       headers: {
-        "Content-type": "application/json"
+        "Content-type": "application/json",
       },
-      body: JSON.stringify(sendobj)
+      body: JSON.stringify(sendobj),
     })
       .then((response) => response.json())
       .then((result) => {
@@ -165,7 +168,14 @@ export default function ContactUs() {
   };
 
   return (
-    <div id="content" className="content">
+    <div
+      id="content"
+      className="content"
+      style={{
+        backgroundColor: theme === "dark" && "#282828",
+        color: theme === "dark" && "white",
+      }}
+    >
       <Menubar slideIndex={0} />
       <Totop />
       <div id="contactus">
@@ -244,7 +254,7 @@ export default function ContactUs() {
                   style={{
                     height: "123px",
                     resize: "none",
-                    overflow: "auto"
+                    overflow: "auto",
                   }}
                   name="cMessage"
                   className={`FontR textF14 ${inputClassNameHelper(
