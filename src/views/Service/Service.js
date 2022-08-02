@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import "./Service.css";
 /*component*/
@@ -11,7 +11,8 @@ import Footer from "../Components/Footer";
 // import healiary_main from "../../assets/images/07service/healiary_main.svg";
 // import healiary_kitchen from "../../assets/images/07service/healiary_kitchen.svg";
 import healiary_application from "../../assets/images/07service/healiary_application.svg";
-import ostomy_application from "../../assets/images/07service/ostomy_application.svg"
+import ostomy_application from "../../assets/images/07service/ostomy_application.svg";
+import { ThemeContext } from "../../context";
 
 // import CommonCardFrameLeft from "../common/CommonCardFrameLeft";
 // import CommonCardFrameRight from "../common/CommonCardFrameRight";
@@ -19,6 +20,7 @@ import ostomy_application from "../../assets/images/07service/ostomy_application
 
 export default function Service({ match }) {
   const matches = useMediaQuery("(max-width:600px)");
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div
@@ -27,6 +29,7 @@ export default function Service({ match }) {
         position: "relative",
         paddingBottom: "400px",
         textAlign: "center",
+        backgroundColor: theme === "dark" && "#282828",
       }}
     >
       <Menubar slideIndex={0} />
@@ -39,7 +42,11 @@ export default function Service({ match }) {
 
       {/* CONTENTS */}
       <div className="servicecontents">
-        <p className="introtxt textF24 tcb FontEB">
+        <p
+          className={`introtxt textF24 FontEB ${
+            theme === "light" ? "tcb" : "tcw"
+          }`}
+        >
           HERINGS’ Two Service platforms.
         </p>
         <hr className="vertical_line"></hr>
@@ -54,7 +61,11 @@ export default function Service({ match }) {
               DIGITAL HEALTHCARE SERVICE PLATFORM
             </span>
           </div>
-          <p className="textT18 explanation">
+          <p
+            className={`textT18 explanation ${
+              theme === "light" ? "tcb" : "tcw"
+            }`}
+          >
             Patients get direct services everyday through this platform. <br />
             Main services include nutrition, symptom management, drug adherence,
             exercise, and medication.
@@ -72,13 +83,22 @@ export default function Service({ match }) {
             <img src={healiary_application} alt="healiary application" />
             <div className="explanation">
               <p className="tco2 textT18 FontB">Application</p>
-              <p className="FontEB textT24">HEALIARY</p>
-              <p className="textT18" style={{ marginBottom: "60px" }}>
+              <p
+                className={`FontEB textT24 ${
+                  theme === "light" ? "tcb" : "tcw"
+                }`}
+              >
+                HEALIARY
+              </p>
+              <p
+                className={`textT18 ${theme === "light" ? "tcb" : "tcw"}`}
+                style={{ marginBottom: "60px" }}
+              >
                 The personalized companion digital platform that takes care of
                 cancer patients’ daily challenges including nutrition/food
                 intake, symptom management, and exercise.
               </p>
-              <p className="textT18">
+              <p className={`textT18 ${theme === "light" ? "tcb" : "tcw"}`}>
                 Patient Engagement Mobile Application. It is a tool for cancer
                 patients to remain engaged and active throughout their therapy
                 with their care team.
@@ -97,18 +117,31 @@ export default function Service({ match }) {
               TELE-HEALTHCARE SERVICE PLATFORM
             </span>
           </div>
-          <p className="textT18 explanation">
+          <p
+            className={`textT18 explanation ${
+              theme === "light" ? "tcb" : "tcw"
+            }`}
+          >
             Gateway service platform between providers and patients for remote
             and home care management.​
           </p>
           <div className="application">
             <div className="explanation">
               <p className="tco2 textT18 FontB">Application</p>
-              <p className="FontEB textT24">HEALIARY</p>
-              <p className="textT18" style={{ marginBottom: "60px" }}>
+              <p
+                className={`FontEB textT24 ${
+                  theme === "light" ? "tcb" : "tcw"
+                }`}
+              >
+                OSTOMY
+              </p>
+              <p
+                className={`textT18 ${theme === "light" ? "tcb" : "tcw"}`}
+                style={{ marginBottom: "60px" }}
+              >
                 Home Health Care Service Platform for Ostomy patients. ​
               </p>
-              <p className="textT18">
+              <p className={`textT18 ${theme === "light" ? "tcb" : "tcw"}`}>
                 Medical care teams can directly communicate with their patients
                 in this platform. Patients inform their current medical
                 conditions including photos then care teams evaluate them and
