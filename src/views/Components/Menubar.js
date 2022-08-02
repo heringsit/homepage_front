@@ -48,7 +48,7 @@ export default function Menubar(props) {
 
   const menuover = (e, key) => {
     e.preventDefault();
-    console.log("enter")
+    console.log("enter");
     setIsOver(true);
   };
 
@@ -72,27 +72,6 @@ export default function Menubar(props) {
           onMouseEnter={menuover}
           onMouseLeave={menuout}
         >
-          {/* <div className="logoImgContainCenter">
-                {theme === "light" ? (
-                  <HeringsLogo
-                    style={{
-                      fill:
-                        props.slideIndex === 0 && pathname === "/"
-                          ? "#000"
-                          : "",
-                    }}
-                  />
-                ) : (
-                  <HeringsLogoDark
-                    style={{
-                      fill:
-                        props.slideIndex === 0 && pathname === "/"
-                          ? "#fff"
-                          : "",
-                    }}
-                  />
-                )}
-              </div> */}
           <div className="mobileMenulogo">
             <NavLink to={`${imsi}/`}>
               <div
@@ -540,12 +519,19 @@ export default function Menubar(props) {
     return (
       <div
         className={`menuWrapDiv ${isOver ? "menuWrapOver " : ""} ${
-          isScroll ? "menuWrapOver " + (theme === "dark" 
-          ? "menuBorderBottomDark "
-          : "menuBorderBottomLight ") : ""
-        } ${pathname === "/aboutus/" ? (theme === "dark" 
-        ? "menuBorderBottomDark"
-        : "menuBorderBottomLight") : "" }`}
+          isScroll
+            ? "menuWrapOver " +
+              (theme === "dark"
+                ? "menuBorderBottomDark "
+                : "menuBorderBottomLight ")
+            : ""
+        } ${
+          pathname === "/aboutus/"
+            ? theme === "dark"
+              ? "menuBorderBottomDark"
+              : "menuBorderBottomLight"
+            : ""
+        }`}
         style={{ backgroundColor: theme === "dark" && "#282828" }}
         onMouseEnter={menuover}
         onMouseLeave={menuout}
