@@ -1,9 +1,9 @@
-<<<<<<< HEAD
-import { Box, Tab, Tabs } from "@material-ui/core";
 import { HashLink as Link } from "react-router-hash-link";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useLocation } from "react-router";
 import "../Components/Menubar.css"
+import { ThemeContext } from "../../context";
+
 export default function TabClick({ visibleArray, isScroll }) {
   let pathname = useLocation().pathname;
   
@@ -12,29 +12,6 @@ export default function TabClick({ visibleArray, isScroll }) {
   const visibleIndex = visibleArray?.indexOf(true);
   
 
-=======
-import { Box, createStyles, makeStyles, Tab, Tabs } from "@material-ui/core";
-import React, { useContext } from "react";
-import { useLocation } from "react-router";
-import { ThemeContext } from "../../context";
-
-export default function TabClick({ isScroll }) {
-  const useStyles = makeStyles((theme) =>
-    createStyles({
-      text: {
-        color: "#787878",
-      },
-      indicator: {
-        color: "#787878",
-      },
-    })
-  );
-
-  const classes = useStyles();
-  let pathname = useLocation().pathname;
-  let hashid = useLocation().hash;
-  console.log(typeof hashid, ">>pathname");
->>>>>>> f4127537c4dbc238ad5ebc6bbe3c74b9e877866a
   const aboutustabs = ["whoweare", "heringsteam", "researchpartners"];
   const crstabs = [
     "propreplatform",

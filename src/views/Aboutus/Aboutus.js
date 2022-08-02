@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import React, { useState, useEffect, useRef } from "react";
-=======
-import React, { useState, useEffect, useContext } from "react";
->>>>>>> f4127537c4dbc238ad5ebc6bbe3c74b9e877866a
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Modal from "@material-ui/core/Modal";
@@ -26,11 +22,8 @@ import { Checkbox } from "@material-ui/core";
 import moment from "moment";
 import TabClick from "../common/TabClick";
 import ContentsTitle from "../Components/ContentsTitle";
-<<<<<<< HEAD
 import useOnScreen from "./hooks/objectObserver";
-=======
 import { ThemeContext } from "../../context";
->>>>>>> f4127537c4dbc238ad5ebc6bbe3c74b9e877866a
 
 const useStyles = makeStyles((theme) =>
   createStyles({
