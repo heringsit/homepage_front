@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
@@ -18,6 +18,7 @@ import CommonCardFrameRight from "../common/CommonCardFrameRight";
 import CommonCardFrameCenter from "../common/CommonCardFramCenter";
 import CommonCardTitle from "../common/CommonCardTitle";
 import TabClick from "../common/TabClick";
+import useOnScreen from "../Aboutus/hooks/objectObserver";
 
 export default function Research() {
   const matches = useMediaQuery("(max-width:600px)");
@@ -39,22 +40,39 @@ export default function Research() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, [isScroll]);
+
+  // Scroll Tracker
+  const scrollElem = Array.from(Array(6).keys());
+  const refs = useRef(scrollElem.map(() => React.createRef()));
+  const visibleArray = Array(6).fill(true);
+  visibleArray[0] = useOnScreen(refs.current[0]);
+  visibleArray[1] = useOnScreen(refs.current[1]);
+  visibleArray[2] = useOnScreen(refs.current[2]);
+  visibleArray[3] = useOnScreen(refs.current[3]);
+  visibleArray[4] = useOnScreen(refs.current[4]);
+  visibleArray[5] = useOnScreen(refs.current[5]);
+  console.log(visibleArray, ">>visibleArray");
+  // does not work as it breaks hooks of rules
+  // const visibleArray = scrollElem.map((key) => useOnScreen(refs.current[key]))
   return (
     <div id="content" className="content">
       <Menubar slideIndex={0} />
       <Totop />
+      {/* <div ref={refs.current[0]}></div> */}
+
       <div id="research">
         <ContentsTitle matches={matches} title={"RESEARCH"} />
         <div
           style={{
-            paddingBottom: "200px"
+            paddingBottom: "200px",
           }}
         >
-          <TabClick isScroll={isScroll} />
+          <TabClick visibleArray={visibleArray} isScroll={isScroll} />
           {/* Nutrition in Cancer Care */}
           <div
             className="SectionDivNT SectionDivUpBlank"
             id="nutritionincancercare"
+            ref={refs.current[0]}
           >
             <CommonCardTitle title={"Nutrition in Cancer Care"} />
             <CommonCardFrameLeft
@@ -71,7 +89,11 @@ export default function Research() {
             />
           </div>
           {/* Drug Adverse Event */}
-          <div className="SectionDivNT SectionDivUpBlank" id="drugadverseevent">
+          <div
+            className="SectionDivNT SectionDivUpBlank"
+            id="drugadverseevent"
+            ref={refs.current[1]}
+          >
             <CommonCardTitle title={"Drug Adverse Event"} />
             <CommonCardFrameRight
               // subTitle={"Nutrition in Cancer Care"}
@@ -90,6 +112,7 @@ export default function Research() {
           <div
             className="SectionDivNT SectionDivUpBlank"
             id="recurrenceprediction"
+            ref={refs.current[2]}
           >
             <CommonCardTitle title={"Recurrence Prediction"} />
             <CommonCardFrameCenter
@@ -101,7 +124,11 @@ export default function Research() {
             />
           </div>
           {/* Exercise */}
-          <div className="SectionDivNT SectionDivUpBlank" id="exercise">
+          <div
+            className="SectionDivNT SectionDivUpBlank"
+            id="exercise"
+            ref={refs.current[3]}
+          >
             <CommonCardTitle title={"Exercise"} />
             <CommonCardFrameCenter
               content={
@@ -115,6 +142,7 @@ export default function Research() {
           <div
             className="SectionDivNT SectionDivUpBlank"
             id="aibasedostomyconditioncheck"
+            ref={refs.current[4]}
           >
             <CommonCardTitle title={"AI-based Ostomy Condition Check"} />
             <CommonCardFrameCenter
@@ -129,6 +157,7 @@ export default function Research() {
           <div
             className="SectionDivNT SectionDivUpBlank"
             id="adherenceofhormonetherapy"
+            ref={refs.current[5]}
           >
             <CommonCardTitle title={"Adherence of Hormone Therapy"} />
 

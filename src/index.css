@@ -227,6 +227,9 @@ html {
 .tcg2 {
   color: #a0a0a0;
 }
+.tcg3 {
+  color: #787878;
+}
 .tcgreen1 {
   color: #07a990;
 }
@@ -476,7 +479,7 @@ body {
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: #a0a0a0;
+  /* color: #a0a0a0; */
 }
 .tabATag {
   width: 80%;
@@ -495,7 +498,7 @@ body {
   /* color: #000000;
   border-bottom: 2px solid #000000; <- the original */
   color: #F37F31;
-  border-bottom: 2px solid #F37F31;
+  border-bottom: 4px solid #F37F31;
 }
 .TABS_layout {
   display: flex;

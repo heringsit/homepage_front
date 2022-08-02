@@ -18,8 +18,8 @@ import i_logo_05 from "../../../assets/images/02about_investors/05coree.png";
 
 export default function PartnersAInvestors(props) {
   return (
-    <div className="addPadding" id="researchpartners">
-      <div className="SectionDiv">
+    <div className="addPadding" >
+      <div className="SectionDiv" >
         {!props.matches ? (
           <div className="titleDiv">
             <div className="textT22 FontEB">

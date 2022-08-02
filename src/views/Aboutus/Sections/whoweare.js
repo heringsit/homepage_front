@@ -4,7 +4,7 @@ import backgroundImg from "../../../assets/images/02about_who_we_are/about_banne
 export default function Whoweare(props) {
   // addPadding <-> top badding of the img in about us
   return (
-    <div className="addPadding" id="">
+    <div className="" id="" >
       <div style={{
         backgroundImage: `url(${backgroundImg})`,
         backgroundPosition: "center",

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
 import Footer from "../Components/Footer";
@@ -15,6 +15,7 @@ import CommonCardFrameLeft from "../common/CommonCardFrameLeft";
 import ProPrePlatformTitle from "./Sections/ProPrePlatformTitle";
 import CommonCardFrameCenter from "../common/CommonCardFramCenter";
 import TabClick from "../common/TabClick";
+import useOnScreen from "../Aboutus/hooks/objectObserver";
 export default function Crs() {
   const matches = useMediaQuery("(max-width:600px)");
   const [isScroll, setIsScroll] = useState(false);
@@ -31,6 +32,17 @@ export default function Crs() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, [isScroll]);
+
+  // Scroll Tracker
+  const scrollElem = Array.from(Array(4).keys());
+  const refs = useRef(scrollElem.map(() => React.createRef()));
+  const visibleArray = Array(4).fill(true);
+  visibleArray[0] = useOnScreen(refs.current[0]);
+  visibleArray[1] = useOnScreen(refs.current[1]);
+  visibleArray[2] = useOnScreen(refs.current[2]);
+  visibleArray[3] = useOnScreen(refs.current[3]);
+  console.log(visibleArray, ">>visibleArray");
+
   return (
     <div id="content" className="content">
       <Menubar slideIndex={0} />
@@ -40,12 +52,16 @@ export default function Crs() {
         <ContentsTitle matches={matches} title={"CLINICAL RESEARCH SERVICE"} />
         <div
           style={{
-            paddingBottom: "200px"
+            paddingBottom: "200px",
           }}
         >
-          <TabClick isScroll={isScroll} />
+          <TabClick visibleArray={visibleArray} isScroll={isScroll} />
           {/* PRO · PRE Platform*/}
-          <div className="SectionDivNT SectionDivUpBlank" id="propreplatform">
+          <div
+            className="SectionDivNT SectionDivUpBlank"
+            id="propreplatform"
+            ref={refs.current[0]}
+          >
             <ProPrePlatformTitle />
             <CommonCardFrameLeft
               // subTitle={"PRO · PRE Platform"}
@@ -70,7 +86,11 @@ export default function Crs() {
             ></iframe>
           </div>
           {/* Data Management */}
-          <div className="SectionDivNT SectionDivUpBlank" id="datamanagement">
+          <div
+            className="SectionDivNT SectionDivUpBlank"
+            id="datamanagement"
+            ref={refs.current[1]}
+          >
             <CommonCardTitle title={"Data Management"} />
             <CommonCardFrameCenter
               image1src={crs_image1}
@@ -80,7 +100,11 @@ We are a one-stop-shop for all data management activities from database build, t
             />
           </div>
           {/* Bio Stastics */}
-          <div className="SectionDivNT SectionDivUpBlank" id="biostatistics">
+          <div
+            className="SectionDivNT SectionDivUpBlank"
+            id="biostatistics"
+            ref={refs.current[2]}
+          >
             <CommonCardTitle title={"Bio Stastics"} />
             <CommonCardFrameCenter
               image1src={crs_image2}
@@ -93,6 +117,7 @@ We are a one-stop-shop for all data management activities from database build, t
           <div
             className="SectionDivNT SectionDivUpBlank"
             id="clinicaloperation"
+            ref={refs.current[3]}
           >
             <CommonCardTitle title={"Clinical Operation"} />
             <CommonCardFrameCenter

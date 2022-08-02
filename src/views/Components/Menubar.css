@@ -1,6 +1,7 @@
 .menuWrapDiv {
   z-index: 100;
   position: fixed;
+  /* border-bottom: 1px solid #E6E6E6; */
   background-color: transparent;
   width: 100%;
   min-height: 87px;
@@ -9,10 +10,13 @@
   align-items: center;
   justify-content: center;
 }
+.menuBorderBottom {
+  border-bottom: 1px solid #E6E6E6;
+}
 .menuWrapOver {
   background-color: #fff;
 }
-.mewnuWrap {
+.menuWrap {
   max-width: 1260px;
   min-width: 1260px;
   width: 1260px;
@@ -35,6 +39,8 @@
 .partHide {
   visibility: hidden;
   display: block;
+  /* transition-property: display, max-height;
+  transition: max-height 0.2s ease-in-out,visibility 0s linear 0.2s; */
   max-height: 0px;
 }
 .menulogo {

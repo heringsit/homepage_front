@@ -19,7 +19,7 @@ export default function Menubar(props) {
   const [isMActive, setIsMActive] = useState(false);
   const [mobileSelected, setMobileSelected] = useState(null);
   const [isScroll, setIsScroll] = useState(false);
-  console.log(pathname === "/", ">pathname");
+  // console.log(pathname === "/", ">pathname");
   const mobilemenuclick = (e, val) => {
     e.preventDefault();
     val === mobileSelected ? setMobileSelected(null) : setMobileSelected(val);
@@ -36,6 +36,7 @@ export default function Menubar(props) {
 
   const menuover = (e, key) => {
     e.preventDefault();
+    console.log("enter")
     setIsOver(true);
   };
 
@@ -466,13 +467,13 @@ export default function Menubar(props) {
   } else {
     return (
       <div
-        className={`menuWrapDiv ${isOver ? "menuWrapOver" : ""} ${
-          isScroll ? "menuWrapOver isScrolledmenu" : ""
-        }`}
+        className={`menuWrapDiv ${isOver ? "menuWrapOver " : ""} ${
+          isScroll ? "menuWrapOver menuBorderBottom " : ""
+        } ${pathname === "/aboutus/" ? "menuBorderBottom" : "" }`}
         onMouseEnter={menuover}
         onMouseLeave={menuout}
       >
-        <div className="mewnuWrap">
+        <div className="menuWrap">
           <div className="menulogo">
             <NavLink to={`${imsi}/`}>
               <div className="logoImgContainCenter">
@@ -608,7 +609,7 @@ export default function Menubar(props) {
           <div className="menuDetailRow">
             <div className="menuDetailDiv">
               <Link
-                smooth="true"
+                smooth={true}
                 to={`${imsi}/aboutus/#aboutus`}
                 onClick={menuclick}
               >
@@ -617,7 +618,7 @@ export default function Menubar(props) {
               <ul className="menuul">
                 <li>
                   <Link
-                    smooth="true"
+                    smooth={true}
                     to={`${imsi}/aboutus/#whoweare`}
                     onClick={menuclick}
                   >
@@ -626,7 +627,7 @@ export default function Menubar(props) {
                 </li>
                 <li>
                   <Link
-                    smooth="true"
+                    smooth={true}
                     to={`${imsi}/aboutus/#heringsteam`}
                     onClick={menuclick}
                   >

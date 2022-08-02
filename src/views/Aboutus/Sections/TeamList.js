@@ -61,19 +61,19 @@ export default class TeamList extends Component {
     return (
       <div
         className="addPadding "
-        id="heringsteam"
+        
         // style={{
         //   wordBreak: "keep-all"
         // }}
       >
-        <div className="SectionDiv  ">
+        <div className="SectionDiv  "  >
           <div className="titleDiv">
             <div className="textT22 FontEB">
               <span>HERINGS Team</span>
             </div>
             <hr></hr>
           </div>
-          <div className="SectionColorGray" style={{ padding: "16px 0" }}>
+          <div  className="SectionColorGray" style={{ padding: "16px 0" }}>
             <div className="TeamListWrap  ">
               <div className="textT18 Subtitle">
                 <span className="FontB">EXECUTIVE</span>
@@ -218,6 +218,7 @@ export default class TeamList extends Component {
                 })}
               </Slider>
             </div>
+            
           </div>
         </div>
       </div>
