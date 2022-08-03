@@ -646,10 +646,14 @@ body {
   background-position: center;
 }
 #research .banner_img {
-  background: url("../src/assets/images/09research/research_full.png");
+  background: url("../src/assets/images/09research/research_background.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+#research .banner_layout {
+  width: 100%;
+  height: 300px;
 }
 #crs .banner_img {
   background: url("../src/assets/images/08crs/crs_banner.png");
@@ -683,6 +687,13 @@ body {
   position: absolute;
   left: 0;
   bottom: 119px;
+}
+#research .title_default {
+  width: 100%;
+  /* text-align: center; */
+  color: white;
+  z-index: 1;
+  position: absolute;
 }
 /* media screen */
 /* media-font trans */

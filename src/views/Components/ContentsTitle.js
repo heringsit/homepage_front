@@ -27,7 +27,6 @@ export default function ContentsTitle(props) {
         </div>
       ) : path === "/research/" ? (
         <div className="relative banner_layout">
-          <div className="banner_gradient"></div>
           <div className="banner_default banner_img ">
             <div className="textF53 FontR tcb title_default">{props.title}</div>
           </div>

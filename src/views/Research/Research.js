@@ -69,13 +69,14 @@ export default function Research() {
       {/* <div ref={refs.current[0]}></div> */}
 
       <div id="research">
+        <TabClick visibleArray={visibleArray} isScroll={isScroll} />
         <ContentsTitle matches={matches} title={"RESEARCH"} />
         <div
           style={{
             paddingBottom: "200px",
           }}
         >
-          <TabClick visibleArray={visibleArray} isScroll={isScroll} />
+          
           {/* Nutrition in Cancer Care */}
           <div
             className="SectionDivNT SectionDivUpBlank"
