@@ -1,3 +1,67 @@
+/*  SERVICE => 1260 < Screen  */
+
+/* explanation text margins: 
+  mr - margin reset
+  mb - margin bottom 
+*/
+.mr {
+  margin: 0;
+}
+.mbsm {
+  margin-bottom: 4px;
+}
+.mb {
+  margin-bottom: 8px;
+}
+.mblg {
+  margin-bottom: 12px;
+}
+.mbxl {
+  margin-bottom: 16px;
+}
+
+/* flex:
+  flex-wrap: default flex wrap
+  flex-col: flex (direction -> column)
+  flex-row: flex (direction -> row)
+  gap#: the gap length 
+*/
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.gap240 {
+  gap: 240px;
+}
+.gap56 {
+  gap: 56px;
+}
+.gap40 {
+  gap: 40px;
+}
+.gap24 {
+  gap: 24px;
+}
+.gap16 {
+  gap: 16px;
+}
+.gap4 {
+  gap: 4px;
+}
+
+/* SERVICE Container */
+.servicecontainer {
+  position: relative;
+  padding-bottom: 500px;
+}
 /* SERVICE TITLE */
 .servicetitle {
   position: relative;
@@ -9,8 +73,10 @@
 .servicecontents {
   position: relative;
   top: 120px;
-  width: 1280px;
-  display: inline-block;
+  max-width: 1280px;
+  padding: 0px 36px 0px 36px;
+  margin: auto;
+  text-align: center;
 }
 
 .introtxt {
@@ -25,12 +91,9 @@
 }
 
 .flatformnum {
-  display: flex;
-  flex-direction: column;
   align-items: flex-start;
   padding: 4px 12px;
   margin: 0 16px 0 0;
-  gap: 4px;
   width: 100px;
   height: 28px;
   background: #f37f31;
@@ -39,18 +102,21 @@
 
 .explanation {
   text-align: start;
+  line-height: 146%;
+}
+.lineheight160 {
+  line-height: 160%;
 }
 
 .application {
-  display: flex;
   align-items: center;
+  gap: 120px;
 }
 
 /* HEALIARY */
 .healiary {
-  align-items: flex-start;
   margin-top: 100px;
-  margin-bottom: 250px;
+  margin-bottom: 240px;
 }
 
 #healiarymp4 {
@@ -60,47 +126,44 @@
   border-radius: 24px;
 }
 
-.healiary .application {
-  margin-top: 100px;
-  height: 500px;
-}
-.healiary .application .explanation {
-  width: 600px;
-  margin: 0 0 8px 150px;
-}
 
-@media (max-width: 1080px) {
-  #healiarymp4 {
-    padding: 180px 0 80px 0;
-    width: 100%;
-    height: 480px;
-  }
-}
-
-/* OSTOMY */
-.ostomy .application .explanation {
-  width: 600px;
-  margin: 0 150px 8px 0;
-}
-
-.ostomy .application {
-  margin-top: 25px;
-  height: 500px;
-}
-
-@media (max-width: 1260px) {
+/*  SERVICE => 1024 < Screen < 1260 */
+@media screen and (max-width: 1260px) {
   .mobile_servicecontents {
     position: relative;
     top: 120px;
     width: 700px;
     display: inline-block;
   }
-
   #healiarymp4 {
     
   }
 
 }
+
+/*  SERVICE => 768 < Screen < 1024 */
+@media screen and (max-width: 1024px) {
+
+
+  /* previously 1080px */
+  #healiarymp4 {
+    padding: 180px 0 80px 0;
+    width: 100%;
+    height: 480px;
+  }
+
+}
+
+/*  SERVICE => 600 < Screen < 768 */
+@media screen and (max-width: 768px) {
+  
+}
+
+/*  SERVICE => 320 < Screen < 600 */
+@media (min-width: 320px) and (max-width: 600px) {
+  
+}
+
 
 /* .platformContentBackLine {
   background-color: #f8f8f8;

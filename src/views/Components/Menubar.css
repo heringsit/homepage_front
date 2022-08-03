@@ -41,10 +41,8 @@
 }
 .partHide {
   visibility: hidden;
-  display: block;
-  /* transition-property: display, max-height;
-  transition: max-height 0.2s ease-in-out,visibility 0s linear 0.2s; */
   max-height: 0px;
+  transition: max-height 0.5s ease-in-out, visibility 0s linear 0s;
 }
 .menulogo {
   display: flex;

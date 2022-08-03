@@ -5,8 +5,8 @@ import Totop from "../Components/Totop";
 import "./Main.css";
 import "../../index.css";
 import mainimage from "../../assets/images/mainimage.png";
-// import project1_7 from "../../assets/videos/project1_7.mp4";
-import project1_7 from "../../assets/videos/project1_7_conv.mpg";
+import project1_7 from "../../assets/videos/project1_7.mp4";
+// import project1_7 from "../../assets/videos/project1_7_conv.mpg";
 export default function Main() {
   return (
     <div
@@ -25,11 +25,13 @@ export default function Main() {
           muted={true}
           loop={true}
           autoPlay={true}
-          // src={project1_7}
+          src={project1_7}
           alt="project1_7"
-        >
-          <source src={project1_7} type="video/mp4" />
-        </video>
+          type="video/mp4"
+        />
+          {/* <source src={project1_7} type="video/mp4" />
+          Your Browser does not support the video tag.
+        </video> */}
         <div className="mainimagelayout ">
           <img
             src={mainimage}
