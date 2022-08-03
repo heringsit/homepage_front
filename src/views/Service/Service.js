@@ -41,7 +41,8 @@ export default function Service({ match }) {
       </div>
 
       {/* CONTENTS */}
-      <div className="servicecontents flex-col">
+      <div className="contentsmargin">
+      <div className="servicecontents contentspadding flex-col">
         <p
           className={`introtxt textF24 FontEB ${
             theme === "light" ? "tcb" : "tcw"
@@ -78,8 +79,8 @@ export default function Service({ match }) {
             allowFullScreen
           ></iframe>
 
-          <div className="application flex-row">
-            <img src={healiary_application} alt="healiary application" />
+          <div className="application flex-row gap120">
+            <img className="image-fit" src={healiary_application} alt="healiary application" />
             <div className="explanation lineheight160 flex-col gap56 mr">
               <div> {/* mr -> margin reset; mb -> margin bottom */}
                 <p className="tco2 textT18 FontB mr mbsm">Application</p>
@@ -103,7 +104,7 @@ export default function Service({ match }) {
 
         {/* OSTOMY */}
         <div className="ostomy flex-col gap24">
-          <div className="explanation flex-col gap16">
+          <div className="flex-col gap16">
             <div className="flatformtitle">
               <div className="flatformnum flex-col gap4">
                 <span className="tcw">Platform 2</span>
@@ -112,12 +113,13 @@ export default function Service({ match }) {
                 TELE-HEALTHCARE SERVICE PLATFORM
               </span>
             </div>
-            <p className="textT18 mr">
+            <p className="textT18 explanation mr">
               Gateway service platform between providers and patients for remote
               and home care management.​
             </p>
           </div>
-          <div className="application flex-row gap40">
+          <div className="application flex-row-reverse gap120">
+            <img className="image-fit" src={ostomy_application} alt="ostomy application" />
             <div className="explanation lineheight160 flex-col gap56">
               <div>
                 <p className="tco2 textT18 FontB mr mbsm">Application</p>
@@ -136,9 +138,9 @@ export default function Service({ match }) {
                 </p>
               </div>
             </div>
-            <img src={ostomy_application} alt="ostomy application" />
           </div>
         </div>
+      </div>
       </div>
       <Footer />
     </div>
