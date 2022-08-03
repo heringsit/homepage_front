@@ -44,11 +44,7 @@ export default function Service({ match }) {
 
         {/* CONTENTS */}
         <div className="mobile_servicecontents">
-          <p
-            className={`introtxt textF20 FontEB ${
-              theme === "light" ? "tcb" : "tcw"
-            }`}
-          >
+          <p className="introtxt textF20 FontEB">
             HERINGS’ Two Service platforms.
           </p>
           <hr className="vertical_line"></hr>
@@ -107,11 +103,7 @@ export default function Service({ match }) {
                 TELE-HEALTHCARE SERVICE PLATFORM
               </span>
             </div>
-            <p
-              className={`textT18 explanation ${
-                theme === "light" ? "tcb" : "tcw"
-              }`}
-            >
+            <p className="textT18 explanation">
               Gateway service platform between providers and patients for remote
               and home care management.​
             </p>
@@ -259,7 +251,7 @@ export default function Service({ match }) {
                 TELE-HEALTHCARE SERVICE PLATFORM
               </span>
             </div>
-            <p className="textT18">
+            <p className="explanation textT18">
               Gateway service platform between providers and patients for remote
               and home care management.​
             </p>
