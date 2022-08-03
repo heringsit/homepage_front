@@ -11,16 +11,15 @@ import { ReactComponent as HeringsLogo } from "../../assets/images/etc/heringsLO
 import { ReactComponent as HeringsLogoDark } from "../../assets/images/etc/heringsLOGO_dark.svg";
 import "./Menubar.css";
 import { Button } from "@material-ui/core";
-import DarkModeOnIcon from "../../assets/images/etc/icon_dark_on.svg";
-import DarkModeOffIcon from "../../assets/images/etc/icon_dark_off.svg";
 import { ThemeContext } from "../../context";
+import DarkToggle from "./DarkToggle";
 
 export default function Menubar(props) {
   const pathname = useLocation().pathname;
   const imsi = process.env.PUBLIC_URL;
   smoothscroll.polyfill();
   const matches = useMediaQuery("(max-width:1260px)");
-  const mobile = useMediaQuery("(max-width:425px)");
+  const mobile = useMediaQuery("(max-width:600px)");
   const [isOver, setIsOver] = useState(false);
   const [isMActive, setIsMActive] = useState(false);
   const [mobileSelected, setMobileSelected] = useState(null);
@@ -63,6 +62,64 @@ export default function Menubar(props) {
     return () => window.removeEventListener("scroll", onScroll);
   }, [isScroll]);
 
+  // 메뉴 텍스트
+  const ABOUTUS = {
+    title: ["WHO WE ARE", "HERINGS TEAM", "PARTNERS & INVESTORS"],
+    link: [
+      `${imsi}/aboutus/#whoweare`,
+      `${imsi}/aboutus/#heringsteam`,
+      `${imsi}/aboutus/#researchpartners`,
+    ],
+  };
+  const SERVICE = {
+    title: [
+      "DIGITAL HEALTHCARE SERVICE PLATFORM",
+      "TELE-HEALTHCARE SERVICE PLATFORM",
+    ],
+    // service link 수정하기
+    link: [
+      `${imsi}/service/#digitalcareservice`,
+      `${imsi}/service/#telehealthcareservice`,
+    ],
+  };
+  const RESEARCH = {
+    title: [
+      "NUTRITION",
+      "SYMPTOM MANAGEMENT",
+      "EXERCISE",
+      "RISK PREDICTION",
+      "DRUG ADHERENCE",
+      "AI ALGORITHMS",
+      "DRUG ADVERSE EVENTS",
+    ],
+    // link 수정해야함
+    link: [
+      `${imsi}/research/#nutritionincancercare`,
+      `${imsi}/research/#drugadverseevent`,
+      `${imsi}/research/#recurrenceprediction`,
+      `${imsi}/research/#exercise`,
+      `${imsi}/research/#aibasedostomyconditioncheck`,
+      `${imsi}/research/#adherenceofhormonetherapy`,
+      `${imsi}/research/#adherenceofhormonetherapy`,
+    ],
+  };
+  const CTS = {
+    title: ["CLINICAL TRIAL DESIGN", "DATA MANAGEMENT", "STATISTICAL ANALYSIS"],
+    link: [
+      `${imsi}/crs/#propreplatform`,
+      `${imsi}/crs/#datamanagement`,
+      `${imsi}/crs/#biostatistics`,
+    ],
+  };
+  const NEWSIR = {
+    title: ["NEWS RELEASE", "IR INFORMATION"],
+    link: [`${imsi}/news/#newsrelease`, `${imsi}/news/#irinformation`],
+  };
+  const CONTACTUS = {
+    title: ["CAREER", "CONTACT US"],
+    link: [`${imsi}/contactus/#career`, `${imsi}/contactus/#contact`],
+  };
+
   if (matches) {
     return (
       <div className="mobileMenuWrapDiv">
@@ -87,48 +144,31 @@ export default function Menubar(props) {
                 }
               ></div>
             </NavLink>
-            {/* Dark Mode Toggle Mobile */}
-            <div className="modediv">
-              <Button
-                className="modebutton"
-                id="modebutton"
+
+            <div className="buttons">
+              {/* Dark Mode Toggle */}
+              <DarkToggle
                 onClick={changeMode}
-              >
-                {theme === "dark" ? (
-                  <label htmlFor="modebutton" className="lighttoggle">
-                    <img
-                      src={DarkModeOffIcon}
-                      alt="dark mode icon"
-                      className="lighticon"
-                    />
-                    {!mobile && (
-                      <span className="lightmode">LIGHT MODE ON</span>
-                    )}
-                  </label>
-                ) : (
-                  <label htmlFor="modebutton" className="darktoggle">
-                    <img
-                      src={DarkModeOnIcon}
-                      alt="dark mode icon"
-                      className="darkicon"
-                    />
-                    {!mobile && <span className="darkmode">DARK MODE ON</span>}
-                  </label>
-                )}
-              </Button>
-            </div>
-            <div className="mobileBtn">
-              <HamburgerSqueeze
-                className="mobileBtnHambuger"
-                isActive={isMActive}
-                toggleButton={menuclick}
-                buttonWidth={25}
-                buttonColor={theme === "light" ? "#FFF" : "#282828"}
-                barColor={theme === "light" ? "black" : "white"}
+                className="modediv"
+                mobile={mobile}
               />
+
+              <div className="mobileBtn">
+                <HamburgerSqueeze
+                  className="mobileBtnHambuger"
+                  isActive={isMActive}
+                  toggleButton={menuclick}
+                  buttonWidth={25}
+                  buttonColor={theme === "light" ? "#FFF" : "#282828"}
+                  barColor={theme === "light" ? "black" : "white"}
+                />
+              </div>
             </div>
           </div>
+
+          {/* MOBILE MENU */}
           <div className={`mobileMenus ${isMActive ? "slider" : "slideroff"}`}>
+            {/* ABOUT US */}
             <div className="mobileMenudiv">
               <Link
                 smooth="true"
@@ -139,10 +179,10 @@ export default function Menubar(props) {
               >
                 <div className="mobileMenuRow">
                   <span
-                    className={`FontEB textF22 menuText ${
+                    className={`FontEB textF22  menuText ${
                       mobileSelected === 0 ? "mobilemenusactive" : ""
                     }
-                       ${theme === "light" ? "tcb" : "tcw"} `}
+                       ${theme === "light" ? "tcb" : "tcw"}`}
                   >
                     ABOUT US
                   </span>
@@ -162,54 +202,26 @@ export default function Menubar(props) {
                     : "mobilemenuslideroff"
                 }`}
               >
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/aboutus/#whoweare`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`menuText FontB textF18 ${
-                        theme === "light" ? "tcg" : "tcw"
-                      }`}
+                {ABOUTUS.title.map((about, idx) => (
+                  <li>
+                    <Link
+                      smooth="true"
+                      to={ABOUTUS.link[idx]}
+                      onClick={menuclick}
                     >
-                      Who We Are
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/aboutus/#heringsteam`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`menuText FontB textF18 ${
-                        theme === "light" ? "tcg" : "tcw"
-                      }`}
-                    >
-                      HERINGS Team
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/aboutus/#researchpartners`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`menuText FontB textF18 ${
-                        theme === "light" ? "tcg" : "tcw"
-                      }`}
-                    >
-                      PARTNERS & INVESTORS
-                    </span>
-                  </Link>
-                </li>
+                      <span
+                        className={`menuText FontB textF18 ${
+                          theme === "light" ? "tcg" : "tcw"
+                        }`}
+                      >
+                        {about}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
-
+            {/* SERVICE */}
             <div className="mobileMenudiv">
               <Link
                 smooth="true"
@@ -242,23 +254,26 @@ export default function Menubar(props) {
                     : "mobilemenuslideroff"
                 }`}
               >
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/service/#digitalcareservice`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`menuText FontB textF18 ${
-                        theme === "light" ? "tcg" : "tcw"
-                      }`}
+                {SERVICE.title.map((service, idx) => (
+                  <li>
+                    <Link
+                      smooth="true"
+                      to={SERVICE.link[idx]}
+                      onClick={menuclick}
                     >
-                      Digital Care Service
-                    </span>
-                  </Link>
-                </li>
+                      <span
+                        className={`menuText FontB textF18 ${
+                          theme === "light" ? "tcg" : "tcw"
+                        }`}
+                      >
+                        {service}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
+            {/* RESEARCH */}
             <div className="mobileMenudiv">
               <Link
                 smooth="true"
@@ -291,99 +306,26 @@ export default function Menubar(props) {
                     : "mobilemenuslideroff"
                 }`}
               >
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/research/#nutritionincancercare`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`menuText FontB textF18 ${
-                        theme === "light" ? "tcg" : "tcw"
-                      }`}
+                {RESEARCH.title.map((research, idx) => (
+                  <li>
+                    <Link
+                      smooth="true"
+                      to={RESEARCH.link[idx]}
+                      onClick={menuclick}
                     >
-                      Nutrition in Cancer Care
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/research/#drugadverseevent`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`menuText FontB textF18 ${
-                        theme === "light" ? "tcg" : "tcw"
-                      }`}
-                    >
-                      Drug Adverse Event
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/research/#recurrenceprediction`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`menuText FontB textF18 ${
-                        theme === "light" ? "tcg" : "tcw"
-                      }`}
-                    >
-                      Recurrence Prediction
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/research/#exercise`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`menuText FontB textF18 ${
-                        theme === "light" ? "tcg" : "tcw"
-                      }`}
-                    >
-                      Excercise
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/research/#aibasedostomyconditioncheck`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`menuText FontB textF18 ${
-                        theme === "light" ? "tcg" : "tcw"
-                      }`}
-                    >
-                      AI Based Ostomy Condition Check
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/research/#adherenceofhormonetherapy`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`menuText FontB textF18 ${
-                        theme === "light" ? "tcg" : "tcw"
-                      }`}
-                    >
-                      Adherence of Hormone Therapy
-                    </span>
-                  </Link>
-                </li>
+                      <span
+                        className={`menuText FontB textF18 ${
+                          theme === "light" ? "tcg" : "tcw"
+                        }`}
+                      >
+                        {research}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
-
+            {/* CTS */}
             <div className="mobileMenudiv">
               <Link
                 smooth="true"
@@ -398,7 +340,7 @@ export default function Menubar(props) {
                       mobileSelected === 3 ? "mobilemenusactive" : ""
                     } ${theme === "light" ? "tcb" : "tcw"}`}
                   >
-                    CRS
+                    CTS
                   </span>
                   {mobileSelected === 3 ? (
                     <Icon style={{ color: "#E78510" }}>expand_less</Icon>
@@ -416,69 +358,23 @@ export default function Menubar(props) {
                     : "mobilemenuslideroff"
                 }`}
               >
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/crs/#propreplatform`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`menuText FontB textF18 ${
-                        theme === "light" ? "tcg" : "tcw"
-                      }`}
-                    >
-                      PRO · PRE Platform
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/crs/#datamanagement`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`menuText FontB textF18 ${
-                        theme === "light" ? "tcg" : "tcw"
-                      }`}
-                    >
-                      Data Management
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/crs/#biostatistics`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`menuText FontB textF18 ${
-                        theme === "light" ? "tcg" : "tcw"
-                      }`}
-                    >
-                      Bio Statistics
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/crs/#clinicaloperation`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`menuText FontB textF18 ${
-                        theme === "light" ? "tcg" : "tcw"
-                      }`}
-                    >
-                      Clinical Operation
-                    </span>
-                  </Link>
-                </li>
+                {CTS.title.map((cts, idx) => (
+                  <li>
+                    <Link smooth="true" to={CTS.link[idx]} onClick={menuclick}>
+                      <span
+                        className={`menuText FontB textF18 ${
+                          theme === "light" ? "tcg" : "tcw"
+                        }`}
+                      >
+                        {cts}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
+            {/* NEWS & IR */}
             <div className="mobileMenudiv">
               <Link
                 smooth="true"
@@ -511,39 +407,27 @@ export default function Menubar(props) {
                     : "mobilemenuslideroff"
                 }`}
               >
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/news/#newsrelease`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`menuText FontB textF18 ${
-                        theme === "light" ? "tcg" : "tcw"
-                      }`}
+                {NEWSIR.title.map((news, idx) => (
+                  <li>
+                    <Link
+                      smooth="true"
+                      to={NEWSIR.link[idx]}
+                      onClick={menuclick}
                     >
-                      NEWS RELEASE
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/news/#irinformation`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`menuText FontB textF18 ${
-                        theme === "light" ? "tcg" : "tcw"
-                      }`}
-                    >
-                      IR INFORMATION
-                    </span>
-                  </Link>
-                </li>
+                      <span
+                        className={`menuText FontB textF18 ${
+                          theme === "light" ? "tcg" : "tcw"
+                        }`}
+                      >
+                        {news}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
+            {/* CONTACT US */}
             <div className="mobileMenudiv">
               <Link
                 smooth="true"
@@ -576,36 +460,23 @@ export default function Menubar(props) {
                     : "mobilemenuslideroff"
                 }`}
               >
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/contactus/#career`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`menuText FontB textF18 ${
-                        theme === "light" ? "tcg" : "tcw"
-                      }`}
+                {CONTACTUS.title.map((contact, idx) => (
+                  <li>
+                    <Link
+                      smooth="true"
+                      to={CONTACTUS.link[idx]}
+                      onClick={menuclick}
                     >
-                      CAREER
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/contactus/#contact`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`menuText FontB textF18 ${
-                        theme === "light" ? "tcg" : "tcw"
-                      }`}
-                    >
-                      CONTACT
-                    </span>
-                  </Link>
-                </li>
+                      <span
+                        className={`menuText FontB textF18 ${
+                          theme === "light" ? "tcg" : "tcw"
+                        }`}
+                      >
+                        {contact}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -629,7 +500,10 @@ export default function Menubar(props) {
               : "menuBorderBottomLight"
             : ""
         }`}
-        style={{ backgroundColor: theme === "dark" && "#282828" }}
+        style={{
+          backgroundColor: theme === "dark" && "#282828",
+          color: theme === "dark" && "white",
+        }}
         onMouseEnter={menuover}
         onMouseLeave={menuout}
       >
@@ -669,7 +543,7 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`textF18 FontR ${
+                  className={`menuText textF18 FontR ${
                     props.slideIndex === 0
                       ? theme === "light"
                         ? "tcb"
@@ -688,7 +562,7 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`textF18 FontR ${
+                  className={`menuText textF18 FontR ${
                     props.slideIndex === 0
                       ? theme === "light"
                         ? "tcb"
@@ -707,7 +581,7 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`textF18 FontR ${
+                  className={`menuText textF18 FontR ${
                     props.slideIndex === 0
                       ? theme === "light"
                         ? "tcb"
@@ -722,7 +596,7 @@ export default function Menubar(props) {
             <div className="menudiv">
               <Link smooth="true" to={`${imsi}/crs/#crs`} onClick={menuclick}>
                 <span
-                  className={`textF18 FontR ${
+                  className={`menuText textF18 FontR ${
                     props.slideIndex === 0
                       ? theme === "light"
                         ? "tcb"
@@ -730,14 +604,14 @@ export default function Menubar(props) {
                       : "tcb"
                   }`}
                 >
-                  CRS
+                  CTS
                 </span>
               </Link>
             </div>
             <div className="menudiv">
               <Link smooth="true" to={`${imsi}/news/#news`} onClick={menuclick}>
                 <span
-                  className={`textF18 FontR ${
+                  className={`menuText textF18 FontR ${
                     props.slideIndex === 0
                       ? theme === "light"
                         ? "tcb"
@@ -757,7 +631,7 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`textF18 FontR ${
+                  className={`menuText textF18 FontR ${
                     props.slideIndex === 0
                       ? theme === "light"
                         ? "tcb"
@@ -770,39 +644,25 @@ export default function Menubar(props) {
               </Link>
             </div>
           </div>
+
           {/* Dark Mode Toggle */}
-          <div className="menudiv">
-            <Button className="modebutton" id="modebutton" onClick={changeMode}>
-              {theme === "dark" ? (
-                <label htmlFor="modebutton" className="lighttoggle">
-                  <img
-                    src={DarkModeOffIcon}
-                    alt="dark mode icon"
-                    className="lighticon"
-                  />
-                  <span className="lightmode">LIGHT MODE ON</span>
-                </label>
-              ) : (
-                <label htmlFor="modebutton" className="darktoggle">
-                  <img
-                    src={DarkModeOnIcon}
-                    alt="dark mode icon"
-                    className="darkicon"
-                  />
-                  <span className="darkmode">DARK MODE ON</span>
-                </label>
-              )}
-            </Button>
-          </div>
+          <DarkToggle
+            onClick={changeMode}
+            className="menudiv"
+            mobile={mobile}
+          />
         </div>
 
-        {/* ABOUT US 하단 메뉴 */}
+        {/* 소메뉴 */}
         <div
           className={`${theme === "light" ? "menuDetail" : "menuDetailDark"} ${
             isOver ? "part" : "partHide"
           }`}
-          style={{ backgroundColor: theme === "dark" && "#282828" }}
+          style={{
+            backgroundColor: theme === "dark" && "#282828",
+          }}
         >
+          {/* ABOUT US 하단 메뉴 */}
           <div className="menuDetailRow">
             <div
               className={`${
@@ -815,51 +675,31 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`textF18 ${theme === "light" ? "tcb" : "tcw"}`}
+                  className={`menuText textF18 ${
+                    theme === "light" ? "tcb" : "tcw"
+                  }`}
                 >
                   ABOUT US
                 </span>
               </Link>
               <ul className="menuul">
-                <li>
-                  <Link
-                    smooth={true}
-                    to={`${imsi}/aboutus/#whoweare`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                {ABOUTUS.title.map((aboutus, idx) => (
+                  <li>
+                    <Link
+                      smooth={true}
+                      to={ABOUTUS.link[idx]}
+                      onClick={menuclick}
                     >
-                      Who We Are
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth={true}
-                    to={`${imsi}/aboutus/#heringsteam`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
-                    >
-                      HERINGS Team
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/aboutus/#researchpartners`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
-                    >
-                      Partners &amp; Investors
-                    </span>
-                  </Link>
-                </li>
+                      <span
+                        className={`menuText textF15 ${
+                          theme === "light" ? "tcg" : "tcw"
+                        }`}
+                      >
+                        {aboutus}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -875,25 +715,31 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`textF18 ${theme === "light" ? "tcb" : "tcw"}`}
+                  className={`menuText textF18 ${
+                    theme === "light" ? "tcb" : "tcw"
+                  }`}
                 >
                   SERVICE
                 </span>
               </Link>
               <ul className="menuul">
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/service/#digitalcareservice`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                {SERVICE.title.map((service, idx) => (
+                  <li>
+                    <Link
+                      smooth="true"
+                      to={SERVICE.link[idx]}
+                      onClick={menuclick}
                     >
-                      Digital Care Service
-                    </span>
-                  </Link>
-                </li>
+                      <span
+                        className={`menuText textF15 ${
+                          theme === "light" ? "tcg" : "tcw"
+                        }`}
+                      >
+                        {service}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -909,106 +755,34 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`textF18 ${theme === "light" ? "tcb" : "tcw"}`}
+                  className={`menuText textF18 ${
+                    theme === "light" ? "tcb" : "tcw"
+                  }`}
                 >
                   RESEARCH
                 </span>
               </Link>
               <ul className="menuul">
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/research/#nutritionincancercare`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                {RESEARCH.title.map((research, idx) => (
+                  <li>
+                    <Link
+                      smooth="true"
+                      to={RESEARCH.link[idx]}
+                      onClick={menuclick}
                     >
-                      Nutrition in Cancer Care
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/research/#drugadverseevent`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
-                    >
-                      Drug Adverse Event
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/research/#recurrenceprediction`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
-                    >
-                      Recurrence Prediction
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/research/#exercise`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
-                    >
-                      Excercise
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/research/#aibasedostomyconditioncheck`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
-                      style={{ display: "block" }}
-                    >
-                      AI-Based Ostomy
-                    </span>
-                    <span
-                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
-                      style={{ display: "block" }}
-                    >
-                      Condition Check
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/research/#adherenceofhormonetherapy`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
-                      style={{ display: "block" }}
-                    >
-                      Adherence of Hormone
-                    </span>
-                    <span
-                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
-                      style={{ display: "block" }}
-                    >
-                      Therapy
-                    </span>
-                  </Link>
-                </li>
+                      <span
+                        className={`menuText textF15 ${
+                          theme === "light" ? "tcg" : "tcw"
+                        }`}
+                      >
+                        {research}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
+
             {/* CRS 하단 메뉴 */}
             <div
               className={`${
@@ -1017,64 +791,30 @@ export default function Menubar(props) {
             >
               <Link smooth="true" to={`${imsi}/crs/#crs`} onClick={menuclick}>
                 <span
-                  className={`textF18 ${theme === "light" ? "tcb" : "tcw"}`}
+                  className={`menuText textF18 ${
+                    theme === "light" ? "tcb" : "tcw"
+                  }`}
                 >
-                  CRS
+                  CTS
                 </span>
               </Link>
               <ul className="menuul">
-                <Link
-                  smooth="true"
-                  to={`${imsi}/crs/#propreplatform`}
-                  onClick={menuclick}
-                >
-                  <span
-                    className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
-                  >
-                    PRO · PRE Platform
-                  </span>
-                </Link>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/crs/#datamanagement`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
-                    >
-                      Data Management
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/crs/#biostatistics`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
-                    >
-                      Bio-Statistics
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/crs/#clinicaloperation`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
-                    >
-                      Clinical Operation
-                    </span>
-                  </Link>
-                </li>
+                {CTS.title.map((cts, idx) => (
+                  <li>
+                    <Link smooth="true" to={CTS.link[idx]} onClick={menuclick}>
+                      <span
+                        className={`menuText textF15 ${
+                          theme === "light" ? "tcg" : "tcw"
+                        }`}
+                      >
+                        {cts}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
+
             {/* NEWS 하단 메뉴 */}
             <div
               className={`${
@@ -1083,36 +823,31 @@ export default function Menubar(props) {
             >
               <Link smooth="true" to={`${imsi}/news/#news`} onClick={menuclick}>
                 <span
-                  className={`textF18 ${theme === "light" ? "tcb" : "tcw"}`}
+                  className={`menuText textF18 ${
+                    theme === "light" ? "tcb" : "tcw"
+                  }`}
                 >
                   NEWS & IR
                 </span>
               </Link>
               <ul className="menuul">
-                <Link
-                  smooth="true"
-                  to={`${imsi}/news/#newsrelease`}
-                  onClick={menuclick}
-                >
-                  <span
-                    className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
-                  >
-                    News Release
-                  </span>
-                </Link>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/news/#irinformation`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                {NEWSIR.title.map((news, idx) => (
+                  <li>
+                    <Link
+                      smooth="true"
+                      to={NEWSIR.link[idx]}
+                      onClick={menuclick}
                     >
-                      IR Information
-                    </span>
-                  </Link>
-                </li>
+                      <span
+                        className={`menuText textF15 ${
+                          theme === "light" ? "tcg" : "tcw"
+                        }`}
+                      >
+                        {news}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -1128,38 +863,31 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`textF18 ${theme === "light" ? "tcb" : "tcw"}`}
+                  className={`menuText textF18 ${
+                    theme === "light" ? "tcb" : "tcw"
+                  }`}
                 >
                   CONTACT US
                 </span>
               </Link>
               <ul className="menuul">
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/contactus/#career`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
+                {CONTACTUS.title.map((contact, idx) => (
+                  <li>
+                    <Link
+                      smooth="true"
+                      to={CONTACTUS.link[idx]}
+                      onClick={menuclick}
                     >
-                      Career
-                    </span>
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    smooth="true"
-                    to={`${imsi}/contactus/#contact`}
-                    onClick={menuclick}
-                  >
-                    <span
-                      className={`textF15 ${theme === "light" ? "tcg" : "tcw"}`}
-                    >
-                      Contact{" "}
-                    </span>
-                  </Link>
-                </li>
+                      <span
+                        className={`menuText textF15 ${
+                          theme === "light" ? "tcg" : "tcw"
+                        }`}
+                      >
+                        {contact}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

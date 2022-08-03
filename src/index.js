@@ -25,9 +25,10 @@ const App = () => {
   const changeTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
+  
   return (
     <BrowserRouter>
-      <ThemeContext.Provider value={{theme, changeTheme}}>
+      <ThemeContext.Provider value={{ theme, changeTheme }}>
         <Switch>
           <Route exact path={`/`} component={Main} />
           <Route path={`/aboutus/:submenu`} component={Aboutus} />

@@ -80,6 +80,14 @@
   height: 300px;
 }
 
+@media screen and (max-width: 1260px) {
+  .servicetitle {
+    position: relative;
+    top: 67px;
+    height: 300px;
+  }
+}
+
 /* SERVICE CONTENTS */
 .servicecontents {
   position: relative;

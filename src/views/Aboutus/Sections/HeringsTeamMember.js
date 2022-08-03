@@ -89,6 +89,15 @@ export const Research_Leadership = [
       "Hankwang Yang is the Chief of the Gastric Cancer Center Department and Gastrointestinal Surgery Department of Seoul National University Hospital.\nWhile being a professor of Gastrointestinal surgery at Seoul National University Hospital, MD Ph.D. Yang also has become editor of the Journal of Gastric Cancer since 2009.\n\nHe holds an MD and a Ph.D from Seoul National University College of Medicine."
   },
   {
+    name: "Myungju Ahn MD, Ph.D",
+    // jobs: "MD Ph.D",
+    // positions: "Collaborating Leader",
+    background: icon2_5,
+    modalimg: icon2_5,
+    detail:
+      "Myungju Ahn is Professor of Hemato-Oncology at the Department of Medicine, Sungkyunkwan University School of Medicine, Seoul. She is a member of numerous research associations and societies, including the ISLAC, AACR, and ASCO and is currently Chief of the Executive Committee and Chairperson of Lung Cancer Disease Committee of the KCSG. She is the current president of the KSMO and was chairperson of the multidisciplinary Immuno-oncology Study Group (2017–2018). She is a board member for the KCA, KSMO and KALC, and is on the editorial board of Journal of Thoracic Oncology. Prof Ahn received her medical and doctoral degrees from Hanyang University College of Medicine, Seoul and completed her residency training at Hanyang University Hospital. "
+  },
+  {
     name: "Charmgil Hong Ph.D",
     // jobs: "Ph.D",
     // positions: "Collaborating Leader",
@@ -97,15 +106,6 @@ export const Research_Leadership = [
     detail:
       "Charmgil Hong is an assistant professor in the School of Computer Science and Electrical Engineering at Handong Global University.\nPrior to his professor career, he was a part of a research team with the University of Pittsburgh and UPMC, involved in the development of technologies and systems for analyzing electronic health records, predicting diagnostics, and detecting potential medical mistakes.\nHis main interests of research focus on Machine Learning, Artificial Intelligence, Outlier Detection, and their applications.\nHe holds a Ph.D in computer science from the University of Pittsburgh."
   },
-  {
-    name: "Myungju Ahn MD, Ph.D",
-    // jobs: "MD Ph.D",
-    // positions: "Collaborating Leader",
-    background: icon2_5,
-    modalimg: icon2_5,
-    detail:
-      "Myungju Ahn is Professor of Hemato-Oncology at the Department of Medicine, Sungkyunkwan University School of Medicine, Seoul. She is a member of numerous research associations and societies, including the ISLAC, AACR, and ASCO and is currently Chief of the Executive Committee and Chairperson of Lung Cancer Disease Committee of the KCSG. She is the current president of the KSMO and was chairperson of the multidisciplinary Immuno-oncology Study Group (2017–2018). She is a board member for the KCA, KSMO and KALC, and is on the editorial board of Journal of Thoracic Oncology. Prof Ahn received her medical and doctoral degrees from Hanyang University College of Medicine, Seoul and completed her residency training at Hanyang University Hospital. "
-  }
   // ,
   // {
   //   name: "Jae-Hoon Kim",
