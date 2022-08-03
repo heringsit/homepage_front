@@ -395,6 +395,17 @@ body {
   height: 100%;
   padding: 100px 10%;
 }
+
+@media screen and (max-width: 600px) {
+  .SectionDiv {
+    position: relative;
+    top: 67px;
+    width: 100%;
+    height: 100%;
+    padding: 120px 10%;
+  }
+}
+
 .SectionDivNoBottom {
   padding: 100px 10% 0px 10%;
 }
@@ -545,16 +556,17 @@ body {
   width: 100%;
   height: 89px;
 }
+
 .vertical_line {
   height: 190px;
   width: 1px;
   color: #dcdcdc;
 }
 
-@media screen and (max-width: 1258px) {
+@media screen and (max-width: 1260px) {
   .sticky_padding {
     width: 100%;
-    height: 56px;
+    height: 67px;
   }
 }
 /*card 공통*/

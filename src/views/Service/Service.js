@@ -22,7 +22,7 @@ export default function Service({ match }) {
   const matches = useMediaQuery("(max-width:1260px)");
   const { theme } = useContext(ThemeContext);
 
-  console.log(match, ">>match ");
+  console.log(match, ">>match ")
   return (
     <div
       id="service"
@@ -53,32 +53,31 @@ export default function Service({ match }) {
         <hr className="vertical_line"></hr>
 
         {/* HEALIARY */}
-        <div id="digitalcareservice">
-          <div className="healiary flex-wrap gap40">
-            <div className="flex-wrap gap16">
-              <div className="flatformtitle">
-                <div className="flatformnum flex-col gap4">
-                  <span className="tcw">Platform 1</span>
-                </div>
-                <span className="tco2 textF28 FontEB">
-                  DIGITAL HEALTHCARE SERVICE PLATFORM
-                </span>
+        <div className="healiary flex-wrap gap40">
+          <div className="flex-wrap gap16">
+            <div className="flatformtitle">
+              <div className="flatformnum flex-col gap4">
+                <span className="tcw">Platform 1</span>
               </div>
-              <p className="textT18 explanation mr">
-                Patients get direct services everyday through this platform.
-                <br />
-                Main services include nutrition, symptom management, drug
-                adherence, exercise, and medication.
-              </p>
+              <span className="tco2 textF28 FontEB">
+                DIGITAL HEALTHCARE SERVICE PLATFORM
+              </span>
             </div>
-            <iframe
-              id="healiarymp4"
-              src="https://www.youtube.com/embed/_d_OvUMhbho?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+            <p className="textT18 explanation mr">
+              Patients get direct services everyday through this platform.
+              <br />
+              Main services include nutrition, symptom management, drug
+              adherence, exercise, and medication.
+            </p>
+          </div>
+          <iframe
+            id="healiarymp4"
+            src="https://www.youtube.com/embed/_d_OvUMhbho?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
 
           <div className="application flex-row gap120">
             <img className="image-fit" src={healiary_application} alt="healiary application" />
@@ -110,10 +109,9 @@ export default function Service({ match }) {
               <div className="flatformnum flex-col gap4">
                 <span className="tcw">Platform 2</span>
               </div>
-              <p className="textT18 mr">
-                Gateway service platform between providers and patients for
-                remote and home care management.​
-              </p>
+              <span className="tco2 textF28 FontEB">
+                TELE-HEALTHCARE SERVICE PLATFORM
+              </span>
             </div>
             <p className="textT18 explanation mr">
               Gateway service platform between providers and patients for remote
@@ -139,7 +137,6 @@ export default function Service({ match }) {
                   guidance.
                 </p>
               </div>
-              <img src={ostomy_application} alt="ostomy application" />
             </div>
           </div>
         </div>
@@ -148,4 +145,5 @@ export default function Service({ match }) {
       <Footer />
     </div>
   );
+  
 }

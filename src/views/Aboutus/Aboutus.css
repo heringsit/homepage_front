@@ -701,6 +701,7 @@ html[data-agent*="Trident"] .each-slide .blur-mask .blur-ie {
   background-color: #ffffff;
   height: 0;
 }
+
 .whoweareContent {
   width: 100%;
   display: flex;
@@ -750,7 +751,7 @@ html[data-agent*="Trident"] .each-slide .blur-mask .blur-ie {
   .whoweareContent {
     flex-direction: column;
   }
-  
+
   .titleDiv {
     margin-bottom: 10px;
   }

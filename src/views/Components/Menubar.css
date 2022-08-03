@@ -252,7 +252,6 @@
   }
 
   .mobileBtn {
-    /* float: right; */
     z-index: 11;
     margin: 2.4vh 1vw 0 0 !important;
     display: block;
@@ -434,7 +433,7 @@
 
 @media screen and (max-width: 600px) {
   .modediv {
-    margin: 0.5vh -7vh 0 8vw;
+    margin: 0.5vh -8vh 0 -10vw;
     z-index: 10;
     text-align: center;
     display: flex;
