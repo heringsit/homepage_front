@@ -41,8 +41,13 @@ export default function Service({ match }) {
       </div>
 
       {/* CONTENTS */}
-      <div className="servicecontents flex-col">
-        <p className="introtxt textF24 FontEB">
+      <div className="contentsmargin">
+      <div className="servicecontents contentspadding flex-col">
+        <p
+          className={`introtxt textF24 FontEB ${
+            theme === "light" ? "tcb" : "tcw"
+          }`}
+        >
           HERINGS’ Two Service platforms.
         </p>
         <hr className="vertical_line"></hr>
@@ -75,71 +80,70 @@ export default function Service({ match }) {
               allowFullScreen
             ></iframe>
 
-            <div className="application flex-row">
-              <img src={healiary_application} alt="healiary application" />
-              <div className="explanation lineheight160 flex-col gap56 mr">
-                <div>
-                  {/* mr -> margin reset; mb -> margin bottom */}
-                  <p className="tco2 textT18 FontB mr mbsm">Application</p>
-                  <p className="FontEB textF24 mr mb">HEALIARY</p>
-                  <p className="textT18 mr">
-                    The personalized companion digital platform that takes care
-                    of cancer patients’ daily challenges including
-                    nutrition/food intake, symptom management, and exercise.
-                  </p>
-                </div>
-                <div>
-                  <p className="textT18 mr">
-                    Patient Engagement Mobile Application. It is a tool for
-                    cancer patients to remain engaged and active throughout
-                    their therapy with their care team.
-                  </p>
-                </div>
+          <div className="application flex-row gap120">
+            <img className="image-fit" src={healiary_application} alt="healiary application" />
+            <div className="explanation lineheight160 flex-col gap56 mr">
+              <div> {/* mr -> margin reset; mb -> margin bottom */}
+                <p className="tco2 textT18 FontB mr mbsm">Application</p>
+                <p className="FontEB textF24 mr mb">HEALIARY</p>
+                <p className="textT18 mr">
+                  The personalized companion digital platform that takes care of
+                  cancer patients’ daily challenges including nutrition/food
+                  intake, symptom management, and exercise.
+                </p>
+              </div>
+              <div>
+                <p className="textT18 mr">
+                  Patient Engagement Mobile Application. It is a tool for cancer
+                  patients to remain engaged and active throughout their therapy
+                  with their care team.
+                </p>
               </div>
             </div>
           </div>
         </div>
 
         {/* OSTOMY */}
-        <div id="telehealthcareservice">
-          <div className="ostomy flex-col gap24">
-            <div className="explanation flex-col gap16">
-              <div className="flatformtitle">
-                <div className="flatformnum flex-col gap4">
-                  <span className="tcw">Platform 2</span>
-                </div>
-                <span className="tco2 textF28 FontEB">
-                  TELE-HEALTHCARE SERVICE PLATFORM
-                </span>
+        <div className="ostomy flex-col gap24">
+          <div className="flex-col gap16">
+            <div className="flatformtitle">
+              <div className="flatformnum flex-col gap4">
+                <span className="tcw">Platform 2</span>
               </div>
               <p className="textT18 mr">
                 Gateway service platform between providers and patients for
                 remote and home care management.​
               </p>
             </div>
-            <div className="application flex-row gap40">
-              <div className="explanation lineheight160 flex-col gap56">
-                <div>
-                  <p className="tco2 textT18 FontB mr mbsm">Application</p>
-                  <p className="FontEB textF24 mr mb">OSTOMY CARE</p>
-                  <p className="textT18 mr">
-                    Home Health Care Service Platform for Ostomy patients. ​
-                  </p>
-                </div>
-                <div>
-                  <p className="textT18 mr">
-                    Medical care teams can directly communicate with their
-                    patients in this platform. Patients inform their current
-                    medical conditions including photos then care teams evaluate
-                    them and provide appropriate feedbacks with self-management
-                    guidance.
-                  </p>
-                </div>
+            <p className="textT18 explanation mr">
+              Gateway service platform between providers and patients for remote
+              and home care management.​
+            </p>
+          </div>
+          <div className="application flex-row-reverse gap120">
+            <img className="image-fit" src={ostomy_application} alt="ostomy application" />
+            <div className="explanation lineheight160 flex-col gap56">
+              <div>
+                <p className="tco2 textT18 FontB mr mbsm">Application</p>
+                <p className="FontEB textF24 mr mb">OSTOMY CARE</p>
+                <p className="textT18 mr">
+                  Home Health Care Service Platform for Ostomy patients. ​
+                </p>
+              </div>
+              <div>
+                <p className="textT18 mr">
+                  Medical care teams can directly communicate with their
+                  patients in this platform. Patients inform their current
+                  medical conditions including photos then care teams evaluate
+                  them and provide appropriate feedbacks with self-management
+                  guidance.
+                </p>
               </div>
               <img src={ostomy_application} alt="ostomy application" />
             </div>
           </div>
         </div>
+      </div>
       </div>
       <Footer />
     </div>
