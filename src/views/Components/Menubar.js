@@ -164,8 +164,8 @@ export default function Menubar(props) {
                 />
               </div>
             </div>
-
           </div>
+
           {/* MOBILE MENU */}
           <div className={`mobileMenus ${isMActive ? "slider" : "slideroff"}`}>
             {/* ABOUT US */}
@@ -179,10 +179,10 @@ export default function Menubar(props) {
               >
                 <div className="mobileMenuRow">
                   <span
-                    className={`FontEB textF22 menuText ${
+                    className={`FontEB textF22  menuText ${
                       mobileSelected === 0 ? "mobilemenusactive" : ""
                     }
-                       ${theme === "light" ? "tcb" : "tcw"} `}
+                       ${theme === "light" ? "tcb" : "tcw"}`}
                   >
                     ABOUT US
                   </span>
@@ -543,7 +543,7 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`textF18 FontR ${
+                  className={`menuText textF18 FontR ${
                     props.slideIndex === 0
                       ? theme === "light"
                         ? "tcb"
@@ -562,7 +562,7 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`textF18 FontR ${
+                  className={`menuText textF18 FontR ${
                     props.slideIndex === 0
                       ? theme === "light"
                         ? "tcb"
@@ -581,7 +581,7 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`textF18 FontR ${
+                  className={`menuText textF18 FontR ${
                     props.slideIndex === 0
                       ? theme === "light"
                         ? "tcb"
@@ -596,7 +596,7 @@ export default function Menubar(props) {
             <div className="menudiv">
               <Link smooth="true" to={`${imsi}/crs/#crs`} onClick={menuclick}>
                 <span
-                  className={`textF18 FontR ${
+                  className={`menuText textF18 FontR ${
                     props.slideIndex === 0
                       ? theme === "light"
                         ? "tcb"
@@ -611,7 +611,7 @@ export default function Menubar(props) {
             <div className="menudiv">
               <Link smooth="true" to={`${imsi}/news/#news`} onClick={menuclick}>
                 <span
-                  className={`textF18 FontR ${
+                  className={`menuText textF18 FontR ${
                     props.slideIndex === 0
                       ? theme === "light"
                         ? "tcb"
@@ -631,7 +631,7 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`textF18 FontR ${
+                  className={`menuText textF18 FontR ${
                     props.slideIndex === 0
                       ? theme === "light"
                         ? "tcb"
@@ -675,7 +675,9 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`textF18 ${theme === "light" ? "tcb" : "tcw"}`}
+                  className={`menuText textF18 ${
+                    theme === "light" ? "tcb" : "tcw"
+                  }`}
                 >
                   ABOUT US
                 </span>
@@ -689,7 +691,7 @@ export default function Menubar(props) {
                       onClick={menuclick}
                     >
                       <span
-                        className={`textF15 ${
+                        className={`menuText textF15 ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -713,7 +715,9 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`textF18 ${theme === "light" ? "tcb" : "tcw"}`}
+                  className={`menuText textF18 ${
+                    theme === "light" ? "tcb" : "tcw"
+                  }`}
                 >
                   SERVICE
                 </span>
@@ -727,7 +731,7 @@ export default function Menubar(props) {
                       onClick={menuclick}
                     >
                       <span
-                        className={`textF15 ${
+                        className={`menuText textF15 ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -751,7 +755,9 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`textF18 ${theme === "light" ? "tcb" : "tcw"}`}
+                  className={`menuText textF18 ${
+                    theme === "light" ? "tcb" : "tcw"
+                  }`}
                 >
                   RESEARCH
                 </span>
@@ -765,7 +771,7 @@ export default function Menubar(props) {
                       onClick={menuclick}
                     >
                       <span
-                        className={`textF15 ${
+                        className={`menuText textF15 ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -785,7 +791,9 @@ export default function Menubar(props) {
             >
               <Link smooth="true" to={`${imsi}/crs/#crs`} onClick={menuclick}>
                 <span
-                  className={`textF18 ${theme === "light" ? "tcb" : "tcw"}`}
+                  className={`menuText textF18 ${
+                    theme === "light" ? "tcb" : "tcw"
+                  }`}
                 >
                   CTS
                 </span>
@@ -795,7 +803,7 @@ export default function Menubar(props) {
                   <li>
                     <Link smooth="true" to={CTS.link[idx]} onClick={menuclick}>
                       <span
-                        className={`textF15 ${
+                        className={`menuText textF15 ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -815,7 +823,9 @@ export default function Menubar(props) {
             >
               <Link smooth="true" to={`${imsi}/news/#news`} onClick={menuclick}>
                 <span
-                  className={`textF18 ${theme === "light" ? "tcb" : "tcw"}`}
+                  className={`menuText textF18 ${
+                    theme === "light" ? "tcb" : "tcw"
+                  }`}
                 >
                   NEWS & IR
                 </span>
@@ -829,7 +839,7 @@ export default function Menubar(props) {
                       onClick={menuclick}
                     >
                       <span
-                        className={`textF15 ${
+                        className={`menuText textF15 ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -853,7 +863,9 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`textF18 ${theme === "light" ? "tcb" : "tcw"}`}
+                  className={`menuText textF18 ${
+                    theme === "light" ? "tcb" : "tcw"
+                  }`}
                 >
                   CONTACT US
                 </span>
@@ -867,7 +879,7 @@ export default function Menubar(props) {
                       onClick={menuclick}
                     >
                       <span
-                        className={`textF15 ${
+                        className={`menuText textF15 ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
