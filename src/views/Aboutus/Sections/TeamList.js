@@ -1,5 +1,5 @@
 import React, { Component, useContext } from "react";
-import { ThemeContext } from "../../../context"
+import { ThemeContext } from "../../../context";
 import Slider from "react-slick";
 import {
   Executive_Leadership,
@@ -16,6 +16,7 @@ import { ReactComponent as TeamListArrowNext } from "../../../assets/images/02ab
 
 import "../Aboutus.css";
 import "../slick.css";
+import { useMediaQuery } from "@material-ui/core";
 
 function PrevArrow(props) {
   const { className, style, onClick, matches } = props;
@@ -59,16 +60,21 @@ export default function TeamList(props) {
     nextArrow: <NextArrow matches={props.matches} />,
     prevArrow: <PrevArrow matches={props.matches} />,
   };
-  const { theme } =useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
+  const { mobile } = useMediaQuery("(max-width:768px)");
 
   return (
     <div className="addPadding">
       <div className="SectionDiv">
         <div className="titleDiv">
-          <div className="textT22 FontB">
+          <div className={`${mobile ? "textT15" : "textT22 FontB"}`}>
             <span>HERINGS Team</span>
           </div>
-          <hr style={{border: "1px solid " + (theme === "dark" ? "white" : "black")}}></hr>
+          <hr
+            style={{
+              border: "1px solid " + (theme === "dark" ? "white" : "black"),
+            }}
+          ></hr>
         </div>
         <div className="SectionColorGray" style={{ padding: "16px 0" }}>
           <div className="TeamListWrap  ">

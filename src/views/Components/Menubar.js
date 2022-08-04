@@ -7,10 +7,10 @@ import { HashLink as Link } from "react-router-hash-link";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import herings_logo_b from "../../assets/images/etc/heringsLOGO_black.svg";
 import herings_logo_w from "../../assets/images/etc/heringsLOGO_white.svg";
+import herings_logo_m from "../../assets/images/etc/heringsLOGO_mobile.svg";
 import { ReactComponent as HeringsLogo } from "../../assets/images/etc/heringsLOGO.svg";
 import { ReactComponent as HeringsLogoDark } from "../../assets/images/etc/heringsLOGO_dark.svg";
 import "./Menubar.css";
-import { Button } from "@material-ui/core";
 import { ThemeContext } from "../../context";
 import DarkToggle from "./DarkToggle";
 
@@ -19,7 +19,7 @@ export default function Menubar(props) {
   const imsi = process.env.PUBLIC_URL;
   smoothscroll.polyfill();
   const matches = useMediaQuery("(max-width:1260px)");
-  const mobile = useMediaQuery("(max-width:600px)");
+  const mobile = useMediaQuery("(max-width:320px)");
   const [isOver, setIsOver] = useState(false);
   const [isMActive, setIsMActive] = useState(false);
   const [mobileSelected, setMobileSelected] = useState(null);
@@ -124,7 +124,7 @@ export default function Menubar(props) {
     return (
       <div className="mobileMenuWrapDiv">
         <div
-          className={`mobileMenuroot`}
+          className="mobileMenuroot"
           style={{ backgroundColor: theme === "dark" && "#282828" }}
           onMouseEnter={menuover}
           onMouseLeave={menuout}
@@ -134,7 +134,9 @@ export default function Menubar(props) {
               <div
                 className="logoImgContainCenterM"
                 style={
-                  theme === "light"
+                  mobile
+                    ? { backgroundImage: "url('" + herings_logo_m + "')" }
+                    : theme === "light"
                     ? {
                         backgroundImage: "url('" + herings_logo_b + "')",
                       }
@@ -210,7 +212,7 @@ export default function Menubar(props) {
                       onClick={menuclick}
                     >
                       <span
-                        className={`menuText FontB textF18 ${
+                        className={`menuText FontB ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -262,7 +264,7 @@ export default function Menubar(props) {
                       onClick={menuclick}
                     >
                       <span
-                        className={`menuText FontB textF18 ${
+                        className={`menuText FontB ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -314,7 +316,7 @@ export default function Menubar(props) {
                       onClick={menuclick}
                     >
                       <span
-                        className={`menuText FontB textF18 ${
+                        className={`menuText FontB ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -362,7 +364,7 @@ export default function Menubar(props) {
                   <li>
                     <Link smooth="true" to={CTS.link[idx]} onClick={menuclick}>
                       <span
-                        className={`menuText FontB textF18 ${
+                        className={`menuText FontB ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -415,7 +417,7 @@ export default function Menubar(props) {
                       onClick={menuclick}
                     >
                       <span
-                        className={`menuText FontB textF18 ${
+                        className={`menuText FontB ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -468,7 +470,7 @@ export default function Menubar(props) {
                       onClick={menuclick}
                     >
                       <span
-                        className={`menuText FontB textF18 ${
+                        className={`menuText FontB ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >

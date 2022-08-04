@@ -66,7 +66,6 @@
   margin: auto;
   background-repeat: no-repeat;
   background-position: center;
-
   background-size: 148px 36px;
   width: 148px;
   height: 36px;
@@ -200,7 +199,7 @@
     height: 100%;
     width: 100%;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   .mobileMenus {
@@ -245,26 +244,23 @@
     text-decoration: none;
     color: #ffffff;
   }
-
   .buttons {
     display: flex;
-    /* justify-content: space-between; */
+    align-items: center;
+    justify-content: center;
   }
-
   .mobileBtn {
     z-index: 11;
-    margin: 2.4vh 1vw 0 0 !important;
+    margin: 3% 1vw 0 0;
     display: block;
     visibility: visible;
   }
-
   .mobileBtnHambuger {
     padding: 0 !important;
   }
   .mobileBtn > button:focus {
     outline: none;
   }
-
   .slider {
     overflow-y: hidden;
     display: block;
@@ -279,7 +275,6 @@
     visibility: hidden;
     max-height: 0px;
   }
-
   .mobileMenuRow {
     display: flex;
     align-items: center;
@@ -287,7 +282,6 @@
     padding-left: 15px;
     height: 2em;
   }
-
   .mobilemenuslider {
     overflow-y: hidden;
     display: block;
@@ -301,6 +295,37 @@
     /* display: none !important; */
     visibility: hidden;
     max-height: 0px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .mobileMenuroot {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    background-color: #fff;
+    margin-right: auto;
+    margin-left: auto;
+    min-height: 35px;
+    flex-direction: row;
+    padding: 0 5px 0 5px;
+  }
+  .mobileMenulogo {
+    display: flex;
+    padding: 0 5px;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .logoImgContainCenterM {
+    width: 28px;
+    height: 28px;
+    background-size: contain;
+  }
+  .menuText {
+    font-size: 12px
   }
 }
 
@@ -348,7 +373,7 @@
   line-height: 137%;
   font-size: 10px;
   color: #ffffff;
-  transform: translateX(-20px);
+  transform: translateX(-25px);
   transition-duration: 0.7s;
 }
 
@@ -358,7 +383,7 @@
 }
 
 .lighticon {
-  transform: translateX(100px);
+  transform: translateX(90px);
   transition-duration: 0.7s;
 }
 
@@ -372,165 +397,45 @@
     justify-content: center;
     width: 182.6px;
   }
-
-  .modebutton {
-    display: none;
-  }
-
-  .darktoggle {
-    width: 140px;
-    height: 35px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 8px 4px 8px;
-    gap: 4px;
-    background-color: #ffffff;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 34px;
-  }
-
-  .lighttoggle {
-    width: 140px;
-    height: 35px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 4px 8px 4px 8px;
-    gap: 4px;
-    background-color: #3c3c3c;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 34px;
-  }
-
-  .darkmode {
-    line-height: 137%;
-    font-size: 10px;
-    color: #3c3c3c;
-    transition-duration: 0.7s;
-  }
-
-  .lightmode {
-    line-height: 137%;
-    font-size: 10px;
-    color: #ffffff;
-    transform: translateX(-20px);
-    transition-duration: 0.7s;
-  }
-
-  .darkicon {
-    transform: translateX(-10px);
-    transition-duration: 0.7s;
-  }
-
-  .lighticon {
-    transform: translateX(100px);
-    transition-duration: 0.7s;
-  }
 }
 
 @media screen and (max-width: 600px) {
   .modediv {
-    margin: 0.5vh -8vh 0 -10vw;
     z-index: 10;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .modebutton {
-    display: none;
-  }
-
-  .darktoggle {
-    width: 28px;
-    height: 28px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 4px;
-    gap: 4px;
-    background-color: #ffffff;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 34px;
-  }
-
-  .lighttoggle {
-    width: 28px;
-    height: 28px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 4px;
-    gap: 4px;
-    background-color: #3c3c3c;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 34px;
-  }
-
-  .darkicon {
-    transform: translateX(0);
-    transition-duration: 0.7s;
-  }
-
-  .lighticon {
-    transform: translateX(0);
-    transition-duration: 0.7s;
   }
 }
 
 @media screen and (max-width: 320px) {
+  .mobileMenulogo {
+    justify-content: space-between;
+  }
+  .logoImgContainCenterM {
+    width: 40px;
+  }
   .modediv {
-    margin: 0.4vh -15vw 0 -10vw;
+    width: max-content;
     z-index: 10;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
-  .modebutton {
-    display: none;
-  }
-
   .darktoggle {
     width: 28px;
     height: 28px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 4px;
-    gap: 4px;
-    background-color: #ffffff;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 34px;
   }
-
   .lighttoggle {
     width: 28px;
     height: 28px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 4px;
-    gap: 4px;
-    background-color: #3c3c3c;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
-    border-radius: 34px;
   }
-
   .darkicon {
     transform: translateX(0);
     transition-duration: 0.7s;
   }
-
   .lighticon {
     transform: translateX(0);
     transition-duration: 0.7s;

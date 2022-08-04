@@ -26,6 +26,7 @@ export default function TabClick({ visibleArray, isScroll }) {
     "aibasedostomyconditioncheck",
     "adherenceofhormonetherapy",
   ];
+  // 내려가는 정도? 조절
   const scrollWithOffset = (el, yOffset = -80) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
     window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
