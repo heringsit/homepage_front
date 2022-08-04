@@ -13,6 +13,7 @@ import Footer from "../Components/Footer";
 import healiary_application from "../../assets/images/07service/healiary_application.svg";
 import ostomy_application from "../../assets/images/07service/ostomy_application.svg";
 import { ThemeContext } from "../../context";
+import CommonCardFrame from "../common/CommonCardFrame";
 
 // import CommonCardFrameLeft from "../common/CommonCardFrameLeft";
 // import CommonCardFrameRight from "../common/CommonCardFrameRight";
@@ -22,7 +23,7 @@ export default function Service({ match }) {
   const matches = useMediaQuery("(max-width:1260px)");
   const { theme } = useContext(ThemeContext);
 
-  console.log(match, ">>match ")
+  console.log(match, ">>match ");
   return (
     <div
       id="service"
@@ -37,113 +38,103 @@ export default function Service({ match }) {
 
       {/* TITLE */}
       <div className="banner_img servicetitle">
-        <span className="textF53 tcw title_default">SERVICE</span>
+        <span className="textF53 tcw FontR title_default">SERVICE</span>
       </div>
 
       {/* CONTENTS */}
       <div className="contentsmargin">
-      <div className="servicecontents contentspadding flex-col">
-        <p
-          className={`introtxt textF24 FontEB ${
-            theme === "light" ? "tcb" : "tcw"
-          }`}
-        >
-          HERINGS’ Two Service platforms.
-        </p>
-        <hr className="vertical_line"></hr>
+        <div className="servicecontents contentspadding flex-col">
+          <p
+            className={`introtxt textF24 FontEB ${
+              theme === "light" ? "tcb" : "tcw"
+            }`}
+          >
+            HERINGS’ Two Service platforms.
+          </p>
+          <hr className="vertical_line"></hr>
 
-        {/* HEALIARY */}
-        <div className="healiary flex-wrap gap-40">
-          <div className="flex-wrap gap-16">
-            <div className="flatformtitle">
-              <div className="flatformnum flex-col gap-4">
-                <span className="tcw">Platform 1</span>
+          {/* HEALIARY */}
+          <div className="healiary flex-wrap gap-40">
+            <div className="flex-wrap gap-16">
+              <div className="flatformtitle">
+                <div className="flatformnum flex-col gap-4">
+                  <span className="tcw">Platform 1</span>
+                </div>
+                <span className="tco2 textF28 FontEB">
+                  DIGITAL HEALTHCARE SERVICE PLATFORM
+                </span>
               </div>
-              <span className="tco2 textF28 FontEB">
-                DIGITAL HEALTHCARE SERVICE PLATFORM
-              </span>
+              <p className="textT18 explanation FontL m-reset">
+                Patients get direct services everyday through this platform.
+                <br />
+                Main services include nutrition, symptom management, drug
+                adherence, exercise, and medication.
+              </p>
             </div>
-            <p className="textT18 explanation m-reset">
-              Patients get direct services everyday through this platform.
-              <br />
-              Main services include nutrition, symptom management, drug
-              adherence, exercise, and medication.
-            </p>
+            <iframe
+              id="healiarymp4"
+              src="https://www.youtube.com/embed/_d_OvUMhbho?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+            <CommonCardFrame
+              imageSrc={healiary_application}
+              imageAlt="healiary application"
+              subText1="Application"
+              subText2="HEALIARY"
+              content1={
+                "The personalized companion digital platform that takes care of cancer patients’ daily challenges including nutrition/food intake, symptom management, and exercise."
+              }
+              content2={
+                "Patient Engagement Mobile Application. It is a tool for cancer patients to remain engaged and active throughout their therapy with their care team."
+              }
+              flexStyle="flex-row gap-120"
+              mainContentStyle="flex-col gap-56"
+              contentPadding=""
+              subText1Style="textT18 FontB mb-4"
+              subText2Style="textF24 FontEB  mb-8"
+            />
           </div>
-          <iframe
-            id="healiarymp4"
-            src="https://www.youtube.com/embed/_d_OvUMhbho?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
 
-          <div className="application flex-row gap-120">
-            <img className="image-fit" src={healiary_application} alt="healiary application" />
-            <div className="explanation lineheight160 flex-col gap-56 m-reset">
-              <div> {/* m-reset -> margin reset; mb-8-> margin bottom */}
-                <p className="tco2 textT18 FontB m-reset mb-4">Application</p>
-                <p className="FontEB textF24 m-reset mb">HEALIARY</p>
-                <p className="textT18 m-reset">
-                  The personalized companion digital platform that takes care of
-                  cancer patients’ daily challenges including nutrition/food
-                  intake, symptom management, and exercise.
-                </p>
+          {/* OSTOMY */}
+          <div className="ostomy flex-col gap-24">
+            <div className="flex-col gap-16">
+              <div className="flatformtitle">
+                <div className="flatformnum flex-col gap-4">
+                  <span className="tcw">Platform 2</span>
+                </div>
+                <span className="tco2 textF28 FontEB">
+                  TELE-HEALTHCARE SERVICE PLATFORM
+                </span>
               </div>
-              <div>
-                <p className="textT18 m-reset">
-                  Patient Engagement Mobile Application. It is a tool for cancer
-                  patients to remain engaged and active throughout their therapy
-                  with their care team.
-                </p>
-              </div>
+              <p className="textT18 explanation m-reset">
+                Gateway service platform between providers and patients for
+                remote and home care management.​
+              </p>
             </div>
+            <CommonCardFrame
+              imageSrc={ostomy_application}
+              imageAlt="ostomy application"
+              subText1="Application"
+              subText2="OSTOMY CARE"
+              content1={
+                "Home Health Care Service Platform for Ostomy patients."
+              }
+              content2={
+                "Medical care teams can directly communicate with their patients in this platform. Patients inform their current medical conditions including photos then care teams evaluate them and provide appropriate feedbacks with self-management guidance."
+              }
+              flexStyle="flex-row-reverse gap-120"
+              mainContentStyle="flex-col gap-56"
+              contentPadding=""
+              subText1Style="textT18 FontB mb-4"
+              subText2Style="textF24 FontEB  mb-8"
+            />
           </div>
         </div>
-
-        {/* OSTOMY */}
-        <div className="ostomy flex-col gap-24">
-          <div className="flex-col gap-16">
-            <div className="flatformtitle">
-              <div className="flatformnum flex-col gap-4">
-                <span className="tcw">Platform 2</span>
-              </div>
-              <span className="tco2 textF28 FontEB">
-                TELE-HEALTHCARE SERVICE PLATFORM
-              </span>
-            </div>
-            <p className="textT18 explanation m-reset">
-              Gateway service platform between providers and patients for remote
-              and home care management.​
-            </p>
-          </div>
-          <div className="application flex-row-reverse gap-120">
-            <img className="image-fit" src={ostomy_application} alt="ostomy application" />
-            <div className="explanation lineheight160 flex-col gap-56">
-              <div>
-                <p className="tco2 textT18 FontB m-reset mb-4">Application</p>
-                <p className="FontEB textF24 m-reset mb">OSTOMY CARE</p>
-                <p className="textT18 m-reset">
-                  Home Health Care Service Platform for Ostomy patients. ​
-                </p>
-              </div>
-              <div>
-                <p className="textT18 m-reset">
-                  Medical care teams can directly communicate with their
-                  patients in this platform. Patients inform their current
-                  medical conditions including photos then care teams evaluate
-                  them and provide appropriate feedbacks with self-management
-                  guidance.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       </div>
       <Footer />
     </div>
   );
-  
 }

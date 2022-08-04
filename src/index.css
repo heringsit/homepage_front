@@ -388,27 +388,6 @@ body {
 .relative {
   position: relative;
 }
-
-/* text margins: 
-  m-reset - margin reset
-  mb-8- margin bottom 
-*/
-.m-reset {
-  margin: 0;
-}
-.mb-4 {
-  margin-bottom: 4px;
-}
-.mb-8 {
-  margin-bottom: 8px;
-}
-.mb-12 {
-  margin-bottom: 12px;
-}
-.mb-16 {
-  margin-bottom: 16px;
-}
-
 /*SectionDiv*/
 .SectionDiv {
   width: 100%;
@@ -755,6 +734,7 @@ body {
   width: 100%;
   z-index: 30;
   position: absolute;
+  letter-spacing: 0.16em;
   left: 0;
   bottom: 119px;
 }

@@ -57,7 +57,7 @@ export default function TabClick({ visibleArray, isScroll }) {
                     className={
                       index === visibleIndex
                         ? "w-full h-full block tagADefault tabATagTab FontEB"
-                        : "w-full h-full block tagADefault " +
+                        : "w-full h-full block tagADefault FontR " +
                           (theme === "dark" ? "tcw" : "tcg3")
                     }
                   >
@@ -88,7 +88,7 @@ export default function TabClick({ visibleArray, isScroll }) {
                     className={
                       index === visibleIndex
                         ? "w-full h-full block tagADefault tabATagTab FontEB"
-                        : "w-full h-full block tagADefault " +
+                        : "w-full h-full block tagADefault FontR " +
                           (theme === "dark" ? "tcw" : "tcg3")
                     }
                   >
@@ -120,7 +120,7 @@ export default function TabClick({ visibleArray, isScroll }) {
                     className={
                       index === visibleIndex
                         ? "w-full h-full block tagADefault tabATagTab FontEB"
-                        : "w-full h-full block tagADefault " +
+                        : "w-full h-full block tagADefault FontR " +
                           (theme === "dark" ? "tcw" : "tcg3")
                     }
                   >
