@@ -146,7 +146,6 @@ const useStyles = makeStyles((theme) =>
 
 export default function Aboutus({ match }) {
   const HAS_VISITED_BEFORE = localStorage.getItem("hasVisitedBefore");
-  const matches = useMediaQuery("(max-width:600px)");
   const [isScroll, setIsScroll] = useState(false);
   const [open, setOpen] = useState(false);
   const [openNotice, setOpenNotice] = useState(false);
@@ -370,7 +369,7 @@ export default function Aboutus({ match }) {
   visibleArray[1] = useOnScreen(refs.current[1]);
   visibleArray[2] = useOnScreen(refs.current[2]);
   // console.log(visibleArray, ">>visibleArray")
-  
+
   return (
     <div
       id="aboutus"
@@ -384,31 +383,21 @@ export default function Aboutus({ match }) {
       <Totop />
       {openerModalNoti()}
       {/* { modalObj !== null ? openInitialNotice() : null} */}
-      <div >
+      <div>
         {/* <ContentsTitle title={"ABOUT US"} /> */}
         <div id="whoweare"></div>
         <TabClick visibleArray={visibleArray} isScroll={isScroll} />
-        
-        <div
-            ref={refs.current[0]}
-        >
-          <Whoweare matches={matches} />
+
+        <div ref={refs.current[0]}>
+          <Whoweare />
         </div>
-        <div
-            id="heringsteam"
-            ref={refs.current[1]}
-        >
-          <TeamList handleOpen={handleOpen} matches={matches} />
+        <div id="heringsteam" ref={refs.current[1]}>
+          <TeamList handleOpen={handleOpen} />
         </div>
-        <div
-            id="researchpartners"
-            ref={refs.current[2]}
-        >
-          <PAI matches={matches} />
-          
+        <div id="researchpartners" ref={refs.current[2]}>
+          <PAI />
         </div>
-        
-        
+
         {/* <QM matches={matches} /> */}
         <Footer />
       </div>

@@ -14,9 +14,13 @@
 
 @media screen and (max-width: 1260px) {
   .servicetitle {
-    position: relative;
     top: 67px;
-    height: 300px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .servicetitle {
+    top: 40px;
   }
 }
 
