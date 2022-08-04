@@ -17,7 +17,7 @@ export default function DarkToggle(props) {
               alt="dark mode icon"
               className="lighticon"
             />
-            {!props.mobile && <span className="lightmode">LIGHT MODE ON</span>}
+            {!props.mobile && <span className="lightmode FontL">LIGHT MODE ON</span>}
           </label>
         ) : (
           <label htmlFor="modebutton" className="darktoggle">
@@ -26,7 +26,7 @@ export default function DarkToggle(props) {
               alt="dark mode icon"
               className="darkicon"
             />
-            {!props.mobile && <span className="darkmode">DARK MODE ON</span>}
+            {!props.mobile && <span className="darkmode FontL">DARK MODE ON</span>}
           </label>
         )}
       </Button>

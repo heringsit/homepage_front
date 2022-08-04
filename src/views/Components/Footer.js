@@ -6,7 +6,7 @@ function Footer() {
   const matches = useMediaQuery("(max-width:480px)");
 
   return (
-    <footer className="footer textF12">
+    <footer className="footer textF12 FontL">
       <div className="footerRowa">
         <NavLink to="/#NULL">Privacy Policy</NavLink>
         <span className="slash">/</span>

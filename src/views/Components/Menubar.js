@@ -94,13 +94,13 @@ export default function Menubar(props) {
     ],
     // link 수정해야함
     link: [
-      `${imsi}/research/#nutritionincancercare`,
-      `${imsi}/research/#drugadverseevent`,
-      `${imsi}/research/#recurrenceprediction`,
+      `${imsi}/research/#nutrition`,
+      `${imsi}/research/#symptommanagement`,
       `${imsi}/research/#exercise`,
-      `${imsi}/research/#aibasedostomyconditioncheck`,
-      `${imsi}/research/#adherenceofhormonetherapy`,
-      `${imsi}/research/#adherenceofhormonetherapy`,
+      `${imsi}/research/#riskprediction`,
+      `${imsi}/research/#drugadherence`,
+      `${imsi}/research/#aialgorithms`,
+      `${imsi}/research/#drugadverseevents`,
     ],
   };
   const CTS = {
@@ -205,7 +205,7 @@ export default function Menubar(props) {
                 }`}
               >
                 {ABOUTUS.title.map((about, idx) => (
-                  <li>
+                  <li key={idx}>
                     <Link
                       smooth="true"
                       to={ABOUTUS.link[idx]}
@@ -257,7 +257,7 @@ export default function Menubar(props) {
                 }`}
               >
                 {SERVICE.title.map((service, idx) => (
-                  <li>
+                  <li key={idx}>
                     <Link
                       smooth="true"
                       to={SERVICE.link[idx]}
@@ -309,7 +309,7 @@ export default function Menubar(props) {
                 }`}
               >
                 {RESEARCH.title.map((research, idx) => (
-                  <li>
+                  <li key={idx}>
                     <Link
                       smooth="true"
                       to={RESEARCH.link[idx]}
@@ -361,7 +361,7 @@ export default function Menubar(props) {
                 }`}
               >
                 {CTS.title.map((cts, idx) => (
-                  <li>
+                  <li key={idx}>
                     <Link smooth="true" to={CTS.link[idx]} onClick={menuclick}>
                       <span
                         className={`menuText FontB ${
@@ -410,7 +410,7 @@ export default function Menubar(props) {
                 }`}
               >
                 {NEWSIR.title.map((news, idx) => (
-                  <li>
+                  <li key={idx}>
                     <Link
                       smooth="true"
                       to={NEWSIR.link[idx]}
@@ -463,7 +463,7 @@ export default function Menubar(props) {
                 }`}
               >
                 {CONTACTUS.title.map((contact, idx) => (
-                  <li>
+                  <li key={idx}>
                     <Link
                       smooth="true"
                       to={CONTACTUS.link[idx]}
@@ -496,7 +496,7 @@ export default function Menubar(props) {
                 : "menuBorderBottomLight ")
             : ""
         } ${
-          pathname === "/aboutus/"
+          pathname === "/aboutus/" || pathname === "/research/"
             ? theme === "dark"
               ? "menuBorderBottomDark"
               : "menuBorderBottomLight"
@@ -677,7 +677,7 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`menuText textF18 ${
+                  className={`menuText textF18 FontR ${
                     theme === "light" ? "tcb" : "tcw"
                   }`}
                 >
@@ -686,14 +686,14 @@ export default function Menubar(props) {
               </Link>
               <ul className="menuul">
                 {ABOUTUS.title.map((aboutus, idx) => (
-                  <li>
+                  <li key={idx}>
                     <Link
                       smooth={true}
                       to={ABOUTUS.link[idx]}
                       onClick={menuclick}
                     >
                       <span
-                        className={`menuText textF15 ${
+                        className={`menuText textF15 FontR ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -717,7 +717,7 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`menuText textF18 ${
+                  className={`menuText textF18 FontR ${
                     theme === "light" ? "tcb" : "tcw"
                   }`}
                 >
@@ -726,14 +726,14 @@ export default function Menubar(props) {
               </Link>
               <ul className="menuul">
                 {SERVICE.title.map((service, idx) => (
-                  <li>
+                  <li key={idx}>
                     <Link
                       smooth="true"
                       to={SERVICE.link[idx]}
                       onClick={menuclick}
                     >
                       <span
-                        className={`menuText textF15 ${
+                        className={`menuText textF15 FontR ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -757,7 +757,7 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`menuText textF18 ${
+                  className={`menuText textF18 FontR${
                     theme === "light" ? "tcb" : "tcw"
                   }`}
                 >
@@ -766,14 +766,14 @@ export default function Menubar(props) {
               </Link>
               <ul className="menuul">
                 {RESEARCH.title.map((research, idx) => (
-                  <li>
+                  <li key={idx}>
                     <Link
                       smooth="true"
                       to={RESEARCH.link[idx]}
                       onClick={menuclick}
                     >
                       <span
-                        className={`menuText textF15 ${
+                        className={`menuText textF15 FontR ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -793,7 +793,7 @@ export default function Menubar(props) {
             >
               <Link smooth="true" to={`${imsi}/crs/#crs`} onClick={menuclick}>
                 <span
-                  className={`menuText textF18 ${
+                  className={`menuText textF18 FontR ${
                     theme === "light" ? "tcb" : "tcw"
                   }`}
                 >
@@ -802,10 +802,10 @@ export default function Menubar(props) {
               </Link>
               <ul className="menuul">
                 {CTS.title.map((cts, idx) => (
-                  <li>
+                  <li key={idx}>
                     <Link smooth="true" to={CTS.link[idx]} onClick={menuclick}>
                       <span
-                        className={`menuText textF15 ${
+                        className={`menuText textF15 FontR ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -825,7 +825,7 @@ export default function Menubar(props) {
             >
               <Link smooth="true" to={`${imsi}/news/#news`} onClick={menuclick}>
                 <span
-                  className={`menuText textF18 ${
+                  className={`menuText textF18 FontR ${
                     theme === "light" ? "tcb" : "tcw"
                   }`}
                 >
@@ -834,14 +834,14 @@ export default function Menubar(props) {
               </Link>
               <ul className="menuul">
                 {NEWSIR.title.map((news, idx) => (
-                  <li>
+                  <li key={idx}>
                     <Link
                       smooth="true"
                       to={NEWSIR.link[idx]}
                       onClick={menuclick}
                     >
                       <span
-                        className={`menuText textF15 ${
+                        className={`menuText textF15 FontR ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -865,7 +865,7 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`menuText textF18 ${
+                  className={`menuText textF18 FontR ${
                     theme === "light" ? "tcb" : "tcw"
                   }`}
                 >
@@ -874,14 +874,14 @@ export default function Menubar(props) {
               </Link>
               <ul className="menuul">
                 {CONTACTUS.title.map((contact, idx) => (
-                  <li>
+                  <li key={idx}>
                     <Link
                       smooth="true"
                       to={CONTACTUS.link[idx]}
                       onClick={menuclick}
                     >
                       <span
-                        className={`menuText textF15 ${
+                        className={`menuText textF15 FontR ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >

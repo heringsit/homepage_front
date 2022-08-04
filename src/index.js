@@ -12,6 +12,7 @@ import Crs from "./views/CRS/Crs";
 import News from "./views/News/News";
 import Contactus from "./views/Contactus/Contactus";
 import "./index.css";
+import "./additional.css";
 import DetailPage from "./views/News/Sections/detail/DetailPage";
 import Main from "./views/Main/Main";
 import { ThemeContext } from "./context";

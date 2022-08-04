@@ -23,12 +23,12 @@ export default function Whoweare() {
       }}
       className="SectionDiv whoweare"
     >
-      <div className="titleDiv">
+      <div className="titleDiv FontB">
         <span>WHO WE ARE</span>
         <hr />
       </div>
       <div className="whoweareContent">
-        <div className="whoweareContentTitle">
+        <div className="whoweareContentTitle FontEB">
           {mobile ? (
             <>
               <span>HERINGS is personalized</span>
@@ -40,7 +40,7 @@ export default function Whoweare() {
             </span>
           )}
         </div>
-        <div className="whoweareContentsWrap">
+        <div className="whoweareContentsWrap FontL">
           {mobile ? (
             <>
               <span>We aim to be the best companion to cancer patients</span>
@@ -57,11 +57,11 @@ export default function Whoweare() {
           <div
             className={`${mobile ? "pt-30" : tablet ? "pt-100" : "pt-150"}`}
           />
-          <span className="we">We</span>
+          <span className="we FontB">We</span>
           {splits.border.map((split, idx) => (
             <div className="mt-12">
-              <span className="FontB tcw">{split}</span>
-              <span className="tcw">{splits.text[idx]}</span>
+              <span className="FontR tcw">{split}</span>
+              <span className="FontB tcw">{splits.text[idx]}</span>
             </div>
           ))}
         </div>

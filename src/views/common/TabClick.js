@@ -19,15 +19,15 @@ export default function TabClick({ visibleArray, isScroll }) {
     "clinicaloperation",
   ];
   const researchtabs = [
-    "nutritionincancercare",
-    "drugadverseevent",
-    "recurrenceprediction",
+    "nutrition",
+    "symptommanagement",
     "exercise",
-    "aibasedostomyconditioncheck",
-    "adherenceofhormonetherapy",
+    "riskprediction",
+    "drugadherence",
+    "aialgorithms",
+    "drugadverseevents"
   ];
-  // 내려가는 정도? 조절
-  const scrollWithOffset = (el, yOffset = -80) => {
+  const scrollWithOffset = (el, yOffset = -90) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
     window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
   };
@@ -116,7 +116,7 @@ export default function TabClick({ visibleArray, isScroll }) {
                   <Link
                     smooth
                     to={`#${tab}`}
-                    scroll={scrollWithOffset}
+                    scroll={el => scrollWithOffset(el, -189)}
                     className={
                       index === visibleIndex
                         ? "w-full h-full block tagADefault tabATagTab FontEB"
@@ -124,19 +124,22 @@ export default function TabClick({ visibleArray, isScroll }) {
                           (theme === "dark" ? "tcw" : "tcg3")
                     }
                   >
-                    {tab === "nutritionincancercare"
-                      ? "Nutrition in Cancer Care"
-                      : tab === "drugadverseevent"
-                      ? "Drug Adverse Event"
-                      : tab === "recurrenceprediction"
-                      ? "Recurrence Prediction"
+                    {tab === "nutrition"
+                      ? "NUTRITION"
+                      : tab === "symptommanagement"
+                      ? "SYMPTOM MANAGEMENT"
                       : tab === "exercise"
-                      ? "Exercise"
-                      : tab === "aibasedostomyconditioncheck"
-                      ? "AI-based Ostomy Condition Check"
-                      : tab === "adherenceofhormonetherapy"
-                      ? "Adherence of Hormone Therapy"
-                      : ""}
+                      ? "EXERCISE"
+                      : tab === "riskprediction"
+                      ? "RISK PREDICTION"
+                      : tab === "drugadherence"
+                      ? "DRUG ADHERENCE"
+                      : tab === "aialgorithms"
+                      ? "AI ALGORITHMS"
+                      : tab === "drugadverseevents"
+                      ? "DRUG ADVERSE EVENTS"
+                      : ""
+                    }
                   </Link>
                 </div>
                 {index + 1 === researchtabs.length ? null : (
