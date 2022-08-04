@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../../../context"
+import { ThemeContext } from "../../../context";
 import p_logo_01 from "../../../assets/images/02about_partners/01suh.png";
 import p_logo_02 from "../../../assets/images/02about_partners/02gsh.png";
 import p_logo_03 from "../../../assets/images/02about_partners/03auh.png";
@@ -15,101 +15,100 @@ import i_logo_02 from "../../../assets/images/02about_investors/02korea_n.svg";
 import i_logo_03 from "../../../assets/images/02about_investors/03venture_n.svg";
 import i_logo_04 from "../../../assets/images/02about_investors/04cap_n.svg";
 import i_logo_05 from "../../../assets/images/02about_investors/05coree.png";
+import { useMediaQuery } from "@material-ui/core";
 
 export default function PartnersAInvestors(props) {
-  const { theme } =useContext(ThemeContext);
+  const mobile = useMediaQuery("(max-width: 320px)");
   return (
-    <div className="addPadding">
-    <div className="SectionDiv SectionDivBigBottom" >
-      {!props.matches ? (
-        <div className="titleDiv">
-          <div className="textT22 FontEB">
+    <div className={`${mobile ? "" : "pt-80"}`}>
+      <div className="SectionDiv pb-400">
+        {!props.matches ? (
+          <div className="titleDiv">
             <span>Partners & Investors </span>
+            <hr />
           </div>
-          <hr style={{border: "1px solid " + (theme === "dark" ? "white" : "black")}}></hr>
-        </div>
-      ) : null}
-      <div className="SectionDivTailContent">
-        <div className="researchWrap">
-          {props.matches ? (
-            <div className="Subtitle">
-              <div className="textT22 FontEB">
-                <span>RESEARCH PARTNERS</span>
+        ) : null}
+        <div className="SectionDivTailContent">
+          <div className="researchWrap">
+            {props.matches ? (
+              <div className="Subtitle">
+                <div className="textT22 FontEB">
+                  <span>RESEARCH PARTNERS</span>
+                </div>
+                <hr></hr>
               </div>
-              <hr></hr>
-            </div>
-          ) : (
-            <div className="textT22 Subtitle">
-              <span className="FontB">RESEARCH</span>
-              <span className="FontR">PARTNERS</span>
-            </div>
-          )}
-          <div className="PAIDiv">
-            <div className="partner__image__container">
-              <img src={p_logo_01} alt="SNUH" />
-            </div>
-            <div className="partner__image__container">
-              <img src={p_logo_02} alt="GSH" />
-            </div>
-            <div className="partner__image__container">
-              <img src={p_logo_03} alt="AUH" />
-            </div>
-            <div className="partner__image__container">
-              <img src={p_logo_04} alt="EUMC" />
-            </div>
-            <div className="partner__image__container">
-              <img src={p_logo_05} alt="CNUH" />
-            </div>
-            <div className="partner__image__container">
-              <img src={p_logo_06} alt="GUDH" />
-            </div>
-            <div className="partner__image__container">
-              <img src={p_logo_07} alt="SSMC" />
-            </div>
-            <div className="partner__image__container">
-              <img src={p_logo_08} alt="KCSG" />
-            </div>
-            <div className="partner__image__container">
-              <img src={p_logo_10} alt="KGOG" />
-            </div>
-            <div className="partner__image__container">
-              <img src={p_logo_09} alt="HGU" />
+            ) : (
+              <div className="textT22 Subtitle">
+                <span className="FontB">RESEARCH</span>
+                <span className="FontR">PARTNERS</span>
+              </div>
+            )}
+            <div className="PAIDiv">
+              <div className="partner__image__container">
+                <img src={p_logo_01} alt="SNUH" />
+              </div>
+              <div className="partner__image__container">
+                <img src={p_logo_02} alt="GSH" />
+              </div>
+              <div className="partner__image__container">
+                <img src={p_logo_03} alt="AUH" />
+              </div>
+              <div className="partner__image__container">
+                <img src={p_logo_04} alt="EUMC" />
+              </div>
+              <div className="partner__image__container">
+                <img src={p_logo_05} alt="CNUH" />
+              </div>
+              <div className="partner__image__container">
+                <img src={p_logo_06} alt="GUDH" />
+              </div>
+              <div className="partner__image__container">
+                <img src={p_logo_07} alt="SSMC" />
+              </div>
+              <div className="partner__image__container">
+                <img src={p_logo_08} alt="KCSG" />
+              </div>
+              <div className="partner__image__container">
+                <img src={p_logo_10} alt="KGOG" />
+              </div>
+              <div className="partner__image__container">
+                <img src={p_logo_09} alt="HGU" />
+              </div>
             </div>
           </div>
-        </div>
-        <div className="researchWrap">
-          {props.matches ? (
-            <div className="Subtitle">
-              <div className="textT22 FontEB">
-                <span>INVESTORS</span>
+          <div className="researchWrap">
+            {props.matches ? (
+              <div className="Subtitle">
+                <div className="textT22 FontEB">
+                  <span>INVESTORS</span>
+                </div>
+                <hr></hr>
               </div>
-              <hr></hr>
-            </div>
-          ) : (
-            <div className="textT22 Subtitle">
-              <span className="FontB">INVESTORS</span>
-            </div>
-          )}
-          <div className="PAIDiv">
-            <div className="inventors__image__container">
-              <img src={i_logo_02} alt="korea" />
-            </div>
-            <div className="inventors__image__container">
-              <img src={i_logo_05} alt="coree" />
-            </div>
-            <div className="inventors__image__container">
-              <img src={i_logo_04} alt="cap" />
-            </div>
-            <div className="inventors__image__container">
-              <img src={i_logo_03} alt="venture" />
-            </div>
-            <div className="inventors__image__container">
-              <img src={i_logo_01} alt="alpen" />
+            ) : (
+              <div className="textT22 Subtitle">
+                <span className="FontB">INVESTORS</span>
+              </div>
+            )}
+            <div className="PAIDiv">
+              <div className="inventors__image__container">
+                <img src={i_logo_02} alt="korea" />
+              </div>
+              <div className="inventors__image__container">
+                <img src={i_logo_05} alt="coree" />
+              </div>
+              <div className="inventors__image__container">
+                <img src={i_logo_04} alt="cap" />
+              </div>
+              <div className="inventors__image__container">
+                <img src={i_logo_03} alt="venture" />
+              </div>
+              <div className="inventors__image__container">
+                <img src={i_logo_01} alt="alpen" />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 }

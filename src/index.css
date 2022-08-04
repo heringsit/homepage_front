@@ -395,21 +395,18 @@ body {
   height: 100%;
   padding: 100px 10%;
 }
-
 @media screen and (max-width: 600px) {
   .SectionDiv {
-    position: relative;
-    top: 67px;
+    margin-top: 67px;
+    padding: 100px 10%;
   }
 }
-
 @media screen and (max-width: 320px) {
   .SectionDiv {
-    position: relative;
-    top: 40px;
+    margin-top: 40px;
+    padding: 100px 10%;
   }
 }
-
 .SectionDivNoBottom {
   padding: 100px 10% 0px 10%;
 }
@@ -418,9 +415,6 @@ body {
 }
 .addPadding {
   padding-top: 48px;
-}
-.addPaddingBig {
-  padding-top: 150px;
 }
 .SectionDivNP {
   width: 100%;
@@ -488,6 +482,35 @@ body {
 .w-screen {
   height: 100vh;
 }
+/* padding & margin */
+.mt-12 {
+  margin-top: 12px;
+}
+.pt-30 {
+  padding-top: 30px;
+}
+.pt-80 {
+  padding-top: 80px;
+}
+.pt-100 {
+  padding-top: 100px;
+}
+.pt-150 {
+  padding-top: 150px;
+}
+.pb-200 {
+  padding-bottom: 200px;
+}
+.pb-300 {
+  padding-bottom: 300px;
+}
+.pb-400 {
+  padding-bottom: 400px;
+}
+.pb-500 {
+  padding-bottom: 500px;
+}
+
 /*tab*/
 .tagAPadding {
   padding: 25px 20px;

@@ -46,39 +46,34 @@ function NextArrow(props) {
 
 // class component에서 function component로 변경 (08.01)
 export default function TeamList(props) {
+  const matches = useMediaQuery("(max-width: 600px)");
+  const mobile = useMediaQuery("(max-width: 320px)");
+  const theme = useContext(ThemeContext);
+
   const LeaderShipSettings = {
     dots: false,
     infinite: true,
     adaptiveHeight: true,
     speed: 500,
-    slidesToShow: props.matches ? 2 : 4,
+    slidesToShow: matches ? 2 : 4,
     // slidesToScroll: this.props.matches ? 1 : 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     //arrows: this.props.matches ? false : true,
-    nextArrow: <NextArrow matches={props.matches} />,
-    prevArrow: <PrevArrow matches={props.matches} />,
+    nextArrow: <NextArrow matches={matches} />,
+    prevArrow: <PrevArrow matches={matches} />,
   };
-  const { theme } = useContext(ThemeContext);
-  const { mobile } = useMediaQuery("(max-width:768px)");
-
   return (
-    <div className="addPadding">
+    <div className={`${mobile ? "" : "pt-80"}`}>
       <div className="SectionDiv">
         <div className="titleDiv">
-          <div className={`${mobile ? "textT15" : "textT22 FontB"}`}>
-            <span>HERINGS Team</span>
-          </div>
-          <hr
-            style={{
-              border: "1px solid " + (theme === "dark" ? "white" : "black"),
-            }}
-          ></hr>
+          <span>HERINGS TEAM</span>
+          <hr />
         </div>
         <div className="SectionColorGray" style={{ padding: "16px 0" }}>
-          <div className="TeamListWrap  ">
-            <div className="textT18 Subtitle">
+          <div className="TeamListWrap">
+            <div className="Subtitle">
               <span className="FontB">EXECUTIVE</span>
               <span className="FontR">LEADERSHIP</span>
             </div>
@@ -105,11 +100,17 @@ export default function TeamList(props) {
                       </div>
                       <div className="heringsTeamContentText">
                         <div>
-                          <span className="FontB textF16 tcb">{team.name}</span>
+                          <span
+                            className={`${mobile ? "" : "FontB"} ${
+                              theme === "dark" ? "tcw" : "tcb"
+                            }`}
+                          >
+                            {team.name}
+                          </span>
                         </div>
                         <div>
                           {/* 여기 index === 4 */}
-                          <span className="textF14 tco">{team.jobs}</span>
+                          <span className="tco">{team.jobs}</span>
                         </div>
                         {/* <div>
                             <span className="textF14 tcg">
@@ -124,7 +125,7 @@ export default function TeamList(props) {
             </Slider>
           </div>
           <div className="TeamListWrap">
-            <div className="textT18 Subtitle">
+            <div className="Subtitle">
               <span className="FontB">RESEARCH</span>
               <span className="FontR">LEADERSHIP</span>
             </div>
@@ -152,7 +153,11 @@ export default function TeamList(props) {
                       </div>
                       <div className="heringsTeamContentText">
                         <div>
-                          <span className="FontB textF16 tcb">{team.name}</span>
+                          <span className={`${mobile ? "" : "FontB"} ${
+                              theme === "dark" ? "tcw" : "tcb"
+                            }`}>
+                            {team.name}
+                          </span>
                         </div>
                         {/* <div>
                             <span className="textF14 tco">{team.jobs}</span>
@@ -170,7 +175,7 @@ export default function TeamList(props) {
             </Slider>
           </div>
           <div className="TeamListWrap">
-            <div className="textT18 Subtitle">
+            <div className="Subtitle">
               <span className="FontB">ADVISORY</span>
               <span className="FontR">BOARD</span>
             </div>
@@ -194,7 +199,11 @@ export default function TeamList(props) {
                       </div>
                       <div className="heringsTeamContentText">
                         <div>
-                          <span className="FontB textF16 tcb">{team.name}</span>
+                          <span className={`${mobile ? "" : "FontB"} ${
+                              theme === "dark" ? "tcw" : "tcb"
+                            }`}>
+                            {team.name}
+                          </span>
                         </div>
                         {/* <div>
                             <span className="textF14 tco">{team.jobs}</span>

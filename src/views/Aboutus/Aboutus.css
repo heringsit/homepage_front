@@ -16,20 +16,6 @@
   color: #f68b29;
   padding: 3px;
 }
-.mt-12 {
-  margin-top: 12px;
-}
-.pt-30 {
-  padding-top: 30px;
-}
-.pt-100 {
-  padding-top: 100px;
-}
-.pt-150 {
-  padding-top: 150px;
-}
-
-/* WHO WE ARE  */
 .titleDiv {
   margin-bottom: 37px;
   display: flex;
@@ -37,15 +23,31 @@
   flex-direction: column;
   align-items: center;
   align-content: center;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
-  color: #fff;
+  /* color: #000; */
 }
 .titleDiv > hr {
   width: 60px;
   margin: 28px auto;
-  background-color: #fff;
   height: 0;
+  background-color: #000;
+}
+
+/* WHO WE ARE  */
+.whoweare .titleDiv {
+  margin-bottom: 37px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+}
+.whoweare .titleDiv > hr {
+  background-color: #fff;
 }
 .whoweareContent {
   width: 100%;
@@ -79,106 +81,20 @@
   font-weight: 600;
 }
 
-@media screen and (max-width: 1024px) {
-  .titleDiv {
-    margin-bottom: 10px;
-    font-size: 18px;
-    color: white;
-  }
-  .titleDiv > hr {
-    width: 50px;
-  }
-  .whoweareContent {
-    flex-direction: column;
-  }
-  .whoweareContentsWrap {
-    font-size: 16px;
-    color: #fff;
-  }
-  .whoweareContentTitle {
-    font-size: 28px;
-    color: #fff;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .titleDiv {
-    font-size: 14px;
-  }
-  .titleDiv > hr {
-    width: 40px;
-    margin: 28px auto;
-    background-color: #fff;
-  }
-  .whoweareContent {
-    flex-direction: column;
-  }
-  .whoweareContentTitle {
-    font-size: 22px;
-  }
-  .whoweareContentsWrap {
-    font-size: 12px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .whoweareContentTitle {
-    /* flex-direction: column; */
-    font-size: 18px;
-  }
-  .whoweareContent {
-    height: max-content;
-  }
-  .whoweareContentsWrap {
-    font-size: 10px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .titleDiv {
-    font-size: 10px;
-  }
-  .titleDiv > hr {
-    width: 35px;
-    margin: 15px 0 5px 0;
-    background-color: #fff;
-  }
-  .whoweareContentTitle {
-    margin: 12px auto;
-    font-size: 12px;
-  }
-  .whoweareContentsWrap {
-    font-size: 8px;
-  }
-  .we {
-    font-size: 8px;
-  }
-}
-
 /* HERINGS TEAM */
-/* .heringsTeamWrap {
-  margin: 0 5%;
-}
-.Subtitle {
-  margin: 5% 0;
-  text-align: center;
-}
-.Subtitle > hr {
-  width: 50px;
-  border: 1px solid #1e1e1e;
-  background-color: #1e1e1e;
-  opacity: 1;
-  margin-top: 1%;
-  margin-bottom: 0;
-} */
 .TeamListWrap {
   height: 100%;
   padding: 0 5%;
+}
+.Subtitle > span:first-child {
+  margin-right: 8px;
 }
 .listWrap {
   position: relative;
   left: -5px;
   right: -5px;
   width: calc(100% + 10px);
+  height: max-content;
   margin-bottom: 50px;
 }
 .teamDivWrap {
@@ -210,7 +126,6 @@
   border-radius: 3px;
   height: 0;
 }
-
 .listImgWrap {
   min-height: 1px;
   width: 100%;
@@ -225,12 +140,16 @@
   height: auto;
 }
 .heringsTeamContentText {
-  /* width: 100%; */
   margin: 35px 25px 10%;
   min-height: 60px;
   text-align: left;
 }
-
+.heringsTeamContentText:first-child {
+  font-size: 16px;
+}
+.heringsTeamContentText:last-child {
+  font-size: 14px;
+}
 /* PARTNERS & INVESTORS */
 .researchWrap {
   padding: 2% 0;
@@ -274,10 +193,90 @@
   width: 100%;
   margin: auto;
 }
-@media screen and (max-width: 600px) {
-  .TeamListWrap {
-    padding: 5%;
+
+@media screen and (max-width: 1024px) {
+  .titleDiv > span {
+    margin-bottom: 18px;
+    font-size: 18px;
   }
+  .titleDiv > hr {
+    width: 50px;
+  }
+  .whoweareContent {
+    flex-direction: column;
+  }
+  .whoweareContentsWrap {
+    font-size: 16px;
+    color: #fff;
+  }
+  .whoweareContentTitle {
+    font-size: 28px;
+    color: #fff;
+  }
+
+  .TeamListWrap {
+    padding: 1% 8%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .titleDiv > span {
+    font-size: 16px;
+  }
+  .titleDiv > hr {
+    width: 40px;
+    margin: 28px auto;
+  }
+  /* WHO WE ARE */
+  .whoweareContent {
+    flex-direction: column;
+  }
+  .whoweareContentTitle {
+    font-size: 22px;
+  }
+  .whoweareContentsWrap {
+    font-size: 12px;
+  }
+  /* HERINGS TEAM */
+  .Subtitle > span {
+    font-size: 15px;
+  }
+  .Subtitle > span:first-child {
+    margin-right: 8px;
+  }
+  .heringsTeamContentText:first-child {
+    font-size: 14px;
+  }
+  .heringsTeamContentText:last-child {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .titleDiv {
+    font-size: 18px;
+  }
+  /* WHO WE ARE */
+  .whoweareContentTitle {
+    /* flex-direction: column; */
+    font-size: 18px;
+  }
+  .whoweareContent {
+    height: max-content;
+  }
+  .whoweareContentsWrap {
+    font-size: 10px;
+  }
+  /* HERINGS TEAM */
+  .TeamListWrap {
+    padding: 1% 5%;
+  }
+  .heringsTeamContentText:first-child {
+    font-size: 14px;
+  }
+  .heringsTeamContentText:last-child {
+    font-size: 14px;
+  }
+  /* PARTNERS&INV */
   .partner__image__container,
   .inventors__image__container {
     margin: 1.5%;
@@ -293,6 +292,85 @@
     margin-right: 0;
   }
 }
-.Subtitle > span:first-child {
-  margin-right: 8px;
+
+@media screen and (max-width: 320px) {
+  .titleDiv > span {
+    font-size: 10px;
+  }
+  .titleDiv > hr {
+    width: 35px;
+    margin: 15px 0 5px 0;
+  }
+  /* WHO WE ARE */
+  .whoweareContentTitle {
+    margin: 12px auto;
+    font-size: 12px;
+  }
+  .whoweareContentsWrap {
+    font-size: 8px;
+  }
+  .we {
+    font-size: 8px;
+  }
+  /* HEARINGS TEAM */
+  .Subtitle > span {
+    font-size: 10px;
+  }
+  .heringsTeamWrap {
+    width: 90%;
+    margin: 2px;
+  }
+  .listWrap {
+    margin-bottom: 10px;
+  }
+  .listImgWrap {
+    min-height: 1px;
+    margin: auto;
+  }
+  .heringsTeamWrap {
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+  }
+  .heringsTeamContentText {
+    min-height: 60px;
+    text-align: left;
+    justify-self: center;
+    margin-top: 5x;
+  }
+  .heringsTeamContentText:first-child {
+    font-size: 10px;
+  }
+  .heringsTeamContentText:last-child {
+    font-size: 10px;
+  }
+}
+
+/* MODAL */
+.careerModalTitleSection > span {
+  font-size: 26px;
+}
+.modalContentText {
+  border-top: 1px solid #ddd;
+  text-align: left;
+  white-space: pre-wrap;
+  color: #4a4a4a;
+  padding: 25px;
+  line-height: 160%;
+  font-size: 16px;
+}
+@media screen and (max-width: 600px) {
+  .careerModalTitleSection > span {
+    font-size: 20px;
+  }
+  .modalContentText {
+    padding: 25px 10px 25px 10px;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .modalContentText {
+    padding: 25px 10px 25px 10px;
+    font-size: 12px;
+  }
 }
