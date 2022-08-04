@@ -1,4 +1,84 @@
-.pipelineContent {
+/*  Research => 1260 < Screen  */
+
+/* CONTENTS DIV */
+.contents {
+  position: relative;
+  max-width: 1280px;
+  margin: auto;
+  text-align: center;
+}
+.contentspadding {
+  padding-left: 36px;
+  padding-right: 36px;
+}
+.contentsmargin {
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+.explanation {
+  text-align: start;
+  line-height: 146%;
+}
+
+.youtube {
+  width: 720px;
+  height: 480px;
+  background: #f2c285;
+  border-radius: 24px;
+}
+
+.image-fit {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/*  Research => 1024 < Screen < 1260 */
+@media screen and (max-width: 1260px) {
+  
+}
+
+/*  Research => 768 < Screen < 1024 */
+@media screen and (max-width: 1024px) {
+  .healiary {
+    margin-top: 100px;
+    margin-bottom: 114px;
+  }
+  
+}
+
+/*  Research => 600 < Screen < 768 */
+@media screen and (max-width: 768px) {
+  
+}
+
+/*  Research => 320 < Screen < 600 */
+@media (min-width: 320px) and (max-width: 600px) {
+  .contentspadding {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .contentsmargin {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .pipelineContent {
   width: 100%;
   padding: 0 0 5%;
   display: flex;
@@ -63,17 +143,17 @@
   border-bottom: solid 0.5px #bebebe;
   background-color: #ffffff;
   display: flex;
-}
+} */
 /* .craimonBar {
   width: 20%;
 } */
-.rhexiumBar {
+/* .rhexiumBar {
   width: 30%;
 }
 .fillDiv {
-  position: absolute;
+  position: absolute; */
   /* left: 0.1%; */
-  width: 100%;
+  /* width: 100%;
   height: 100%;
   display: inline-flex;
   align-items: center;
@@ -117,4 +197,4 @@
   .div-table-wrap {
     width: 1024px;
   }
-}
+} */

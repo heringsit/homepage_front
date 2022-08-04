@@ -97,7 +97,7 @@ export default function Crs() {
             id="datamanagement"
             ref={refs.current[1]}
           >
-            <CommonCardTitle title={"Data Management"} />
+            <CommonCardTitle title={"Data Management"} fontSize={"textF53"} />
             <CommonCardFrameCenter
               image1src={crs_image1}
               image1alt={"crs_image1"}
@@ -111,7 +111,7 @@ We are a one-stop-shop for all data management activities from database build, t
             id="biostatistics"
             ref={refs.current[2]}
           >
-            <CommonCardTitle title={"Bio Stastics"} />
+            <CommonCardTitle title={"Bio Stastics"} fontSize={"textF53"} />
             <CommonCardFrameCenter
               image1src={crs_image2}
               image1alt={"crs_image2"}
@@ -125,7 +125,7 @@ We are a one-stop-shop for all data management activities from database build, t
             id="clinicaloperation"
             ref={refs.current[3]}
           >
-            <CommonCardTitle title={"Clinical Operation"} />
+            <CommonCardTitle title={"Clinical Operation"} fontSize={"textF53"} />
             <CommonCardFrameCenter
               image1src={crs_image3}
               image1alt={"crs_image3"}

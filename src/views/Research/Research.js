@@ -4,22 +4,19 @@ import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
 import Footer from "../Components/Footer";
 import ContentsTitle from "../Components/ContentsTitle";
-import drugadverse_main from "../../assets/images/09research/drugadverse_main.png";
-import drugadverse_sub from "../../assets/images/09research/drugadverse_sub.png";
-import research_image1 from "../../assets/images/09research/research_image1.png";
-import research_image2 from "../../assets/images/09research/research_image2.png";
-import research_image3 from "../../assets/images/09research/research_image3.png";
-import research_image4 from "../../assets/images/09research/research_image4.png";
-import rhexiumoncon_main from "../../assets/images/09research/rhexiumoncon_main.png";
-import rhexiumoncon_sub from "../../assets/images/09research/rhexiumoncon_sub.png";
+import nutrition from "../../assets/images/09research/nutrition.png";
+import symptommanagement from "../../assets/images/09research/symptom_management.png";
+import drugadverseevents from "../../assets/images/09research/drug_adverse_events.png";
+import research_1 from "../../assets/images/09research/research_1.png";
+import research_2 from "../../assets/images/09research/research_2.png";
+import research_3 from "../../assets/images/09research/research_3.png";
+import research_4 from "../../assets/images/09research/research_4.png";
 import "./Research.css";
-import CommonCardFrameLeft from "../common/CommonCardFrameLeft";
-import CommonCardFrameRight from "../common/CommonCardFrameRight";
-import CommonCardFrameCenter from "../common/CommonCardFramCenter";
 import CommonCardTitle from "../common/CommonCardTitle";
 import TabClick from "../common/TabClick";
 import useOnScreen from "../Aboutus/hooks/objectObserver";
 import { ThemeContext } from "../../context";
+import CommonCardFrame from "../common/CommonCardFrame";
 
 export default function Research() {
   const matches = useMediaQuery("(max-width:600px)");
@@ -44,16 +41,17 @@ export default function Research() {
   }, [isScroll]);
 
   // Scroll Tracker
-  const scrollElem = Array.from(Array(6).keys());
+  const scrollElem = Array.from(Array(7).keys());
   const refs = useRef(scrollElem.map(() => React.createRef()));
-  const visibleArray = Array(6).fill(true);
+  const visibleArray = Array(7).fill(true);
   visibleArray[0] = useOnScreen(refs.current[0]);
   visibleArray[1] = useOnScreen(refs.current[1]);
   visibleArray[2] = useOnScreen(refs.current[2]);
   visibleArray[3] = useOnScreen(refs.current[3]);
   visibleArray[4] = useOnScreen(refs.current[4]);
   visibleArray[5] = useOnScreen(refs.current[5]);
-  console.log(visibleArray, ">>visibleArray");
+  visibleArray[6] = useOnScreen(refs.current[6]);
+  // console.log(visibleArray, ">>visibleArray");
   // does not work as it breaks hooks of rules
   // const visibleArray = scrollElem.map((key) => useOnScreen(refs.current[key]))
   return (
@@ -71,112 +69,149 @@ export default function Research() {
       <div id="research">
         <TabClick visibleArray={visibleArray} isScroll={isScroll} />
         <ContentsTitle matches={matches} title={"RESEARCH"} />
-        <div
-          style={{
-            paddingBottom: "200px",
-          }}
-        >
-          
-          {/* Nutrition in Cancer Care */}
-          <div
-            className="SectionDivNT SectionDivUpBlank"
-            id="nutritionincancercare"
-            ref={refs.current[0]}
-          >
-            <CommonCardTitle title={"Nutrition in Cancer Care"} />
-            <CommonCardFrameLeft
-              // subTitle={"Nutrition in Cancer Care"}
-              Title={"Rhexiumonco Nutrition"}
-              content1={"Clinical Content Library – Real-time, "}
-              content2={
-                "Multidisciplinary system that combines clinical knowledge with patient data to assist oncologists in generating personalized treatment plans."
-              }
-              image1src={rhexiumoncon_main}
-              image2src={rhexiumoncon_sub}
-              image1alt={"rhexiumoncon_main"}
-              image2alt={"rhexiumoncon_sub"}
-            />
-          </div>
-          {/* Drug Adverse Event */}
-          <div
-            className="SectionDivNT SectionDivUpBlank"
-            id="drugadverseevent"
-            ref={refs.current[1]}
-          >
-            <CommonCardTitle title={"Drug Adverse Event"} />
-            <CommonCardFrameRight
-              // subTitle={"Nutrition in Cancer Care"}
-              Title={"Drug Adverse Event Reporting System"}
-              content1={"Platform that can be immediately "}
-              content2={
-                "reported as a national drug adverse event reporting system when drug adverse events occur. This work was supported by the Bio Industry Technology Development Program(No. 20015086) By the Ministry of Trade, Industry & Energy(MOTIE, Korea)."
-              }
-              image1src={drugadverse_main}
-              image2src={drugadverse_sub}
-              image1alt={"drugadverse_main"}
-              image2alt={"drugadverse_sub"}
-            />
-          </div>
-          {/* Recurrence Prediction */}
-          <div
-            className="SectionDivNT SectionDivUpBlank"
-            id="recurrenceprediction"
-            ref={refs.current[2]}
-          >
-            <CommonCardTitle title={"Recurrence Prediction"} />
-            <CommonCardFrameCenter
-              content={
-                "Since recurrence of lung cancer can be predicted as a specific symptom that occurs, we research an algorithm that inputs the symptoms directly felt by the patient in real time and predicts the possibility of recurrence in advance."
-              }
-              image1src={research_image1}
-              image1alt={"research_image1"}
-            />
-          </div>
-          {/* Exercise */}
-          <div
-            className="SectionDivNT SectionDivUpBlank"
-            id="exercise"
-            ref={refs.current[3]}
-          >
-            <CommonCardTitle title={"Exercise"} />
-            <CommonCardFrameCenter
-              content={
-                "In cancer patients, the decrease in physical ability, including muscle strength, causes sarcopenia and cachexia, which ultimately worsens the prognosis of cancer patients. We research exercise algorithms that could enhance physical ability in cancer patients and apply them to our platform to demonstrate their effectiveness."
-              }
-              image1src={research_image2}
-              image1alt={"research_image2"}
-            />
-          </div>
-          {/* AI-based Ostomy Condition Check */}
-          <div
-            className="SectionDivNT SectionDivUpBlank"
-            id="aibasedostomyconditioncheck"
-            ref={refs.current[4]}
-          >
-            <CommonCardTitle title={"AI-based Ostomy Condition Check"} />
-            <CommonCardFrameCenter
-              content={
-                "We are collecting ostomy photos containing status information using our digital platform. We research an algorithm that automatically determines the condition of the ostomy by learning it through artificial intelligence."
-              }
-              image1src={research_image3}
-              image1alt={"research_image3"}
-            />
-          </div>
-          {/* Adherence of hormone therapy */}
-          <div
-            className="SectionDivNT SectionDivUpBlank"
-            id="adherenceofhormonetherapy"
-            ref={refs.current[5]}
-          >
-            <CommonCardTitle title={"Adherence of Hormone Therapy"} />
+        <div className="pb-600 contentsmargin">
+          <div className="contents contentspadding">
+            {/* Nutrition in Cancer Care */}
+            <div className="pt-64" id="nutrition" ref={refs.current[0]}>
+              <CommonCardTitle title={"NUTRITION"} fontSize={"textF28"} />
+              <CommonCardFrame
+                imageSrc={nutrition}
+                imageAlt="nutrition"
+                contentPadding="ps-48 ptb-36"
+                content1="Nutrition is one the most import fields in the long cancer
+                          care journey. It is significantly related to treatment
+                          outcomes such as quality of life, drug compliance, and even to
+                          prognosis."
+                content2="We do perform nutrition research in terms of food data
+                          analysis, association with symptoms and treatments, dietary
+                          patterns, and clinical trial, etc."
+                content3="Recently, a pilot study (NUGA trial, NCT04800991) was
+                          performed for evaluating feasibility and efficacy of digital
+                          health technology with nutritional care in gastric cancer
+                          patients who underwent gastrectomy."
+              />
+            </div>
+            {/* Symptom Management */}
+            <div className="pt-236"></div>
+            <div className="pt-64" id="symptommanagement" ref={refs.current[1]}>
+              <CommonCardTitle
+                title={"SYMPTOM MANAGEMENT"}
+                fontSize={"textF28"}
+              />
+              <div className="align-items-center flex-col gap-40">
+                <div
+                  className={`align-items-center flex-row gap-16 ${
+                    theme === "light" ? "tcb" : "tcw"
+                  }`}
+                  style={{ height: "34px" }}
+                >
+                  <span className="FontEB textF24">ATTI</span>
+                  <p className="m-reset textF18">
+                    Real-time, clinical decision support tool to monitor and
+                    manage the complexities of lung cancer care.
+                  </p>
+                </div>
+                <div className="align-items-center flex-row gap-58">
+                  <img
+                    className="image-fit"
+                    src={symptommanagement}
+                    alt="nutrition"
+                  />
+                  <iframe
+                    className="youtube"
+                    src="https://www.youtube.com/embed/Fp19GlDhVRE?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </div>
+            {/* Exercise */}
+            <div className="pt-236"></div>
+            <div className="pt-64" id="exercise" ref={refs.current[2]}>
+              <CommonCardTitle title={"EXERCISE"} fontSize={"textF28"} />
+              <CommonCardFrame
+                imageSrc={research_1}
+                imageAlt="research_exercise"
+                content1="In cancer patients, the decrease in physical ability, including muscle strength, causes sarcopenia and cachexia, which ultimately worsens the prognosis of cancer patients. We research exercise algorithms that could enhance physical ability in cancer patients and apply them to our platform to demonstrate their effectiveness."
+                contentPadding="ptb-24"
+                flexStyle="flex-col gap-68"
+                subText1Style=""
+                subText2Style=""
+              />
+            </div>
+            {/* Risk Prediction */}
+            <div className="pt-236"></div>
+            <div className="pt-64" id="riskprediction" ref={refs.current[3]}>
+              <CommonCardTitle title={"RISK PREDICTION"} fontSize={"textF28"} />
+              <CommonCardFrame
+                imageSrc={research_2}
+                imageAlt="research_risk_prediction"
+                content1={
+                  "Cancer may progress or recur even after surgery or chemotherapy and radiation therapy. Since recurrence of lung cancer can be predicted as a specific symptom that occurs, we research an algorithm that inputs the symptoms directly felt by the patient in real time and predicts the possibility of recurrence in advance."
+                }
+                contentPadding="ptb-24"
+                flexStyle="flex-col gap-68"
+                subText1Style=""
+                subText2Style=""
+              />
+            </div>
+            {/* Drug Adherence */}
+            <div className="pt-236"></div>
+            <div className="pt-64" id="drugadherence" ref={refs.current[4]}>
+              <CommonCardTitle title={"DRUG ADHERENCE"} fontSize={"textF28"} />
+              <CommonCardFrame
+                imageSrc={research_3}
+                imageAlt="research_drug_adherence"
+                content1={
+                  "In breast cancer patients, hormone therapy is an important treatment that can prevent recurrence. However, drug adherence is poor because it needs to be taken for a long time and many adverse events occur. We research that can improve the drug adherence of hormone therapy in breast cancer patients by analyzing various factors that affect drug adherence​."
+                }
+                contentPadding="ptb-24"
+                flexStyle="flex-col gap-68"
+                subText1Style=""
+                subText2Style=""
+              />
+            </div>
+            {/* AI algorithms */}
+            <div className="pt-236"></div>
+            <div className="pt-64" id="aialgorithms" ref={refs.current[5]}>
+              <CommonCardTitle title={"AI ALGORITHMS"} fontSize={"textF28"} />
+              <CommonCardFrame
+                imageSrc={research_4}
+                imageAlt="research_aialgorithms"
+                content1={
+                  "Through the development of AI algorithms, medical staff can provide medical services to patients more accurately and quickly. We are collecting ostomy photos containing status information using our digital platform. We research an algorithm that automatically determines the condition of the ostomy by learning it through artificial intelligence."
+                }
+                contentPadding="ptb-24"
+                flexStyle="flex-col gap-68"
+                subText1Style=""
+                subText2Style=""
+              />
+            </div>
 
-            <CommonCardFrameCenter
-              content={
-                "In breast cancer patients, hormone therapy is an important treatment that can prevent recurrence. However, drug adherence is poor because it needs to be taken for a long time and many adverse events occur. We research that can improve the drug adherence of hormone therapy in breast cancer patients by analyzing various factors that affect drug adherence."
-              }
-              image1src={research_image4}
-              image1alt={"research_image4"}
-            />
+            <div className="pt-236"></div>
+            <div className="pt-64" id="drugadverseevents" ref={refs.current[6]}>
+              <CommonCardTitle
+                title={"DRUG ADVERSE EVENTS"}
+                fontSize={"textF28"}
+              />
+              <CommonCardFrame
+                imageSrc={drugadverseevents}
+                imageAlt="SODA"
+                content1="Platform that can be immediately reported as a national
+                drug adverse event reporting system when drug adverse
+                events occur. This work was supported by the Bio Industry
+                Technology"
+                content2="Development Program(No. 20015086) By the Ministry of
+                Trade, Industry & Energy(MOTIE, Korea)."
+                subText1="SMART REPORT SYSTEM FOR DRUG ADVERSE EVENTS"
+                subText2="SODA"
+                subText1Style="FontB mb-4"
+                subText2Style="textF24 FontEB mb"
+              />
+            </div>
           </div>
         </div>
       </div>

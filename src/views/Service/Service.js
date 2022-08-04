@@ -53,17 +53,17 @@ export default function Service({ match }) {
         <hr className="vertical_line"></hr>
 
         {/* HEALIARY */}
-        <div className="healiary flex-wrap gap40">
-          <div className="flex-wrap gap16">
+        <div className="healiary flex-wrap gap-40">
+          <div className="flex-wrap gap-16">
             <div className="flatformtitle">
-              <div className="flatformnum flex-col gap4">
+              <div className="flatformnum flex-col gap-4">
                 <span className="tcw">Platform 1</span>
               </div>
               <span className="tco2 textF28 FontEB">
                 DIGITAL HEALTHCARE SERVICE PLATFORM
               </span>
             </div>
-            <p className="textT18 explanation mr">
+            <p className="textT18 explanation m-reset">
               Patients get direct services everyday through this platform.
               <br />
               Main services include nutrition, symptom management, drug
@@ -79,20 +79,20 @@ export default function Service({ match }) {
             allowFullScreen
           ></iframe>
 
-          <div className="application flex-row gap120">
+          <div className="application flex-row gap-120">
             <img className="image-fit" src={healiary_application} alt="healiary application" />
-            <div className="explanation lineheight160 flex-col gap56 mr">
-              <div> {/* mr -> margin reset; mb -> margin bottom */}
-                <p className="tco2 textT18 FontB mr mbsm">Application</p>
-                <p className="FontEB textF24 mr mb">HEALIARY</p>
-                <p className="textT18 mr">
+            <div className="explanation lineheight160 flex-col gap-56 m-reset">
+              <div> {/* m-reset -> margin reset; mb-8-> margin bottom */}
+                <p className="tco2 textT18 FontB m-reset mb-4">Application</p>
+                <p className="FontEB textF24 m-reset mb">HEALIARY</p>
+                <p className="textT18 m-reset">
                   The personalized companion digital platform that takes care of
                   cancer patients’ daily challenges including nutrition/food
                   intake, symptom management, and exercise.
                 </p>
               </div>
               <div>
-                <p className="textT18 mr">
+                <p className="textT18 m-reset">
                   Patient Engagement Mobile Application. It is a tool for cancer
                   patients to remain engaged and active throughout their therapy
                   with their care team.
@@ -103,33 +103,33 @@ export default function Service({ match }) {
         </div>
 
         {/* OSTOMY */}
-        <div className="ostomy flex-col gap24">
-          <div className="flex-col gap16">
+        <div className="ostomy flex-col gap-24">
+          <div className="flex-col gap-16">
             <div className="flatformtitle">
-              <div className="flatformnum flex-col gap4">
+              <div className="flatformnum flex-col gap-4">
                 <span className="tcw">Platform 2</span>
               </div>
               <span className="tco2 textF28 FontEB">
                 TELE-HEALTHCARE SERVICE PLATFORM
               </span>
             </div>
-            <p className="textT18 explanation mr">
+            <p className="textT18 explanation m-reset">
               Gateway service platform between providers and patients for remote
               and home care management.​
             </p>
           </div>
-          <div className="application flex-row-reverse gap120">
+          <div className="application flex-row-reverse gap-120">
             <img className="image-fit" src={ostomy_application} alt="ostomy application" />
-            <div className="explanation lineheight160 flex-col gap56">
+            <div className="explanation lineheight160 flex-col gap-56">
               <div>
-                <p className="tco2 textT18 FontB mr mbsm">Application</p>
-                <p className="FontEB textF24 mr mb">OSTOMY CARE</p>
-                <p className="textT18 mr">
+                <p className="tco2 textT18 FontB m-reset mb-4">Application</p>
+                <p className="FontEB textF24 m-reset mb">OSTOMY CARE</p>
+                <p className="textT18 m-reset">
                   Home Health Care Service Platform for Ostomy patients. ​
                 </p>
               </div>
               <div>
-                <p className="textT18 mr">
+                <p className="textT18 m-reset">
                   Medical care teams can directly communicate with their
                   patients in this platform. Patients inform their current
                   medical conditions including photos then care teams evaluate
