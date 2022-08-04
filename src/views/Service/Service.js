@@ -84,7 +84,7 @@ export default function Service({ match }) {
             <div className="explanation lineheight160 flex-col gap-56 m-reset">
               <div> {/* m-reset -> margin reset; mb-8-> margin bottom */}
                 <p className="tco2 textT18 FontB m-reset mb-4">Application</p>
-                <p className="FontEB textF24 m-reset mb">HEALIARY</p>
+                <p className="FontEB textF24 m-reset mb-8">HEALIARY</p>
                 <p className="textT18 m-reset">
                   The personalized companion digital platform that takes care of
                   cancer patients’ daily challenges including nutrition/food
@@ -123,7 +123,7 @@ export default function Service({ match }) {
             <div className="explanation lineheight160 flex-col gap-56">
               <div>
                 <p className="tco2 textT18 FontB m-reset mb-4">Application</p>
-                <p className="FontEB textF24 m-reset mb">OSTOMY CARE</p>
+                <p className="FontEB textF24 m-reset mb-8">OSTOMY CARE</p>
                 <p className="textT18 m-reset">
                   Home Health Care Service Platform for Ostomy patients. ​
                 </p>

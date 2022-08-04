@@ -89,6 +89,7 @@ export default function Research() {
                           performed for evaluating feasibility and efficacy of digital
                           health technology with nutritional care in gastric cancer
                           patients who underwent gastrectomy."
+                mainTextStyle = "text-align-start textT18 FontL lineheight160"
               />
             </div>
             {/* Symptom Management */}
@@ -106,7 +107,7 @@ export default function Research() {
                   style={{ height: "34px" }}
                 >
                   <span className="FontEB textF24">ATTI</span>
-                  <p className="m-reset textF18">
+                  <p className="m-reset FontL textF18">
                     Real-time, clinical decision support tool to monitor and
                     manage the complexities of lung cancer care.
                   </p>
@@ -209,7 +210,7 @@ export default function Research() {
                 subText1="SMART REPORT SYSTEM FOR DRUG ADVERSE EVENTS"
                 subText2="SODA"
                 subText1Style="FontB mb-4"
-                subText2Style="textF24 FontEB mb"
+                subText2Style="textF24 FontEB mb-8"
               />
             </div>
           </div>
