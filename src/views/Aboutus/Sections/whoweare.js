@@ -2,9 +2,11 @@ import React from "react";
 import "../Aboutus.css";
 import backgroundImg from "../../../assets/images/02about_who_we_are/about_banner_background.svg";
 import { useMediaQuery } from "@material-ui/core";
+
 export default function Whoweare() {
   const tablet = useMediaQuery("(max-width: 768px)");
   const mobile = useMediaQuery("(max-width: 320px)");
+
   const splits = {
     border: ["IDENTIFY", "PRIORITIZE", "DEVELOP", "IMPLEMENT"],
     text: [
@@ -23,27 +25,29 @@ export default function Whoweare() {
       }}
       className="SectionDiv whoweare"
     >
-      <div className="titleDiv FontB">
-        <span>WHO WE ARE</span>
+      <div className="titleDiv">
+        <span className="FontB">WHO WE ARE</span>
         <hr />
       </div>
       <div className="whoweareContent">
-        <div className="whoweareContentTitle FontEB">
+        <div className="whoweareContentTitle">
           {mobile ? (
             <>
-              <span>HERINGS is personalized</span>
-              <span>Digital Health Care Service Company</span>
+              <span className="FontB">HERINGS is personalized</span>
+              <span className="FontB">Digital Health Care Service Company</span>
             </>
           ) : (
-            <span>
+            <span className="FontB">
               HERINGS is personalized Digital Health Care Service Company
             </span>
           )}
         </div>
-        <div className="whoweareContentsWrap FontL">
+        <div className="whoweareContentsWrap">
           {mobile ? (
             <>
-              <span>We aim to be the best companion to cancer patients</span>
+              <span className="FontL">
+                We aim to be the best companion to cancer patients
+              </span>
               <span>through their long journey to overcome the disease.</span>
             </>
           ) : (
@@ -59,9 +63,9 @@ export default function Whoweare() {
           />
           <span className="we FontB">We</span>
           {splits.border.map((split, idx) => (
-            <div className="mt-12">
-              <span className="FontR tcw">{split}</span>
-              <span className="FontB tcw">{splits.text[idx]}</span>
+            <div className="mt-8">
+              <span className="FontB tcw">{split}</span>
+              <span className="FontR tcw">{splits.text[idx]}</span>
             </div>
           ))}
         </div>

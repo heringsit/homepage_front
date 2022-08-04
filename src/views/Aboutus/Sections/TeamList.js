@@ -68,7 +68,7 @@ export default function TeamList(props) {
     <div className={`${mobile ? "" : "pt-80"}`}>
       <div className="SectionDiv">
         <div className="titleDiv">
-          <span>HERINGS TEAM</span>
+          <span className="FontB">HERINGS TEAM</span>
           <hr />
         </div>
         <div className="SectionColorGray" style={{ padding: "16px 0" }}>

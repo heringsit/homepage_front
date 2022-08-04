@@ -24,8 +24,6 @@
   align-items: center;
   align-content: center;
   font-size: 24px;
-  font-weight: 600;
-  /* color: #000; */
 }
 .titleDiv > hr {
   width: 60px;
@@ -43,7 +41,7 @@
   align-items: center;
   align-content: center;
   font-size: 24px;
-  font-weight: 600;
+  /* font-weight: 600; */
   color: #fff;
 }
 .whoweare .titleDiv > hr {
@@ -65,7 +63,7 @@
   align-items: center;
   flex-wrap: wrap;
   font-size: 32px;
-  font-weight: 600;
+  /* font-weight: 600; */
   color: #fff;
 }
 .whoweareContentsWrap {
@@ -78,7 +76,7 @@
 }
 .we {
   font-size: 20px;
-  font-weight: 600;
+  /* font-weight: 600; */
 }
 
 /* HERINGS TEAM */
@@ -294,23 +292,29 @@
 }
 
 @media screen and (max-width: 320px) {
+  .titleDiv {
+    margin-bottom: 10px;
+  }
   .titleDiv > span {
     font-size: 10px;
   }
   .titleDiv > hr {
     width: 35px;
-    margin: 15px 0 5px 0;
+    margin: 15px 0 0 0;
   }
   /* WHO WE ARE */
   .whoweareContentTitle {
-    margin: 12px auto;
+    margin: 20px auto;
     font-size: 12px;
   }
   .whoweareContentsWrap {
-    font-size: 8px;
+    width: 300px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    word-break: normal;
   }
   .we {
-    font-size: 8px;
+    font-size: 10px;
   }
   /* HEARINGS TEAM */
   .Subtitle > span {

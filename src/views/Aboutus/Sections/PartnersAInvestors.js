@@ -20,11 +20,11 @@ import { useMediaQuery } from "@material-ui/core";
 export default function PartnersAInvestors(props) {
   const mobile = useMediaQuery("(max-width: 320px)");
   return (
-    <div className={`${mobile ? "" : "pt-80"}`}>
-      <div className="SectionDiv pb-400">
+    <div className={`${mobile ? "pb-400" : "pt-80"}`}>
+      <div className="SectionDiv">
         {!props.matches ? (
           <div className="titleDiv">
-            <span>Partners & Investors </span>
+            <span className="FontB">Partners & Investors </span>
             <hr />
           </div>
         ) : null}

@@ -502,6 +502,12 @@ body {
   height: 100vh;
 }
 /* padding & margin */
+.mt-8 {
+  margin-top: 8px;
+}
+.mt-10 {
+  margin-top: 10px;
+}
 .mt-12 {
   margin-top: 12px;
 }
