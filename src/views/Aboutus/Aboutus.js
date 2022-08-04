@@ -72,10 +72,10 @@ const useStyles = makeStyles((theme) =>
     modalContent: {
       height: "auto",
       maxHeight: 750,
-      padding: 40,
+      padding: 20,
       textAlign: "center",
       [theme.breakpoints.down("xs")]: {
-        paddingTop: 25,
+        paddingTop: 20,
         paddingBottom: 25,
         paddingLeft: 10,
         paddingRight: 10,
@@ -99,7 +99,7 @@ const useStyles = makeStyles((theme) =>
     },
     modalClose: {
       maxWidth: 70,
-      padding: 20,
+      padding: 2,
       cursor: "pointer",
       outline: "none",
       [theme.breakpoints.down("xs")]: {
@@ -127,24 +127,24 @@ const useStyles = makeStyles((theme) =>
       flexWrap: "wrap",
       color: "#4a4a4a",
     },
-    modalContentText: {
-      borderTop: "1px solid #ddd",
-      textAlign: "left",
-      whiteSpace: "pre-wrap",
-      color: "#4a4a4a",
-      padding: "25px",
-      lineHeight: "160%",
-      [theme.breakpoints.down("xs")]: {
-        paddingTop: "25px",
-        paddingBottom: "25px",
-        paddingLeft: "10px",
-        paddingRight: "10px",
-      },
-    },
+    // modalContentText: {
+    //   borderTop: "1px solid #ddd",
+    //   textAlign: "left",
+    //   whiteSpace: "pre-wrap",
+    //   color: "#4a4a4a",
+    //   padding: "25px",
+    //   lineHeight: "160%",
+    //   [theme.breakpoints.down("xs")]: {
+    //     paddingTop: "25px",
+    //     paddingBottom: "25px",
+    //     paddingLeft: "10px",
+    //     paddingRight: "10px",
+    //   },
+    // },
   })
 );
 
-export default function Aboutus({ match }) {
+export default function Aboutus() {
   const HAS_VISITED_BEFORE = localStorage.getItem("hasVisitedBefore");
   const [isScroll, setIsScroll] = useState(false);
   const [open, setOpen] = useState(false);
@@ -153,7 +153,7 @@ export default function Aboutus({ match }) {
   const [modalPopObj, setmodalPopObj] = useState({});
   const [slideIndex, setSlideIndex] = useState(0);
   const [watchToday, setWatchToday] = useState(false);
-  const { theme, changeTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   console.log("about us mode", theme);
 
@@ -244,7 +244,7 @@ export default function Aboutus({ match }) {
               <div style={{ width: "100%" }}>
                 <div className="careerModalTitle">
                   <div className="careerModalTitleSection">
-                    <span className="FontNB textF26" style={{ marginLeft: 45 }}>
+                    <span className="FontNB" style={{ marginLeft: 45 }}>
                       {modalPopObj.title}
                     </span>
                   </div>
@@ -265,7 +265,7 @@ export default function Aboutus({ match }) {
                     }}
                   >
                     <div
-                      className="tbContents tcb FontNR textF16 "
+                      className="tbContents tcb FontNR "
                       style={{ borderBottom: "solid 0.5px #bebebe" }}
                     >
                       {modalPopObj.recruitment}
@@ -447,7 +447,7 @@ export default function Aboutus({ match }) {
                 </div>
                 <div
                   id="transition-modal-description"
-                  className={`textF16 FontR ${classes.modalContentText}`}
+                  className={`modalContentText FontR ${classes.modalContentText}`}
                 >
                   {modalObj?.detail}
                 </div>

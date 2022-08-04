@@ -677,7 +677,7 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`menuText textF18 ${
+                  className={`menuText textF18 FontR ${
                     theme === "light" ? "tcb" : "tcw"
                   }`}
                 >
@@ -693,7 +693,7 @@ export default function Menubar(props) {
                       onClick={menuclick}
                     >
                       <span
-                        className={`menuText textF15 ${
+                        className={`menuText textF15 FontR ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -717,7 +717,7 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`menuText textF18 ${
+                  className={`menuText textF18 FontR ${
                     theme === "light" ? "tcb" : "tcw"
                   }`}
                 >
@@ -733,7 +733,7 @@ export default function Menubar(props) {
                       onClick={menuclick}
                     >
                       <span
-                        className={`menuText textF15 ${
+                        className={`menuText textF15 FontR ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -757,7 +757,7 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`menuText textF18 ${
+                  className={`menuText textF18 FontR${
                     theme === "light" ? "tcb" : "tcw"
                   }`}
                 >
@@ -773,7 +773,7 @@ export default function Menubar(props) {
                       onClick={menuclick}
                     >
                       <span
-                        className={`menuText textF15 ${
+                        className={`menuText textF15 FontR ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -793,7 +793,7 @@ export default function Menubar(props) {
             >
               <Link smooth="true" to={`${imsi}/crs/#crs`} onClick={menuclick}>
                 <span
-                  className={`menuText textF18 ${
+                  className={`menuText textF18 FontR ${
                     theme === "light" ? "tcb" : "tcw"
                   }`}
                 >
@@ -805,7 +805,7 @@ export default function Menubar(props) {
                   <li key={idx}>
                     <Link smooth="true" to={CTS.link[idx]} onClick={menuclick}>
                       <span
-                        className={`menuText textF15 ${
+                        className={`menuText textF15 FontR ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -825,7 +825,7 @@ export default function Menubar(props) {
             >
               <Link smooth="true" to={`${imsi}/news/#news`} onClick={menuclick}>
                 <span
-                  className={`menuText textF18 ${
+                  className={`menuText textF18 FontR ${
                     theme === "light" ? "tcb" : "tcw"
                   }`}
                 >
@@ -841,7 +841,7 @@ export default function Menubar(props) {
                       onClick={menuclick}
                     >
                       <span
-                        className={`menuText textF15 ${
+                        className={`menuText textF15 FontR ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >
@@ -865,7 +865,7 @@ export default function Menubar(props) {
                 onClick={menuclick}
               >
                 <span
-                  className={`menuText textF18 ${
+                  className={`menuText textF18 FontR ${
                     theme === "light" ? "tcb" : "tcw"
                   }`}
                 >
@@ -881,7 +881,7 @@ export default function Menubar(props) {
                       onClick={menuclick}
                     >
                       <span
-                        className={`menuText textF15 ${
+                        className={`menuText textF15 FontR ${
                           theme === "light" ? "tcg" : "tcw"
                         }`}
                       >

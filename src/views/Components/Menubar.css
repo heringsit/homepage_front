@@ -325,7 +325,7 @@
     background-size: contain;
   }
   .menuText {
-    font-size: 12px
+    font-size: 12px;
   }
 }
 
@@ -389,6 +389,9 @@
 
 /* MOBILE DARK MODE */
 @media screen and (max-width: 1260px) {
+  .mobileMenulogo {
+    justify-content: space-between;
+  }
   .modediv {
     z-index: 10;
     text-align: center;
@@ -410,9 +413,6 @@
 }
 
 @media screen and (max-width: 320px) {
-  .mobileMenulogo {
-    justify-content: space-between;
-  }
   .logoImgContainCenterM {
     width: 40px;
   }

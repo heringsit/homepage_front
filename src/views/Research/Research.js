@@ -139,8 +139,6 @@ export default function Research() {
                 content1="In cancer patients, the decrease in physical ability, including muscle strength, causes sarcopenia and cachexia, which ultimately worsens the prognosis of cancer patients. We research exercise algorithms that could enhance physical ability in cancer patients and apply them to our platform to demonstrate their effectiveness."
                 contentPadding="ptb-24"
                 flexStyle="flex-col gap-68"
-                subText1Style=""
-                subText2Style=""
               />
             </div>
             {/* Risk Prediction */}
@@ -155,8 +153,6 @@ export default function Research() {
                 }
                 contentPadding="ptb-24"
                 flexStyle="flex-col gap-68"
-                subText1Style=""
-                subText2Style=""
               />
             </div>
             {/* Drug Adherence */}
@@ -171,8 +167,6 @@ export default function Research() {
                 }
                 contentPadding="ptb-24"
                 flexStyle="flex-col gap-68"
-                subText1Style=""
-                subText2Style=""
               />
             </div>
             {/* AI algorithms */}
@@ -187,8 +181,6 @@ export default function Research() {
                 }
                 contentPadding="ptb-24"
                 flexStyle="flex-col gap-68"
-                subText1Style=""
-                subText2Style=""
               />
             </div>
 

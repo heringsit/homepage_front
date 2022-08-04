@@ -8,9 +8,10 @@ const CommonCardFrame = (
     contentStyle = "align-items-center" , // ex: content align style
     contentPadding = "ps-48", // ex: content padding
     flexStyle = "flex-row-reverse gap-64", // ex: "flex-row-reverse gap-64"
-    mainTextStyle = "text-align-start textT18 FontR lineheight160",
+    mainTextStyle = "text-align-start textT18 FontL lineheight160",
     subText1Style,
     subText2Style,
+    mainContentStyle = "flex-col",
     content1,
     content2,
     content3,
@@ -26,7 +27,7 @@ const CommonCardFrame = (
         src={imageSrc}
         alt={imageAlt}
       />
-      <div className={`flex-col m-reset ${
+      <div className={`${mainTextStyle} ${mainContentStyle} m-reset ${
         theme === "light" ? "tcb" : "tcw"
       }`}>
         <div>
