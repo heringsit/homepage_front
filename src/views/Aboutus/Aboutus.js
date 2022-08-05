@@ -21,10 +21,11 @@ import search from "../../assets/images/etc/search.png";
 import { Checkbox } from "@material-ui/core";
 import moment from "moment";
 import TabClick from "../common/TabClick";
-import ContentsTitle from "../Components/ContentsTitle";
+// import ContentsTitle from "../Components/ContentsTitle";
 import useOnScreen from "./hooks/objectObserver";
 import { ThemeContext } from "../../context";
 
+// 22.08.05 makeStyles 사용에서 css 로 코드 변환 중
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
@@ -48,6 +49,7 @@ const useStyles = makeStyles((theme) =>
     },
     modal: {
       display: "flex",
+      position: "fixed",
       alignItems: "center",
       justifyContent: "center",
     },
@@ -56,7 +58,6 @@ const useStyles = makeStyles((theme) =>
       // flexDirection:'column',
       // alignItems: "center",
       // justifyContent: "center",
-
       width: "55%",
       // height: "439px",
       maxHeight: "85vh",
@@ -69,53 +70,11 @@ const useStyles = makeStyles((theme) =>
         // maxHeight: 500,
       },
     },
-    modalContent: {
-      height: "auto",
-      maxHeight: 750,
-      padding: 20,
-      textAlign: "center",
-      [theme.breakpoints.down("xs")]: {
-        paddingTop: 20,
-        paddingBottom: 25,
-        paddingLeft: 10,
-        paddingRight: 10,
-      },
-    },
-    modalCloseWrap: {
-      position: "relative",
-    },
-    modalCloseDiv: {
-      position: "absolute",
-      top: "-40px",
-      right: "-40px",
-      display: "flex",
-      width: "100%",
-      justifyContent: "flex-end",
-      outline: "none",
-      [theme.breakpoints.down("xs")]: {
-        top: "-25px",
-        right: "-10px",
-      },
-    },
-    modalClose: {
-      maxWidth: 70,
-      padding: 2,
-      cursor: "pointer",
-      outline: "none",
-      [theme.breakpoints.down("xs")]: {
-        maxWidth: 50,
-        padding: 12.5,
-      },
-    },
-    modalimgaeWrap: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-    },
     modalimage: {
       width: "35%",
       maxWidth: "35%",
       height: "auto",
+      paddingTop: "50px",
     },
     modalTitle: {
       marginTop: 20,
@@ -127,20 +86,6 @@ const useStyles = makeStyles((theme) =>
       flexWrap: "wrap",
       color: "#4a4a4a",
     },
-    // modalContentText: {
-    //   borderTop: "1px solid #ddd",
-    //   textAlign: "left",
-    //   whiteSpace: "pre-wrap",
-    //   color: "#4a4a4a",
-    //   padding: "25px",
-    //   lineHeight: "160%",
-    //   [theme.breakpoints.down("xs")]: {
-    //     paddingTop: "25px",
-    //     paddingBottom: "25px",
-    //     paddingLeft: "10px",
-    //     paddingRight: "10px",
-    //   },
-    // },
   })
 );
 
@@ -233,7 +178,7 @@ export default function Aboutus() {
         className={classes.modal}
         open={openNotice}
         onClose={handleNoticeClose}
-        hideBackdrop={false}
+        hideBackdrop={true}
         onBackdropClick={() => {
           setOpenNotice(false);
         }}
@@ -370,6 +315,7 @@ export default function Aboutus() {
   visibleArray[2] = useOnScreen(refs.current[2]);
   // console.log(visibleArray, ">>visibleArray")
 
+  const tablet = useMediaQuery("(max-width: 786px)");
   return (
     <div
       id="aboutus"
@@ -377,6 +323,7 @@ export default function Aboutus() {
         position: "relative",
         backgroundColor: theme === "dark" && "#282828",
         color: theme === "dark" && "#fff",
+        overflow: modalObj && "hidden",
       }}
     >
       <Menubar slideIndex={slideIndex} />
@@ -386,7 +333,9 @@ export default function Aboutus() {
       <div>
         {/* <ContentsTitle title={"ABOUT US"} /> */}
         <div id="whoweare"></div>
-        <TabClick visibleArray={visibleArray} isScroll={isScroll} />
+        {!tablet && (
+          <TabClick visibleArray={visibleArray} isScroll={isScroll} />
+        )}
 
         <div ref={refs.current[0]}>
           <Whoweare />
@@ -417,17 +366,13 @@ export default function Aboutus() {
         <Fade in={open}>
           <div className={classes.paper}>
             {modalObj !== JSON.stringify({}) ? (
-              <div className={classes.modalContent}>
-                <div className={classes.modalCloseWrap}>
-                  <div className={classes.modalCloseDiv} onClick={handleClose}>
-                    <img
-                      src={iconClose}
-                      alt="close"
-                      className={classes.modalClose}
-                    />
+              <div className="modalContent">
+                <div className="modalCloseWrap">
+                  <div className="modalCloseDiv" onClick={handleClose}>
+                    <img src={iconClose} alt="close" className="modalClose" />
                   </div>
                 </div>
-                <div className={classes.modalimgaeWrap}>
+                <div className="modalimgaeWrap">
                   <img
                     src={modalObj?.modalimg}
                     alt={modalObj?.name}
@@ -447,7 +392,7 @@ export default function Aboutus() {
                 </div>
                 <div
                   id="transition-modal-description"
-                  className={`modalContentText FontR ${classes.modalContentText}`}
+                  className="modalContentText FontR"
                 >
                   {modalObj?.detail}
                 </div>

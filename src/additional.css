@@ -26,11 +26,23 @@
 .pt-16 {
   padding-top: 16px;
 }
+.pt-30 {
+  padding-top: 30px;
+}
 .pt-32 {
   padding-top: 32px;
 }
 .pt-64 {
   padding-top: 64px;
+}
+.pt-80 {
+  padding-top: 80px;
+}
+.pt-100 {
+  padding-top: 100px;
+}
+.pt-150 {
+  padding-top: 150px;
 }
 .pt-300 {
   padding-top: 300px;
@@ -58,6 +70,15 @@
 .pb-200 {
   padding-bottom: 200px;
 }
+.pb-300 {
+  padding-bottom: 300px;
+}
+.pb-400 {
+  padding-bottom: 400px;
+}
+.pt-500 {
+  padding-bottom: 500px;
+}
 .pb-600 {
   padding-bottom: 600px;
 }
@@ -75,6 +96,7 @@
 /* text margins: 
   m-reset - margin reset
   mb-8- margin bottom 
+  mt : margin top
 */
 .m-reset {
   margin: 0;
@@ -91,6 +113,15 @@
 .mb-16 {
   margin-bottom: 16px;
 }
+.mt-8 {
+  margin-top: 8px;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+.mt-12 {
+  margin-top: 12px;
+}
 
 /* flex:
   flex-wrap: default flex wrap
@@ -98,6 +129,9 @@
   flex-row: flex (direction -> row)
   gap-#: the gap length 
 */
+.flex {
+  display: flex;
+}
 .flex-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -168,6 +202,14 @@
 }
 .lineheight140 {
   line-height: 140%;
+}
+
+/* display */
+.block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
 }
 
 

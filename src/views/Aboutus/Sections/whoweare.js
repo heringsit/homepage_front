@@ -33,8 +33,8 @@ export default function Whoweare() {
         <div className="whoweareContentTitle">
           {mobile ? (
             <>
-              <span className="FontB">HERINGS is personalized</span>
-              <span className="FontB">Digital Health Care Service Company</span>
+              <span className="FontR">HERINGS is personalized</span>
+              <span className="FontR">Digital Health Care Service Company</span>
             </>
           ) : (
             <span className="FontB">
@@ -42,16 +42,16 @@ export default function Whoweare() {
             </span>
           )}
         </div>
-        <div className="whoweareContentsWrap">
+        <div className="mt-8 whoweareContentsWrap">
           {mobile ? (
             <>
               <span className="FontL">
                 We aim to be the best companion to cancer patients
               </span>
-              <span>through their long journey to overcome the disease.</span>
+              <span className="FontL">through their long journey to overcome the disease.</span>
             </>
           ) : (
-            <span>
+            <span className="FontL">
               We aim to be the best companion to cancer patients through their
               long journey to overcome the disease.
             </span>
@@ -65,7 +65,7 @@ export default function Whoweare() {
           {splits.border.map((split, idx) => (
             <div className="mt-8">
               <span className="FontB tcw">{split}</span>
-              <span className="FontR tcw">{splits.text[idx]}</span>
+              <span className="FontL tcw">{splits.text[idx]}</span>
             </div>
           ))}
         </div>

@@ -34,14 +34,6 @@
 
 /* WHO WE ARE  */
 .whoweare .titleDiv {
-  margin-bottom: 37px;
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  font-size: 24px;
-  /* font-weight: 600; */
   color: #fff;
 }
 .whoweare .titleDiv > hr {
@@ -143,10 +135,10 @@
   text-align: left;
 }
 .heringsTeamContentText:first-child {
-  font-size: 16px;
+  font-size: 18px;
 }
 .heringsTeamContentText:last-child {
-  font-size: 14px;
+  font-size: 16px;
 }
 /* PARTNERS & INVESTORS */
 .researchWrap {
@@ -293,32 +285,39 @@
 
 @media screen and (max-width: 320px) {
   .titleDiv {
-    margin-bottom: 10px;
+    margin: 0 0 0 0;
   }
   .titleDiv > span {
-    font-size: 10px;
+    font-size: 15px;
+    font-weight: 600;
   }
   .titleDiv > hr {
     width: 35px;
-    margin: 15px 0 0 0;
+    margin: 5px 0 30px 0;
   }
   /* WHO WE ARE */
   .whoweareContentTitle {
-    margin: 20px auto;
-    font-size: 12px;
+    margin: auto;
+    font-size: 15px;
+    font-weight: 600;
   }
   .whoweareContentsWrap {
     width: 300px;
-    margin-top: -10px;
     margin-bottom: 20px;
     word-break: normal;
   }
-  .we {
-    font-size: 10px;
+  .whoweareContentsWrap span {
+    font-size: 12px;
   }
+  .we {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
   /* HEARINGS TEAM */
   .Subtitle > span {
-    font-size: 10px;
+    font-size: 14px;
+    margin: 2px 0 2px 0;
   }
   .heringsTeamWrap {
     width: 90%;
@@ -343,14 +342,20 @@
     margin-top: 5x;
   }
   .heringsTeamContentText:first-child {
-    font-size: 10px;
+    font-size: 12px;
   }
   .heringsTeamContentText:last-child {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 
 /* MODAL */
+.modalContent {
+  height: auto;
+  max-height: 750;
+  padding: 20;
+  text-align: center;
+}
 .careerModalTitleSection > span {
   font-size: 26px;
 }
@@ -362,6 +367,48 @@
   padding: 25px;
   line-height: 160%;
   font-size: 16px;
+}
+.modalCloseWrap {
+  position: relative;
+}
+.modalCloseDiv {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  outline: none;
+  padding: 5px;
+}
+.modalClose {
+  width: 50px;
+  height: 50px;
+  max-width: 70;
+  padding: 2;
+  cursor: pointer;
+  outline: none;
+}
+.modalimageWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 1260px) {
+  .modalCloseDiv {
+    top: calc(-0.9vh);
+  }
+  .modalClose {
+    width: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .modalCloseDiv {
+    top: -10px;
+  }
+  .modalClose {
+    width: 30px;
+  }
 }
 @media screen and (max-width: 600px) {
   .careerModalTitleSection > span {
