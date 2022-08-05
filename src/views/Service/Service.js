@@ -58,7 +58,7 @@ export default function Service({ match }) {
             <div className="flex-wrap gap-16">
               <div className="flatformtitle">
                 <div className="flatformnum flex-col gap-4">
-                  <span className="tcw">Platform 1</span>
+                  <span className="tcw textF16">Platform 1</span>
                 </div>
                 <span className="tco2 textF28 FontEB">
                   DIGITAL HEALTHCARE SERVICE PLATFORM
@@ -103,7 +103,7 @@ export default function Service({ match }) {
             <div className="flex-col gap-16">
               <div className="flatformtitle">
                 <div className="flatformnum flex-col gap-4">
-                  <span className="tcw">Platform 2</span>
+                  <span className="tcw textF16">Platform 2</span>
                 </div>
                 <span className="tco2 textF28 FontEB">
                   TELE-HEALTHCARE SERVICE PLATFORM
