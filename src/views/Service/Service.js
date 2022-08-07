@@ -109,7 +109,7 @@ export default function Service({ match }) {
                   TELE-HEALTHCARE SERVICE PLATFORM
                 </span>
               </div>
-              <p className="textT18 explanation m-reset">
+              <p className="textT18 explanation FontL m-reset">
                 Gateway service platform between providers and patients for
                 remote and home care management.​
               </p>

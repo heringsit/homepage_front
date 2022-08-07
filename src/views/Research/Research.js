@@ -77,7 +77,7 @@ export default function Research() {
               <CommonCardFrame
                 imageSrc={nutrition}
                 imageAlt="nutrition"
-                contentPadding="ps-48 ptb-36"
+                contentPadding="drugadverse-padding ptb-36"
                 content1="Nutrition is one the most import fields in the long cancer
                           care journey. It is significantly related to treatment
                           outcomes such as quality of life, drug compliance, and even to
@@ -101,16 +101,18 @@ export default function Research() {
               />
               <div className="align-items-center flex-col gap-40">
                 <div
-                  className={`align-items-center flex-row gap-16 ${
+                  className={`align-items-center ${
                     theme === "light" ? "tcb" : "tcw"
                   }`}
-                  style={{ height: "34px" }}
+                  
                 >
+                  
                   <span className="FontEB textF24">ATTI</span>
-                  <p className="m-reset FontL textF18">
+                  <p className="m-reset FontL textT18" >
                     Real-time, clinical decision support tool to monitor and
                     manage the complexities of lung cancer care.
                   </p>
+
                 </div>
                 <div className="align-items-center flex-row gap-58">
                   <img
@@ -203,6 +205,7 @@ export default function Research() {
                 subText2="SODA"
                 subText1Style="FontB mb-4"
                 subText2Style="textF24 FontEB mb-8"
+                contentPadding="drugadverse-padding"
               />
             </div>
           </div>
