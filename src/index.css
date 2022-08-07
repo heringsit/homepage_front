@@ -456,15 +456,6 @@ body {
 }
 
 /*기본 css*/
-.flex {
-  display: flex;
-}
-.block {
-  display: block;
-}
-.inline-block {
-  display: inline-block;
-}
 .break-keepall {
   word-break: keep-all;
 }
