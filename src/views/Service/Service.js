@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+// import useMediaQuery from "@material-ui/core/useMediaQuery";
 import "./Service.css";
 /*component*/
 import Menubar from "../Components/Menubar";
@@ -20,7 +20,6 @@ import CommonCardFrame from "../common/CommonCardFrame";
 // import ServiceTitleImage from "../../assets/images/07service/service_title.svg";
 
 export default function Service({ match }) {
-  const matches = useMediaQuery("(max-width:1260px)");
   const { theme } = useContext(ThemeContext);
 
   console.log(match, ">>match ");
@@ -54,11 +53,11 @@ export default function Service({ match }) {
           <hr className="vertical_line"></hr>
 
           {/* HEALIARY */}
-          <div className="healiary flex-wrap gap-40">
-            <div className="flex-wrap gap-16">
+          <div className="healiary flex-wrap gap-40 inline-block">
+            <div className="flex-wrap gap-16 mb-20">
               <div className="flatformtitle">
                 <div className="flatformnum flex-col gap-4">
-                  <span className="FontB tcw">Platform 1</span>
+                  <span className="tcw textF16">Platform 1</span>
                 </div>
                 <span className="tco2 textF28 FontEB">
                   DIGITAL HEALTHCARE SERVICE PLATFORM
@@ -71,14 +70,15 @@ export default function Service({ match }) {
                 adherence, exercise, and medication.
               </p>
             </div>
-            <iframe
-              id="healiarymp4"
-              src="https://www.youtube.com/embed/_d_OvUMhbho?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+            <div className="youtube mb-20">
+              <iframe
+                src="https://www.youtube.com/embed/_d_OvUMhbho?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
             <CommonCardFrame
               imageSrc={healiary_application}
               imageAlt="healiary application"
@@ -103,7 +103,8 @@ export default function Service({ match }) {
             <div className="flex-col gap-16">
               <div className="flatformtitle">
                 <div className="flatformnum flex-col gap-4">
-                  <span className="FontB tcw">Platform 2</span>
+
+                  <span className="tcw textF16">Platform 2</span>
                 </div>
                 <span className="tco2 textF28 FontEB">
                   TELE-HEALTHCARE SERVICE PLATFORM

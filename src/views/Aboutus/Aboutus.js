@@ -23,7 +23,7 @@ import moment from "moment";
 import TabClick from "../common/TabClick";
 // import ContentsTitle from "../Components/ContentsTitle";
 import useOnScreen from "./hooks/objectObserver";
-import { ThemeContext } from "../../context";
+import { MediaQueryContext, ThemeContext } from "../../context";
 
 // 22.08.05 makeStyles 사용에서 css 로 코드 변환 중
 const useStyles = makeStyles((theme) =>
@@ -99,6 +99,7 @@ export default function Aboutus() {
   const [slideIndex, setSlideIndex] = useState(0);
   const [watchToday, setWatchToday] = useState(false);
   const { theme } = useContext(ThemeContext);
+  const { mTablet } = useContext(MediaQueryContext);
 
   console.log("about us mode", theme);
 
@@ -315,7 +316,6 @@ export default function Aboutus() {
   visibleArray[2] = useOnScreen(refs.current[2]);
   // console.log(visibleArray, ">>visibleArray")
 
-  const tablet = useMediaQuery("(max-width: 786px)");
   return (
     <div
       id="aboutus"
@@ -333,7 +333,7 @@ export default function Aboutus() {
       <div>
         {/* <ContentsTitle title={"ABOUT US"} /> */}
         <div id="whoweare"></div>
-        {!tablet && (
+        {!mTablet && (
           <TabClick visibleArray={visibleArray} isScroll={isScroll} />
         )}
 

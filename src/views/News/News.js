@@ -10,7 +10,7 @@ import NewsRelease from "./Sections/NewsRelease";
 import "./News.css";
 import ContentsTitle from "../Components/ContentsTitle";
 import "./Sections/detail/DetailPage";
-import { ThemeContext } from "../../context";
+import { MediaQueryContext, ThemeContext } from "../../context";
 
 // const useStyles = makeStyles((theme) =>
 //   createStyles({
@@ -126,7 +126,8 @@ import { ThemeContext } from "../../context";
 // );
 
 export default function News({ match }) {
-  const matches = useMediaQuery("(max-width:600px)");
+  // const matches = useMediaQuery("(max-width:600px)");
+  const { sTablet } = useContext(MediaQueryContext);
   const { theme } = useContext(ThemeContext);
   // const [open, setOpen] = useState(false);
   // const [modalObj, setModalObj] = useState({});
@@ -159,8 +160,8 @@ export default function News({ match }) {
         <div className="pt-97" />
         <ContentsTitle matches={matches} title={"NEWS & IR"} />
         {/* 배너 */}
-        <NewsRelease matches={matches} />
-        <IRInformation matches={matches} />
+        <NewsRelease matches={sTablet} />
+        <IRInformation matches={sTablet} />
         <Footer />
       </div>
     </div>
