@@ -179,22 +179,21 @@ export default function ContactUs() {
       <Menubar slideIndex={0} />
       <Totop />
       <div id="contactus">
+        <div className="pt-97" />
         <ContentsTitle matches={matches} title={"CONTACT US"} />
         <Career matches={matches} />
         <div className="SectionDiv" id="contact">
           <div className="titleDiv">
-            <div className="textT22 FontEB">
-              <span>CONTACT</span>
-            </div>
+              <span className="textT22 FontEB">CONTACT</span>
             <hr></hr>
           </div>
           <div className="subTitleDiv">
-            <div className="contactusSubTitle textF22">
-              <span className="tcgreen1">We are here to help.</span> Want to
+            <div className="contactusSubTitle textT22 FontR">
+              <span className="tcgreen1 textT22 FontEB">We are here to help.</span> Want to
               learn more about our services?
               <br />
               Please get in touch,{" "}
-              <span className="tco">we'd love to hear from you!</span>
+              <span className="tco textT22 FontEB">we'd love to hear from you!</span>
             </div>
           </div>
           <div className="contactusContentsDiv">
@@ -210,12 +209,12 @@ export default function ContactUs() {
               </div>
             </div>
             <div className="squareDiv tcw">
-              <div className="textF20">
+              <div className="textF20 FontR">
                 <span className="textF40 FontB">OFFICE</span> 14th Floor, 560,
                 Eonju-ro, Gangnam-gu, Seoul, Republic of Korea
               </div>
               <hr></hr>
-              <div className="textF16">
+              <div className="FontR textF16">
                 <span className="tcgreen3 FontB">TEL</span>+82.02.6949.3516
                 <span className="tcgreen3 FontB">FAX</span>+82.02.6949.3517
               </div>
@@ -223,7 +222,7 @@ export default function ContactUs() {
             <div className="contactusInputDiv">
               <form
                 method="POST"
-                className="contactusInputForm"
+                className="contactusInputForm "
                 id="contactDatas"
               >
                 <input
@@ -231,21 +230,21 @@ export default function ContactUs() {
                   onChange={onChange}
                   placeholder="Name"
                   name="cName"
-                  className={`${inputClassNameHelper(isEnteredNameValid())}`}
+                  className={`FontR textF14 ${inputClassNameHelper(isEnteredNameValid())}`}
                 />
                 <input
                   type="text"
                   onChange={onChange}
                   placeholder="Email"
                   name="cEmail"
-                  className={`${inputClassNameHelper(isEnteredEmailValid())}`}
+                  className={`FontR textF14 ${inputClassNameHelper(isEnteredEmailValid())}`}
                 />
                 <input
                   type="text"
                   onChange={onChange}
                   placeholder="Phone"
                   name="cPhone"
-                  className={`${inputClassNameHelper(isEnteredPhoneValid())}`}
+                  className={`FontR textF14 ${inputClassNameHelper(isEnteredPhoneValid())}`}
                 />
                 <textarea
                   type="textarea"

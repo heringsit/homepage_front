@@ -209,9 +209,7 @@ export default function NewsRelease() {
       <div className="SectionDivNews" id="irinformation">
         <div className="SectionDivNT ">
           <div className="titleDiv">
-            <div className="textT22 FontEB">
-              <span>IR Information</span>
-            </div>
+              <span className="textT22 FontEB">IR Information</span>
             <hr></hr>
           </div>
         </div>

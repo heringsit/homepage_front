@@ -6,34 +6,34 @@ function Footer() {
   const matches = useMediaQuery("(max-width:480px)");
 
   return (
-    <footer className="footer textF12 FontL">
+    <footer className="footer">
       <div className="footerRowa">
-        <NavLink to="/#NULL">Privacy Policy</NavLink>
+        <NavLink className="FontL textF12" to="/#NULL">Privacy Policy</NavLink>
         <span className="slash">/</span>
-        <NavLink to="/aboutus/#heringsteam">Terms And Conditions</NavLink>
+        <NavLink className="FontL textF12" to="/aboutus/#heringsteam">Terms And Conditions</NavLink>
         <span className="slash">/</span>
-        <NavLink to="/contactus">Contact us</NavLink>
+        <NavLink className="FontL textF12" to="/contactus">Contact us</NavLink>
       </div>
       <div className="footerRow">
-        <div className="footerContent">
-          <span className="tco">ADD.</span>
+        <div className="footerContent FontL textF12">
+          <span className="tco FontL textF12">ADD.</span>
           14F, 560, Eonju-ro, Gangnam-gu, Seoul, Republic of Korea
         </div>
-        <div className="footerContent">
-          <span className="tco">TEL.</span>
+        <div className="footerContent FontL textF12">
+          <span className="tco FontL textF12">TEL.</span>
           +82.02.6949.3516
-        </div>
-        <div className="footerContent">
-          <span className="tco">FAX.</span>
+        </div> 
+        <div className="footerContent FontL textF12">
+          <span className="tco FontL textF12">FAX.</span>
           +82.02.6949.3517
         </div>
-        <div className="footerContent">
-          <span className="tco">R.</span>
+        <div className="footerContent FontL textF12">
+          <span className="tco FontL textF12">R.</span>
           Corporate registration number 516-87-00127
         </div>
       </div>
-      <div className="footerRow">
-        <div className="footerContent">
+      <div className="footerRow FontL textF12">
+        <div className="footerContent FontL textF12">
           Copyright © {new Date().getFullYear()} HERINGS. All rights reserved.
         </div>
       </div>
