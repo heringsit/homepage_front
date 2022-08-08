@@ -320,11 +320,11 @@ export default function Aboutus() {
     <div
       id="aboutus"
       style={{
-        position: "relative",
         backgroundColor: theme === "dark" && "#282828",
         color: theme === "dark" && "#fff",
-        overflow: modalObj && "hidden",
+        // overflow: modalObj && "hidden",
       }}
+      className="position-relative"
     >
       <Menubar slideIndex={slideIndex} />
       <Totop />

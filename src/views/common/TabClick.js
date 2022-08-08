@@ -56,8 +56,8 @@ export default function TabClick({ visibleArray, isScroll }) {
                     scroll={scrollWithOffset}
                     className={
                       index === visibleIndex
-                        ? "w-full h-full block tagADefault tabATagTab FontEB"
-                        : "w-full h-full block tagADefault FontR " +
+                        ? "w-full h-full tagADefault tabATagTab FontEB"
+                        : "w-full h-full tagADefault FontR " +
                           (theme === "dark" ? "tcw" : "tcg3")
                     }
                   >
@@ -87,8 +87,8 @@ export default function TabClick({ visibleArray, isScroll }) {
                     scroll={scrollWithOffset}
                     className={
                       index === visibleIndex
-                        ? "w-full h-full block tagADefault tabATagTab FontEB"
-                        : "w-full h-full block tagADefault FontR " +
+                        ? "w-full h-full tagADefault tabATagTab FontEB"
+                        : "w-full h-full tagADefault FontR " +
                           (theme === "dark" ? "tcw" : "tcg3")
                     }
                   >
@@ -119,8 +119,8 @@ export default function TabClick({ visibleArray, isScroll }) {
                     scroll={el => scrollWithOffset(el, -189)}
                     className={
                       index === visibleIndex
-                        ? "w-full h-full block tagADefault tabATagTab FontEB"
-                        : "w-full h-full block tagADefault FontR " +
+                        ? "w-full h-full tagADefault tabATagTab FontEB"
+                        : "w-full h-full tagADefault FontR " +
                           (theme === "dark" ? "tcw" : "tcg3")
                     }
                   >
