@@ -104,9 +104,12 @@ export default function Research() {
                 fontSize={"textF28"}
               />
               <div className="align-items-center flex-col gap-40">
-                {/* 위에서 div 전체에 color 를 변경함 */}
-                <div className="align-items-center flex gap-16">
-                  <span className="FontEB textF24">ATTI</span>
+                <div
+                  className={`flex gap-16 align-items-center ${
+                    theme === "light" ? "tcb" : "tcw"
+                  }`}
+                >
+                  <p className="m-reset FontEB textF24">ATTI</p>
                   <p className="m-reset FontL textT18">
                     Real-time, clinical decision support tool to monitor and
                     manage the complexities of lung cancer care.

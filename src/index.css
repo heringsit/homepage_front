@@ -435,7 +435,7 @@ body {
   offset-position: 100px;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   align-items: flex-end;
   background-color: white;
@@ -447,8 +447,10 @@ body {
 
 .vertical_line {
   height: 190px;
-  width: 1px;
-  color: #dcdcdc;
+  width: 0px;
+  border-left: 1px solid #dcdcdc;
+  left: 1px;
+  margin: auto;
 }
 
 @media screen and (max-width: 1260px) {
@@ -529,9 +531,9 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 220px;
+  height: 100%;
   z-index: 2;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
 }
 #aboutus .banner_img {
   background: url("../src/assets/images/02about_who_we_are/about_banner.png");
@@ -561,6 +563,10 @@ body {
   background-size: cover;
   background-position: center;
 }
+#crs .banner_layout {
+  width: 100%;
+  height: 300px;
+}
 #news .banner_img {
   background: url("../src/assets/images/10newsir/newsir_banner.png");
   background-repeat: no-repeat;
@@ -584,6 +590,7 @@ body {
 .title_center {
   width: 100%;
   text-align: center;
+  z-index: 2;
   letter-spacing: 0.16em;
   color: #ffffff;
 }
