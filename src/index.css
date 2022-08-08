@@ -377,7 +377,9 @@ body {
   padding: 25px 20px;
 }
 .tagADefault {
-  width: 80%;
+  /* width: 80%; */
+  padding-left: 10%;
+  padding-right: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -408,7 +410,7 @@ body {
   /* justify-content: space-between; */
 }
 .TABS_layout_padding {
-  padding: 0 8%;
+  padding: 0 5%;
   height: 100px;
 }
 
