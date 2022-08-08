@@ -74,8 +74,8 @@ export default function TeamList(props) {
         <div className="SectionColorGray" style={{ padding: "16px 0" }}>
           <div className="TeamListWrap">
             <div className="Subtitle">
-              <span className="FontB">EXECUTIVE</span>
-              <span className="FontR">LEADERSHIP</span>
+              <span className="FontB tcb">EXECUTIVE</span>
+              <span className="FontR tcb">LEADERSHIP</span>
             </div>
             <Slider {...LeaderShipSettings} className="listWrap">
               {Executive_Leadership.map((team, index) => {
@@ -126,8 +126,8 @@ export default function TeamList(props) {
           </div>
           <div className="TeamListWrap">
             <div className="Subtitle">
-              <span className="FontB">RESEARCH</span>
-              <span className="FontR">LEADERSHIP</span>
+              <span className="FontB tcb">RESEARCH</span>
+              <span className="FontR tcb">LEADERSHIP</span>
             </div>
             <Slider {...LeaderShipSettings} className="listWrap">
               {Research_Leadership.map((team, index) => {
@@ -176,8 +176,8 @@ export default function TeamList(props) {
           </div>
           <div className="TeamListWrap">
             <div className="Subtitle">
-              <span className="FontB">ADVISORY</span>
-              <span className="FontR">BOARD</span>
+              <span className="FontB tcb">ADVISORY</span>
+              <span className="FontR tcb">BOARD</span>
             </div>
             <Slider {...LeaderShipSettings} className="listWrap">
               {Advisory_Board.map((team, index) => {
