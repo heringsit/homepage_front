@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../../../context";
+import { MediaQueryContext } from "../../../context";
 import p_logo_01 from "../../../assets/images/02about_partners/01suh.png";
 import p_logo_02 from "../../../assets/images/02about_partners/02gsh.png";
 import p_logo_03 from "../../../assets/images/02about_partners/03auh.png";
@@ -15,10 +15,10 @@ import i_logo_02 from "../../../assets/images/02about_investors/02korea_n.svg";
 import i_logo_03 from "../../../assets/images/02about_investors/03venture_n.svg";
 import i_logo_04 from "../../../assets/images/02about_investors/04cap_n.svg";
 import i_logo_05 from "../../../assets/images/02about_investors/05coree.png";
-import { useMediaQuery } from "@material-ui/core";
 
 export default function PartnersAInvestors(props) {
-  const mobile = useMediaQuery("(max-width: 320px)");
+  // const mobile = useMediaQuery("(max-width: 320px)");
+  const { mobile } = useContext(MediaQueryContext);
   return (
     <div className={`${mobile ? "pb-400" : "pt-80 pb-200"}`}>
       <div className="SectionDiv">

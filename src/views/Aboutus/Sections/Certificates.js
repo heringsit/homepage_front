@@ -62,8 +62,8 @@ const useStyles = makeStyles((theme) =>
 );
 
 export default function Certificates(props) {
-  const imsi = process.env.PUBLIC_URL;
-  const matches = useMediaQuery("(max-width:600px)");
+  // const imsi = process.env.PUBLIC_URL;
+  // const matches = useMediaQuery("(max-width:600px)");
   const [isDataReady, setIsDataReady] = useState(false);
   const [paginginfo, setPaginginfo] = useState([]);
   const classes = useStyles();

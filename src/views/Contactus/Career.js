@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import moment from "moment";
 import parse from "html-react-parser";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+// import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
@@ -11,6 +11,7 @@ import { imsi } from "../../index";
 
 import { ReactComponent as IconClose } from "../../assets/images/05career/close.svg";
 import "./Career.css";
+import { MediaQueryContext } from "../../context";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -18,7 +19,7 @@ const useStyles = makeStyles((theme) =>
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      outline: "none"
+      outline: "none",
     },
     paper: {
       width: "65%",
@@ -29,10 +30,10 @@ const useStyles = makeStyles((theme) =>
       backgroundColor: "#FFF",
       outline: "none",
       [theme.breakpoints.down("xs")]: {
-        width: "80%"
+        width: "80%",
         // minHeight: 400,
         // maxHeight: 500,
-      }
+      },
     },
 
     modalContent: {
@@ -40,16 +41,16 @@ const useStyles = makeStyles((theme) =>
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      overflow: "auto"
+      overflow: "auto",
     },
     modalimgaeWrap: {
       display: "flex",
       justifyContent: "center",
-      alignItems: "center"
+      alignItems: "center",
     },
     modalimage: {
       maxWidth: "35%",
-      height: "auto"
+      height: "auto",
     },
     modalTitle: {
       marginTop: 20,
@@ -58,17 +59,18 @@ const useStyles = makeStyles((theme) =>
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      color: "#4a4a4a"
+      color: "#4a4a4a",
     },
     modalContentText: {
       whiteSpace: "pre-wrap",
-      color: "#4a4a4a"
-    }
+      color: "#4a4a4a",
+    },
   })
 );
 
 export default function Career({ match }) {
-  const matches = useMediaQuery("(max-width:600px)");
+  // const matches = useMediaQuery("(max-width:600px)");
+  const { sTablet } = useContext(MediaQueryContext);
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [modalObj, setModalObj] = useState({});
@@ -112,15 +114,15 @@ export default function Career({ match }) {
       .get(`${imsi}/api/boardListCnt`, {
         params: {
           type: "Career",
-          date: sendingDateFormat
-        }
+          date: sendingDateFormat,
+        },
       })
       .then((response) => {
         console.log(response.data.boardCnt);
         setCountList([
           response.data.boardCnt[0].cnt,
           response.data.boardCnt[0].newcnt,
-          response.data.boardCnt[0].expcnt
+          response.data.boardCnt[0].expcnt,
         ]);
       })
       .catch(function (error) {
@@ -132,8 +134,8 @@ export default function Career({ match }) {
         params: {
           type: "Career",
           tab: selectedTab,
-          page: 1
-        }
+          page: 1,
+        },
       })
       .then((response) => {
         console.log(response.data.paginginfo);
@@ -154,8 +156,8 @@ export default function Career({ match }) {
         params: {
           type: "Career",
           tab: careerTab,
-          page: parseInt(page)
-        }
+          page: parseInt(page),
+        },
       })
       .then((response) => {
         setPaginginfo(response.data.paginginfo);
@@ -319,7 +321,7 @@ export default function Career({ match }) {
                 tabClick(e, "A");
               }}
             >
-              <span className={`FontB ${matches ? "textF32" : "textF70"}`}>
+              <span className={`FontB ${sTablet ? "textF32" : "textF70"}`}>
                 {countList[0]}
               </span>
               <div
@@ -327,7 +329,7 @@ export default function Career({ match }) {
                   careerTab === "A" ? "tcw" : "tcb"
                 }`}
               >
-                {matches ? "진행중인 채용" : "현재 진행중인 채용"}
+                {sTablet ? "진행중인 채용" : "현재 진행중인 채용"}
               </div>
             </div>
             <div
@@ -338,7 +340,7 @@ export default function Career({ match }) {
                 tabClick(e, "B");
               }}
             >
-              <span className={`FontB ${matches ? "textF32" : "textF70"}`}>
+              <span className={`FontB ${sTablet ? "textF32" : "textF70"}`}>
                 {countList[1]}
               </span>
               <div
@@ -357,7 +359,7 @@ export default function Career({ match }) {
                 tabClick(e, "C");
               }}
             >
-              <span className={`FontB ${matches ? "textF32" : "textF70"}`}>
+              <span className={`FontB ${sTablet ? "textF32" : "textF70"}`}>
                 {countList[2]}
               </span>
               <div
@@ -470,7 +472,7 @@ export default function Career({ match }) {
         disableScrollLock={true}
         BackdropComponent={Backdrop}
         BackdropProps={{
-          timeout: 500
+          timeout: 500,
         }}
       >
         <Fade in={open}>
