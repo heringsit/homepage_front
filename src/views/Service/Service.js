@@ -103,6 +103,7 @@ export default function Service({ match }) {
             <div className="flex-col gap-16">
               <div className="flatformtitle">
                 <div className="flatformnum flex-col gap-4">
+
                   <span className="tcw textF16">Platform 2</span>
                 </div>
                 <span className="tco2 textF28 FontEB">

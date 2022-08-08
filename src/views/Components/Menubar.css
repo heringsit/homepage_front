@@ -5,10 +5,11 @@
   background-color: transparent;
   width: 100%;
   min-height: 87px;
+  padding: 4px 64px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  justify-content: space-between;
 }
 .menuBorderBottomLight {
   border-bottom: 1px solid #e6e6e6;
@@ -20,13 +21,14 @@
   background-color: #fff;
 }
 .menuWrap {
-  max-width: 1260px;
+  /* max-width: 1260px;
   min-width: 1260px;
-  width: 1260px;
+  width: 1260px; */
   min-height: 87px;
   height: 87px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   display: flex;
+  justify-content: space-between;
 }
 
 .part {
