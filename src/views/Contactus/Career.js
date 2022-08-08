@@ -307,9 +307,7 @@ export default function Career({ match }) {
         {/* id 를 추가해야 이동한다 ; scroll focusing 스크롤 포커싱 */}
         <div className="SectionDivCareer" id="career">
           <div className="titleDiv">
-            <div className="textT22 FontEB">
-              <span>HERINGS CAREERS</span>
-            </div>
+            <span className="textT22 FontEB">HERINGS CAREERS</span>
             <hr></hr>
           </div>
           <div className="listCnt">

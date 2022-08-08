@@ -229,9 +229,7 @@ export default function NewsRelease({ match }) {
       <div className="SectionDivNews" id="newsrelease">
         <div className="SectionDivNT ">
           <div className="titleDiv">
-            <div className="textT22 FontEB">
-              <span>News Release</span>
-            </div>
+            <span className="textT22 FontEB">News Release</span>
             <hr></hr>
           </div>
         </div>

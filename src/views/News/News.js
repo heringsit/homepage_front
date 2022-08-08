@@ -157,6 +157,7 @@ export default function News({ match }) {
       <Menubar slideIndex={slideIndex} />
       <Totop />
       <div id="news">
+        <div className="pt-97" />
         <ContentsTitle matches={sTablet} title={"NEWS & IR"} />
         {/* 배너 */}
         <NewsRelease matches={sTablet} />

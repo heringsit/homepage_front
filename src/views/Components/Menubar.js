@@ -28,7 +28,7 @@ export default function Menubar(props) {
   const { theme, changeTheme } = useContext(ThemeContext);
   // const [mode, setMode] = useState(theme);
 
-  console.log(pathname === "/", ">pathname");
+  // console.log(pathname === "/", ">pathname");
 
   const changeMode = () => changeTheme(theme === "light" ? "dark" : "light");
 

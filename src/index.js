@@ -23,9 +23,12 @@ export const imsi = process.env.PUBLIC_URL; // 운영계
 // export const imsi = `http://localhost:9099`; // local
 
 const App = () => {
-  const [theme, setTheme] = useState("light");
+  const cookietheme = localStorage.getItem("theme");
+  if (!cookietheme) {localStorage.setItem("theme", "light");}
+  const [theme, setTheme] = useState(cookietheme ? cookietheme : "light");
   const changeTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
+    localStorage.setItem("theme", theme === "light" ? "dark" : "light");
   };
   // media query 사이즈 관리 & 수정이 쉽도록 context(global variable)로 설정
   const mobile = useMediaQuery("(max-width:320px)");
