@@ -1,4 +1,4 @@
-import { Button, useMediaQuery } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import React, { useContext } from "react";
 import { ThemeContext } from "../../context";
 

@@ -1,5 +1,5 @@
-import React, { Component, useContext } from "react";
-import { ThemeContext } from "../../../context";
+import React, { useContext } from "react";
+import { MediaQueryContext, ThemeContext } from "../../../context";
 import Slider from "react-slick";
 import {
   Executive_Leadership,
@@ -16,7 +16,6 @@ import { ReactComponent as TeamListArrowNext } from "../../../assets/images/02ab
 
 import "../Aboutus.css";
 import "../slick.css";
-import { useMediaQuery } from "@material-ui/core";
 
 function PrevArrow(props) {
   const { className, style, onClick, matches } = props;
@@ -46,8 +45,9 @@ function NextArrow(props) {
 
 // class component에서 function component로 변경 (08.01)
 export default function TeamList(props) {
-  const matches = useMediaQuery("(max-width: 600px)");
-  const mobile = useMediaQuery("(max-width: 320px)");
+  // const matches = useMediaQuery("(max-width: 600px)");
+  // const mobile = useMediaQuery("(max-width: 320px)");
+  const { sTablet, mobile } = useContext(MediaQueryContext);
   const theme = useContext(ThemeContext);
 
   const LeaderShipSettings = {
@@ -55,14 +55,14 @@ export default function TeamList(props) {
     infinite: true,
     adaptiveHeight: true,
     speed: 500,
-    slidesToShow: matches ? 2 : 4,
+    slidesToShow: sTablet ? 2 : 4,
     // slidesToScroll: this.props.matches ? 1 : 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
     //arrows: this.props.matches ? false : true,
-    nextArrow: <NextArrow matches={matches} />,
-    prevArrow: <PrevArrow matches={matches} />,
+    nextArrow: <NextArrow matches={sTablet} />,
+    prevArrow: <PrevArrow matches={sTablet} />,
   };
   return (
     <div className={`${mobile ? "" : "pt-80"}`}>
@@ -153,9 +153,11 @@ export default function TeamList(props) {
                       </div>
                       <div className="heringsTeamContentText">
                         <div>
-                          <span className={`${mobile ? "" : "FontB"} ${
+                          <span
+                            className={`${mobile ? "" : "FontB"} ${
                               theme === "dark" ? "tcw" : "tcb"
-                            }`}>
+                            }`}
+                          >
                             {team.name}
                           </span>
                         </div>
@@ -199,9 +201,11 @@ export default function TeamList(props) {
                       </div>
                       <div className="heringsTeamContentText">
                         <div>
-                          <span className={`${mobile ? "" : "FontB"} ${
+                          <span
+                            className={`${mobile ? "" : "FontB"} ${
                               theme === "dark" ? "tcw" : "tcb"
-                            }`}>
+                            }`}
+                          >
                             {team.name}
                           </span>
                         </div>
