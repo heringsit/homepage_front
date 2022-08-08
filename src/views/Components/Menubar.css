@@ -161,7 +161,7 @@
 }
 
 .menuDetailDiv .menuText {
-  font-size: 18px;
+  /* font-size: 18px; */
 }
 .menuul .menuText {
   font-size: 12px;
@@ -219,14 +219,14 @@
     justify-content: center;
   }
 
-  .mobileMenudiv {
+  .mobileMenuDiv {
     width: 100%;
     text-align: left;
     max-height: 280px;
     padding: 20px 10px 0;
   }
 
-  .mobileMenudiv a {
+  .mobileMenuDiv a {
     color: #000000;
     text-decoration: none;
   }
