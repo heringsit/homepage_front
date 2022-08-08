@@ -158,7 +158,7 @@ export default function News({ match }) {
       <Totop />
       <div id="news">
         <div className="pt-97" />
-        <ContentsTitle matches={matches} title={"NEWS & IR"} />
+        <ContentsTitle matches={sTablet} title={"NEWS & IR"} />
         {/* 배너 */}
         <NewsRelease matches={sTablet} />
         <IRInformation matches={sTablet} />

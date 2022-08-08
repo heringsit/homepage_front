@@ -179,8 +179,8 @@ export default function ContactUs() {
       <Totop />
       <div id="contactus">
         <div className="pt-97" />
-        <ContentsTitle matches={matches} title={"CONTACT US"} />
-        <Career matches={matches} />
+        <ContentsTitle matches={sTablet} title={"CONTACT US"} />
+        <Career matches={sTablet} />
         <div className="SectionDiv" id="contact">
           <div className="titleDiv">
               <span className="textT22 FontEB">CONTACT</span>
