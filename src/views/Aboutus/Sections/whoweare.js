@@ -63,7 +63,7 @@ export default function Whoweare() {
           />
           <span className="we FontB">We</span>
           {splits.border.map((split, idx) => (
-            <div className="mt-8">
+            <div className="mt-8" key={idx}>
               <span className="FontB tcw">{split}</span>
               <span className="FontL tcw">{splits.text[idx]}</span>
             </div>

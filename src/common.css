@@ -113,6 +113,9 @@
 .mb-16 {
   margin-bottom: 16px;
 }
+.mb-20 {
+  margin-bottom: 20px;
+}
 .mt-8 {
   margin-top: 8px;
 }
@@ -212,6 +215,31 @@
   display: inline-block;
 }
 
+/* position */
+.position-relative {
+  position: relative;
+}
+
+/*기본 css*/
+.break-keepall {
+  word-break: keep-all;
+}
+.w-full {
+  width: 100%;
+}
+.w-80 {
+  width: 80%;
+}
+.w-screen {
+  width: 100vw;
+}
+.h-full {
+  height: 100%;
+}
+.w-screen {
+  height: 100vh;
+}
+
 /*  1024 < Screen < 1260 */
 @media screen and (max-width: 1260px) {
 }
@@ -245,8 +273,6 @@
 }
 
 /* Font-Size 
-  index.css에서 옮겨옴! 
-  => 필요하다면 다시 옮겨도 됩니다 수정하기 너무 힘들어서 일단 가져왔어요!
 */
 .textF70 {
   font-size: 70px;

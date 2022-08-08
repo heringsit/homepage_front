@@ -11,15 +11,16 @@ import herings_logo_m from "../../assets/images/etc/heringsLOGO_mobile.svg";
 import { ReactComponent as HeringsLogo } from "../../assets/images/etc/heringsLOGO.svg";
 import { ReactComponent as HeringsLogoDark } from "../../assets/images/etc/heringsLOGO_dark.svg";
 import "./Menubar.css";
-import { ThemeContext } from "../../context";
+import { MediaQueryContext, ThemeContext } from "../../context";
 import DarkToggle from "./DarkToggle";
 
 export default function Menubar(props) {
   const pathname = useLocation().pathname;
   const imsi = process.env.PUBLIC_URL;
   smoothscroll.polyfill();
-  const matches = useMediaQuery("(max-width:1260px)");
-  const mobile = useMediaQuery("(max-width:320px)");
+  // const matches = useMediaQuery("(max-width:1260px)");
+  // const mobile = useMediaQuery("(max-width:320px)");
+  const { mDesktop, mobile } = useContext(MediaQueryContext);
   const [isOver, setIsOver] = useState(false);
   const [isMActive, setIsMActive] = useState(false);
   const [mobileSelected, setMobileSelected] = useState(null);
@@ -120,7 +121,7 @@ export default function Menubar(props) {
     link: [`${imsi}/contactus/#career`, `${imsi}/contactus/#contact`],
   };
 
-  if (matches) {
+  if (mDesktop) {
     return (
       <div className="mobileMenuWrapDiv">
         <div

@@ -16,9 +16,10 @@ import ProPrePlatformTitle from "./Sections/ProPrePlatformTitle";
 import CommonCardFrameCenter from "../common/CommonCardFramCenter";
 import TabClick from "../common/TabClick";
 import useOnScreen from "../Aboutus/hooks/objectObserver";
-import { ThemeContext } from "../../context";
+import { MediaQueryContext, ThemeContext } from "../../context";
 export default function Crs() {
-  const matches = useMediaQuery("(max-width:600px)");
+  // const matches = useMediaQuery("(max-width:600px)");
+  const { sTablet } = useContext(MediaQueryContext);
   const { theme } = useContext(ThemeContext);
   const [isScroll, setIsScroll] = useState(false);
   const onScroll = () => {
@@ -55,7 +56,7 @@ export default function Crs() {
       <Totop />
 
       <div id="crs">
-        <ContentsTitle matches={matches} title={"CLINICAL RESEARCH SERVICE"} />
+        <ContentsTitle matches={sTablet} title={"CLINICAL RESEARCH SERVICE"} />
         <div
           style={{
             paddingBottom: "200px",
@@ -125,7 +126,10 @@ We are a one-stop-shop for all data management activities from database build, t
             id="clinicaloperation"
             ref={refs.current[3]}
           >
-            <CommonCardTitle title={"Clinical Operation"} fontSize={"textF53"} />
+            <CommonCardTitle
+              title={"Clinical Operation"}
+              fontSize={"textF53"}
+            />
             <CommonCardFrameCenter
               image1src={crs_image3}
               image1alt={"crs_image3"}

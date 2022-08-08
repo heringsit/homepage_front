@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
-
 //import iconClose from "../../assets/images/02about_herings_team/window-close.svg";
 import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
@@ -10,11 +8,12 @@ import Career from "./Career";
 
 import "./Contactus.css";
 import { useContext } from "react";
-import { ThemeContext } from "../../context";
+import { MediaQueryContext, ThemeContext } from "../../context";
 
 export default function ContactUs() {
   //const imsi = process.env.PUBLIC_URL;
-  const matches = useMediaQuery("(max-width:600px)");
+  // const matches = useMediaQuery("(max-width:600px)");
+  const { sTablet } = useContext(MediaQueryContext);
   const { theme } = useContext(ThemeContext);
   const [cName, setCName] = useState("");
   const [cEmail, setCEmail] = useState("");
@@ -179,8 +178,8 @@ export default function ContactUs() {
       <Menubar slideIndex={0} />
       <Totop />
       <div id="contactus">
-        <ContentsTitle matches={matches} title={"CONTACT US"} />
-        <Career matches={matches} />
+        <ContentsTitle matches={sTablet} title={"CONTACT US"} />
+        <Career matches={sTablet} />
         <div className="SectionDiv" id="contact">
           <div className="titleDiv">
             <div className="textT22 FontEB">

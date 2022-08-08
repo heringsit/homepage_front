@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+// import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
 import Footer from "../Components/Footer";
@@ -15,11 +15,12 @@ import "./Research.css";
 import CommonCardTitle from "../common/CommonCardTitle";
 import TabClick from "../common/TabClick";
 import useOnScreen from "../Aboutus/hooks/objectObserver";
-import { ThemeContext } from "../../context";
+import { MediaQueryContext, ThemeContext } from "../../context";
 import CommonCardFrame from "../common/CommonCardFrame";
 
 export default function Research() {
-  const matches = useMediaQuery("(max-width:600px)");
+  // const matches = useMediaQuery("(max-width:600px)");
+  const { sTablet, mTablet } = useContext(MediaQueryContext);
   const { theme } = useContext(ThemeContext);
   const [isScroll, setIsScroll] = useState(false);
   const onScroll = () => {
@@ -60,6 +61,7 @@ export default function Research() {
       className="content"
       style={{
         backgroundColor: theme === "dark" && "#282828",
+        color: theme === "dark" && "white",
       }}
     >
       <Menubar slideIndex={0} />
@@ -67,8 +69,10 @@ export default function Research() {
       {/* <div ref={refs.current[0]}></div> */}
 
       <div id="research">
-        <TabClick visibleArray={visibleArray} isScroll={isScroll} />
-        <ContentsTitle matches={matches} title={"RESEARCH"} />
+        {!mTablet && (
+          <TabClick visibleArray={visibleArray} isScroll={isScroll} />
+        )}
+        <ContentsTitle matches={sTablet} title={"RESEARCH"} />
         <div className="pb-600 contentsmargin">
           <div className="contents contentspadding">
             {/* Nutrition in Cancer Care */}
@@ -77,7 +81,7 @@ export default function Research() {
               <CommonCardFrame
                 imageSrc={nutrition}
                 imageAlt="nutrition"
-                contentPadding="ps-48 ptb-36"
+                contentPadding="drugadverse-padding ptb-36"
                 content1="Nutrition is one the most import fields in the long cancer
                           care journey. It is significantly related to treatment
                           outcomes such as quality of life, drug compliance, and even to
@@ -89,7 +93,7 @@ export default function Research() {
                           performed for evaluating feasibility and efficacy of digital
                           health technology with nutritional care in gastric cancer
                           patients who underwent gastrectomy."
-                mainTextStyle = "text-align-start textT18 FontL lineheight160"
+                mainTextStyle="text-align-start textT18 FontL lineheight160"
               />
             </div>
             {/* Symptom Management */}
@@ -100,32 +104,29 @@ export default function Research() {
                 fontSize={"textF28"}
               />
               <div className="align-items-center flex-col gap-40">
-                <div
-                  className={`align-items-center flex-row gap-16 ${
-                    theme === "light" ? "tcb" : "tcw"
-                  }`}
-                  style={{ height: "34px" }}
-                >
+                {/* 위에서 div 전체에 color 를 변경함 */}
+                <div className="align-items-center flex gap-16">
                   <span className="FontEB textF24">ATTI</span>
-                  <p className="m-reset FontL textF18">
+                  <p className="m-reset FontL textT18">
                     Real-time, clinical decision support tool to monitor and
                     manage the complexities of lung cancer care.
                   </p>
                 </div>
-                <div className="align-items-center flex-row gap-58">
+                <div className="align-items-center flex-row gap-58 w-80">
                   <img
                     className="image-fit"
                     src={symptommanagement}
                     alt="nutrition"
                   />
-                  <iframe
-                    className="youtube"
-                    src="https://www.youtube.com/embed/Fp19GlDhVRE?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+                  <div className="youtube">
+                    <iframe
+                      src="https://www.youtube.com/embed/Fp19GlDhVRE?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -203,6 +204,7 @@ export default function Research() {
                 subText2="SODA"
                 subText1Style="FontB mb-4"
                 subText2Style="textF24 FontEB mb-8"
+                contentPadding="drugadverse-padding"
               />
             </div>
           </div>
