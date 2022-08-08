@@ -106,9 +106,9 @@ export default function Menubar(props) {
   const CTS = {
     title: ["CLINICAL TRIAL DESIGN", "DATA MANAGEMENT", "STATISTICAL ANALYSIS"],
     link: [
-      `${imsi}/crs/#propreplatform`,
+      `${imsi}/crs/#clinicaltrialdesign`,
       `${imsi}/crs/#datamanagement`,
-      `${imsi}/crs/#biostatistics`,
+      `${imsi}/crs/#statisticalanalysis`,
     ],
   };
   const NEWSIR = {
@@ -118,6 +118,10 @@ export default function Menubar(props) {
   const CONTACTUS = {
     title: ["CAREER", "CONTACT US"],
     link: [`${imsi}/contactus/#career`, `${imsi}/contactus/#contact`],
+  };
+  const scrollWithOffset = (el, yOffset = -90) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
   };
 
   if (matches) {
@@ -496,14 +500,14 @@ export default function Menubar(props) {
                 : "menuBorderBottomLight ")
             : ""
         } ${
-          pathname === "/aboutus/" || pathname === "/research/"
+          pathname === "/aboutus/" || pathname === "/research/" || pathname === "/crs/"
             ? theme === "dark"
               ? "menuBorderBottomDark"
               : "menuBorderBottomLight"
             : ""
         }`}
         style={{
-          backgroundColor: theme === "dark" && "#282828",
+          backgroundColor: theme === "dark" ? "#282828" : "#ffffff",
           color: theme === "dark" && "white",
         }}
         onMouseEnter={menuover}
@@ -803,7 +807,7 @@ export default function Menubar(props) {
               <ul className="menuul">
                 {CTS.title.map((cts, idx) => (
                   <li key={idx}>
-                    <Link smooth="true" to={CTS.link[idx]} onClick={menuclick}>
+                    <Link smooth="true" to={CTS.link[idx]} scroll={el => scrollWithOffset(el, -189)} onClick={menuclick}>
                       <span
                         className={`menuText  FontR ${
                           theme === "light" ? "tcg" : "tcw"

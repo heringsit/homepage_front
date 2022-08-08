@@ -41,6 +41,9 @@
 .pt-100 {
   padding-top: 100px;
 }
+.pt-120 {
+  padding-top: 120px;
+}
 .pt-150 {
   padding-top: 150px;
 }
@@ -52,6 +55,9 @@
 }
 
 /* pb-# - padding bottom */
+.pb-0 {
+  padding-bottom: 0px;
+}
 .pb-4 {
   padding-bottom: 4px;
 }
@@ -63,6 +69,9 @@
 }
 .pb-32 {
   padding-bottom: 32px;
+}
+.pb-56 {
+  padding-bottom: 56px;
 }
 .pb-64 {
   padding-bottom: 64px;
@@ -215,6 +224,11 @@
   line-height: 140%;
 }
 
+/* letter spacing */
+.letterspacing-02 {
+  letter-spacing: 0.02em;
+}
+
 /* display */
 .block {
   display: block;
@@ -227,6 +241,7 @@
 .position-relative {
   position: relative;
 }
+
 
 
 /*  1024 < Screen < 1260 */

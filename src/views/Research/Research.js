@@ -101,18 +101,16 @@ export default function Research() {
               />
               <div className="align-items-center flex-col gap-40">
                 <div
-                  className={`align-items-center ${
+                  className={`flex gap-16 align-items-center ${
                     theme === "light" ? "tcb" : "tcw"
                   }`}
                   
                 >
-                  
-                  <span className="FontEB textF24">ATTI</span>
+                  <p className="m-reset FontEB textF24">ATTI</p>
                   <p className="m-reset FontL textT18" >
                     Real-time, clinical decision support tool to monitor and
                     manage the complexities of lung cancer care.
                   </p>
-
                 </div>
                 <div className="align-items-center flex-row gap-58">
                   <img

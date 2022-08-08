@@ -9,14 +9,12 @@ export default function TabClick({ visibleArray, isScroll }) {
 
   // ex: [true, false, false] -> [whoweare:Visible, teamList:not-Visible, pai:not-Visible]
   // const visibleCount = visibleArray?.filter(value => value===true).length; // check how many elements are visible in DOM
-  const visibleIndex = visibleArray?.indexOf(true);
-
+  const visibleIndex = visibleArray?.indexOf(true) === -1 ? 0 : visibleArray?.indexOf(true);
   const aboutustabs = ["whoweare", "heringsteam", "researchpartners"];
   const crstabs = [
-    "propreplatform",
+    "clinicaltrialdesign",
     "datamanagement",
-    "biostatistics",
-    "clinicaloperation",
+    "statisticalanalysis",
   ];
   const researchtabs = [
     "nutrition",
@@ -84,7 +82,7 @@ export default function TabClick({ visibleArray, isScroll }) {
                   <Link
                     smooth
                     to={`#${tab}`}
-                    scroll={scrollWithOffset}
+                    scroll={el => scrollWithOffset(el, -189)}
                     className={
                       index === visibleIndex
                         ? "w-full h-full tagADefault tabATagTab FontEB"
@@ -92,14 +90,12 @@ export default function TabClick({ visibleArray, isScroll }) {
                           (theme === "dark" ? "tcw" : "tcg3")
                     }
                   >
-                    {tab === "propreplatform"
-                      ? "PRO · PRE Platform"
+                    {tab === "clinicaltrialdesign"
+                      ? "CLINICAL TRIAL DESIGN"
                       : tab === "datamanagement"
-                      ? "Data management"
-                      : tab === "biostatistics"
-                      ? "Bio-Statistics"
-                      : tab === "clinicaloperation"
-                      ? "Clinical Operation"
+                      ? "DATA MANAGEMENT"
+                      : tab === "statisticalanalysis"
+                      ? "STATISTICAL ANALYSIS"
                       : ""}
                   </Link>
                 </div>
