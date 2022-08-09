@@ -38,6 +38,9 @@
 .pt-80 {
   padding-top: 80px;
 }
+.pt-97 {
+  padding-bottom: 97px;
+}
 .pt-100 {
   padding-top: 100px;
 }
@@ -196,6 +199,9 @@
 .align-items-center {
   align-items: center;
 }
+.align-items-stretch {
+  align-items: stretch;
+}
 .application {
   align-items: center;
 }
@@ -242,10 +248,34 @@
 
 /*  1024 < Screen < 1260 */
 @media screen and (max-width: 1260px) {
+  /* Font-Size 
+  */
+  /*Research*/
+  #research .textF28 {
+    font-size: 28px;
+  }
+  #research .textF24 {
+    font-size: 24px;
+  }
+  #research .textF18 {
+    font-size: 18px;
+  }
 }
 
 /*  768 < Screen < 1024 */
 @media screen and (max-width: 1024px) {
+  /* Font-Size
+  */
+  /*Research*/
+  #research .textF28 {
+    font-size: 28px;
+  }
+  #research .textF24 {
+    font-size: 24px;
+  }
+  #research .textF18 {
+    font-size: 18px;
+  }
   /* Draft design */
   .flex-row {
     flex-direction: column-reverse;
@@ -266,14 +296,39 @@
 
 /*  600 < Screen < 768 */
 @media screen and (max-width: 768px) {
+  /* Font-Size
+  */
+  /*Research*/
+  #research .textF28 {
+    font-size: 28px;
+  }
+  #research .textF24 {
+    font-size: 24px;
+  }
+  #research .textF18 {
+    font-size: 18px;
+  }
+
 }
 
 /*  320 < Screen < 600 */
 @media (min-width: 320px) and (max-width: 600px) {
+  /* Font-Size
+  */
+  /*Research*/
+  #research .textF28 {
+    font-size: 26px;
+  }
+  #research .textF24 {
+    font-size: 22px;
+  }
+  #research .textF18 {
+    font-size: 16px;
+  }
 }
 
-/* Font-Size 
-*/
+
+
 .textF70 {
   font-size: 70px;
 }
