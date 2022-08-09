@@ -23,69 +23,6 @@ import { MediaQueryContext, ThemeContext } from "../../context";
 import { AboutUsModal } from "../Components/AboutUsModal";
 
 // 22.08.05 makeStyles 사용에서 css 로 코드 변환 (style 통일)
-const useStyles = makeStyles((theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-    },
-    control: {
-      padding: theme.spacing(2),
-    },
-    header: {
-      height: "100%",
-    },
-    ieAlignCenter: {
-      display: "flex",
-    },
-    longheigntContent: {
-      height: "100%",
-      overflow: "visible",
-    },
-    section2Height: {
-      //minHeight: 680
-    },
-    modal: {
-      display: "flex",
-      position: "fixed",
-      alignItems: "center",
-      justifyContent: "center",
-    },
-    paper: {
-      display: "flex",
-      // flexDirection:'column',
-      // alignItems: "center",
-      // justifyContent: "center",
-      width: "55%",
-      // height: "439px",
-      maxHeight: "85vh",
-      overflow: "auto",
-      boxShadow: "0 0 100px 20px rgba(0, 0, 0, 0.7)",
-      backgroundColor: "#FFF",
-      [theme.breakpoints.down("xs")]: {
-        width: "80%",
-        // minHeight: 400,
-        // maxHeight: 500,
-      },
-    },
-    modalimage: {
-      width: "35%",
-      maxWidth: "35%",
-      height: "auto",
-      paddingTop: "50px",
-    },
-    modalTitle: {
-      marginTop: 20,
-      marginBottom: 20,
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      flexWrap: "wrap",
-      color: "#4a4a4a",
-    },
-  })
-);
-
 export default function Aboutus() {
   const HAS_VISITED_BEFORE = localStorage.getItem("hasVisitedBefore");
   const [isScroll, setIsScroll] = useState(false);
@@ -174,7 +111,7 @@ export default function Aboutus() {
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
-        className={classes.modal}
+        className="modal"
         open={openNotice}
         onClose={handleNoticeClose}
         hideBackdrop={true}
@@ -183,9 +120,9 @@ export default function Aboutus() {
         }}
       >
         <Fade in={openNotice}>
-          <div className={classes.paper}>
+          <div className="paper">
             {modalPopObj !== undefined && (
-              <div style={{ width: "100%" }}>
+              <div className="w-full">
                 <div className="careerModalTitle">
                   <div className="careerModalTitleSection">
                     <span className="FontNB" style={{ marginLeft: 45 }}>
@@ -198,7 +135,7 @@ export default function Aboutus() {
                   />
                 </div>
 
-                <div className="careerModalContent" style={{ paddingTop: 10 }}>
+                <div className="careerModalContent pt-10">
                   <div
                     className="readContentsRow"
                     style={{
@@ -297,8 +234,6 @@ export default function Aboutus() {
   const handleClose = () => {
     setOpen(false);
   };
-
-  const classes = useStyles();
 
   // Scroll Tracker
   const scrollElem = Array.from(Array(3).keys());

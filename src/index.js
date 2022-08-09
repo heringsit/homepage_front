@@ -33,7 +33,7 @@ const App = () => {
     localStorage.setItem("theme", theme === "light" ? "dark" : "light");
   };
   // media query 사이즈 관리 & 수정이 쉽도록 context(global variable)로 설정
-  const mobile = useMediaQuery("(max-width:320px)");
+  const mobile = useMediaQuery("(min-width: 320px) and (max-width:600px)");
   const sTablet = useMediaQuery("(max-width:600px)");
   const mTablet = useMediaQuery("(max-width: 768px)");
   const sDesktop = useMediaQuery("(max-width: 1024px)");

@@ -113,6 +113,9 @@
 .m-reset {
   margin: 0;
 }
+.ml-0 {
+  margin-left: 0px;
+}
 .ml-45 {
   margin-left: 45px;
 }
@@ -143,6 +146,9 @@
 .mt-20 {
   margin-top: 20px;
 }
+.mt-50 {
+  margin-top: 50px;
+}
 
 /* flex:
   flex-wrap: default flex wrap
@@ -152,6 +158,9 @@
 */
 .flex {
   display: flex;
+}
+.none {
+  display: none;
 }
 .flex-wrap {
   display: flex;
@@ -231,6 +240,12 @@
 .justify-center {
   justify-content: center;
 }
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
 
 .lineheight160 {
   line-height: 160%;
@@ -285,6 +300,10 @@
 @media screen and (max-width: 1260px) {
   /* Font-Size 
   */
+  /* ABOUT US */
+  #heringsteam .textF18 {
+    font-size: 16px;
+  }
   /*Research*/
   #research .textF28 {
     font-size: 28px;
@@ -311,6 +330,13 @@
 @media screen and (max-width: 1024px) {
   /* Font-Size
   */
+  /* ABOUT US */
+  #aboutus .textF32 {
+    font-size: 28px;
+  }
+  #aboutus .textF20 {
+    font-size: 18px;
+  }
   /*Research*/
   #research .textF28 {
     font-size: 28px;
@@ -349,10 +375,20 @@
   }
 }
 
-/*  600 < Screen < 768 */
+/*  600 < Screen <= 768 */
 @media screen and (max-width: 768px) {
   /* Font-Size
   */
+  /* ABOUT US */
+  #aboutus .textF32 {
+    font-size: 24px;
+  }
+  #aboutus .textF18 {
+    font-size: 14px;
+  }
+  #aboutus .textF16 {
+    font-size: 12px;
+  }
   /*Research*/
   #research .textF28 {
     font-size: 28px;
@@ -373,13 +409,19 @@
   #crs .textF18 {
     font-size: 18px;
   }
-
 }
 
-/*  320 < Screen < 600 */
+/*  320 <= Screen <= 600 */
 @media (min-width: 320px) and (max-width: 600px) {
   /* Font-Size
   */
+  /* ABOUT US */
+  #aboutus .textF20 {
+    font-size: 17px;
+  }
+  #aboutus .textF32 {
+    font-size: 20px;
+  }
   /*Research*/
   #research .textF28 {
     font-size: 26px;
@@ -401,8 +443,6 @@
     font-size: 16px;
   }
 }
-
-
 
 .textF70 {
   font-size: 70px;

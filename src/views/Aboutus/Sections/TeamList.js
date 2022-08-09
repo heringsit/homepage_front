@@ -45,8 +45,6 @@ function NextArrow(props) {
 
 // class component에서 function component로 변경 (08.01)
 export default function TeamList(props) {
-  // const matches = useMediaQuery("(max-width: 600px)");
-  // const mobile = useMediaQuery("(max-width: 320px)");
   const { sTablet, mobile } = useContext(MediaQueryContext);
   const theme = useContext(ThemeContext);
 
@@ -64,6 +62,17 @@ export default function TeamList(props) {
     nextArrow: <NextArrow matches={sTablet} />,
     prevArrow: <PrevArrow matches={sTablet} />,
   };
+
+  const HERINGS_TEAM_LIST = [
+    Executive_Leadership,
+    Research_Leadership,
+    Advisory_Board,
+  ];
+  const ListTitle = [
+    "Executive_Leadership",
+    "Research_Leadership",
+    "Advisory_Board",
+  ];
   return (
     <div className={`${mobile ? "" : "pt-80"}`}>
       <div className="SectionDiv">
@@ -71,161 +80,69 @@ export default function TeamList(props) {
           <span className="FontB textF24">HERINGS TEAM</span>
           <hr />
         </div>
-        <div className="SectionColorGray" style={{ padding: "16px 0" }}>
-          <div className="TeamListWrap">
-            <div className="Subtitle">
-              <span className="FontB tcb">EXECUTIVE</span>
-              <span className="FontR tcb">LEADERSHIP</span>
-            </div>
-            <Slider {...LeaderShipSettings} className="listWrap">
-              {Executive_Leadership.map((team, index) => {
-                return (
-                  <div
-                    key={index}
-                    className={`teamDivWrap ${index === 0 ? "wrapFirst" : ""}`}
-                  >
+        <div className="SectionColorGray">
+          {HERINGS_TEAM_LIST.map((LIST, idx) => (
+            <div className="TeamListWrap" key={idx}>
+              <div className="Subtitle">
+                <span className="FontB tcb textF24">
+                  {ListTitle[idx].split("_")[0]}
+                </span>
+                <span className="FontR tcb textF24">
+                  {ListTitle[idx].split("_")[1]}
+                </span>
+              </div>
+              <Slider {...LeaderShipSettings} className="listWrap">
+                {LIST.map((team, index) => {
+                  return (
                     <div
-                      className="heringsTeamWrap"
-                      onClick={() => {
-                        props.handleOpen(team);
-                      }}
+                      key={index}
+                      className={`teamDivWrap ${index === 0 && "ml-0"}`}
                     >
-                      <hr />
-                      <div className="listImgWrap">
-                        <img
-                          className="listImg"
-                          src={team.modalimg}
-                          alt={team.name}
-                        />
-                      </div>
-                      <div className="heringsTeamContentText">
-                        <div>
+                      <div
+                        className={` ${
+                          team.jobs === "None"
+                            ? "none"
+                            : "heringsTeamWrap m-reset"
+                        }`}
+                        onClick={() => {
+                          props.handleOpen(team);
+                        }}
+                      >
+                        <hr />
+                        <div className="align-items-center justify-center flex w-full">
+                          <img
+                            className="listImg"
+                            src={team.modalimg}
+                            alt={team.name}
+                          />
+                        </div>
+                        <div className="heringsTeamContentText">
                           <span
-                            className={`${mobile ? "" : "FontB"} textF16 ${
+                            className={`${mobile ? "" : "FontB"} textF18 ${
                               theme === "dark" ? "tcw" : "tcb"
                             }`}
                           >
                             {team.name}
                           </span>
-                        </div>
-                        <div>
-                          {/* 여기 index === 4 */}
-                          <span className="tco textF14">{team.jobs}</span>
-                        </div>
-                        {/* <div>
+                          {idx === 0 && (
+                            <div>
+                              <br />
+                              <span className="tco textF16">{team.jobs}</span>
+                            </div>
+                          )}
+                          {/* <div>
                             <span className="textF14 tcg">
                               {team.positions}
                             </span>
                           </div> */}
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </Slider>
-          </div>
-          <div className="TeamListWrap">
-            <div className="Subtitle">
-              <span className="FontB tcb">RESEARCH</span>
-              <span className="FontR tcb">LEADERSHIP</span>
-            </div>
-            <Slider {...LeaderShipSettings} className="listWrap">
-              {Research_Leadership.map((team, index) => {
-                return (
-                  <div key={index} className="teamDivWrap">
-                    <div
-                      className={` ${
-                        team.jobs === "None"
-                          ? "teamDivWrapNone"
-                          : "heringsTeamWrap"
-                      }`}
-                      onClick={() => {
-                        props.handleOpen(team);
-                      }}
-                    >
-                      <hr />
-                      <div className="listImgWrap">
-                        <img
-                          src={team.modalimg}
-                          alt={team.name}
-                          className="listImg"
-                        />
-                      </div>
-                      <div className="heringsTeamContentText">
-                        <div>
-                          <span
-                            className={`${mobile ? "" : "FontB"} textF16 ${
-                              theme === "dark" ? "tcw" : "tcb"
-                            }`}
-                          >
-                            {team.name}
-                          </span>
                         </div>
-                        {/* <div>
-                            <span className="textF14 tco">{team.jobs}</span>
-                          </div>
-                          <div>
-                            <span className="textF14 tcg">
-                              {team.positions}
-                            </span>
-                          </div> */}
                       </div>
                     </div>
-                  </div>
-                );
-              })}
-            </Slider>
-          </div>
-          <div className="TeamListWrap">
-            <div className="Subtitle">
-              <span className="FontB tcb">ADVISORY</span>
-              <span className="FontR tcb">BOARD</span>
+                  );
+                })}
+              </Slider>
             </div>
-            <Slider {...LeaderShipSettings} className="listWrap">
-              {Advisory_Board.map((team, index) => {
-                return (
-                  <div key={index} className="teamDivWrap">
-                    <div
-                      className="heringsTeamWrap"
-                      onClick={() => {
-                        props.handleOpen(team);
-                      }}
-                    >
-                      <hr />
-                      <div className="listImgWrap">
-                        <img
-                          src={team.modalimg}
-                          alt={team.name}
-                          className="listImg"
-                        />
-                      </div>
-                      <div className="heringsTeamContentText">
-                        <div>
-                          <span
-                            className={`${mobile ? "" : "FontB"} textF16 ${
-                              theme === "dark" ? "tcw" : "tcb"
-                            }`}
-                          >
-                            {team.name}
-                          </span>
-                        </div>
-                        {/* <div>
-                            <span className="textF14 tco">{team.jobs}</span>
-                          </div>
-                          <div>
-                            <span className="textF14 tcg">
-                              {team.positions !== ""
-                                ? team.positions
-                                : "\u00A0"}
-                            </span>
-                          </div> */}
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </Slider>
-          </div>
+          ))}
         </div>
       </div>
     </div>
