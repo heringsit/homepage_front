@@ -366,6 +366,9 @@ body {
   background: #f2c285;
   border-radius: 24px;
 }
+#service .youtube {
+  width: 100%;
+}
 .youtube > iframe {
   position: absolute;
   top: 0;
@@ -654,12 +657,12 @@ body {
   .newcard_mp4_padding_b {
     padding-bottom: 40px;
   }
-  #research .banner_img {
+  /* #research .banner_img {
     background: url("../src/assets/images/09research/research_full.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
-  }
+  } */
 }
 @media (min-width: 428px) and (max-width: 768px) {
   .content {
@@ -726,6 +729,9 @@ body {
   .TABS_layout_padding {
     padding: 0 0;
     height: 70px;
+  }
+  .title_center {
+    padding-top: 67px;
   }
 }
 @media (min-width: 768px) and (max-width: 1260px) {

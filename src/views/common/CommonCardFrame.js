@@ -8,7 +8,7 @@ const CommonCardFrame = (
     contentStyle = "align-items-center" , // ex: content align style
     contentPadding = "ps-48", // ex: content padding
     flexStyle = "flex-row-reverse gap-64", // ex: "flex-row-reverse gap-64"
-    mainTextStyle = "text-align-start textT18 FontL lineheight160",
+    mainTextStyle = "text-align-start textF18 FontL lineheight160",
     subText1Style,
     subText2Style,
     mainContentStyle = "flex-col",

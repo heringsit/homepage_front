@@ -30,9 +30,35 @@
   padding-left: 48px;
   padding-right: 48px;
 }
+
+.research-youtube {
+  width: 100%;
+  height: 480px;
+  background: #f2c285;
+  border-radius: 24px;
+}
+
+.atti-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.contents-top-padding {
+  padding-top: 236px;
+}
+
 /*  Research => 1024 < Screen < 1260 */
 @media screen and (max-width: 1260px) {
-  
+  .drugadverse-padding {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .research-youtube {
+    height: 400px;
+  }
+  .contents-top-padding {
+    padding-top: 116px;
+  }
 }
 
 /*  Research => 768 < Screen < 1024 */
@@ -41,13 +67,23 @@
     margin-top: 100px;
     margin-bottom: 114px;
   }
+  .atti-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .contents-top-padding {
+    padding-top: 96px;
+  }
 }
 
 /*  Research => 600 < Screen < 768 */
 @media screen and (max-width: 768px) {
   .drugadverse-padding {
-    padding-left: 24px;
-    padding-right: 24px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .research-youtube {
+    height: 267px;
   }
 }
 
@@ -65,7 +101,9 @@
     padding-left: 0px;
     padding-right: 0px;
   }
-  
+  .research-youtube {
+    height: 200px;
+  }
 }
 
 

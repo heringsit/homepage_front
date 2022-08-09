@@ -178,8 +178,9 @@ export default function ContactUs() {
       <Menubar slideIndex={0} />
       <Totop />
       <div id="contactus">
-        <div className="pt-97" />
-        <ContentsTitle matches={sTablet} title={"CONTACT US"} />
+        <div className="banner_img servicetitle">
+          <span className="textF53 tcb FontR title_default">SERVICE</span>
+        </div>
         <Career matches={sTablet} />
         <div className="SectionDiv" id="contact">
           <div className="titleDiv">

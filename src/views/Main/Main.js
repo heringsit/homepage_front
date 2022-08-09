@@ -28,10 +28,10 @@ export default function Main() {
           src={project1_7}
           alt="project1_7"
           type="video/mp4"
-        />
-          {/* <source src={project1_7} type="video/mp4" />
-          Your Browser does not support the video tag.
-        </video> */}
+        >
+          <source src={project1_7} type="video/mp4" />
+          Your Browser does not support the video tag. 
+        </video>
         <div className="mainimagelayout ">
           <img
             src={mainimage}

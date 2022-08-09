@@ -237,6 +237,7 @@ export default function Menubar(props) {
                       <Link
                         smooth="true"
                         to={MENU.smallMenu[idx].link[i]}
+                        scroll={el => scrollWithOffset(el, -149)}
                         onClick={menuclick}
                       >
                         <span
@@ -313,7 +314,12 @@ export default function Menubar(props) {
           <div className="menusAfterLogo">
             {MENU.title.map((menu, idx) => (
               <div className="menudiv" key={idx}>
-                <Link smooth="true" to={MENU.link[idx]} onClick={menuclick}>
+                <Link 
+                  smooth="true" 
+                  to={MENU.link[idx]} 
+                  
+                  onClick={menuclick}
+                >
                   <span
                     className={`menuText textF18 FontR ${
                       props.slideIndex === 0

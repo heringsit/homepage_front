@@ -93,11 +93,11 @@ export default function Research() {
                           performed for evaluating feasibility and efficacy of digital
                           health technology with nutritional care in gastric cancer
                           patients who underwent gastrectomy."
-                mainTextStyle="text-align-start textT18 FontL lineheight160"
+                mainTextStyle="text-align-start textF18 FontL lineheight160"
               />
             </div>
             {/* Symptom Management */}
-            <div className="pt-236"></div>
+            <div className="contents-top-padding"></div>
             <div className="pt-64" id="symptommanagement" ref={refs.current[1]}>
               <CommonCardTitle
                 title={"SYMPTOM MANAGEMENT"}
@@ -109,32 +109,35 @@ export default function Research() {
                     theme === "light" ? "tcb" : "tcw"
                   }`}
                 >
+                <div className="atti-content align-items-center gap-16">
                   <p className="m-reset FontEB textF24">ATTI</p>
-                  <p className="m-reset FontL textT18">
+                  <p className="m-reset FontL textF18">
                     Real-time, clinical decision support tool to monitor and
                     manage the complexities of lung cancer care.
                   </p>
                 </div>
-                <div className="align-items-center flex-row gap-58 w-80">
+                </div>
+                <div className="align-items-center flex-row gap-58 w-full">
                   <img
                     className="image-fit"
                     src={symptommanagement}
                     alt="nutrition"
                   />
-                  <div className="youtube">
-                    <iframe
-                      src="https://www.youtube.com/embed/Fp19GlDhVRE?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"
-                      title="YouTube video player"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
+                  <div className="research-youtube">
+                  <iframe
+                    className="research-youtube"
+                    src="https://www.youtube.com/embed/Fp19GlDhVRE?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1&loop=1"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; loop; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
                   </div>
                 </div>
               </div>
             </div>
             {/* Exercise */}
-            <div className="pt-236"></div>
+            <div className="contents-top-padding"></div>
             <div className="pt-64" id="exercise" ref={refs.current[2]}>
               <CommonCardTitle title={"EXERCISE"} fontSize={"textF28"} />
               <CommonCardFrame
@@ -143,10 +146,11 @@ export default function Research() {
                 content1="In cancer patients, the decrease in physical ability, including muscle strength, causes sarcopenia and cachexia, which ultimately worsens the prognosis of cancer patients. We research exercise algorithms that could enhance physical ability in cancer patients and apply them to our platform to demonstrate their effectiveness."
                 contentPadding="ptb-24"
                 flexStyle="flex-col gap-68"
+                mainTextStyle="text-align-start textF18 FontL lineheight160"
               />
             </div>
             {/* Risk Prediction */}
-            <div className="pt-236"></div>
+            <div className="contents-top-padding"></div>
             <div className="pt-64" id="riskprediction" ref={refs.current[3]}>
               <CommonCardTitle title={"RISK PREDICTION"} fontSize={"textF28"} />
               <CommonCardFrame
@@ -157,10 +161,11 @@ export default function Research() {
                 }
                 contentPadding="ptb-24"
                 flexStyle="flex-col gap-68"
+                mainTextStyle="text-align-start textF18 FontL lineheight160"
               />
             </div>
             {/* Drug Adherence */}
-            <div className="pt-236"></div>
+            <div className="contents-top-padding"></div>
             <div className="pt-64" id="drugadherence" ref={refs.current[4]}>
               <CommonCardTitle title={"DRUG ADHERENCE"} fontSize={"textF28"} />
               <CommonCardFrame
@@ -171,10 +176,11 @@ export default function Research() {
                 }
                 contentPadding="ptb-24"
                 flexStyle="flex-col gap-68"
+                mainTextStyle="text-align-start textF18 FontL lineheight160"
               />
             </div>
             {/* AI algorithms */}
-            <div className="pt-236"></div>
+            <div className="contents-top-padding"></div>
             <div className="pt-64" id="aialgorithms" ref={refs.current[5]}>
               <CommonCardTitle title={"AI ALGORITHMS"} fontSize={"textF28"} />
               <CommonCardFrame
@@ -185,10 +191,11 @@ export default function Research() {
                 }
                 contentPadding="ptb-24"
                 flexStyle="flex-col gap-68"
+                mainTextStyle="text-align-start textF18 FontL lineheight160"
               />
             </div>
 
-            <div className="pt-236"></div>
+            <div className="contents-top-padding"></div>
             <div className="pt-64" id="drugadverseevents" ref={refs.current[6]}>
               <CommonCardTitle
                 title={"DRUG ADVERSE EVENTS"}
@@ -208,6 +215,7 @@ export default function Research() {
                 subText1Style="FontB mb-4"
                 subText2Style="textF24 FontEB mb-8"
                 contentPadding="drugadverse-padding"
+                mainTextStyle="text-align-start textF18 FontL lineheight160"
               />
             </div>
           </div>

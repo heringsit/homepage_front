@@ -85,6 +85,7 @@
   max-height: 100%;
 }
 
+
 /*  SERVICE => 1024 < Screen < 1260 */
 @media screen and (max-width: 1260px) {
 }
