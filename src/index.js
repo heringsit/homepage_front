@@ -1,6 +1,6 @@
 import "react-app-polyfill/ie9";
 import "react-app-polyfill/stable";
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
@@ -24,7 +24,9 @@ export const imsi = process.env.PUBLIC_URL; // 운영계
 
 const App = () => {
   const cookietheme = localStorage.getItem("theme");
-  if (!cookietheme) {localStorage.setItem("theme", "light");}
+  if (!cookietheme) {
+    localStorage.setItem("theme", "light");
+  }
   const [theme, setTheme] = useState(cookietheme ? cookietheme : "light");
   const changeTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");

@@ -1,10 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
-import { makeStyles, createStyles } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Modal from "@material-ui/core/Modal";
-import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-import iconClose from "../../assets/images/02about_herings_team/window-close.svg";
 import axios from "axios";
 import parse from "html-react-parser";
 import { ReactComponent as IconClose } from "../../assets/images/05career/close.svg";
@@ -18,14 +14,15 @@ import TeamList from "./Sections/TeamList";
 import "./Aboutus.css";
 import { imsi } from "../../index";
 import search from "../../assets/images/etc/search.png";
-import { Checkbox } from "@material-ui/core";
+import { Checkbox, createStyles, makeStyles } from "@material-ui/core";
 import moment from "moment";
 import TabClick from "../common/TabClick";
 // import ContentsTitle from "../Components/ContentsTitle";
-import useOnScreen from "./hooks/objectObserver";
+import useOnScreen from "../hooks/objectObserver";
 import { MediaQueryContext, ThemeContext } from "../../context";
+import { AboutUsModal } from "../Components/AboutUsModal";
 
-// 22.08.05 makeStyles 사용에서 css 로 코드 변환 중
+// 22.08.05 makeStyles 사용에서 css 로 코드 변환 (style 통일)
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
@@ -171,6 +168,7 @@ export default function Aboutus() {
     }
     return setWatchToday(true);
   };
+  // 이 모달은 어디에 쓰이는지 모르겠음
   const openInitialNotice = () => {
     return (
       <Modal
@@ -299,12 +297,7 @@ export default function Aboutus() {
   const handleClose = () => {
     setOpen(false);
   };
-  const openerModalNoti = () => {
-    if (modalObj) {
-      return openInitialNotice();
-    }
-    return null;
-  };
+
   const classes = useStyles();
 
   // Scroll Tracker
@@ -322,14 +315,13 @@ export default function Aboutus() {
       style={{
         backgroundColor: theme === "dark" && "#282828",
         color: theme === "dark" && "#fff",
-        // overflow: modalObj && "hidden",
       }}
       className="position-relative"
     >
       <Menubar slideIndex={slideIndex} />
       <Totop />
-      {openerModalNoti()}
-      {/* { modalObj !== null ? openInitialNotice() : null} */}
+      {/* {openerModalNoti()} */}
+      {modalObj && openInitialNotice()}
       <div>
         {/* <ContentsTitle title={"ABOUT US"} /> */}
         <div id="whoweare"></div>
@@ -350,59 +342,7 @@ export default function Aboutus() {
         {/* <QM matches={matches} /> */}
         <Footer />
       </div>
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        className={`modalNoOutline ${classes.modal}`}
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        disableScrollLock={true}
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
-      >
-        <Fade in={open}>
-          <div className={classes.paper}>
-            {modalObj !== JSON.stringify({}) ? (
-              <div className="modalContent">
-                <div className="modalCloseWrap">
-                  <div className="modalCloseDiv" onClick={handleClose}>
-                    <img src={iconClose} alt="close" className="modalClose" />
-                  </div>
-                </div>
-                <div className="modalimgaeWrap">
-                  <img
-                    src={modalObj?.modalimg}
-                    alt={modalObj?.name}
-                    className={classes.modalimage}
-                  />
-                </div>
-                <div className={classes.modalTitle}>
-                  <span
-                    className="teamModalName textF22 FontB"
-                    id="transition-modal-title"
-                  >
-                    {modalObj?.name}
-                  </span>
-                  <span className="teamModalPosition textF16 FontB">
-                    {modalObj?.positions}
-                  </span>
-                </div>
-                <div
-                  id="transition-modal-description"
-                  className="modalContentText FontR"
-                >
-                  {modalObj?.detail}
-                </div>
-              </div>
-            ) : (
-              <div> no info</div>
-            )}
-          </div>
-        </Fade>
-      </Modal>
+      <AboutUsModal open={open} handleClose={handleClose} modalObj={modalObj} />
     </div>
   );
 }

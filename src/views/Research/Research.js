@@ -14,7 +14,7 @@ import research_4 from "../../assets/images/09research/research_4.png";
 import "./Research.css";
 import CommonCardTitle from "../common/CommonCardTitle";
 import TabClick from "../common/TabClick";
-import useOnScreen from "../Aboutus/hooks/objectObserver";
+import useOnScreen from "../hooks/objectObserver";
 import { MediaQueryContext, ThemeContext } from "../../context";
 import CommonCardFrame from "../common/CommonCardFrame";
 
