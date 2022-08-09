@@ -16,42 +16,42 @@ export default function ContentsTitle(props) {
   return (
     <div>
       {path === "/aboutus/" ? (
-        <div className="relative banner_layout">
+        <div className="position-relative banner_layout">
           <div className="banner_gradient"></div>
           <div className="banner_default banner_img ">
             <div className="textF53 FontR tcb title_default">{props.title}</div>
           </div>
         </div>
       ) : path === `/service/` ? (
-        <div className="relative banner_layout">
+        <div className="position-relative banner_layout">
           {theme === "dark" ? <div className="banner_gradient"></div> : null}
           <div className="banner_default banner_img">
             <div className="textF53 FontR tcb title_default">{props.title}</div>
           </div>
         </div>
       ) : path === "/research/" ? (
-        <div className="relative banner_layout">
+        <div className="position-relative banner_layout">
           {theme === "dark" ? <div className="banner_gradient"></div> : null}
           <div className="banner_default banner_img ">
             <div className="textF53 FontR tcb title_center">{props.title}</div>
           </div>
         </div>
       ) : path === "/crs/" ? (
-        <div className="relative banner_layout">
+        <div className="position-relative banner_layout">
           <div className="banner_gradient"></div>
           <div className="banner_default banner_img">
             <div className="textF53 FontR tcb title_center">{props.title}</div>
           </div>
         </div>
       ) : path === "/news/" ? (
-        <div className="relative banner_layout">
+        <div className="position-relative banner_layout">
           {theme === "dark" ? <div className="banner_gradient"></div> : null}
           <div className="banner_default banner_img">
             <div className="textF53 FontR tcb title_default">{props.title}</div>
           </div>
         </div>
       ) : path === "/contactus/" ? (
-        <div className="relative banner_layout">
+        <div className="position-relative banner_layout">
           <div className="banner_gradient"></div>
           <div className="banner_default banner_img">
             <div className="textF53 FontR tcb title_default">{props.title}</div>

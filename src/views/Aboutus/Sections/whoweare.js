@@ -26,18 +26,18 @@ export default function Whoweare() {
       className="SectionDiv whoweare"
     >
       <div className="titleDiv">
-        <span className="FontB">WHO WE ARE</span>
+        <span className="FontB textF20">WHO WE ARE</span>
         <hr />
       </div>
       <div className="whoweareContent">
         <div className="whoweareContentTitle">
           {mobile ? (
             <>
-              <span className="FontR">HERINGS is personalized</span>
-              <span className="FontR">Digital Health Care Service Company</span>
+              <span className="FontR textF32 tcw">HERINGS is personalized</span>
+              <span className="FontR textF32 tcw">Digital Health Care Service Company</span>
             </>
           ) : (
-            <span className="FontB">
+            <span className="FontB textF32 tcw">
               HERINGS is personalized Digital Health Care Service Company
             </span>
           )}
@@ -45,13 +45,13 @@ export default function Whoweare() {
         <div className="mt-8 whoweareContentsWrap">
           {mobile ? (
             <>
-              <span className="FontL">
+              <span className="FontL textF20 tcw">
                 We aim to be the best companion to cancer patients
               </span>
-              <span className="FontL">through their long journey to overcome the disease.</span>
+              <span className="FontL textF20 tcw">through their long journey to overcome the disease.</span>
             </>
           ) : (
-            <span className="FontL">
+            <span className="FontL textF20 tcw">
               We aim to be the best companion to cancer patients through their
               long journey to overcome the disease.
             </span>
@@ -61,7 +61,7 @@ export default function Whoweare() {
           <div
             className={`${mobile ? "pt-30" : tablet ? "pt-100" : "pt-150"}`}
           />
-          <span className="we FontB">We</span>
+          <span className="we FontB tcw textF20">We</span>
           {splits.border.map((split, idx) => (
             <div className="mt-8" key={idx}>
               <span className="FontB tcw">{split}</span>

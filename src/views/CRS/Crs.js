@@ -11,7 +11,7 @@ import crs_image3 from "../../assets/images/08crs/crs_image3.png";
 import CommonCardTitle from "../common/CommonCardTitle";
 import ClinicalTrialServiceTitle from "./Sections/ClinicalTrialServiceTitle";
 import TabClick from "../common/TabClick";
-import useOnScreen from "../Aboutus/hooks/objectObserver";
+import useOnScreen from "../hooks/objectObserver";
 import { ThemeContext } from "../../context";
 import CommonCardFrame from "../common/CommonCardFrame";
 export default function Crs() {

@@ -23,7 +23,6 @@
   flex-direction: column;
   align-items: center;
   align-content: center;
-  font-size: 24px;
 }
 .titleDiv > hr {
   width: 60px;
@@ -54,21 +53,12 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  font-size: 32px;
-  /* font-weight: 600; */
-  color: #fff;
 }
 .whoweareContentsWrap {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
-  font-size: 20px;
-  color: #fff;
-}
-.we {
-  font-size: 20px;
-  /* font-weight: 600; */
 }
 
 /* HERINGS TEAM */
@@ -187,7 +177,6 @@
 @media screen and (max-width: 1024px) {
   .titleDiv > span {
     margin-bottom: 18px;
-    font-size: 18px;
   }
   .titleDiv > hr {
     width: 50px;
@@ -199,20 +188,12 @@
     font-size: 16px;
     color: #fff;
   }
-  .whoweareContentTitle {
-    font-size: 28px;
-    color: #fff;
-  }
-
   .TeamListWrap {
     padding: 1% 8%;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .titleDiv > span {
-    font-size: 16px;
-  }
   .titleDiv > hr {
     width: 40px;
     margin: 28px auto;
@@ -220,12 +201,6 @@
   /* WHO WE ARE */
   .whoweareContent {
     flex-direction: column;
-  }
-  .whoweareContentTitle {
-    font-size: 22px;
-  }
-  .whoweareContentsWrap {
-    font-size: 12px;
   }
   /* HERINGS TEAM */
   .Subtitle > span {
@@ -350,6 +325,21 @@
 }
 
 /* MODAL */
+.paper {
+  width: 55%;
+  max-height: calc(85vh);
+  overflow: auto;
+  box-shadow: 0 0 100px 20px rgba(0, 0, 0, 0.7);
+  background-color: #fff;
+}
+.modalimage {
+  width: 35%;
+  max-width: 35%;
+  height: auto;
+}
+.modalTitle {
+  color: #4a4a4a;
+}
 .modalContent {
   height: auto;
   max-height: 750;
@@ -394,6 +384,9 @@
   justify-content: center;
   align-items: center;
 }
+.modal-border {
+  border-top: solid 0.5px #bebebe;
+}
 @media screen and (max-width: 1260px) {
   .modalCloseDiv {
     top: calc(-0.9vh);
@@ -403,6 +396,9 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .paper {
+    width: 80%;
+  }
   .modalCloseDiv {
     top: -10px;
   }

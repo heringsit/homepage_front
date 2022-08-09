@@ -446,10 +446,6 @@
   border-radius: 20px;
   padding: 10px 15px;
 }
-.readContentsRow {
-  display: inline-flex;
-  width: 100%;
-}
 .tbCaption {
   margin: 5px 10px;
   min-width: 100px;

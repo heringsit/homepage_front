@@ -24,7 +24,7 @@ export default function PartnersAInvestors(props) {
       <div className="SectionDiv">
         {!props.matches ? (
           <div className="titleDiv">
-            <span className="FontB">Partners & Investors </span>
+            <span className="FontB textF24">Partners & Investors </span>
             <hr />
           </div>
         ) : null}
