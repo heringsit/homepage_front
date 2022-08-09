@@ -318,6 +318,7 @@ export default function Menubar(props) {
                     <Link
                       smooth="true"
                       to={RESEARCH.link[idx]}
+                      scroll={el => scrollWithOffset(el, -149)}
                       onClick={menuclick}
                     >
                       <span
@@ -367,7 +368,11 @@ export default function Menubar(props) {
               >
                 {CTS.title.map((cts, idx) => (
                   <li key={idx}>
-                    <Link smooth="true" to={CTS.link[idx]} onClick={menuclick}>
+                    <Link 
+                      smooth="true" to={CTS.link[idx]} 
+                      scroll={el => scrollWithOffset(el, -149)}
+                      onClick={menuclick}
+                      >
                       <span
                         className={`menuText FontB ${
                           theme === "light" ? "tcg" : "tcw"
@@ -695,6 +700,7 @@ export default function Menubar(props) {
                     <Link
                       smooth={true}
                       to={ABOUTUS.link[idx]}
+                      scroll={el => scrollWithOffset(el, -90)}
                       onClick={menuclick}
                     >
                       <span
@@ -735,6 +741,7 @@ export default function Menubar(props) {
                     <Link
                       smooth="true"
                       to={SERVICE.link[idx]}
+                      scroll={el => scrollWithOffset(el, -189)}
                       onClick={menuclick}
                     >
                       <span
@@ -775,6 +782,7 @@ export default function Menubar(props) {
                     <Link
                       smooth="true"
                       to={RESEARCH.link[idx]}
+                      scroll={el => scrollWithOffset(el, -189)}
                       onClick={menuclick}
                     >
                       <span

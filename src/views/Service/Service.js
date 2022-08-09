@@ -53,17 +53,17 @@ export default function Service({ match }) {
           <hr className="vertical_line"></hr>
 
           {/* HEALIARY */}
-          <div className="healiary flex-wrap gap-40 inline-block">
+          <div className="healiary flex-wrap gap-40 inline-block" id="digitalcareservice">
             <div className="flex-wrap gap-16 mb-20">
               <div className="flatformtitle">
                 <div className="flatformnum flex-col gap-4">
-                  <span className="tcw textF16">Platform 1</span>
+                  <span className="tcw FontB textF16">Platform 1</span>
                 </div>
                 <span className="tco2 textF28 FontEB">
                   DIGITAL HEALTHCARE SERVICE PLATFORM
                 </span>
               </div>
-              <p className="textT18 explanation FontL m-reset">
+              <p className="textF18 explanation FontL m-reset">
                 Patients get direct services everyday through this platform.
                 <br />
                 Main services include nutrition, symptom management, drug
@@ -99,18 +99,18 @@ export default function Service({ match }) {
           </div>
 
           {/* OSTOMY */}
-          <div className="ostomy flex-col gap-24">
+          <div className="ostomy flex-col gap-24" id="telehealthcareservice">
             <div className="flex-col gap-16">
               <div className="flatformtitle">
                 <div className="flatformnum flex-col gap-4">
 
-                  <span className="tcw textF16">Platform 2</span>
+                  <span className="tcw FontB textF16">Platform 2</span>
                 </div>
                 <span className="tco2 textF28 FontEB">
                   TELE-HEALTHCARE SERVICE PLATFORM
                 </span>
               </div>
-              <p className="textT18 explanation FontL m-reset">
+              <p className="textF18 explanation FontL m-reset">
                 Gateway service platform between providers and patients for
                 remote and home care management.​
               </p>
@@ -129,7 +129,7 @@ export default function Service({ match }) {
               flexStyle="flex-row-reverse gap-120"
               mainContentStyle="flex-col gap-56"
               contentPadding=""
-              subText1Style="textT18 FontB mb-4"
+              subText1Style="textF18 FontB mb-4"
               subText2Style="textF24 FontEB  mb-8"
             />
           </div>

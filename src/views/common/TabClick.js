@@ -2,10 +2,12 @@ import { HashLink as Link } from "react-router-hash-link";
 import React, { useState, useContext } from "react";
 import { useLocation } from "react-router";
 import "../Components/Menubar.css";
-import { ThemeContext } from "../../context";
+import { ThemeContext, MediaQueryContext } from "../../context";
 
 export default function TabClick({ visibleArray, isScroll }) {
   let pathname = useLocation().pathname;
+  const { theme } = useContext(ThemeContext);
+  const { mDesktop } = useContext(MediaQueryContext);
 
   // ex: [true, false, false] -> [whoweare:Visible, teamList:not-Visible, pai:not-Visible]
   // const visibleCount = visibleArray?.filter(value => value===true).length; // check how many elements are visible in DOM
@@ -30,8 +32,7 @@ export default function TabClick({ visibleArray, isScroll }) {
     window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
   };
 
-  const { theme } = useContext(ThemeContext);
-
+  
   return (
     <div
       className="TABS_sticky"
@@ -82,7 +83,7 @@ export default function TabClick({ visibleArray, isScroll }) {
                   <Link
                     smooth
                     to={`#${tab}`}
-                    scroll={el => scrollWithOffset(el, -189)}
+                    scroll={el => scrollWithOffset(el, (mDesktop ? -149 : -189))}
                     className={
                       index === visibleIndex
                         ? "w-full h-full tagADefault tabATagTab FontEB"
@@ -112,7 +113,7 @@ export default function TabClick({ visibleArray, isScroll }) {
                   <Link
                     smooth
                     to={`#${tab}`}
-                    scroll={el => scrollWithOffset(el, -189)}
+                    scroll={el => scrollWithOffset(el, (mDesktop ? -149 : -189))}
                     className={
                       index === visibleIndex
                         ? "w-full h-full tagADefault tabATagTab FontEB"
