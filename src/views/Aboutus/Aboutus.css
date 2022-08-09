@@ -62,12 +62,22 @@
 }
 
 /* HERINGS TEAM */
+.SectionColorGray {
+  background-color: #f6f8fb;
+  padding: 16px 25px;
+}
 .TeamListWrap {
   height: 100%;
-  padding: 0 5%;
+  padding-left: calc(2vw);
+  padding-right: calc(2vw);
+  /* padding: calc(2vh) calc(3vw); */
 }
 .Subtitle > span:first-child {
   margin-right: 8px;
+}
+.Subtitle {
+  padding-left: calc(1vw);
+  margin: calc(3vh) 0;
 }
 .listWrap {
   position: relative;
@@ -79,40 +89,27 @@
 }
 .teamDivWrap {
   outline: none;
-  margin: 0 auto;
-}
-.teamDivWrapNone {
-  display: none;
+  margin: 0;
+  text-align: center;
 }
 .heringsTeamWrap {
   word-break: keep-all;
   outline: none;
   width: 92%;
+  height: 400px;
   cursor: pointer;
   background-color: #fff;
   border-radius: 25px;
-  display: flex;
-  flex-direction: column;
-  margin: 0 5px;
-}
-.wrapFirst {
-  margin-left: 0;
+  padding: 2%;
+  display: inline-block;
 }
 .heringsTeamWrap > hr {
   width: 45px;
-  margin: 12px auto;
+  margin: 4% auto;
   background-color: #f5f5f5;
   border: 3px solid #f5f5f5;
   border-radius: 3px;
   height: 0;
-}
-.listImgWrap {
-  min-height: 1px;
-  width: 100%;
-  margin: 15px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .listImg {
   width: 65%;
@@ -120,15 +117,11 @@
   height: auto;
 }
 .heringsTeamContentText {
-  margin: 35px 25px 10%;
+  position: relative;
+  bottom: 0px;
+  margin: 15%;
   min-height: 60px;
   text-align: left;
-}
-.heringsTeamContentText:first-child {
-  font-size: 18px;
-}
-.heringsTeamContentText:last-child {
-  font-size: 16px;
 }
 /* PARTNERS & INVESTORS */
 .researchWrap {
@@ -173,7 +166,17 @@
   width: 100%;
   margin: auto;
 }
-
+@media screen and (max-width: 1260px) {
+  .SectionColorGray {
+    padding: 16px 35px;
+  }
+  .Subtitle {
+    margin: calc(2vh) 0;
+  }
+  .heringsTeamWrap {
+    height: 300px;
+  }
+}
 @media screen and (max-width: 1024px) {
   .titleDiv > span {
     margin-bottom: 18px;
@@ -184,9 +187,8 @@
   .whoweareContent {
     flex-direction: column;
   }
-  .whoweareContentsWrap {
-    font-size: 16px;
-    color: #fff;
+  .SectionColorGray {
+    padding: 16px 2px;
   }
   .TeamListWrap {
     padding: 1% 8%;
@@ -203,43 +205,24 @@
     flex-direction: column;
   }
   /* HERINGS TEAM */
-  .Subtitle > span {
-    font-size: 15px;
-  }
   .Subtitle > span:first-child {
     margin-right: 8px;
   }
-  .heringsTeamContentText:first-child {
-    font-size: 14px;
+  .SectionColorGray {
+    padding: 14px 5px;
   }
-  .heringsTeamContentText:last-child {
-    font-size: 11px;
+  .heringsTeamWrap {
+    height: 250px;
   }
 }
-@media screen and (max-width: 600px) {
-  .titleDiv {
-    font-size: 18px;
-  }
+@media screen and (min-width: 320px) and (max-width: 600px) {
   /* WHO WE ARE */
-  .whoweareContentTitle {
-    /* flex-direction: column; */
-    font-size: 18px;
-  }
   .whoweareContent {
     height: max-content;
-  }
-  .whoweareContentsWrap {
-    font-size: 10px;
   }
   /* HERINGS TEAM */
   .TeamListWrap {
     padding: 1% 5%;
-  }
-  .heringsTeamContentText:first-child {
-    font-size: 14px;
-  }
-  .heringsTeamContentText:last-child {
-    font-size: 14px;
   }
   /* PARTNERS&INV */
   .partner__image__container,
@@ -262,10 +245,6 @@
   .titleDiv {
     margin: 0 0 0 0;
   }
-  .titleDiv > span {
-    font-size: 15px;
-    font-weight: 600;
-  }
   .titleDiv > hr {
     width: 35px;
     margin: 5px 0 30px 0;
@@ -273,30 +252,15 @@
   /* WHO WE ARE */
   .whoweareContentTitle {
     margin: auto;
-    font-size: 15px;
-    font-weight: 600;
   }
   .whoweareContentsWrap {
     width: 300px;
     margin-bottom: 20px;
     word-break: normal;
   }
-  .whoweareContentsWrap span {
-    font-size: 12px;
-  }
-  .we {
-    font-size: 15px;
-    font-weight: 600;
-  }
-
   /* HEARINGS TEAM */
   .Subtitle > span {
-    font-size: 14px;
     margin: 2px 0 2px 0;
-  }
-  .heringsTeamWrap {
-    width: 90%;
-    margin: 2px;
   }
   .listWrap {
     margin-bottom: 10px;
@@ -306,6 +270,7 @@
     margin: auto;
   }
   .heringsTeamWrap {
+    width: 90%;
     margin: 0;
     align-items: center;
     justify-content: center;
@@ -316,15 +281,15 @@
     justify-self: center;
     margin-top: 5x;
   }
-  .heringsTeamContentText:first-child {
-    font-size: 12px;
-  }
-  .heringsTeamContentText:last-child {
-    font-size: 12px;
-  }
 }
 
 /* MODAL */
+.modal {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+}
 .paper {
   width: 55%;
   max-height: calc(85vh);
@@ -346,9 +311,6 @@
   padding: 20;
   text-align: center;
 }
-.careerModalTitleSection > span {
-  font-size: 26px;
-}
 .modalContentText {
   border-top: 1px solid #ddd;
   text-align: left;
@@ -356,7 +318,6 @@
   color: #4a4a4a;
   padding: 25px;
   line-height: 160%;
-  font-size: 16px;
 }
 .modalCloseWrap {
   position: relative;
@@ -408,16 +369,13 @@
 }
 @media screen and (max-width: 600px) {
   .careerModalTitleSection > span {
-    font-size: 20px;
   }
   .modalContentText {
     padding: 25px 10px 25px 10px;
-    font-size: 12px;
   }
 }
 @media screen and (max-width: 320px) {
   .modalContentText {
     padding: 25px 10px 25px 10px;
-    font-size: 12px;
   }
 }

@@ -169,7 +169,7 @@ export default function ContactUs() {
   return (
     <div
       id="content"
-      className="content"
+      className="content position-relative"
       style={{
         backgroundColor: theme === "dark" && "#282828",
         color: theme === "dark" && "white",

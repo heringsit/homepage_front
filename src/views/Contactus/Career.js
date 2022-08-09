@@ -305,7 +305,7 @@ export default function Career({ match }) {
       <div id="cotactus">
         {/* <ContentsTitle matches={matches} title={"CONTACT US"} /> */}
         {/* id 를 추가해야 이동한다 ; scroll focusing 스크롤 포커싱 */}
-        <div className="SectionDivCareer" id="career">
+        <div className="SectionDivCareer position-relative" id="career">
           <div className="titleDiv">
             <span className="textT22 FontEB">HERINGS CAREERS</span>
             <hr></hr>
