@@ -6,15 +6,33 @@
   width: 100%;
   height: 1060px;
 }
+.contents-top-padding {
+  padding-top: 236px;
+}
 @media (max-width: 600px) {
   #attimp4 {
     width: 100%;
     height: 480px;
   }
 }
-@media (min-width: 600px) and(max-width: 1080px) {
+@media (min-width: 600px) and (max-width: 1080px) {
   #attimp4 {
     width: 100%;
     height: 600px;
+  }
+}
+
+
+/*  Research => 1024 < Screen < 1260 */
+@media screen and (max-width: 1260px) {
+  .contents-top-padding {
+    padding-top: 116px;
+  }
+}
+
+/*  Research => 768 < Screen < 1024 */
+@media screen and (max-width: 1024px) {
+  .contents-top-padding {
+    padding-top: 96px;
   }
 }
