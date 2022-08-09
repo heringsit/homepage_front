@@ -26,11 +26,17 @@
 .pt-16 {
   padding-top: 16px;
 }
+.pt-20 {
+  padding-top: 20px;
+}
 .pt-30 {
   padding-top: 30px;
 }
 .pt-32 {
   padding-top: 32px;
+}
+.pt-50 {
+  padding-top: 50px;
 }
 .pt-64 {
   padding-top: 64px;
@@ -52,6 +58,12 @@
 }
 .pt-236 {
   padding-top: 236px;
+}
+.pt-500 {
+  padding-bottom: 500px;
+}
+.pb-600 {
+  padding-bottom: 600px;
 }
 
 /* pb-# - padding bottom */
@@ -79,12 +91,6 @@
 .pb-400 {
   padding-bottom: 400px;
 }
-.pt-500 {
-  padding-bottom: 500px;
-}
-.pb-600 {
-  padding-bottom: 600px;
-}
 
 /* ptb-# - padding top and bottom */
 .ptb-24 {
@@ -103,6 +109,9 @@
 */
 .m-reset {
   margin: 0;
+}
+.ml-45 {
+  margin-left: 45px;
 }
 .mb-4 {
   margin-bottom: 4px;
@@ -128,6 +137,9 @@
 .mt-12 {
   margin-top: 12px;
 }
+.mt-20 {
+  margin-top: 20px;
+}
 
 /* flex:
   flex-wrap: default flex wrap
@@ -144,6 +156,11 @@
 }
 .flex-col {
   display: flex;
+  flex-direction: column;
+}
+.flex-wrap-col {
+  display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
 }
 .flex-col-reverse {
@@ -193,6 +210,9 @@
 .text-align-start {
   text-align: start;
 }
+.text-align-right {
+  text-align: right;
+}
 .text-align-center {
   text-align: center;
 }
@@ -204,6 +224,9 @@
 }
 .application {
   align-items: center;
+}
+.justify-center {
+  justify-content: center;
 }
 
 .lineheight160 {
@@ -220,10 +243,19 @@
 .inline-block {
   display: inline-block;
 }
+.inline-flex {
+  display: inline-flex;
+}
+.flex {
+  display: flex;
+}
 
 /* position */
 .position-relative {
   position: relative;
+}
+.position-fixed {
+  position: fixed;
 }
 
 /*기본 css*/

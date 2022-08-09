@@ -68,7 +68,7 @@ export default function TeamList(props) {
     <div className={`${mobile ? "" : "pt-80"}`}>
       <div className="SectionDiv">
         <div className="titleDiv">
-          <span className="FontB">HERINGS TEAM</span>
+          <span className="FontB textF24">HERINGS TEAM</span>
           <hr />
         </div>
         <div className="SectionColorGray" style={{ padding: "16px 0" }}>
@@ -101,7 +101,7 @@ export default function TeamList(props) {
                       <div className="heringsTeamContentText">
                         <div>
                           <span
-                            className={`${mobile ? "" : "FontB"} ${
+                            className={`${mobile ? "" : "FontB"} textF16 ${
                               theme === "dark" ? "tcw" : "tcb"
                             }`}
                           >
@@ -110,7 +110,7 @@ export default function TeamList(props) {
                         </div>
                         <div>
                           {/* 여기 index === 4 */}
-                          <span className="tco">{team.jobs}</span>
+                          <span className="tco textF14">{team.jobs}</span>
                         </div>
                         {/* <div>
                             <span className="textF14 tcg">
@@ -154,7 +154,7 @@ export default function TeamList(props) {
                       <div className="heringsTeamContentText">
                         <div>
                           <span
-                            className={`${mobile ? "" : "FontB"} ${
+                            className={`${mobile ? "" : "FontB"} textF16 ${
                               theme === "dark" ? "tcw" : "tcb"
                             }`}
                           >
@@ -202,7 +202,7 @@ export default function TeamList(props) {
                       <div className="heringsTeamContentText">
                         <div>
                           <span
-                            className={`${mobile ? "" : "FontB"} ${
+                            className={`${mobile ? "" : "FontB"} textF16 ${
                               theme === "dark" ? "tcw" : "tcb"
                             }`}
                           >
