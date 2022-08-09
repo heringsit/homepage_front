@@ -53,7 +53,10 @@ export default function Service({ match }) {
           <hr className="vertical_line"></hr>
 
           {/* HEALIARY */}
-          <div className="healiary flex-wrap gap-40 inline-block" id="digitalcareservice">
+          <div
+            className="healiary flex-wrap gap-40 inline-block"
+            id="digitalcareservice"
+          >
             <div className="flex-wrap gap-16 mb-20">
               <div className="flatformtitle">
                 <div className="flatformnum flex-col gap-4">

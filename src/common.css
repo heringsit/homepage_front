@@ -425,6 +425,11 @@
 .textF12 {
   font-size: 12px;
 }
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .textF16 {
+    font-size: 13px;
+  }
+}
 @media screen and (max-width: 768px) {
   .textF70 {
     font-size: 60px;
@@ -508,7 +513,7 @@
     font-size: 15px;
   }
   .textF16 {
-    font-size: 14px;
+    font-size: 13px;
   }
   .textF15 {
     font-size: 12px;
