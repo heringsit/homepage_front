@@ -12,11 +12,12 @@ import CommonCardTitle from "../common/CommonCardTitle";
 import ClinicalTrialServiceTitle from "./Sections/ClinicalTrialServiceTitle";
 import TabClick from "../common/TabClick";
 import useOnScreen from "../hooks/objectObserver";
-import { ThemeContext } from "../../context";
+import { ThemeContext, MediaQueryContext } from "../../context";
 import CommonCardFrame from "../common/CommonCardFrame";
 export default function Crs() {
   const matches = useMediaQuery("(max-width:600px)");
   const { theme } = useContext(ThemeContext);
+  const { mTablet } = useContext(MediaQueryContext);
   const [isScroll, setIsScroll] = useState(false);
   const onScroll = () => {
     if (window.scrollY > 238 || window.pageYOffset > 238) {
@@ -51,7 +52,9 @@ export default function Crs() {
       <Totop />
 
       <div id="crs">
-        <TabClick visibleArray={visibleArray} isScroll={isScroll} />
+        {!mTablet && (
+          <TabClick visibleArray={visibleArray} isScroll={isScroll} />
+        )}
         <ContentsTitle matches={matches} title={"CLINICAL TRIAL SERVICE"} />
         <div className="contentsmargin">
           <div className="contents contentspadding">
