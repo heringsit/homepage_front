@@ -71,7 +71,7 @@ export default function Crs() {
               />
             </div>
             {/* Data Management */}
-            <div className="pt-236"></div>
+            <div className="contents-top-padding"></div>
             <div className="pt-64" id="datamanagement" ref={refs.current[1]}>
               <CommonCardTitle title={"DATA MANAGEMENT"} fontSize={"textF28 "} />
               <CommonCardFrame
@@ -84,7 +84,7 @@ export default function Crs() {
               />
             </div>
             {/* Statistical Analysis */}
-            <div className="pt-236 "></div>
+            <div className="contents-top-padding "></div>
             <div className="pt-64 pb-600 " id="statisticalanalysis" ref={refs.current[2]}>
               <CommonCardTitle title={"STATISTICAL ANALYSIS"} fontSize={"textF28 "} />
               <CommonCardFrame

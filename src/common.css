@@ -260,6 +260,16 @@
   #research .textF18 {
     font-size: 18px;
   }
+  /*CTS*/
+  #crs .textF28 {
+    font-size: 28px;
+  }
+  #crs .textF24 {
+    font-size: 24px;
+  }
+  #crs .textF18 {
+    font-size: 18px;
+  }
 }
 
 /*  768 < Screen < 1024 */
@@ -274,6 +284,16 @@
     font-size: 24px;
   }
   #research .textF18 {
+    font-size: 18px;
+  }
+  /*CTS*/
+  #crs .textF28 {
+    font-size: 28px;
+  }
+  #crs .textF24 {
+    font-size: 24px;
+  }
+  #crs .textF18 {
     font-size: 18px;
   }
   /* Draft design */
@@ -308,6 +328,16 @@
   #research .textF18 {
     font-size: 18px;
   }
+  /*CTS*/
+  #crs .textF28 {
+    font-size: 28px;
+  }
+  #crs .textF24 {
+    font-size: 24px;
+  }
+  #crs .textF18 {
+    font-size: 18px;
+  }
 
 }
 
@@ -323,6 +353,16 @@
     font-size: 22px;
   }
   #research .textF18 {
+    font-size: 16px;
+  }
+  /*CTS*/
+  #crs .textF28 {
+    font-size: 26px;
+  }
+  #crs .textF24 {
+    font-size: 22px;
+  }
+  #crs .textF18 {
     font-size: 16px;
   }
 }
