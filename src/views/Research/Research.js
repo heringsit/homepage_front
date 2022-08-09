@@ -109,13 +109,13 @@ export default function Research() {
                     theme === "light" ? "tcb" : "tcw"
                   }`}
                 >
-                <div className="atti-content align-items-center gap-16">
-                  <p className="m-reset FontEB textF24">ATTI</p>
-                  <p className="m-reset FontL textF18">
-                    Real-time, clinical decision support tool to monitor and
-                    manage the complexities of lung cancer care.
-                  </p>
-                </div>
+                  <div className="atti-content align-items-center gap-16">
+                    <p className="m-reset FontEB textF24">ATTI</p>
+                    <p className="m-reset FontL textF18">
+                      Real-time, clinical decision support tool to monitor and
+                      manage the complexities of lung cancer care.
+                    </p>
+                  </div>
                 </div>
                 <div className="align-items-center flex-row gap-58 w-full">
                   <img
@@ -124,14 +124,14 @@ export default function Research() {
                     alt="nutrition"
                   />
                   <div className="research-youtube">
-                  <iframe
-                    className="research-youtube"
-                    src="https://www.youtube.com/embed/Fp19GlDhVRE?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1&loop=1"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; loop; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+                    <iframe
+                      className="research-youtube"
+                      src="https://www.youtube.com/embed/Fp19GlDhVRE?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1&loop=1"
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; loop; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
                   </div>
                 </div>
               </div>

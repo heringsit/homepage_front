@@ -14,6 +14,7 @@ import healiary_application from "../../assets/images/07service/healiary_applica
 import ostomy_application from "../../assets/images/07service/ostomy_application.svg";
 import { ThemeContext } from "../../context";
 import CommonCardFrame from "../common/CommonCardFrame";
+import ContentsTitle from "../Components/ContentsTitle";
 
 // import CommonCardFrameLeft from "../common/CommonCardFrameLeft";
 // import CommonCardFrameRight from "../common/CommonCardFrameRight";
@@ -34,11 +35,8 @@ export default function Service({ match }) {
     >
       <Menubar slideIndex={0} />
       <Totop />
-
       {/* TITLE */}
-      <div className="banner_img servicetitle">
-        <span className="textF53 tcw FontR title_default">SERVICE</span>
-      </div>
+      <ContentsTitle title={"SERVICE"} />
 
       {/* CONTENTS */}
       <div className="contentsmargin">

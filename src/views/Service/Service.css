@@ -1,5 +1,9 @@
 /*  SERVICE => 1260 < Screen  */
 
+.banner_padding {
+  padding-top: 97px;
+}
+
 /* SERVICE Container */
 .servicecontainer {
   position: relative;
@@ -15,6 +19,9 @@
 @media screen and (max-width: 1260px) {
   .servicetitle {
     top: 67px;
+  }
+  .banner_padding {
+    padding-top: 67px;
   }
 }
 

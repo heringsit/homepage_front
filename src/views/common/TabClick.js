@@ -106,7 +106,7 @@ export default function TabClick({ visibleArray, isScroll }) {
                   </span>
                 )}
               </React.Fragment>
-            ))
+            )) // research tabs
           : researchtabs.map((tab, index) => (
               <React.Fragment key={index}>
                 <div className="TABS_tab FontR textF16">
