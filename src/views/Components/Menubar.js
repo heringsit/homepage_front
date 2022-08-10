@@ -152,7 +152,11 @@ export default function Menubar(props) {
     return (
       <div className="mobileMenuWrapDiv">
         <div
-          className="mobileMenuroot"
+          className={`mobileMenuroot  ${
+            theme === "dark"
+                ? "menuBorderBottomDark"
+                : "menuBorderBottomLight"
+          }`}
           style={{ backgroundColor: theme === "dark" && "#282828" }}
           onMouseEnter={menuover}
           onMouseLeave={menuout}
@@ -261,20 +265,9 @@ export default function Menubar(props) {
     return (
       <div
         className={`menuWrapDiv ${isOver ? "menuWrapOver " : ""} ${
-          isScroll
-            ? "menuWrapOver " +
-              (theme === "dark"
-                ? "menuBorderBottomDark "
-                : "menuBorderBottomLight ")
-            : ""
-        } ${
-          pathname === "/aboutus/" ||
-          pathname === "/research/" ||
-          pathname === "/crs/"
-            ? theme === "dark"
+          theme === "dark"
               ? "menuBorderBottomDark"
               : "menuBorderBottomLight"
-            : ""
         }`}
         style={{
           backgroundColor: theme === "dark" ? "#282828" : "#ffffff",
