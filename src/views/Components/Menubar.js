@@ -4,7 +4,6 @@ import Icon from "@material-ui/core/Icon";
 import { HamburgerSqueeze } from "react-animated-burgers";
 import { NavLink, useLocation } from "react-router-dom";
 import { HashLink as Link } from "react-router-hash-link";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import herings_logo_b from "../../assets/images/etc/heringsLOGO_black.svg";
 import herings_logo_w from "../../assets/images/etc/heringsLOGO_white.svg";
 import herings_logo_m from "../../assets/images/etc/heringsLOGO_mobile.svg";
@@ -19,17 +18,12 @@ export default function Menubar(props) {
   const pathname = useLocation().pathname;
   const imsi = process.env.PUBLIC_URL;
   smoothscroll.polyfill();
-  // const matches = useMediaQuery("(max-width:1260px)");
-  // const mobile = useMediaQuery("(max-width:320px)");
   const { mDesktop, mobile } = useContext(MediaQueryContext);
   const [isOver, setIsOver] = useState(false);
   const [isMActive, setIsMActive] = useState(false);
   const [mobileSelected, setMobileSelected] = useState(null);
   const [isScroll, setIsScroll] = useState(false);
   const { theme, changeTheme } = useContext(ThemeContext);
-  // const [mode, setMode] = useState(theme);
-
-  // console.log(pathname === "/", ">pathname");
 
   const changeMode = () => changeTheme(theme === "light" ? "dark" : "light");
 

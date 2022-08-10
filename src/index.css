@@ -284,67 +284,55 @@ body {
   margin-left: auto;
 }
 /*SectionDiv*/
-.SectionDiv {
+/* .SectionDiv {
   width: 100%;
   height: 100%;
   padding: 100px 10%;
-}
-@media screen and (max-width: 600px) {
-  .SectionDiv {
-    margin-top: 67px;
-    padding: 100px 10%;
-  }
-}
-@media screen and (max-width: 320px) {
-  .SectionDiv {
-    margin-top: 40px;
-    padding: 100px 10%;
-  }
-}
-.SectionDivNoBottom {
+} */
+/* .SectionDivNoBottom {
   padding: 100px 10% 0px 10%;
-}
-.SectionDivBigBottom {
+} */
+/* .SectionDivBigBottom {
   padding-bottom: 200px;
-}
-.addPadding {
+} */
+/* .addPadding {
   padding-top: 48px;
-}
-.SectionDivNP {
+} */
+/* .SectionDivNP {
   width: 100%;
   height: 100%;
   position: relative;
-}
-.SectionDivNT {
+} */
+/* .SectionDivNT {
   width: 100%;
   height: 100%;
   padding: 0 10%;
-}
-.SectionTitle {
+} */
+/* .SectionTitle {
   width: 100%;
   height: 170px;
-}
-.SectionDivTail {
+} */
+/* .SectionDivTail {
   width: 100%;
   height: 100%;
   padding-top: 2%;
   position: relative;
-}
-.SectionDivTailContent {
+} */
+/* .SectionDivTailContent {
   width: 100%;
   padding: 0 5%;
-}
-.SectionDivTailFooter {
+} */
+/* .SectionDivTailFooter {
   width: 100%;
   position: absolute;
   bottom: 0;
-}
-.SectionDivUpBlank {
+} */
+/* .SectionDivUpBlank {
   padding-top: 200px;
-}
-.menuTitleDiv {
+} */
+/* .menuTitleDiv {
   padding-top: 40px;
-}
+} */
 .youtube {
   position: relative;
   padding-top: 56%;
@@ -413,7 +401,6 @@ body {
   padding: 0 5%;
   height: 100px;
 }
-
 .TABS_tab {
   width: 33.333%;
   height: 100%;
@@ -444,9 +431,8 @@ body {
 }
 .sticky_padding {
   width: 100%;
-  height: 89px;
+  height: 84px;
 }
-
 .vertical_line {
   height: 190px;
   width: 0px;
@@ -455,13 +441,8 @@ body {
   margin: auto;
 }
 
-@media screen and (max-width: 1260px) {
-  .sticky_padding {
-    width: 100%;
-    height: 67px;
-  }
-}
 /*card 공통*/
+/* COMMON CARD TITLE */
 .card_titleDiv {
   display: flex;
   width: 100%;
@@ -469,6 +450,9 @@ body {
   align-items: center;
   align-content: center;
   text-align: center;
+}
+.card_titleDiv span {
+  font-size: 28px;
 }
 .card_titleDiv_padding_b {
   padding-bottom: 16px;
@@ -603,13 +587,13 @@ body {
 } */
 
 /* media screen */
-/* media-font trans */
-@media screen and (max-width: 428px) {
-  .content {
-    position: relative;
-    padding-bottom: 100px;
+@media screen and (max-width: 1260px) {
+  .sticky_padding {
+    width: 100%;
+    height: 84px;
   }
-
+}
+@media screen and (max-width: 428px) {
   .card_MinWidth {
     padding-top: 12px;
     padding-bottom: 48px;
@@ -662,23 +646,20 @@ body {
     background-position: top;
   } */
 }
-@media (min-width: 428px) and (max-width: 768px) {
-  .content {
-    position: relative;
-    padding-bottom: 100px;
-  }
-}
-/* media-other */
-@media screen and (max-width: 480px) {
-}
-
-@media screen and (max-width: 600px) {
-  .SectionDiv {
+/*  320 <= Screen <= 600 */
+@media (min-width: 320px) and (max-width: 600px) {
+  /* .SectionDiv {
     padding: 55px 5%;
   }
   .SectionDivNT {
     padding-left: 5%;
     padding-right: 5%;
+  } */
+
+  /* COMMON CARD TITLE */
+  .card_titleDiv span {
+    font-size: 14px;
+    font-weight: 600;
   }
 }
 @media screen and (max-width: 700px) {
@@ -723,7 +704,11 @@ body {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 600px) and (max-width: 768px) {
+  /* COMMON CARD TITLE */
+  .card_titleDiv span {
+    font-size: 24px;
+  }
   .TABS_layout_padding {
     padding: 0 0;
     height: 70px;

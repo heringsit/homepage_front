@@ -99,10 +99,7 @@ export default function Research() {
             {/* Symptom Management */}
             <div className="contents-top-padding"></div>
             <div className="pt-64" id="symptommanagement" ref={refs.current[1]}>
-              <CommonCardTitle
-                title={"SYMPTOM MANAGEMENT"}
-                fontSize={"textF28"}
-              />
+              <CommonCardTitle title={"SYMPTOM MANAGEMENT"} />
               <div className="align-items-center flex-col gap-40">
                 <div
                   className={`flex gap-16 align-items-center ${
@@ -138,7 +135,7 @@ export default function Research() {
             {/* Exercise */}
             <div className="contents-top-padding"></div>
             <div className="pt-64" id="exercise" ref={refs.current[2]}>
-              <CommonCardTitle title={"EXERCISE"} fontSize={"textF28"} />
+              <CommonCardTitle title={"EXERCISE"} />
               <CommonCardFrame
                 imageSrc={research_1}
                 imageAlt="research_exercise"
@@ -151,7 +148,7 @@ export default function Research() {
             {/* Risk Prediction */}
             <div className="contents-top-padding"></div>
             <div className="pt-64" id="riskprediction" ref={refs.current[3]}>
-              <CommonCardTitle title={"RISK PREDICTION"} fontSize={"textF28"} />
+              <CommonCardTitle title={"RISK PREDICTION"} />
               <CommonCardFrame
                 imageSrc={research_2}
                 imageAlt="research_risk_prediction"
@@ -166,7 +163,7 @@ export default function Research() {
             {/* Drug Adherence */}
             <div className="contents-top-padding"></div>
             <div className="pt-64" id="drugadherence" ref={refs.current[4]}>
-              <CommonCardTitle title={"DRUG ADHERENCE"} fontSize={"textF28"} />
+              <CommonCardTitle title={"DRUG ADHERENCE"} />
               <CommonCardFrame
                 imageSrc={research_3}
                 imageAlt="research_drug_adherence"
@@ -181,7 +178,7 @@ export default function Research() {
             {/* AI algorithms */}
             <div className="contents-top-padding"></div>
             <div className="pt-64" id="aialgorithms" ref={refs.current[5]}>
-              <CommonCardTitle title={"AI ALGORITHMS"} fontSize={"textF28"} />
+              <CommonCardTitle title={"AI ALGORITHMS"} />
               <CommonCardFrame
                 imageSrc={research_4}
                 imageAlt="research_aialgorithms"
@@ -196,10 +193,7 @@ export default function Research() {
 
             <div className="contents-top-padding"></div>
             <div className="pt-64" id="drugadverseevents" ref={refs.current[6]}>
-              <CommonCardTitle
-                title={"DRUG ADVERSE EVENTS"}
-                fontSize={"textF28"}
-              />
+              <CommonCardTitle title={"DRUG ADVERSE EVENTS"} />
               <CommonCardFrame
                 imageSrc={drugadverseevents}
                 imageAlt="SODA"

@@ -8,8 +8,9 @@ export default function ContentsTitle(props) {
   const { theme } = useContext(ThemeContext);
   const { mDesktop, mTablet } = useContext(MediaQueryContext);
   console.log(props)
+
   return (
-    <div className="banner_container">
+    <>
       {path === "/aboutus/" ? (
         <div className="position-relative banner_container">
           <div className="banner_gradient"></div>
@@ -60,6 +61,6 @@ export default function ContentsTitle(props) {
       ) : (
         ""
       )}
-    </div>
+    </>
   );
 }
