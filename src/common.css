@@ -427,17 +427,10 @@
   }
 }
 
-/*  320 <= Screen <= 600 */
-@media (min-width: 320px) and (max-width: 600px) {
+/*  320 < Screen <= 600 */
+@media screen and (max-width: 600px) {
   /* Font-Size
   */
-  /* ABOUT US */
-  #aboutus .textF32 {
-    font-size: 16px;
-  }
-  #aboutus .textF20 {
-    font-size: 12px;
-  }
   /*Research*/
   #research .textF24 {
     font-size: 22px;
@@ -453,7 +446,16 @@
     font-size: 16px;
   }
 }
-
+/* screen <= 320px */
+@media screen and (max-width: 320px) {
+  /* ABOUT US */
+  #aboutus .textF32 {
+    font-size: 16px;
+  }
+  #aboutus .textF20 {
+    font-size: 12px;
+  }
+}
 .textF70 {
   font-size: 70px;
 }

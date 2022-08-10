@@ -157,6 +157,8 @@
   width: 100%;
   margin: auto;
 }
+
+/* 1024 < screen <= 1260 */
 @media screen and (max-width: 1260px) {
   .SectionColorGray {
     padding: 16px 35px;
@@ -168,6 +170,7 @@
     height: 300px;
   }
 }
+/* 768 < screen <= 1024 */
 @media screen and (max-width: 1024px) {
   .titleDiv > span {
     margin-bottom: 18px;
@@ -185,7 +188,7 @@
     padding: 1% 8%;
   }
 }
-
+/* 600 < screen <= 768 */
 @media screen and (max-width: 768px) {
   .titleDiv > hr {
     width: 40px;
@@ -206,48 +209,12 @@
     height: 250px;
   }
 }
-@media screen and (min-width: 320px) and (max-width: 600px) {
-  /* WHO WE ARE */
-  .whoweareContent {
-    height: max-content;
-  }
-  /* HERINGS TEAM */
+/* 320px < screen <= 600px */
+@media screen and (max-width: 600px) {
+  /* HEARINGS TEAM */
   .TeamListWrap {
     padding: 1% 5%;
   }
-  /* PARTNERS&INV */
-  .partner__image__container,
-  .inventors__image__container {
-    margin: 1.5%;
-    width: 22.75%;
-    padding: 3%;
-  }
-  .partner__image__container:nth-child(4n + 1),
-  .inventors__image__container:nth-child(4n + 1) {
-    margin-left: 0;
-  }
-  .partner__image__container:nth-child(4n),
-  .inventors__image__container:nth-child(4n) {
-    margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 320px) and (max-width: 600px) {
-  /* WHO WE ARE */
-  .whoweareContent {
-    margin-top: 44px;
-  }
-  .whoweareContentTitle {
-    margin: auto;
-  }
-  .whoweareContentsWrap {
-    margin-bottom: 48px;
-    white-space: pre-wrap;
-  }
-  .split {
-    letter-spacing: normal;
-  }
-  /* HEARINGS TEAM */
   .Subtitle > span {
     margin: 2px 0 2px 0;
   }
@@ -269,6 +236,38 @@
     text-align: left;
     justify-self: center;
     margin-top: 5x;
+  }
+  /* PARTNERS&INV */
+  .partner__image__container,
+  .inventors__image__container {
+    margin: 1.5%;
+    width: 22.75%;
+    padding: 3%;
+  }
+  .partner__image__container:nth-child(4n + 1),
+  .inventors__image__container:nth-child(4n + 1) {
+    margin-left: 0;
+  }
+  .partner__image__container:nth-child(4n),
+  .inventors__image__container:nth-child(4n) {
+    margin-right: 0;
+  }
+}
+@media screen and (width: 320px) {
+  /* WHO WE ARE */
+  .whoweareContent {
+    height: max-content;
+    margin-top: 44px;
+  }
+  .whoweareContentTitle {
+    margin: auto;
+  }
+  .whoweareContentsWrap {
+    margin-bottom: 48px;
+    white-space: pre-wrap;
+  }
+  .split {
+    letter-spacing: normal;
   }
 }
 
