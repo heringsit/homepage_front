@@ -1,18 +1,25 @@
 import { useMediaQuery } from "@material-ui/core";
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { MediaQueryContext } from "../../context";
 import "./Footer.css";
 function Footer() {
-  const matches = useMediaQuery("(max-width:480px)");
-
+  // const matches = useMediaQuery("(max-width:480px)");
+  const { mobile } = useContext(MediaQueryContext);
   return (
     <footer className="footer">
       <div className="footerRowa">
-        <NavLink className="FontL textF12" to="/#NULL">Privacy Policy</NavLink>
+        <NavLink className="FontL textF12" to="/#NULL">
+          Privacy Policy
+        </NavLink>
         <span className="slash">/</span>
-        <NavLink className="FontL textF12" to="/aboutus/#heringsteam">Terms And Conditions</NavLink>
+        <NavLink className="FontL textF12" to="/aboutus/#heringsteam">
+          Terms And Conditions
+        </NavLink>
         <span className="slash">/</span>
-        <NavLink className="FontL textF12" to="/contactus">Contact us</NavLink>
+        <NavLink className="FontL textF12" to="/contactus">
+          Contact us
+        </NavLink>
       </div>
       <div className="footerRow">
         <div className="footerContent FontL textF12">
@@ -22,7 +29,7 @@ function Footer() {
         <div className="footerContent FontL textF12">
           <span className="tco FontL textF12">TEL.</span>
           +82.02.6949.3516
-        </div> 
+        </div>
         <div className="footerContent FontL textF12">
           <span className="tco FontL textF12">FAX.</span>
           +82.02.6949.3517
@@ -37,10 +44,10 @@ function Footer() {
           Copyright © {new Date().getFullYear()} HERINGS. All rights reserved.
         </div>
       </div>
-      {matches && (
+      {mobile && (
         <div
           style={{
-            height: "110px"
+            height: "86px",
           }}
         ></div>
       )}

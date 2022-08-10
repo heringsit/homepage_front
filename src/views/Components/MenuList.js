@@ -39,7 +39,6 @@ export const MENU = {
         "AI ALGORITHMS",
         "DRUG ADVERSE EVENTS",
       ],
-      // link 수정해야함
       link: [
         `${imsi}/research/#nutrition`,
         `${imsi}/research/#symptommanagement`,

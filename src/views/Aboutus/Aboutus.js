@@ -258,7 +258,6 @@ export default function Aboutus() {
       {/* {openerModalNoti()} */}
       {modalObj && openInitialNotice()}
       <div>
-        {/* <ContentsTitle title={"ABOUT US"} /> */}
         <div id="whoweare"></div>
         {!mTablet && (
           <TabClick visibleArray={visibleArray} isScroll={isScroll} />
