@@ -648,6 +648,14 @@ body {
 }
 /*  320 <= Screen <= 600 */
 @media (min-width: 320px) and (max-width: 600px) {
+  /* @media (min-width: 428px) and (max-width: 768px) {
+  .content {
+    position: relative;
+    padding-bottom: 100px;
+  }
+} */
+}
+@media screen and (max-width: 600px) {
   /* .SectionDiv {
     padding: 55px 5%;
   }
@@ -725,7 +733,7 @@ body {
 }
 @media screen and (max-width: 1024px) {
 }
-@media (min-width: 428px) and (max-width: 1100px) {
+@media (min-width: 768px) and (max-width: 1260px) {
   .card_MinWidth {
     padding-top: 48px;
     padding-bottom: 72px;

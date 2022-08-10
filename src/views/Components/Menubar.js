@@ -24,6 +24,8 @@ export default function Menubar(props) {
   const [mobileSelected, setMobileSelected] = useState(null);
   const [isScroll, setIsScroll] = useState(false);
   const { theme, changeTheme } = useContext(ThemeContext);
+  const scrollOffset = [-100,]
+  // console.log(pathname === "/", ">pathname");
 
   const changeMode = () => changeTheme(theme === "light" ? "dark" : "light");
 
@@ -152,9 +154,14 @@ export default function Menubar(props) {
                   {MENU.smallMenu[idx].title.map((smallMenu, i) => (
                     <li key={i}>
                       <Link
+                        style={{
+                          display: "block",
+                          width: "100%",
+                          height: "100%",
+                        }}
                         smooth="true"
                         to={MENU.smallMenu[idx].link[i]}
-                        scroll={(el) => scrollWithOffset(el, -149)}
+                        scroll={(el) => scrollWithOffset(el, -100)}
                         onClick={menuclick}
                       >
                         <span
@@ -189,32 +196,35 @@ export default function Menubar(props) {
         onMouseEnter={menuover}
         onMouseLeave={menuout}
       >
-        <div className="menuWrap">
-          <div className="menulogo">
-            <NavLink to={`${imsi}/`}>
-              <div className="logoImgContainCenter">
-                {theme === "light" ? (
-                  <HeringsLogo
-                    style={{
-                      fill:
-                        props.slideIndex === 0 && pathname === "/"
-                          ? "#000"
-                          : "",
-                    }}
-                  />
-                ) : (
-                  <HeringsLogoDark
-                    style={{
-                      fill:
-                        props.slideIndex === 0 && pathname === "/"
-                          ? "#fff"
-                          : "",
-                    }}
-                  />
-                )}
-              </div>
-            </NavLink>
-          </div>
+        <div
+          className="menuWrap"
+          
+        >
+          {/* <div className="menulogo"> */}
+          <NavLink to={`${imsi}/`}>
+            <div className="logoImgContainCenter">
+              {theme === "light" ? (
+                <HeringsLogo
+                  style={{
+                    fill:
+                      props.slideIndex === 0 && pathname === "/"
+                        ? "#000"
+                        : "",
+                  }}
+                />
+              ) : (
+                <HeringsLogoDark
+                  style={{
+                    fill:
+                      props.slideIndex === 0 && pathname === "/"
+                        ? "#fff"
+                        : "",
+                  }}
+                />
+              )}
+            </div>
+          </NavLink>
+          {/* </div> */}
 
           {/* GNB 대메뉴 */}
           <div className="menusAfterLogo">
@@ -277,7 +287,7 @@ export default function Menubar(props) {
                       <Link
                         smooth={true}
                         to={MENU.smallMenu[idx].link[i]}
-                        scroll={(el) => scrollWithOffset(el, -189)}
+                        scroll={(el) => scrollWithOffset(el, -100)}
                         onClick={menuclick}
                       >
                         <span
