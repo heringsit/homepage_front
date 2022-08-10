@@ -13,6 +13,7 @@ import { ReactComponent as HeringsLogoDark } from "../../assets/images/etc/herin
 import "./Menubar.css";
 import { MediaQueryContext, ThemeContext } from "../../context";
 import DarkToggle from "./DarkToggle";
+import { MENU } from "./MenuList";
 
 export default function Menubar(props) {
   const pathname = useLocation().pathname;
@@ -63,86 +64,6 @@ export default function Menubar(props) {
     return () => window.removeEventListener("scroll", onScroll);
   }, [isScroll]);
 
-  // 메뉴 텍스트
-  const MENU = {
-    title: [
-      "ABOUT US",
-      "SERVICE",
-      "RESEARCH",
-      "CTS",
-      "NEWS & IR",
-      "CONTACT US",
-    ],
-    link: [
-      `${imsi}/aboutus/#aboutus`,
-      `${imsi}/service/#service`,
-      `${imsi}/research/#research`,
-      `${imsi}/crs/#crs`,
-      `${imsi}/news/#news`,
-      `${imsi}/contactus/#contactus`,
-    ],
-    smallMenu: [
-      {
-        title: ["WHO WE ARE", "HERINGS TEAM", "PARTNERS & INVESTORS"],
-        link: [
-          `${imsi}/aboutus/#whoweare`,
-          `${imsi}/aboutus/#heringsteam`,
-          `${imsi}/aboutus/#researchpartners`,
-        ],
-      },
-      {
-        title: [
-          "DIGITAL HEALTHCARE SERVICE PLATFORM",
-          "TELE-HEALTHCARE SERVICE PLATFORM",
-        ],
-        link: [
-          `${imsi}/service/#digitalcareservice`,
-          `${imsi}/service/#telehealthcareservice`,
-        ],
-      },
-      {
-        title: [
-          "NUTRITION",
-          "SYMPTOM MANAGEMENT",
-          "EXERCISE",
-          "RISK PREDICTION",
-          "DRUG ADHERENCE",
-          "AI ALGORITHMS",
-          "DRUG ADVERSE EVENTS",
-        ],
-        // link 수정해야함
-        link: [
-          `${imsi}/research/#nutrition`,
-          `${imsi}/research/#symptommanagement`,
-          `${imsi}/research/#exercise`,
-          `${imsi}/research/#riskprediction`,
-          `${imsi}/research/#drugadherence`,
-          `${imsi}/research/#aialgorithms`,
-          `${imsi}/research/#drugadverseevents`,
-        ],
-      },
-      {
-        title: [
-          "CLINICAL TRIAL DESIGN",
-          "DATA MANAGEMENT",
-          "STATISTICAL ANALYSIS",
-        ],
-        link: [
-          `${imsi}/crs/#clinicaltrialdesign`,
-          `${imsi}/crs/#datamanagement`,
-          `${imsi}/crs/#statisticalanalysis`,
-        ],
-      },
-      {
-        title: ["NEWS RELEASE", "IR INFORMATION"],
-        link: [`${imsi}/news/#newsrelease`, `${imsi}/news/#irinformation`],
-      },
-      {
-        title: ["CAREER", "CONTACT US"],
-        link: [`${imsi}/contactus/#career`, `${imsi}/contactus/#contact`],
-      },
-    ],
-  };
   const scrollWithOffset = (el, yOffset = -90) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
     window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
@@ -153,15 +74,13 @@ export default function Menubar(props) {
       <div className="mobileMenuWrapDiv">
         <div
           className={`mobileMenuroot  ${
-            theme === "dark"
-                ? "menuBorderBottomDark"
-                : "menuBorderBottomLight"
+            theme === "dark" ? "menuBorderBottomDark" : "menuBorderBottomLight"
           }`}
           style={{ backgroundColor: theme === "dark" && "#282828" }}
           onMouseEnter={menuover}
           onMouseLeave={menuout}
         >
-          <div className="mobileMenulogo">
+          <div className="mobileMenulogo ptb-10 flex align-items-center">
             <NavLink to={`${imsi}/`}>
               <div
                 className="logoImgContainCenterM"
@@ -242,7 +161,7 @@ export default function Menubar(props) {
                         style={{display: "block", width: "100%", height: "100%"}}
                         smooth="true"
                         to={MENU.smallMenu[idx].link[i]}
-                        scroll={el => scrollWithOffset(el, -149)}
+                        scroll={(el) => scrollWithOffset(el, -149)}
                         onClick={menuclick}
                       >
                         <span
@@ -265,10 +184,10 @@ export default function Menubar(props) {
   } else {
     return (
       <div
-        className={`menuWrapDiv ${isOver ? "menuWrapOver " : ""} ${
-          theme === "dark"
-              ? "menuBorderBottomDark"
-              : "menuBorderBottomLight"
+        className={`menuWrapDiv position-fixed w-full flex-col ${
+          isOver && "menuWrapOver"
+        } ${
+          theme === "dark" ? "menuBorderBottomDark" : "menuBorderBottomLight"
         }`}
         style={{
           backgroundColor: theme === "dark" ? "#282828" : "#ffffff",
@@ -302,18 +221,13 @@ export default function Menubar(props) {
                 )}
               </div>
             </NavLink>
-
-            {/* GNB 대메뉴 */}
           </div>
+
+          {/* GNB 대메뉴 */}
           <div className="menusAfterLogo">
             {MENU.title.map((menu, idx) => (
               <div className="menudiv" key={idx}>
-                <Link 
-                  smooth="true" 
-                  to={MENU.link[idx]} 
-                  
-                  onClick={menuclick}
-                >
+                <Link smooth="true" to={MENU.link[idx]} onClick={menuclick}>
                   <span
                     className={`menuText textF18 FontR ${
                       props.slideIndex === 0
@@ -350,7 +264,7 @@ export default function Menubar(props) {
           <div className="menuDetailRow">
             {MENU.title.map((menu, idx) => (
               <div
-              key={idx}
+                key={idx}
                 className={`${
                   theme === "light" ? "menuDetailDiv" : "menuDetailDivDark"
                 }`}
