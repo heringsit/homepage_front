@@ -76,7 +76,7 @@ export default function TeamList(props) {
   ];
   return (
     <div className="aboutuscontents bg-gray">
-      <CommonCardTitle title={"HERINGS TEAM"} />
+      <CommonCardTitle title={"HERINGS TEAM"} tc={0} />
       {HERINGS_TEAM_LIST.map((LIST, idx) => (
         <div className="TeamListWrap" key={idx}>
           <div className="Subtitle">

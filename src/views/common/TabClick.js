@@ -27,7 +27,7 @@ export default function TabClick({ visibleArray, isScroll }) {
     "aialgorithms",
     "drugadverseevents"
   ];
-  const scrollWithOffset = (el, yOffset = -100) => {
+  const scrollWithOffset = (el, yOffset = -(84+60)) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
     window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
   };
@@ -83,7 +83,7 @@ export default function TabClick({ visibleArray, isScroll }) {
                   <Link
                     smooth
                     to={`#${tab}`}
-                    scroll={el => scrollWithOffset(el, (mDesktop ? -149 : -189))}
+                    scroll={el => scrollWithOffset(el, -184)}
                     className={
                       index === visibleIndex
                         ? "w-full h-full tagADefault tabATagTab FontEB"
@@ -113,7 +113,7 @@ export default function TabClick({ visibleArray, isScroll }) {
                   <Link
                     smooth
                     to={`#${tab}`}
-                    scroll={el => scrollWithOffset(el, (mDesktop ? -149 : -189))}
+                    scroll={el => scrollWithOffset(el, (mDesktop ? -149 : -184))}
                     className={
                       index === visibleIndex
                         ? "w-full h-full tagADefault tabATagTab FontEB"

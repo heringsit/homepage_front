@@ -2,7 +2,7 @@
   z-index: 100;
   background-color: transparent;
   width: 100%;
-  padding: 4px 64px;
+  /* padding: 4px 64px; */
   justify-content: space-between;
 }
 .menuBorderBottomLight {
@@ -15,7 +15,8 @@
   background-color: #fff;
 }
 .menuWrap {
-  min-height: 73px; /* inital 84 - (padding + border) = 73 */
+  padding: 4px 64px;
+  min-height: 81px; /* inital 84 - (padding + border) = 73 */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,8 +26,8 @@
   display: block;
   visibility: visible;
   background-color: #fff;
-  height: 300px;
-  max-height: 300px;
+  height: 302px;
+  max-height: 302px;
   transition-property: display, max-height;
   transition: display 0.5s ease-in-out, max-height 0.5s ease-in-out;
 }
@@ -89,6 +90,7 @@
 }
 .menuDetailRow {
   max-width: 1260px;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: row;

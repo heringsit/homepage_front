@@ -85,6 +85,9 @@
 .pb-32 {
   padding-bottom: 32px;
 }
+.pb-48 {
+  padding-bottom: 48px;
+}
 .pb-64 {
   padding-bottom: 64px;
 }
@@ -145,6 +148,9 @@
 .mb-20 {
   margin-bottom: 20px;
 }
+.mb-40 {
+  margin-bottom: 40px;
+}
 .mt-8 {
   margin-top: 8px;
 }
@@ -156,6 +162,9 @@
 }
 .mt-20 {
   margin-top: 20px;
+}
+.mt-40 {
+  margin-top: 40px;
 }
 .mt-50 {
   margin-top: 50px;
@@ -203,6 +212,9 @@
 }
 .gap-120 {
   gap: 120px;
+}
+.gap-88 {
+  gap: 88px;
 }
 .gap-68 {
   gap: 68px;
