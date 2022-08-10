@@ -96,6 +96,14 @@
 }
 
 /* ptb-# - padding top and bottom */
+.ptb-10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.ptb-18 {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
 .ptb-24 {
   padding-top: 24px;
   padding-bottom: 24px;
@@ -156,9 +164,6 @@
   flex-row: flex (direction -> row)
   gap-#: the gap length 
 */
-.flex {
-  display: flex;
-}
 .none {
   display: none;
 }
@@ -540,204 +545,6 @@
 .textF12 {
   font-size: 12px;
 }
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .textF16 {
-    font-size: 13px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .textF70 {
-    font-size: 60px;
-  }
-  .textF53 {
-    font-size: 38px;
-  }
-  .textF48 {
-    font-size: 42px;
-  }
-  .textF40 {
-    font-size: 36px;
-  }
-  .textF39 {
-    font-size: 35px;
-  }
-  .textF38 {
-    font-size: 34px;
-  }
-  .textF37 {
-    font-size: 33px;
-  }
-  .textF36 {
-    font-size: 32px;
-  }
-  .textF35 {
-    font-size: 31px;
-  }
-  .textF34 {
-    font-size: 30px;
-  }
-  .textF33 {
-    font-size: 29px;
-  }
-  .textF32 {
-    font-size: 28px;
-  }
-  .textF31 {
-    font-size: 27px;
-  }
-  .textF30 {
-    font-size: 26px;
-  }
-  .textF29 {
-    font-size: 25px;
-  }
-  .textF28 {
-    font-size: 24px;
-  }
-  .textF27 {
-    font-size: 23px;
-  }
-  .textF26 {
-    font-size: 18px;
-  }
-  .textF25 {
-    font-size: 21px;
-  }
-  .textF24 {
-    font-size: 20px;
-  }
-  .textF23 {
-    font-size: 19px;
-  }
-  .textF22 {
-    font-size: 18px;
-  }
-  .textF21 {
-    font-size: 17px;
-  }
-  .textF20 {
-    font-size: 16px;
-  }
-  .textF19 {
-    font-size: 16px;
-  }
-  .textF18 {
-    font-size: 16px;
-  }
-  .textF17 {
-    font-size: 15px;
-  }
-  .textF16 {
-    font-size: 13px;
-  }
-  .textF15 {
-    font-size: 12px;
-  }
-  .textF14 {
-    font-size: 12px;
-  }
-  .textF13 {
-    font-size: 10px;
-  }
-  .textF12 {
-    font-size: 10px;
-  }
-}
-@media screen and (max-width: 600px) {
-  .textF70 {
-    font-size: 40px;
-  }
-  .textF53 {
-    font-size: 26px;
-  }
-  .textF48 {
-    font-size: 36px;
-  }
-  .textF40 {
-    font-size: 32px;
-  }
-  .textF39 {
-    font-size: 31px;
-  }
-  .textF38 {
-    font-size: 30px;
-  }
-  .textF37 {
-    font-size: 29px;
-  }
-  .textF36 {
-    font-size: 28px;
-  }
-  .textF35 {
-    font-size: 27px;
-  }
-  .textF34 {
-    font-size: 26px;
-  }
-  .textF33 {
-    font-size: 25px;
-  }
-  .textF32 {
-    font-size: 20px;
-  }
-  .textF31 {
-    font-size: 23px;
-  }
-  .textF30 {
-    font-size: 22px;
-  }
-  .textF29 {
-    font-size: 20px;
-  }
-  .textF28 {
-    font-size: 18px;
-  }
-  .textF27 {
-    font-size: 18px;
-  }
-  .textF26 {
-    font-size: 16px;
-  }
-  .textF25 {
-    font-size: 17px;
-  }
-  .textF24 {
-    font-size: 16px;
-  }
-  .textF23 {
-    font-size: 15px;
-  }
-  .textF22 {
-    font-size: 12px;
-  }
-  .textF21 {
-    font-size: 13px;
-  }
-  .textF20 {
-    font-size: 12px;
-  }
-  .textF19 {
-    font-size: 12px;
-  }
-  .textF18 {
-    font-size: 12px;
-  }
-  .textF17 {
-    font-size: 12px;
-  }
-  .textF16 {
-    font-size: 12px;
-  }
-  .textF15 {
-    font-size: 12px;
-  }
-  .textF14 {
-    font-size: 10px;
-  }
-  .textF13 {
-    font-size: 10px;
-  }
-  .textF12 {
-    font-size: 10px;
-  }
+.textF10 {
+  font-size: 10px;
 }
