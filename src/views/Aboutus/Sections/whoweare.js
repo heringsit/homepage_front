@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import "../Aboutus.css";
 import backgroundImg from "../../../assets/images/02about_who_we_are/about_banner_background.svg";
-import { useMediaQuery } from "@material-ui/core";
 import { MediaQueryContext } from "../../../context";
+import CommonCardTitle from "../../common/CommonCardTitle";
 
 export default function Whoweare() {
   const { mobile, mTablet } = useContext(MediaQueryContext);
@@ -23,43 +23,22 @@ export default function Whoweare() {
         backgroundImage: `url(${backgroundImg})`,
         backgroundPosition: "center",
       }}
-      className="SectionDiv whoweare"
+      className={`whoweare aboutuscontents ${
+        mobile ? "mt-50" : mTablet ? "mt-84" : ""
+      }`}
     >
-      <div className="titleDiv">
-        <span className="FontB textF20">WHO WE ARE</span>
-        <hr />
-      </div>
+      <CommonCardTitle title={"WHO WE ARE"} />
       <div className="whoweareContent">
-        <div className="whoweareContentTitle">
-          {mTablet ? (
-            <>
-              <span className="FontB textF32 tcw">HERINGS is personalized</span>
-              <span className="FontB textF32 tcw">
-                Digital Health Care Service Company
-              </span>
-            </>
-          ) : (
-            <span className="FontB textF32 tcw">
-              HERINGS is personalized Digital Health Care Service Company
-            </span>
-          )}
+        <div className="whoweareContentTitle mb-16">
+          <span className="FontB textF32 tcw">
+            HERINGS is personalized Digital Health Care Service Company
+          </span>
         </div>
         <div className="mt-8 whoweareContentsWrap">
-          {mTablet ? (
-            <>
-              <span className="FontL textF20 tcw">
-                We aim to be the best companion to cancer patients
-              </span>
-              <span className="FontL textF20 tcw">
-                through their long journey to overcome the disease.
-              </span>
-            </>
-          ) : (
-            <span className="FontL textF20 tcw">
-              We aim to be the best companion to cancer patients through their
-              long journey to overcome the disease.
-            </span>
-          )}
+          <span className="FontL textF20 tcw">
+            We aim to be the best companion to cancer patients through their
+            long journey to overcome the disease.
+          </span>
         </div>
         <div className="whoweareContentsWrap">
           <div
@@ -67,9 +46,9 @@ export default function Whoweare() {
           />
           <span className="we FontB tcw textF20">We</span>
           {splits.border.map((split, idx) => (
-            <div className="mt-8" key={idx}>
-              <span className="FontB tcw">{split}</span>
-              <span className="FontL tcw">{splits.text[idx]}</span>
+            <div className="mt-5" key={idx}>
+              <span className="FontB textF20 tcw">{split}</span>
+              <span className="FontL textF20 tcw split">{splits.text[idx]}</span>
             </div>
           ))}
         </div>

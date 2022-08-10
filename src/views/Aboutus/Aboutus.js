@@ -257,8 +257,7 @@ export default function Aboutus() {
       <Totop />
       {/* {openerModalNoti()} */}
       {modalObj && openInitialNotice()}
-      <div >
-        {/* <ContentsTitle title={"ABOUT US"} /> */}
+      <div>
         <div id="whoweare"></div>
         {!mTablet && (
           <TabClick visibleArray={visibleArray} isScroll={isScroll} />

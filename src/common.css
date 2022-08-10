@@ -169,6 +169,9 @@
 .mt-50 {
   margin-top: 50px;
 }
+.mt-84 {
+  margin-top: 84px;
+}
 
 /* flex:
   flex-wrap: default flex wrap
@@ -316,6 +319,11 @@
   height: 100vh;
 }
 
+/* background color */
+.bg-gray {
+  background-color: #f6f8fb;
+}
+
 /*  1024 < Screen < 1260 */
 @media screen and (max-width: 1260px) {
   /* Font-Size 
@@ -436,16 +444,13 @@
   /* Font-Size
   */
   /* ABOUT US */
-  #aboutus .textF20 {
-    font-size: 17px;
-  }
   #aboutus .textF32 {
-    font-size: 20px;
+    font-size: 16px;
+  }
+  #aboutus .textF20 {
+    font-size: 12px;
   }
   /*Research*/
-  #research .textF28 {
-    font-size: 26px;
-  }
   #research .textF24 {
     font-size: 22px;
   }
@@ -453,9 +458,6 @@
     font-size: 16px;
   }
   /*CTS*/
-  #crs .textF28 {
-    font-size: 26px;
-  }
   #crs .textF24 {
     font-size: 22px;
   }

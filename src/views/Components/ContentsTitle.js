@@ -8,6 +8,7 @@ export default function ContentsTitle(props) {
   const { theme } = useContext(ThemeContext);
   const { mDesktop, mTablet } = useContext(MediaQueryContext);
   console.log(props)
+
   return (
     <>
       {path === "/aboutus/" ? (
