@@ -239,6 +239,7 @@ export default function Menubar(props) {
                   {MENU.smallMenu[idx].title.map((smallMenu, i) => (
                     <li key={i}>
                       <Link
+                        style={{display: "block", width: "100%", height: "100%"}}
                         smooth="true"
                         to={MENU.smallMenu[idx].link[i]}
                         scroll={el => scrollWithOffset(el, -149)}

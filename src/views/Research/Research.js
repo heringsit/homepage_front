@@ -127,9 +127,7 @@ export default function Research() {
                     <iframe
                       src="https://www.youtube.com/embed/Fp19GlDhVRE?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1&loop=1"
                       title="YouTube video player"
-                      // frameBorder="0"
                       allow="accelerometer; loop; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      // allowFullScreen
                     />
                   </div>
                 </div>
