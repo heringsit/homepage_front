@@ -282,6 +282,7 @@
     /* display: none !important; */
     visibility: hidden;
     max-height: 0px;
+    /* transition: max-height 0.5s ease-in-out, visibility 0s linear 0s; */
   }
   .mobileMenuRow {
     display: flex;
@@ -303,6 +304,8 @@
     /* display: none !important; */
     visibility: hidden;
     max-height: 0px;
+    transition: max-height 0.3s ease-in-out, visibility 0s linear 0s;
+
   }
 }
 
