@@ -257,14 +257,14 @@ export default function Aboutus() {
       <Totop />
       {/* {openerModalNoti()} */}
       {modalObj && openInitialNotice()}
-      <div>
+      <div >
         {/* <ContentsTitle title={"ABOUT US"} /> */}
         <div id="whoweare"></div>
         {!mTablet && (
           <TabClick visibleArray={visibleArray} isScroll={isScroll} />
         )}
 
-        <div ref={refs.current[0]}>
+        <div className="pb-48" ref={refs.current[0]}>
           <Whoweare />
         </div>
         <div id="heringsteam" ref={refs.current[1]}>

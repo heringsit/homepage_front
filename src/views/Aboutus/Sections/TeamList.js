@@ -74,7 +74,6 @@ export default function TeamList(props) {
     "Advisory_Board",
   ];
   return (
-    <div className="pt-48">
     <div className="SectionDiv">
       <div className="titleDiv">
         <span className="FontB textF24">HERINGS TEAM</span>
@@ -144,7 +143,6 @@ export default function TeamList(props) {
           </div>
         ))}
       </div>
-    </div>
     </div>
   );
 }

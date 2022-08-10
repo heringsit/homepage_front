@@ -21,14 +21,16 @@ export default function Menubar(props) {
   smoothscroll.polyfill();
   // const matches = useMediaQuery("(max-width:1260px)");
   // const mobile = useMediaQuery("(max-width:320px)");
-  const { mDesktop, mobile } = useContext(MediaQueryContext);
+  const { mDesktop, mTablet, mobile } = useContext(MediaQueryContext);
   const [isOver, setIsOver] = useState(false);
   const [isMActive, setIsMActive] = useState(false);
   const [mobileSelected, setMobileSelected] = useState(null);
   const [isScroll, setIsScroll] = useState(false);
   const { theme, changeTheme } = useContext(ThemeContext);
   // const [mode, setMode] = useState(theme);
-  const scrollOffset = [-100,]
+  const scrollOffset = (mTablet 
+    ? [-0, -(84+40), -84, -84, 0, 0] // screen < 768px
+    : [-(84+60), -(84+40), -184, -184, 0, 0]) // screen > 768px
   // console.log(pathname === "/", ">pathname");
 
   const changeMode = () => changeTheme(theme === "light" ? "dark" : "light");
@@ -165,7 +167,7 @@ export default function Menubar(props) {
                         }}
                         smooth="true"
                         to={MENU.smallMenu[idx].link[i]}
-                        scroll={(el) => scrollWithOffset(el, -100)}
+                        scroll={(el) => scrollWithOffset(el, scrollOffset[idx])}
                         onClick={menuclick}
                       >
                         <span
@@ -291,7 +293,7 @@ export default function Menubar(props) {
                       <Link
                         smooth={true}
                         to={MENU.smallMenu[idx].link[i]}
-                        scroll={(el) => scrollWithOffset(el, -100)}
+                        scroll={(el) => scrollWithOffset(el, scrollOffset[idx])}
                         onClick={menuclick}
                       >
                         <span
