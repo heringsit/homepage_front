@@ -58,7 +58,7 @@
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
 }
 .banner_margin {
-  margin-top: 97px;
+  margin-top: 84px;
 }
 
 /*title_default*/
@@ -83,9 +83,6 @@
 @media screen and (max-width: 1260px) {
   .banner_container {
     height: 280px;
-  }
-  .banner_margin {
-    margin-top: 67px;
   }
 }
 /*  Research => 768 < Screen < 1024 */

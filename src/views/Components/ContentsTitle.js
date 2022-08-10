@@ -9,7 +9,7 @@ export default function ContentsTitle(props) {
   const { mDesktop, mTablet } = useContext(MediaQueryContext);
   console.log(props)
   return (
-    <div className="banner_container">
+    <>
       {path === "/aboutus/" ? (
         <div className="position-relative banner_container">
           <div className="banner_gradient"></div>
@@ -47,22 +47,25 @@ export default function ContentsTitle(props) {
         <>
           <div style={{height: "84px"}}/>
           <div className="position-relative banner_container " >
-            {/* {theme === "dark" ? <div className="banner_gradient"></div> : null} */}
+            {theme === "dark" ? <div className="banner_gradient"></div> : null}
             <div className="banner_default banner_img banner">
               <div className="textF53 FontR tcb title_center">{props.title}</div>
             </div>
           </div>
         </>
       ) : path === "/contactus/" ? (
-        <div className="position-relative banner_container">
-          <div className="banner_gradient"></div>
-          <div className="banner_default banner_img">
-            <div className="textF53 FontR tcb title_default">{props.title}</div>
+        <>
+          <div style={{height: "84px"}}/>
+          <div className="position-relative banner_container">
+            {theme === "dark" ? <div className="banner_gradient"></div> : null}
+            <div className="banner_default banner_img">
+              <div className="textF53 FontR tcb title_default">{props.title}</div>
+            </div>
           </div>
-        </div>
+        </>
       ) : (
         ""
       )}
-    </div>
+    </>
   );
 }

@@ -27,7 +27,7 @@ export default function TabClick({ visibleArray, isScroll }) {
     "aialgorithms",
     "drugadverseevents"
   ];
-  const scrollWithOffset = (el, yOffset = -90) => {
+  const scrollWithOffset = (el, yOffset = -100) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
     window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
   };
