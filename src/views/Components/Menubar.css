@@ -2,7 +2,7 @@
   z-index: 100;
   background-color: transparent;
   width: 100%;
-  padding: 0 2%;
+  padding: 4px 64px;
   justify-content: space-between;
 }
 .menuBorderBottomLight {
@@ -15,7 +15,7 @@
   background-color: #fff;
 }
 .menuWrap {
-  min-height: 81px;
+  min-height: 73px; /* inital 84 - (padding + border) = 73 */
   display: flex;
   justify-content: space-between;
   align-items: center;

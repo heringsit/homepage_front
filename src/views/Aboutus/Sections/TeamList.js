@@ -74,77 +74,77 @@ export default function TeamList(props) {
     "Advisory_Board",
   ];
   return (
-    <div className={`${mobile ? "" : "pt-80"}`}>
-      <div className="SectionDiv">
-        <div className="titleDiv">
-          <span className="FontB textF24">HERINGS TEAM</span>
-          <hr />
-        </div>
-        <div className="SectionColorGray">
-          {HERINGS_TEAM_LIST.map((LIST, idx) => (
-            <div className="TeamListWrap" key={idx}>
-              <div className="Subtitle">
-                <span className="FontB tcb textF24">
-                  {ListTitle[idx].split("_")[0]}
-                </span>
-                <span className="FontR tcb textF24">
-                  {ListTitle[idx].split("_")[1]}
-                </span>
-              </div>
-              <Slider {...LeaderShipSettings} className="listWrap">
-                {LIST.map((team, index) => {
-                  return (
+    <div className="pt-48">
+    <div className="SectionDiv">
+      <div className="titleDiv">
+        <span className="FontB textF24">HERINGS TEAM</span>
+        <hr />
+      </div>
+      <div className="SectionColorGray">
+        {HERINGS_TEAM_LIST.map((LIST, idx) => (
+          <div className="TeamListWrap" key={idx}>
+            <div className="Subtitle">
+              <span className="FontB tcb textF24">
+                {ListTitle[idx].split("_")[0]}
+              </span>
+              <span className="FontR tcb textF24">
+                {ListTitle[idx].split("_")[1]}
+              </span>
+            </div>
+            <Slider {...LeaderShipSettings} className="listWrap">
+              {LIST.map((team, index) => {
+                return (
+                  <div
+                    key={index}
+                    className={`teamDivWrap ${index === 0 && "ml-0"}`}
+                  >
                     <div
-                      key={index}
-                      className={`teamDivWrap ${index === 0 && "ml-0"}`}
+                      className={` ${
+                        team.jobs === "None"
+                          ? "none"
+                          : "heringsTeamWrap m-reset"
+                      }`}
+                      onClick={() => {
+                        props.handleOpen(team);
+                      }}
                     >
-                      <div
-                        className={` ${
-                          team.jobs === "None"
-                            ? "none"
-                            : "heringsTeamWrap m-reset"
-                        }`}
-                        onClick={() => {
-                          props.handleOpen(team);
-                        }}
-                      >
-                        <hr />
-                        <div className="align-items-center justify-center flex w-full">
-                          <img
-                            className="listImg"
-                            src={team.modalimg}
-                            alt={team.name}
-                          />
-                        </div>
-                        <div className="heringsTeamContentText">
-                          <span
-                            className={`${mobile ? "" : "FontB"} textF18 ${
-                              theme === "dark" ? "tcw" : "tcb"
-                            }`}
-                          >
-                            {team.name}
+                      <hr />
+                      <div className="align-items-center justify-center flex w-full">
+                        <img
+                          className="listImg"
+                          src={team.modalimg}
+                          alt={team.name}
+                        />
+                      </div>
+                      <div className="heringsTeamContentText">
+                        <span
+                          className={`${mobile ? "" : "FontB"} textF18 ${
+                            theme === "dark" ? "tcw" : "tcb"
+                          }`}
+                        >
+                          {team.name}
+                        </span>
+                        {idx === 0 && (
+                          <div>
+                            <br />
+                            <span className="tco textF16">{team.jobs}</span>
+                          </div>
+                        )}
+                        {/* <div>
+                          <span className="textF14 tcg">
+                            {team.positions}
                           </span>
-                          {idx === 0 && (
-                            <div>
-                              <br />
-                              <span className="tco textF16">{team.jobs}</span>
-                            </div>
-                          )}
-                          {/* <div>
-                            <span className="textF14 tcg">
-                              {team.positions}
-                            </span>
-                          </div> */}
-                        </div>
+                        </div> */}
                       </div>
                     </div>
-                  );
-                })}
-              </Slider>
-            </div>
-          ))}
-        </div>
+                  </div>
+                );
+              })}
+            </Slider>
+          </div>
+        ))}
       </div>
+    </div>
     </div>
   );
 }

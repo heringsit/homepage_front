@@ -20,7 +20,7 @@ export default function PartnersAInvestors(props) {
   // const mobile = useMediaQuery("(max-width: 320px)");
   const { mobile } = useContext(MediaQueryContext);
   return (
-    <div className={`${mobile ? "pb-400" : "pt-80 pb-200"}`}>
+    <div className={`${mobile ? "pb-400" : "pt-48 pb-200"}`}>
       <div className="SectionDiv">
         {!props.matches ? (
           <div className="titleDiv">
