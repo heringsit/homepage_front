@@ -75,7 +75,8 @@ export default function TeamList(props) {
     "Advisory_Board",
   ];
   return (
-    <div className="aboutuscontents bg-gray">
+    <div className="aboutuscontents bg-gray ">
+      <div className="pt-48" />
       <CommonCardTitle title={"HERINGS TEAM"} tc={0} />
       {HERINGS_TEAM_LIST.map((LIST, idx) => (
         <div className="TeamListWrap" key={idx}>
