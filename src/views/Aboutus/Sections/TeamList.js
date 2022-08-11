@@ -119,10 +119,9 @@ export default function TeamList(props) {
                         {team.name}
                       </span>
                       {idx === 0 && (
-                        <div>
-                          <br />
-                          <span className="FontR tco textF16">{team.jobs}</span>
-                        </div>
+
+                        <span className="tco textF16">{team.jobs}</span>
+
                       )}
                       {/* <div>
                             <span className="textF14 tcg">

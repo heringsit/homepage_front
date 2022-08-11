@@ -284,56 +284,6 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
-/*SectionDiv*/
-/* .SectionDiv {
-  width: 100%;
-  height: 100%;
-  padding: 100px 10%;
-} */
-/* .SectionDivNoBottom {
-  padding: 100px 10% 0px 10%;
-} */
-/* .SectionDivBigBottom {
-  padding-bottom: 200px;
-} */
-/* .addPadding {
-  padding-top: 48px;
-} */
-/* .SectionDivNP {
-  width: 100%;
-  height: 100%;
-  position: relative;
-} */
-/* .SectionDivNT {
-  width: 100%;
-  height: 100%;
-  padding: 0 10%;
-} */
-/* .SectionTitle {
-  width: 100%;
-  height: 170px;
-} */
-/* .SectionDivTail {
-  width: 100%;
-  height: 100%;
-  padding-top: 2%;
-  position: relative;
-} */
-/* .SectionDivTailContent {
-  width: 100%;
-  padding: 0 5%;
-} */
-/* .SectionDivTailFooter {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-} */
-/* .SectionDivUpBlank {
-  padding-top: 200px;
-} */
-/* .menuTitleDiv {
-  padding-top: 40px;
-} */
 .youtube {
   position: relative;
   padding-top: 56%;
@@ -502,99 +452,68 @@ body {
   background: linear-gradient(242.33deg, #555555 10.43%, #111111 33.54%);
   box-shadow: 4px 4px 32px rgba(0, 0, 0, 0.24);
 }
-/*banner*/
-/* .banner_container {
-  padding-top: 0px;
-}
-.banner_layout {
-  width: 100%;
-  height: 300px;
-}
-.banner_default {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.banner_gradient {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-}
-#aboutus .banner_img {
-  background: url("../src/assets/images/02about_who_we_are/about_banner.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-#service .banner_img {
-  background: url("../src/assets/images/07service/service_title.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-#research .banner_img {
-  background: url("../src/assets/images/09research/research_background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-#cts .banner_img {
-  background: url("../src/assets/images/08cts/cts_banner.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-#news .banner_img {
-  background: url("../src/assets/images/10newsir/newsir_banner.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-#contactus .banner_img {
-  background: url("../src/assets/images/06contactus/contactus_banner.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-} */
-/*title_default*/
-/* .title_default {
-  width: 100%;
-  text-align: center;
-  z-index: 30;
-  position: absolute;
-  bottom: 0;
-}
-.title_center {
-  width: 100%;
-  text-align: center;
-  z-index: 2;
-  letter-spacing: 0.16em;
-  color: #ffffff;
-}
-#service .title_default,
-#news .title_default,
-#contactus .title_default {
-  width: 100%;
-  z-index: 30;
-  position: absolute;
-  letter-spacing: 0.16em;
-  left: 0;
-  bottom: 119px;
-} */
 
 /* media screen */
+/*  1024 < Screen < 1260 */
 @media screen and (max-width: 1260px) {
   .sticky_padding {
     width: 100%;
     height: 84px;
   }
+  .SectionDivNT {
+    padding: 176px 48px 0 48px;
+  }
+  .SectionDivUpBlank {
+    padding-top: 190px;
+  }
+  .tagAPadding {
+    padding: 25px 0px;
+  }
 }
+/*  768 < Screen < 1024 */
+@media screen and (max-width: 1024px) {
+  .TABS_layout_padding {
+    height: 100px;
+    padding: 0 0;
+  }
+  .card_MinWidth {
+    padding-top: 48px;
+    padding-bottom: 72px;
+    min-width: 360px;
+    max-width: 100%;
+  }
+}
+/*  600 < Screen <= 768 */
+@media screen and (max-width: 768px) {
+  /* COMMON CARD TITLE */
+  .card_titleDiv span {
+    font-size: 24px;
+  }
+  .TABS_layout_padding {
+    padding: 0 0;
+    height: 70px;
+  }
+  /* .title_center {
+    padding-top: 67px;
+  } */
+}
+/*  320 < Screen <= 600 */
+@media screen and (max-width: 600px) {
+  /* COMMON CARD TITLE */
+  .card_titleDiv span {
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+/* screen <= 320px */
+@media screen and (max-width: 320px) {
+  /* COMMON CARD TITLE */
+  .card_titleDiv span {
+    font-size: 14px;
+    font-weight: 600;
+  }
+}
+
 @media screen and (max-width: 428px) {
   .card_MinWidth {
     padding-top: 12px;
@@ -608,13 +527,6 @@ body {
   .SectionDivUpBlank {
     padding: 0px 0px 0px 0px;
   }
-  /* .banner_default {
-    height: 240px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  } */
   .card_middlebar {
     display: block;
     height: 1px;
@@ -622,54 +534,8 @@ body {
     background: #aaaaaa;
     margin: 40px 0;
   }
-  /* .title_default {
-    width: 70%;
-    text-align: center;
-  }
-  #cts .textF53 {
-    font-size: 22px;
-  }
-  #cts .textF28 {
-    font-size: 10px;
-  }
-  .card_titleDiv_padding_b {
-    padding-bottom: 0;
-  }
-  .card_titleDiv_bold {
-    font-family: "Roboto300", sans-serif;
-  } */
   .newcard_mp4_padding_b {
     padding-bottom: 40px;
-  }
-  /* #research .banner_img {
-    background: url("../src/assets/images/09research/research_full.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-  } */
-}
-/*  320 <= Screen <= 600 */
-@media (min-width: 320px) and (max-width: 600px) {
-  /* @media (min-width: 428px) and (max-width: 768px) {
-  .content {
-    position: relative;
-    padding-bottom: 100px;
-  }
-} */
-}
-@media screen and (max-width: 600px) {
-  /* .SectionDiv {
-    padding: 55px 5%;
-  }
-  .SectionDivNT {
-    padding-left: 5%;
-    padding-right: 5%;
-  } */
-
-  /* COMMON CARD TITLE */
-  .card_default_font {
-    font-size: 14px;
-    /* font-weight: 600; */
   }
 }
 @media screen and (max-width: 700px) {
@@ -713,36 +579,6 @@ body {
     height: 410px;
   }
 }
-
-@media screen and (min-width: 600px) and (max-width: 768px) {
-  /* COMMON CARD TITLE */
-  .card_default_font {
-    font-size: 24px;
-  }
-  .TABS_layout_padding {
-    padding: 0 0;
-    height: 70px;
-  }
-  /* .title_center {
-    padding-top: 67px;
-  } */
-}
-@media (min-width: 768px) and (max-width: 1260px) {
-  .TABS_layout_padding {
-    height: 100px;
-    padding: 0 0;
-  }
-}
-@media screen and (max-width: 1024px) {
-}
-@media (min-width: 768px) and (max-width: 1260px) {
-  .card_MinWidth {
-    padding-top: 48px;
-    padding-bottom: 72px;
-    min-width: 360px;
-    max-width: 100%;
-  }
-}
 @media screen and (max-width: 1100px) {
   .card_between {
     display: flex;
@@ -761,19 +597,6 @@ body {
   }
   .cardRight.card_between {
     flex-direction: column-reverse;
-  }
-}
-@media (min-width: 428px) and (max-width: 1260px) {
-  .SectionDivNT {
-    padding: 176px 48px 0 48px;
-  }
-  .SectionDivUpBlank {
-    padding-top: 190px;
-  }
-}
-@media screen and (max-width: 1260px) {
-  .tagAPadding {
-    padding: 25px 0px;
   }
 }
 @media screen and (min-width: 1260px) {

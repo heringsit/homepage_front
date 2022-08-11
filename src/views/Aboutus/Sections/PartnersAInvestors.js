@@ -26,13 +26,13 @@ export default function PartnersAInvestors(props) {
         <div className="researchWrap">
           {props.matches ? (
             <div className="Subtitle">
-              <div className="textT22 FontEB">
+              <div className="textF24 FontEB">
                 <span>RESEARCH PARTNERS</span>
               </div>
               <hr></hr>
             </div>
           ) : (
-            <div className="textT22 Subtitle">
+            <div className="textF24 Subtitle">
               <span className="FontB">RESEARCH</span>
               <span className="FontR">PARTNERS</span>
             </div>
@@ -73,13 +73,13 @@ export default function PartnersAInvestors(props) {
         <div className="researchWrap">
           {props.matches ? (
             <div className="Subtitle">
-              <div className="textT22 FontEB">
+              <div className="textF24 FontEB">
                 <span>INVESTORS</span>
               </div>
               <hr></hr>
             </div>
           ) : (
-            <div className="textT22 Subtitle">
+            <div className="textF24 Subtitle">
               <span className="FontB">INVESTORS</span>
             </div>
           )}

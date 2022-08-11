@@ -28,6 +28,7 @@ export default function Menubar(props) {
   const scrollOffset = (mTablet 
     ? [-84, -(84+40), -84, -84, 0, 0] // screen < 768px
     : [-(84+100), -(84+40), -184, -184, 0, 0]) // screen > 768px
+
   // console.log(pathname === "/", ">pathname");
 
   const changeMode = () => changeTheme(theme === "light" ? "dark" : "light");
@@ -200,10 +201,7 @@ export default function Menubar(props) {
         onMouseEnter={menuover}
         onMouseLeave={menuout}
       >
-        <div
-          className="menuWrap"
-          
-        >
+        <div className="menuWrap">
           {/* <div className="menulogo"> */}
           <NavLink to={`${imsi}/`}>
             <div className="logoImgContainCenter">
@@ -211,18 +209,14 @@ export default function Menubar(props) {
                 <HeringsLogo
                   style={{
                     fill:
-                      props.slideIndex === 0 && pathname === "/"
-                        ? "#000"
-                        : "",
+                      props.slideIndex === 0 && pathname === "/" ? "#000" : "",
                   }}
                 />
               ) : (
                 <HeringsLogoDark
                   style={{
                     fill:
-                      props.slideIndex === 0 && pathname === "/"
-                        ? "#fff"
-                        : "",
+                      props.slideIndex === 0 && pathname === "/" ? "#fff" : "",
                   }}
                 />
               )}
@@ -242,7 +236,7 @@ export default function Menubar(props) {
                           ? "tcb"
                           : "tcw"
                         : "tcb"
-                    }`}
+                    } ${isMActive && "tcb"}`}
                   >
                     {menu}
                   </span>
@@ -295,7 +289,7 @@ export default function Menubar(props) {
                         onClick={menuclick}
                       >
                         <span
-                          className={`menuText FontR ${
+                          className={`menuText FontL ${
                             theme === "light" ? "tcg" : "tcw"
                           }`}
                         >
