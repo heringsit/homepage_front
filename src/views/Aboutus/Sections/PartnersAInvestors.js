@@ -21,6 +21,7 @@ export default function PartnersAInvestors(props) {
   const { mobile } = useContext(MediaQueryContext);
   return (
     <div className={`aboutuscontents`}>
+      <div className="pt-48" />
       {!props.matches && <CommonCardTitle title={"PARTNERS & INVESTORS"} />}
       <div className="SectionDivTailContent">
         <div className="researchWrap">
