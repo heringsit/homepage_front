@@ -33,7 +33,12 @@
 .mainimagelayout {
   position: relative;
   text-align: center;
+  justify-content: center;
+  background-image: url("../../assets/images/mainimage.png");
+  background-size: cover;
+  background-position: right;
 }
+
 
 @media (max-width: 600px) {
   .mainimagetext {

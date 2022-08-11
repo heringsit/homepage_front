@@ -324,7 +324,7 @@ export default function Career({ match }) {
                 tabClick(e, "A");
               }}
             >
-              <span className={`FontB ${matches ? "textF32" : "textF70"}`}>
+              <span className={`FontNR ${matches ? "textF32" : "textF70"}`}>
                 {countList[0]}
               </span>
               <div
@@ -344,7 +344,7 @@ export default function Career({ match }) {
                 tabClick(e, "B");
               }}
             >
-              <span className={`FontB ${matches ? "textF32" : "textF70"}`}>
+              <span className={`FontNR ${matches ? "textF32" : "textF70"}`}>
                 {countList[1]}
               </span>
               <div
@@ -363,7 +363,7 @@ export default function Career({ match }) {
                 tabClick(e, "C");
               }}
             >
-              <span className={`FontB ${matches ? "textF32" : "textF70"}`}>
+              <span className={`FontNR ${matches ? "textF32" : "textF70"}`}>
                 {countList[2]}
               </span>
               <div
@@ -378,16 +378,16 @@ export default function Career({ match }) {
           <div className="careerContainList">
             <div className={`${theme === "dark" ? "careerContainListHeaderD" : "careerContainListHeader"} FontNL flex-row`}>
               <div className="careerContainListHeaderCol col1 korFonts">
-                <span className="textF16">구분</span>
+                <span className="textF16 FontNR">구분</span>
               </div>
               <div className="careerContainListHeaderCol col2 korFonts">
-                <span className="textF16">내용</span>
+                <span className="textF16 FontNR">내용</span>
               </div>
               <div className="careerContainListHeaderCol col3 korFonts">
-                <span className="textF16">채용 분야</span>
+                <span className="textF16 FontNR">채용 분야</span>
               </div>
               <div className="careerContainListHeaderCol col4 korFonts">
-                <span className="textF16">상태</span>
+                <span className="textF16 FontNR">상태</span>
               </div>
             </div>
             {isDataReady ? (
@@ -401,7 +401,7 @@ export default function Career({ match }) {
                         handleOpen(data, checkDate(data.closing_date, "E"));
                       }}
                     >
-                      <div className="careerContainListCol col1 textF16 korFonts">
+                      <div className="careerContainListCol col1 textF16 korFonts FontNR">
                         {convertData(
                           data.check_career_new +
                             "/" +
@@ -414,21 +414,21 @@ export default function Career({ match }) {
                       <div className="careerContainListCol col2 careerListTitle">
                         <div className="textF20 tcb FontNB">{data.title}</div>
                         <div className="careerListTitleDate">
-                          <span className="textF14 tcg korFonts">
+                          <span className="textF14 tcg korFonts FontNR">
                             ~ {data.closing_date} 까지
                           </span>
                           <span className="tcg careerListTitleDateSeparator">
                             |
                           </span>
-                          <span className="textF14 tco korFonts">
+                          <span className="textF14 tco korFonts FontNR">
                             {checkDate(data.closing_date, "D")}
                           </span>
                         </div>
                       </div>
-                      <div className="careerContainListCol col3 textF16">
+                      <div className="careerContainListCol col3 textF16 FontNR">
                         {data.recruitment}
                       </div>
-                      <div className="careerContainListCol col4 textF16 listBtn">
+                      <div className="careerContainListCol col4 textF16 listBtn FontNR">
                         <div
                           className={`careerBtn ${
                             checkDate(data.closing_date, "E")
