@@ -263,7 +263,7 @@ export default function Aboutus() {
           <TabClick visibleArray={visibleArray} isScroll={isScroll} />
         )}
 
-        <div className="pb-48" ref={refs.current[0]}>
+        <div ref={refs.current[0]}>
           <Whoweare />
         </div>
         <div id="heringsteam" ref={refs.current[1]}>

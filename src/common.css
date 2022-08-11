@@ -464,7 +464,13 @@
   #aboutus .textF32 {
     font-size: 16px;
   }
+  #aboutus .textF24 {
+    font-size: 14px;
+  }
   #aboutus .textF20 {
+    font-size: 12px;
+  }
+  #aboutus .textF18 {
     font-size: 12px;
   }
 }

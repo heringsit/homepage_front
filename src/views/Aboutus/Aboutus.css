@@ -81,18 +81,20 @@
 .teamDivWrap {
   outline: none;
   margin: 0;
-  text-align: center;
+  /* text-align: center; */
 }
 .heringsTeamWrap {
   word-break: keep-all;
   outline: none;
   width: 92%;
-  height: 400px;
+  height: 370px;
   cursor: pointer;
   background-color: #fff;
   border-radius: 25px;
   padding: 2%;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .heringsTeamWrap > hr {
   width: 45px;
@@ -108,11 +110,13 @@
   height: auto;
 }
 .heringsTeamContentText {
-  position: relative;
-  bottom: 0px;
-  margin: 15%;
+  margin: 15% 10%;
   min-height: 60px;
+  height: 100%;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 /* PARTNERS & INVESTORS */
 .researchWrap {
@@ -225,18 +229,6 @@
     min-height: 1px;
     margin: auto;
   }
-  .heringsTeamWrap {
-    width: 90%;
-    margin: 0;
-    align-items: center;
-    justify-content: center;
-  }
-  .heringsTeamContentText {
-    min-height: 60px;
-    text-align: left;
-    justify-self: center;
-    margin-top: 5x;
-  }
   /* PARTNERS&INV */
   .partner__image__container,
   .inventors__image__container {
@@ -253,7 +245,7 @@
     margin-right: 0;
   }
 }
-@media screen and (width: 320px) {
+@media screen and (max-width: 320px) {
   /* WHO WE ARE */
   .whoweareContent {
     height: max-content;
@@ -265,6 +257,10 @@
   .whoweareContentsWrap {
     margin-bottom: 48px;
     white-space: pre-wrap;
+  }
+  /* HERINGS TEAM */
+  .heringsTeamWrap {
+    height: 200px;
   }
   .split {
     letter-spacing: normal;
