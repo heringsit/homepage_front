@@ -6,7 +6,7 @@ export const MENU = {
     `${imsi}/aboutus/#aboutus`,
     `${imsi}/service/#service`,
     `${imsi}/research/#research`,
-    `${imsi}/crs/#crs`,
+    `${imsi}/cts/#cts`,
     `${imsi}/news/#news`,
     `${imsi}/contactus/#contactus`,
   ],
@@ -56,9 +56,9 @@ export const MENU = {
         "STATISTICAL ANALYSIS",
       ],
       link: [
-        `${imsi}/crs/#clinicaltrialdesign`,
-        `${imsi}/crs/#datamanagement`,
-        `${imsi}/crs/#statisticalanalysis`,
+        `${imsi}/cts/#clinicaltrialdesign`,
+        `${imsi}/cts/#datamanagement`,
+        `${imsi}/cts/#statisticalanalysis`,
       ],
     },
     {

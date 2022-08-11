@@ -181,9 +181,10 @@ html {
 .FontB {
   font-family: "Roboto500", sans-serif;
 }
-/* .FontLB {
-  font-family: "Roboto600", sans-serif;
-} */
+.FontCB { /* Custom Font */
+  font-family: "Roboto400", sans-serif;
+  font-weight: 600;
+}
 .FontEB {
   font-family: "Roboto700", sans-serif;
 }
@@ -335,6 +336,7 @@ body {
 .tabATagTab {
   width: 100%; /* width: 80%; */
   display: flex;
+  margin-top: 1px; /* height 99px + 1px margin-top */
   align-items: center;
   justify-content: center;
   text-decoration: none;
@@ -359,11 +361,6 @@ body {
   align-items: center;
   text-align: center;
   color: #a0a0a0;
-}
-.TABS_layout > .TABS_tab > a:not(:first-child) {
-  height: 24px;
-  margin: auto;
-  border-left: 1px solid #e1e1e1;
 }
 .TABS_sticky {
   position: -webkit-sticky;
@@ -390,6 +387,10 @@ body {
   left: 1px;
   margin: auto;
 }
+.separator {
+  height: 24px;
+  width: 1px;
+}
 
 /*card 공통*/
 /* COMMON CARD TITLE */
@@ -401,9 +402,10 @@ body {
   align-content: center;
   text-align: center;
 }
-.card_titleDiv span {
+.card_default_font {
   font-size: 28px;
 }
+
 .card_titleDiv_padding_b {
   padding-bottom: 16px;
 }

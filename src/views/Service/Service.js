@@ -34,113 +34,117 @@ export default function Service({ match }) {
       className="servicecontainer"
     >
       <Menubar slideIndex={0} />
-      <Totop />
+      
       {/* TITLE */}
       <ContentsTitle title={"SERVICE"} />
 
       {/* CONTENTS */}
-      <div className="contentsmargin">
-        <div className="servicecontents contentspadding flex-col gap-88">
-          <div> {/* Content Title */}
-            <p
-              className={`introtxt textF24 FontEB ${
-                theme === "light" ? "tcb" : "tcw"
-              }`}
-            >
-              HERINGS’ Two Service platforms.
-              
-            </p>
-            <hr className="vertical_line"></hr>
-          </div>
-          <div className="flex-col gap-240"> 
-            {/* HEALIARY */}
-            <div
-              className="text-align-center flex-wrap gap-40 inline-block"
-              id="digitalcareservice"
-            >
-              <div className="flex-wrap gap-16">
-                <div className="flatformtitle">
-                  <div className="flatformnum flex-col gap-4">
-                    <span className="tcw FontB textF16">Platform 1</span>
+      <div className="flex-col"> 
+        <div className="contentsmargin pb-200">
+          <div className="servicecontents contentspadding flex-col gap-88">
+            <div> {/* Content Title */}
+              <p
+                className={`introtxt textF24 FontEB ${
+                  theme === "light" ? "tcb" : "tcw"
+                }`}
+              >
+                HERINGS’ Two Service platforms.
+                
+              </p>
+              <hr className="vertical_line"></hr>
+            </div>
+            <div className="flex-col gap-240"> 
+              {/* HEALIARY */}
+              <div
+                className="text-align-center flex-wrap gap-40 inline-block"
+                id="digitalcareservice"
+              >
+                <div className="flex-wrap gap-16">
+                  <div className="flatformtitle">
+                    <div className="flatformnum flex-col gap-4">
+                      <span className="tcw FontB textF16">Platform 1</span>
+                    </div>
+                    <span className="tco2 textF28 FontEB">
+                      DIGITAL HEALTHCARE SERVICE PLATFORM
+                    </span>
                   </div>
-                  <span className="tco2 textF28 FontEB">
-                    DIGITAL HEALTHCARE SERVICE PLATFORM
-                  </span>
+                  <p className="textF18 explanation FontL m-reset">
+                    Patients get direct services everyday through this platform.
+                    <br />
+                    Main services include nutrition, symptom management, drug
+                    adherence, exercise, and medication.
+                  </p>
                 </div>
-                <p className="textF18 explanation FontL m-reset">
-                  Patients get direct services everyday through this platform.
-                  <br />
-                  Main services include nutrition, symptom management, drug
-                  adherence, exercise, and medication.
-                </p>
-              </div>
-              <div className="youtube mb-40 mt-40">
-                <iframe
-                  src="https://www.youtube.com/embed/_d_OvUMhbho?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
+                <div className="youtube mb-40 mt-40">
+                  <iframe
+                    src="https://www.youtube.com/embed/_d_OvUMhbho?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+                <CommonCardFrame
+                  imageSrc={healiary_application}
+                  imageAlt="healiary application"
+                  subText1="Application"
+                  subText2="HEALIARY"
+                  content1={
+                    "The personalized companion digital platform that takes care of cancer patients’ daily challenges including nutrition/food intake, symptom management, and exercise."
+                  }
+                  content2={
+                    "Patient Engagement Mobile Application. It is a tool for cancer patients to remain engaged and active throughout their therapy with their care team."
+                  }
+                  flexStyle="flex-row gap-120"
+                  mainContentStyle="flex-col gap-56"
+                  contentPadding=""
+                  subText1Style="textT18 FontB mb-4"
+                  subText2Style="textF24 FontEB  mb-8"
                 />
               </div>
-              <CommonCardFrame
-                imageSrc={healiary_application}
-                imageAlt="healiary application"
-                subText1="Application"
-                subText2="HEALIARY"
-                content1={
-                  "The personalized companion digital platform that takes care of cancer patients’ daily challenges including nutrition/food intake, symptom management, and exercise."
-                }
-                content2={
-                  "Patient Engagement Mobile Application. It is a tool for cancer patients to remain engaged and active throughout their therapy with their care team."
-                }
-                flexStyle="flex-row gap-120"
-                mainContentStyle="flex-col gap-56"
-                contentPadding=""
-                subText1Style="textT18 FontB mb-4"
-                subText2Style="textF24 FontEB  mb-8"
-              />
-            </div>
 
-            {/* OSTOMY */}
-            <div className="text-align-center flex-col gap-24" id="telehealthcareservice">
-              <div className="flex-col gap-16">
-                <div className="flatformtitle">
-                  <div className="flatformnum flex-col gap-4">
+              {/* OSTOMY */}
+              <div className="text-align-center flex-col gap-24" id="telehealthcareservice">
+                <div className="flex-col gap-16">
+                  <div className="flatformtitle">
+                    <div className="flatformnum flex-col gap-4">
 
-                    <span className="tcw FontB textF16">Platform 2</span>
+                      <span className="tcw FontB textF16">Platform 2</span>
+                    </div>
+                    <span className="tco2 textF28 FontEB">
+                      TELE-HEALTHCARE SERVICE PLATFORM
+                    </span>
                   </div>
-                  <span className="tco2 textF28 FontEB">
-                    TELE-HEALTHCARE SERVICE PLATFORM
-                  </span>
+                  <p className="textF18 explanation FontL m-reset">
+                    Gateway service platform between providers and patients for
+                    remote and home care management.​
+                  </p>
                 </div>
-                <p className="textF18 explanation FontL m-reset">
-                  Gateway service platform between providers and patients for
-                  remote and home care management.​
-                </p>
+                <CommonCardFrame
+                  imageSrc={ostomy_application}
+                  imageAlt="ostomy application"
+                  subText1="Application"
+                  subText2="OSTOMY CARE"
+                  content1={
+                    "Home Health Care Service Platform for Ostomy patients."
+                  }
+                  content2={
+                    "Medical care teams can directly communicate with their patients in this platform. Patients inform their current medical conditions including photos then care teams evaluate them and provide appropriate feedbacks with self-management guidance."
+                  }
+                  flexStyle="flex-row-reverse gap-120"
+                  mainContentStyle="flex-col gap-56"
+                  contentPadding=""
+                  subText1Style="textF18 FontB mb-4"
+                  subText2Style="textF24 FontEB  mb-8"
+                />
               </div>
-              <CommonCardFrame
-                imageSrc={ostomy_application}
-                imageAlt="ostomy application"
-                subText1="Application"
-                subText2="OSTOMY CARE"
-                content1={
-                  "Home Health Care Service Platform for Ostomy patients."
-                }
-                content2={
-                  "Medical care teams can directly communicate with their patients in this platform. Patients inform their current medical conditions including photos then care teams evaluate them and provide appropriate feedbacks with self-management guidance."
-                }
-                flexStyle="flex-row-reverse gap-120"
-                mainContentStyle="flex-col gap-56"
-                contentPadding=""
-                subText1Style="textF18 FontB mb-4"
-                subText2Style="textF24 FontEB  mb-8"
-              />
             </div>
           </div>
         </div>
+        <Totop />
+        <Footer />
       </div>
-      <Footer />
+      
     </div>
   );
 }

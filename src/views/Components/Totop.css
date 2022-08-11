@@ -2,10 +2,12 @@
   display: none;
   width: 86px;
   height: 86px;
-  position: fixed;
+  position: sticky;
   z-index: 99;
   bottom: 30px;
   right: 30px;
+  margin-left: auto;
+  margin-bottom: 30px;
   cursor: pointer;
 }
 .bottom-totop-div {

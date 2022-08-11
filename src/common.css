@@ -66,10 +66,10 @@
   padding-top: 236px;
 }
 .pt-500 {
-  padding-bottom: 500px;
+  padding-top: 500px;
 }
-.pb-600 {
-  padding-bottom: 600px;
+.pt-600 {
+  padding-top: 600px;
 }
 
 /* pb-# - padding bottom */
@@ -90,6 +90,9 @@
 }
 .pb-64 {
   padding-bottom: 64px;
+}
+.pb-143 {
+  padding-bottom: 143px;
 }
 .pb-200 {
   padding-bottom: 200px;
@@ -228,6 +231,9 @@
 .gap-56 {
   gap: 56px;
 }
+.gap-48 {
+  gap: 48px;
+}
 .gap-40 {
   gap: 40px;
 }
@@ -346,13 +352,13 @@
     font-size: 18px;
   }
   /*CTS*/
-  #crs .textF28 {
+  #cts .textF28 {
     font-size: 28px;
   }
-  #crs .textF24 {
+  #cts .textF24 {
     font-size: 24px;
   }
-  #crs .textF18 {
+  #cts .textF18 {
     font-size: 18px;
   }
 }
@@ -385,13 +391,13 @@
     font-size: 18px;
   }
   /*CTS*/
-  #crs .textF28 {
+  #cts .textF28 {
     font-size: 28px;
   }
-  #crs .textF24 {
+  #cts .textF24 {
     font-size: 24px;
   }
-  #crs .textF18 {
+  #cts .textF18 {
     font-size: 18px;
   }
   /* Draft design */
@@ -446,13 +452,13 @@
     font-size: 18px;
   }
   /*CTS*/
-  #crs .textF28 {
+  #cts .textF28 {
     font-size: 28px;
   }
-  #crs .textF24 {
+  #cts .textF24 {
     font-size: 24px;
   }
-  #crs .textF18 {
+  #cts .textF18 {
     font-size: 18px;
   }
 }
@@ -469,10 +475,10 @@
     font-size: 16px;
   }
   /*CTS*/
-  #crs .textF24 {
+  #cts .textF24 {
     font-size: 22px;
   }
-  #crs .textF18 {
+  #cts .textF18 {
     font-size: 16px;
   }
 }

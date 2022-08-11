@@ -11,9 +11,10 @@ export default function TabClick({ visibleArray, isScroll }) {
 
   // ex: [true, false, false] -> [whoweare:Visible, teamList:not-Visible, pai:not-Visible]
   // const visibleCount = visibleArray?.filter(value => value===true).length; // check how many elements are visible in DOM
-  const visibleIndex = visibleArray?.indexOf(true) === -1 ? 0 : visibleArray?.indexOf(true);
+  const visibleIndex =
+    visibleArray?.indexOf(true) === -1 ? 0 : visibleArray?.indexOf(true);
   const aboutustabs = ["whoweare", "heringsteam", "researchpartners"];
-  const crstabs = [
+  const ctstabs = [
     "clinicaltrialdesign",
     "datamanagement",
     "statisticalanalysis",
@@ -25,14 +26,13 @@ export default function TabClick({ visibleArray, isScroll }) {
     "riskprediction",
     "drugadherence",
     "aialgorithms",
-    "drugadverseevents"
+    "drugadverseevents",
   ];
-  const scrollWithOffset = (el, yOffset = -(84+60)) => {
+  const scrollWithOffset = (el, yOffset = -(84 + 100)) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
     window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
   };
 
-  
   return (
     <div
       className="TABS_sticky"
@@ -70,20 +70,26 @@ export default function TabClick({ visibleArray, isScroll }) {
                   </Link>
                 </div>
                 {index + 1 === aboutustabs.length ? null : (
-                  <span className="tcg3" style={{ margin: "auto" }}>
-                    |
-                  </span>
+                  <div style={{ margin: "auto" }}>
+                    <div
+                      className="separator"
+                      style={{
+                        backgroundColor:
+                          theme === "dark" ? "#5F5F5F" : "#E1E1E1",
+                      }}
+                    />
+                  </div>
                 )}
               </React.Fragment>
             ))
-          : pathname === "/crs/"
-          ? crstabs.map((tab, index) => (
+          : pathname === "/cts/"
+          ? ctstabs.map((tab, index) => (
               <React.Fragment key={index}>
                 <div className="TABS_tab FontR textF16">
                   <Link
                     smooth
                     to={`#${tab}`}
-                    scroll={el => scrollWithOffset(el, -184)}
+                    scroll={scrollWithOffset}
                     className={
                       index === visibleIndex
                         ? "w-full h-full tagADefault tabATagTab FontEB"
@@ -100,10 +106,16 @@ export default function TabClick({ visibleArray, isScroll }) {
                       : ""}
                   </Link>
                 </div>
-                {index + 1 === crstabs.length ? null : (
-                  <span className="tcg3" style={{ margin: "auto" }}>
-                    |
-                  </span>
+                {index + 1 === ctstabs.length ? null : (
+                  <div style={{ margin: "auto" }}>
+                    <div
+                      className="separator"
+                      style={{
+                        backgroundColor:
+                          theme === "dark" ? "#5F5F5F" : "#E1E1E1",
+                      }}
+                    />
+                  </div>
                 )}
               </React.Fragment>
             )) // research tabs
@@ -113,7 +125,9 @@ export default function TabClick({ visibleArray, isScroll }) {
                   <Link
                     smooth
                     to={`#${tab}`}
-                    scroll={el => scrollWithOffset(el, (mDesktop ? -149 : -184))}
+                    scroll={(el) =>
+                      scrollWithOffset(el, mDesktop ? -149 : -184)
+                    }
                     className={
                       index === visibleIndex
                         ? "w-full h-full tagADefault tabATagTab FontEB"
@@ -135,14 +149,19 @@ export default function TabClick({ visibleArray, isScroll }) {
                       ? "AI ALGORITHMS"
                       : tab === "drugadverseevents"
                       ? "DRUG ADVERSE EVENTS"
-                      : ""
-                    }
+                      : ""}
                   </Link>
                 </div>
                 {index + 1 === researchtabs.length ? null : (
-                  <span className="tcg3" style={{ margin: "auto" }}>
-                    |
-                  </span>
+                  <div style={{ margin: "auto" }}>
+                    <div
+                      className="separator"
+                      style={{
+                        backgroundColor:
+                          theme === "dark" ? "#5F5F5F" : "#E1E1E1",
+                      }}
+                    />
+                  </div>
                 )}
               </React.Fragment>
             ))}
