@@ -19,8 +19,6 @@
 .aboutuscontents {
   width: 100%;
   height: 100%;
-  padding-top: 100px;
-  padding-bottom: 100px;
   padding: 100px 10%;
 }
 
@@ -218,6 +216,9 @@
 }
 /* 320px < screen <= 600px */
 @media screen and (max-width: 600px) {
+  .whoweareContentsWrap {
+    padding-top: 10px;
+  }
   /* HEARINGS TEAM */
   .TeamListWrap {
     padding: 1% 5%;
@@ -263,7 +264,8 @@
   }
   /* HERINGS TEAM */
   .heringsTeamWrap {
-    height: 200px;
+    min-height: 160px;
+    height: max-content;
   }
   .split {
     letter-spacing: normal;

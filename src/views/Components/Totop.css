@@ -19,3 +19,10 @@
   align-items: center;
   justify-content: center;
 }
+/* screen <= 320px */
+@media screen and (max-width: 320px) {
+  .bottom-totop {
+    width: 50px;
+    height: 50px;
+  }
+}

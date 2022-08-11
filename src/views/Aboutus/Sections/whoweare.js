@@ -23,7 +23,7 @@ export default function Whoweare() {
         backgroundImage: `url(${backgroundImg})`,
         backgroundPosition: "center",
       }}
-      className={`whoweare aboutuscontents ${
+      className={`whoweare aboutuscontents bg-gray ${
         mobile ? "mt-50" : mTablet ? "mt-84" : ""
       }`}
     >
