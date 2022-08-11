@@ -59,10 +59,10 @@ export default function Service({ match }) {
                 className="text-align-center flex-wrap gap-40 inline-block"
                 id="digitalcareservice"
               >
-                <div className="flex-wrap gap-16">
+                <div className="flex-wrap gap-16 ">
                   <div className="flatformtitle">
-                    <div className="flatformnum flex-col gap-4">
-                      <span className="tcw FontB textF16">Platform 1</span>
+                    <div className="flatformnum flex-col gap-4 w-100px">
+                      <span className="tcw FontB textF16 ">Platform 1</span>
                     </div>
                     <span className="tco2 textF28 FontEB">
                       DIGITAL HEALTHCARE SERVICE PLATFORM
@@ -105,13 +105,12 @@ export default function Service({ match }) {
 
               {/* OSTOMY */}
               <div className="text-align-center flex-col gap-24" id="telehealthcareservice">
-                <div className="flex-col gap-16">
+                <div className="flex-wrap gap-16">
                   <div className="flatformtitle">
-                    <div className="flatformnum flex-col gap-4">
-
+                    <div className="flatformnum flex-col gap-4 w-100px">
                       <span className="tcw FontB textF16">Platform 2</span>
                     </div>
-                    <span className="tco2 textF28 FontEB">
+                    <span className="tco2 textF28 FontEB ">
                       TELE-HEALTHCARE SERVICE PLATFORM
                     </span>
                   </div>

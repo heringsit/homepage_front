@@ -260,6 +260,7 @@
 .align-items-center {
   align-items: center;
 }
+
 .align-items-stretch {
   align-items: stretch;
 }
@@ -275,7 +276,9 @@
 .justify-around {
   justify-content: space-around;
 }
-
+.justify-left {
+  justify-content: left;
+}
 .lineheight160 {
   line-height: 160%;
 }
@@ -315,6 +318,11 @@
 .w-80 {
   width: 80%;
 }
+.w-100px {
+  width: 100px;
+  min-width: 100px;
+  max-width: 100px;
+}
 .w-screen {
   width: calc(100vw);
   height: calc(100vh);
@@ -351,6 +359,16 @@
   #heringsteam .textF18 {
     font-size: 16px;
   }
+  /*service*/
+  #service .textF28 {
+    font-size: 28px;
+  }
+  #service .textF24 {
+    font-size: 24px;
+  }
+  #service .textF18 {
+    font-size: 18px;
+  }
   /*Research*/
   #research .textF28 {
     font-size: 28px;
@@ -382,6 +400,16 @@
     font-size: 28px;
   }
   #aboutus .textF20 {
+    font-size: 18px;
+  }
+  /*service*/
+  #service .textF28 {
+    font-size: 28px;
+  }
+  #service .textF24 {
+    font-size: 24px;
+  }
+  #service .textF18 {
     font-size: 18px;
   }
   /*Research*/
@@ -436,6 +464,16 @@
   #aboutus .textF16 {
     font-size: 12px;
   }
+  /*service*/
+  #service .textF28 {
+    font-size: 28px;
+  }
+  #service .textF24 {
+    font-size: 24px;
+  }
+  #service .textF18 {
+    font-size: 18px;
+  }
   /*Research*/
   #research .textF28 {
     font-size: 28px;
@@ -462,6 +500,16 @@
 @media screen and (max-width: 600px) {
   /* Font-Size
   */
+  /*service*/
+  #service .textF28 {
+  font-size: 20px;
+  }
+  #service .textF24 {
+    font-size: 18px;
+  }
+  #service .textF18 {
+    font-size: 16px;
+  }
   /*Research*/
   #research .textF24 {
     font-size: 22px;
@@ -492,6 +540,10 @@
   #aboutus .textF18 {
     font-size: 12px;
   }
+  
+  /* #service .textF16 {
+    font-size: 12px;
+  } */
 }
 .textF70 {
   font-size: 70px;
