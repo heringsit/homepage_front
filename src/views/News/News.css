@@ -65,8 +65,8 @@
 .newsContainListHeader {
   display: flex;
   flex-direction: row;
-  border-top: 3px solid #232323;
-  border-bottom: 1px solid #232323;
+  border-top: 3px solid;
+  border-bottom: 1px solid;
 }
 .newsContainListHeaderCol {
   margin: 10px 0;

@@ -145,10 +145,11 @@ export default function News({ match }) {
   //   setOpen(false);
   // };
   // const classes = useStyles();
+  
   return (
     <div
-      id="content"
-      className="content"
+      id="news" 
+      
       style={{
         backgroundColor: theme === "dark" && "#282828",
         color: theme === "dark" && "white",
@@ -157,18 +158,17 @@ export default function News({ match }) {
       <Menubar slideIndex={slideIndex} />
       
       
-      <div id="news" className="w-screen flex-col justify-between">
-        <div className="pb-200">
+      <div className="w-screen flex-col justify-between ">
+        <div className={`pb-200 ${theme === "dark" && "bg-black"} `} >
           <ContentsTitle title={"News & IR"} />
-          {/* <ContentsTitle matches={sTablet} title={"NEWS & IR"} /> */}
           {/* 배너 */}
           <NewsRelease matches={sTablet} />
           <IRInformation matches={sTablet} />
+          
         </div>
         <Totop />
         <Footer />
       </div>
-      
     </div>
   );
 }
