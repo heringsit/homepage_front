@@ -3,7 +3,7 @@ import axios from "axios";
 import moment from "moment";
 import parse from "html-react-parser";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
-// import useMediaQuery from "@material-ui/core/useMediaQuery";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
@@ -11,7 +11,8 @@ import { imsi } from "../../index";
 
 import { ReactComponent as IconClose } from "../../assets/images/05career/close.svg";
 import "./Career.css";
-import { MediaQueryContext } from "../../context";
+import CommonCardTitle from "../common/CommonCardTitle";
+import { ThemeContext } from "../../context";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -69,8 +70,7 @@ const useStyles = makeStyles((theme) =>
 );
 
 export default function Career({ match }) {
-  // const matches = useMediaQuery("(max-width:600px)");
-  const { sTablet } = useContext(MediaQueryContext);
+  const matches = useMediaQuery("(max-width:600px)");
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [modalObj, setModalObj] = useState({});
@@ -298,18 +298,23 @@ export default function Career({ match }) {
 
   useEffect(getdata, []);
   console.log("listData::", listData);
+
+  const { theme } = useContext(ThemeContext);
   return (
-    <div>  {/*id="content" className="content">*/}
+    <div id="content" className="content">
       {/* <Menubar slideIndex={0} />
       <Totop /> */}
       <div id="cotactus">
         {/* <ContentsTitle matches={matches} title={"CONTACT US"} /> */}
         {/* id 를 추가해야 이동한다 ; scroll focusing 스크롤 포커싱 */}
-        <div className="SectionDivCareer position-relative" id="career">
-          <div className="titleDiv">
-            <span className="textT22 FontEB">HERINGS CAREERS</span>
+        <div className="SectionDivCareer" id="career">
+          {/* <div className="titleDiv">
+            <div className="textT22 FontEB">
+              <span>HERINGS CAREERS</span>
+            </div>
             <hr></hr>
-          </div>
+          </div> */}
+          <CommonCardTitle title="HERINGS CAREERS" />
           <div className="listCnt">
             <div
               className={`${
@@ -319,15 +324,16 @@ export default function Career({ match }) {
                 tabClick(e, "A");
               }}
             >
-              <span className={`FontB ${sTablet ? "textF32" : "textF70"}`}>
+              <span className={`FontB ${matches ? "textF32" : "textF70"}`}>
                 {countList[0]}
               </span>
               <div
                 className={`FontNR textF18 korFonts ${
-                  careerTab === "A" ? "tcw" : "tcb"
+                  theme === "dark" || careerTab === "A" ? "tcw" : "tcb"
+                }
                 }`}
               >
-                {sTablet ? "진행중인 채용" : "현재 진행중인 채용"}
+                {matches ? "진행중인 채용" : "현재 진행중인 채용"}
               </div>
             </div>
             <div
@@ -338,12 +344,12 @@ export default function Career({ match }) {
                 tabClick(e, "B");
               }}
             >
-              <span className={`FontB ${sTablet ? "textF32" : "textF70"}`}>
+              <span className={`FontB ${matches ? "textF32" : "textF70"}`}>
                 {countList[1]}
               </span>
               <div
                 className={`FontNR textF18 korFonts ${
-                  careerTab === "B" ? "tcw" : "tcb"
+                  theme === "dark" || careerTab === "A" ? "tcw" : "tcb"
                 }`}
               >
                 신입 / 인턴
@@ -357,12 +363,12 @@ export default function Career({ match }) {
                 tabClick(e, "C");
               }}
             >
-              <span className={`FontB ${sTablet ? "textF32" : "textF70"}`}>
+              <span className={`FontB ${matches ? "textF32" : "textF70"}`}>
                 {countList[2]}
               </span>
               <div
                 className={`FontNR textF18 korFonts ${
-                  careerTab === "C" ? "tcw" : "tcb"
+                  theme === "dark" || careerTab === "A" ? "tcw" : "tcb"
                 }`}
               >
                 경력
@@ -370,18 +376,18 @@ export default function Career({ match }) {
             </div>
           </div>
           <div className="careerContainList">
-            <div className="careerContainListHeader FontNL">
-              <div className="careerContainListHeaderCol col1 textF16 korFonts">
-                구분
+            <div className={`${theme === "dark" ? "careerContainListHeaderD" : "careerContainListHeader"} FontNL flex-row`}>
+              <div className="careerContainListHeaderCol col1 korFonts">
+                <span className="textF16">구분</span>
               </div>
-              <div className="careerContainListHeaderCol col2 textF16 korFonts">
-                내용
+              <div className="careerContainListHeaderCol col2 korFonts">
+                <span className="textF16">내용</span>
               </div>
-              <div className="careerContainListHeaderCol col3 textF16 korFonts">
-                채용분야
+              <div className="careerContainListHeaderCol col3 korFonts">
+                <span className="textF16">채용 분야</span>
               </div>
-              <div className="careerContainListHeaderCol col4 textF16 korFonts">
-                상태
+              <div className="careerContainListHeaderCol col4 korFonts">
+                <span className="textF16">상태</span>
               </div>
             </div>
             {isDataReady ? (

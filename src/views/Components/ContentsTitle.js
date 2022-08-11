@@ -58,8 +58,8 @@ export default function ContentsTitle(props) {
           <div style={{height: "84px"}}/>
           <div className="position-relative banner_container">
             {theme === "dark" ? <div className="banner_gradient"></div> : null}
-            <div className="banner_default banner_img">
-              <div className="textF53 FontR tcb title_default">{props.title}</div>
+            <div className="banner_default banner_img banner">
+              <div className={`textF53 FontR tcb ${theme==="dark" ? "tcw" : "tcb"} title_center`}>{props.title}</div>
             </div>
           </div>
         </>

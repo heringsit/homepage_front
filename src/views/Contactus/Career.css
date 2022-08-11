@@ -126,10 +126,12 @@
 }
 
 .careerContainListHeader {
-  display: flex;
-  flex-direction: row;
   border-top: 3px solid #232323;
   border-bottom: 1px solid #232323;
+}
+.careerContainListHeaderD {
+  border-top: 3px solid #fff;
+  border-bottom: 1px solid #fff;
 }
 .careerContainListHeaderCol {
   margin: 10px 0;
@@ -445,6 +447,10 @@
   color: #fd8d27;
   border-radius: 20px;
   padding: 10px 15px;
+}
+.readContentsRow {
+  display: inline-flex;
+  width: 100%;
 }
 .tbCaption {
   margin: 5px 10px;

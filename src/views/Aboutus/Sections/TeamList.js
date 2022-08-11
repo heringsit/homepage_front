@@ -123,11 +123,6 @@ export default function TeamList(props) {
                         <span className="tco textF16">{team.jobs}</span>
 
                       )}
-                      {/* <div>
-                            <span className="textF14 tcg">
-                              {team.positions}
-                            </span>
-                          </div> */}
                     </div>
                   </div>
                 </div>
