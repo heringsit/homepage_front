@@ -502,6 +502,9 @@ body {
     font-size: 18px;
     font-weight: 600;
   }
+  .Font_Mont_600 {
+    font-size: 45px;
+  }
 }
 /* screen <= 320px */
 @media screen and (max-width: 320px) {
@@ -510,6 +513,10 @@ body {
     font-size: 18px;
     font-weight: 600;
   }
+  .Font_Mont_600 {
+    font-size: 40px;
+  }
+  
 }
 
 @media screen and (max-width: 428px) {
