@@ -39,6 +39,7 @@ const App = () => {
   const sDesktop = useMediaQuery("(max-width: 1024px)");
   const mDesktop = useMediaQuery("(max-width: 1260px)");
   const lDesktop = useMediaQuery("(max-width: 1920px)");
+  document.body.style.backgroundColor = theme === "dark" ? "#282828" : "#FFFFFF";
 
   return (
     <BrowserRouter>

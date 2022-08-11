@@ -44,7 +44,7 @@ export default function Cts() {
 
   return (
     <div
-      id="content"
+      id="cts"
       className="content"
       style={{ backgroundColor: theme === "dark" && "#282828" }}
     >
@@ -53,9 +53,9 @@ export default function Cts() {
         <TabClick visibleArray={visibleArray} isScroll={isScroll} />
       )}
 
-      <div id="cts">
+      <div >
         <ContentsTitle matches={matches} title={"CLINICAL TRIAL SERVICE"} />
-        <div className="flex-col">
+        <div className="w-screen flex-col justify-between ">
           <div className="pb-200 contentsmargin">
             <div className="contents contentspadding">
               <div className="pt-64 pb-56">

@@ -3,7 +3,7 @@
   width: 86px;
   height: 86px;
   position: sticky;
-  z-index: 99;
+  z-index: 0;
   bottom: 30px;
   right: 30px;
   margin-left: auto;
