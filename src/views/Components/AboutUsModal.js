@@ -12,6 +12,7 @@ export function AboutUsModal(props) {
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
+        id="aboutusmodal"
         className="modalNoOutline position-fixed flex align-items-center justify-center"
         open={props.open}
         onClose={props.handleClose}
@@ -51,7 +52,7 @@ export function AboutUsModal(props) {
                 </div>
                 <div
                   id="transition-modal-description"
-                  className="modalContentText FontR"
+                  className="modalContentText textF16 FontR"
                 >
                   {props.modalObj?.detail}
                 </div>

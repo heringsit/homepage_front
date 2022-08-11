@@ -250,6 +250,9 @@
 .gap-4 {
   gap: 4px;
 }
+.gap-10 {
+  gap: 10px;
+}
 
 /* Line Alignment */
 .text-align-start {
@@ -357,7 +360,7 @@
   background-color: #282828;
 }
 .bg-white {
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
 }
 
 /* border color */
@@ -509,7 +512,6 @@
   }
   #service .textF18 {
     font-size: 18px;
-
   }
   /*Research*/
   #research .textF28 {
@@ -537,9 +539,15 @@
 @media screen and (max-width: 600px) {
   /* Font-Size
   */
+  #aboutus .textF18 {
+    font-size: 15px;
+  }
+  #aboutus .textF16 {
+    font-size: 14px;
+  }
   /*service*/
   #service .textF28 {
-  font-size: 20px;
+    font-size: 20px;
   }
   #service .textF24 {
     font-size: 18px;
@@ -548,18 +556,39 @@
     font-size: 16px;
   }
   /*Research*/
+  #research .textF28 {
+    font-size: 24px;
+  }
   #research .textF24 {
-    font-size: 22px;
+    font-size: 18px;
   }
   #research .textF18 {
     font-size: 16px;
   }
   /*CTS*/
+  #cts .textF28 {
+    font-size: 24px;
+  }
   #cts .textF24 {
-    font-size: 22px;
+    font-size: 18px;
   }
   #cts .textF18 {
     font-size: 16px;
+  }
+  #aboutusmodal .textF22 {
+    font-size: 18px;
+  }
+  #aboutusmodal .textF16 {
+    font-size: 14px;
+  }
+  .mobileMenuWrapDiv .textF22 {
+    font-size: 18px;
+  }
+  .mobileMenuWrapDiv .textF18 {
+    font-size: 16px;
+  }
+  .banner_container .textF53 {
+    font-size: 40px;
   }
 }
 /* screen <= 320px */
@@ -569,15 +598,50 @@
     font-size: 16px;
   }
   #aboutus .textF24 {
-    font-size: 14px;
+    font-size: 15px;
   }
   #aboutus .textF20 {
     font-size: 12px;
   }
   #aboutus .textF18 {
+    font-size: 13px;
+  }
+  #aboutus .textF16 {
     font-size: 12px;
   }
-  
+  #aboutusmodal .textF22 {
+    font-size: 12px;
+  }
+  #aboutusmodal .textF16 {
+    font-size: 12px;
+  }
+  #research .textF28 {
+    font-size: 20px;
+  }
+  #research .textF24 {
+    font-size: 18px;
+  }
+  #research .textF18 {
+    font-size: 14px;
+  }
+  #cts .textF28 {
+    font-size: 20px;
+  }
+  #cts .textF24 {
+    font-size: 18px;
+  }
+  #cts .textF18 {
+    font-size: 14px;
+  }
+  .mobileMenuWrapDiv .textF22 {
+    font-size: 16px;
+  }
+  .mobileMenuWrapDiv .textF18 {
+    font-size: 14px;
+  }
+  .banner_container .textF53 {
+    font-size: 32px;
+  }
   /* #service .textF16 {
     font-size: 12px;
   } */

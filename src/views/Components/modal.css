@@ -95,6 +95,13 @@
   }
 }
 @media screen and (max-width: 320px) {
+  .modalCloseDiv {
+    top: 1px;
+  }
+  .modalClose {
+    width: 20px;
+    height: 20px;
+  }
   .modalContentText {
     padding: 25px 10px 25px 10px;
   }
