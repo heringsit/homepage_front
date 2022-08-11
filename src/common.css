@@ -6,6 +6,10 @@
   pb# -> content bottom padding + #px
 
 */
+/* padding */
+.p-20 {
+  padding: 20px;
+}
 /* ps-# - padding side */
 .ps-36 {
   padding-left: 36px;
@@ -312,8 +316,14 @@
 .w-full {
   width: 100%;
 }
+.w-40 {
+  width: 40%;
+}
 .w-80 {
   width: 80%;
+}
+.w-95 {
+  width: 95%;
 }
 .w-screen {
   width: calc(100vw);
@@ -322,8 +332,15 @@
 .h-full {
   height: 100%;
 }
-
-
+.w-screen {
+  height: 100vh;
+}
+.out-none {
+  outline: none;
+}
+.overflow-auto {
+  overflow: auto;
+}
 /* background color */
 .bg-gray {
   background-color: #f6f8fb;
@@ -350,6 +367,9 @@
   /* ABOUT US */
   #heringsteam .textF18 {
     font-size: 16px;
+  }
+  #heringsteam .textF16 {
+    font-size: 14px;
   }
   /*Research*/
   #research .textF28 {
@@ -383,6 +403,12 @@
   }
   #aboutus .textF20 {
     font-size: 18px;
+  }
+  #heringsteam .textF18 {
+    font-size: 14px;
+  }
+  #heringsteam .textF16 {
+    font-size: 12px;
   }
   /*Research*/
   #research .textF28 {
@@ -430,10 +456,19 @@
   #aboutus .textF32 {
     font-size: 24px;
   }
+  #aboutus .textF24 {
+    font-size: 20px;
+  }
   #aboutus .textF18 {
     font-size: 14px;
   }
   #aboutus .textF16 {
+    font-size: 12px;
+  }
+  #heringsteam .textF18 {
+    font-size: 13px;
+  }
+  #heringsteam .textF16 {
     font-size: 12px;
   }
   /*Research*/
