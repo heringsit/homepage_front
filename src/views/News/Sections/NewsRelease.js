@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../News.css";
 import axios from "axios";
 import moment from "moment";
@@ -13,6 +13,7 @@ import { saveAs } from "file-saver";
 import { imsi } from "../../..";
 import search from "../../../assets/images/etc/search.png";
 import CommonCardTitle from "../../common/CommonCardTitle";
+import { ThemeContext } from "../../../context"; 
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -225,6 +226,9 @@ export default function NewsRelease({ match }) {
     );
   };
   useEffect(getdata, []);
+
+  const { theme } = useContext(ThemeContext);
+
   return (
      <div>  {/*id="content" className="content">*/}
       <div className="SectionDivNews" id="newsrelease">
@@ -237,7 +241,7 @@ export default function NewsRelease({ match }) {
           </div>
         </div> */}
         <div className="newsContainList">
-          <div className="newsContainListHeader FontNL">
+          <div className={`newsContainListHeader FontNL ${theme==="dark" ? "border-w" : "border-b"}`}>
             <div className="newsContainListHeaderCol ncol1 textF16 FontNL">
               제목
             </div>

@@ -316,18 +316,31 @@
   width: 80%;
 }
 .w-screen {
-  width: 100vw;
+  width: calc(100vw);
+  height: calc(100vh);
 }
 .h-full {
   height: 100%;
 }
-.w-screen {
-  height: 100vh;
-}
+
 
 /* background color */
 .bg-gray {
   background-color: #f6f8fb;
+}
+.bg-black {
+  background-color: #282828;
+}
+.bg-white {
+  background-color: #F3F3F3;
+}
+
+/* border color */
+.border-w {
+  border-color: #f6f6f6;
+}
+.border-b {
+  border-color: #232323;
 }
 
 /*  1024 < Screen < 1260 */

@@ -57,7 +57,7 @@ export default function Research() {
   // const visibleArray = scrollElem.map((key) => useOnScreen(refs.current[key]))
   return (
     <div
-      id="content"
+      id="research"
       className="content"
       style={{
         backgroundColor: theme === "dark" && "#282828",
@@ -70,152 +70,149 @@ export default function Research() {
         <TabClick visibleArray={visibleArray} isScroll={isScroll} />
       )}
       
-      <div id="research">
         <ContentsTitle matches={sTablet} title={"RESEARCH"} />
-        <div className="flex-col">  
-          <div className="pb-200 contentsmargin">
-            <div className="contents contentspadding">
-              {/* Nutrition in Cancer Care */}
-              <div className="pt-64" id="nutrition" ref={refs.current[0]}>
-                <CommonCardTitle title={"NUTRITION"} fontSize={"textF28"} />
-                <CommonCardFrame
-                  imageSrc={nutrition}
-                  imageAlt="nutrition"
-                  contentPadding="drugadverse-padding ptb-36"
-                  content1="Nutrition is one the most import fields in the long cancer
-                            care journey. It is significantly related to treatment
-                            outcomes such as quality of life, drug compliance, and even to
-                            prognosis."
-                  content2="We do perform nutrition research in terms of food data
-                            analysis, association with symptoms and treatments, dietary
-                            patterns, and clinical trial, etc."
-                  content3="Recently, a pilot study (NUGA trial, NCT04800991) was
-                            performed for evaluating feasibility and efficacy of digital
-                            health technology with nutritional care in gastric cancer
-                            patients who underwent gastrectomy."
-                  mainTextStyle="text-align-start textF18 FontL lineheight160"
-                />
-              </div>
-              {/* Symptom Management */}
-              <div className="contents-top-padding"></div>
-              <div className="pt-64" id="symptommanagement" ref={refs.current[1]}>
-                <CommonCardTitle title={"SYMPTOM MANAGEMENT"} />
-                <div className="align-items-center flex-col gap-40">
-                  <div
-                    className={`flex gap-16 align-items-center ${
-                      theme === "light" ? "tcb" : "tcw"
-                    }`}
-                  >
-                    <div className="atti-content align-items-center gap-16">
-                      <p className="m-reset FontEB textF24">ATTI</p>
-                      <p className="m-reset FontL textF18">
-                        Real-time, clinical decision support tool to monitor and
-                        manage the complexities of lung cancer care.
-                      </p>
-                    </div>
+      <div className="w-screen flex-col justify-between ">  
+        <div className="pb-200 contentsmargin">
+          <div className="contents contentspadding">
+            {/* Nutrition in Cancer Care */}
+            <div className="pt-64" id="nutrition" ref={refs.current[0]}>
+              <CommonCardTitle title={"NUTRITION"} fontSize={"textF28"} />
+              <CommonCardFrame
+                imageSrc={nutrition}
+                imageAlt="nutrition"
+                contentPadding="drugadverse-padding ptb-36"
+                content1="Nutrition is one the most import fields in the long cancer
+                          care journey. It is significantly related to treatment
+                          outcomes such as quality of life, drug compliance, and even to
+                          prognosis."
+                content2="We do perform nutrition research in terms of food data
+                          analysis, association with symptoms and treatments, dietary
+                          patterns, and clinical trial, etc."
+                content3="Recently, a pilot study (NUGA trial, NCT04800991) was
+                          performed for evaluating feasibility and efficacy of digital
+                          health technology with nutritional care in gastric cancer
+                          patients who underwent gastrectomy."
+                mainTextStyle="text-align-start textF18 FontL lineheight160"
+              />
+            </div>
+            {/* Symptom Management */}
+            <div className="contents-top-padding"></div>
+            <div className="pt-64" id="symptommanagement" ref={refs.current[1]}>
+              <CommonCardTitle title={"SYMPTOM MANAGEMENT"} />
+              <div className="align-items-center flex-col gap-40">
+                <div
+                  className={`flex gap-16 align-items-center ${
+                    theme === "light" ? "tcb" : "tcw"
+                  }`}
+                >
+                  <div className="atti-content align-items-center gap-16">
+                    <p className="m-reset FontEB textF24">ATTI</p>
+                    <p className="m-reset FontL textF18">
+                      Real-time, clinical decision support tool to monitor and
+                      manage the complexities of lung cancer care.
+                    </p>
                   </div>
-                  <div className="align-items-center flex-row gap-58 w-full">
-                    <img
-                      className="image-fit"
-                      src={symptommanagement}
-                      alt="nutrition"
+                </div>
+                <div className="align-items-center flex-row gap-58 w-full">
+                  <img
+                    className="image-fit"
+                    src={symptommanagement}
+                    alt="nutrition"
+                  />
+                  <div className="research-youtube">
+                    <iframe
+                      src="https://www.youtube.com/embed/Fp19GlDhVRE?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1&loop=1"
+                      title="YouTube video player"
+                      allow="accelerometer; loop; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     />
-                    <div className="research-youtube">
-                      <iframe
-                        src="https://www.youtube.com/embed/Fp19GlDhVRE?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1&loop=1"
-                        title="YouTube video player"
-                        allow="accelerometer; loop; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      />
-                    </div>
                   </div>
                 </div>
               </div>
-              {/* Exercise */}
-              <div className="contents-top-padding"></div>
-              <div className="pt-64" id="exercise" ref={refs.current[2]}>
-                <CommonCardTitle title={"EXERCISE"} />
-                <CommonCardFrame
-                  imageSrc={research_1}
-                  imageAlt="research_exercise"
-                  content1="In cancer patients, the decrease in physical ability, including muscle strength, causes sarcopenia and cachexia, which ultimately worsens the prognosis of cancer patients. We research exercise algorithms that could enhance physical ability in cancer patients and apply them to our platform to demonstrate their effectiveness."
-                  contentPadding="ptb-24"
-                  flexStyle="flex-col gap-68"
-                  mainTextStyle="text-align-start textF18 FontL lineheight160"
-                />
-              </div>
-              {/* Risk Prediction */}
-              <div className="contents-top-padding"></div>
-              <div className="pt-64" id="riskprediction" ref={refs.current[3]}>
-                <CommonCardTitle title={"RISK PREDICTION"} />
-                <CommonCardFrame
-                  imageSrc={research_2}
-                  imageAlt="research_risk_prediction"
-                  content1={
-                    "Cancer may progress or recur even after surgery or chemotherapy and radiation therapy. Since recurrence of lung cancer can be predicted as a specific symptom that occurs, we research an algorithm that inputs the symptoms directly felt by the patient in real time and predicts the possibility of recurrence in advance."
-                  }
-                  contentPadding="ptb-24"
-                  flexStyle="flex-col gap-68"
-                  mainTextStyle="text-align-start textF18 FontL lineheight160"
-                />
-              </div>
-              {/* Drug Adherence */}
-              <div className="contents-top-padding"></div>
-              <div className="pt-64" id="drugadherence" ref={refs.current[4]}>
-                <CommonCardTitle title={"DRUG ADHERENCE"} />
-                <CommonCardFrame
-                  imageSrc={research_3}
-                  imageAlt="research_drug_adherence"
-                  content1={
-                    "In breast cancer patients, hormone therapy is an important treatment that can prevent recurrence. However, drug adherence is poor because it needs to be taken for a long time and many adverse events occur. We research that can improve the drug adherence of hormone therapy in breast cancer patients by analyzing various factors that affect drug adherence​."
-                  }
-                  contentPadding="ptb-24"
-                  flexStyle="flex-col gap-68"
-                  mainTextStyle="text-align-start textF18 FontL lineheight160"
-                />
-              </div>
-              {/* AI algorithms */}
-              <div className="contents-top-padding"></div>
-              <div className="pt-64" id="aialgorithms" ref={refs.current[5]}>
-                <CommonCardTitle title={"AI ALGORITHMS"} />
-                <CommonCardFrame
-                  imageSrc={research_4}
-                  imageAlt="research_aialgorithms"
-                  content1={
-                    "Through the development of AI algorithms, medical staff can provide medical services to patients more accurately and quickly. We are collecting ostomy photos containing status information using our digital platform. We research an algorithm that automatically determines the condition of the ostomy by learning it through artificial intelligence."
-                  }
-                  contentPadding="ptb-24"
-                  flexStyle="flex-col gap-68"
-                  mainTextStyle="text-align-start textF18 FontL lineheight160"
-                />
-              </div>
+            </div>
+            {/* Exercise */}
+            <div className="contents-top-padding"></div>
+            <div className="pt-64" id="exercise" ref={refs.current[2]}>
+              <CommonCardTitle title={"EXERCISE"} />
+              <CommonCardFrame
+                imageSrc={research_1}
+                imageAlt="research_exercise"
+                content1="In cancer patients, the decrease in physical ability, including muscle strength, causes sarcopenia and cachexia, which ultimately worsens the prognosis of cancer patients. We research exercise algorithms that could enhance physical ability in cancer patients and apply them to our platform to demonstrate their effectiveness."
+                contentPadding="ptb-24"
+                flexStyle="flex-col gap-68"
+                mainTextStyle="text-align-start textF18 FontL lineheight160"
+              />
+            </div>
+            {/* Risk Prediction */}
+            <div className="contents-top-padding"></div>
+            <div className="pt-64" id="riskprediction" ref={refs.current[3]}>
+              <CommonCardTitle title={"RISK PREDICTION"} />
+              <CommonCardFrame
+                imageSrc={research_2}
+                imageAlt="research_risk_prediction"
+                content1={
+                  "Cancer may progress or recur even after surgery or chemotherapy and radiation therapy. Since recurrence of lung cancer can be predicted as a specific symptom that occurs, we research an algorithm that inputs the symptoms directly felt by the patient in real time and predicts the possibility of recurrence in advance."
+                }
+                contentPadding="ptb-24"
+                flexStyle="flex-col gap-68"
+                mainTextStyle="text-align-start textF18 FontL lineheight160"
+              />
+            </div>
+            {/* Drug Adherence */}
+            <div className="contents-top-padding"></div>
+            <div className="pt-64" id="drugadherence" ref={refs.current[4]}>
+              <CommonCardTitle title={"DRUG ADHERENCE"} />
+              <CommonCardFrame
+                imageSrc={research_3}
+                imageAlt="research_drug_adherence"
+                content1={
+                  "In breast cancer patients, hormone therapy is an important treatment that can prevent recurrence. However, drug adherence is poor because it needs to be taken for a long time and many adverse events occur. We research that can improve the drug adherence of hormone therapy in breast cancer patients by analyzing various factors that affect drug adherence​."
+                }
+                contentPadding="ptb-24"
+                flexStyle="flex-col gap-68"
+                mainTextStyle="text-align-start textF18 FontL lineheight160"
+              />
+            </div>
+            {/* AI algorithms */}
+            <div className="contents-top-padding"></div>
+            <div className="pt-64" id="aialgorithms" ref={refs.current[5]}>
+              <CommonCardTitle title={"AI ALGORITHMS"} />
+              <CommonCardFrame
+                imageSrc={research_4}
+                imageAlt="research_aialgorithms"
+                content1={
+                  "Through the development of AI algorithms, medical staff can provide medical services to patients more accurately and quickly. We are collecting ostomy photos containing status information using our digital platform. We research an algorithm that automatically determines the condition of the ostomy by learning it through artificial intelligence."
+                }
+                contentPadding="ptb-24"
+                flexStyle="flex-col gap-68"
+                mainTextStyle="text-align-start textF18 FontL lineheight160"
+              />
+            </div>
 
-              <div className="contents-top-padding"></div>
-              <div className="pt-64" id="drugadverseevents" ref={refs.current[6]}>
-                <CommonCardTitle title={"DRUG ADVERSE EVENTS"} />
-                <CommonCardFrame
-                  imageSrc={drugadverseevents}
-                  imageAlt="SODA"
-                  content1="Platform that can be immediately reported as a national
-                  drug adverse event reporting system when drug adverse
-                  events occur. This work was supported by the Bio Industry
-                  Technology"
-                  content2="Development Program(No. 20015086) By the Ministry of
-                  Trade, Industry & Energy(MOTIE, Korea)."
-                  subText1="SMART REPORT SYSTEM FOR DRUG ADVERSE EVENTS"
-                  subText2="SODA"
-                  subText1Style="FontB mb-4"
-                  subText2Style="textF24 FontEB mb-8"
-                  contentPadding="drugadverse-padding"
-                  mainTextStyle="text-align-start textF18 FontL lineheight160"
-                />
-              </div>
+            <div className="contents-top-padding"></div>
+            <div className="pt-64" id="drugadverseevents" ref={refs.current[6]}>
+              <CommonCardTitle title={"DRUG ADVERSE EVENTS"} />
+              <CommonCardFrame
+                imageSrc={drugadverseevents}
+                imageAlt="SODA"
+                content1="Platform that can be immediately reported as a national
+                drug adverse event reporting system when drug adverse
+                events occur. This work was supported by the Bio Industry
+                Technology"
+                content2="Development Program(No. 20015086) By the Ministry of
+                Trade, Industry & Energy(MOTIE, Korea)."
+                subText1="SMART REPORT SYSTEM FOR DRUG ADVERSE EVENTS"
+                subText2="SODA"
+                subText1Style="FontB mb-4"
+                subText2Style="textF24 FontEB mb-8"
+                contentPadding="drugadverse-padding"
+                mainTextStyle="text-align-start textF18 FontL lineheight160"
+              />
             </div>
           </div>
-          <Totop />
-          <Footer />
         </div>
+        <Totop />
+        <Footer />
       </div>
-      
     </div>
   );
 }

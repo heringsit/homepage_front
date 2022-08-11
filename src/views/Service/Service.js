@@ -39,7 +39,7 @@ export default function Service({ match }) {
       <ContentsTitle title={"SERVICE"} />
 
       {/* CONTENTS */}
-      <div className="flex-col"> 
+      <div className="w-screen flex-col justify-between "> 
         <div className="contentsmargin pb-200">
           <div className="servicecontents contentspadding flex-col gap-88">
             <div> {/* Content Title */}

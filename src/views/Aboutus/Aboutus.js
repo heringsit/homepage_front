@@ -260,7 +260,7 @@ export default function Aboutus() {
       {!mTablet && (
         <TabClick visibleArray={visibleArray} isScroll={isScroll} />
       )}
-      <div className="flex-col">
+      <div className="flex-col justify-between">
         <div className="flex-col gap-48">
           <div id="whoweare" ref={refs.current[0]}>
             <Whoweare />
