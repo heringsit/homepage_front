@@ -6,6 +6,10 @@
   pb# -> content bottom padding + #px
 
 */
+/* padding */
+.p-20 {
+  padding: 20px;
+}
 /* ps-# - padding side */
 .ps-36 {
   padding-left: 36px;
@@ -312,8 +316,14 @@
 .w-full {
   width: 100%;
 }
+.w-40 {
+  width: 40%;
+}
 .w-80 {
   width: 80%;
+}
+.w-95 {
+  width: 95%;
 }
 .w-screen {
   width: 100vw;
@@ -323,6 +333,12 @@
 }
 .w-screen {
   height: 100vh;
+}
+.out-none {
+  outline: none;
+}
+.overflow-auto {
+  overflow: auto;
 }
 
 /* background color */

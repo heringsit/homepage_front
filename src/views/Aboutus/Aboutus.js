@@ -105,7 +105,6 @@ export default function Aboutus() {
     }
     return setWatchToday(true);
   };
-  // 이 모달은 어디에 쓰이는지 모르겠음
   const openInitialNotice = () => {
     return (
       <Modal

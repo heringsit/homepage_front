@@ -3,6 +3,7 @@ import Modal from "@material-ui/core/Modal";
 import Fade from "@material-ui/core/Fade";
 import { Backdrop } from "@material-ui/core";
 import iconClose from "../../assets/images/02about_herings_team/window-close.svg";
+import "./modal.css"
 
 export function AboutUsModal(props) {
     // open, handleClose, modalObj 
