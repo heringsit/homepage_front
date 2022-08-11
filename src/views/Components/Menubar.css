@@ -150,6 +150,9 @@
 .menuText:hover {
   color: #e78510;
 }
+.menuTextActive {
+  color: #e78510;
+}
 
 .mobilemenusactive {
   color: #e78510;

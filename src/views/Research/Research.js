@@ -71,10 +71,12 @@ export default function Research() {
       )}
       
         <ContentsTitle matches={sTablet} title={"RESEARCH"} />
-      <div className="w-screen flex-col justify-between ">  
+      {/* content + footer flex */}
+      <div className="flex-col justify-between ">  
+        {/* content container */}
         <div className="pb-200 contentsmargin">
           <div className="contents contentspadding">
-            {/* Nutrition in Cancer Care */}
+            {/* Nutrition */}
             <div className="pt-64" id="nutrition" ref={refs.current[0]}>
               <CommonCardTitle title={"NUTRITION"} fontSize={"textF28"} />
               <CommonCardFrame

@@ -226,17 +226,24 @@ export default function Menubar(props) {
 
           {/* GNB 대메뉴 */}
           <div className="menusAfterLogo">
+          {pathname=== "/service/" ? console.log("imhere") : null}
             {MENU.title.map((menu, idx) => (
               <div className="menudiv" key={idx}>
                 <Link smooth="true" to={MENU.link[idx]} onClick={menuclick}>
                   <span
                     className={`menuText textF18 FontR ${
-                      props.slideIndex === 0
-                        ? theme === "light"
+                    //   props.slideIndex === 0 && pathname !== MENU.linkpath[idx]
+                    //     ? theme === "light"
+                    //       ? "tcb"
+                    //       : "tcw"
+                    //     : "tcb"
+                    // } ${isMActive && "tcb"} ${
+                      pathname === MENU.linkpath[idx]
+                        ? "menuTextActive"
+                        : theme === "light"
                           ? "tcb"
                           : "tcw"
-                        : "tcb"
-                    } ${isMActive && "tcb"}`}
+                    }`}
                   >
                     {menu}
                   </span>

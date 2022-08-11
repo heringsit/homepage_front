@@ -10,6 +10,14 @@ export const MENU = {
     `${imsi}/news/#news`,
     `${imsi}/contactus/#contactus`,
   ],
+  linkpath: [
+    `/aboutus/`,
+    `/service/`,
+    `/research/`,
+    `/cts/`,
+    `/news/`,
+    `/contactus/`,
+  ],
   smallMenu: [
     {
       title: ["WHO WE ARE", "HERINGS TEAM", "PARTNERS & INVESTORS"],

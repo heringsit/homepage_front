@@ -55,7 +55,7 @@ export default function Cts() {
 
       <div >
         <ContentsTitle matches={matches} title={"CLINICAL TRIAL SERVICE"} />
-        <div className="w-screen flex-col justify-between ">
+        <div className="flex-col justify-between ">
           <div className="pb-200 contentsmargin">
             <div className="contents contentspadding">
               <div className="pt-64 pb-56">

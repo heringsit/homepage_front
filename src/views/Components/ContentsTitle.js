@@ -6,8 +6,8 @@ document.documentElement.setAttribute("data-agent", navigator.userAgent);
 export default function ContentsTitle(props) {
   let path = useLocation().pathname;
   const { theme } = useContext(ThemeContext);
-  const { mDesktop, mTablet } = useContext(MediaQueryContext);
-  console.log(props)
+  const { mTablet } = useContext(MediaQueryContext);
+  // console.log(props)
   return (
     <>
       {path === "/aboutus/" ? (
