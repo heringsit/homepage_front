@@ -114,7 +114,7 @@ export default function TeamList(props) {
                     </div>
                     <div className="heringsTeamContentText">
                       <span
-                        className={`${mobile ? "" : "FontB"} textF18 ${
+                        className={`${mobile ? "FontR" : "FontB"} textF18 ${
                           theme === "dark" ? "tcw" : "tcb"
                         }`}
                       >
