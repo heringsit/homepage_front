@@ -507,7 +507,7 @@ body {
 @media screen and (max-width: 320px) {
   /* COMMON CARD TITLE */
   .card_titleDiv span {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
   }
 }

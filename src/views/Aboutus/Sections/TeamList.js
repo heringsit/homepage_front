@@ -104,6 +104,7 @@ export default function TeamList(props) {
                     }}
                   >
                     <hr />
+                    <div className={`${mobile ? "pt-20" : "pt-48"}`}></div>
                     <div className="align-items-center justify-center flex w-full">
                       <img
                         className="listImg"
@@ -120,9 +121,7 @@ export default function TeamList(props) {
                         {team.name}
                       </span>
                       {idx === 0 && (
-
                         <span className="tco textF16">{team.jobs}</span>
-
                       )}
                     </div>
                   </div>

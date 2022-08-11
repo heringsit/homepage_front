@@ -85,7 +85,6 @@
   max-height: 100%;
 }
 
-
 /*  SERVICE => 1024 < Screen < 1260 */
 @media screen and (max-width: 1260px) {
 }
@@ -122,8 +121,18 @@
 @media (min-width: 320px) and (max-width: 600px) {
   .flatformnum {
     margin: 0 5px 0 0;
-    padding: 5px 10px;
-    width: 30%;
+    /* padding: 5px 10px; */
+    /* padding: 7px 12px; */
+    width: 50%;
+  }
+  .flatformtitle {
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: left;
+    gap: 16px;
+  }
+  .flatformtitle > span {
+    text-align: left;
   }
   .contentspadding {
     padding-left: 12px;
@@ -135,7 +144,12 @@
   }
 }
 @media screen and (max-width: 320px) {
-
+  /* .flatformtitle {
+    justify-content: space-between;
+  } */
+  .flatformtitle > span {
+    text-align: left;
+  }
 }
 /* .platformContentBackLine {
   background-color: #f8f8f8;

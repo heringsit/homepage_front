@@ -42,7 +42,7 @@ export default function Whoweare() {
         </div>
         <div className="whoweareContentsWrap">
           <div
-            className={`${mobile ? "pt-30" : mTablet ? "pt-100" : "pt-150"}`}
+            className={`${mobile ? "pt-30" : mTablet ? "pt-120" : "pt-150"}`}
           />
           <span className="we FontB tcw textF20">We</span>
           {splits.border.map((split, idx) => (

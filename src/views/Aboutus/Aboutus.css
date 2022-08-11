@@ -217,7 +217,7 @@
 /* 320px < screen <= 600px */
 @media screen and (max-width: 600px) {
   .whoweareContentsWrap {
-    padding-top: 10px;
+    margin-bottom: 50px;
   }
   /* HEARINGS TEAM */
   .TeamListWrap {
@@ -259,7 +259,7 @@
     margin: auto;
   }
   .whoweareContentsWrap {
-    margin-bottom: 48px;
+    margin-bottom: 20px;
     white-space: pre-wrap;
   }
   /* HERINGS TEAM */

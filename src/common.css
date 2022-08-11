@@ -250,6 +250,9 @@
 .gap-4 {
   gap: 4px;
 }
+.gap-10 {
+  gap: 10px;
+}
 
 /* Line Alignment */
 .text-align-start {
@@ -264,6 +267,7 @@
 .align-items-center {
   align-items: center;
 }
+
 .align-items-stretch {
   align-items: stretch;
 }
@@ -279,7 +283,9 @@
 .justify-around {
   justify-content: space-around;
 }
-
+.justify-left {
+  justify-content: left;
+}
 .lineheight160 {
   line-height: 160%;
 }
@@ -325,6 +331,11 @@
 .w-95 {
   width: 95%;
 }
+.w-100px {
+  width: 100px;
+  min-width: 100px;
+  max-width: 100px;
+}
 .w-screen {
   width: calc(100vw);
   height: calc(100vh);
@@ -368,8 +379,19 @@
   #heringsteam .textF18 {
     font-size: 16px;
   }
+
   #heringsteam .textF16 {
     font-size: 14px;
+  }
+  /*service*/
+  #service .textF28 {
+    font-size: 28px;
+  }
+  #service .textF24 {
+    font-size: 24px;
+  }
+  #service .textF18 {
+    font-size: 18px;
   }
   /*Research*/
   #research .textF28 {
@@ -409,6 +431,16 @@
   }
   #heringsteam .textF16 {
     font-size: 12px;
+  }
+  /*service*/
+  #service .textF28 {
+    font-size: 28px;
+  }
+  #service .textF24 {
+    font-size: 24px;
+  }
+  #service .textF18 {
+    font-size: 18px;
   }
   /*Research*/
   #research .textF28 {
@@ -471,6 +503,16 @@
   #heringsteam .textF16 {
     font-size: 12px;
   }
+  /*service*/
+  #service .textF28 {
+    font-size: 28px;
+  }
+  #service .textF24 {
+    font-size: 24px;
+  }
+  #service .textF18 {
+    font-size: 18px;
+  }
   /*Research*/
   #research .textF28 {
     font-size: 28px;
@@ -497,22 +539,47 @@
 @media screen and (max-width: 600px) {
   /* Font-Size
   */
+  #aboutus .textF18 {
+    font-size: 15px;
+  }
+  #aboutus .textF16 {
+    font-size: 14px;
+  }
+  /*service*/
+  #service .textF28 {
+    font-size: 20px;
+  }
+  #service .textF24 {
+    font-size: 18px;
+  }
+  #service .textF18 {
+    font-size: 16px;
+  }
   /*Research*/
+  #research .textF28 {
+    font-size: 24px;
+  }
   #research .textF24 {
-    font-size: 22px;
+    font-size: 18px;
   }
   #research .textF18 {
     font-size: 16px;
   }
   /*CTS*/
   #cts .textF28 {
-    font-size: 26px;
+    font-size: 24px;
   }
   #cts .textF24 {
-    font-size: 22px;
+    font-size: 18px;
   }
   #cts .textF18 {
     font-size: 16px;
+  }
+  #aboutusmodal .textF22 {
+    font-size: 18px;
+  }
+  #aboutusmodal .textF16 {
+    font-size: 14px;
   }
   .mobileMenuWrapDiv .textF22 {
     font-size: 18px;
@@ -531,12 +598,15 @@
     font-size: 16px;
   }
   #aboutus .textF24 {
-    font-size: 14px;
+    font-size: 15px;
   }
   #aboutus .textF20 {
     font-size: 12px;
   }
   #aboutus .textF18 {
+    font-size: 13px;
+  }
+  #aboutus .textF16 {
     font-size: 12px;
   }
   #aboutusmodal .textF22 {
@@ -545,8 +615,20 @@
   #aboutusmodal .textF16 {
     font-size: 12px;
   }
+  #research .textF28 {
+    font-size: 20px;
+  }
+  #research .textF24 {
+    font-size: 18px;
+  }
+  #research .textF18 {
+    font-size: 14px;
+  }
   #cts .textF28 {
-    font-size: 22px;
+    font-size: 20px;
+  }
+  #cts .textF24 {
+    font-size: 18px;
   }
   #cts .textF18 {
     font-size: 14px;
@@ -560,6 +642,9 @@
   .banner_container .textF53 {
     font-size: 32px;
   }
+  /* #service .textF16 {
+    font-size: 12px;
+  } */
 }
 .textF70 {
   font-size: 70px;
