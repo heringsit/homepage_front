@@ -20,7 +20,7 @@ export default function Totop() {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
     >
-      <div className="bottom-totop-div ">
+      <div className="bottom-totop-div">
         <img src={topIcon} alt="top" />
       </div>
     </div>

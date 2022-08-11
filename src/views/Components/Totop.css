@@ -19,3 +19,15 @@
   align-items: center;
   justify-content: center;
 }
+/* screen <= 320px */
+@media screen and (max-width: 320px) {
+  .bottom-totop  {
+    width: 60px;
+    height: 60px;
+    right: 20px;
+  }
+  .bottom-totop-div > img {
+    width: 60px;
+    height: 60px;
+  }
+}
