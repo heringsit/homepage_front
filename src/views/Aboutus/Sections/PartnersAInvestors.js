@@ -20,7 +20,7 @@ import CommonCardTitle from "../../common/CommonCardTitle";
 export default function PartnersAInvestors(props) {
   const { mobile } = useContext(MediaQueryContext);
   return (
-    <div className={`aboutuscontents ${mobile ? "pb-400" : "pb-300"}`}>
+    <div className={`aboutuscontents`}>
       {!props.matches && <CommonCardTitle title={"PARTNERS & INVESTORS"} />}
       <div className="SectionDivTailContent">
         <div className="researchWrap">

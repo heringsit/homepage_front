@@ -8,15 +8,15 @@ function Footer() {
   const { mobile } = useContext(MediaQueryContext);
   return (
     <footer className="footer">
-      <div className="footerRowa">
+      <div className="footerRowa  ">
         <NavLink className="FontL textF12" to="/#NULL">
           Privacy Policy
         </NavLink>
-        <span className="slash">/</span>
+        <span className="slash FontL textF12">/</span>
         <NavLink className="FontL textF12" to="/aboutus/#heringsteam">
           Terms And Conditions
         </NavLink>
-        <span className="slash">/</span>
+        <span className="slash FontL textF12">/</span> 
         <NavLink className="FontL textF12" to="/contactus">
           Contact us
         </NavLink>
@@ -44,13 +44,6 @@ function Footer() {
           Copyright © {new Date().getFullYear()} HERINGS. All rights reserved.
         </div>
       </div>
-      {mobile && (
-        <div
-          style={{
-            height: "86px",
-          }}
-        ></div>
-      )}
     </footer>
   );
 }

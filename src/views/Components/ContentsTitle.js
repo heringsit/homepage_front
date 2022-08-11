@@ -8,7 +8,6 @@ export default function ContentsTitle(props) {
   const { theme } = useContext(ThemeContext);
   const { mDesktop, mTablet } = useContext(MediaQueryContext);
   console.log(props)
-
   return (
     <>
       {path === "/aboutus/" ? (
@@ -37,7 +36,7 @@ export default function ContentsTitle(props) {
             <div className="textF53 FontR tcw title_center">{props.title}</div>
           </div>
         </div>
-      ) : path === "/crs/" ? (
+      ) : path === "/cts/" ? (
         <div className={`position-relative banner_container ${mTablet && "banner_margin"}`}>
           <div className="banner_gradient"></div>
           <div className="banner_default banner_img">
@@ -50,7 +49,7 @@ export default function ContentsTitle(props) {
           <div className="position-relative banner_container " >
             {theme === "dark" ? <div className="banner_gradient"></div> : null}
             <div className="banner_default banner_img banner">
-              <div className="textF53 FontR tcb title_center">{props.title}</div>
+              <div className={`textF53 FontR ${theme==="dark" ? "tcw" : "tcb"} title_center`}>{props.title}</div>
             </div>
           </div>
         </>

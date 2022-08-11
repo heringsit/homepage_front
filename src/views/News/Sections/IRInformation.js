@@ -12,6 +12,7 @@ import { saveAs } from "file-saver";
 import { imsi } from "../../..";
 import search from "../../../assets/images/etc/search.png";
 import downLoad from "../../../assets/images/etc/download.png";
+import CommonCardTitle from "../../common/CommonCardTitle";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -205,14 +206,16 @@ export default function NewsRelease() {
   };
   useEffect(getdata, []);
   return (
-    <div id="content" className="content">
+    <div>  {/*id="content" className="content">*/}
       <div className="SectionDivNews" id="irinformation">
-        <div className="SectionDivNT ">
+        {/* <div className="SectionDivNT ">
           <div className="titleDiv">
               <span className="textT22 FontEB">IR Information</span>
             <hr></hr>
           </div>
-        </div>
+        </div> */}
+        <CommonCardTitle title={"IR Information"} fontStyle={"FontEB"} fontSize={"textF22"} />
+
         <div className="newsContainList">
           <div className="newsContainListHeader FontNL">
             <div className="newsContainListHeaderCol ncol1 textF16 korFonts">

@@ -7,7 +7,7 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Aboutus from "./views/Aboutus/Aboutus";
 import Service from "./views/Service/Service";
 import Research from "./views/Research/Research";
-import Crs from "./views/CRS/Crs";
+import Cts from "./views/CTS/Cts";
 // import Career from "./views/Contactus/Career"; // 경로 수정
 import News from "./views/News/News";
 import Contactus from "./views/Contactus/Contactus";
@@ -53,7 +53,7 @@ const App = () => {
             <Route path={`/service/:submenu`} component={Service} />
             <Route path={`/service`} component={Service} />
             <Route path={`/research`} component={Research} />
-            <Route path={`/crs`} component={Crs} />
+            <Route path={`/cts`} component={Cts} />
             {/* Career */}
             <Route path={`/contactus/:submenu`} component={Contactus} />
             <Route path={`/contactus`} component={Contactus} />

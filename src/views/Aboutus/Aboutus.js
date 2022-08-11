@@ -254,26 +254,28 @@ export default function Aboutus() {
       className="position-relative"
     >
       <Menubar slideIndex={slideIndex} />
-      <Totop />
+      
       {/* {openerModalNoti()} */}
       {modalObj && openInitialNotice()}
-      <div>
-        <div id="whoweare"></div>
-        {!mTablet && (
-          <TabClick visibleArray={visibleArray} isScroll={isScroll} />
-        )}
+      {!mTablet && (
+        <TabClick visibleArray={visibleArray} isScroll={isScroll} />
+      )}
+      <div className="flex-col">
+        <div className="flex-col gap-48">
+          <div id="whoweare" ref={refs.current[0]}>
+            <Whoweare />
+          </div>
+          <div id="heringsteam" ref={refs.current[1]}>
+            <TeamList handleOpen={handleOpen} />
+          </div>
+          <div id="researchpartners" ref={refs.current[2]}>
+            <PAI />
+          </div>
 
-        <div className="pb-48" ref={refs.current[0]}>
-          <Whoweare />
+          {/* <QM matches={matches} /> */}
+          
         </div>
-        <div id="heringsteam" ref={refs.current[1]}>
-          <TeamList handleOpen={handleOpen} />
-        </div>
-        <div id="researchpartners" ref={refs.current[2]}>
-          <PAI />
-        </div>
-
-        {/* <QM matches={matches} /> */}
+        <Totop />
         <Footer />
       </div>
       <AboutUsModal open={open} handleClose={handleClose} modalObj={modalObj} />

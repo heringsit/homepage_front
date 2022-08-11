@@ -26,8 +26,8 @@ export default function Menubar(props) {
   const { theme, changeTheme } = useContext(ThemeContext);
   // const [mode, setMode] = useState(theme);
   const scrollOffset = (mTablet 
-    ? [-0, -(84+40), -84, -84, 0, 0] // screen < 768px
-    : [-(84+60), -(84+40), -184, -184, 0, 0]) // screen > 768px
+    ? [-84, -(84+40), -84, -84, 0, 0] // screen < 768px
+    : [-(84+100), -(84+40), -184, -184, 0, 0]) // screen > 768px
   // console.log(pathname === "/", ">pathname");
 
   const changeMode = () => changeTheme(theme === "light" ? "dark" : "light");
@@ -40,6 +40,7 @@ export default function Menubar(props) {
   const menuclick = (e, key) => {
     setIsMActive(!isMActive);
     setMobileSelected(null);
+    setIsOver(false);
   };
 
   const onScroll = () => {

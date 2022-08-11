@@ -155,16 +155,20 @@ export default function News({ match }) {
       }}
     >
       <Menubar slideIndex={slideIndex} />
-      <Totop />
       
-      <div id="news">
-        <ContentsTitle title={"News & IR"} />
-        {/* <ContentsTitle matches={sTablet} title={"NEWS & IR"} /> */}
-        {/* 배너 */}
-        <NewsRelease matches={sTablet} />
-        <IRInformation matches={sTablet} />
+      
+      <div id="news" className="w-screen flex-col justify-between">
+        <div className="pb-200">
+          <ContentsTitle title={"News & IR"} />
+          {/* <ContentsTitle matches={sTablet} title={"NEWS & IR"} /> */}
+          {/* 배너 */}
+          <NewsRelease matches={sTablet} />
+          <IRInformation matches={sTablet} />
+        </div>
+        <Totop />
         <Footer />
       </div>
+      
     </div>
   );
 }

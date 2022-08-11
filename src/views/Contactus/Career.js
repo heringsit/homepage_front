@@ -299,7 +299,7 @@ export default function Career({ match }) {
   useEffect(getdata, []);
   console.log("listData::", listData);
   return (
-    <div id="content" className="content">
+    <div>  {/*id="content" className="content">*/}
       {/* <Menubar slideIndex={0} />
       <Totop /> */}
       <div id="cotactus">

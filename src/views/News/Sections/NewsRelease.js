@@ -12,6 +12,7 @@ import { ReactComponent as IconClose } from "../../../assets/images/05career/clo
 import { saveAs } from "file-saver";
 import { imsi } from "../../..";
 import search from "../../../assets/images/etc/search.png";
+import CommonCardTitle from "../../common/CommonCardTitle";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -225,20 +226,22 @@ export default function NewsRelease({ match }) {
   };
   useEffect(getdata, []);
   return (
-    <div id="content" className="content">
+     <div>  {/*id="content" className="content">*/}
       <div className="SectionDivNews" id="newsrelease">
-        <div className="SectionDivNT ">
+        <CommonCardTitle title={"News Release"} fontStyle={"FontEB"} fontSize={"textF22"} />
+        
+        {/* <div className="SectionDivNT ">
           <div className="titleDiv">
             <span className="textT22 FontEB">News Release</span>
             <hr></hr>
           </div>
-        </div>
+        </div> */}
         <div className="newsContainList">
           <div className="newsContainListHeader FontNL">
-            <div className="newsContainListHeaderCol ncol1 textF16 korFonts">
+            <div className="newsContainListHeaderCol ncol1 textF16 FontNL">
               제목
             </div>
-            <div className="newsContainListHeaderCol ncol2 textF16 korFonts">
+            <div className="newsContainListHeaderCol ncol2 textF16 FontNL">
               등록일
             </div>
           </div>

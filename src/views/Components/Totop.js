@@ -16,7 +16,7 @@ export default function Totop() {
   return (
     <div
       className={`bottom-totop`}
-      style={{ display: scrolled ? "block" : "none" }}
+      style={{ display: scrolled ? "block" : "none"}}
       onClick={() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}

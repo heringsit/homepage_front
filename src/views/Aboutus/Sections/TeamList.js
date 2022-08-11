@@ -121,7 +121,7 @@ export default function TeamList(props) {
                       {idx === 0 && (
                         <div>
                           <br />
-                          <span className="tco textF16">{team.jobs}</span>
+                          <span className="FontR tco textF16">{team.jobs}</span>
                         </div>
                       )}
                       {/* <div>

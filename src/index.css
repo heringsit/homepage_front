@@ -181,9 +181,10 @@ html {
 .FontB {
   font-family: "Roboto500", sans-serif;
 }
-/* .FontLB {
-  font-family: "Roboto600", sans-serif;
-} */
+.FontCB { /* Custom Font */
+  font-family: "Roboto400", sans-serif;
+  font-weight: 600;
+}
 .FontEB {
   font-family: "Roboto700", sans-serif;
 }
@@ -385,6 +386,7 @@ body {
 .tabATagTab {
   width: 100%; /* width: 80%; */
   display: flex;
+  margin-top: 1px; /* height 99px + 1px margin-top */
   align-items: center;
   justify-content: center;
   text-decoration: none;
@@ -409,11 +411,6 @@ body {
   align-items: center;
   text-align: center;
   color: #a0a0a0;
-}
-.TABS_layout > .TABS_tab > a:not(:first-child) {
-  height: 24px;
-  margin: auto;
-  border-left: 1px solid #e1e1e1;
 }
 .TABS_sticky {
   position: -webkit-sticky;
@@ -440,6 +437,10 @@ body {
   left: 1px;
   margin: auto;
 }
+.separator {
+  height: 24px;
+  width: 1px;
+}
 
 /*card 공통*/
 /* COMMON CARD TITLE */
@@ -451,9 +452,10 @@ body {
   align-content: center;
   text-align: center;
 }
-.card_titleDiv span {
+.card_default_font {
   font-size: 28px;
 }
+
 .card_titleDiv_padding_b {
   padding-bottom: 16px;
 }
@@ -542,8 +544,8 @@ body {
   background-size: cover;
   background-position: center;
 }
-#crs .banner_img {
-  background: url("../src/assets/images/08crs/crs_banner.png");
+#cts .banner_img {
+  background: url("../src/assets/images/08cts/cts_banner.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -624,10 +626,10 @@ body {
     width: 70%;
     text-align: center;
   }
-  #crs .textF53 {
+  #cts .textF53 {
     font-size: 22px;
   }
-  #crs .textF28 {
+  #cts .textF28 {
     font-size: 10px;
   }
   .card_titleDiv_padding_b {
@@ -665,9 +667,9 @@ body {
   } */
 
   /* COMMON CARD TITLE */
-  .card_titleDiv span {
+  .card_default_font {
     font-size: 14px;
-    font-weight: 600;
+    /* font-weight: 600; */
   }
 }
 @media screen and (max-width: 700px) {
@@ -714,7 +716,7 @@ body {
 
 @media screen and (min-width: 600px) and (max-width: 768px) {
   /* COMMON CARD TITLE */
-  .card_titleDiv span {
+  .card_default_font {
     font-size: 24px;
   }
   .TABS_layout_padding {
