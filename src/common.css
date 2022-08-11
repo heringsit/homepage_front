@@ -332,6 +332,9 @@
   #heringsteam .textF18 {
     font-size: 16px;
   }
+  #heringsteam .textF16 {
+    font-size: 14px;
+  }
   /*Research*/
   #research .textF28 {
     font-size: 28px;
@@ -364,6 +367,12 @@
   }
   #aboutus .textF20 {
     font-size: 18px;
+  }
+  #heringsteam .textF18 {
+    font-size: 14px;
+  }
+  #heringsteam .textF16 {
+    font-size: 12px;
   }
   /*Research*/
   #research .textF28 {
@@ -411,10 +420,19 @@
   #aboutus .textF32 {
     font-size: 24px;
   }
+  #aboutus .textF24 {
+    font-size: 20px;
+  }
   #aboutus .textF18 {
     font-size: 14px;
   }
   #aboutus .textF16 {
+    font-size: 12px;
+  }
+  #heringsteam .textF18 {
+    font-size: 13px;
+  }
+  #heringsteam .textF16 {
     font-size: 12px;
   }
   /*Research*/

@@ -87,7 +87,8 @@
   word-break: keep-all;
   outline: none;
   width: 92%;
-  height: 370px;
+  height: max-content;
+  min-height: 370px;
   cursor: pointer;
   background-color: #fff;
   border-radius: 25px;
@@ -171,7 +172,8 @@
     margin: calc(2vh) 0;
   }
   .heringsTeamWrap {
-    height: 300px;
+    height: max-content;
+    min-height: 300px;
   }
 }
 /* 768 < screen <= 1024 */
@@ -210,7 +212,8 @@
     padding: 14px 5px;
   }
   .heringsTeamWrap {
-    height: 250px;
+    height: max-content;
+    min-height: 200px;
   }
 }
 /* 320px < screen <= 600px */
