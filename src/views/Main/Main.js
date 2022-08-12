@@ -5,9 +5,9 @@ import Totop from "../Components/Totop";
 import "./Main.css"; 
 import "../../index.css";
 import mainimage from "../../assets/images/mainimage.png";
-// import project1_7 from "../../assets/videos/project1_7.mp4";
+import project1_7 from "../../assets/videos/project1_7.mp4";
 import { MediaQueryContext } from "../../context";
-import project1_7 from "../../assets/videos/homepage_background.mp4";
+// import project1_7 from "../../assets/videos/homepage_background.mp4";
 export default function Main() {
   const { mTablet } = useContext(MediaQueryContext);
   return (
@@ -54,21 +54,28 @@ export default function Main() {
             </div>
           </div>
         ) : (
-          
-          <video
-            className="w-full"//mainvideo"
-            controls//={false}
-            muted={true}
-            loop//={true}
-            autoPlay//={true}
-            playsInline
-            // src={project1_7}
-            // alt="project1_7"
-            // type="video/mp4"
-          >
-            <source src={project1_7} type="video/mp4" />
-            Your Browser does not support the video tag.
-          </video>
+          <img
+              src={mainimage}
+              alt="mainvideo"
+              style={{
+                width: "100%",
+                height: "100%",
+              }}
+            />
+          // <video
+          //   className="mainvideo"
+          //   controls//={false}
+          //   muted={true}
+          //   loop//={true}
+          //   autoPlay//={true}
+          //   playsInline
+          //   // src={project1_7}
+          //   // alt="project1_7"
+          //   // type="video/mp4"
+          // >
+          //   <source src={project1_7} type="video/mp4" />
+          //   Your Browser does not support the video tag.
+          // </video>
           
         )}
       </div>

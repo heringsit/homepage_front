@@ -190,13 +190,15 @@ export default function Menubar(props) {
     return (
       <div
         className={`menuWrapDiv position-fixed w-full flex-col ${
-          isOver && "menuWrapOver"
-        } ${
-          theme === "dark" ? "menuBorderBottomDark" : "menuBorderBottomLight"
+          pathname !== "/"  
+            ? theme === "dark" ? "menuBorderBottomDark" : "menuBorderBottomLight"
+            : ""
         }`}
         style={{
-          backgroundColor: theme === "dark" ? "#282828" : "#ffffff",
-          color: theme === "dark" && "white",
+          backgroundColor: pathname === "/" 
+                            ? "transparent"
+                            : theme === "dark" ? "#282828" : "#ffffff",
+          color: theme === "dark" && "#ffffff",
         }}
         onMouseEnter={menuover}
         onMouseLeave={menuout}
