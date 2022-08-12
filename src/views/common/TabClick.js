@@ -29,7 +29,9 @@ export default function TabClick({ visibleArray }) {
     "aialgorithms",
     "drugadverseevents",
   ];
-  const privacytabs = ["healiary", "ostomy"];
+  const newsir = ["newsrelease", "irinformation"];
+  const contactus = ["career", "contact"];
+  const privacypolicies = ["healiary", "ostomy"];
   const scrollWithOffset = (el, yOffset = -(84 + 100)) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
     window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
@@ -43,197 +45,272 @@ export default function TabClick({ visibleArray }) {
       <div className="sticky_padding" />
       <div
         className={
-          "TABS_layout " +
+          "TABS_layout TABS_layout_padding " +
           (theme === "dark" ? "menuBorderBottomDark" : "menuBorderBottomLight")
         }
       >
-        {pathname === "/aboutus/" ? (
-          aboutustabs.map((tab, index) => (
-            <React.Fragment key={index}>
-              <div className="TABS_tab FontR textF16">
-                <Link
-                  smooth
-                  to={`#${tab}`}
-                  scroll={scrollWithOffset}
-                  className={
-                    index === visibleIndex
-                      ? "w-full h-full tagADefault tabATagTab FontEB"
-                      : "w-full h-full tagADefault FontR " +
-                        (theme === "dark" ? "tcw" : "tcg3")
-                  }
-                >
-                  {tab === "whoweare"
-                    ? "Who We Are"
-                    : tab === "heringsteam"
-                    ? "HERINGS Team"
-                    : tab === "researchpartners"
-                    ? "Partners & Investors"
-                    : ""}
-                </Link>
-              </div>
-              {index + 1 === aboutustabs.length ? null : (
-                <div style={{ margin: "auto" }}>
-                  <div
-                    className="separator"
-                    style={{
-                      backgroundColor: theme === "dark" ? "#5F5F5F" : "#E1E1E1",
-                    }}
-                  />
+        {pathname === "/aboutus/"
+          ? aboutustabs.map((tab, index) => (
+              <React.Fragment key={index}>
+                <div className={"TABS_tab FontR textF16"}>
+                  <Link
+                    smooth
+                    to={`#${tab}`}
+                    scroll={scrollWithOffset}
+                    className={
+                      index === visibleIndex
+                        ? "w-full h-full tagADefault tabATagTab FontEB"
+                        : "w-full h-full tagADefault FontR " +
+                          (theme === "dark" ? "tcw" : "tcg3")
+                    }
+                  >
+                    {tab === "whoweare"
+                      ? "Who We Are"
+                      : tab === "heringsteam"
+                      ? "HERINGS Team"
+                      : tab === "researchpartners"
+                      ? "Partners & Investors"
+                      : ""}
+                  </Link>
                 </div>
-              )}
-            </React.Fragment>
-          ))
-        ) : pathname === "/service/" ? (
-          servicetabs.map((tab, index) => (
-            <React.Fragment key={index}>
-              <div className="TABS_tab FontR textF16">
-                <Link
-                  smooth
-                  to={`#${tab}`}
-                  scroll={(el) => scrollWithOffset(el, mDesktop ? -149 : -220)}
-                  className={
-                    index === visibleIndex
-                      ? "w-full h-full tagADefault tabATagTab FontEB"
-                      : "w-full h-full tagADefault FontR " +
-                        (theme === "dark" ? "tcw" : "tcg3")
-                  }
-                >
-                  {tab === "digitalcareservice"
-                    ? "DIGITAL HEALTHCARE SERVICE PLATFORM"
-                    : tab === "telehealthcareservice"
-                    ? "TELE-HEALTHCARE SERVICE PLATFORM"
-                    : ""}
-                </Link>
-              </div>
-              {index + 1 === servicetabs.length ? null : (
-                <div style={{ margin: "auto" }}>
-                  <div
-                    className="separator"
-                    style={{
-                      backgroundColor: theme === "dark" ? "#5F5F5F" : "#E1E1E1",
-                    }}
-                  />
+                {index + 1 === aboutustabs.length ? null : (
+                  <div style={{ margin: "auto" }}>
+                    <div
+                      className="separator"
+                      style={{
+                        backgroundColor:
+                          theme === "dark" ? "#5F5F5F" : "#E1E1E1",
+                      }}
+                    />
+                  </div>
+                )}
+              </React.Fragment>
+            ))
+          : pathname === "/service/"
+          ? servicetabs.map((tab, index) => (
+              <React.Fragment key={index}>
+                <div className="TABS_tab FontR textF16">
+                  <Link
+                    smooth
+                    to={`#${tab}`}
+                    scroll={(el) =>
+                      scrollWithOffset(el, mDesktop ? -149 : -220)
+                    }
+                    className={
+                      index === visibleIndex
+                        ? "w-full h-full tagADefault tabATagTab FontEB"
+                        : "w-full h-full tagADefault FontR " +
+                          (theme === "dark" ? "tcw" : "tcg3")
+                    }
+                  >
+                    {tab === "digitalcareservice"
+                      ? "DIGITAL HEALTHCARE SERVICE PLATFORM"
+                      : tab === "telehealthcareservice"
+                      ? "TELE-HEALTHCARE SERVICE PLATFORM"
+                      : ""}
+                  </Link>
                 </div>
-              )}
-            </React.Fragment>
-          ))
-        ) : pathname === "/cts/" ? (
-          ctstabs.map((tab, index) => (
-            <React.Fragment key={index}>
-              <div className="TABS_tab FontR textF16">
-                <Link
-                  smooth
-                  to={`#${tab}`}
-                  scroll={scrollWithOffset}
-                  className={
-                    index === visibleIndex
-                      ? "w-full h-full tagADefault tabATagTab FontEB"
-                      : "w-full h-full tagADefault FontR " +
-                        (theme === "dark" ? "tcw" : "tcg3")
-                  }
-                >
-                  {tab === "clinicaltrialdesign"
-                    ? "CLINICAL TRIAL DESIGN"
-                    : tab === "datamanagement"
-                    ? "DATA MANAGEMENT"
-                    : tab === "statisticalanalysis"
-                    ? "STATISTICAL ANALYSIS"
-                    : ""}
-                </Link>
-              </div>
-              {index + 1 === ctstabs.length ? null : (
-                <div style={{ margin: "auto" }}>
-                  <div
-                    className="separator"
-                    style={{
-                      backgroundColor: theme === "dark" ? "#5F5F5F" : "#E1E1E1",
-                    }}
-                  />
+                {index + 1 === servicetabs.length ? null : (
+                  <div style={{ margin: "auto" }}>
+                    <div
+                      className="separator"
+                      style={{
+                        backgroundColor:
+                          theme === "dark" ? "#5F5F5F" : "#E1E1E1",
+                      }}
+                    />
+                  </div>
+                )}
+              </React.Fragment>
+            ))
+          : pathname === "/cts/"
+          ? ctstabs.map((tab, index) => (
+              <React.Fragment key={index}>
+                <div className="TABS_tab FontR textF16">
+                  <Link
+                    smooth
+                    to={`#${tab}`}
+                    scroll={scrollWithOffset}
+                    className={
+                      index === visibleIndex
+                        ? "w-full h-full tagADefault tabATagTab FontEB"
+                        : "w-full h-full tagADefault FontR " +
+                          (theme === "dark" ? "tcw" : "tcg3")
+                    }
+                  >
+                    {tab === "clinicaltrialdesign"
+                      ? "CLINICAL TRIAL DESIGN"
+                      : tab === "datamanagement"
+                      ? "DATA MANAGEMENT"
+                      : tab === "statisticalanalysis"
+                      ? "STATISTICAL ANALYSIS"
+                      : ""}
+                  </Link>
                 </div>
-              )}
-            </React.Fragment>
-          )) // research tabs
-        ) : pathname === "/research/" ? (
-          researchtabs.map((tab, index) => (
-            <React.Fragment key={index}>
-              <div className="TABS_tab FontR textF16">
-                <Link
-                  smooth
-                  to={`#${tab}`}
-                  scroll={(el) => scrollWithOffset(el, mDesktop ? -149 : -184)}
-                  className={
-                    index === visibleIndex
-                      ? "w-full h-full tagADefault tabATagTab FontEB"
-                      : "w-full h-full tagADefault FontR " +
-                        (theme === "dark" ? "tcw" : "tcg3")
-                  }
-                >
-                  {tab === "nutrition"
-                    ? "NUTRITION"
-                    : tab === "symptommanagement"
-                    ? "SYMPTOM MANAGEMENT"
-                    : tab === "exercise"
-                    ? "EXERCISE"
-                    : tab === "riskprediction"
-                    ? "RISK PREDICTION"
-                    : tab === "drugadherence"
-                    ? "DRUG ADHERENCE"
-                    : tab === "aialgorithms"
-                    ? "AI ALGORITHMS"
-                    : tab === "drugadverseevents"
-                    ? "DRUG ADVERSE EVENTS"
-                    : ""}
-                </Link>
-              </div>
-              {index + 1 === researchtabs.length ? null : (
-                <div style={{ margin: "auto" }}>
-                  <div
-                    className="separator"
-                    style={{
-                      backgroundColor: theme === "dark" ? "#5F5F5F" : "#E1E1E1",
-                    }}
-                  />
+                {index + 1 === ctstabs.length ? null : (
+                  <div style={{ margin: "auto" }}>
+                    <div
+                      className="separator"
+                      style={{
+                        backgroundColor:
+                          theme === "dark" ? "#5F5F5F" : "#E1E1E1",
+                      }}
+                    />
+                  </div>
+                )}
+              </React.Fragment>
+            )) // research tabs
+          : pathname === "/research/"
+          ? researchtabs.map((tab, index) => (
+              <React.Fragment key={index}>
+                <div className="TABS_tab FontR textF16">
+                  <Link
+                    smooth
+                    to={`#${tab}`}
+                    scroll={(el) =>
+                      scrollWithOffset(el, mDesktop ? -149 : -184)
+                    }
+                    className={
+                      index === visibleIndex
+                        ? "w-full h-full tagADefault tabATagTab FontEB"
+                        : "w-full h-full tagADefault FontR " +
+                          (theme === "dark" ? "tcw" : "tcg3")
+                    }
+                  >
+                    {tab === "nutrition"
+                      ? "NUTRITION"
+                      : tab === "symptommanagement"
+                      ? "SYMPTOM MANAGEMENT"
+                      : tab === "exercise"
+                      ? "EXERCISE"
+                      : tab === "riskprediction"
+                      ? "RISK PREDICTION"
+                      : tab === "drugadherence"
+                      ? "DRUG ADHERENCE"
+                      : tab === "aialgorithms"
+                      ? "AI ALGORITHMS"
+                      : tab === "drugadverseevents"
+                      ? "DRUG ADVERSE EVENTS"
+                      : ""}
+                  </Link>
                 </div>
-              )}
-            </React.Fragment>
-          ))
-        ) : pathname === "/privacypolicy" ? (
-          privacytabs.map((tab, index) => (
-            <React.Fragment key={index}>
-              <div className="TABS_tab FontR textF16">
-                <Link
-                  smooth
-                  to={`#${tab}`}
-                  scroll={scrollWithOffset}
-                  className={
-                    index === visibleIndex
-                      ? "w-full h-full tagADefault tabATagTab FontEB"
-                      : "w-full h-full tagADefault FontR " +
-                        (theme === "dark" ? "tcw" : "tcg3")
-                  }
-                >
-                  {tab === "healiary"
-                    ? "HEALIARY"
-                    : tab === "ostomy"
-                    ? "OSTOMY"
-                    : ""}
-                </Link>
-              </div>
-              {index + 1 === privacytabs.length ? null : (
-                <div style={{ margin: "auto" }}>
-                  <div
-                    className="separator"
-                    style={{
-                      backgroundColor: theme === "dark" ? "#5F5F5F" : "#E1E1E1",
-                    }}
-                  />
+                {index + 1 === researchtabs.length ? null : (
+                  <div style={{ margin: "auto" }}>
+                    <div
+                      className="separator"
+                      style={{
+                        backgroundColor:
+                          theme === "dark" ? "#5F5F5F" : "#E1E1E1",
+                      }}
+                    />
+                  </div>
+                )}
+              </React.Fragment>
+            ))
+          : pathname === "/news/"
+          ? newsir.map((tab, index) => (
+              <React.Fragment key={index}>
+                <div className="TABS_tab FontR textF16">
+                  <Link
+                    smooth
+                    to={`#${tab}`}
+                    scroll={scrollWithOffset}
+                    className={
+                      index === visibleIndex
+                        ? "w-full h-full tagADefault tabATagTab FontEB"
+                        : "w-full h-full tagADefault FontR " +
+                          (theme === "dark" ? "tcw" : "tcg3")
+                    }
+                  >
+                    {tab === "newsrelease"
+                      ? "NEWS RELEASE"
+                      : tab === "irinformation"
+                      ? "IR INFORMATION"
+                      : ""}
+                  </Link>
                 </div>
-              )}
-            </React.Fragment>
-          ))
-        ) : (
-          <></>
-        )}
+                {index + 1 === newsir.length ? null : (
+                  <div style={{ margin: "auto" }}>
+                    <div
+                      className="separator"
+                      style={{
+                        backgroundColor:
+                          theme === "dark" ? "#5F5F5F" : "#E1E1E1",
+                      }}
+                    />
+                  </div>
+                )}
+              </React.Fragment>
+            ))
+          : pathname === "/contactus/"
+          ? contactus.map((tab, index) => (
+              <React.Fragment key={index}>
+                <div className="TABS_tab FontR textF16">
+                  <Link
+                    smooth
+                    to={`#${tab}`}
+                    scroll={scrollWithOffset}
+                    className={
+                      index === visibleIndex
+                        ? "w-full h-full tagADefault tabATagTab FontEB"
+                        : "w-full h-full tagADefault FontR " +
+                          (theme === "dark" ? "tcw" : "tcg3")
+                    }
+                  >
+                    {tab === "career"
+                      ? "HERINGS CAREERS"
+                      : tab === "contact"
+                      ? "CONTACT"
+                      : ""}
+                  </Link>
+                </div>
+                {index + 1 === contactus.length ? null : (
+                  <div style={{ margin: "auto" }}>
+                    <div
+                      className="separator"
+                      style={{
+                        backgroundColor:
+                          theme === "dark" ? "#5F5F5F" : "#E1E1E1",
+                      }}
+                    />
+                  </div>
+                )}
+              </React.Fragment>
+            ))
+          : privacypolicies.map((tab, index) => (
+              <React.Fragment key={index}>
+                <div className="TABS_tab FontR textF16">
+                  <Link
+                    smooth
+                    to={`#${tab}`}
+                    scroll={scrollWithOffset}
+                    className={
+                      index === visibleIndex
+                        ? "w-full h-full tagADefault tabATagTab FontEB"
+                        : "w-full h-full tagADefault FontR " +
+                          (theme === "dark" ? "tcw" : "tcg3")
+                    }
+                  >
+                    {tab === "career"
+                      ? "HERINGS CAREERS"
+                      : tab === "contact"
+                      ? "CONTACT"
+                      : ""}
+                  </Link>
+                </div>
+                {index + 1 === contactus.length ? null : (
+                  <div style={{ margin: "auto" }}>
+                    <div
+                      className="separator"
+                      style={{
+                        backgroundColor:
+                          theme === "dark" ? "#5F5F5F" : "#E1E1E1",
+                      }}
+                    />
+                  </div>
+                )}
+              </React.Fragment>
+            ))}
       </div>
     </div>
   );

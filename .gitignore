@@ -159,7 +159,7 @@ sketch
 
 video
 
-*.mp4
+# *.mp4
 
 ### Windows ###
 # Windows thumbnail cache files

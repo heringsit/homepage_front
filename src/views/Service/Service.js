@@ -58,7 +58,7 @@ export default function Service() {
       {!mTablet && <TabClick visibleArray={visibleArray} />}
       <ContentsTitle title="SERVICE" />
       {/* CONTENTS */}
-      <div className="w-screen flex-col justify-between">
+      <div className="flex-col justify-between">
         <div className="contentsmargin pb-200">
           <div className="servicecontents contentspadding flex-col gap-88">
             <div>

@@ -228,10 +228,10 @@ export default function NewsRelease({ match }) {
   useEffect(getdata, []);
 
   const { theme } = useContext(ThemeContext);
-
+  const fontColor = theme === "dark" ? "tcw" : "tcb";
   return (
      <div>  {/*id="content" className="content">*/}
-      <div className="SectionDivNews" id="newsrelease">
+      <div className="SectionDivNews" >
         <CommonCardTitle title={"News Release"} fontStyle={"FontEB"} fontSize={"textF22"} />
         
         {/* <div className="SectionDivNT ">
@@ -259,7 +259,7 @@ export default function NewsRelease({ match }) {
                         handleOpen(data, checkDate(data.regiDate, "E"));
                       }}
                     >
-                      <div className="textF20 tcb FontNB">{data.title}</div>
+                      <div className="textF20 fontColor FontNB">{data.title}</div>
                     </div>
                   </div>
                   <div className="newsContainListCol ncol2 textF16">

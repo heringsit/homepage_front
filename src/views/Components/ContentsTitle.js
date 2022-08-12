@@ -53,9 +53,8 @@ export default function ContentsTitle(props) {
         </div>
       ) : path === "/news/" ? (
         <>
-          <div style={{ height: "84px" }} />
           <div className="position-relative banner_container banner">
-          <div className="banner_gradient"></div>
+            <div className="banner_gradient"></div>
             <div className="banner_default banner_img">
               <div className="textF53 FontR tcw title_center">
                 {props.title}
@@ -65,9 +64,8 @@ export default function ContentsTitle(props) {
         </>
       ) : path === "/contactus/" ? (
         <>
-          <div style={{ height: "84px" }} />
           <div className="position-relative banner_container">
-          <div className="banner_gradient"></div>
+            <div className="banner_gradient"></div>
             <div className="banner_default banner_img">
               <div className="textF53 FontR tcw title_center">
                 {props.title}

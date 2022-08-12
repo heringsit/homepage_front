@@ -210,7 +210,7 @@ export default function NewsRelease() {
 
   return (
     <div>  {/*id="content" className="content">*/}
-      <div className="SectionDivNews" id="irinformation">
+      <div className="SectionDivNews" >
         {/* <div className="SectionDivNT ">
           <div className="titleDiv">
               <span className="textT22 FontEB">IR Information</span>
@@ -241,7 +241,7 @@ export default function NewsRelease() {
                         handleOpen(data, checkDate(data.regiDate, "E"));
                       }}
                     >
-                      <div className="textF20 tcb FontNB">{data.title}</div>
+                      <div className="textF20 fontColor FontNB">{data.title}</div>
                     </div>
                   </div>
                   <div className="newsContainListCol ncol2 textF16">
