@@ -352,7 +352,7 @@ body {
   height: 100px;
 }
 .TABS_tab {
-  width: 33.333%;
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
