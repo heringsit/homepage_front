@@ -14,6 +14,7 @@ export default function TabClick({ visibleArray, isScroll }) {
   const visibleIndex =
     visibleArray?.indexOf(true) === -1 ? 0 : visibleArray?.indexOf(true);
   const aboutustabs = ["whoweare", "heringsteam", "researchpartners"];
+  const servicetabs = ["digitalcareservice", "telehealthcareservice"];
   const ctstabs = [
     "clinicaltrialdesign",
     "datamanagement",
@@ -70,6 +71,41 @@ export default function TabClick({ visibleArray, isScroll }) {
                   </Link>
                 </div>
                 {index + 1 === aboutustabs.length ? null : (
+                  <div style={{ margin: "auto" }}>
+                    <div
+                      className="separator"
+                      style={{
+                        backgroundColor:
+                          theme === "dark" ? "#5F5F5F" : "#E1E1E1",
+                      }}
+                    />
+                  </div>
+                )}
+              </React.Fragment>
+            ))
+          : pathname === "/service/"
+          ? servicetabs.map((tab, index) => (
+              <React.Fragment key={index}>
+                <div className="TABS_tab FontR textF16">
+                  <Link
+                    smooth
+                    to={`#${tab}`}
+                    scroll={scrollWithOffset}
+                    className={
+                      index === visibleIndex
+                        ? "w-full h-full tagADefault tabATagTab FontEB"
+                        : "w-full h-full tagADefault FontR " +
+                          (theme === "dark" ? "tcw" : "tcg3")
+                    }
+                  >
+                    {tab === "digitalcareservice"
+                      ? "DIGITAL HEALTHCARE SERVICE PLATFORM"
+                      : tab === "telehealthcareservice"
+                      ? "TELE-HEALTHCARE SERVICE PLATFORM"
+                      : ""}
+                  </Link>
+                </div>
+                {index + 1 === ctstabs.length ? null : (
                   <div style={{ margin: "auto" }}>
                     <div
                       className="separator"

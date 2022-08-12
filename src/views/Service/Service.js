@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 // import useMediaQuery from "@material-ui/core/useMediaQuery";
 import "./Service.css";
 /*component*/
@@ -12,17 +12,44 @@ import Footer from "../Components/Footer";
 // import healiary_kitchen from "../../assets/images/07service/healiary_kitchen.svg";
 import healiary_application from "../../assets/images/07service/healiary_application.svg";
 import ostomy_application from "../../assets/images/07service/ostomy_application.svg";
-import { ThemeContext } from "../../context";
+import { MediaQueryContext, ThemeContext } from "../../context";
 import CommonCardFrame from "../common/CommonCardFrame";
 import ContentsTitle from "../Components/ContentsTitle";
+import TabClick from "../common/TabClick";
+import useOnScreen from "../hooks/objectObserver";
 
 // import CommonCardFrameLeft from "../common/CommonCardFrameLeft";
 // import CommonCardFrameRight from "../common/CommonCardFrameRight";
 // import ServiceTitleImage from "../../assets/images/07service/service_title.svg";
 
-export default function Service({ match }) {
+export default function Service() {
   const { theme } = useContext(ThemeContext);
+  const [isScroll, setIsScroll] = useState(false);
+  const onScroll = () => {
+    // if (window.scrollY >= 0 || window.pageYOffset >= 0) {
+    //   setIsScroll(true);
+    // } else {
+    //   setIsScroll(false);
+    // }
+    if (window.scrollY > 0 || window.pageYOffset > 0) {
+      setIsScroll(true);
+    } else {
+      setIsScroll(false);
+    }
+  };
+  // 모바일 메뉴
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isScroll]);
 
+  const scrollElem = Array.from(Array(2).keys());
+  const refs = useRef(scrollElem.map(() => React.createRef()));
+  const visibleArray = Array(2).fill(true);
+  visibleArray[0] = useOnScreen(refs.current[0]);
+  visibleArray[1] = useOnScreen(refs.current[1]);
+
+  const { mTablet } = useContext(MediaQueryContext);
   // console.log(match, ">>match ");
   return (
     <div
@@ -33,29 +60,32 @@ export default function Service({ match }) {
       }}
       className="servicecontainer"
     >
-      <Menubar slideIndex={0} />
-      
-      {/* TITLE */}
+      <Menubar slideIndex={0} /> {/* TITLE */}
       <ContentsTitle title={"SERVICE"} />
-
+      {!mTablet && <TabClick visibleArray={visibleArray} isScroll={isScroll}/>}
       {/* CONTENTS */}
-      <div className="w-screen flex-col justify-between "> 
+      <div className="w-screen flex-col justify-between ">
         <div className="contentsmargin pb-200">
           <div className="servicecontents contentspadding flex-col gap-88">
-            <div> {/* Content Title */}
+            <div>
+              {/* Content Title */}
               <p
                 className={`introtxt textF24 FontEB ${
                   theme === "light" ? "tcb" : "tcw"
                 }`}
               >
                 HERINGS’ Two Service platforms.
-                
               </p>
-              <div className={`vertical_line ${theme === "dark" ? "vertical_line_dark" : "vertical_line_light"}`}/>
-
+              <div
+                className={`vertical_line ${
+                  theme === "dark"
+                    ? "vertical_line_dark"
+                    : "vertical_line_light"
+                }`}
+              />
               {/* <hr className="vertical_line"></hr> */}
             </div>
-            <div className="flex-col gap-240"> 
+            <div className="flex-col gap-240">
               {/* HEALIARY */}
               <div
                 className="text-align-center flex-wrap gap-40 inline-block"
@@ -106,7 +136,10 @@ export default function Service({ match }) {
               </div>
 
               {/* OSTOMY */}
-              <div className="text-align-center flex-col gap-24" id="telehealthcareservice">
+              <div
+                className="text-align-center flex-col gap-24"
+                id="telehealthcareservice"
+              >
                 <div className="flex-wrap gap-16">
                   <div className="flatformtitle">
                     <div className="flatformnum flex-col gap-4 w-100px">
@@ -145,7 +178,6 @@ export default function Service({ match }) {
         <Totop />
         <Footer />
       </div>
-      
     </div>
   );
 }
