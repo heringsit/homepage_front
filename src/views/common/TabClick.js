@@ -291,14 +291,14 @@ export default function TabClick({ visibleArray }) {
                           (theme === "dark" ? "tcw" : "tcg3")
                     }
                   >
-                    {tab === "career"
-                      ? "HERINGS CAREERS"
-                      : tab === "contact"
-                      ? "CONTACT"
+                    {tab === "healiary"
+                      ? "HERLIARY"
+                      : tab === "ostomy"
+                      ? "OSTOMY"
                       : ""}
                   </Link>
                 </div>
-                {index + 1 === contactus.length ? null : (
+                {index + 1 === privacypolicies.length ? null : (
                   <div style={{ margin: "auto" }}>
                     <div
                       className="separator"
