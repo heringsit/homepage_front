@@ -53,12 +53,9 @@ export default function Service() {
         backgroundColor: theme === "dark" && "#282828",
         color: theme === "dark" && "white",
       }}
-      className="servicecontainer"
     >
       <Menubar slideIndex={0} /> {/* TITLE */}
-      
-      {!mTablet && <TabClick visibleArray={visibleArray} isScroll={isScroll} />}
-
+      {!mTablet && <TabClick visibleArray={visibleArray} />}
       <ContentsTitle title="SERVICE" />
       {/* CONTENTS */}
       <div className="flex-col justify-between">

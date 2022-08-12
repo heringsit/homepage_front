@@ -31,6 +31,7 @@ export default function TabClick({ visibleArray }) {
   ];
   const newsir = ["newsrelease", "irinformation"];
   const contactus = ["career", "contact"];
+  const privacypolicies = ["healiary", "ostomy"];
   const scrollWithOffset = (el, yOffset = -(84 + 100)) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
     window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
@@ -240,42 +241,76 @@ export default function TabClick({ visibleArray }) {
                   </div>
                 )}
               </React.Fragment>
-            )) 
-          : contactus.map((tab, index) => (
-            <React.Fragment key={index}>
-              <div className="TABS_tab FontR textF16">
-                <Link
-                  smooth
-                  to={`#${tab}`}
-                  scroll={scrollWithOffset}
-                  className={
-                    index === visibleIndex
-                      ? "w-full h-full tagADefault tabATagTab FontEB"
-                      : "w-full h-full tagADefault FontR " +
-                        (theme === "dark" ? "tcw" : "tcg3")
-                  }
-                >
-                  {tab === "career"
-                    ? "HERINGS CAREERS"
-                    : tab === "contact"
-                    ? "CONTACT"
-                    : ""}
-                </Link>
-              </div>
-              {index + 1 === contactus.length ? null : (
-                <div style={{ margin: "auto" }}>
-                  <div
-                    className="separator"
-                    style={{
-                      backgroundColor:
-                        theme === "dark" ? "#5F5F5F" : "#E1E1E1",
-                    }}
-                  />
+            ))
+          : pathname === "/contactus/"
+          ? contactus.map((tab, index) => (
+              <React.Fragment key={index}>
+                <div className="TABS_tab FontR textF16">
+                  <Link
+                    smooth
+                    to={`#${tab}`}
+                    scroll={scrollWithOffset}
+                    className={
+                      index === visibleIndex
+                        ? "w-full h-full tagADefault tabATagTab FontEB"
+                        : "w-full h-full tagADefault FontR " +
+                          (theme === "dark" ? "tcw" : "tcg3")
+                    }
+                  >
+                    {tab === "career"
+                      ? "HERINGS CAREERS"
+                      : tab === "contact"
+                      ? "CONTACT"
+                      : ""}
+                  </Link>
                 </div>
-              )}
-            </React.Fragment>
-          ))
-          }
+                {index + 1 === contactus.length ? null : (
+                  <div style={{ margin: "auto" }}>
+                    <div
+                      className="separator"
+                      style={{
+                        backgroundColor:
+                          theme === "dark" ? "#5F5F5F" : "#E1E1E1",
+                      }}
+                    />
+                  </div>
+                )}
+              </React.Fragment>
+            ))
+          : privacypolicies.map((tab, index) => (
+              <React.Fragment key={index}>
+                <div className="TABS_tab FontR textF16">
+                  <Link
+                    smooth
+                    to={`#${tab}`}
+                    scroll={scrollWithOffset}
+                    className={
+                      index === visibleIndex
+                        ? "w-full h-full tagADefault tabATagTab FontEB"
+                        : "w-full h-full tagADefault FontR " +
+                          (theme === "dark" ? "tcw" : "tcg3")
+                    }
+                  >
+                    {tab === "career"
+                      ? "HERINGS CAREERS"
+                      : tab === "contact"
+                      ? "CONTACT"
+                      : ""}
+                  </Link>
+                </div>
+                {index + 1 === contactus.length ? null : (
+                  <div style={{ margin: "auto" }}>
+                    <div
+                      className="separator"
+                      style={{
+                        backgroundColor:
+                          theme === "dark" ? "#5F5F5F" : "#E1E1E1",
+                      }}
+                    />
+                  </div>
+                )}
+              </React.Fragment>
+            ))}
       </div>
     </div>
   );

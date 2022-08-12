@@ -181,7 +181,8 @@ html {
 .FontB {
   font-family: "Roboto500", sans-serif;
 }
-.FontCB { /* Custom Font */
+.FontCB {
+  /* Custom Font */
   font-family: "Roboto400", sans-serif;
   font-weight: 600;
 }
@@ -346,8 +347,6 @@ body {
 .TABS_layout {
   display: flex;
   /* justify-content: space-between; */
-}
-.TABS_layout_padding {
   padding: 0 5%;
   height: 100px;
 }
@@ -389,7 +388,7 @@ body {
   border-color: #646464;
 }
 .vertical_line_light {
-  border-color: #DCDCDC;
+  border-color: #dcdcdc;
 }
 .separator {
   height: 24px;
@@ -522,7 +521,6 @@ body {
   .Font_Mont_600 {
     font-size: 40px;
   }
-  
 }
 
 @media screen and (max-width: 428px) {

@@ -58,7 +58,6 @@ export default function Research() {
   return (
     <div
       id="research"
-      className="content"
       style={{
         backgroundColor: theme === "dark" && "#282828",
         color: theme === "dark" && "white",

@@ -24,13 +24,13 @@
   background-position: center;
 }
 #news .banner_img {
-  background: url("../../../src/assets/images/10newsir/newsir_banner.png");
+  background: url("../../../src/assets/images/10newsir/newsir_background.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 #contactus .banner_img {
-  background: url("../../../src/assets/images/06contactus/contactus_banner.png");
+  background: url("../../../src/assets/images/06contactus/contactus_background.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

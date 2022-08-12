@@ -45,7 +45,6 @@ export default function Cts() {
   return (
     <div
       id="cts"
-      className="content"
       style={{ backgroundColor: theme === "dark" && "#282828" }}
     >
       <Menubar slideIndex={0} />
@@ -54,7 +53,7 @@ export default function Cts() {
       )}
 
       <div >
-        <ContentsTitle matches={matches} title={"CLINICAL TRIAL SERVICE"} />
+        <ContentsTitle matches={matches} title="CLINICAL TRIAL SERVICE" />
         <div className="flex-col justify-between ">
           <div className="pb-200 contentsmargin">
             <div className="contents contentspadding">
@@ -63,7 +62,7 @@ export default function Cts() {
               </div>
               {/* Clinical Trial Service */}
               <div className="pt-64" id="clinicaltrialdesign" ref={refs.current[0]} >
-                <CommonCardTitle title={"CLINICAL TRIAL DESIGN"} fontSize={"textF28 "} />
+                <CommonCardTitle title="CLINICAL TRIAL DESIGN" fontSize="textF28" />
                 <CommonCardFrame
                   imageSrc={cts_image1}
                   imageAlt="clinical trial design"

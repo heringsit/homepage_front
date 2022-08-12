@@ -9,7 +9,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footerRowa  ">
-        <NavLink className="FontL textF12" to="/#NULL">
+        <NavLink className="FontL textF12" to="/privacypolicy">
           Privacy Policy
         </NavLink>
         <span className="slash FontL textF12">/</span>
