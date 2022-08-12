@@ -231,7 +231,7 @@ export default function NewsRelease({ match }) {
   const fontColor = theme === "dark" ? "tcw" : "tcb";
   return (
      <div>  {/*id="content" className="content">*/}
-      <div className="SectionDivNews" id="newsrelease">
+      <div className="SectionDivNews" >
         <CommonCardTitle title={"News Release"} fontStyle={"FontEB"} fontSize={"textF22"} />
         
         {/* <div className="SectionDivNT ">

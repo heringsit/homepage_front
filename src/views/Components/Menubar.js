@@ -190,13 +190,15 @@ export default function Menubar(props) {
     return (
       <div
         className={`menuWrapDiv position-fixed w-full flex-col ${
-          isOver && "menuWrapOver"
-        } ${
-          theme === "dark" ? "menuBorderBottomDark" : "menuBorderBottomLight"
+          pathname !== "/"  
+            ? theme === "dark" ? "menuBorderBottomDark" : "menuBorderBottomLight"
+            : ""// menu border 추가-> "menuBorderBottomLight"
         }`}
         style={{
-          backgroundColor: theme === "dark" ? "#282828" : "#ffffff",
-          color: theme === "dark" && "white",
+          backgroundColor: pathname === "/" 
+                            ? "transparent"
+                            : theme === "dark" ? "#282828" : "#ffffff",
+          color: theme === "dark" && "#ffffff",
         }}
         onMouseEnter={menuover}
         onMouseLeave={menuout}
@@ -205,7 +207,7 @@ export default function Menubar(props) {
           {/* <div className="menulogo"> */}
           <NavLink to={`${imsi}/`}>
             <div className="logoImgContainCenter">
-              {theme === "light" ? (
+              {theme === "light" || pathname === "/" ? (
                 <HeringsLogo
                   style={{
                     fill:
@@ -234,7 +236,7 @@ export default function Menubar(props) {
                     className={`menuText textF18 FontR ${
                       pathname === MENU.linkpath[idx]
                         ? "menuTextActive"
-                        : theme === "light"
+                        : theme === "light" || pathname === "/" 
                           ? "tcb"
                           : "tcw"
                     }`}
