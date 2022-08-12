@@ -71,13 +71,11 @@
   min-height: 160px;
   margin: 12px 25px;
   position: relative;
-  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #07a990;
-  color: #fff;
   cursor: pointer;
 }
 
@@ -93,12 +91,32 @@
   border-bottom: 25px solid transparent;
 }
 
-.squareCareerSelected {
+.squareCareerSelectedDark {
+  width: 200px;
+  min-height: 160px;
+  margin: 12px 25px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #07a990;
+  cursor: pointer;
 }
 
-.squareCareerSelected:after {
+.squareCareerSelectedDark:before,
+.squareCareerSelectedDark:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-top: 25px solid #282828;
+  border-right: 25px solid #282828;
+  border-left: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+}
+
+/* .squareCareerSelected:after {
   content: "";
   position: absolute;
   top: 100%;
@@ -110,7 +128,7 @@
   border-bottom: 0;
   margin-left: -23px;
   margin-bottom: -23px;
-}
+} */
 
 .careerContainList {
   display: flex;

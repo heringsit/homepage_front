@@ -296,7 +296,7 @@ export default function Menubar(props) {
                         onClick={menuclick}
                       >
                         <span
-                          className={`menuText FontL ${
+                          className={`menuText textF15 FontL ${
                             theme === "light" ? "tcg" : "tcw"
                           }`}
                         >

@@ -27,7 +27,7 @@ export default function Whoweare() {
         mobile ? "mt-50" : mTablet ? "mt-84" : ""
       }`}
     >
-      <CommonCardTitle title={"WHO WE ARE"} />
+      <CommonCardTitle title="WHO WE ARE" fontSize="textF28" />
       <div className="whoweareContent">
         <div className="whoweareContentTitle mb-16">
           <span className="FontB textF32 tcw">

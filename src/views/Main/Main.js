@@ -54,13 +54,12 @@ export default function Main() {
             </div>
           </div>
         ) : (
-          
           <video
-            className="w-full"//mainvideo"
-            controls//={false}
+            className="w-full" //mainvideo"
+            controls //={false}
             muted={true}
-            loop//={true}
-            autoPlay//={true}
+            loop //={true}
+            autoPlay //={true}
             playsInline
             // src={project1_7}
             // alt="project1_7"
@@ -69,7 +68,6 @@ export default function Main() {
             <source src={project1_7} type="video/mp4" />
             Your Browser does not support the video tag.
           </video>
-          
         )}
       </div>
       <Footer />
