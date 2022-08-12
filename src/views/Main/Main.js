@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 import Footer from "../Components/Footer";
 import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
-import "./Main.css";
+import "./Main.css"; 
 import "../../index.css";
-// import mainimage from "../../assets/images/mainimage.png";
-import project1_7 from "../../assets/videos/project1_7.mp4";
+import mainimage from "../../assets/images/mainimage.png";
+// import project1_7 from "../../assets/videos/project1_7.mp4";
 import { MediaQueryContext } from "../../context";
-// import project1_7 from "../../assets/videos/project1_7_conv.mpg";
+import project1_7 from "../../assets/videos/homepage_background.mp4";
 export default function Main() {
   const { mTablet } = useContext(MediaQueryContext);
   return (
