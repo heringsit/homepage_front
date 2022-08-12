@@ -210,8 +210,8 @@
     padding: 14px 5px;
   }
   .heringsTeamWrap {
-    height: max-content;
-    min-height: 200px;
+    height: 100%;
+    min-height: 240px;
   }
 }
 /* 320px < screen <= 600px */
