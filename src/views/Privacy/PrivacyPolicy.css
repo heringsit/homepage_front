@@ -1,22 +1,61 @@
-.activeButton {
+.policyWrap {
+  padding-left: 32%;
+  padding-right: 32%;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.selectedPolicyButton {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   padding: 8px 20px 8px 24px;
   gap: 4px;
-  width: 168px;
+  width: max-content;
   height: 32px;
   background-color: #cdcdcd;
   border-radius: 12px;
+  margin: 47px 6px;
 }
-.defaultButton {
+.policyButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px 8px 24px;
+  gap: 4px;
+  width: max-content;
+  height: 32px;
+  background-color: #ebebeb;
+  border-radius: 12px;
+  margin: 47px 6px;
+}
+.policycontent {
+  text-align: center;
+}
+.text {
+  text-align: left;
+  line-height: 160%;
+}
+@media screen and (max-width: 320px) {
+  .buttons {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 8px 20px 8px 24px;
-    gap: 4px;
-    width: 168px;
-    height: 32px;
-    background-color: #EBEBEB;
-    border-radius: 12px;
+    flex-direction: column;
+    /* margin-left: 100%; */
+    justify-content: right;
+  }
+  .policyButton {
+    margin: 12px 0px;
+  }
+  .selectedPolicyButton {
+    margin: 12px 0px;
+  }
+  .policyWrap {
+    margin-top: 87px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 }
