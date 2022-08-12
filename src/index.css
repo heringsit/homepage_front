@@ -381,9 +381,15 @@ body {
 .vertical_line {
   height: 190px;
   width: 0px;
-  border-left: 1px solid #646464;
+  border-left: 1px solid;
   left: 1px;
   margin: auto;
+}
+.vertical_line_dark {
+  border-color: #646464;
+}
+.vertical_line_light {
+  border-color: #DCDCDC;
 }
 .separator {
   height: 24px;

@@ -51,7 +51,7 @@ export default function Service({ match }) {
                 HERINGS’ Two Service platforms.
                 
               </p>
-              <div className="vertical_line"/>
+              <div className={`vertical_line ${theme === "dark" ? "vertical_line_dark" : "vertical_line_light"}`}/>
 
               {/* <hr className="vertical_line"></hr> */}
             </div>
