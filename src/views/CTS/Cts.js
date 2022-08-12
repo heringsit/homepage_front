@@ -40,7 +40,7 @@ export default function Cts() {
   visibleArray[0] = useOnScreen(refs.current[0]);
   visibleArray[1] = useOnScreen(refs.current[1]);
   visibleArray[2] = useOnScreen(refs.current[2]);
-  console.log(visibleArray, ">>visibleArray");
+  // console.log(visibleArray, ">>visibleArray");
 
   return (
     <div

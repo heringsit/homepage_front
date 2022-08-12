@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { MediaQueryContext } from "../../../context";
+import React from "react";
+// import { MediaQueryContext } from "../../../context";
 import p_logo_01 from "../../../assets/images/02about_partners/01suh.png";
 import p_logo_02 from "../../../assets/images/02about_partners/02gsh.png";
 import p_logo_03 from "../../../assets/images/02about_partners/03auh.png";
@@ -18,7 +18,7 @@ import i_logo_05 from "../../../assets/images/02about_investors/05coree.png";
 import CommonCardTitle from "../../common/CommonCardTitle";
 
 export default function PartnersAInvestors(props) {
-  const { mobile } = useContext(MediaQueryContext);
+  // const { mobile } = useContext(MediaQueryContext);
   return (
     <div className={`aboutuscontents`}>
       <div className="pt-48" />

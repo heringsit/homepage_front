@@ -23,7 +23,7 @@ import ContentsTitle from "../Components/ContentsTitle";
 export default function Service({ match }) {
   const { theme } = useContext(ThemeContext);
 
-  console.log(match, ">>match ");
+  // console.log(match, ">>match ");
   return (
     <div
       id="service"
