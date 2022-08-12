@@ -343,6 +343,12 @@
   width: calc(100vw);
   height: calc(100vh);
 }
+.w-max {
+  width: max-content;
+}
+.h-max {
+  height: max-content;
+}
 .h-full {
   height: 100%;
 }

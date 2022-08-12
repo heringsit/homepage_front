@@ -19,7 +19,7 @@ export default function ContentsTitle(props) {
         </div>
       ) : path === `/service/` ? (
         <>
-          <div style={{height: "84px"}}/>
+          {/* <div style={{height: "84px"}}/> */}
           <div className="position-relative banner_container " >
             {theme === "dark" ? <div className="banner_gradient"></div> : null}
             <div className="banner_default banner_img banner">
