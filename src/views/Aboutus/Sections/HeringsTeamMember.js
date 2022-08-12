@@ -23,13 +23,13 @@ import icon3_8 from "../../../assets/images/02about_herings_team/new220707/3_7Ka
 
 export const Executive_Leadership = [
   {
-    name: "Byungho Nam Ph.D, MBA",
+    name: "Byung-Ho Nam, Ph.D, MBA",
     jobs: "CEO & FOUNDER",
     // positions: "CEO & FOUNDER",
     background: icon1_1,
     modalimg: icon1_1,
     detail:
-      "Byungho Nam, Ph.D, is the CEO and founder of HERINGS. Byungho has more than 20 years of experience in clinical research especially for oncology and cardiology. Previously, Byungho was a professor at the National Cancer Center (NCC), Korea. He also served as the director of Clinical Research Coordination Center at the NCC for organizing and supporting nation-wide public funded clinical trials. He led many clinical research projects where he not only developed cancer risk prediction models including pancreatic cancer, but also designed several landmark cancer clinical trials. Prior to the NCC, He was a professor at the Boston University and a leading biostatistician at the Framingham Heart Study.\n\nByung-Ho received his Ph.D in Biostatistics from Boston University. He studied at the University of Michigan for his MS in Applied Statistics and received a BA at the Seoul National University majoring French with minor in Business Administration."
+      "Byung-Ho Nam, Ph.D, is the CEO and founder of HERINGS. Byungho has more than 20 years of experience in clinical research especially for oncology and cardiology. Previously, Byungho was a professor at the National Cancer Center (NCC), Korea. He also served as the director of Clinical Research Coordination Center at the NCC for organizing and supporting nation-wide public funded clinical trials. He led many clinical research projects where he not only developed cancer risk prediction models including pancreatic cancer, but also designed several landmark cancer clinical trials. Prior to the NCC, He was a professor at the Boston University and a leading biostatistician at the Framingham Heart Study.\n\nByung-Ho received his Ph.D in Biostatistics from Boston University. He studied at the University of Michigan for his MS in Applied Statistics and received a BA at the Seoul National University majoring French with minor in Business Administration."
   },
   {
     name: "Yooin Song MBA",

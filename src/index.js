@@ -17,6 +17,7 @@ import DetailPage from "./views/News/Sections/detail/DetailPage";
 import Main from "./views/Main/Main";
 import { MediaQueryContext, ThemeContext } from "./context";
 import { useMediaQuery } from "@material-ui/core";
+import PrivacyPolicy from "./views/Privacy/PrivacyPolicy";
 
 export const imsi = process.env.PUBLIC_URL; // 운영계
 // export const imsi = `http://52.79.120.20:9099`; // 개발계
@@ -39,7 +40,8 @@ const App = () => {
   const sDesktop = useMediaQuery("(max-width: 1024px)");
   const mDesktop = useMediaQuery("(max-width: 1260px)");
   const lDesktop = useMediaQuery("(max-width: 1920px)");
-  document.body.style.backgroundColor = theme === "dark" ? "#282828" : "#FFFFFF";
+  document.body.style.backgroundColor =
+    theme === "dark" ? "#282828" : "#FFFFFF";
 
   return (
     <BrowserRouter>
@@ -61,6 +63,7 @@ const App = () => {
             <Route path={`/news/:submenu/detail/:id`} component={DetailPage} />
             <Route path={`/news/:submenu`} component={News} />
             <Route path={`/news`} component={News} />
+            <Route path={`/privacypolicy`} component={PrivacyPolicy} />
             <Route path="*" component={Aboutus} />
             <Redirect exact froåm={`/`} to={"/aboutus"} />
           </Switch>
