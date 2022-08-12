@@ -381,7 +381,7 @@ body {
 .vertical_line {
   height: 190px;
   width: 0px;
-  border-left: 1px solid #dcdcdc;
+  border-left: 1px solid #646464;
   left: 1px;
   margin: auto;
 }

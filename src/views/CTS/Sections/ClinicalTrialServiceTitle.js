@@ -18,7 +18,7 @@ export default function ClinicalTrialServiceTitle() {
         <br/> data management and statistical analysis. CTS includes both Intramural and Extramural clinical trials.     
       </p>
       <div>
-        <div className="vertical_line"></div>
+        <div className="vertical_line"/>
       </div>
     </div>
   );

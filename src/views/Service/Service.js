@@ -51,7 +51,9 @@ export default function Service({ match }) {
                 HERINGS’ Two Service platforms.
                 
               </p>
-              <hr className="vertical_line"></hr>
+              <div className="vertical_line"/>
+
+              {/* <hr className="vertical_line"></hr> */}
             </div>
             <div className="flex-col gap-240"> 
               {/* HEALIARY */}
