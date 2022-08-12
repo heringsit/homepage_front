@@ -1,6 +1,7 @@
-import { HashLink as Link } from "react-router-hash-link";
+import { HashLink } from "react-router-hash-link";
 import React, { useContext } from "react";
 import { useLocation } from "react-router";
+// import { Link } from "react-router-dom"
 import "../Components/Menubar.css";
 import { ThemeContext, MediaQueryContext } from "../../context";
 
@@ -53,7 +54,7 @@ export default function TabClick({ visibleArray }) {
           aboutustabs.map((tab, index) => (
             <React.Fragment key={index}>
               <div className={"TABS_tab FontR textF16"}>
-                <Link
+                <HashLink
                   smooth
                   to={`#${tab}`}
                   scroll={scrollWithOffset}
@@ -71,7 +72,7 @@ export default function TabClick({ visibleArray }) {
                     : tab === "researchpartners"
                     ? "Partners & Investors"
                     : ""}
-                </Link>
+                </HashLink>
               </div>
               {index + 1 === aboutustabs.length ? null : (
                 <div style={{ margin: "auto" }}>
@@ -89,7 +90,7 @@ export default function TabClick({ visibleArray }) {
           servicetabs.map((tab, index) => (
             <React.Fragment key={index}>
               <div className="TABS_tab FontR textF16">
-                <Link
+                <HashLink
                   smooth
                   to={`#${tab}`}
                   scroll={(el) => scrollWithOffset(el, mDesktop ? -149 : -220)}
@@ -105,7 +106,7 @@ export default function TabClick({ visibleArray }) {
                     : tab === "telehealthcareservice"
                     ? "TELE-HEALTHCARE SERVICE PLATFORM"
                     : ""}
-                </Link>
+                </HashLink>
               </div>
               {index + 1 === servicetabs.length ? null : (
                 <div style={{ margin: "auto" }}>
@@ -123,7 +124,7 @@ export default function TabClick({ visibleArray }) {
           ctstabs.map((tab, index) => (
             <React.Fragment key={index}>
               <div className="TABS_tab FontR textF16">
-                <Link
+                <HashLink
                   smooth
                   to={`#${tab}`}
                   scroll={scrollWithOffset}
@@ -141,7 +142,7 @@ export default function TabClick({ visibleArray }) {
                     : tab === "statisticalanalysis"
                     ? "STATISTICAL ANALYSIS"
                     : ""}
-                </Link>
+                </HashLink>
               </div>
               {index + 1 === ctstabs.length ? null : (
                 <div style={{ margin: "auto" }}>
@@ -159,7 +160,7 @@ export default function TabClick({ visibleArray }) {
           researchtabs.map((tab, index) => (
             <React.Fragment key={index}>
               <div className="TABS_tab FontR textF16">
-                <Link
+                <HashLink
                   smooth
                   to={`#${tab}`}
                   scroll={(el) => scrollWithOffset(el, mDesktop ? -149 : -184)}
@@ -185,7 +186,7 @@ export default function TabClick({ visibleArray }) {
                     : tab === "drugadverseevents"
                     ? "DRUG ADVERSE EVENTS"
                     : ""}
-                </Link>
+                </HashLink>
               </div>
               {index + 1 === researchtabs.length ? null : (
                 <div style={{ margin: "auto" }}>
@@ -203,7 +204,7 @@ export default function TabClick({ visibleArray }) {
           newsir.map((tab, index) => (
             <React.Fragment key={index}>
               <div className="TABS_tab FontR textF16">
-                <Link
+                <HashLink
                   smooth
                   to={`#${tab}`}
                   scroll={scrollWithOffset}
@@ -219,7 +220,7 @@ export default function TabClick({ visibleArray }) {
                     : tab === "irinformation"
                     ? "IR INFORMATION"
                     : ""}
-                </Link>
+                </HashLink>
               </div>
               {index + 1 === newsir.length ? null : (
                 <div style={{ margin: "auto" }}>
@@ -237,7 +238,7 @@ export default function TabClick({ visibleArray }) {
           contactus.map((tab, index) => (
             <React.Fragment key={index}>
               <div className="TABS_tab FontR textF16">
-                <Link
+                <HashLink
                   smooth
                   to={`#${tab}`}
                   scroll={scrollWithOffset}
@@ -253,7 +254,7 @@ export default function TabClick({ visibleArray }) {
                     : tab === "contact"
                     ? "CONTACT"
                     : ""}
-                </Link>
+                </HashLink>
               </div>
               {index + 1 === contactus.length ? null : (
                 <div style={{ margin: "auto" }}>
@@ -267,43 +268,45 @@ export default function TabClick({ visibleArray }) {
               )}
             </React.Fragment>
           ))
-        ) : pathname === "/privacypolicy/" ? (
-          privacypolicies.map((tab, index) => (
-            <React.Fragment key={index}>
-              <div className="TABS_tab FontR textF16">
-                <Link
-                  smooth
-                  to={`${tab}`}
-                  scroll={scrollWithOffset}
-                  className={
-                    index === visibleIndex
-                      ? "w-full h-full tagADefault tabATagTab FontEB"
-                      : "w-full h-full tagADefault FontR " +
-                        (theme === "dark" ? "tcw" : "tcg3")
-                  }
-                >
-                  {tab === "healiary"
-                    ? "HEALIARY"
-                    : tab === "ostomy"
-                    ? "OSTOMY"
-                    : ""}
-                </Link>
-              </div>
-              {index + 1 === privacypolicies.length ? null : (
-                <div style={{ margin: "auto" }}>
-                  <div
-                    className="separator"
-                    style={{
-                      backgroundColor: theme === "dark" ? "#5F5F5F" : "#E1E1E1",
-                    }}
-                  />
-                </div>
-              )}
-            </React.Fragment>
-          ))
-        ) : (
-          <></>
-        )}
+        ) : <></>
+        // pathname === "/privacypolicy/" ? (
+        //   privacypolicies.map((tab, index) => (
+        //     <React.Fragment key={index}>
+        //       <div className="TABS_tab FontR textF16">
+        //         <Link
+        //           smooth
+        //           to={`${tab}`}
+        //           scroll={scrollWithOffset}
+        //           className={
+        //             index === visibleIndex
+        //               ? "w-full h-full tagADefault tabATagTab FontEB"
+        //               : "w-full h-full tagADefault FontR " +
+        //                 (theme === "dark" ? "tcw" : "tcg3")
+        //           }
+        //         >
+        //           {tab === "healiary"
+        //             ? "HEALIARY"
+        //             : tab === "ostomy"
+        //             ? "OSTOMY"
+        //             : ""}
+        //         </Link>
+        //       </div>
+        //       {index + 1 === privacypolicies.length ? null : (
+        //         <div style={{ margin: "auto" }}>
+        //           <div
+        //             className="separator"
+        //             style={{
+        //               backgroundColor: theme === "dark" ? "#5F5F5F" : "#E1E1E1",
+        //             }}
+        //           />
+        //         </div>
+        //       )}
+        //     </React.Fragment>
+        //   ))
+        // ) : (
+        //   <></>
+        // )
+        }
       </div>
     </div>
   );
