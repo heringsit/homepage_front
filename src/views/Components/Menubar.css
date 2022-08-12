@@ -100,7 +100,7 @@
 .menuDetailDiv {
   border-right: 1px solid #f1f1f1;
   min-height: 255px;
-  padding: 25px 10px;
+  padding: 20px 10px;
   width: 300px;
   text-align: center;
 }
@@ -152,9 +152,11 @@
 
 .menuText:hover {
   color: #e78510;
+  font-weight: 700;
 }
 .menuTextActive {
   color: #e78510;
+  font-weight: 700;
 }
 
 .mobilemenusactive {

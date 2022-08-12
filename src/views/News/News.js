@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 // import { makeStyles, createStyles } from "@material-ui/core/styles";
 // import useMediaQuery from "@material-ui/core/useMediaQuery";
 
@@ -11,6 +11,8 @@ import "./News.css";
 import ContentsTitle from "../Components/ContentsTitle";
 import "./Sections/detail/DetailPage";
 import { MediaQueryContext, ThemeContext } from "../../context";
+import TabClick from "../common/TabClick";
+import useOnScreen from "../hooks/objectObserver";
 
 // const useStyles = makeStyles((theme) =>
 //   createStyles({
@@ -127,7 +129,7 @@ import { MediaQueryContext, ThemeContext } from "../../context";
 
 export default function News({ match }) {
   // const matches = useMediaQuery("(max-width:600px)");
-  const { sTablet } = useContext(MediaQueryContext);
+  const { mTablet, sTablet } = useContext(MediaQueryContext);
   const { theme } = useContext(ThemeContext);
   // const [open, setOpen] = useState(false);
   // const [modalObj, setModalObj] = useState({});
@@ -145,7 +147,12 @@ export default function News({ match }) {
   //   setOpen(false);
   // };
   // const classes = useStyles();
-  
+  const scrollElem = Array.from(Array(2).keys());
+  const refs = useRef(scrollElem.map(() => React.createRef()));
+  const visibleArray = Array(2).fill(true);
+  visibleArray[0] = useOnScreen(refs.current[0]);
+  visibleArray[1] = useOnScreen(refs.current[1]);
+
   return (
     <div
       id="news" 
@@ -156,14 +163,21 @@ export default function News({ match }) {
       }}
     >
       <Menubar slideIndex={slideIndex} />
-      
+      {!mTablet && <TabClick visibleArray={visibleArray} />}
       
       <div className="w-screen flex-col justify-between ">
         <div className={`pb-200 ${theme === "dark" && "bg-black"} `} >
           <ContentsTitle title={"News & IR"} />
           {/* 배너 */}
-          <NewsRelease matches={sTablet} />
-          <IRInformation matches={sTablet} />
+          <div id="newsrelease" ref={refs.current[0]}>
+            <NewsRelease matches={sTablet}  />
+          </div>
+          <div id="irinformation" ref={refs.current[1]}>
+            <IRInformation matches={sTablet} />
+          </div>
+          
+          
+          
           
         </div>
         <Totop />

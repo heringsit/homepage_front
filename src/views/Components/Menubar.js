@@ -192,7 +192,7 @@ export default function Menubar(props) {
         className={`menuWrapDiv position-fixed w-full flex-col ${
           pathname !== "/"  
             ? theme === "dark" ? "menuBorderBottomDark" : "menuBorderBottomLight"
-            : ""
+            : ""// menu border 추가-> "menuBorderBottomLight"
         }`}
         style={{
           backgroundColor: pathname === "/" 
@@ -207,7 +207,7 @@ export default function Menubar(props) {
           {/* <div className="menulogo"> */}
           <NavLink to={`${imsi}/`}>
             <div className="logoImgContainCenter">
-              {theme === "light" ? (
+              {theme === "light" || pathname === "/" ? (
                 <HeringsLogo
                   style={{
                     fill:
@@ -234,15 +234,9 @@ export default function Menubar(props) {
                 <Link smooth="true" to={MENU.link[idx]} onClick={menuclick}>
                   <span
                     className={`menuText textF18 FontR ${
-                    //   props.slideIndex === 0 && pathname !== MENU.linkpath[idx]
-                    //     ? theme === "light"
-                    //       ? "tcb"
-                    //       : "tcw"
-                    //     : "tcb"
-                    // } ${isMActive && "tcb"} ${
                       pathname === MENU.linkpath[idx]
                         ? "menuTextActive"
-                        : theme === "light"
+                        : theme === "light" || pathname === "/" 
                           ? "tcb"
                           : "tcw"
                     }`}
@@ -263,7 +257,7 @@ export default function Menubar(props) {
         </div>
 
         {/* 소메뉴 */}
-        <div
+        {/* <div
           className={`${theme === "light" ? "menuDetail" : "menuDetailDark"} ${
             isOver ? "part" : "partHide"
           }`}
@@ -298,7 +292,7 @@ export default function Menubar(props) {
                         onClick={menuclick}
                       >
                         <span
-                          className={`menuText FontL ${
+                          className={`menuText textF15 FontL ${
                             theme === "light" ? "tcg" : "tcw"
                           }`}
                         >
@@ -311,7 +305,7 @@ export default function Menubar(props) {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }

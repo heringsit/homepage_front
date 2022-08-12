@@ -210,7 +210,7 @@ export default function NewsRelease() {
 
   return (
     <div>  {/*id="content" className="content">*/}
-      <div className="SectionDivNews" id="irinformation">
+      <div className="SectionDivNews" >
         {/* <div className="SectionDivNT ">
           <div className="titleDiv">
               <span className="textT22 FontEB">IR Information</span>

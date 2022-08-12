@@ -54,6 +54,7 @@ export default function Main() {
             </div>
           </div>
         ) : (
+
           <img
               src={mainimage}
               alt="mainvideo"
@@ -76,7 +77,7 @@ export default function Main() {
           //   <source src={project1_7} type="video/mp4" />
           //   Your Browser does not support the video tag.
           // </video>
-          
+        
         )}
       </div>
       <Footer />

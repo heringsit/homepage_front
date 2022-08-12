@@ -22,7 +22,7 @@ export default function PartnersAInvestors(props) {
   return (
     <div className={`aboutuscontents`}>
       <div className="pt-48" />
-      {!props.matches && <CommonCardTitle title={"PARTNERS & INVESTORS"} />}
+      {!props.matches && <CommonCardTitle title="PARTNERS & INVESTORS" fontSize="textF28" />}
       <div className="SectionDivTailContent">
         <div className="researchWrap">
           {props.matches ? (

@@ -1,4 +1,4 @@
-/* ABOUT US MODAL */ /* MODAL */
+/* ABOUT US MODAL */
 .modal {
   display: flex;
   position: fixed;
@@ -45,11 +45,11 @@
   width: 100%;
   justify-content: flex-end;
   outline: none;
-  padding: 5px;
+  padding: 7px 10px;
 }
 .modalClose {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   max-width: 70;
   padding: 2;
   cursor: pointer;
@@ -72,10 +72,17 @@
 }
 @media screen and (max-width: 1260px) {
   .modalCloseDiv {
-    top: calc(-0.9vh);
+    /* top: calc(-0.9vh); */
+    margin: -1px -2px;
   }
   .modalClose {
-    width: 40px;
+    width: 28px;
+    /* height: 28px; */
+  }
+}
+@media screen and (max-width: 1024px) {
+  .modalCloseDiv {
+    margin-top: -6px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -83,10 +90,11 @@
     width: 80%;
   }
   .modalCloseDiv {
-    top: -10px;
+    /* top: -10px; */
+    margin-top: -6px;
   }
   .modalClose {
-    width: 30px;
+    width: 26px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -96,7 +104,8 @@
 }
 @media screen and (max-width: 320px) {
   .modalCloseDiv {
-    top: 1px;
+    /* top: 1px; */
+    margin: -1px -2px;
   }
   .modalClose {
     width: 20px;
@@ -105,101 +114,4 @@
   .modalContentText {
     padding: 25px 10px 25px 10px;
   }
-}
-
-/* CAREER MODAL */
-.pager {
-  width: 65%;
-  max-height: calc(85vh);
-  overflow: auto;
-  box-shadow: 0 0 100px 20px rgba(0, 0, 0, 0.7);
-  background-color: #fff;
-  outline: none;
-}
-.careerModalIconSection {
-  cursor: pointer;
-  width: 35px;
-  height: 35px;
-  fill: #c0c0c0;
-}
-.careerModalContentCaption {
-  padding: 10px 20px;
-  background-color: #fd8d27;
-}
-.careerModalContent {
-  width: 100%;
-  padding: 40px 60px;
-  border-top: 1px solid #ddd;
-}
-.careerModalBottom {
-  width: 100%;
-  border-top: 1px solid #ddd;
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
-}
-.careerModalClose {
-  width: 150px;
-  min-height: 30px;
-  background-color: #c0c0c0;
-  border-radius: 5px;
-  padding: 8px;
-  text-align: center;
-  cursor: pointer;
-}
-.readContentsRow {
-  width: 100%;
-  display: inline-flex;
-  overflow-y: auto;
-  overflow-x: hidden;
-  height: auto;
-}
-.tbContentsB {
-  min-width: 90px;
-  padding: 5px;
-  color: #1e1e1e;
-}
-.tbContents {
-  width: 100%;
-  padding: 5px;
-}
-.readContentsTableButton {
-  text-align: center;
-  border: 1px solid #fd8d27;
-  color: #fd8d27;
-  border-radius: 20px;
-  padding: 10px 15px;
-}
-.careerContents {
-  width: 100%;
-  padding: 15px;
-}
-.careerContents > p > img {
-  max-width: 100%;
-}
-.careerContents > span {
-  word-break: break-all;
-}
-/* media screen */
-/*  1024 < Screen < 1260 */
-@media screen and (max-width: 1260px) {
-}
-
-/*  768 < Screen < 1024 */
-@media screen and (max-width: 1024px) {
-}
-
-/*  600 < Screen <= 768 */
-@media screen and (max-width: 768px) {
-  .pager {
-    width: 80%;
-  }
-}
-
-/*  320 < Screen <= 600 */
-@media screen and (max-width: 600px) {
-}
-
-/* screen <= 320px */
-@media screen and (max-width: 320px) {
 }
