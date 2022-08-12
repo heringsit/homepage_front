@@ -1,5 +1,5 @@
 import { HashLink as Link } from "react-router-hash-link";
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { useLocation } from "react-router";
 import "../Components/Menubar.css";
 import { ThemeContext, MediaQueryContext } from "../../context";

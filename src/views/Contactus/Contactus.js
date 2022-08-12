@@ -190,12 +190,12 @@ export default function ContactUs() {
           </div> */}
           <CommonCardTitle title="CONTACT" />
           <div className="subTitleDiv">
-            <div className="contactusSubTitle textF22">
-              <span className="tcgreen1">We are here to help.</span> Want to
+            <div className="contactusSubTitle FontL textF22">
+              <span className="tcgreen1 FontL">We are here to help.</span> Want to
               learn more about our services?
               <br />
               Please get in touch,{" "}
-              <span className="tco">we'd love to hear from you!</span>
+              <span className="FontL tco">we'd love to hear from you!</span>
             </div>
           </div>
           <div className="contactusContentsDiv">
@@ -211,20 +211,20 @@ export default function ContactUs() {
               </div>
             </div>
             <div className="squareDiv tcw">
-              <div className="textF20">
+              <div className="textF20 FontL">
                 <span className="textF40 FontB">OFFICE</span> 14th Floor, 560,
                 Eonju-ro, Gangnam-gu, Seoul, Republic of Korea
               </div>
               <hr></hr>
-              <div className="textF16">
+              <div className="textF16 FontL">
                 <span className="tcgreen3 FontB">TEL</span>+82.02.6949.3516
                 <span className="tcgreen3 FontB">FAX</span>+82.02.6949.3517
               </div>
             </div>
-            <div className="contactusInputDiv">
+            <div className="contactusInputDiv" >
               <form
                 method="POST"
-                className="contactusInputForm"
+                className="contactusInputForm "
                 id="contactDatas"
               >
                 <input
@@ -232,21 +232,21 @@ export default function ContactUs() {
                   onChange={onChange}
                   placeholder="Name"
                   name="cName"
-                  className={`${inputClassNameHelper(isEnteredNameValid())}`}
+                  className={`${inputClassNameHelper(isEnteredNameValid())} FontR`}
                 />
                 <input
                   type="text"
                   onChange={onChange}
                   placeholder="Email"
                   name="cEmail"
-                  className={`${inputClassNameHelper(isEnteredEmailValid())}`}
+                  className={`${inputClassNameHelper(isEnteredEmailValid())} FontR`}
                 />
                 <input
                   type="text"
                   onChange={onChange}
                   placeholder="Phone"
                   name="cPhone"
-                  className={`${inputClassNameHelper(isEnteredPhoneValid())}`}
+                  className={`${inputClassNameHelper(isEnteredPhoneValid())} FontR`}
                 />
                 <textarea
                   type="textarea"

@@ -1,11 +1,11 @@
-import { useMediaQuery } from "@material-ui/core";
-import React, { useContext } from "react";
+// import { useMediaQuery } from "@material-ui/core";
+import React from "react";
 import { NavLink } from "react-router-dom";
-import { MediaQueryContext } from "../../context";
+// import { MediaQueryContext } from "../../context";
 import "./Footer.css";
 function Footer() {
   // const matches = useMediaQuery("(max-width:480px)");
-  const { mobile } = useContext(MediaQueryContext);
+  // const { mobile } = useContext(MediaQueryContext);
   return (
     <footer className="footer">
       <div className="footerRowa  ">
