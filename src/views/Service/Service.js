@@ -26,11 +26,6 @@ export default function Service() {
   const { theme } = useContext(ThemeContext);
   const [isScroll, setIsScroll] = useState(false);
   const onScroll = () => {
-    // if (window.scrollY >= 0 || window.pageYOffset >= 0) {
-    //   setIsScroll(true);
-    // } else {
-    //   setIsScroll(false);
-    // }
     if (window.scrollY > 0 || window.pageYOffset > 0) {
       setIsScroll(true);
     } else {
@@ -61,10 +56,12 @@ export default function Service() {
       className="servicecontainer"
     >
       <Menubar slideIndex={0} /> {/* TITLE */}
-      <ContentsTitle title={"SERVICE"} />
-      {!mTablet && <TabClick visibleArray={visibleArray} isScroll={isScroll}/>}
+      
+      {!mTablet && <TabClick visibleArray={visibleArray} isScroll={isScroll} />}
+
+      <ContentsTitle title="SERVICE" />
       {/* CONTENTS */}
-      <div className="w-screen flex-col justify-between ">
+      <div className="w-screen flex-col justify-between">
         <div className="contentsmargin pb-200">
           <div className="servicecontents contentspadding flex-col gap-88">
             <div>
@@ -90,6 +87,7 @@ export default function Service() {
               <div
                 className="text-align-center flex-wrap gap-40 inline-block"
                 id="digitalcareservice"
+                ref={refs.current[0]}
               >
                 <div className="flex-wrap gap-16 ">
                   <div className="flatformtitle">
@@ -139,6 +137,7 @@ export default function Service() {
               <div
                 className="text-align-center flex-col gap-24"
                 id="telehealthcareservice"
+                ref={refs.current[1]}
               >
                 <div className="flex-wrap gap-16">
                   <div className="flatformtitle">

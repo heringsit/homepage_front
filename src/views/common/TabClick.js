@@ -4,7 +4,7 @@ import { useLocation } from "react-router";
 import "../Components/Menubar.css";
 import { ThemeContext, MediaQueryContext } from "../../context";
 
-export default function TabClick({ visibleArray, isScroll }) {
+export default function TabClick({ visibleArray }) {
   let pathname = useLocation().pathname;
   const { theme } = useContext(ThemeContext);
   const { mDesktop } = useContext(MediaQueryContext);
@@ -90,7 +90,9 @@ export default function TabClick({ visibleArray, isScroll }) {
                   <Link
                     smooth
                     to={`#${tab}`}
-                    scroll={scrollWithOffset}
+                    scroll={(el) =>
+                      scrollWithOffset(el, mDesktop ? -149 : -220)
+                    }
                     className={
                       index === visibleIndex
                         ? "w-full h-full tagADefault tabATagTab FontEB"
@@ -105,7 +107,7 @@ export default function TabClick({ visibleArray, isScroll }) {
                       : ""}
                   </Link>
                 </div>
-                {index + 1 === ctstabs.length ? null : (
+                {index + 1 === servicetabs.length ? null : (
                   <div style={{ margin: "auto" }}>
                     <div
                       className="separator"
