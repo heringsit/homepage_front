@@ -18,7 +18,7 @@ import Main from "./views/Main/Main";
 import { MediaQueryContext, ThemeContext } from "./context";
 import { useMediaQuery } from "@material-ui/core";
 import PrivacyPolicy from "./views/Privacy/PrivacyPolicy";
-import HealiaryPrivacy from "./views/Privacy/HealiaryPrivacy";
+// import HealiaryPrivacy from "./views/Privacy/HealiaryPrivacy";
 
 export const imsi = process.env.PUBLIC_URL; // 운영계
 // export const imsi = `http://52.79.120.20:9099`; // 개발계
@@ -66,8 +66,8 @@ const App = () => {
             <Route path={`/news`} component={News} />
             <Route path={`/privacypolicy`} component={PrivacyPolicy} />
             <Route
-              path={`/privacypolicy/healiary`}
-              component={HealiaryPrivacy}
+              path={`/privacypolicy/:submenu`}
+              component={PrivacyPolicy}
             />
             <Route path="*" component={Aboutus} />
             <Redirect exact froåm={`/`} to={"/aboutus"} />
