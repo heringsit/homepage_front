@@ -70,14 +70,18 @@ export default function TeamList(props) {
     Advisory_Board,
   ];
   const ListTitle = [
-    "Executive_Leadership",
-    "Research_Leadership",
-    "Advisory_Board",
+    "EXECUTIVE_LEADERSHIP",
+    "RESEARCH_LEADERSHIP",
+    "ADVISORY_BOARD",
   ];
   return (
     <div className="aboutuscontents bg-gray ">
       <div className="pt-48" />
-      <CommonCardTitle title="HERINGS TEAM" fontSize="textF28" tc={0} />
+      {/* <CommonCardTitle title="HERINGS TEAM" fontSize="textF28" tc={0} /> */}{" "}
+      <div className="aboutustitle">
+        <p className="textF20 FontCB tcb">HERINGS TEAM</p>
+        <div className="aboutusline"></div>
+      </div>
       {HERINGS_TEAM_LIST.map((LIST, idx) => (
         <div className="TeamListWrap" key={idx}>
           <div className="Subtitle">

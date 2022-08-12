@@ -65,11 +65,11 @@ export default function TabClick({ visibleArray }) {
                   }
                 >
                   {tab === "whoweare"
-                    ? "Who We Are"
+                    ? "WHO WE ARE"
                     : tab === "heringsteam"
-                    ? "HERINGS Team"
+                    ? "HERINGS TEAM"
                     : tab === "researchpartners"
-                    ? "Partners & Investors"
+                    ? "PARTNERS & INVESTORS"
                     : ""}
                 </Link>
               </div>

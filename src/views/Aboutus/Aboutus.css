@@ -21,14 +21,19 @@
   height: 100%;
   padding: 100px 10%;
 }
-
+.aboutustitle {
+  text-align: center;
+}
+.aboutusline {
+  display: inline-block;
+  width: 60px;
+  height: 1.5px;
+  background: #000;
+}
+#whoweare .aboutusline {
+  background: #ffffff;
+}
 /* WHO WE ARE  */
-.whoweare .card_titleDiv span {
-  color: #fff;
-}
-.whoweare .card_middlebar {
-  background: #fff;
-}
 .whoweareContent {
   width: 100%;
   display: flex;
@@ -36,9 +41,10 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin-top: 96px;
 }
 .whoweareContentTitle {
-  margin: 24px auto;
+  margin-bottom: 16px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -199,9 +205,9 @@
     margin: 28px auto;
   }
   /* WHO WE ARE */
-  .whoweareContent {
+  /* .whoweareContent {
     flex-direction: column;
-  }
+  } */
   /* HERINGS TEAM */
   .Subtitle > span:first-child {
     margin-right: 8px;
@@ -216,9 +222,9 @@
 }
 /* 320px < screen <= 600px */
 @media screen and (max-width: 600px) {
-  .whoweareContentsWrap {
+  /* .whoweareContentsWrap {
     margin-bottom: 50px;
-  }
+  } */
   /* HEARINGS TEAM */
   .TeamListWrap {
     padding: 1% 5%;
@@ -251,7 +257,7 @@
 }
 @media screen and (max-width: 320px) {
   /* WHO WE ARE */
-  .whoweareContent {
+  /* .whoweareContent {
     height: max-content;
     margin-top: 44px;
   }
@@ -261,7 +267,7 @@
   .whoweareContentsWrap {
     margin-bottom: 20px;
     white-space: pre-wrap;
-  }
+  } */
   /* HERINGS TEAM */
   .heringsTeamWrap {
     min-height: 160px;
@@ -271,4 +277,3 @@
     letter-spacing: normal;
   }
 }
-

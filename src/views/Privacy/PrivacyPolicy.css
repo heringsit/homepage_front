@@ -1,0 +1,22 @@
+.activeButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 20px 8px 24px;
+  gap: 4px;
+  width: 168px;
+  height: 32px;
+  background-color: #cdcdcd;
+  border-radius: 12px;
+}
+.defaultButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 20px 8px 24px;
+    gap: 4px;
+    width: 168px;
+    height: 32px;
+    background-color: #EBEBEB;
+    border-radius: 12px;
+}

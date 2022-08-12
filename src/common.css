@@ -176,11 +176,17 @@
 .mt-40 {
   margin-top: 40px;
 }
+.mt-48 {
+  margin-top: 48px;
+}
 .mt-50 {
   margin-top: 50px;
 }
 .mt-84 {
   margin-top: 84px;
+}
+.mt-124 {
+  margin-top: 124px;
 }
 
 /* flex:
@@ -288,6 +294,9 @@
 }
 .justify-left {
   justify-content: left;
+}
+.lineheight200 {
+  line-height: 200%;
 }
 .lineheight160 {
   line-height: 160%;

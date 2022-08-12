@@ -15,14 +15,18 @@ import i_logo_02 from "../../../assets/images/02about_investors/02korea_n.svg";
 import i_logo_03 from "../../../assets/images/02about_investors/03venture_n.svg";
 import i_logo_04 from "../../../assets/images/02about_investors/04cap_n.svg";
 import i_logo_05 from "../../../assets/images/02about_investors/05coree.png";
-import CommonCardTitle from "../../common/CommonCardTitle";
+// import CommonCardTitle from "../../common/CommonCardTitle";
 
 export default function PartnersAInvestors(props) {
   // const { mobile } = useContext(MediaQueryContext);
   return (
     <div className={`aboutuscontents`}>
       <div className="pt-48" />
-      {!props.matches && <CommonCardTitle title="PARTNERS & INVESTORS" fontSize="textF28" />}
+      {/* {!props.matches && <CommonCardTitle title="PARTNERS & INVESTORS" fontSize="textF28" />} */}
+      <div className="aboutustitle">
+        <p className="textF20 FontCB tcb">PARTNERS & INVESTORS</p>
+        <div className="aboutusline"></div>
+      </div>
       <div className="SectionDivTailContent">
         <div className="researchWrap">
           {props.matches ? (

@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 import "../Aboutus.css";
-import backgroundImg from "../../../assets/images/02about_who_we_are/about_banner_background.svg";
+// import backgroundImg from "../../../assets/images/02about_who_we_are/about_banner_background.svg";
+//about us 배경 변경
+import backgroundImg from "../../../assets/images/02about_who_we_are/aboutus_background.svg"
 import { MediaQueryContext } from "../../../context";
-import CommonCardTitle from "../../common/CommonCardTitle";
+// import CommonCardTitle from "../../common/CommonCardTitle";
 
 export default function Whoweare() {
   const { mobile, mTablet } = useContext(MediaQueryContext);
@@ -27,28 +29,31 @@ export default function Whoweare() {
         mobile ? "mt-50" : mTablet ? "mt-84" : ""
       }`}
     >
-      <CommonCardTitle title="WHO WE ARE" fontSize="textF28" />
+      {/* <CommonCardTitle title="WHO WE ARE" fontSize="textF28" /> */}
+      <div className="aboutustitle">
+        <p className="textF20 FontCB tcw">WHO WE ARE</p>
+        <div className="aboutusline"></div>
+      </div>
+
       <div className="whoweareContent">
-        <div className="whoweareContentTitle mb-16">
-          <span className="FontB textF32 tcw">
-            HERINGS is personalized Digital Health Care Service Company
-          </span>
-        </div>
-        <div className="mt-8 whoweareContentsWrap">
-          <span className="FontL textF20 tcw">
-            We aim to be the best companion to cancer patients through their
-            long journey to overcome the disease.
-          </span>
-        </div>
-        <div className="whoweareContentsWrap">
+        <span className="whoweareContentTitle FontCB textF32 tcw">
+          HERINGS is personalized Digital Health Care Service Company
+        </span>
+        <span className="flex-col align-items-center FontL textF20 tcw">
+          We aim to be the best companion to cancer patients through their long
+          journey to overcome the disease.
+        </span>
+        <div className={`${mobile ? "lineheight140" : "lineheight200"} whoweareContentsWrap`}>
           <div
-            className={`${mobile ? "pt-30" : mTablet ? "pt-120" : "pt-150"}`}
+            className={`${mTablet ? "mt-48" : "mt-124"}`}
           />
           <span className="we FontB tcw textF20">We</span>
           {splits.border.map((split, idx) => (
             <div className="mt-5" key={idx}>
               <span className="FontB textF20 tcw">{split}</span>
-              <span className="FontL textF20 tcw split">{splits.text[idx]}</span>
+              <span className="FontL textF20 tcw split">
+                {splits.text[idx]}
+              </span>
             </div>
           ))}
         </div>
