@@ -143,6 +143,9 @@
 .isScrolledmenu {
   box-shadow: 0px 2px 2px 0px rgba(150, 150, 150, 0.3);
 }
+.menuText {
+  font-size: 15px;
+}
 .mobileMenuRow:hover .menuText {
   color: #e78510;
 }

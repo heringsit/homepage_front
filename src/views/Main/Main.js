@@ -20,6 +20,7 @@ export default function Main() {
     >
       <Menubar slideIndex={0} />
       <Totop />
+      {console.log(project1_7)}
       <div id="main">
         {mTablet ? (
           <div className="mainimagelayout w-full h-full">
@@ -53,19 +54,22 @@ export default function Main() {
             </div>
           </div>
         ) : (
+          
           <video
-            className="mainvideo"
-            controls={false}
+            className="w-full"//mainvideo"
+            controls//={false}
             muted={true}
-            loop={true}
-            autoPlay={true}
-            src={project1_7}
-            alt="project1_7"
-            type="video/mp4"
+            loop//={true}
+            autoPlay//={true}
+            playsInline
+            // src={project1_7}
+            // alt="project1_7"
+            // type="video/mp4"
           >
             <source src={project1_7} type="video/mp4" />
             Your Browser does not support the video tag.
           </video>
+          
         )}
       </div>
       <Footer />

@@ -14,7 +14,7 @@ import TeamList from "./Sections/TeamList";
 import "./Aboutus.css";
 import { imsi } from "../../index";
 import search from "../../assets/images/etc/search.png";
-import { Checkbox, createStyles, makeStyles } from "@material-ui/core";
+import { Checkbox } from "@material-ui/core";
 import moment from "moment";
 import TabClick from "../common/TabClick";
 // import ContentsTitle from "../Components/ContentsTitle";
@@ -30,7 +30,7 @@ export default function Aboutus() {
   const [openNotice, setOpenNotice] = useState(false);
   const [modalObj, setModalObj] = useState({});
   const [modalPopObj, setmodalPopObj] = useState({});
-  const [slideIndex, setSlideIndex] = useState(0);
+  const [slideIndex] = useState(0);
   const [watchToday, setWatchToday] = useState(false);
   const { theme } = useContext(ThemeContext);
   const { mTablet } = useContext(MediaQueryContext);

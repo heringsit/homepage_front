@@ -23,7 +23,7 @@ import ContentsTitle from "../Components/ContentsTitle";
 export default function Service({ match }) {
   const { theme } = useContext(ThemeContext);
 
-  console.log(match, ">>match ");
+  // console.log(match, ">>match ");
   return (
     <div
       id="service"
@@ -51,7 +51,9 @@ export default function Service({ match }) {
                 HERINGS’ Two Service platforms.
                 
               </p>
-              <hr className="vertical_line"></hr>
+              <div className={`vertical_line ${theme === "dark" ? "vertical_line_dark" : "vertical_line_light"}`}/>
+
+              {/* <hr className="vertical_line"></hr> */}
             </div>
             <div className="flex-col gap-240"> 
               {/* HEALIARY */}
