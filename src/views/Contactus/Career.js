@@ -301,195 +301,191 @@ export default function Career({ match }) {
 
   const { theme } = useContext(ThemeContext);
   return (
-    <div id="content" className="content">
-      {/* <Menubar slideIndex={0} />
-      <Totop /> */}
-      <div id="cotactus">
-        {/* <ContentsTitle matches={matches} title={"CONTACT US"} /> */}
-        {/* id 를 추가해야 이동한다 ; scroll focusing 스크롤 포커싱 */}
-        <div className="SectionDivCareer" id="career">
-          {/* <div className="titleDiv">
-            <div className="textT22 FontEB">
-              <span>HERINGS CAREERS</span>
-            </div>
-            <hr></hr>
-          </div> */}
-          <CommonCardTitle title="HERINGS CAREERS" />
-          <div className="listCnt">
+    <div >
+      {/* <ContentsTitle matches={matches} title={"CONTACT US"} /> */}
+      {/* id 를 추가해야 이동한다 ; scroll focusing 스크롤 포커싱 */}
+      <div className="SectionDivCareer">
+        {/* <div className="titleDiv">
+          <div className="textT22 FontEB">
+            <span>HERINGS CAREERS</span>
+          </div>
+          <hr></hr>
+        </div> */}
+        <CommonCardTitle title="HERINGS CAREERS" />
+        <div className="listCnt">
+          <div
+            className={`${
+              careerTab === "A"
+                ? theme === "dark"
+                  ? "squareCareerSelectedDark"
+                  : "squareCareerSelected"
+                : "squareCareer"
+            }`}
+            onClick={(e) => {
+              tabClick(e, "A");
+            }}
+          >
+            <span className={`FontNR ${matches ? "textF32" : "textF70"}`}>
+              {countList[0]}
+            </span>
             <div
-              className={`${
-                careerTab === "A"
-                  ? theme === "dark"
-                    ? "squareCareerSelectedDark"
-                    : "squareCareerSelected"
-                  : "squareCareer"
+              className={`FontNR textF18 korFonts ${
+                theme === "dark" ? "tcw" : careerTab === "A" ? "tcw" : "tcb"
+              }
               }`}
-              onClick={(e) => {
-                tabClick(e, "A");
-              }}
             >
-              <span className={`FontNR ${matches ? "textF32" : "textF70"}`}>
-                {countList[0]}
-              </span>
-              <div
-                className={`FontNR textF18 korFonts ${
-                  theme === "dark" ? "tcw" : careerTab === "A" ? "tcw" : "tcb"
-                }
-                }`}
-              >
-                {matches ? "진행중인 채용" : "현재 진행중인 채용"}
-              </div>
-            </div>
-            <div
-              className={`${
-                careerTab === "B"
-                  ? theme === "dark"
-                    ? "squareCareerSelectedDark"
-                    : "squareCareerSelected"
-                  : "squareCareer"
-              }`}
-              onClick={(e) => {
-                tabClick(e, "B");
-              }}
-            >
-              <span className={`FontNR ${matches ? "textF32" : "textF70"}`}>
-                {countList[1]}
-              </span>
-              <div
-                className={`FontNR textF18 korFonts ${
-                  theme === "dark" ? "tcw" : careerTab === "B" ? "tcw" : "tcb"
-                }`}
-              >
-                신입 / 인턴
-              </div>
-            </div>
-            <div
-              className={`${
-                careerTab === "C"
-                  ? theme === "dark"
-                    ? "squareCareerSelectedDark"
-                    : "squareCareerSelected"
-                  : "squareCareer"
-              }`}
-              onClick={(e) => {
-                tabClick(e, "C");
-              }}
-            >
-              <span className={`FontNR ${matches ? "textF32" : "textF70"}`}>
-                {countList[2]}
-              </span>
-              <div
-                className={`FontNR textF18 korFonts ${
-                  theme === "dark" ? "tcw" : careerTab === "C" ? "tcw" : "tcb"
-                }`}
-              >
-                경력
-              </div>
+              {matches ? "진행중인 채용" : "현재 진행중인 채용"}
             </div>
           </div>
-          <div className="careerContainList">
+          <div
+            className={`${
+              careerTab === "B"
+                ? theme === "dark"
+                  ? "squareCareerSelectedDark"
+                  : "squareCareerSelected"
+                : "squareCareer"
+            }`}
+            onClick={(e) => {
+              tabClick(e, "B");
+            }}
+          >
+            <span className={`FontNR ${matches ? "textF32" : "textF70"}`}>
+              {countList[1]}
+            </span>
             <div
-              className={`${
-                theme === "dark"
-                  ? "careerContainListHeaderD"
-                  : "careerContainListHeader"
-              } FontNL flex-row`}
+              className={`FontNR textF18 korFonts ${
+                theme === "dark" ? "tcw" : careerTab === "B" ? "tcw" : "tcb"
+              }`}
             >
-              <div className="careerContainListHeaderCol col1 korFonts">
-                <span className="textF16 FontNR">구분</span>
-              </div>
-              <div className="careerContainListHeaderCol col2 korFonts">
-                <span className="textF16 FontNR">내용</span>
-              </div>
-              <div className="careerContainListHeaderCol col3 korFonts">
-                <span className="textF16 FontNR">채용 분야</span>
-              </div>
-              <div className="careerContainListHeaderCol col4 korFonts">
-                <span className="textF16 FontNR">상태</span>
-              </div>
+              신입 / 인턴
             </div>
-            {isDataReady ? (
-              listData.length > 0 ? (
-                listData.map((data, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="careerListRow FontNR"
-                      onClick={(e) => {
-                        handleOpen(data, checkDate(data.closing_date, "E"));
-                      }}
-                    >
-                      <div className="careerContainListCol col1 textF16 korFonts FontNR">
-                        {convertData(
-                          data.check_career_new +
-                            "/" +
-                            data.check_career_experienced +
-                            "/" +
-                            data.check_career_exp_year,
-                          "career"
-                        )}
-                      </div>
-                      <div className="careerContainListCol col2 careerListTitle">
-                        <div
-                          className={`textF20 ${
-                            theme === "dark" ? "tcw" : "tcb"
-                          } FontNB`}
-                        >
-                          {data.title}
-                        </div>
-                        <div className="careerListTitleDate">
-                          <span className="textF14 tcg korFonts FontNR">
-                            ~ {data.closing_date} 까지
-                          </span>
-                          <span className="tcg careerListTitleDateSeparator">
-                            |
-                          </span>
-                          <span className="textF14 tco korFonts FontNR">
-                            {checkDate(data.closing_date, "D")}
-                          </span>
-                        </div>
-                      </div>
-                      <div className="careerContainListCol col3 textF16 FontNR">
-                        {data.recruitment}
-                      </div>
-                      <div className="careerContainListCol col4 textF16 listBtn FontNR">
-                        <div
-                          className={`careerBtn ${
-                            checkDate(data.closing_date, "E")
-                              ? "careerBtnIng"
-                              : "careerBtnEnd"
-                          }`}
-                        >
-                          {checkDate(data.closing_date, "E")
-                            ? "채용중"
-                            : "마감"}
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })
-              ) : (
-                <div className="nodatasWrap">
-                  <div className="nodatas FontB">등록된 게시물이 없습니다!</div>
-                </div>
-              )
-            ) : (
-              <div></div>
-            )}
-            {paginginfo.totalPage > 1 ? (
-              <div
-                className="pagingDiv"
-                // onClick={(e) => loadMore(e)}
-              >
-                {pageingFn(paginginfo)}
-              </div>
-            ) : (
-              <div></div>
-            )}
+          </div>
+          <div
+            className={`${
+              careerTab === "C"
+                ? theme === "dark"
+                  ? "squareCareerSelectedDark"
+                  : "squareCareerSelected"
+                : "squareCareer"
+            }`}
+            onClick={(e) => {
+              tabClick(e, "C");
+            }}
+          >
+            <span className={`FontNR ${matches ? "textF32" : "textF70"}`}>
+              {countList[2]}
+            </span>
+            <div
+              className={`FontNR textF18 korFonts ${
+                theme === "dark" ? "tcw" : careerTab === "C" ? "tcw" : "tcb"
+              }`}
+            >
+              경력
+            </div>
           </div>
         </div>
-        {/* <Footer /> */}
+        <div className="careerContainList">
+          <div
+            className={`${
+              theme === "dark"
+                ? "careerContainListHeaderD"
+                : "careerContainListHeader"
+            } FontNL flex-row`}
+          >
+            <div className="careerContainListHeaderCol col1 korFonts">
+              <span className="textF16 FontNR">구분</span>
+            </div>
+            <div className="careerContainListHeaderCol col2 korFonts">
+              <span className="textF16 FontNR">내용</span>
+            </div>
+            <div className="careerContainListHeaderCol col3 korFonts">
+              <span className="textF16 FontNR">채용 분야</span>
+            </div>
+            <div className="careerContainListHeaderCol col4 korFonts">
+              <span className="textF16 FontNR">상태</span>
+            </div>
+          </div>
+          {isDataReady ? (
+            listData.length > 0 ? (
+              listData.map((data, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="careerListRow FontNR"
+                    onClick={(e) => {
+                      handleOpen(data, checkDate(data.closing_date, "E"));
+                    }}
+                  >
+                    <div className="careerContainListCol col1 textF16 korFonts FontNR">
+                      {convertData(
+                        data.check_career_new +
+                          "/" +
+                          data.check_career_experienced +
+                          "/" +
+                          data.check_career_exp_year,
+                        "career"
+                      )}
+                    </div>
+                    <div className="careerContainListCol col2 careerListTitle">
+                      <div
+                        className={`textF20 ${
+                          theme === "dark" ? "tcw" : "tcb"
+                        } FontNB`}
+                      >
+                        {data.title}
+                      </div>
+                      <div className="careerListTitleDate">
+                        <span className="textF14 tcg korFonts FontNR">
+                          ~ {data.closing_date} 까지
+                        </span>
+                        <span className="tcg careerListTitleDateSeparator">
+                          |
+                        </span>
+                        <span className="textF14 tco korFonts FontNR">
+                          {checkDate(data.closing_date, "D")}
+                        </span>
+                      </div>
+                    </div>
+                    <div className="careerContainListCol col3 textF16 FontNR">
+                      {data.recruitment}
+                    </div>
+                    <div className="careerContainListCol col4 textF16 listBtn FontNR">
+                      <div
+                        className={`careerBtn ${
+                          checkDate(data.closing_date, "E")
+                            ? "careerBtnIng"
+                            : "careerBtnEnd"
+                        }`}
+                      >
+                        {checkDate(data.closing_date, "E")
+                          ? "채용중"
+                          : "마감"}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })
+            ) : (
+              <div className="nodatasWrap">
+                <div className="nodatas FontB">등록된 게시물이 없습니다!</div>
+              </div>
+            )
+          ) : (
+            <div></div>
+          )}
+          {paginginfo.totalPage > 1 ? (
+            <div
+              className="pagingDiv"
+              // onClick={(e) => loadMore(e)}
+            >
+              {pageingFn(paginginfo)}
+            </div>
+          ) : (
+            <div></div>
+          )}
+        </div>
       </div>
+        
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"

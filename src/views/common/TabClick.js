@@ -29,6 +29,8 @@ export default function TabClick({ visibleArray }) {
     "aialgorithms",
     "drugadverseevents",
   ];
+  const newsir = ["newsrelease", "irinformation"];
+  const contactus = ["career", "contact"];
   const scrollWithOffset = (el, yOffset = -(84 + 100)) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
     window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
@@ -157,7 +159,8 @@ export default function TabClick({ visibleArray }) {
                 )}
               </React.Fragment>
             )) // research tabs
-          : researchtabs.map((tab, index) => (
+          : pathname === "/research/"
+          ? researchtabs.map((tab, index) => (
               <React.Fragment key={index}>
                 <div className="TABS_tab FontR textF16">
                   <Link
@@ -202,7 +205,77 @@ export default function TabClick({ visibleArray }) {
                   </div>
                 )}
               </React.Fragment>
-            ))}
+            ))
+          : pathname === "/news/"
+          ? newsir.map((tab, index) => (
+              <React.Fragment key={index}>
+                <div className="TABS_tab FontR textF16">
+                  <Link
+                    smooth
+                    to={`#${tab}`}
+                    scroll={scrollWithOffset}
+                    className={
+                      index === visibleIndex
+                        ? "w-full h-full tagADefault tabATagTab FontEB"
+                        : "w-full h-full tagADefault FontR " +
+                          (theme === "dark" ? "tcw" : "tcg3")
+                    }
+                  >
+                    {tab === "newsrelease"
+                      ? "NEWS RELEASE"
+                      : tab === "irinformation"
+                      ? "IR INFORMATION"
+                      : ""}
+                  </Link>
+                </div>
+                {index + 1 === newsir.length ? null : (
+                  <div style={{ margin: "auto" }}>
+                    <div
+                      className="separator"
+                      style={{
+                        backgroundColor:
+                          theme === "dark" ? "#5F5F5F" : "#E1E1E1",
+                      }}
+                    />
+                  </div>
+                )}
+              </React.Fragment>
+            )) 
+          : contactus.map((tab, index) => (
+            <React.Fragment key={index}>
+              <div className="TABS_tab FontR textF16">
+                <Link
+                  smooth
+                  to={`#${tab}`}
+                  scroll={scrollWithOffset}
+                  className={
+                    index === visibleIndex
+                      ? "w-full h-full tagADefault tabATagTab FontEB"
+                      : "w-full h-full tagADefault FontR " +
+                        (theme === "dark" ? "tcw" : "tcg3")
+                  }
+                >
+                  {tab === "career"
+                    ? "HERINGS CAREERS"
+                    : tab === "contact"
+                    ? "CONTACT"
+                    : ""}
+                </Link>
+              </div>
+              {index + 1 === contactus.length ? null : (
+                <div style={{ margin: "auto" }}>
+                  <div
+                    className="separator"
+                    style={{
+                      backgroundColor:
+                        theme === "dark" ? "#5F5F5F" : "#E1E1E1",
+                    }}
+                  />
+                </div>
+              )}
+            </React.Fragment>
+          ))
+          }
       </div>
     </div>
   );

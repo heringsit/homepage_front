@@ -156,7 +156,6 @@ export default function News({ match }) {
   return (
     <div
       id="news" 
-      
       style={{
         backgroundColor: theme === "dark" && "#282828",
         color: theme === "dark" && "white",
@@ -165,7 +164,7 @@ export default function News({ match }) {
       <Menubar slideIndex={slideIndex} />
       {!mTablet && <TabClick visibleArray={visibleArray} />}
       
-      <div className="w-screen flex-col justify-between ">
+      <div className="flex-col justify-between ">
         <div className={`pb-200 ${theme === "dark" && "bg-black"} `} >
           <ContentsTitle title={"News & IR"} />
           {/* 배너 */}
