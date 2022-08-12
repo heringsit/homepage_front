@@ -318,7 +318,11 @@ export default function Career({ match }) {
           <div className="listCnt">
             <div
               className={`${
-                careerTab === "A" ? "squareCareerSelected" : "squareCareer"
+                careerTab === "A"
+                  ? theme === "dark"
+                    ? "squareCareerSelectedDark"
+                    : "squareCareerSelected"
+                  : "squareCareer"
               }`}
               onClick={(e) => {
                 tabClick(e, "A");
@@ -329,7 +333,7 @@ export default function Career({ match }) {
               </span>
               <div
                 className={`FontNR textF18 korFonts ${
-                  theme === "dark" || careerTab === "A" ? "tcw" : "tcb"
+                  theme === "dark" ? "tcw" : careerTab === "A" ? "tcw" : "tcb"
                 }
                 }`}
               >
@@ -338,7 +342,11 @@ export default function Career({ match }) {
             </div>
             <div
               className={`${
-                careerTab === "B" ? "squareCareerSelected" : "squareCareer"
+                careerTab === "B"
+                  ? theme === "dark"
+                    ? "squareCareerSelectedDark"
+                    : "squareCareerSelected"
+                  : "squareCareer"
               }`}
               onClick={(e) => {
                 tabClick(e, "B");
@@ -349,7 +357,7 @@ export default function Career({ match }) {
               </span>
               <div
                 className={`FontNR textF18 korFonts ${
-                  theme === "dark" || careerTab === "A" ? "tcw" : "tcb"
+                  theme === "dark" ? "tcw" : careerTab === "B" ? "tcw" : "tcb"
                 }`}
               >
                 신입 / 인턴
@@ -357,7 +365,11 @@ export default function Career({ match }) {
             </div>
             <div
               className={`${
-                careerTab === "C" ? "squareCareerSelected" : "squareCareer"
+                careerTab === "C"
+                  ? theme === "dark"
+                    ? "squareCareerSelectedDark"
+                    : "squareCareerSelected"
+                  : "squareCareer"
               }`}
               onClick={(e) => {
                 tabClick(e, "C");
@@ -368,7 +380,7 @@ export default function Career({ match }) {
               </span>
               <div
                 className={`FontNR textF18 korFonts ${
-                  theme === "dark" || careerTab === "A" ? "tcw" : "tcb"
+                  theme === "dark" ? "tcw" : careerTab === "C" ? "tcw" : "tcb"
                 }`}
               >
                 경력
@@ -376,7 +388,13 @@ export default function Career({ match }) {
             </div>
           </div>
           <div className="careerContainList">
-            <div className={`${theme === "dark" ? "careerContainListHeaderD" : "careerContainListHeader"} FontNL flex-row`}>
+            <div
+              className={`${
+                theme === "dark"
+                  ? "careerContainListHeaderD"
+                  : "careerContainListHeader"
+              } FontNL flex-row`}
+            >
               <div className="careerContainListHeaderCol col1 korFonts">
                 <span className="textF16 FontNR">구분</span>
               </div>
@@ -412,7 +430,13 @@ export default function Career({ match }) {
                         )}
                       </div>
                       <div className="careerContainListCol col2 careerListTitle">
-                        <div className="textF20 tcb FontNB">{data.title}</div>
+                        <div
+                          className={`textF20 ${
+                            theme === "dark" ? "tcw" : "tcb"
+                          } FontNB`}
+                        >
+                          {data.title}
+                        </div>
                         <div className="careerListTitleDate">
                           <span className="textF14 tcg korFonts FontNR">
                             ~ {data.closing_date} 까지

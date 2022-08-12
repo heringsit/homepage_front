@@ -232,12 +232,6 @@ export default function Menubar(props) {
                 <Link smooth="true" to={MENU.link[idx]} onClick={menuclick}>
                   <span
                     className={`menuText textF18 FontR ${
-                    //   props.slideIndex === 0 && pathname !== MENU.linkpath[idx]
-                    //     ? theme === "light"
-                    //       ? "tcb"
-                    //       : "tcw"
-                    //     : "tcb"
-                    // } ${isMActive && "tcb"} ${
                       pathname === MENU.linkpath[idx]
                         ? "menuTextActive"
                         : theme === "light"
@@ -261,7 +255,7 @@ export default function Menubar(props) {
         </div>
 
         {/* 소메뉴 */}
-        <div
+        {/* <div
           className={`${theme === "light" ? "menuDetail" : "menuDetailDark"} ${
             isOver ? "part" : "partHide"
           }`}
@@ -296,7 +290,7 @@ export default function Menubar(props) {
                         onClick={menuclick}
                       >
                         <span
-                          className={`menuText FontL ${
+                          className={`menuText textF15 FontL ${
                             theme === "light" ? "tcg" : "tcw"
                           }`}
                         >
@@ -309,7 +303,7 @@ export default function Menubar(props) {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }
