@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./PrivacyPolicy.css";
 import HealiaryPrivacyPolicy from "../../assets/text/HealiaryPrivacyPolicy.txt";
+//Terms Of Service
+import HealiaryTOS from "../../assets/text/HealiaryTOS.txt";
 import PrivacyButtons from "./Compoments/PrivacyButtons";
+import { ThemeContext } from "../../context";
 
 export default function HealiaryPrivacy() {
   const [buttonId, setButtonID] = useState(0);
@@ -10,18 +13,27 @@ export default function HealiaryPrivacy() {
   const submenu = patharray[patharray.length - 1];
   const [policies, setPolicies] = useState([]);
 
+  const { theme } = useContext(ThemeContext);
+
   function onClick(id, e) {
     setButtonID(id);
   }
 
   useEffect(() => {
-    fetch(HealiaryPrivacyPolicy)
-      .then((r) => r.text())
-      .then((text) => {
-        // console.log(text.split("\n"));
-        setPolicies(text.split("\n"));
-      });
-  }, [""]);
+    submenu === "0"
+      ? fetch(HealiaryPrivacyPolicy)
+          .then((r) => r.text())
+          .then((text) => {
+            // console.log(text.split("\n"));
+            setPolicies(text.split("\n"));
+          })
+      : fetch(HealiaryTOS)
+          .then((r) => r.text())
+          .then((text) => {
+            // console.log(text.split("\n"));
+            setPolicies(text.split("\n"));
+          });
+  }, [policies]);
 
   return (
     <>
@@ -31,15 +43,41 @@ export default function HealiaryPrivacy() {
           texts={["개인 정보 처리 방침 >", "이용 약관 >"]}
           onClick={onClick}
         />
-        <div className="policycontent">
+        <div className="mt-48">
           {submenu === "0" ? (
-            policies.map((policy, idx) => (
-              <p key={idx} className="m-reset">
-                {policy}
+            <>
+              <p
+                className={`textF16 FontCB  policyTitle ${
+                  theme === "dark" ? "tcw" : "tcb"
+                }`}
+              >
+                힐리어리 개인정보 처리 방침
               </p>
-            ))
+              {policies.map((policy, idx) => (
+                <p
+                  key={idx}
+                  className="m-reset FontNR lineheight160 policyContents"
+                >
+                  {policy}
+                </p>
+              ))}
+            </>
           ) : (
-            <div></div>
+            <>
+              <p className={`textF16 FontCB tcb policyTitle ${
+                  theme === "dark" ? "tcw" : "tcb"
+                }`}>
+                힐리어리 이용 약관
+              </p>
+              {policies.map((policy, idx) => (
+                <p
+                  key={idx}
+                  className="m-reset textF16 FontNR text-align-left lineheight160 policyContents"
+                >
+                  {policy}
+                </p>
+              ))}
+            </>
           )}
         </div>
       </div>

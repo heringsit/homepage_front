@@ -2,7 +2,7 @@
   padding-left: 32%;
   padding-right: 32%;
 }
-.buttons {
+.privacybuttons {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -15,35 +15,39 @@
   padding: 8px 20px 8px 24px;
   gap: 4px;
   width: max-content;
-  height: 32px;
+  height: fit-content;
   border-radius: 12px;
-  margin: 47px 6px;
+  margin: 47px 6px 0 6px;
 }
-.policycontent {
-  text-align: left;
-}
-.text {
-  text-align: left;
+.policyTitle {
+  margin: 48px 0 48px 0;
+  text-align: center;
   line-height: 160%;
 }
+.policyContents {
+  text-align: left;
+}
 
-/* TABLE */
-
+/*  600 < Screen <= 768 */
+@media screen and (max-width: 1024px) {
+  .policyWrap {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+/* screen <= 320px */
 @media screen and (max-width: 320px) {
-  .buttons {
+  .privacybuttons {
     display: flex;
     flex-direction: column;
-    /* margin-left: 100%; */
-    justify-content: right;
+    text-align: right;
   }
   .policyButton {
-    margin: 12px 0px;
-  }
-  .selectedPolicyButton {
-    margin: 12px 0px;
+    margin: 6px 0px;
+    display: inline-block;
   }
   .policyWrap {
-    margin-top: 87px;
+    margin-top: 135px;
     padding-left: 10%;
     padding-right: 10%;
   }

@@ -45,15 +45,17 @@
   width: 100%;
   justify-content: flex-end;
   outline: none;
-  padding: 7px 10px;
 }
 .modalClose {
-  width: 35px;
-  height: 35px;
+  width: 70px;
+  height: 70px;
   max-width: 70;
   padding: 2;
   cursor: pointer;
   outline: none;
+}
+.modalimage {
+  padding-top: 70px;
 }
 .modalimageWrap {
   display: flex;
@@ -71,30 +73,20 @@
   height: auto;
 }
 @media screen and (max-width: 1260px) {
-  .modalCloseDiv {
-    /* top: calc(-0.9vh); */
-    margin: -1px -2px;
+  .modalimage {
+    padding-top: 60px;
   }
   .modalClose {
-    width: 28px;
-    /* height: 28px; */
-  }
-}
-@media screen and (max-width: 1024px) {
-  .modalCloseDiv {
-    margin-top: -6px;
+    width: 50px;
+    height: 50px;
   }
 }
 @media screen and (max-width: 768px) {
+  .modalimage {
+    padding-top: 40px;
+  }
   .paper {
     width: 80%;
-  }
-  .modalCloseDiv {
-    /* top: -10px; */
-    margin-top: -6px;
-  }
-  .modalClose {
-    width: 26px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -103,13 +95,12 @@
   }
 }
 @media screen and (max-width: 320px) {
-  .modalCloseDiv {
-    /* top: 1px; */
-    margin: -1px -2px;
-  }
   .modalClose {
-    width: 20px;
-    height: 20px;
+    width: 35px;
+    height: 35px;
+  }
+  .modalimage {
+    padding-top: 30px;
   }
   .modalContentText {
     padding: 25px 10px 25px 10px;

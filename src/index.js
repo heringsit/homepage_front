@@ -64,7 +64,7 @@ const App = () => {
             <Route path={`/news/:submenu/detail/:id`} component={DetailPage} />
             <Route path={`/news/:submenu`} component={News} />
             <Route path={`/news`} component={News} />
-            <Route path={`/privacypolicy`} component={PrivacyPolicy} />
+            <Route path={`/privacypolicy/`} component={PrivacyPolicy} />
             {/* <Route
               path={`/privacypolicy/:submenu`}
               children={<PrivacyPolicy />}

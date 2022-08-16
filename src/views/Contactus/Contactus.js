@@ -178,7 +178,7 @@ export default function ContactUs() {
 
   return (
     <div
-    id="contactus"
+      id="contactus"
       style={{
         backgroundColor: theme === "dark" && "#282828",
         color: theme === "dark" && "#fff",
@@ -187,12 +187,12 @@ export default function ContactUs() {
       <Menubar slideIndex={0} />
       <Totop />
       {!mTablet && <TabClick visibleArray={visibleArray} />}
-      
+
       <ContentsTitle matches={matches} title={"CONTACT US"} />
       <div id="career" ref={refs.current[0]}>
         <Career matches={matches} />
       </div>
-      
+
       <div className="SectionDiv" id="contact" ref={refs.current[1]}>
         {/* <div className="titleDiv">
           <div className="textT22 FontEB">
@@ -202,7 +202,11 @@ export default function ContactUs() {
         </div> */}
         <CommonCardTitle title="CONTACT" />
         <div className="subTitleDiv">
-          <div className="contactusSubTitle FontL textF22">
+          <div
+            className={`contactusSubTitle FontL textF22 ${
+              theme === "dark" ? "tcw" : "tcg4"
+            }`}
+          >
             <span className="tcgreen1 FontL">We are here to help.</span> Want to
             learn more about our services?
             <br />
@@ -233,7 +237,7 @@ export default function ContactUs() {
               <span className="tcgreen3 FontB">FAX</span>+82.02.6949.3517
             </div>
           </div>
-          <div className="contactusInputDiv" >
+          <div className="contactusInputDiv">
             <form
               method="POST"
               className="contactusInputForm "
@@ -244,21 +248,27 @@ export default function ContactUs() {
                 onChange={onChange}
                 placeholder="Name"
                 name="cName"
-                className={`${inputClassNameHelper(isEnteredNameValid())} FontR`}
+                className={`${inputClassNameHelper(
+                  isEnteredNameValid()
+                )} FontR`}
               />
               <input
                 type="text"
                 onChange={onChange}
                 placeholder="Email"
                 name="cEmail"
-                className={`${inputClassNameHelper(isEnteredEmailValid())} FontR`}
+                className={`${inputClassNameHelper(
+                  isEnteredEmailValid()
+                )} FontR`}
               />
               <input
                 type="text"
                 onChange={onChange}
                 placeholder="Phone"
                 name="cPhone"
-                className={`${inputClassNameHelper(isEnteredPhoneValid())} FontR`}
+                className={`${inputClassNameHelper(
+                  isEnteredPhoneValid()
+                )} FontR`}
               />
               <textarea
                 type="textarea"
