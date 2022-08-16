@@ -13,28 +13,28 @@ export default function PrivacyPolicy() {
   const { mTablet } = useContext(MediaQueryContext);
   const { theme } = useContext(ThemeContext);
 
-  const [isScroll, setIsScroll] = useState(false);
+  // const [isScroll, setIsScroll] = useState(false);
   const [slideIndex] = useState(0);
   
   const [tab, setTab] = useState(0);
-  const onScroll = () => {
-    if (window.scrollY > 238 || window.pageYOffset > 238) {
-      setIsScroll(true);
-    } else {
-      setIsScroll(false);
-    }
-  };
+  // const onScroll = () => {
+  //   if (window.scrollY > 238 || window.pageYOffset > 238) {
+  //     setIsScroll(true);
+  //   } else {
+  //     setIsScroll(false);
+  //   }
+  // };
 
   // set tab
   const onClick = (e, tabID) => {
     setTab(tabID)
   }
 
-  // 모바일 메뉴
-  useEffect(() => {
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [isScroll]);
+  // // 모바일 메뉴
+  // useEffect(() => {
+  //   window.addEventListener("scroll", onScroll);
+  //   return () => window.removeEventListener("scroll", onScroll);
+  // }, [isScroll]);
 
   // Scroll Tracker
   // const scrollElem = Array.from(Array(2).keys());
