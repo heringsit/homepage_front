@@ -206,7 +206,7 @@ export default function Research() {
                 content2="Development Program(No. 20015086) By the Ministry of
                 Trade, Industry & Energy(MOTIE, Korea)."
                 subText1="SMART REPORT SYSTEM FOR DRUG ADVERSE EVENTS"
-                subText2="SODA"
+                // subText2="SODA"
                 subText1Style="FontB mb-4"
                 subText2Style="textF24 FontEB mb-8"
                 contentPadding="drugadverse-padding"

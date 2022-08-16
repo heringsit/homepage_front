@@ -2,7 +2,8 @@ import React from "react";
 import Modal from "@material-ui/core/Modal";
 import Fade from "@material-ui/core/Fade";
 import { Backdrop } from "@material-ui/core";
-import iconClose from "../../assets/images/02about_herings_team/window-close.svg";
+// import iconClose from "../../assets/images/02about_herings_team/window-close.svg";
+import iconClose from "../../assets/images/02about_herings_team/closeIcon.png"
 import "./modal.css"
 
 export function AboutUsModal(props) {
@@ -36,7 +37,7 @@ export function AboutUsModal(props) {
                   <img
                     src={props.modalObj?.modalimg}
                     alt={props.modalObj?.name}
-                    className="pt-50 modalimage"
+                    className="modalimage"
                   />
                 </div>
                 <div className="modalTitle mt-20 mb-20 flex-wrap-col align-items-center justify-center">
