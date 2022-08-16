@@ -7,19 +7,6 @@
   justify-content: center;
   text-align: center;
 }
-.selectedPolicyButton {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 20px 8px 24px;
-  gap: 4px;
-  width: max-content;
-  height: 32px;
-  background-color: #cdcdcd;
-  border-radius: 12px;
-  margin: 47px 6px;
-}
 .policyButton {
   display: flex;
   flex-direction: row;
@@ -29,17 +16,19 @@
   gap: 4px;
   width: max-content;
   height: 32px;
-  background-color: #ebebeb;
   border-radius: 12px;
   margin: 47px 6px;
 }
 .policycontent {
-  text-align: center;
+  text-align: left;
 }
 .text {
   text-align: left;
   line-height: 160%;
 }
+
+/* TABLE */
+
 @media screen and (max-width: 320px) {
   .buttons {
     display: flex;
