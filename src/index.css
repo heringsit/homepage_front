@@ -199,6 +199,10 @@ html {
 .FontNB {
   font-family: "NotoSansKoreanB", sans-serif;
 }
+.FontNCB {
+  font-family: "NotoSansKoreanR", sans-serif;
+  font-weight: 600;
+}
 .FontNEB {
   font-family: "NotoSansKoreanEB", sans-serif;
 }

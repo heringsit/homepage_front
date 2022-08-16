@@ -65,10 +65,10 @@ const App = () => {
             <Route path={`/news/:submenu`} component={News} />
             <Route path={`/news`} component={News} />
             <Route path={`/privacypolicy`} component={PrivacyPolicy} />
-            <Route
+            {/* <Route
               path={`/privacypolicy/:submenu`}
-              component={PrivacyPolicy}
-            />
+              children={<PrivacyPolicy />}
+            /> */}
             <Route path="*" component={Aboutus} />
             <Redirect exact froåm={`/`} to={"/aboutus"} />
           </Switch>
