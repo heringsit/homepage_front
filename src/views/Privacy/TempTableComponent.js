@@ -1,22 +1,10 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../../context";
 
-const testTitle = ["구분", "항목", "기간"];
-const testVariables = [
-  [
-    "5. 대출 \n - 주택담보대출 찾기: 주택담보대출 찾기 서비스 제공 \n - 대출 받기: 대출 받기 서비스 제공 \n - 아파트 대출 한도 계산기: 주택담보대출 한도를 계산하여 정보 제공",
-    "5. 대출 \n\t - 주택담보대출 찾기: 주택담보대출 찾기 서비스 제공 ",
-    "5. 대출 \n - 주택담보대출 찾기: 주택담보대출 찾기 서비스 제공",
-  ],
-  [
-    "5. 대출 \n - 주택담보대출 찾기: 주택담보대출 찾기 서비스 제공 \n - 대출 받기: 대출 받기 서비스 제공 \n - 아파트 대출 한도 계산기: 주택담보대출 한도를 계산하여 정보 제공",
-    "5. 대출 \n\t - 주택담보대출 찾기: 주택담보대출 찾기 서비스 제공 ",
-    "5. 대출 \n - 주택담보대출 찾기: 주택담보대출 찾기 서비스 제공",
-  ],
-];
 const newLine = new RegExp("\n");
 const newTab = new RegExp("\t");
-const Table = ({ titles = testTitle, cell = testVariables }) => {
+const Table = ({ rows, columns }) => {
+  // console.log(rows, columns, "rows & columns");
   const { theme } = useContext(ThemeContext);
   const processNewLine = (content) => {
     return content.split(newLine);
@@ -34,7 +22,10 @@ const Table = ({ titles = testTitle, cell = testVariables }) => {
       );
     } else
       return (
-        <p className={`m-reset ${idx === 0 ? "" : "mt-16"} FontNL textF14`} key={idx}>
+        <p
+          className={`m-reset ${idx === 0 ? "" : "mt-16"} FontNL textF14`}
+          key={idx}
+        >
           {content}
         </p>
       );
@@ -43,7 +34,7 @@ const Table = ({ titles = testTitle, cell = testVariables }) => {
     <table cellSpacing={0}>
       <thead>
         <tr>
-          {titles.map((title, idx) => (
+          {rows.map((title, idx) => (
             <th
               key={idx}
               className={`${
@@ -51,7 +42,7 @@ const Table = ({ titles = testTitle, cell = testVariables }) => {
                   ? "bg-tableheader-light tctheader"
                   : "bg-tableheader-dark tcw"
               }  p-12 FontNL textF14 border border-b-0 ${
-                idx === titles.length - 1 ? "" : "border-r-0"
+                idx === rows.length - 1 ? "" : "border-r-0"
               }`}
               style={{ borderColor: "#e5e8eb" }}
             >
@@ -61,23 +52,27 @@ const Table = ({ titles = testTitle, cell = testVariables }) => {
         </tr>
       </thead>
       <tbody>
-        {cell.map((contents, cell_idx) => (
+        {columns.map((contents, column_idx) => (
           <tr>
-            {contents.map((content, contents_idx) => (
-              <td
-                key={contents_idx}
-                className={`p-12 ${
-                  theme === "light" ? "tctheader" : "tcw"
-                } border  ${cell_idx === cell.length - 1 ? "" : "border-b-0"} ${
-                  contents_idx === titles.length - 1 ? "" : "border-r-0"
-                } `}
-                style={{ borderColor: "#e5e8eb" }}
-              >
-                {processNewLine(content).map((line, contents_idx) =>
-                  processTab(line, contents_idx)
-                )}
-              </td>
-            ))}
+            {contents.map((content, contents_idx) =>
+              content === "" ? (
+                <td key={contents_idx} className="border border-t-0"></td>
+              ) : (
+                <td
+                  key={contents_idx}
+                  className={`p-12 ${
+                    theme === "light" ? "tctheader" : "tcw"
+                  } border ${
+                    column_idx === columns.length - 1 ? "" : "border-b-0"
+                  } ${contents_idx === rows.length - 1 ? "" : "border-r-0"} `}
+                  style={{ borderColor: "#e5e8eb" }}
+                >
+                  {processNewLine(content).map((line, contents_idx) =>
+                    processTab(line, contents_idx)
+                  )}
+                </td>
+              )
+            )}
           </tr>
         ))}
       </tbody>
