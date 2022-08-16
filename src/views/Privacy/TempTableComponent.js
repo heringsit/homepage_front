@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../context";
+
 const testTitle = ["구분", "항목", "기간"];
 const testVariables = [
   [
@@ -15,6 +17,7 @@ const testVariables = [
 const newLine = new RegExp("\n");
 const newTab = new RegExp("\t");
 const Table = ({ titles = testTitle, cell = testVariables }) => {
+  const { theme } = useContext(ThemeContext);
   const processNewLine = (content) => {
     return content.split(newLine);
   };
@@ -22,11 +25,19 @@ const Table = ({ titles = testTitle, cell = testVariables }) => {
     console.log(newTab.test(content));
     if (newTab.test(content)) {
       return (
-        <p className={`tab-1 m-reset ${idx===0 ? "" : "mt-16"} FontNL`} key={idx}>
+        <p
+          className={`tab-1 m-reset ${idx === 0 ? "" : "mt-16"} FontNL textF14`}
+          key={idx}
+        >
           {content}
         </p>
       );
-    } else return <p className={`m-reset ${idx===0 ? "" : "mt-16"} FontNL`} key={idx}>{content}</p>;
+    } else
+      return (
+        <p className={`m-reset ${idx === 0 ? "" : "mt-16"} FontNL textF14`} key={idx}>
+          {content}
+        </p>
+      );
   };
   return (
     <table cellSpacing={0}>
@@ -35,10 +46,14 @@ const Table = ({ titles = testTitle, cell = testVariables }) => {
           {titles.map((title, idx) => (
             <th
               key={idx}
-              className={`bg-tableheader tctheader p-12 FontNL border border-b-0 ${
+              className={`${
+                theme === "light"
+                  ? "bg-tableheader-light tctheader"
+                  : "bg-tableheader-dark tcw"
+              }  p-12 FontNL textF14 border border-b-0 ${
                 idx === titles.length - 1 ? "" : "border-r-0"
               }`}
-              style={{borderColor: "#e5e8eb"}}
+              style={{ borderColor: "#e5e8eb" }}
             >
               {title}
             </th>
@@ -51,10 +66,12 @@ const Table = ({ titles = testTitle, cell = testVariables }) => {
             {contents.map((content, contents_idx) => (
               <td
                 key={contents_idx}
-                className={`p-12 tctheader border  ${
-                  cell_idx === cell.length - 1 ? "" : "border-b-0"
-                } ${contents_idx === titles.length - 1 ? "" : "border-r-0"} `}
-                style={{borderColor: "#e5e8eb"}}
+                className={`p-12 ${
+                  theme === "light" ? "tctheader" : "tcw"
+                } border  ${cell_idx === cell.length - 1 ? "" : "border-b-0"} ${
+                  contents_idx === titles.length - 1 ? "" : "border-r-0"
+                } `}
+                style={{ borderColor: "#e5e8eb" }}
               >
                 {processNewLine(content).map((line, contents_idx) =>
                   processTab(line, contents_idx)
