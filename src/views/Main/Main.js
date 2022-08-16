@@ -57,10 +57,10 @@ export default function Main() {
 
           <video
             className="mainvideo"
-            controls//={false}
+            controls={false}
             muted={true}
-            loop//={true}
-            autoPlay//={true}
+            loop={true}
+            autoPlay={true}
             playsInline
             style={{
               width:"100%",
