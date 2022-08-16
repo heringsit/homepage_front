@@ -305,6 +305,10 @@
   line-height: 140%;
 }
 
+.no-decoration {
+  text-decoration: none;
+}
+
 /* display */
 .block {
   display: block;

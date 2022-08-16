@@ -41,8 +41,10 @@ export default function PrivacyPolicy() {
   // const visibleArray = Array(2).fill(true);
   // visibleArray[0] = useOnScreen(refs.current[0]);
   // visibleArray[1] = useOnScreen(refs.current[1]);
-  const { submenu } = useParams();
-  console.log(submenu);
+  const patharray = window.location.pathname.split("/")
+  const submenu = patharray[patharray.length-1]
+  const selected = submenu === "ostomy"
+  console.log(selected);
   return (
     <div
       id="privacypolicy"
@@ -66,19 +68,19 @@ export default function PrivacyPolicy() {
               : "menuBorderBottomLight")
           }
         >
-          <div className="TABS_tab FontR textF16" onClick={e => onClick(e, 0)}>
+          <Link className="TABS_tab FontR textF16 no-decoration" onClick={e => onClick(e, 0)} to="healiary" >
             <div
-              to={`#test`}
+              // to={`#test`}
               className={
-                tab === 0 //index === visibleIndex
-                  ? "w-full h-full tagADefault tabATagTab FontEB"
+                selected === false //index === visibleIndex
+                  ? " w-full h-full tagADefault tabATagTab FontEB"
                   : "w-full h-full tagADefault FontR " +
                     (theme === "dark" ? "tcw" : "tcg3")
               }
             >
               HEALIARY
             </div>
-          </div>
+          </Link>
           <div style={{ margin: "auto" }}>
             <div
               className="separator"
@@ -87,11 +89,10 @@ export default function PrivacyPolicy() {
               }}
             />
           </div>
-          <div className="TABS_tab FontR textF16" onClick={e => onClick(e, 1)}>
+          <Link className="TABS_tab FontR textF16 no-decoration" onClick={e => onClick(e, 1)} to="ostomy">
             <div
-              to={`#test`}
               className={
-                tab === 1 //index === visibleIndex
+                selected === true //index === visibleIndex
                   ? "w-full h-full tagADefault tabATagTab FontEB"
                   : "w-full h-full tagADefault FontR " +
                     (theme === "dark" ? "tcw" : "tcg3")
@@ -99,10 +100,10 @@ export default function PrivacyPolicy() {
             >
               OSTOMY
             </div>
-          </div>
+          </Link>
         </div>
       </div>
-      {tab === 0 
+      {selected === false 
         ? <HealiaryPrivacy />
         : <OstomyPrivacy />
         }

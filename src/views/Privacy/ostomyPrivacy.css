@@ -1,0 +1,74 @@
+.policyWrap {
+  width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.selectedPolicyButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px 8px 24px;
+  gap: 4px;
+  width: max-content;
+  height: 32px;
+  background-color: #cdcdcd;
+  border-radius: 12px;
+  margin: 47px 6px;
+}
+.policyButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px 8px 24px;
+  gap: 4px;
+  width: max-content;
+  height: 32px;
+  background-color: #ebebeb;
+  border-radius: 12px;
+  margin: 47px 6px;
+}
+.policycontent {
+  text-align: center;
+  padding: 0 24px 48px;
+  /* padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 48px; */
+}
+.text {
+  text-align: left;
+  line-height: 160%;
+}
+@media screen and (max-width: 768px) {
+  .policyWrap {
+    margin-top: 84px;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 320px) {
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 100%; */
+    justify-content: right;
+  }
+  .policyButton {
+    margin: 12px 0px;
+  }
+  .selectedPolicyButton {
+    margin: 12px 0px;
+  }
+  .policyWrap {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
