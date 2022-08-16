@@ -22,11 +22,11 @@ const Table = ({ titles = testTitle, cell = testVariables }) => {
     console.log(newTab.test(content));
     if (newTab.test(content)) {
       return (
-        <p className="tab-1" key={idx}>
+        <p className={`tab-1 m-reset ${idx===0 ? "" : "mt-16"} FontNL`} key={idx}>
           {content}
         </p>
       );
-    } else return <p key={idx}>{content}</p>;
+    } else return <p className={`m-reset ${idx===0 ? "" : "mt-16"} FontNL`} key={idx}>{content}</p>;
   };
   return (
     <table cellSpacing={0}>
@@ -35,9 +35,10 @@ const Table = ({ titles = testTitle, cell = testVariables }) => {
           {titles.map((title, idx) => (
             <th
               key={idx}
-              className={`border border-b-0 ${
+              className={`bg-tableheader tctheader p-12 FontNL border border-b-0 ${
                 idx === titles.length - 1 ? "" : "border-r-0"
               }`}
+              style={{borderColor: "#e5e8eb"}}
             >
               {title}
             </th>
@@ -50,9 +51,10 @@ const Table = ({ titles = testTitle, cell = testVariables }) => {
             {contents.map((content, contents_idx) => (
               <td
                 key={contents_idx}
-                className={`border ${
+                className={`p-12 tctheader border  ${
                   cell_idx === cell.length - 1 ? "" : "border-b-0"
-                } ${contents_idx === titles.length - 1 ? "" : "border-r-0"}`}
+                } ${contents_idx === titles.length - 1 ? "" : "border-r-0"} `}
+                style={{borderColor: "#e5e8eb"}}
               >
                 {processNewLine(content).map((line, contents_idx) =>
                   processTab(line, contents_idx)
