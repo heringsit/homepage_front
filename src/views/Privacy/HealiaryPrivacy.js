@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./PrivacyPolicy.css";
 import HealiaryPrivacyPolicy from "../../assets/text/HealiaryPrivacyPolicy.txt";
 //Terms Of Service
 import HealiaryTOS from "../../assets/text/HealiaryTOS.txt";
 import PrivacyButtons from "./Compoments/PrivacyButtons";
+import { ThemeContext } from "../../context";
 
 export default function HealiaryPrivacy() {
   const [buttonId, setButtonID] = useState(0);
   const patharray = window.location.pathname.split("/");
   const submenu = patharray[patharray.length - 1];
   const [policies, setPolicies] = useState([]);
+
+  const { theme } = useContext(ThemeContext);
 
   function onClick(id, e) {
     setButtonID(id);
@@ -30,7 +33,7 @@ export default function HealiaryPrivacy() {
             // console.log(text.split("\n"));
             setPolicies(text.split("\n"));
           });
-  }, [policies])
+  }, [policies]);
 
   return (
     <>
@@ -43,7 +46,11 @@ export default function HealiaryPrivacy() {
         <div className="mt-48">
           {submenu === "0" ? (
             <>
-              <p className="textF16 FontCB tcb text-align-center lineheight160 policyTitle">
+              <p
+                className={`textF16 FontCB  policyTitle ${
+                  theme === "dark" ? "tcw" : "tcb"
+                }`}
+              >
                 힐리어리 개인정보 처리 방침
               </p>
               {policies.map((policy, idx) => (
@@ -57,7 +64,9 @@ export default function HealiaryPrivacy() {
             </>
           ) : (
             <>
-              <p className="textF16 FontCB tcb policyTitle">
+              <p className={`textF16 FontCB tcb policyTitle ${
+                  theme === "dark" ? "tcw" : "tcb"
+                }`}>
                 힐리어리 이용 약관
               </p>
               {policies.map((policy, idx) => (
