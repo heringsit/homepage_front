@@ -55,30 +55,24 @@ export default function Main() {
           </div>
         ) : (
 
-          <img
-              src={mainimage}
-              alt="mainvideo"
-              style={{
-                width: "100%",
-                height: "100%",
-              }}
-            />
-          // <video
-          //   className="mainvideo"
-          //   controls//={false}
-          //   muted={true}
-          //   loop//={true}
-          //   autoPlay//={true}
-          //   playsInline
-          //   // src={project1_7}
-          //   // alt="project1_7"
-          //   // type="video/mp4"
-          // >
-          //   <source src={project1_7} type="video/mp4" />
-          //   Your Browser does not support the video tag.
-          // </video>
+          <video
+            className="mainvideo"
+            controls//={false}
+            muted={true}
+            loop//={true}
+            autoPlay//={true}
+            playsInline
+            style={{
+              width:"100%",
+              height:"100%"
+
+            }}
+          >
+            <source src="https://turtleneck.s3.ap-northeast-2.amazonaws.com/heringsmain.mp4" type="video/mp4" />
+            Your Browser does not support the video tag.
+          </video>
         
-        )}
+         )}
       </div>
       <Footer />
     </div>
