@@ -57,10 +57,10 @@ export default function Main() {
 
           <video
             className="mainvideo"
-            controls//={false}
+            controls={false}
             muted={true}
-            loop//={true}
-            autoPlay//={true}
+            loop={true}
+            autoPlay={true}
             playsInline
             style={{
               width:"100%",
@@ -68,7 +68,7 @@ export default function Main() {
 
             }}
           >
-            <source src="https://turtleneck.s3.ap-northeast-2.amazonaws.com/heringsmain.mp4" type="video/mp4" />
+            <source src="https://turtleneck.s3.ap-northeast-2.amazonaws.com/homepage_background.mp4" type="video/mp4" />
             Your Browser does not support the video tag.
           </video>
         
