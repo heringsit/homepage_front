@@ -405,6 +405,12 @@
 .bg-white {
   background-color: #f3f3f3;
 }
+.bg-button-selected {
+  background-color: #cdcdcd;
+}
+.bg-button {
+  background-color: #ebebeb;
+}
 
 /* border color */
 .border-w {

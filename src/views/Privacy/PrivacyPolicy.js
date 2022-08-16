@@ -15,6 +15,7 @@ export default function PrivacyPolicy() {
 
   // const [isScroll, setIsScroll] = useState(false);
   const [slideIndex] = useState(0);
+  
   const [tab, setTab] = useState(0);
   // const onScroll = () => {
   //   if (window.scrollY > 238 || window.pageYOffset > 238) {
@@ -107,7 +108,6 @@ export default function PrivacyPolicy() {
         ? <HealiaryPrivacy />
         : <OstomyPrivacy />
         }
-      
       <Totop />
       <Footer />
     </div>
