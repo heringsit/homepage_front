@@ -10,6 +10,9 @@
 .p-20 {
   padding: 20px;
 }
+.p-12 {
+  padding: 12px;
+}
 /* ps-# - padding side */
 .ps-24 {
   padding-left: 24px;
@@ -178,6 +181,9 @@
 }
 .mt-12 {
   margin-top: 12px;
+}
+.mt-16 {
+  margin-top: 16px;
 }
 .mt-20 {
   margin-top: 20px;
@@ -411,6 +417,9 @@
 .bg-button {
   background-color: #ebebeb;
 }
+.bg-tableheader {
+  background-color: #efefef;
+}
 
 /* border color */
 .border-w {
@@ -419,25 +428,27 @@
 .border-b {
   border-color: #232323;
 }
+.border-table {
+  border-color: #e5e8eb;
+}
 
 /* border */
 .border {
-  border: solid 1px;
+  border: 1px solid;
 }
 
 .border-t-0 {
-  border-top: solid 0px;
+  border-top: 0px solid;
 }
 .border-b-0 {
-  border-bottom: solid 0px;
+  border-bottom: 0px solid;
 }
 .border-l-0 {
-  border-left: solid 0px;
+  border-left: 0px solid;
 }
 .border-r-0 {
-  border-right: solid 0px;
+  border-right: 0px solid;
 }
-
 
 /*  1024 < Screen < 1260 */
 @media screen and (max-width: 1260px) {
