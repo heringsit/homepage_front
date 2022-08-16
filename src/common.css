@@ -11,6 +11,10 @@
   padding: 20px;
 }
 /* ps-# - padding side */
+.ps-24 {
+  padding-left: 24px;
+  padding-right: 24px;
+}
 .ps-36 {
   padding-left: 36px;
   padding-right: 36px;
@@ -128,11 +132,16 @@
   padding-top: 36px;
   padding-bottom: 36px;
 }
+.ptb-48 {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
 
 /* text margins: 
   m-reset - margin reset
   mb-8- margin bottom 
   mt : margin top
+  ms: margin sides
 */
 .m-reset {
   margin: 0;
@@ -187,6 +196,10 @@
 }
 .mt-124 {
   margin-top: 124px;
+}
+.ms-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* flex:
@@ -261,6 +274,14 @@
 }
 .gap-10 {
   gap: 10px;
+}
+
+/* text tab */
+.tab-1 {
+  padding-left: 2em;
+}
+.tab-2 {
+  padding-left: 2em;
 }
 
 /* Line Alignment */
@@ -392,6 +413,16 @@
 .border-b {
   border-color: #232323;
 }
+
+/* border */
+.border {
+  border: solid 1px;
+}
+
+.border-b-0 {
+  border-bottom: solid 0px;
+}
+
 
 /*  1024 < Screen < 1260 */
 @media screen and (max-width: 1260px) {
