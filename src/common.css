@@ -426,8 +426,11 @@
 .bg-button {
   background-color: #ebebeb;
 }
-.bg-tableheader {
+.bg-tableheader-light {
   background-color: #efefef;
+}
+.bg-tableheader-dark {
+  background-color: #4e5968;
 }
 
 /* border color */
