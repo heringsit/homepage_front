@@ -137,36 +137,34 @@
 .partner__image__container {
   border: 1px solid #f0f3f6;
   width: 19%;
-  height: 130px;
+  height: calc(18vh);
   padding: 2% 3.5%;
   margin: 0 1% 1% 0;
   min-height: 1px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: white;
+  text-align: center;
 }
 .partner__image__container > img {
   height: auto;
   width: 100%;
-  margin: auto;
+  margin: auto 0;
 }
 .inventors__image__container {
   border: 1px solid #f0f3f6;
   width: 24%;
-  height: 180px;
+  height: calc(23vh);
   padding: 3% 4.5%;
   margin: 0 1% 1% 0;
   min-height: 1px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: white;
+  text-align: center;
 }
 .inventors__image__container > img {
   height: auto;
   width: 100%;
-  margin: auto;
+  margin: auto 0;
 }
 
 /* 1024 < screen <= 1260 */
@@ -199,6 +197,12 @@
   .TeamListWrap {
     padding: 1% 8%;
   }
+  .partner__image__container {
+    height: calc(15vh);
+  }
+  .inventors__image__container {
+    height: calc(17vh);
+  }
 }
 /* 600 < screen <= 768 */
 @media screen and (max-width: 768px) {
@@ -220,6 +224,12 @@
   .heringsTeamWrap {
     height: 100%;
     min-height: 240px;
+  }
+  .partner__image__container {
+    height: calc(12vh);
+  }
+  .inventors__image__container {
+    height: calc(15vh);
   }
 }
 /* 320px < screen <= 600px */
@@ -247,6 +257,7 @@
     margin: 1.5%;
     width: 22.75%;
     padding: 3%;
+    height: calc(12vh);
   }
   .partner__image__container:nth-child(4n + 1),
   .inventors__image__container:nth-child(4n + 1) {
@@ -277,5 +288,11 @@
   }
   .split {
     letter-spacing: normal;
+  }
+  .partner__image__container {
+    height: calc(7vh);
+  }
+  .inventors__image__container {
+    height: calc(8vh);
   }
 }

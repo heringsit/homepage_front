@@ -5,6 +5,7 @@ import Table from "./Compoments/PrivacyTable";
 import UserPrivacy from "../../assets/text/OstomyUserPrivacy.txt";
 import AppTerms from "../../assets/text/OstomyAppTerms.txt";
 import WebTerms from "../../assets/text/OstomyWebTerms.txt";
+
 import { ThemeContext } from "../../context";
 import Loading from "./Loading";
 import PrivacyButtons from "./Compoments/PrivacyButtons";

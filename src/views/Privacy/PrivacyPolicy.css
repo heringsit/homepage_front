@@ -55,15 +55,16 @@
 /* screen <= 320px */
 @media screen and (max-width: 320px) {
   .privacybuttons {
-    float: left;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
   }
   .policyButton {
-    margin: 0px 6px;
     display: inline-block;
+    margin: 6px 0 6px auto;
   }
   .policyWrap {
     width: 280px;
-    margin-top: 84px;
     padding: 48px 0;
   }
 }
