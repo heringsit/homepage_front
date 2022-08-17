@@ -1,28 +1,16 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../../../context";
 
-const testTitle = ["구분", "항목", "기간"];
-const testVariables = [
-  [
-    "5. 대출 \n - 주택담보대출 찾기: 주택담보대출 찾기 서비스 제공 \n - 대출 받기: 대출 받기 서비스 제공 \n - 아파트 대출 한도 계산기: 주택담보대출 한도를 계산하여 정보 제공",
-    "5. 대출 \n\t - 주택담보대출 찾기: 주택담보대출 찾기 서비스 제공 ",
-    "5. 대출 \n - 주택담보대출 찾기: 주택담보대출 찾기 서비스 제공",
-  ],
-  [
-    "5. 대출 \n - 주택담보대출 찾기: 주택담보대출 찾기 서비스 제공 \n - 대출 받기: 대출 받기 서비스 제공 \n - 아파트 대출 한도 계산기: 주택담보대출 한도를 계산하여 정보 제공",
-    "5. 대출 \n\t - 주택담보대출 찾기: 주택담보대출 찾기 서비스 제공 ",
-    "5. 대출 \n - 주택담보대출 찾기: 주택담보대출 찾기 서비스 제공",
-  ],
-];
 const newLine = new RegExp("\n");
 const newTab = new RegExp("\t");
-const Table = ({ titles = testTitle, cell = testVariables }) => {
+const PrivacyTable = ({ titles, rows }) => {
+  // console.log(rows, rows, "rows & rows");
   const { theme } = useContext(ThemeContext);
   const processNewLine = (content) => {
     return content.split(newLine);
   };
   const processTab = (content, idx) => {
-    console.log(newTab.test(content));
+    // console.log(newTab.test(content));
     if (newTab.test(content)) {
       return (
         <p
@@ -34,7 +22,10 @@ const Table = ({ titles = testTitle, cell = testVariables }) => {
       );
     } else
       return (
-        <p className={`m-reset ${idx === 0 ? "" : "mt-16"} FontNL textF14`} key={idx}>
+        <p
+          className={`m-reset ${idx === 0 ? "" : "mt-16"} FontNL textF14`}
+          key={idx}
+        >
           {content}
         </p>
       );
@@ -61,27 +52,53 @@ const Table = ({ titles = testTitle, cell = testVariables }) => {
         </tr>
       </thead>
       <tbody>
-        {cell.map((contents, cell_idx) => (
+        {rows?.map((cells, row_idx) => (
           <tr>
-            {contents?.map((content, contents_idx) => (
-              <td
-                key={contents_idx}
-                className={`p-12 ${
-                  theme === "light" ? "tctheader" : "tcw"
-                } border  ${cell_idx === cell.length - 1 ? "" : "border-b-0"} ${
-                  contents_idx === titles.length - 1 ? "" : "border-r-0"
-                } `}
-                style={{ borderColor: "#e5e8eb" }}
-              >
-                {processNewLine(content).map((line, contents_idx) =>
-                  processTab(line, contents_idx)
-                )}
-              </td>
-            ))}
+            {cells?.map((cell, cell_idx) =>
+              cell.includes("t0b0r0") ? (
+                <td
+                  key={cell_idx}
+                  className="border border-t-0 border-b-0 border-r-0"
+                  style={{ borderColor: "#e5e8eb" }}
+                ></td>
+              ) : cell.includes("t0b0") ? (
+                <td
+                  key={cell_idx}
+                  className="border border-t-0 border-b-0"
+                  style={{ borderColor: "#e5e8eb" }}
+                ></td>
+              ) : cell.includes("t0") ? (
+                <td
+                  key={cell_idx}
+                  className="border border-t-0"
+                  style={{ borderColor: "#e5e8eb" }}
+                ></td>
+              ) : cell.includes("b0") ? (
+                <td
+                  key={cell_idx}
+                  className="border border-b-0"
+                  style={{ borderColor: "#e5e8eb" }}
+                ></td>
+              ) : (
+                <td
+                  key={cell_idx}
+                  className={`p-12 ${
+                    theme === "light" ? "tctheader" : "tcw"
+                  } border ${row_idx === rows.length - 1 ? "" : "border-b-0"} ${
+                    cell_idx === titles.length - 1 ? "" : "border-r-0"
+                  } `}
+                  style={{ borderColor: "#e5e8eb" }}
+                >
+                  {processNewLine(cell).map((line, cell_idx) =>
+                    processTab(line, cell_idx)
+                  )}
+                </td>
+              )
+            )}
           </tr>
         ))}
       </tbody>
     </table>
   );
 };
-export default Table;
+export default PrivacyTable;

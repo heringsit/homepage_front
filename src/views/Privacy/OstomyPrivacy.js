@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { WebTerms } from "./OstomyContent/webTerms";
 import "./OstomyContent/ostomyPrivacy.css";
-import Table from "./Compoments/PrivacyTable";
 import UserPrivacy from "../../assets/text/UserPrivacy.txt";
 import { ThemeContext } from "../../context";
 import Loading from "./Loading";
@@ -30,16 +29,7 @@ export default function OstomyPrivacy() {
         setisFetchFinished(true);
       });
   }, [submenu]);
-  {
-    /* {policies.map((policy, idx) => (
-                <p
-                  key={idx}
-                  className="m-reset FontNR lineheight160 policyContents"
-                >
-                  {console.log(newLine.test(policy))}
-                </p>
-              ))} */
-  }
+  
   if (!isFetchFinished) return <Loading />;
   return (
     <div className="policyWrap">
