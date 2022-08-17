@@ -47,8 +47,9 @@ export default function HealiaryPrivacy() {
   }
 
   useEffect(() => {
-    submenu === "0"
-      ? fetch(HealiaryPrivacyPolicy, {
+    console.log(submenu);
+    submenu === "1"
+      ? fetch(HealiaryTOS, {
           method: "GET",
         })
           .then((r) => r.text())
@@ -56,7 +57,7 @@ export default function HealiaryPrivacy() {
             setPolicies(text.split("\n"));
             setisFetchFinished(true);
           })
-      : fetch(HealiaryTOS, {
+      : fetch(HealiaryPrivacyPolicy, {
           method: "GET",
         })
           .then((r) => r.text())
@@ -103,7 +104,21 @@ export default function HealiaryPrivacy() {
             pathname="healiary"
           />
           <div>
-            {submenu === "0" ? (
+            {submenu === "1" ? (
+              <>
+                <p className="textF16 FontCB tcb policyTitle">
+                  힐리어리 이용 약관
+                </p>
+                {policies.map((policy, idx) => (
+                  <p
+                    key={idx}
+                    className="m-reset textF16 FontNR text-align-left lineheight160 policyContents"
+                  >
+                    {policy}
+                  </p>
+                ))}
+              </>
+            ) : (
               <>
                 <p className="textF16 FontCB policyTitle">
                   힐리어리 개인정보 처리 방침
@@ -131,20 +146,6 @@ export default function HealiaryPrivacy() {
                     </p>
                   )
                 )}
-              </>
-            ) : (
-              <>
-                <p className="textF16 FontCB tcb policyTitle">
-                  힐리어리 이용 약관
-                </p>
-                {policies.map((policy, idx) => (
-                  <p
-                    key={idx}
-                    className="m-reset textF16 FontNR text-align-left lineheight160 policyContents"
-                  >
-                    {policy}
-                  </p>
-                ))}
               </>
             )}
           </div>

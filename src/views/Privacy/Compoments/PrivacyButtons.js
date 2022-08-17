@@ -2,10 +2,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function PrivacyButtons({ texts, onClick }) {
+export default function PrivacyButtons({ texts, onClick, pathname="healiary" }) {
   const patharray = window.location.pathname.split("/");
-  const submenu = patharray[patharray.length - 1];
-  console.log(submenu);
+  const hashpath = patharray[patharray.length - 1]
+
+  const submenu = (hashpath === "0" || hashpath === "1") ? hashpath : "0" ;
+  
+  console.log(typeof hashpath)
+
   return (
     <div className="privacybuttons m-reset">
       {texts.map((button, idx) => (
@@ -17,7 +21,7 @@ export default function PrivacyButtons({ texts, onClick }) {
           }
           className="no-decoration policyButton"
           onClick={(e) => onClick(idx, e)}
-          to={`${idx}`}
+          to={`/privacypolicy/healiary/${idx}`}
           key={idx}
         >
           <div className="FontR textF14 color-b">{button}</div>

@@ -34,7 +34,7 @@ const Table = ({ titles, rows }) => {
     <table cellSpacing={0}>
       <thead>
         <tr>
-          {titles.map((title, idx) => (
+          {titles?.map((title, idx) => (
             <th
               key={idx}
               className={`${
@@ -52,9 +52,9 @@ const Table = ({ titles, rows }) => {
         </tr>
       </thead>
       <tbody>
-        {rows.map((cells, row_idx) => (
+        {rows?.map((cells, row_idx) => (
           <tr>
-            {cells.map((cell, cell_idx) =>
+            {cells?.map((cell, cell_idx) =>
               cell === "" ? (
                 <td
                   key={cell_idx}
