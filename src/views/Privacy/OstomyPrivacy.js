@@ -18,7 +18,7 @@ export default function OstomyPrivacy() {
   ];
   return (
     <div className="ps-24 ptb-48 ostomyWrap">
-      <Table rows={testTitle} columns={testVariables} />
+      <Table titles={testTitle} rows={testVariables} />
       <div className="flex-col gap-40">
         <WebTerms />
       </div>

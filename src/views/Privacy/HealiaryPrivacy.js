@@ -72,7 +72,7 @@ export default function HealiaryPrivacy() {
               </p>
               {policies.map((policy, idx) =>
                 policy === "^Table^" ? (
-                  <Table rows={purposeRows} columns={purposeColumns} />
+                  <Table titles={purposeRows} rows={purposeColumns} />
                 ) : (
                   // <div></div>
                   <p
