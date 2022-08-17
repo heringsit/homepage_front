@@ -20,7 +20,7 @@ export default function PrivacyButtons({ texts, onClick }) {
           to={`${idx}`}
           key={idx}
         >
-          <div className="FontR textF14 color-b w-full h-full">{button}</div>
+          <div className="FontR textF14 color-b">{button}</div>
         </Link>
       ))}
     </div>

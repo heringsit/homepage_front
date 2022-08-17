@@ -1,25 +1,49 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { WebTerms } from "./OstomyContent/webTerms";
 import "./OstomyContent/ostomyPrivacy.css";
-import Table from "./TempTableComponent";
+import Table from "./Compoments/PrivacyTable";
+import UserPrivacy from "../../assets/text/UserPrivacy.txt";
+import { ThemeContext } from "../../context";
+import Loading from "./Loading";
+
+const newLine = new RegExp("H");
 export default function OstomyPrivacy() {
-  const testTitle = ["구분", "항목", "기간"];
-  const testVariables = [
-    [
-      "5. 대출 \n - 주택담보대출 찾기: 주택담보대출 찾기 서비스 제공 \n - 대출 받기: 대출 받기 서비스 제공 \n - 아파트 대출 한도 계산기: 주택담보대출 한도를 계산하여 정보 제공",
-      "5. 대출 \n\t - 주택담보대출 찾기: 주택담보대출 찾기 서비스 제공 ",
-      "5. 대출 \n - 주택담보대출 찾기: 주택담보대출 찾기 서비스 제공",
-    ],
-    [
-      "5. 대출 \n - 주택담보대출 찾기: 주택담보대출 찾기 서비스 제공 \n - 대출 받기: 대출 받기 서비스 제공 \n - 아파트 대출 한도 계산기: 주택담보대출 한도를 계산하여 정보 제공",
-      "5. 대출 \n\t - 주택담보대출 찾기: 주택담보대출 찾기 서비스 제공 ",
-      "5. 대출 \n - 주택담보대출 찾기: 주택담보대출 찾기 서비스 제공",
-    ],
-  ];
+  const [buttonId, setButtonID] = useState(0);
+  const patharray = window.location.pathname.split("/");
+  const submenu = patharray[patharray.length - 1];
+  const [policies, setPolicies] = useState([]);
+  const [isFetchFinished, setisFetchFinished] = useState(false);
+
+  const { theme } = useContext(ThemeContext);
+
+  function onClick(id, e) {
+    setButtonID(id);
+  }
+
+  useEffect(() => {
+    fetch(UserPrivacy, {
+      method: "GET",
+    })
+      .then((r) => r.text())
+      .then((text) => {
+        setPolicies(text.split("\n"));
+        setisFetchFinished(true);
+      });
+  }, [submenu]);
+  {
+    /* {policies.map((policy, idx) => (
+                <p
+                  key={idx}
+                  className="m-reset FontNR lineheight160 policyContents"
+                >
+                  {console.log(newLine.test(policy))}
+                </p>
+              ))} */
+  }
+  if (!isFetchFinished) return <Loading />;
   return (
-    <div className="ps-24 ptb-48 ostomyWrap">
-      <Table titles={testTitle} rows={testVariables} />
-      <div className="flex-col gap-40">
+    <div className="policyWrap">
+      <div className="flex-col gap-24">
         <WebTerms />
       </div>
     </div>

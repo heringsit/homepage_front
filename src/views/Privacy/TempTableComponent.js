@@ -56,7 +56,11 @@ const Table = ({ titles, rows }) => {
           <tr>
             {cells.map((cell, cell_idx) =>
               cell === "" ? (
-                <td key={cell_idx} className="border border-t-0"></td>
+                <td
+                  key={cell_idx}
+                  className="border border-t-0"
+                  style={{ borderColor: "#e5e8eb" }}
+                ></td>
               ) : (
                 <td
                   key={cell_idx}
