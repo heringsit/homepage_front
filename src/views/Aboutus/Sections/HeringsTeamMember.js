@@ -38,7 +38,7 @@ export const Executive_Leadership = [
     background: icon1_2,
     modalimg: icon1_2,
     detail:
-      "Yooin Song is the COO of HERINGS. He is a business expert at life science and bio-industry, working over for 15 years. Previously Song was a private equity fund manager, mainly invested in biotech and life science companies. Also, he was a strategic consultant at Deloitte Consulting for Life Science and Healthcare division.\n\nMr. Song is a Ph.D Candidate in business administration, and he got an MBA degree from IE business school. He also studied at the University of Washington.",
+      "Yooin Song is the COO of HERINGS. He is a business expert at life science and bio-industry, working over for 15 years. Previously Song was a private equity fund manager, mainly invested in biotech and life science companies. Also, he was a strategic consultant at Deloitte Consulting for Life Science and Healthcare division.\n\nMr. Song is a Ph.D Candidate in business administration, and he got an MBA degree from IE business school. He also studied at the University of Washington. Mr. Song is a Ph.D Candidate in Business Administration from HUFS, and he studied at the IE business school in Madrid, Spain for his MBA degree. He also received BA degree at occidental linguistics department in HUFS.",
   },
   // {
   //   name: "Jaeho Lee",
@@ -211,7 +211,7 @@ export const Advisory_Board = [
       "John Crowley, who is the Chief of Strategic Alliances at Cancer Research and Biostatistics. He founded CRAB in 1997 and served as President and CEO until 2014. Dr. Crowley was the Director of the Statistical Center for SWOG, co-located at CRAB and the Fred Hutchinson Cancer Research Center, from 1984 to 2012. He is the author or co-author of over 400 scientific papers and books.\n\nHe holds an affiliate appointment at the School of Public Health at the Oregon Health and Science University. He received a BS in Mathematics at Pomona College, and MS and Ph.D in Biomathematics at the University of Washington in 1968, 1970, and 1973, respectively.\n",
   },
   {
-    name: "Kyujin Choi Lawyer, Pharmacist",
+    name: "Kyu-Jin Choi Lawyer, Pharmacist",
     // jobs: "Lawyer, Pharmacist",
     positions: "",
     background: icon3_7,

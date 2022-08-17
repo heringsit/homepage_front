@@ -69,7 +69,7 @@ export default function PrivacyPolicy() {
               : "menuBorderBottomLight")
           }
         >
-          <Link className="TABS_tab FontR textF16 no-decoration" onClick={e => onClick(e, 0)} to="/privacypolicy/healiary" >
+          <Link className="TABS_tab FontR textF16 no-decoration" onClick={e => onClick(e, 0)} to="/privacypolicy/healiary/0" >
             <div
               // to={`#test`}
               className={

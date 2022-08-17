@@ -10,7 +10,7 @@ const Table = ({ titles, rows }) => {
     return content.split(newLine);
   };
   const processTab = (content, idx) => {
-    console.log(newTab.test(content));
+    // console.log(newTab.test(content));
     if (newTab.test(content)) {
       return (
         <p
