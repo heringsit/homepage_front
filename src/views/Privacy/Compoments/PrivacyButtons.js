@@ -2,7 +2,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function PrivacyButtons({ texts, onClick, pathname="healiary" }) {
+export default function PrivacyButtons({
+  texts,
+  onClick,
+  pathname = "healiary",
+}) {
   const patharray = window.location.pathname.split("/");
   const hashpath = patharray[patharray.length - 1]
   const isNumeric = (str) => {
