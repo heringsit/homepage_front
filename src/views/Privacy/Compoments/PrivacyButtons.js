@@ -9,6 +9,7 @@ export default function PrivacyButtons({ texts, onClick, pathname="healiary" }) 
   const submenu = (hashpath === "0" || hashpath === "1") ? hashpath : "0" ;
   
   console.log(typeof hashpath)
+
   return (
     <div className="privacybuttons m-reset">
       {texts.map((button, idx) => (
@@ -23,7 +24,7 @@ export default function PrivacyButtons({ texts, onClick, pathname="healiary" }) 
           to={`/privacypolicy/healiary/${idx}`}
           key={idx}
         >
-          <div className="FontNR textF14 color-b w-full h-full">{button}</div>
+          <div className="FontR textF14 color-b">{button}</div>
         </Link>
       ))}
     </div>

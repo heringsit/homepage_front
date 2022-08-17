@@ -43,7 +43,7 @@ const Table = ({ titles = testTitle, cell = testVariables }) => {
     <table cellSpacing={0}>
       <thead>
         <tr>
-          {titles.map((title, idx) => (
+          {titles?.map((title, idx) => (
             <th
               key={idx}
               className={`${
@@ -63,7 +63,7 @@ const Table = ({ titles = testTitle, cell = testVariables }) => {
       <tbody>
         {cell.map((contents, cell_idx) => (
           <tr>
-            {contents.map((content, contents_idx) => (
+            {contents?.map((content, contents_idx) => (
               <td
                 key={contents_idx}
                 className={`p-12 ${

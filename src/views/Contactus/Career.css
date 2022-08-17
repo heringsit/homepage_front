@@ -234,7 +234,7 @@
   background-color: #dadada;
 }
 
-@media screen and (max-width: 992px) {
+/* @media screen and (max-width: 992px) {
   .squareCareer {
     width: 160px;
     min-height: 126px;
@@ -283,7 +283,7 @@
     margin-left: -19px;
     margin-bottom: -19px;
   }
-}
+} */
 @media screen and (max-width: 768px) {
   .squareCareer {
     width: 120px;
