@@ -10,7 +10,7 @@ const Table = ({ titles, rows }) => {
     return content.split(newLine);
   };
   const processTab = (content, idx) => {
-    console.log(newTab.test(content));
+    // console.log(newTab.test(content));
     if (newTab.test(content)) {
       return (
         <p
@@ -34,7 +34,7 @@ const Table = ({ titles, rows }) => {
     <table cellSpacing={0}>
       <thead>
         <tr>
-          {titles.map((title, idx) => (
+          {titles?.map((title, idx) => (
             <th
               key={idx}
               className={`${
@@ -52,8 +52,8 @@ const Table = ({ titles, rows }) => {
         </tr>
       </thead>
       <tbody>
-        {rows.map((cells, row_idx) => (
-          <tr>
+        {rows?.map((cells, row_idx) => (
+          <tr key={row_idx}>
             {cells.map((cell, cell_idx) =>
               cell === "" ? (
                 <td
