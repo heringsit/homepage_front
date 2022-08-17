@@ -92,62 +92,64 @@ export default function HealiaryPrivacy() {
   //         // });
   // }, [policies]);
   if (!isFetchFinished) return <Loading />;
-  return (
-    <>
-      {/* 개인 정보 처리 방침, 이용 약관 버튼 바꿈 */}
-      <div className="w-full h-full policyWrap">
-        <PrivacyButtons
-          texts={["개인 정보 처리 방침 >", "이용 약관 >"]}
-          onClick={onClick}
-          pathname="healiary"
-        />
-        <div>
-          {submenu === "0" ? (
-            <>
-              <p className="textF16 FontCB policyTitle">
-                힐리어리 개인정보 처리 방침
-              </p>
-              {policies.map((policy, idx) => {
-                return policies.includes("(B)") ? (
+  else {
+    return (
+      <>
+        {/* 개인 정보 처리 방침, 이용 약관 버튼 바꿈 */}
+        <div className="w-full h-full policyWrap">
+          <PrivacyButtons
+            texts={["개인 정보 처리 방침 >", "이용 약관 >"]}
+            onClick={onClick}
+            pathname="healiary"
+          />
+          <div>
+            {submenu === "0" ? (
+              <>
+                <p className="textF16 FontCB policyTitle">
+                  힐리어리 개인정보 처리 방침
+                </p>
+                {policies.map((policy, idx) =>
+                  policy.includes("(B)") ? (
+                    <p
+                      key={idx}
+                      className="m-reset FontNR lineheight160 policyContents"
+                    >
+                      {policy.split("(B)")[1]}
+                    </p>
+                  ) : policy.includes("T") ? (
+                    <Table
+                      titles={titles[policy.split("-")[1]]}
+                      rows={rows[policy.split("-")[1]]}
+                    />
+                  ) : (
+                    // <div></div>
+                    <p
+                      key={idx}
+                      className="m-reset FontNL lineheight160 policyContents"
+                    >
+                      {policy}
+                    </p>
+                  )
+                )}
+              </>
+            ) : (
+              <>
+                <p className="textF16 FontCB tcb policyTitle">
+                  힐리어리 이용 약관
+                </p>
+                {policies.map((policy, idx) => (
                   <p
                     key={idx}
-                    className="m-reset FontNR lineheight160 policyContents"
-                  >
-                    {policy.split("(B)")[1]}
-                  </p>
-                ) : policy.includes("T") ? (
-                  <Table
-                    titles={titles[policy.split("-")[1]]}
-                    rows={rows[policy.split("-")[1]]}
-                  />
-                ) : (
-                  // <div></div>
-                  <p
-                    key={idx}
-                    className="m-reset FontNL lineheight160 policyContents"
+                    className="m-reset textF16 FontNR text-align-left lineheight160 policyContents"
                   >
                     {policy}
                   </p>
-                );
-              })}
-            </>
-          ) : (
-            <>
-              <p className="textF16 FontCB tcb policyTitle">
-                힐리어리 이용 약관
-              </p>
-              {policies.map((policy, idx) => (
-                <p
-                  key={idx}
-                  className="m-reset textF16 FontNR text-align-left lineheight160 policyContents"
-                >
-                  {policy}
-                </p>
-              ))}
-            </>
-          )}
+                ))}
+              </>
+            )}
+          </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  }
 }
