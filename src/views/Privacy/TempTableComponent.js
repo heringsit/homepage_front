@@ -3,8 +3,8 @@ import { ThemeContext } from "../../context";
 
 const newLine = new RegExp("\n");
 const newTab = new RegExp("\t");
-const Table = ({ rows, columns }) => {
-  // console.log(rows, columns, "rows & columns");
+const Table = ({ titles, rows }) => {
+  // console.log(rows, rows, "rows & rows");
   const { theme } = useContext(ThemeContext);
   const processNewLine = (content) => {
     return content.split(newLine);
@@ -34,7 +34,7 @@ const Table = ({ rows, columns }) => {
     <table cellSpacing={0}>
       <thead>
         <tr>
-          {rows.map((title, idx) => (
+          {titles.map((title, idx) => (
             <th
               key={idx}
               className={`${
@@ -42,7 +42,7 @@ const Table = ({ rows, columns }) => {
                   ? "bg-tableheader-light tctheader"
                   : "bg-tableheader-dark tcw"
               }  p-12 FontNL textF14 border border-b-0 ${
-                idx === rows.length - 1 ? "" : "border-r-0"
+                idx === titles.length - 1 ? "" : "border-r-0"
               }`}
               style={{ borderColor: "#e5e8eb" }}
             >
@@ -52,23 +52,27 @@ const Table = ({ rows, columns }) => {
         </tr>
       </thead>
       <tbody>
-        {columns.map((contents, column_idx) => (
+        {rows.map((cells, row_idx) => (
           <tr>
-            {contents.map((content, contents_idx) =>
-              content === "" ? (
-                <td key={contents_idx} className="border border-t-0"></td>
+            {cells.map((cell, cell_idx) =>
+              cell === "" ? (
+                <td
+                  key={cell_idx}
+                  className="border border-t-0"
+                  style={{ borderColor: "#e5e8eb" }}
+                ></td>
               ) : (
                 <td
-                  key={contents_idx}
+                  key={cell_idx}
                   className={`p-12 ${
                     theme === "light" ? "tctheader" : "tcw"
-                  } border ${
-                    column_idx === columns.length - 1 ? "" : "border-b-0"
-                  } ${contents_idx === rows.length - 1 ? "" : "border-r-0"} `}
+                  } border ${row_idx === rows.length - 1 ? "" : "border-b-0"} ${
+                    cell_idx === titles.length - 1 ? "" : "border-r-0"
+                  } `}
                   style={{ borderColor: "#e5e8eb" }}
                 >
-                  {processNewLine(content).map((line, contents_idx) =>
-                    processTab(line, contents_idx)
+                  {processNewLine(cell).map((line, cell_idx) =>
+                    processTab(line, cell_idx)
                   )}
                 </td>
               )

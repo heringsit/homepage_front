@@ -609,6 +609,9 @@
   .banner_container .textF53 {
     font-size: 40px;
   }
+  #privacypolicy .policyContents {
+    font-size: 14px;
+  }
 }
 /* screen <= 320px */
 @media screen and (max-width: 320px) {
@@ -665,6 +668,9 @@
     font-size: 12px;
   } */
   #privacypolicy .policyContents {
+    font-size: 12px;
+  }
+  #privacypolicy .policyButton .textF14 {
     font-size: 12px;
   }
 }

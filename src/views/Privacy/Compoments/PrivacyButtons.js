@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function PrivacyButtons({ texts, onClick }) {
   const patharray = window.location.pathname.split("/");
   const submenu = patharray[patharray.length - 1];
-  console.log(submenu)
+  console.log(submenu);
   return (
     <div className="privacybuttons m-reset">
       {texts.map((button, idx) => (
@@ -20,7 +20,7 @@ export default function PrivacyButtons({ texts, onClick }) {
           to={`${idx}`}
           key={idx}
         >
-          <div className="FontNR textF14 color-b w-full h-full">{button}</div>
+          <div className="FontR textF14 color-b">{button}</div>
         </Link>
       ))}
     </div>
