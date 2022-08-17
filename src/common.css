@@ -149,6 +149,9 @@
 .m-reset {
   margin: 0;
 }
+.m-auto {
+  margin: auto;
+}
 .ml-0 {
   margin-left: 0px;
 }
@@ -460,6 +463,22 @@
 }
 .border-r-0 {
   border-right: 0px solid;
+}
+
+
+/* Loader */
+.loader {
+  border: 16px solid #f3f3f3; 
+  border-top: 16px solid #f37f31; 
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /*  1024 < Screen < 1260 */

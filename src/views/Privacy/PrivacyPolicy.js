@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router";
+import { useHistory, useLocation } from "react-router";
 import { useParams, Link } from "react-router-dom";
 import { MediaQueryContext, ThemeContext } from "../../context";
 import TabClick from "../common/TabClick";
@@ -15,7 +15,6 @@ export default function PrivacyPolicy() {
 
   // const [isScroll, setIsScroll] = useState(false);
   const [slideIndex] = useState(0);
-  
   const [tab, setTab] = useState(0);
   // const onScroll = () => {
   //   if (window.scrollY > 238 || window.pageYOffset > 238) {
@@ -42,10 +41,10 @@ export default function PrivacyPolicy() {
   // const visibleArray = Array(2).fill(true);
   // visibleArray[0] = useOnScreen(refs.current[0]);
   // visibleArray[1] = useOnScreen(refs.current[1]);
-  const patharray = window.location.pathname.split("/")
+  const history = useHistory();
+  const patharray = history.location.pathname.split("/")
   const submenu = patharray[patharray.length-1]
   const selected = submenu === "ostomy"
-  console.log(selected);
   return (
     <div
       id="privacypolicy"
@@ -104,10 +103,10 @@ export default function PrivacyPolicy() {
           </Link>
         </div>
       </div>
-      {selected === false 
+      {selected === false
         ? <HealiaryPrivacy />
         : <OstomyPrivacy />
-        }
+      }
       <Totop />
       <Footer />
     </div>
