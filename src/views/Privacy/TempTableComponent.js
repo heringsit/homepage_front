@@ -4,7 +4,7 @@ import { ThemeContext } from "../../context";
 const newLine = new RegExp("\n");
 const newTab = new RegExp("\t");
 const Table = ({ titles, rows }) => {
-  // console.log(rows, rows, "rows & rows");
+  console.log(titles, rows, "titles & rows");
   const { theme } = useContext(ThemeContext);
   const processNewLine = (content) => {
     return content.split(newLine);

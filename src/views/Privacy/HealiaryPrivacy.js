@@ -20,7 +20,7 @@ export default function HealiaryPrivacy() {
   const [isFetchFinished, setisFetchFinished] = useState(false);
   const { theme } = useContext(ThemeContext);
 
-  const titles = [["구분", "처리항목", "처리목적"], [""]];
+  const titles = [["구분", "처리항목", "처리목적"], []];
   const rows = [
     [
       [
@@ -135,8 +135,8 @@ export default function HealiaryPrivacy() {
                   ) : policy.includes("T") ? (
                     <React.Fragment key={idx} >
                       <Table
-                        titles={titles[policy.split("-")[1]]}
-                        rows={rows[policy.split("-")[1]]}
+                        titles={titles[parseInt(policy.split("-")[1])]}
+                        rows={rows[parseInt(policy.split("-")[1])]}
                       />
                     </React.Fragment>
                   ) : (

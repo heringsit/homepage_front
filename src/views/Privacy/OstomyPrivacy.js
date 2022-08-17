@@ -96,9 +96,9 @@ export default function OstomyPrivacy() {
     <div className="policyWrap">
       <PrivacyButtons
         texts={[
-          "개인정보보호 방침 >",
-          "이용약관 (앱: 일반 회원) >",
-          "이용약관 (웹: 병원 회원) >",
+          "개인정보처리방침 >",
+          "이용약관1 >",//(앱: 일반 회원)
+          "이용약관2 >",//(웹: 병원 회원)
         ]}
         onClick={onClick}
         pathname="ostomy"
