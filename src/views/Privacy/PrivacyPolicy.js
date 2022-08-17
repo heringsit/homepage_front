@@ -41,11 +41,11 @@ export default function PrivacyPolicy() {
   // const visibleArray = Array(2).fill(true);
   // visibleArray[0] = useOnScreen(refs.current[0]);
   // visibleArray[1] = useOnScreen(refs.current[1]);
-  const history = useHistory();
-  const patharray = history.location.pathname.split("/")
-  const submenu = patharray[patharray.length-1]
-  const selected = submenu === "ostomy"
 
+  const patharray = window.location.pathname.split("/")
+  const submenu = patharray[patharray.length-2]
+  const selected = submenu === "ostomy"
+  // console.log(selected);
   return (
     <div
       id="privacypolicy"
