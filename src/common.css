@@ -413,6 +413,7 @@
 .overflow-auto {
   overflow: auto;
 }
+
 /* background color */
 .bg-gray {
   background-color: #f6f8fb;
@@ -422,12 +423,6 @@
 }
 .bg-white {
   background-color: #f3f3f3;
-}
-.bg-button-selected {
-  background-color: #cdcdcd;
-}
-.bg-button {
-  background-color: #ebebeb;
 }
 .bg-tableheader-light {
   background-color: #efefef;
@@ -451,7 +446,6 @@
 .border {
   border: 1px solid;
 }
-
 .border-t-0 {
   border-top: 0px solid;
 }

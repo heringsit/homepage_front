@@ -45,12 +45,13 @@ export default function PrivacyPolicy() {
   const patharray = history.location.pathname.split("/")
   const submenu = patharray[patharray.length-1]
   const selected = submenu === "ostomy"
+
   return (
     <div
       id="privacypolicy"
       style={{
         backgroundColor: theme === "dark" && "#282828",
-        color: theme === "dark" && "#fff",
+        color: theme === "dark" ? "#fff" : "#282828",
       }}
     >
       <Menubar slideIndex={slideIndex} />
@@ -68,7 +69,7 @@ export default function PrivacyPolicy() {
               : "menuBorderBottomLight")
           }
         >
-          <Link className="TABS_tab FontR textF16 no-decoration" onClick={e => onClick(e, 0)} to="healiary" >
+          <Link className="TABS_tab FontR textF16 no-decoration" onClick={e => onClick(e, 0)} to="/privacypolicy/healiary/0" >
             <div
               // to={`#test`}
               className={
@@ -89,7 +90,7 @@ export default function PrivacyPolicy() {
               }}
             />
           </div>
-          <Link className="TABS_tab FontR textF16 no-decoration" onClick={e => onClick(e, 1)} to="ostomy">
+          <Link className="TABS_tab FontR textF16 no-decoration" onClick={e => onClick(e, 1)} to="/privacypolicy/ostomy/0">
             <div
               className={
                 selected === true //index === visibleIndex
