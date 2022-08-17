@@ -3,6 +3,7 @@ import { useHistory, useLocation } from "react-router";
 import { useParams, Link } from "react-router-dom";
 import { MediaQueryContext, ThemeContext } from "../../context";
 import TabClick from "../common/TabClick";
+import ContentsTitle from "../Components/ContentsTitle";
 import Footer from "../Components/Footer";
 import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
@@ -43,9 +44,9 @@ export default function PrivacyPolicy() {
   // visibleArray[1] = useOnScreen(refs.current[1]);
   const history = useHistory();
   const patharray = history.location.pathname.split("/")
-  const submenu = patharray[patharray.length-1]
+  const submenu = patharray[patharray.length-2]
   const selected = submenu === "ostomy"
-
+  console.log(submenu)
   return (
     <div
       id="privacypolicy"
@@ -69,7 +70,7 @@ export default function PrivacyPolicy() {
               : "menuBorderBottomLight")
           }
         >
-          <Link className="TABS_tab FontR textF16 no-decoration" onClick={e => onClick(e, 0)} to="/privacypolicy/healiary" >
+          <Link className="TABS_tab FontR textF16 no-decoration" onClick={e => onClick(e, 0)} to="/privacypolicy/healiary/0" >
             <div
               // to={`#test`}
               className={
@@ -90,7 +91,7 @@ export default function PrivacyPolicy() {
               }}
             />
           </div>
-          <Link className="TABS_tab FontR textF16 no-decoration" onClick={e => onClick(e, 1)} to="/privacypolicy/ostomy">
+          <Link className="TABS_tab FontR textF16 no-decoration" onClick={e => onClick(e, 1)} to="/privacypolicy/ostomy/0">
             <div
               className={
                 selected === true //index === visibleIndex
@@ -104,6 +105,9 @@ export default function PrivacyPolicy() {
           </Link>
         </div>
       </div>
+      <ContentsTitle title={`${patharray[patharray.length-1] === "0" 
+                                ? "PRIVACY POLICY"
+                                : "TERMS AND SERVICES"}`}/>
       {selected === false
         ? <HealiaryPrivacy />
         : <OstomyPrivacy />

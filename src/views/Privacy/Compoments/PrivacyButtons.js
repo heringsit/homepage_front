@@ -5,10 +5,14 @@ import { Link } from "react-router-dom";
 export default function PrivacyButtons({ texts, onClick, pathname="healiary" }) {
   const patharray = window.location.pathname.split("/");
   const hashpath = patharray[patharray.length - 1]
-
-  const submenu = (hashpath === "0" || hashpath === "1") ? hashpath : "0" ;
+  const isNumeric = (str) => {
+    if (typeof str != "string") return false;
+    return !isNaN(str) &&
+           !isNaN(parseFloat(str));
+  }
+  const submenu = isNumeric(hashpath) ? hashpath : "0" ;
   
-  console.log(typeof hashpath)
+  // console.log(typeof hashpath)
 
   return (
     <div className="privacybuttons m-reset">
@@ -21,7 +25,7 @@ export default function PrivacyButtons({ texts, onClick, pathname="healiary" }) 
           }
           className="no-decoration policyButton"
           onClick={(e) => onClick(idx, e)}
-          to={`/privacypolicy/healiary/${idx}`}
+          to={`/privacypolicy/${pathname}/${idx}`}
           key={idx}
         >
           <div className="FontR textF14 color-b">{button}</div>

@@ -5,6 +5,7 @@ import Table from "./Compoments/PrivacyTable";
 import UserPrivacy from "../../assets/text/UserPrivacy.txt";
 import { ThemeContext } from "../../context";
 import Loading from "./Loading";
+import PrivacyButtons from "./Compoments/PrivacyButtons";
 
 const newLine = new RegExp("H");
 export default function OstomyPrivacy() {
@@ -30,19 +31,15 @@ export default function OstomyPrivacy() {
         setisFetchFinished(true);
       });
   }, [submenu]);
-  {
-    /* {policies.map((policy, idx) => (
-                <p
-                  key={idx}
-                  className="m-reset FontNR lineheight160 policyContents"
-                >
-                  {console.log(newLine.test(policy))}
-                </p>
-              ))} */
-  }
+  
   if (!isFetchFinished) return <Loading />;
   return (
     <div className="policyWrap">
+      <PrivacyButtons 
+        texts={["개인정보보호 방침 >", "이용약관 (앱: 일반 회원) >", "이용약관 (웹: 병원 회원) >"]}
+        onClick={onClick}
+        pathname="ostomy"
+      />
       <div className="flex-col gap-24">
         <WebTerms />
       </div>

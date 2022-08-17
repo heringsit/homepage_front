@@ -132,10 +132,12 @@ export default function HealiaryPrivacy() {
                       {policy.split("(B)")[1]}
                     </p>
                   ) : policy.includes("T") ? (
-                    <Table
-                      titles={titles[policy.split("-")[1]]}
-                      rows={rows[policy.split("-")[1]]}
-                    />
+                    <React.Fragment key={idx} >
+                      <Table
+                        titles={titles[policy.split("-")[1]]}
+                        rows={rows[policy.split("-")[1]]}
+                      />
+                    </React.Fragment>
                   ) : (
                     // <div></div>
                     <p

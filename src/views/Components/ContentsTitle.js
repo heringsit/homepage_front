@@ -8,6 +8,7 @@ export default function ContentsTitle(props) {
   const { theme } = useContext(ThemeContext);
   const { mTablet } = useContext(MediaQueryContext);
   // console.log(props)
+
   return (
     <>
       {path === "/aboutus/" ? (
@@ -76,9 +77,17 @@ export default function ContentsTitle(props) {
             </div>
           </div>
         </>
-      ) : (
-        ""
-      )}
+      ) : path.split("/")[1] === "privacypolicy" ? (
+          <div
+            className={`position-relative banner_container`}
+          >
+            {theme === "dark" ? <div className="banner_gradient"></div> : null}
+            <div className="banner_default banner_img">
+              <div className="textF53 FontR tcw title_center">{props.title}</div>
+            </div>
+          </div>
+      ) : 
+      ""}
     </>
   );
 }
