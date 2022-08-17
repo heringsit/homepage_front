@@ -19,7 +19,7 @@ export default function ContentsTitle(props) {
         </div>
       ) : path === `/service/` ? (
         <>
-          {/* <div style={{height: "84px"}}/> */}
+          <div style={{height: mTablet ? "84px" : ""}}/>
           <div className="position-relative banner_container ">
             {theme === "dark" ? <div className="banner_gradient"></div> : null}
             <div className="banner_default banner_img banner">
@@ -53,6 +53,7 @@ export default function ContentsTitle(props) {
         </div>
       ) : path === "/news/" ? (
         <>
+          <div style={{height: mTablet ? "84px" : ""}}/>
           <div className="position-relative banner_container banner">
             <div className="banner_gradient"></div>
             <div className="banner_default banner_img">
@@ -64,6 +65,8 @@ export default function ContentsTitle(props) {
         </>
       ) : path === "/contactus/" ? (
         <>
+          <div style={{height: mTablet ? "84px" : ""}}/>
+
           <div className="position-relative banner_container">
             <div className="banner_gradient"></div>
             <div className="banner_default banner_img">
