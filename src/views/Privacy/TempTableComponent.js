@@ -53,8 +53,8 @@ const Table = ({ titles, rows }) => {
       </thead>
       <tbody>
         {rows?.map((cells, row_idx) => (
-          <tr key={row_idx}>
-            {cells.map((cell, cell_idx) =>
+          <tr>
+            {cells?.map((cell, cell_idx) =>
               cell === "" ? (
                 <td
                   key={cell_idx}

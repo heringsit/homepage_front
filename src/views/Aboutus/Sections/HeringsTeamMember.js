@@ -211,7 +211,7 @@ export const Advisory_Board = [
       "John Crowley, who is the Chief of Strategic Alliances at Cancer Research and Biostatistics. He founded CRAB in 1997 and served as President and CEO until 2014. Dr. Crowley was the Director of the Statistical Center for SWOG, co-located at CRAB and the Fred Hutchinson Cancer Research Center, from 1984 to 2012. He is the author or co-author of over 400 scientific papers and books.\n\nHe holds an affiliate appointment at the School of Public Health at the Oregon Health and Science University. He received a BS in Mathematics at Pomona College, and MS and Ph.D in Biomathematics at the University of Washington in 1968, 1970, and 1973, respectively.\n",
   },
   {
-    name: "Kyujin Choi Lawyer, Pharmacist",
+    name: "Kyu-Jin Choi Lawyer, Pharmacist",
     // jobs: "Lawyer, Pharmacist",
     positions: "",
     background: icon3_7,
