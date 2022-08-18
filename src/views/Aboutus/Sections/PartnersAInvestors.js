@@ -25,7 +25,7 @@ export default function PartnersAInvestors(props) {
       <div className="pt-48" />
       {/* {!props.matches && <CommonCardTitle title="PARTNERS & INVESTORS" fontSize="textF28" />} */}
       <div className="aboutustitle">
-        <p className="mt-0 textF20 FontCB tcb">PARTNERS & INVESTORS</p>
+        <p className="mt-0 textF20 FontCB">PARTNERS & INVESTORS</p>
         <div className="aboutusline"></div>
       </div>
       <div className="SectionDivTailContent">
