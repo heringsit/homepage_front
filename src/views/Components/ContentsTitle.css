@@ -5,7 +5,7 @@
   background-size: cover;
   background-position: center;
 }
-#service .banner_img {
+#service .banner_img , #privacypolicy .banner_img {
   background: url("../../../src/assets/images/07service/service_banner.png");
   background-repeat: no-repeat;
   background-size: cover;
