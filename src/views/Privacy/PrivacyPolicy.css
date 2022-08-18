@@ -48,12 +48,9 @@
 }
 @media screen and (max-width: 600px) {
   .policyWrap {
-    width: 330px;
-    padding: 48px 5px;
+    width: 100%;
+    padding: 48px 24px;
   }
-}
-/* screen <= 320px */
-@media screen and (max-width: 320px) {
   .privacybuttons {
     display: flex;
     flex-direction: column;
@@ -63,6 +60,10 @@
     display: inline-block;
     margin: 6px 0 6px auto;
   }
+}
+/* screen <= 320px */
+@media screen and (max-width: 320px) {
+  
   .policyWrap {
     width: 280px;
     padding: 48px 0;

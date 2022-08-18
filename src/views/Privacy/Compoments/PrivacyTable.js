@@ -14,7 +14,10 @@ const PrivacyTable = ({ titles, rows }) => {
     if (newTab.test(content)) {
       return (
         <p
-          className={`tab-1 m-reset ${idx === 0 ? "" : "mt-16"} FontNL textF14`}
+          className={`tab-1 m-reset ${
+            // idx === 0 ? "" : "mt-16"
+            ""
+          } FontNL textF14`}
           key={idx}
         >
           {content}
@@ -23,7 +26,10 @@ const PrivacyTable = ({ titles, rows }) => {
     } else
       return (
         <p
-          className={`m-reset ${idx === 0 ? "" : "mt-16"} FontNL textF14`}
+          className={`m-reset ${
+            // idx === 0 ? "" : "mt-16"
+            ""
+          } FontNL textF14`}
           key={idx}
         >
           {content}
@@ -31,7 +37,7 @@ const PrivacyTable = ({ titles, rows }) => {
       );
   };
   return (
-    <table cellSpacing={0}>
+    <table className="w-full" cellSpacing={0}>
       <thead>
         <tr>
           {titles?.map((title, idx) => (
@@ -53,7 +59,7 @@ const PrivacyTable = ({ titles, rows }) => {
       </thead>
       <tbody>
         {rows?.map((cells, row_idx) => (
-          <tr>
+          <tr key={row_idx}>
             {cells?.map((cell, cell_idx) =>
               cell.includes("t0b0r0") ? (
                 <td

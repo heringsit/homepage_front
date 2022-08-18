@@ -79,7 +79,7 @@ export default function TeamList(props) {
       <div className="pt-48" />
       {/* <CommonCardTitle title="HERINGS TEAM" fontSize="textF28" tc={0} /> */}{" "}
       <div className="aboutustitle">
-        <p className="textF20 FontCB tcb">HERINGS TEAM</p>
+        <p className="mt-0 textF20 FontCB tcb">HERINGS TEAM</p>
         <div className="aboutusline"></div>
       </div>
       {HERINGS_TEAM_LIST.map((LIST, idx) => (
