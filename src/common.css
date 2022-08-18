@@ -546,6 +546,9 @@
   #heringsteam .textF16 {
     font-size: 12px;
   }
+  .SectionDivCareer .textF18 {
+    font-size: 14px;
+  }
 }
 
 /*  320 < Screen <= 600 */
@@ -612,6 +615,9 @@
   #privacypolicy .policyContents {
     font-size: 14px;
   }
+  .SectionDivCareer .textF18 {
+    font-size: 13px;
+  }
 }
 /* screen <= 320px */
 @media screen and (max-width: 320px) {
@@ -671,6 +677,12 @@
     font-size: 12px;
   }
   #privacypolicy .policyButton .textF14 {
+    font-size: 12px;
+  }
+  .SectionDivCareer .textF18 {
+    font-size: 12px;
+  }
+  .SectionDivCareer .textF16 {
     font-size: 12px;
   }
 }
