@@ -5,11 +5,7 @@ import "./Service.css";
 import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
 import Footer from "../Components/Footer";
-// import ContentsTitle from "../Components/ContentsTitle";
-// import ostomy_main from "../../assets/images/07service/ostomy_main.png";
-// import ostomy_popup from "../../assets/images/07service/ostomy_popup.png";
-// import healiary_main from "../../assets/images/07service/healiary_main.svg";
-// import healiary_kitchen from "../../assets/images/07service/healiary_kitchen.svg";
+/* Pictures */ 
 import healiary_application from "../../assets/images/07service/healiary_application.svg";
 import ostomy_application from "../../assets/images/07service/ostomy_application.svg";
 import { MediaQueryContext, ThemeContext } from "../../context";
@@ -18,9 +14,6 @@ import ContentsTitle from "../Components/ContentsTitle";
 import TabClick from "../common/TabClick";
 import useOnScreen from "../hooks/objectObserver";
 
-// import CommonCardFrameLeft from "../common/CommonCardFrameLeft";
-// import CommonCardFrameRight from "../common/CommonCardFrameRight";
-// import ServiceTitleImage from "../../assets/images/07service/service_title.svg";
 
 export default function Service() {
   const { theme } = useContext(ThemeContext);

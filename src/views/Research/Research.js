@@ -207,10 +207,11 @@ export default function Research() {
                 Trade, Industry & Energy(MOTIE, Korea)."
                 subText1="SMART REPORT SYSTEM FOR DRUG ADVERSE EVENTS"
                 // subText2="SODA"
-                subText1Style="FontB mb-4"
-                subText2Style="textF24 FontEB mb-8"
+                subText1Style="textF24 FontEB lineheight140 mb-8"
+                // subText2Style="textF24 FontEB mb-8"
                 contentPadding="drugadverse-padding"
                 mainTextStyle="text-align-start textF18 FontL lineheight160"
+                headerStyle={theme==="dark" ? "tcw" : "tcb"}
               />
             </div>
           </div>

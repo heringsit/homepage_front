@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 // import { WebTerms } from "./OstomyContent/webTerms";
 import "./OstomyContent/ostomyPrivacy.css";
 import PrivacyTable from "./Compoments/PrivacyTable";
@@ -11,11 +11,11 @@ import {
   ostomyPrivacyTitles,
 } from "./Compoments/OstomyTableList";
 
-import { ThemeContext } from "../../context";
+// import { ThemeContext } from "../../context";
 import Loading from "./Loading";
 import PrivacyButtons from "./Compoments/PrivacyButtons";
 
-const newLine = new RegExp("H");
+// const newLine = new RegExp("H");
 export default function OstomyPrivacy() {
   const [buttonId, setButtonID] = useState(0);
   const patharray = window.location.pathname.split("/");
@@ -23,7 +23,7 @@ export default function OstomyPrivacy() {
   const [policies, setPolicies] = useState([]);
   const [isFetchFinished, setisFetchFinished] = useState(false);
 
-  const { theme } = useContext(ThemeContext);
+  // const { theme } = useContext(ThemeContext);
 
   const linePrinter = (policies, ostomyPrivacyTitles, ostomyPrivacyRows) => {
     return (
