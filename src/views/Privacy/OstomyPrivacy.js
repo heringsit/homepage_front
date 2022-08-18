@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 // import { WebTerms } from "./OstomyContent/webTerms";
 import "./OstomyContent/ostomyPrivacy.css";
 import PrivacyTable from "./Compoments/PrivacyTable";
+import OstomySpecialTable from "./Compoments/OstomySpecialTable";
 import UserPrivacy from "../../assets/text/OstomyUserPrivacy.txt";
 import AppTerms from "../../assets/text/OstomyAppTerms.txt";
 import WebTerms from "../../assets/text/OstomyWebTerms.txt";
@@ -23,7 +24,7 @@ export default function OstomyPrivacy() {
   const [isFetchFinished, setisFetchFinished] = useState(false);
 
   const { theme } = useContext(ThemeContext);
-  // console.log(ostomyPrivacyRows)
+
   const linePrinter = (policies, ostomyPrivacyTitles, ostomyPrivacyRows) => {
     return (
       <>
@@ -37,30 +38,29 @@ export default function OstomyPrivacy() {
             </p>
           ) : policy.includes("T") ? (
             <React.Fragment key={idx}>
-              {console.log(policy.split("-")[1], ">> titles")}
-              <PrivacyTable
-                titles={ostomyPrivacyTitles[parseInt(policy.split("-")[1])]}
-                rows={ostomyPrivacyRows[parseInt(policy.split("-")[1])]}
-              />
+              {policy.split("-")[1] === "s\r" ? (
+                <OstomySpecialTable />
+              ) : (
+                <PrivacyTable
+                  titles={ostomyPrivacyTitles[parseInt(policy.split("-")[1])]}
+                  rows={ostomyPrivacyRows[parseInt(policy.split("-")[1])]}
+                />
+              )}
             </React.Fragment>
           ) : policy.includes("(N)") ? (
-            <>
               <p
                 key={idx}
                 className="m-reset FontNL lineheight160 policyContents"
               >
                 <br />
               </p>
-            </>
           ) : (
-            <>
               <p
                 key={idx}
                 className="m-reset FontNL lineheight160 policyContents"
               >
                 {policy}
               </p>
-            </>
           )
         )}
       </>
