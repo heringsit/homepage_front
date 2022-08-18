@@ -24,7 +24,7 @@ export default function HealiaryPrivacy() {
   const { theme } = useContext(ThemeContext);
 
   function onClick(id, e) {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
     setButtonID(id);
   }
 
@@ -91,54 +91,45 @@ export default function HealiaryPrivacy() {
                 <p className="textF16 FontCB tcb policyTitle">
                   힐리어리 이용 약관
                 </p>
-                {policies.map((policy, idx) =>
-                  policy.includes("(B)") ? (
-                    <p
-                      key={idx}
-                      className="m-reset FontNR lineheight160 policyContents"
-                    >
-                      {policy.split("(B)")[1]}
-                    </p>
-                  ) : (
-                    // <div></div>
-                    <p
-                      key={idx}
-                      className="m-reset FontNL lineheight160 policyContents"
-                    >
-                      {policy}
-                    </p>
-                  )
-                )}
+                {policies.map((policy, idx) => (
+                  <React.Fragment key={idx}>
+                    {policy.includes("(B)") ? (
+                      <p className="m-reset FontNR lineheight160 policyContents">
+                        {policy.split("(B)")[1]}
+                      </p>
+                    ) : (
+                      // <div></div>
+                      <p className="m-reset FontNL lineheight160 policyContents">
+                        {policy}
+                      </p>
+                    )}
+                  </React.Fragment>
+                ))}
               </>
             ) : (
               <>
                 <p className="textF16 FontCB policyTitle">
                   힐리어리 개인정보 처리 방침
                 </p>
-                {policies.map((policy, idx) =>
-                  policy.includes("(B)") ? (
-                    <p
-                      key={idx}
-                      className="m-reset FontNR lineheight160 policyContents"
-                    >
-                      {policy.split("(B)")[1]}
-                    </p>
-                  ) : policy.includes("T") ? (
-
-                    <PrivacyTable
-                      titles={healiaryPrivacyTitles[policy.split("-")[1]]}
-                      rows={healiaryPrivacyRows[policy.split("-")[1]]}
-                    />
-                  ) : (
-                    // <div></div>
-                    <p
-                      key={idx}
-                      className="m-reset FontNL lineheight160 policyContents"
-                    >
-                      {policy}
-                    </p>
-                  )
-                )}
+                {policies.map((policy, idx) => (
+                  <React.Fragment key={idx}>
+                    {policy.includes("(B)") ? (
+                      <p className="m-reset FontNR lineheight160 policyContents">
+                        {policy.split("(B)")[1]}
+                      </p>
+                    ) : policy.includes("T") ? (
+                      <PrivacyTable
+                        titles={healiaryPrivacyTitles[policy.split("-")[1]]}
+                        rows={healiaryPrivacyRows[policy.split("-")[1]]}
+                      />
+                    ) : (
+                      // <div></div>
+                      <p className="m-reset FontNL lineheight160 policyContents">
+                        {policy}
+                      </p>
+                    )}
+                  </React.Fragment>
+                ))}
               </>
             )}
           </div>

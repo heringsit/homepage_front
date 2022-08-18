@@ -20,7 +20,7 @@ import TabClick from "../common/TabClick";
 // import ContentsTitle from "../Components/ContentsTitle";
 import useOnScreen from "../hooks/objectObserver";
 import { MediaQueryContext, ThemeContext } from "../../context";
-import { AboutUsModal } from "../Components/AboutUsModal";
+import { AboutUsModal } from "./AboutUsModal";
 
 // 22.08.05 makeStyles 사용에서 css 로 코드 변환 (style 통일)
 export default function Aboutus() {

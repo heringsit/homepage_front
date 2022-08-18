@@ -309,11 +309,10 @@
 /* DARK MODE */
 .modebutton {
   display: none;
-}
-
-.darktoggle {
   width: 140px;
   height: 35px;
+}
+.darktoggle {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -338,7 +337,6 @@
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
   border-radius: 34px;
 }
-
 .darkmode {
   line-height: 137%;
   color: #3c3c3c;
@@ -373,6 +371,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
     width: 182.6px;
   }
 }

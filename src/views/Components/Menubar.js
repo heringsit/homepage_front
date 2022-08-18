@@ -104,7 +104,6 @@ export default function Menubar(props) {
               <DarkToggle
                 onClick={changeMode}
                 className="modediv"
-                mobile={mobile}
               />
 
               <div className="mobileBtn">
@@ -252,7 +251,6 @@ export default function Menubar(props) {
           <DarkToggle
             onClick={changeMode}
             className="menudiv"
-            mobile={mobile}
           />
         </div>
 
