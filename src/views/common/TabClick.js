@@ -8,7 +8,7 @@ import { ThemeContext, MediaQueryContext } from "../../context";
 export default function TabClick({ visibleArray }) {
   let pathname = useLocation().pathname;
   const { theme } = useContext(ThemeContext);
-  const { mDesktop } = useContext(MediaQueryContext);
+  const { mTablet } = useContext(MediaQueryContext);
 
   // ex: [true, false, false] -> [whoweare:Visible, teamList:not-Visible, pai:not-Visible]
   // const visibleCount = visibleArray?.filter(value => value===true).length; // check how many elements are visible in DOM
@@ -32,7 +32,7 @@ export default function TabClick({ visibleArray }) {
   ];
   const newsir = ["newsrelease", "irinformation"];
   const contactus = ["career", "contact"];
-  const privacypolicies = ["healiary", "ostomy"];
+  // const privacypolicies = ["healiary", "ostomy"];
   const scrollWithOffset = (el, yOffset = -(84 + 100)) => {
     const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
     window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
@@ -93,7 +93,7 @@ export default function TabClick({ visibleArray }) {
                 <HashLink
                   smooth
                   to={`#${tab}`}
-                  scroll={(el) => scrollWithOffset(el, mDesktop ? -149 : -220)}
+                  scroll={(el) => scrollWithOffset(el, mTablet ? -224 : -224)}
                   className={
                     index === visibleIndex
                       ? "w-full h-full tagADefault tabATagTab FontEB"
@@ -163,7 +163,7 @@ export default function TabClick({ visibleArray }) {
                 <HashLink
                   smooth
                   to={`#${tab}`}
-                  scroll={(el) => scrollWithOffset(el, mDesktop ? -149 : -184)}
+                  scroll={(el) => scrollWithOffset(el, mTablet ? -149 : -184)}
                   className={
                     index === visibleIndex
                       ? "w-full h-full tagADefault tabATagTab FontEB"

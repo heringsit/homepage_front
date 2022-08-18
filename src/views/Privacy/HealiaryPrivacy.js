@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import {  useHistory } from "react-router-dom";
 import "./PrivacyPolicy.css";
 import HealiaryPrivacyPolicy from "../../assets/text/HealiaryPrivacyPolicy.txt";
 //Terms Of Service
 import HealiaryTOS from "../../assets/text/HealiaryTOS.txt";
 import PrivacyButtons from "./Compoments/PrivacyButtons";
-import { ThemeContext } from "../../context";
+// import { ThemeContext } from "../../context";
 
 import Loading from "./Loading";
 import PrivacyTable from "./Compoments/PrivacyTable";
@@ -21,7 +21,7 @@ export default function HealiaryPrivacy() {
   const submenu = patharray[patharray.length - 1];
   const [policies, setPolicies] = useState([]);
   const [isFetchFinished, setisFetchFinished] = useState(false);
-  const { theme } = useContext(ThemeContext);
+  // const { theme } = useContext(ThemeContext);
 
   function onClick(id, e) {
     window.scrollTo(0, 0);
@@ -88,7 +88,7 @@ export default function HealiaryPrivacy() {
           <div>
             {submenu === "1" ? (
               <>
-                <p className="textF16 FontCB tcb policyTitle">
+                <p className="textF16 FontCB policyTitle">
                   힐리어리 이용 약관
                 </p>
                 {policies.map((policy, idx) => (

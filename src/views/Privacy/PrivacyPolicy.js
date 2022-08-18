@@ -1,17 +1,17 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
-import { useHistory, useLocation } from "react-router";
-import { useParams, Link } from "react-router-dom";
-import { MediaQueryContext, ThemeContext } from "../../context";
-import TabClick from "../common/TabClick";
-import ContentsTitle from "../Components/ContentsTitle";
+import React, { useContext, useEffect, useState } from "react";
+import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
+import { ThemeContext } from "../../context";
+// import TabClick from "../common/TabClick";
+// import ContentsTitle from "../Components/ContentsTitle";
 import Footer from "../Components/Footer";
 import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
-import useOnScreen from "../hooks/objectObserver";
+// import useOnScreen from "../hooks/objectObserver";
 import HealiaryPrivacy from "./HealiaryPrivacy";
 import OstomyPrivacy from "./OstomyPrivacy";
 export default function PrivacyPolicy() {
-  const { mTablet } = useContext(MediaQueryContext);
+  // const { mTablet } = useContext(MediaQueryContext);
   const { theme } = useContext(ThemeContext);
 
   // const [isScroll, setIsScroll] = useState(false);
