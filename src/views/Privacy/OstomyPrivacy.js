@@ -1,10 +1,14 @@
 import React, { useEffect, useState, useContext } from "react";
 // import { WebTerms } from "./OstomyContent/webTerms";
 import "./OstomyContent/ostomyPrivacy.css";
-import Table from "./Compoments/PrivacyTable";
+import PrivacyTable from "./Compoments/PrivacyTable";
 import UserPrivacy from "../../assets/text/OstomyUserPrivacy.txt";
 import AppTerms from "../../assets/text/OstomyAppTerms.txt";
 import WebTerms from "../../assets/text/OstomyWebTerms.txt";
+import {
+  ostomyPrivacyRows,
+  ostomyPrivacyTitles,
+} from "./Compoments/OstomyTableList";
 
 import { ThemeContext } from "../../context";
 import Loading from "./Loading";
@@ -19,7 +23,8 @@ export default function OstomyPrivacy() {
   const [isFetchFinished, setisFetchFinished] = useState(false);
 
   const { theme } = useContext(ThemeContext);
-  const linePrinter = (policies) => {
+  // console.log(ostomyPrivacyRows)
+  const linePrinter = (policies, ostomyPrivacyTitles, ostomyPrivacyRows) => {
     return (
       <>
         {policies.map((policy, idx) =>
@@ -32,27 +37,31 @@ export default function OstomyPrivacy() {
             </p>
           ) : policy.includes("T") ? (
             <React.Fragment key={idx}>
-              <Table />
+              {console.log(policy.split("-")[1], ">> titles")}
+              <PrivacyTable
+                titles={ostomyPrivacyTitles[parseInt(policy.split("-")[1])]}
+                rows={ostomyPrivacyRows[parseInt(policy.split("-")[1])]}
+              />
             </React.Fragment>
           ) : policy.includes("(N)") ? (
             <>
-              <div></div>
               <p
                 key={idx}
                 className="m-reset FontNL lineheight160 policyContents"
               >
-                <br/>
+                <br />
               </p>
             </>
-          ) : <>
-          <div></div>
-          <p
-            key={idx}
-            className="m-reset FontNL lineheight160 policyContents"
-          >
-            {policy}
-          </p>
-        </>
+          ) : (
+            <>
+              <p
+                key={idx}
+                className="m-reset FontNL lineheight160 policyContents"
+              >
+                {policy}
+              </p>
+            </>
+          )
         )}
       </>
     );
@@ -63,32 +72,33 @@ export default function OstomyPrivacy() {
   }
 
   useEffect(() => {
-    {submenu === "0" 
-    ? fetch(UserPrivacy, {
-        method: "GET",
-      })
-        .then((r) => r.text())
-        .then((text) => {
-          setPolicies(text.split("\n"));
-          setisFetchFinished(true);
-        })
-    : submenu === "1" 
-    ? fetch(AppTerms, {
-      method: "GET",
-    })
-      .then((r) => r.text())
-      .then((text) => {
-        setPolicies(text.split("\n"));
-        setisFetchFinished(true);
-      })
-    : fetch(WebTerms, {
-      method: "GET",
-    })
-      .then((r) => r.text())
-      .then((text) => {
-        setPolicies(text.split("\n"));
-        setisFetchFinished(true);
-      })
+    {
+      submenu === "0"
+        ? fetch(UserPrivacy, {
+            method: "GET",
+          })
+            .then((r) => r.text())
+            .then((text) => {
+              setPolicies(text.split("\n"));
+              setisFetchFinished(true);
+            })
+        : submenu === "1"
+        ? fetch(AppTerms, {
+            method: "GET",
+          })
+            .then((r) => r.text())
+            .then((text) => {
+              setPolicies(text.split("\n"));
+              setisFetchFinished(true);
+            })
+        : fetch(WebTerms, {
+            method: "GET",
+          })
+            .then((r) => r.text())
+            .then((text) => {
+              setPolicies(text.split("\n"));
+              setisFetchFinished(true);
+            });
     }
   }, [submenu]);
 
@@ -98,8 +108,8 @@ export default function OstomyPrivacy() {
       <PrivacyButtons
         texts={[
           "개인정보처리방침 >",
-          "이용약관1 >",//(앱: 일반 회원)
-          "이용약관2 >",//(웹: 병원 회원)
+          "이용약관1 >", //(앱: 일반 회원)
+          "이용약관2 >", //(웹: 병원 회원)
         ]}
         onClick={onClick}
         pathname="ostomy"
@@ -109,21 +119,21 @@ export default function OstomyPrivacy() {
           <p className="textF16 FontCB policyTitle">
             장루관리 개인정보 처리방침_일반회원(앱), 병원회원(웹) 공용
           </p>
-          {linePrinter(policies)}
+          {linePrinter(policies, ostomyPrivacyTitles, ostomyPrivacyRows)}
         </>
       ) : submenu === "1" ? (
         <>
           <p className="textF16 FontCB policyTitle">
             장루관리 이용약관_일반회원(앱)
           </p>
-          {linePrinter(policies)}
+          {linePrinter(policies, ostomyPrivacyTitles, ostomyPrivacyRows)}
         </>
       ) : (
         <>
           <p className="textF16 FontCB policyTitle">
             장루관리 이용약관_병원회원(웹)
           </p>
-          {linePrinter(policies)}
+          {linePrinter(policies, ostomyPrivacyTitles, ostomyPrivacyRows)}
         </>
       )}
     </div>
