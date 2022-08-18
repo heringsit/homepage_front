@@ -118,10 +118,13 @@ export default function HealiaryPrivacy() {
                         {policy.split("(B)")[1]}
                       </p>
                     ) : policy.includes("T") ? (
+                      <>
                       <PrivacyTable
-                        titles={healiaryPrivacyTitles[policy.split("-")[1]]}
-                        rows={healiaryPrivacyRows[policy.split("-")[1]]}
+                        titles={healiaryPrivacyTitles[parseInt(policy.split("-")[1])]}
+                        rows={healiaryPrivacyRows[parseInt(policy.split("-")[1])]}
                       />
+                      <br/>
+                      </>
                     ) : (
                       // <div></div>
                       <p className="m-reset FontNL lineheight160 policyContents">

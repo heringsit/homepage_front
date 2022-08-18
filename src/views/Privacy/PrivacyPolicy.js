@@ -110,9 +110,9 @@ export default function PrivacyPolicy() {
           </Link>
         </div>
       </div>
-      <ContentsTitle title={`${patharray[patharray.length-1] === "0" 
+      {/* <ContentsTitle title={`${patharray[patharray.length-1] === "0" 
                                 ? "PRIVACY POLICY"
-                                : "TERMS AND SERVICES"}`}/>
+                                : "TERMS AND SERVICES"}`}/> */}
       {selected === false
         ? <HealiaryPrivacy />
         : <OstomyPrivacy />
