@@ -23,7 +23,9 @@ export default function Whoweare() {
     <div
       style={{
         backgroundImage: `url(${backgroundImg})`,
-        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundPosition: "75% 50%",
+        
       }}
       className={`whoweare aboutuscontents bg-gray ${
         mobile ? "mt-50" : mTablet ? "mt-84" : ""

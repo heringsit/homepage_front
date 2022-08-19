@@ -33,6 +33,12 @@
   height: 1.5px;
   background: #000;
 }
+.aboutuslineDark {
+  display: inline-block;
+  width: 60px;
+  height: 1.5px;
+  background: #fff;
+}
 #whoweare .aboutusline {
   background: #fff;
 }

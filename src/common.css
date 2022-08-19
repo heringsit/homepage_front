@@ -459,11 +459,10 @@
   border-right: 0px solid;
 }
 
-
 /* Loader */
 .loader {
-  border: 16px solid #f3f3f3; 
-  border-top: 16px solid #f37f31; 
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #f37f31;
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -471,8 +470,12 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*  1024 < Screen < 1260 */
@@ -618,6 +621,21 @@
   .SectionDivCareer .textF18 {
     font-size: 13px;
   }
+  #contact .textF40 {
+    font-size: 32px;
+  }
+  #contact .textF22 {
+    font-size: 18px;
+  }
+  #contact .textF20 {
+    font-size: 16px;
+  }
+  #contact .textF16 {
+    font-size: 14px;
+  }
+  #contact .textF14 {
+    font-size: 12px;
+  }
 }
 /* screen <= 320px */
 @media screen and (max-width: 320px) {
@@ -683,6 +701,18 @@
     font-size: 12px;
   }
   .SectionDivCareer .textF16 {
+    font-size: 12px;
+  }
+  #contact .textF40 {
+    font-size: 24px;
+  }
+  #contact .textF22 {
+    font-size: 14px;
+  }
+  #contact .textF20 {
+    font-size: 12px;
+  }
+  #contact .textF16 {
     font-size: 12px;
   }
 }

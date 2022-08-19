@@ -30,7 +30,9 @@ export default function PartnersAInvestors(props) {
         <p className={`textF20 FontCB ${theme === "dark" ? "tcw" : "tcb"}`}>
           PARTNERS & INVESTORS
         </p>
-        <div className="aboutusline"></div>
+        <div
+          className={`${theme === "dark" ? "aboutuslineDark" : "aboutusline"}`}
+        ></div>
       </div>
       <div className="SectionDivTailContent">
         <div className="researchWrap">

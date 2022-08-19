@@ -301,7 +301,7 @@ export default function Career({ match }) {
 
   const { theme } = useContext(ThemeContext);
   return (
-    <div>
+    <div >
       {/* <ContentsTitle matches={matches} title={"CONTACT US"} /> */}
       {/* id 를 추가해야 이동한다 ; scroll focusing 스크롤 포커싱 */}
       <div className="SectionDivCareer">
@@ -457,7 +457,9 @@ export default function Career({ match }) {
                             : "careerBtnEnd"
                         }`}
                       >
-                        {checkDate(data.closing_date, "E") ? "채용중" : "마감"}
+                        {checkDate(data.closing_date, "E")
+                          ? "채용중"
+                          : "마감"}
                       </div>
                     </div>
                   </div>
@@ -483,7 +485,7 @@ export default function Career({ match }) {
           )}
         </div>
       </div>
-
+        
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
