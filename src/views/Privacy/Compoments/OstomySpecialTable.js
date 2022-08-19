@@ -8,9 +8,8 @@ import { ThemeContext } from "../../../context";
 //             <p className={`m-reset FontNL textF14`}>
 //               (개인)
 //             </p> */}
-const newLine = new RegExp("\n");
+const newLine = new RegExp("\\n");
 const processNewLine = (content) => {
-  console.log(content.split(newLine))
   return content.split(newLine);
 };
 const OstomySpecialTable = () => {

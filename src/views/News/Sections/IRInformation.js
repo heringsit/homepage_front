@@ -184,7 +184,7 @@ export default function NewsRelease() {
             onClick={(e) => {
               page(e, data);
             }}
-            className={`${
+            className={`FontNR ${
               parseInt(data) === parseInt(paging.curPage) ? "pagingActive" : ""
             }`}
           >
@@ -207,7 +207,7 @@ export default function NewsRelease() {
   };
   useEffect(getdata, []);
   const { theme } = useContext(ThemeContext);
-
+  const fontColor = theme === "dark" ? "tcw" : "tcb";
   return (
     <div>  {/*id="content" className="content">*/}
       <div className="SectionDivNews" >
@@ -241,10 +241,10 @@ export default function NewsRelease() {
                         handleOpen(data, checkDate(data.regiDate, "E"));
                       }}
                     >
-                      <div className="textF20 fontColor FontNB">{data.title}</div>
+                      <div className={`textF20 ${fontColor} FontNB`}>{data.title}</div>
                     </div>
                   </div>
-                  <div className="newsContainListCol ncol2 textF16">
+                  <div className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}>
                     <div
                       style={{
                         border: "solid 1px",
@@ -258,16 +258,18 @@ export default function NewsRelease() {
                       <img
                         alt="img"
                         src={downLoad}
+                        className={theme === "dark" ? "invert" : ""}
                         style={{ width: 15, height: 15, marginLeft: 8 }}
                       />
                     </div>
                   </div>
-                  <div className="newsContainListCol ncol2 textF16">
+                  <div className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}>
                     {moment(data.reg_datetime).format("YYYY-MM-DD")}
                   </div>
                 </div>
               );
             })}
+            
             {/* <div className="nodatasWrap">
               <div className="nodatas FontB">등록된 게시물이 없습니다!</div>
             </div> */}
@@ -417,7 +419,7 @@ export default function NewsRelease() {
                       className="careerModalClose FontR textF16"
                       onClick={handleClose}
                     >
-                      <span className="newsButtonLink" onClick={handleClose}>
+                      <span className="newsButtonLink FontR" onClick={handleClose}>
                         Close
                       </span>
                     </div>

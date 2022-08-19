@@ -32,7 +32,7 @@ export default function PrivacyButtons({
           to={`/privacypolicy/${pathname}/${idx}`}
           key={idx}
         >
-          <div className="FontR textF14 color-b">{button}</div>
+          <div className="FontNR textF14 color-b">{button}</div>
         </Link>
       ))}
     </div>
