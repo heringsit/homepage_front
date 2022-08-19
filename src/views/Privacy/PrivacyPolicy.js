@@ -48,7 +48,7 @@ export default function PrivacyPolicy() {
   const patharray = history.location.pathname.split("/")
   const submenu = patharray[patharray.length-2]
   const selected = submenu === "ostomy"
-  console.log(submenu)
+  // console.log(submenu)
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])

@@ -1,11 +1,16 @@
 // import { useMediaQuery } from "@material-ui/core";
-import React from "react";
+import React, {useContext} from "react";
 import { NavLink } from "react-router-dom";
-// import { MediaQueryContext } from "../../context";
+import { HashLink } from "react-router-hash-link";
+import { MediaQueryContext } from "../../context";
 import "./Footer.css";
 function Footer() {
   // const matches = useMediaQuery("(max-width:480px)");
-  // const { mobile } = useContext(MediaQueryContext);
+  const { mTablet } = useContext(MediaQueryContext);
+  const scrollWithOffset = (el, yOffset = mTablet ? -42 : -184) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
+  };
   return (
     <footer className="footer">
       <div className="footerRowa  ">
@@ -17,9 +22,13 @@ function Footer() {
           Terms And Conditions
         </NavLink>
         <span className="slash FontL textF12">/</span> 
-        <NavLink className="FontL textF12" to="/contactus/">
+        <HashLink 
+          className="FontL textF12" 
+          to="/contactus/#contact"
+          smooth
+          scroll={scrollWithOffset}>
           Contact us
-        </NavLink>
+        </HashLink>
       </div>
       <div className="footerRow">
         <div className="footerContent FontL textF12">
