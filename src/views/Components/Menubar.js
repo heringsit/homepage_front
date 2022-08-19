@@ -26,7 +26,7 @@ export default function Menubar(props) {
   const { theme, changeTheme } = useContext(ThemeContext);
   // const [mode, setMode] = useState(theme);
   const scrollOffset = (mTablet 
-    ? [-84, -(84+40), -84, -84, -84, -84] // screen < 768px
+    ? [-84, -(84+40), -84, -84, -84, 84] // screen < 768px
     : [-(84+100), -(84+140), -184, -184, -184, -184]) // screen > 768px
 
   // console.log(pathname === "/", ">pathname");
