@@ -7,13 +7,15 @@ import "../../index.css";
 import { MediaQueryContext } from "../../context";
 
 export default function Main() {
+  // mTablet (768px)
   const { mTablet } = useContext(MediaQueryContext);
   return (
-    <div className="" id="main">
+    <div id="main">
       <Menubar slideIndex={0} />
       <Totop />
       <div className="main-container">
-        {mTablet ? (
+        {// 768px > 이미지; 768px < 비디오
+         mTablet ? (
           <div className="mainimagelayout w-full h-full">
             <div
               style={{
