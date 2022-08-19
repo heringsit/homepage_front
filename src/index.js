@@ -15,7 +15,7 @@ import "./index.css";
 import "./common.css";
 import DetailPage from "./views/News/Sections/detail/DetailPage";
 import Main from "./views/Main/Main";
-import { MediaQueryContext, ThemeContext, ComponentId } from "./context";
+import { MediaQueryContext, ThemeContext } from "./context";
 import { useMediaQuery } from "@material-ui/core";
 import PrivacyPolicy from "./views/Privacy/PrivacyPolicy";
 // import HealiaryPrivacy from "./views/Privacy/HealiaryPrivacy";
