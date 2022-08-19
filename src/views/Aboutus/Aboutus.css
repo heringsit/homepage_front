@@ -20,8 +20,11 @@
   width: 100%;
   height: 100%;
   padding: 100px 10%;
+  border: none;
 }
 .aboutustitle {
+  width: max-content;
+  margin: auto;
   text-align: center;
 }
 .aboutusline {
@@ -30,18 +33,23 @@
   height: 1.5px;
   background: #000;
 }
+.aboutuslineDark {
+  display: inline-block;
+  width: 60px;
+  height: 1.5px;
+  background: #fff;
+}
 #whoweare .aboutusline {
-  background: #ffffff;
+  background: #fff;
 }
 /* WHO WE ARE  */
 .whoweareContent {
-  width: 100%;
+  width: max-content;
+  height: max-content;
+  margin: 96px auto auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  margin-top: 96px;
 }
 .whoweareContentTitle {
   margin-bottom: 16px;
@@ -53,10 +61,10 @@
   white-space: pre-line;
 }
 .whoweareContentsWrap {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   width: 100%;
-  align-items: center;
+  text-align: center;
   white-space: pre-line;
 }
 
@@ -129,17 +137,17 @@
 }
 .PAIDiv {
   display: flex;
-  margin: 0 auto;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
+  /* justify-content: space-between; */
+  gap: 4px;
 }
 .partner__image__container {
   border: 1px solid #f0f3f6;
   width: 19%;
-  height: calc(18vh);
+  height: 180px;
   padding: 2% 3.5%;
-  margin: 0 1% 1% 0;
+  /* margin: 0 1% 1% 0; */
   min-height: 1px;
   display: flex;
   background-color: white;
@@ -148,14 +156,13 @@
 .partner__image__container > img {
   height: auto;
   width: 100%;
-  margin: auto 0;
+  margin: auto;
 }
 .inventors__image__container {
   border: 1px solid #f0f3f6;
-  width: 24%;
-  height: calc(23vh);
+  width: 18.5%;
+  height: 180px;
   padding: 3% 4.5%;
-  margin: 0 1% 1% 0;
   min-height: 1px;
   display: flex;
   background-color: white;
@@ -169,6 +176,12 @@
 
 /* 1024 < screen <= 1260 */
 @media screen and (max-width: 1260px) {
+  .aboutuscontents {
+    border: none;
+  }
+  .whoweareContent {
+    width: 90%;
+  }
   .SectionColorGray {
     padding: 16px 35px;
   }
@@ -178,6 +191,13 @@
   .heringsTeamWrap {
     height: max-content;
     min-height: 300px;
+  }
+  .partner__image__container {
+    height: 100px;
+  }
+  .inventors__image__container {
+    width: 20%;
+    height: 120px;
   }
 }
 /* 768 < screen <= 1024 */
@@ -198,10 +218,10 @@
     padding: 1% 8%;
   }
   .partner__image__container {
-    height: calc(15vh);
+    height: 100px;
   }
   .inventors__image__container {
-    height: calc(17vh);
+    height: 120px;
   }
 }
 /* 600 < screen <= 768 */
@@ -226,10 +246,14 @@
     min-height: 240px;
   }
   .partner__image__container {
-    height: calc(12vh);
+    width: 30%;
+    height: 100px;
+    margin-bottom: 10px;
   }
   .inventors__image__container {
-    height: calc(15vh);
+    width: 30%;
+    height: 120px;
+    margin-bottom: 10px;
   }
 }
 /* 320px < screen <= 600px */
@@ -254,10 +278,8 @@
   /* PARTNERS&INV */
   .partner__image__container,
   .inventors__image__container {
-    margin: 1.5%;
-    width: 22.75%;
-    padding: 3%;
-    height: calc(12vh);
+    margin: 0 0 8px 0;
+    height: 80px;
   }
   .partner__image__container:nth-child(4n + 1),
   .inventors__image__container:nth-child(4n + 1) {
@@ -290,10 +312,10 @@
     letter-spacing: normal;
   }
   .partner__image__container {
-    height: calc(7vh);
+    height: 50px;
   }
   .inventors__image__container {
-    height: calc(8vh);
+    height: 80px;
   }
 }
 

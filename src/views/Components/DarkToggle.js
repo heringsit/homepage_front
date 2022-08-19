@@ -12,7 +12,7 @@ export default function DarkToggle(props) {
     <div className={props.className}>
       <Button className="modebutton" onClick={props.onClick}>
         {theme === "dark" ? (
-          <label htmlFor="modebutton" className="lighttoggle w-full h-full">
+          <label htmlFor="modebutton" className="lighttoggle">
             <img
               src={DarkModeOffIcon}
               alt="dark mode icon"
@@ -23,7 +23,7 @@ export default function DarkToggle(props) {
             )}
           </label>
         ) : (
-          <label htmlFor="modebutton" className="darktoggle w-full h-full">
+          <label htmlFor="modebutton" className="darktoggle">
             <img
               src={DarkModeOnIcon}
               alt="dark mode icon"

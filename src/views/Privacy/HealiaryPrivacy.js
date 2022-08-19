@@ -119,11 +119,17 @@ export default function HealiaryPrivacy() {
                       </p>
                     ) : policy.includes("T") ? (
                       <>
-                      <PrivacyTable
-                        titles={healiaryPrivacyTitles[parseInt(policy.split("-")[1])]}
-                        rows={healiaryPrivacyRows[parseInt(policy.split("-")[1])]}
-                      />
-                      <br/>
+                        <PrivacyTable
+                          titles={
+                            healiaryPrivacyTitles[
+                              parseInt(policy.split("-")[1])
+                            ]
+                          }
+                          rows={
+                            healiaryPrivacyRows[parseInt(policy.split("-")[1])]
+                          }
+                        />
+                        <br />
                       </>
                     ) : (
                       // <div></div>

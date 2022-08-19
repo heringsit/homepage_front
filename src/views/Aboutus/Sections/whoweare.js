@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "../Aboutus.css";
 // import backgroundImg from "../../../assets/images/02about_who_we_are/about_banner_background.svg";
 //about us 배경 변경
-import backgroundImg from "../../../assets/images/02about_who_we_are/aboutus_background.svg"
+import backgroundImg from "../../../assets/images/02about_who_we_are/aboutus_background.svg";
 import { MediaQueryContext } from "../../../context";
 // import CommonCardTitle from "../../common/CommonCardTitle";
 
@@ -45,10 +45,12 @@ export default function Whoweare() {
           We aim to be the best companion to cancer patients through their long
           journey to overcome the disease.
         </span>
-        <div className={`${mobile ? "lineheight140" : "lineheight200"} whoweareContentsWrap`}>
-          <div
-            className={`${mTablet ? "mt-48" : "mt-124"}`}
-          />
+        <div
+          className={`${
+            mobile ? "lineheight140" : "lineheight200"
+          } whoweareContentsWrap`}
+        >
+          <div className={`${mTablet ? "mt-48" : "mt-124"}`} />
           <span className="we FontB tcw textF20">We</span>
           {splits.border.map((split, idx) => (
             <div className="mt-5" key={idx}>

@@ -250,7 +250,7 @@ export default function ContactUs() {
                 name="cName"
                 className={`${inputClassNameHelper(
                   isEnteredNameValid()
-                )} FontR`}
+                )} FontR textF14`}
               />
               <input
                 type="text"
@@ -259,7 +259,7 @@ export default function ContactUs() {
                 name="cEmail"
                 className={`${inputClassNameHelper(
                   isEnteredEmailValid()
-                )} FontR`}
+                )} FontR textF14`}
               />
               <input
                 type="text"
@@ -268,7 +268,7 @@ export default function ContactUs() {
                 name="cPhone"
                 className={`${inputClassNameHelper(
                   isEnteredPhoneValid()
-                )} FontR`}
+                )} FontR textF14`}
               />
               <textarea
                 type="textarea"

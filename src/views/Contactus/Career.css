@@ -262,7 +262,6 @@
     border: 2px solid #07a990;
     border-width: 0px 2px 2px 0px;
   }
-
   .squareCareerSelected {
     width: 160px;
     min-height: 126px;
@@ -275,7 +274,6 @@
     border-left: 20px solid transparent;
     border-bottom: 20px solid transparent;
   }
-
   .squareCareerSelected:after {
     border: 19px solid transparent;
     border-top-color: #07a990;
@@ -325,14 +323,6 @@
     border-left: 15px solid transparent;
     border-bottom: 15px solid transparent;
   }
-
-  .squareCareerSelected:after {
-    border: 15px solid transparent;
-    border-top-color: #07a990;
-    border-bottom: 0;
-    margin-left: -15px;
-    margin-bottom: -15px;
-  }
   .careerListTitle {
     flex-direction: column;
     padding: 5px;
@@ -376,9 +366,28 @@
     padding: 110px 2.5%;
   }
   .squareCareer {
+    width: 120px;
+    min-height: 80px;
+    margin: 10px 12px;
+  }
+  .squareCareerSelected {
+    width: 120px;
+    min-height: 80px;
+    margin: 10px 12px;
+  }
+  .squareCareerSelected:before,
+  .squareCareerSelected:after {
+    border-top: 10px solid #fff;
+    border-right: 10px solid #fff;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+}
+@media screen and (max-width: 320px) {
+  .squareCareer {
+    margin: 8px 6px;
     width: 80px;
     min-height: 60px;
-    margin: 12px 15px;
   }
   .squareCareer:after,
   .squareCareer:before {
@@ -406,7 +415,7 @@
   .squareCareerSelected {
     width: 80px;
     min-height: 60px;
-    margin: 12px 15px;
+    margin: 8px 6px;
   }
   .squareCareerSelected:before,
   .squareCareerSelected:after {
@@ -414,14 +423,6 @@
     border-right: 10px solid #fff;
     border-left: 10px solid transparent;
     border-bottom: 10px solid transparent;
-  }
-
-  .squareCareerSelected:after {
-    border: 10px solid transparent;
-    border-top-color: #07a990;
-    border-bottom: 0;
-    margin-left: -10px;
-    margin-bottom: -10px;
   }
 }
 

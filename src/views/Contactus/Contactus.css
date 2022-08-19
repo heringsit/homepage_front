@@ -24,7 +24,7 @@
   border: solid 1px #94c0d8;
   background-color: #ffffff;
   padding: 1%;
-  font-size: 16px;
+  /* font-size: 16px; */
 }
 .contactusInputForm > textarea {
   margin: 10px 0;
@@ -206,5 +206,26 @@
     width: 80%;
     margin: 5px auto;
     float: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .contractusMap {
+    width: 100%;
+    max-width: 1100px;
+    min-height: 380px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .contractusMap {
+    width: 100%;
+    max-width: 1100px;
+    min-height: 300px;
+  }
+  .squareDiv {
+    min-height: 145px;
+  }
+  .contactusInputForm > input {
+    margin: 5px 0;
+    height: 35px;
   }
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 // import { MediaQueryContext } from "../../../context";
 import p_logo_01 from "../../../assets/images/02about_partners/01suh.png";
 import p_logo_02 from "../../../assets/images/02about_partners/02gsh.png";
@@ -16,17 +16,23 @@ import i_logo_02 from "../../../assets/images/02about_investors/02korea_n.svg";
 import i_logo_03 from "../../../assets/images/02about_investors/03venture_n.svg";
 import i_logo_04 from "../../../assets/images/02about_investors/04cap_n.svg";
 import i_logo_05 from "../../../assets/images/02about_investors/05coree.png";
+import { ThemeContext } from "../../../context";
 // import CommonCardTitle from "../../common/CommonCardTitle";
 
 export default function PartnersAInvestors(props) {
+  const { theme } = useContext(ThemeContext);
   // const { mobile } = useContext(MediaQueryContext);
   return (
     <div className={`aboutuscontents`}>
       <div className="pt-48" />
       {/* {!props.matches && <CommonCardTitle title="PARTNERS & INVESTORS" fontSize="textF28" />} */}
       <div className="aboutustitle">
-        <p className="mt-0 textF20 FontCB">PARTNERS & INVESTORS</p>
-        <div className="aboutusline"></div>
+        <p className={`mt-0 textF20 FontCB ${theme === "dark" ? "tcw" : "tcb"}`}>
+          PARTNERS & INVESTORS
+        </p>
+        <div
+          className={`${theme === "dark" ? "aboutuslineDark" : "aboutusline"}`}
+        ></div>
       </div>
       <div className="SectionDivTailContent">
         <div className="researchWrap">
