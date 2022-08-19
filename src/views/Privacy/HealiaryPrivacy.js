@@ -28,6 +28,7 @@ export default function HealiaryPrivacy() {
     setButtonID(id);
   }
 
+  // Wait until the data is completely fetched.
   useEffect(() => {
     console.log(submenu);
     submenu === "1"
@@ -48,32 +49,7 @@ export default function HealiaryPrivacy() {
             setisFetchFinished(true);
           });
   }, [submenu, buttonId]);
-  // async function fetchText (texts) {
-  //   const response = await fetch(texts)
 
-  //   console.log(response)
-  // .then((r) => r.text())
-  // .then((text) => {
-  //   // console.log(text.split("\n"));
-  //   setPolicies(text.split("\n"));
-  // })
-  // console.log(response)
-  // }
-  // useEffect(() => {
-  //   submenu === "0"
-  //     ? fetchText(HealiaryPrivacyPolicy)
-  //         // .then((r) => r.text())
-  //         // .then((text) => {
-  //         //   // console.log(text.split("\n"));
-  //         //   setPolicies(text.split("\n"));
-  //         // })
-  //     : fetchText(HealiaryTOS)
-  //         // .then((r) => r.text())
-  //         // .then((text) => {
-  //         //   // console.log(text.split("\n"));
-  //         //   setPolicies(text.split("\n"));
-  //         // });
-  // }, [policies]);
   if (!isFetchFinished) return <Loading />;
   else {
     return (
