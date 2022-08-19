@@ -27,7 +27,7 @@ export default function PartnersAInvestors(props) {
       <div className="pt-48" />
       {/* {!props.matches && <CommonCardTitle title="PARTNERS & INVESTORS" fontSize="textF28" />} */}
       <div className="aboutustitle">
-        <p className={`textF20 FontCB ${theme === "dark" ? "tcw" : "tcb"}`}>
+        <p className={`mt-0 textF20 FontCB ${theme === "dark" ? "tcw" : "tcb"}`}>
           PARTNERS & INVESTORS
         </p>
         <div
