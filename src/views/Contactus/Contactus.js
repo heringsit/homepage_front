@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 //import iconClose from "../../assets/images/02about_herings_team/window-close.svg";
@@ -13,8 +13,9 @@ import CommonCardTitle from "../common/CommonCardTitle";
 import { ThemeContext, MediaQueryContext } from "../../context";
 import useOnScreen from "../hooks/objectObserver";
 import TabClick from "../common/TabClick";
+import { useHistory } from "react-router-dom";
 
-export default function ContactUs() {
+export default function ContactUs(props) {
   //const imsi = process.env.PUBLIC_URL;
   const matches = useMediaQuery("(max-width:600px)");
   const [cName, setCName] = useState("");
@@ -176,6 +177,25 @@ export default function ContactUs() {
   visibleArray[0] = useOnScreen(refs.current[0]);
   visibleArray[1] = useOnScreen(refs.current[1]);
 
+  // Scroll function
+  // update: TabClick function -> NavLink 에서 오는 random 숫자
+  // hashId: TabClick function -> NavLink 에서 오는 hashId 
+  const executeScroll = () => {
+    const element = document.getElementById(props.location.hashId);
+    const headOffset= mTablet ? 84 : 184;
+    const elementPosition=element?.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - headOffset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    })    
+  };
+
+  useEffect (() => {
+    executeScroll()  
+  }, [props.location.update])
+  
   return (
     <div
       id="contactus"
@@ -185,7 +205,7 @@ export default function ContactUs() {
       }}
     >
       <Menubar slideIndex={0} />
-      <Totop />
+      
       {!mTablet && <TabClick visibleArray={visibleArray} />}
 
       <ContentsTitle matches={matches} title={"CONTACT US"} />
@@ -291,6 +311,7 @@ export default function ContactUs() {
           </div>
         </div>
       </div>
+      <Totop />
       <Footer />
     </div>
   );

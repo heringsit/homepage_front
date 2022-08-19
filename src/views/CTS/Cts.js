@@ -14,7 +14,8 @@ import TabClick from "../common/TabClick";
 import useOnScreen from "../hooks/objectObserver";
 import { ThemeContext, MediaQueryContext } from "../../context";
 import CommonCardFrame from "../common/CommonCardFrame";
-export default function Cts() {
+import { useHistory } from "react-router";
+export default function Cts(props) {
   const matches = useMediaQuery("(max-width:600px)");
   const { theme } = useContext(ThemeContext);
   const { mTablet } = useContext(MediaQueryContext);
@@ -41,6 +42,25 @@ export default function Cts() {
   visibleArray[1] = useOnScreen(refs.current[1]);
   visibleArray[2] = useOnScreen(refs.current[2]);
   // console.log(visibleArray, ">>visibleArray");
+
+  // Scroll function
+  // update: TabClick function -> NavLink 에서 오는 random 숫자
+  // hashId: TabClick function -> NavLink 에서 오는 hashId 
+  const executeScroll = () => {
+    const element = document.getElementById(props.location.hashId);
+    const headOffset= mTablet ? 84 : 184;
+    const elementPosition=element?.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - headOffset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    })    
+  };
+
+  useEffect (() => {
+    executeScroll()  
+  }, [props.location.update])
 
   return (
     <div

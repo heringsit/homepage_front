@@ -4,6 +4,7 @@ import { useLocation } from "react-router";
 // import { Link } from "react-router-dom"
 import "../Components/Menubar.css";
 import { ThemeContext, MediaQueryContext } from "../../context";
+import { NavLink } from "react-router-dom";
 
 export default function TabClick({ visibleArray }) {
   let pathname = useLocation().pathname;
@@ -54,10 +55,14 @@ export default function TabClick({ visibleArray }) {
           aboutustabs.map((tab, index) => (
             <React.Fragment key={index}>
               <div className={"TABS_tab FontR textF16"}>
-                <HashLink
-                  smooth
-                  to={`#${tab}`}
-                  scroll={scrollWithOffset}
+              <NavLink
+                  // smooth
+                  to={{
+                    pathname:`/aboutus/`,
+                    hashId: tab,
+                    update: Math.random(),
+                  }}
+                  // scroll={(el) => scrollWithOffset(el, mTablet ? -224 : -224)}
                   className={
                     index === visibleIndex
                       ? "w-full h-full tagADefault tabATagTab FontEB"
@@ -72,7 +77,7 @@ export default function TabClick({ visibleArray }) {
                     : tab === "researchpartners"
                     ? "PARTNERS & INVESTORS"
                     : ""}
-                </HashLink>
+                </NavLink>
               </div>
               {index + 1 === aboutustabs.length ? null : (
                 <div style={{ margin: "auto" }}>
@@ -90,10 +95,14 @@ export default function TabClick({ visibleArray }) {
           servicetabs.map((tab, index) => (
             <React.Fragment key={index}>
               <div className="TABS_tab FontR textF16">
-                <HashLink
-                  smooth
-                  to={`#${tab}`}
-                  scroll={(el) => scrollWithOffset(el, mTablet ? -224 : -224)}
+                <NavLink
+                  // smooth
+                  to={{
+                    pathname:`/service/`,
+                    hashId: tab,
+                    update: Math.random(),
+                  }}
+                  // scroll={(el) => scrollWithOffset(el, mTablet ? -224 : -224)}
                   className={
                     index === visibleIndex
                       ? "w-full h-full tagADefault tabATagTab FontEB"
@@ -106,7 +115,7 @@ export default function TabClick({ visibleArray }) {
                     : tab === "telehealthcareservice"
                     ? "TELE-HEALTHCARE SERVICE PLATFORM"
                     : ""}
-                </HashLink>
+                </NavLink>
               </div>
               {index + 1 === servicetabs.length ? null : (
                 <div style={{ margin: "auto" }}>
@@ -124,10 +133,14 @@ export default function TabClick({ visibleArray }) {
           ctstabs.map((tab, index) => (
             <React.Fragment key={index}>
               <div className="TABS_tab FontR textF16">
-                <HashLink
-                  smooth
-                  to={`#${tab}`}
-                  scroll={scrollWithOffset}
+              <NavLink
+                  // smooth
+                  to={{
+                    pathname:`/cts/`,
+                    hashId: tab,
+                    update: Math.random(),
+                  }}
+                  // scroll={(el) => scrollWithOffset(el, mTablet ? -224 : -224)}
                   className={
                     index === visibleIndex
                       ? "w-full h-full tagADefault tabATagTab FontEB"
@@ -142,7 +155,7 @@ export default function TabClick({ visibleArray }) {
                     : tab === "statisticalanalysis"
                     ? "STATISTICAL ANALYSIS"
                     : ""}
-                </HashLink>
+                </NavLink>
               </div>
               {index + 1 === ctstabs.length ? null : (
                 <div style={{ margin: "auto" }}>
@@ -160,10 +173,14 @@ export default function TabClick({ visibleArray }) {
           researchtabs.map((tab, index) => (
             <React.Fragment key={index}>
               <div className="TABS_tab FontR textF16">
-                <HashLink
-                  smooth
-                  to={`#${tab}`}
-                  scroll={(el) => scrollWithOffset(el, mTablet ? -149 : -184)}
+                <NavLink
+                  // smooth
+                  to={{
+                    pathname:`/research/`,
+                    hashId: tab,
+                    update: Math.random(),
+                  }}
+                  // scroll={(el) => scrollWithOffset(el, mTablet ? -149 : -184)}
                   className={
                     index === visibleIndex
                       ? "w-full h-full tagADefault tabATagTab FontEB"
@@ -186,7 +203,7 @@ export default function TabClick({ visibleArray }) {
                     : tab === "drugadverseevents"
                     ? "DRUG ADVERSE EVENTS"
                     : ""}
-                </HashLink>
+                </NavLink>
               </div>
               {index + 1 === researchtabs.length ? null : (
                 <div style={{ margin: "auto" }}>
@@ -204,10 +221,14 @@ export default function TabClick({ visibleArray }) {
           newsir.map((tab, index) => (
             <React.Fragment key={index}>
               <div className="TABS_tab FontR textF16">
-                <HashLink
-                  smooth
-                  to={`#${tab}`}
-                  scroll={scrollWithOffset}
+              <NavLink
+                  // smooth
+                  to={{
+                    pathname:`/news/`,
+                    hashId: tab,
+                    update: Math.random(),
+                  }}
+                  // scroll={(el) => scrollWithOffset(el, mTablet ? -224 : -224)}
                   className={
                     index === visibleIndex
                       ? "w-full h-full tagADefault tabATagTab FontEB"
@@ -220,7 +241,7 @@ export default function TabClick({ visibleArray }) {
                     : tab === "irinformation"
                     ? "IR INFORMATION"
                     : ""}
-                </HashLink>
+                </NavLink>
               </div>
               {index + 1 === newsir.length ? null : (
                 <div style={{ margin: "auto" }}>
@@ -238,10 +259,14 @@ export default function TabClick({ visibleArray }) {
           contactus.map((tab, index) => (
             <React.Fragment key={index}>
               <div className="TABS_tab FontR textF16">
-                <HashLink
-                  smooth
-                  to={`#${tab}`}
-                  scroll={scrollWithOffset}
+              <NavLink
+                  // smooth
+                  to={{
+                    pathname:`/contactus/`,
+                    hashId: tab,
+                    update: Math.random(),
+                  }}
+                  // scroll={(el) => scrollWithOffset(el, mTablet ? -224 : -224)}
                   className={
                     index === visibleIndex
                       ? "w-full h-full tagADefault tabATagTab FontEB"
@@ -254,7 +279,7 @@ export default function TabClick({ visibleArray }) {
                     : tab === "contact"
                     ? "CONTACT"
                     : ""}
-                </HashLink>
+                </NavLink>
               </div>
               {index + 1 === contactus.length ? null : (
                 <div style={{ margin: "auto" }}>

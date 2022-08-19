@@ -17,8 +17,9 @@ import TabClick from "../common/TabClick";
 import useOnScreen from "../hooks/objectObserver";
 import { MediaQueryContext, ThemeContext } from "../../context";
 import CommonCardFrame from "../common/CommonCardFrame";
+import { useHistory } from "react-router";
 
-export default function Research() {
+export default function Research(props) {
   // const matches = useMediaQuery("(max-width:600px)");
   const { sTablet, mTablet } = useContext(MediaQueryContext);
   const { theme } = useContext(ThemeContext);
@@ -55,6 +56,27 @@ export default function Research() {
   // console.log(visibleArray, ">>visibleArray");
   // does not work as it breaks hooks of rules
   // const visibleArray = scrollElem.map((key) => useOnScreen(refs.current[key]))
+
+
+  // Scroll function
+  // update: TabClick function -> NavLink 에서 오는 random 숫자
+  // hashId: TabClick function -> NavLink 에서 오는 hashId 
+  const executeScroll = () => {
+    const element = document.getElementById(props.location.hashId);
+    const headOffset= mTablet ? 84 : 184;
+    const elementPosition=element?.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - headOffset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    })    
+  };
+
+  useEffect (() => {
+    executeScroll()  
+  }, [props.location.update])
+
   return (
     <div
       id="research"

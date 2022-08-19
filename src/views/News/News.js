@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 // import { makeStyles, createStyles } from "@material-ui/core/styles";
 // import useMediaQuery from "@material-ui/core/useMediaQuery";
 
@@ -127,7 +127,7 @@ import useOnScreen from "../hooks/objectObserver";
 //   })
 // );
 
-export default function News({ match }) {
+export default function News(props, { match }) {
   // const matches = useMediaQuery("(max-width:600px)");
   const { mTablet, sTablet } = useContext(MediaQueryContext);
   const { theme } = useContext(ThemeContext);
@@ -152,6 +152,25 @@ export default function News({ match }) {
   const visibleArray = Array(2).fill(true);
   visibleArray[0] = useOnScreen(refs.current[0]);
   visibleArray[1] = useOnScreen(refs.current[1]);
+
+  // Scroll function
+  // update: TabClick function -> NavLink 에서 오는 random 숫자
+  // hashId: TabClick function -> NavLink 에서 오는 hashId 
+  const executeScroll = () => {
+    const element = document.getElementById(props.location.hashId);
+    const headOffset= mTablet ? 84 : 184;
+    const elementPosition=element?.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - headOffset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    })    
+  };
+
+  useEffect (() => {
+    executeScroll()  
+  }, [props.location.update])
 
   return (
     <div

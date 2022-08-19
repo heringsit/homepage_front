@@ -8,15 +8,17 @@ import Footer from "../Components/Footer";
 /* Pictures */ 
 import healiary_application from "../../assets/images/07service/healiary_application.svg";
 import ostomy_application from "../../assets/images/07service/ostomy_application.svg";
-import { MediaQueryContext, ThemeContext } from "../../context";
+import { MediaQueryContext, ThemeContext, ComponentId } from "../../context";
 import CommonCardFrame from "../common/CommonCardFrame";
 import ContentsTitle from "../Components/ContentsTitle";
 import TabClick from "../common/TabClick";
 import useOnScreen from "../hooks/objectObserver";
+import { useHistory } from "react-router";
 
 
-export default function Service() {
+export default function Service(props) {
   const { theme } = useContext(ThemeContext);
+
   const [isScroll, setIsScroll] = useState(false);
   const onScroll = () => {
     if (window.scrollY > 0 || window.pageYOffset > 0) {
@@ -39,6 +41,26 @@ export default function Service() {
 
   const { mTablet } = useContext(MediaQueryContext);
   // console.log(match, ">>match ");
+
+  // Scroll function
+  // update: TabClick function -> NavLink 에서 오는 random 숫자
+  // hashId: TabClick function -> NavLink 에서 오는 hashId 
+  const executeScroll = () => {
+    const element = document.getElementById(props.location.hashId);
+    const headOffset= mTablet ? 124 : 224;
+    const elementPosition=element?.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - headOffset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    })    
+  };
+
+  useEffect (() => {
+    executeScroll()  
+  }, [props.location.update])
+
   return (
     <div
       id="service"
