@@ -156,6 +156,9 @@
   text-align: center;
   border-right: 0.5px solid #d8d8d8;
 }
+.careerContainListHeaderColD {
+  border-right: 0.5px solid #232323;
+}
 .careerContainListHeader .careerContainListHeaderCol:last-child {
   border-right: 0;
 }

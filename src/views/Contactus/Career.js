@@ -301,7 +301,7 @@ export default function Career({ match }) {
 
   const { theme } = useContext(ThemeContext);
   return (
-    <div >
+    <div>
       {/* <ContentsTitle matches={matches} title={"CONTACT US"} /> */}
       {/* id 를 추가해야 이동한다 ; scroll focusing 스크롤 포커싱 */}
       <div className="SectionDivCareer">
@@ -392,16 +392,34 @@ export default function Career({ match }) {
                 : "careerContainListHeader"
             } FontNL flex-row`}
           >
-            <div className="careerContainListHeaderCol col1 korFonts">
+            <div
+              className={`${
+                theme === "dark"
+                  ? "careerContainListHeaderCol"
+                  : "careerContainListHeaderColD"
+              } col1 korFonts`}
+            >
               <span className="textF16 FontNR">구분</span>
             </div>
-            <div className="careerContainListHeaderCol col2 korFonts">
+            <div
+              className={`${
+                theme === "dark"
+                  ? "careerContainListHeaderCol"
+                  : "careerContainListHeaderColD"
+              } col2 korFonts`}
+            >
               <span className="textF16 FontNR">내용</span>
             </div>
-            <div className="careerContainListHeaderCol col3 korFonts">
+            <div
+              className={`${
+                theme === "dark"
+                  ? "careerContainListHeaderCol"
+                  : "careerContainListHeaderColD"
+              } col3 korFonts`}
+            >
               <span className="textF16 FontNR">채용 분야</span>
             </div>
-            <div className="careerContainListHeaderCol col4 korFonts">
+            <div className="col4 korFonts text-align-center mtb-10">
               <span className="textF16 FontNR">상태</span>
             </div>
           </div>
@@ -457,9 +475,7 @@ export default function Career({ match }) {
                             : "careerBtnEnd"
                         }`}
                       >
-                        {checkDate(data.closing_date, "E")
-                          ? "채용중"
-                          : "마감"}
+                        {checkDate(data.closing_date, "E") ? "채용중" : "마감"}
                       </div>
                     </div>
                   </div>
@@ -485,7 +501,7 @@ export default function Career({ match }) {
           )}
         </div>
       </div>
-        
+
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
