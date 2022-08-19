@@ -17,7 +17,6 @@ import TabClick from "../common/TabClick";
 import useOnScreen from "../hooks/objectObserver";
 import { MediaQueryContext, ThemeContext } from "../../context";
 import CommonCardFrame from "../common/CommonCardFrame";
-import { useHistory } from "react-router";
 
 export default function Research(props) {
   // const matches = useMediaQuery("(max-width:600px)");
@@ -57,10 +56,11 @@ export default function Research(props) {
   // does not work as it breaks hooks of rules
   // const visibleArray = scrollElem.map((key) => useOnScreen(refs.current[key]))
 
-
   // Scroll function
   // update: TabClick function -> NavLink 에서 오는 random 숫자
   // hashId: TabClick function -> NavLink 에서 오는 hashId 
+  // Tab/Menubar 안에서 NavLink 눌을때 마다 random number가 만들어 집니다.
+  // useEffect hook + random number 통해 click 을 track 합니다 
   const executeScroll = () => {
     const element = document.getElementById(props.location.hashId);
     const headOffset= mTablet ? 84 : 184;
@@ -77,6 +77,7 @@ export default function Research(props) {
     executeScroll()  
   }, [props.location.update])
 
+  // CommonCardTitle, CommonCardFrame component 들이 쓰입니다
   return (
     <div
       id="research"

@@ -3,12 +3,12 @@ const imsi = process.env.PUBLIC_URL;
 export const MENU = {
   title: ["ABOUT US", "SERVICE", "RESEARCH", "CTS", "NEWS & IR", "CONTACT US"],
   link: [
-    `${imsi}/aboutus/#aboutus`,
-    `${imsi}/service/#service`,
-    `${imsi}/research/#research`,
-    `${imsi}/cts/#cts`,
-    `${imsi}/news/#news`,
-    `${imsi}/contactus/#contactus`,
+    `${imsi}/aboutus/`,
+    `${imsi}/service/`,
+    `${imsi}/research/`,
+    `${imsi}/cts/`,
+    `${imsi}/news/`,
+    `${imsi}/contactus/`,
   ],
   linkpath: [
     `/aboutus/`,
@@ -17,6 +17,14 @@ export const MENU = {
     `/cts/`,
     `/news/`,
     `/contactus/`,
+  ],
+  hashId: [
+    "aboutus",
+    "service",
+    "research",
+    "cts",
+    "news",
+    "contactus"
   ],
   smallMenu: [
     {

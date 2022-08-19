@@ -2,28 +2,21 @@ import React, { useContext, useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../../context";
-// import TabClick from "../common/TabClick";
-// import ContentsTitle from "../Components/ContentsTitle";
 import Footer from "../Components/Footer";
 import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
-// import useOnScreen from "../hooks/objectObserver";
 import HealiaryPrivacy from "./HealiaryPrivacy";
 import OstomyPrivacy from "./OstomyPrivacy";
 export default function PrivacyPolicy() {
-  // const { mTablet } = useContext(MediaQueryContext);
   const { theme } = useContext(ThemeContext);
-
-  // const [isScroll, setIsScroll] = useState(false);
   const [slideIndex] = useState(0);
   const [tab, setTab] = useState(0);
-  // const onScroll = () => {
-  //   if (window.scrollY > 238 || window.pageYOffset > 238) {
-  //     setIsScroll(true);
-  //   } else {
-  //     setIsScroll(false);
-  //   }
-  // };
+  
+  // Healiary, Ostomy txt:
+  //  (N)   : new line
+  //  (B)   : bold text
+  //  (T-#) : table location
+  //  (T-s) : special table location
 
   // set tab
   const onClick = (e, tabID) => {
@@ -37,13 +30,7 @@ export default function PrivacyPolicy() {
   //   return () => window.removeEventListener("scroll", onScroll);
   // }, [isScroll]);
 
-  // Scroll Tracker
-  // const scrollElem = Array.from(Array(2).keys());
-  // const refs = useRef(scrollElem.map(() => React.createRef()));
-  // const visibleArray = Array(2).fill(true);
-  // visibleArray[0] = useOnScreen(refs.current[0]);
-  // visibleArray[1] = useOnScreen(refs.current[1]);
-  
+  // Scroll Tracker 
   const history = useHistory();
   const patharray = history.location.pathname.split("/")
   const submenu = patharray[patharray.length-2]
@@ -110,9 +97,6 @@ export default function PrivacyPolicy() {
           </Link>
         </div>
       </div>
-      {/* <ContentsTitle title={`${patharray[patharray.length-1] === "0" 
-                                ? "PRIVACY POLICY"
-                                : "TERMS AND SERVICES"}`}/> */}
       {selected === false
         ? <HealiaryPrivacy />
         : <OstomyPrivacy />

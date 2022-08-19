@@ -234,7 +234,7 @@ export default function Aboutus(props) {
     setOpen(false);
   };
 
-  // Scroll Tracker
+  // Scroll Tracker: ref로 page location tracking
   const scrollElem = Array.from(Array(3).keys());
   const refs = useRef(scrollElem.map(() => React.createRef()));
   const visibleArray = Array(3).fill(true);
@@ -246,6 +246,8 @@ export default function Aboutus(props) {
   // Scroll function
   // update: TabClick function -> NavLink 에서 오는 random 숫자
   // hashId: TabClick function -> NavLink 에서 오는 hashId 
+  // Tab/Menubar 안에서 NavLink 눌을때 마다 random number가 만들어 집니다.
+  // useEffect hook + random number 통해 click 을 track 합니다 
   const executeScroll = () => {
     const element = document.getElementById(props.location.hashId);
     const headOffset= mTablet ? 84 : 184;

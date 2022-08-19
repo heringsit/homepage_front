@@ -2,6 +2,8 @@ import React, {useContext} from "react";
 import { ThemeContext } from "../../context";
 import "../../index.css"
 const CommonCardFrame = (
+  // main(textStyle, ContentStyle) -> Main content 수정
+  // content(padding, style, 1,2,3) -> Content text and Content style 수정 
   {
     imageSrc, 
     imageAlt,     

@@ -70,7 +70,7 @@ export default function OstomyPrivacy() {
     window.scrollTo(0, 0);
     setButtonID(id);
   }
-
+  // Wait until the data is completely fetched.
   useEffect(() => {
     {
       submenu === "0"
