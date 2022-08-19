@@ -287,7 +287,7 @@
 } */
 @media screen and (max-width: 768px) {
   .squareCareer {
-    width: 120px;
+    width: 140px;
     min-height: 92px;
     margin: 12px 15px;
   }
@@ -313,18 +313,29 @@
     border: 2px solid #07a990;
     border-width: 0px 2px 2px 0px;
   }
-
   .squareCareerSelected {
-    width: 120px;
+    width: 140px;
     min-height: 92px;
     margin: 12px 15px;
   }
-  .squareCareerSelected:before,
-  .squareCareerSelected:after {
-    border-top: 15px solid #fff;
-    border-right: 15px solid #fff;
-    border-left: 15px solid transparent;
-    border-bottom: 15px solid transparent;
+  .squareCareerSelected::after,
+  .squareCareerSelected:before {
+    border-top: 14px solid #fff;
+    border-right: 14px solid #fff;
+    border-left: 14px solid transparent;
+    border-bottom: 14px solid transparent;
+  }
+  .squareCareerSelectedDark {
+    width: 140px;
+    min-height: 92px;
+    margin: 12px 15px;
+  }
+  .squareCareerSelectedDark::after,
+  .squareCareerSelectedDark:before {
+    border-top: 14px solid #232323;
+    border-right: 14px solid #232323;
+    border-left: 14px solid transparent;
+    border-bottom: 14px solid transparent;
   }
   .careerListTitle {
     flex-direction: column;
@@ -378,12 +389,10 @@
     min-height: 80px;
     margin: 10px 12px;
   }
-  .squareCareerSelected:before,
-  .squareCareerSelected:after {
-    border-top: 10px solid #fff;
-    border-right: 10px solid #fff;
-    border-left: 10px solid transparent;
-    border-bottom: 10px solid transparent;
+  .squareCareerSelectedDark {
+    width: 120px;
+    min-height: 80px;
+    margin: 10px 12px;
   }
 }
 @media screen and (max-width: 320px) {
@@ -424,6 +433,18 @@
   .squareCareerSelected:after {
     border-top: 10px solid #fff;
     border-right: 10px solid #fff;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+  .squareCareerSelectedDark {
+    width: 80px;
+    min-height: 60px;
+    margin: 8px 6px;
+  }
+  .squareCareerSelectedDark::after,
+  .squareCareerSelectedDark:before {
+    border-top: 10px solid #232323;
+    border-right: 10px solid #232323;
     border-left: 10px solid transparent;
     border-bottom: 10px solid transparent;
   }
