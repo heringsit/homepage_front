@@ -26,7 +26,7 @@ export default function Menubar(props) {
   const { theme, changeTheme } = useContext(ThemeContext);
   // const [mode, setMode] = useState(theme);
   const scrollOffset = (mTablet 
-    ? [-84, -(84+40), -84, -84, -84, 0] // screen < 768px
+    ? [-84, -(84+40), -84, -84, -84, -84] // screen < 768px
     : [-(84+100), -(84+140), -184, -184, -184, -184]) // screen > 768px
 
   // console.log(pathname === "/", ">pathname");
@@ -157,15 +157,20 @@ export default function Menubar(props) {
                 >
                   {MENU.smallMenu[idx].title.map((smallMenu, i) => (
                     <li key={i}>
-                      <Link
+                      <NavLink
                         style={{
                           display: "block",
                           width: "100%",
                           height: "100%",
                         }}
-                        smooth="true"
-                        to={MENU.smallMenu[idx].link[i]}
-                        scroll={(el) => scrollWithOffset(el, scrollOffset[idx])}
+                        // smooth="true"
+                        to={{
+                          pathname:MENU.linkpath[idx],
+                          hashId: MENU.smallMenu[idx].link[i],
+                          update: Math.random(),
+                        }}
+                        // to={MENU.smallMenu[idx].link[i]}
+                        // scroll={(el) => scrollWithOffset(el, scrollOffset[idx])}
                         onClick={menuclick}
                       >
                         <span
@@ -175,7 +180,7 @@ export default function Menubar(props) {
                         >
                           {smallMenu}
                         </span>
-                      </Link>
+                      </NavLink>
                     </li>
                   ))}
                 </ul>
@@ -227,7 +232,6 @@ export default function Menubar(props) {
 
           {/* GNB 대메뉴 */}
           <div className="menusAfterLogo">
-          {pathname=== "/service/" ? console.log("imhere") : null}
             {MENU.title.map((menu, idx) => (
               <div className="menudiv" key={idx}>
                 <Link smooth="true" to={MENU.link[idx]} onClick={menuclick}>

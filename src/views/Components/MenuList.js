@@ -22,9 +22,9 @@ export const MENU = {
     {
       title: ["WHO WE ARE", "HERINGS TEAM", "PARTNERS & INVESTORS"],
       link: [
-        `${imsi}/aboutus/#whoweare`,
-        `${imsi}/aboutus/#heringsteam`,
-        `${imsi}/aboutus/#researchpartners`,
+        `whoweare`,
+        `heringsteam`,
+        `researchpartners`,
       ],
     },
     {
@@ -33,8 +33,8 @@ export const MENU = {
         "TELE-HEALTHCARE SERVICE PLATFORM",
       ],
       link: [
-        `${imsi}/service/#digitalcareservice`,
-        `${imsi}/service/#telehealthcareservice`,
+        `digitalcareservice`,
+        `telehealthcareservice`,
       ],
     },
     {
@@ -48,13 +48,13 @@ export const MENU = {
         "DRUG ADVERSE EVENTS",
       ],
       link: [
-        `${imsi}/research/#nutrition`,
-        `${imsi}/research/#symptommanagement`,
-        `${imsi}/research/#exercise`,
-        `${imsi}/research/#riskprediction`,
-        `${imsi}/research/#drugadherence`,
-        `${imsi}/research/#aialgorithms`,
-        `${imsi}/research/#drugadverseevents`,
+        `nutrition`,
+        `symptommanagement`,
+        `exercise`,
+        `riskprediction`,
+        `drugadherence`,
+        `aialgorithms`,
+        `drugadverseevents`,
       ],
     },
     {
@@ -64,18 +64,18 @@ export const MENU = {
         "STATISTICAL ANALYSIS",
       ],
       link: [
-        `${imsi}/cts/#clinicaltrialdesign`,
-        `${imsi}/cts/#datamanagement`,
-        `${imsi}/cts/#statisticalanalysis`,
+        `clinicaltrialdesign`,
+        `datamanagement`,
+        `statisticalanalysis`,
       ],
     },
     {
       title: ["NEWS RELEASE", "IR INFORMATION"],
-      link: [`${imsi}/news/#newsrelease`, `${imsi}/news/#irinformation`],
+      link: [`newsrelease`, `irinformation`],
     },
     {
       title: ["CAREER", "CONTACT US"],
-      link: [`${imsi}/contactus/#career`, `${imsi}/contactus/#contact`],
+      link: [`career`, `contact`],
     },
   ],
 };

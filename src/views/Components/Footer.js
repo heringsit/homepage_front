@@ -1,16 +1,11 @@
 // import { useMediaQuery } from "@material-ui/core";
-import React, {useContext} from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
-import { MediaQueryContext } from "../../context";
+// import { MediaQueryContext } from "../../context";
 import "./Footer.css";
 function Footer() {
   // const matches = useMediaQuery("(max-width:480px)");
-  const { mTablet } = useContext(MediaQueryContext);
-  const scrollWithOffset = (el, yOffset = mTablet ? -42 : -184) => {
-    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-    window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
-  };
+  // const { mobile } = useContext(MediaQueryContext);
   return (
     <footer className="footer">
       <div className="footerRowa  ">
@@ -21,14 +16,18 @@ function Footer() {
         <NavLink className="FontL textF12" to="/privacypolicy/healiary/1">
           Terms And Conditions
         </NavLink>
-        <span className="slash FontL textF12">/</span> 
-        <HashLink 
-          className="FontL textF12" 
-          to="/contactus/#contact"
-          smooth
-          scroll={scrollWithOffset}>
+        <span className="slash FontL textF12">/</span>
+        <NavLink
+          className="FontL textF12"
+          to={{
+            pathname: `/contactus/`,
+            hashId: "contact",
+            update: Math.random(),
+          }}
+          // to="/contactus/#contact"
+        >
           Contact us
-        </HashLink>
+        </NavLink>
       </div>
       <div className="footerRow">
         <div className="footerContent FontL textF12">

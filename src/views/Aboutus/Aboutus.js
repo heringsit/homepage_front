@@ -23,7 +23,7 @@ import { MediaQueryContext, ThemeContext } from "../../context";
 import { AboutUsModal } from "./AboutUsModal";
 
 // 22.08.05 makeStyles 사용에서 css 로 코드 변환 (style 통일)
-export default function Aboutus() {
+export default function Aboutus(props) {
   const HAS_VISITED_BEFORE = localStorage.getItem("hasVisitedBefore");
   const [isScroll, setIsScroll] = useState(false);
   const [open, setOpen] = useState(false);
@@ -242,6 +242,25 @@ export default function Aboutus() {
   visibleArray[1] = useOnScreen(refs.current[1]);
   visibleArray[2] = useOnScreen(refs.current[2]);
   // console.log(visibleArray, ">>visibleArray")
+  
+  // Scroll function
+  // update: TabClick function -> NavLink 에서 오는 random 숫자
+  // hashId: TabClick function -> NavLink 에서 오는 hashId 
+  const executeScroll = () => {
+    const element = document.getElementById(props.location.hashId);
+    const headOffset= mTablet ? 84 : 184;
+    const elementPosition=element?.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - headOffset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    })    
+  };
+
+  useEffect (() => {
+    executeScroll()  
+  }, [props.location.update])
 
   return (
     <div
