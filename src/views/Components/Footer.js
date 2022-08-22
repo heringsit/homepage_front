@@ -16,18 +16,17 @@ function Footer() {
         <NavLink className="FontL textF12" to="/privacypolicy/healiary/1">
           Terms And Conditions
         </NavLink>
-        <span className="slash FontL textF12">/</span>
-        <NavLink
+        {/* <span className="slash FontL textF12">/</span> */}
+        {/* <NavLink
           className="FontL textF12"
           to={{
             pathname: `/contactus/`,
             hashId: "contact",
             update: Math.random(),
           }}
-          // to="/contactus/#contact"
         >
           Contact us
-        </NavLink>
+        </NavLink> */}
       </div>
       <div className="footerRow">
         <div className="footerContent FontL textF12">
