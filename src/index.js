@@ -17,6 +17,7 @@ import DetailPage from "./views/News/Sections/detail/DetailPage";
 import Main from "./views/Main/Main";
 import { MediaQueryContext, ThemeContext } from "./context";
 import { useMediaQuery } from "@material-ui/core";
+import PrivacyPolicy from "./views/Privacy/PrivacyPolicy";
 import Ham from "./views/ham/Ham";
 
 export const imsi = process.env.PUBLIC_URL; // 운영계
