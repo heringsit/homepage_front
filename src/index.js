@@ -17,6 +17,7 @@ import DetailPage from "./views/News/Sections/detail/DetailPage";
 import Main from "./views/Main/Main";
 import { MediaQueryContext, ThemeContext } from "./context";
 import { useMediaQuery } from "@material-ui/core";
+import Ham from "./views/ham/Ham";
 
 export const imsi = process.env.PUBLIC_URL; // 운영계
 // export const imsi = `http://52.79.120.20:9099`; // 개발계
@@ -61,6 +62,7 @@ const App = () => {
             <Route path={`/news/:submenu/detail/:id`} component={DetailPage} />
             <Route path={`/news/:submenu`} component={News} />
             <Route path={`/news`} component={News} />
+            <Route path={`/ham`} component={Ham} />
             <Route path="*" component={Aboutus} />
             <Redirect exact froåm={`/`} to={"/aboutus"} />
           </Switch>
