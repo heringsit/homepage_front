@@ -18,7 +18,7 @@ import useOnScreen from "../hooks/objectObserver";
 import { MediaQueryContext, ThemeContext } from "../../context";
 import CommonCardFrame from "../common/CommonCardFrame";
 
-export default function Research() {
+export default function Research(props) {
   // const matches = useMediaQuery("(max-width:600px)");
   const { sTablet, mTablet } = useContext(MediaQueryContext);
   const { theme } = useContext(ThemeContext);
@@ -55,10 +55,32 @@ export default function Research() {
   // console.log(visibleArray, ">>visibleArray");
   // does not work as it breaks hooks of rules
   // const visibleArray = scrollElem.map((key) => useOnScreen(refs.current[key]))
+
+  // Scroll function
+  // update: TabClick function -> NavLink 에서 오는 random 숫자
+  // hashId: TabClick function -> NavLink 에서 오는 hashId 
+  // Tab/Menubar 안에서 NavLink 눌을때 마다 random number가 만들어 집니다.
+  // useEffect hook + random number 통해 click 을 track 합니다 
+  const executeScroll = () => {
+    const element = document.getElementById(props.location.hashId);
+    const headOffset= mTablet ? 84 : 184;
+    const elementPosition=element?.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - headOffset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    })    
+  };
+
+  useEffect (() => {
+    executeScroll()  
+  }, [props.location.update])
+
+  // CommonCardTitle, CommonCardFrame component 들이 쓰입니다
   return (
     <div
       id="research"
-      className="content"
       style={{
         backgroundColor: theme === "dark" && "#282828",
         color: theme === "dark" && "white",
@@ -207,11 +229,12 @@ export default function Research() {
                 content2="Development Program(No. 20015086) By the Ministry of
                 Trade, Industry & Energy(MOTIE, Korea)."
                 subText1="SMART REPORT SYSTEM FOR DRUG ADVERSE EVENTS"
-                subText2="SODA"
-                subText1Style="FontB mb-4"
-                subText2Style="textF24 FontEB mb-8"
+                // subText2="SODA"
+                subText1Style="textF24 FontEB lineheight140 mb-8"
+                // subText2Style="textF24 FontEB mb-8"
                 contentPadding="drugadverse-padding"
                 mainTextStyle="text-align-start textF18 FontL lineheight160"
+                headerStyle={theme==="dark" ? "tcw" : "tcb"}
               />
             </div>
           </div>

@@ -8,7 +8,7 @@ const useOnScreen = (ref) => {
     
   }
 
-  const observer = useMemo (() => new IntersectionObserver(
+  const observer = useMemo(() => new IntersectionObserver(
     ([entry]) => setIntersecting(entry.isIntersecting), 
     options
   ))

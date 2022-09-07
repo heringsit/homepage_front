@@ -1,4 +1,5 @@
-/*  1260 < Screen  */
+/*  1260 < Screen (Desktop) */
+
 /* PADDING */
 /* 
   ps-# -> content side padding + #px 
@@ -10,7 +11,14 @@
 .p-20 {
   padding: 20px;
 }
+.p-12 {
+  padding: 12px;
+}
 /* ps-# - padding side */
+.ps-24 {
+  padding-left: 24px;
+  padding-right: 24px;
+}
 .ps-36 {
   padding-left: 36px;
   padding-right: 36px;
@@ -128,14 +136,22 @@
   padding-top: 36px;
   padding-bottom: 36px;
 }
+.ptb-48 {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
 
 /* text margins: 
   m-reset - margin reset
   mb-8- margin bottom 
   mt : margin top
+  ms: margin sides
 */
 .m-reset {
   margin: 0;
+}
+.m-auto {
+  margin: auto;
 }
 .ml-0 {
   margin-left: 0px;
@@ -161,6 +177,12 @@
 .mb-40 {
   margin-bottom: 40px;
 }
+.mb-48 {
+  margin-bottom: 48px;
+}
+.mt-0 {
+  margin-top: 0px;
+}
 .mt-8 {
   margin-top: 8px;
 }
@@ -170,17 +192,34 @@
 .mt-12 {
   margin-top: 12px;
 }
+.mt-16 {
+  margin-top: 16px;
+}
 .mt-20 {
   margin-top: 20px;
 }
 .mt-40 {
   margin-top: 40px;
 }
+.mt-48 {
+  margin-top: 48px;
+}
 .mt-50 {
   margin-top: 50px;
 }
 .mt-84 {
   margin-top: 84px;
+}
+.mt-124 {
+  margin-top: 124px;
+}
+.ms-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.mtb-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* flex:
@@ -257,12 +296,23 @@
   gap: 10px;
 }
 
+/* text tab */
+.tab-1 {
+  padding-left: 2em;
+}
+.tab-2 {
+  padding-left: 2em;
+}
+
 /* Line Alignment */
 .text-align-start {
   text-align: start;
 }
 .text-align-right {
   text-align: right;
+}
+.text-align-left {
+  text-align: left;
 }
 .text-align-center {
   text-align: center;
@@ -289,11 +339,18 @@
 .justify-left {
   justify-content: left;
 }
+.lineheight200 {
+  line-height: 200%;
+}
 .lineheight160 {
   line-height: 160%;
 }
 .lineheight140 {
   line-height: 140%;
+}
+
+.no-decoration {
+  text-decoration: none;
 }
 
 /* display */
@@ -343,6 +400,12 @@
   width: calc(100vw);
   height: calc(100vh);
 }
+.w-max {
+  width: max-content;
+}
+.h-max {
+  height: max-content;
+}
 .h-full {
   height: 100%;
 }
@@ -355,6 +418,7 @@
 .overflow-auto {
   overflow: auto;
 }
+
 /* background color */
 .bg-gray {
   background-color: #f6f8fb;
@@ -365,6 +429,12 @@
 .bg-white {
   background-color: #f3f3f3;
 }
+.bg-tableheader-light {
+  background-color: #efefef;
+}
+.bg-tableheader-dark {
+  background-color: #4e5968;
+}
 
 /* border color */
 .border-w {
@@ -372,6 +442,49 @@
 }
 .border-b {
   border-color: #232323;
+}
+.border-table {
+  border-color: #e5e8eb;
+}
+
+/* border */
+.border {
+  border: 1px solid;
+}
+.border-t-0 {
+  border-top: 0px solid;
+}
+.border-b-0 {
+  border-bottom: 0px solid;
+}
+.border-l-0 {
+  border-left: 0px solid;
+}
+.border-r-0 {
+  border-right: 0px solid;
+}
+
+/* Loader */
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #f37f31;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+/* inverter */
+.invert {
+  filter: invert(100%);
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*  1024 < Screen < 1260 */
@@ -382,39 +495,8 @@
   #heringsteam .textF18 {
     font-size: 16px;
   }
-
   #heringsteam .textF16 {
     font-size: 14px;
-  }
-  /*service*/
-  #service .textF28 {
-    font-size: 28px;
-  }
-  #service .textF24 {
-    font-size: 24px;
-  }
-  #service .textF18 {
-    font-size: 18px;
-  }
-  /*Research*/
-  #research .textF28 {
-    font-size: 28px;
-  }
-  #research .textF24 {
-    font-size: 24px;
-  }
-  #research .textF18 {
-    font-size: 18px;
-  }
-  /*CTS*/
-  #cts .textF28 {
-    font-size: 28px;
-  }
-  #cts .textF24 {
-    font-size: 24px;
-  }
-  #cts .textF18 {
-    font-size: 18px;
   }
 }
 
@@ -434,36 +516,6 @@
   }
   #heringsteam .textF16 {
     font-size: 12px;
-  }
-  /*service*/
-  #service .textF28 {
-    font-size: 28px;
-  }
-  #service .textF24 {
-    font-size: 24px;
-  }
-  #service .textF18 {
-    font-size: 18px;
-  }
-  /*Research*/
-  #research .textF28 {
-    font-size: 28px;
-  }
-  #research .textF24 {
-    font-size: 24px;
-  }
-  #research .textF18 {
-    font-size: 18px;
-  }
-  /*CTS*/
-  #cts .textF28 {
-    font-size: 28px;
-  }
-  #cts .textF24 {
-    font-size: 24px;
-  }
-  #cts .textF18 {
-    font-size: 18px;
   }
   /* Draft design */
   .flex-row {
@@ -506,35 +558,8 @@
   #heringsteam .textF16 {
     font-size: 12px;
   }
-  /*service*/
-  #service .textF28 {
-    font-size: 28px;
-  }
-  #service .textF24 {
-    font-size: 24px;
-  }
-  #service .textF18 {
-    font-size: 18px;
-  }
-  /*Research*/
-  #research .textF28 {
-    font-size: 28px;
-  }
-  #research .textF24 {
-    font-size: 24px;
-  }
-  #research .textF18 {
-    font-size: 18px;
-  }
-  /*CTS*/
-  #cts .textF28 {
-    font-size: 28px;
-  }
-  #cts .textF24 {
-    font-size: 24px;
-  }
-  #cts .textF18 {
-    font-size: 18px;
+  .SectionDivCareer .textF18 {
+    font-size: 14px;
   }
 }
 
@@ -542,6 +567,12 @@
 @media screen and (max-width: 600px) {
   /* Font-Size
   */
+  #aboutus .textF32 {
+    font-size: 20px;
+  }
+  #aboutus .textF28 {
+    font-size: 20px;
+  }
   #aboutus .textF18 {
     font-size: 15px;
   }
@@ -592,6 +623,27 @@
   }
   .banner_container .textF53 {
     font-size: 40px;
+  }
+  #privacypolicy .policyContents {
+    font-size: 14px;
+  }
+  .SectionDivCareer .textF18 {
+    font-size: 13px;
+  }
+  #contact .textF40 {
+    font-size: 32px;
+  }
+  #contact .textF22 {
+    font-size: 18px;
+  }
+  #contact .textF20 {
+    font-size: 16px;
+  }
+  #contact .textF16 {
+    font-size: 14px;
+  }
+  #contact .textF14 {
+    font-size: 12px;
   }
 }
 /* screen <= 320px */
@@ -648,6 +700,30 @@
   /* #service .textF16 {
     font-size: 12px;
   } */
+  #privacypolicy .policyContents {
+    font-size: 12px;
+  }
+  #privacypolicy .policyButton .textF14 {
+    font-size: 12px;
+  }
+  .SectionDivCareer .textF18 {
+    font-size: 12px;
+  }
+  .SectionDivCareer .textF16 {
+    font-size: 12px;
+  }
+  #contact .textF40 {
+    font-size: 24px;
+  }
+  #contact .textF22 {
+    font-size: 14px;
+  }
+  #contact .textF20 {
+    font-size: 12px;
+  }
+  #contact .textF16 {
+    font-size: 12px;
+  }
 }
 .textF70 {
   font-size: 70px;

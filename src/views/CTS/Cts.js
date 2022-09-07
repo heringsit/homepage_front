@@ -14,7 +14,7 @@ import TabClick from "../common/TabClick";
 import useOnScreen from "../hooks/objectObserver";
 import { ThemeContext, MediaQueryContext } from "../../context";
 import CommonCardFrame from "../common/CommonCardFrame";
-export default function Cts() {
+export default function Cts(props) {
   const matches = useMediaQuery("(max-width:600px)");
   const { theme } = useContext(ThemeContext);
   const { mTablet } = useContext(MediaQueryContext);
@@ -42,10 +42,31 @@ export default function Cts() {
   visibleArray[2] = useOnScreen(refs.current[2]);
   // console.log(visibleArray, ">>visibleArray");
 
+  // Scroll function
+  // update: TabClick function -> NavLink 에서 오는 random 숫자
+  // hashId: TabClick function -> NavLink 에서 오는 hashId
+  // Tab/Menubar 안에서 NavLink 눌을때 마다 random number가 만들어 집니다.
+  // useEffect hook + random number 통해 click 을 track 합니다  
+  const executeScroll = () => {
+    const element = document.getElementById(props.location.hashId);
+    const headOffset= mTablet ? 84 : 184;
+    const elementPosition=element?.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - headOffset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    })    
+  };
+
+  useEffect (() => {
+    executeScroll()  
+  }, [props.location.update])
+
+  // CommonCardTitle, CommonCardFrame component 들이 쓰입니다
   return (
     <div
       id="cts"
-      className="content"
       style={{ backgroundColor: theme === "dark" && "#282828" }}
     >
       <Menubar slideIndex={0} />
@@ -54,7 +75,7 @@ export default function Cts() {
       )}
 
       <div >
-        <ContentsTitle matches={matches} title={"CLINICAL TRIAL SERVICE"} />
+        <ContentsTitle matches={matches} title="CLINICAL TRIAL SERVICE" />
         <div className="flex-col justify-between ">
           <div className="pb-200 contentsmargin">
             <div className="contents contentspadding">
@@ -63,7 +84,7 @@ export default function Cts() {
               </div>
               {/* Clinical Trial Service */}
               <div className="pt-64" id="clinicaltrialdesign" ref={refs.current[0]} >
-                <CommonCardTitle title={"CLINICAL TRIAL DESIGN"} fontSize={"textF28 "} />
+                <CommonCardTitle title="CLINICAL TRIAL DESIGN" fontSize="textF28" />
                 <CommonCardFrame
                   imageSrc={cts_image1}
                   imageAlt="clinical trial design"

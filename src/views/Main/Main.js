@@ -2,36 +2,21 @@ import React, { useContext } from "react";
 import Footer from "../Components/Footer";
 import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
-import "./Main.css"; 
+import "./Main.css";
 import "../../index.css";
-import mainimage from "../../assets/images/mainimage.png";
-// import project1_7 from "../../assets/videos/project1_7.mp4";
 import { MediaQueryContext } from "../../context";
-import project1_7 from "../../assets/videos/homepage_background.mp4";
+
 export default function Main() {
+  // mTablet (768px)
   const { mTablet } = useContext(MediaQueryContext);
   return (
-    <div
-      id="maincontent"
-      className="content"
-      style={{
-        height: "100vh",
-      }}
-    >
+    <div id="main">
       <Menubar slideIndex={0} />
       <Totop />
-      {console.log(project1_7)}
-      <div id="main">
-        {mTablet ? (
+      <div className="main-container">
+        {// 768px > 이미지; 768px < 비디오
+         mTablet ? (
           <div className="mainimagelayout w-full h-full">
-            {/* <img
-              src={mainimage}
-              alt="mainimage"
-              style={{
-                width: "100%",
-                height: "100%",
-              }}
-            /> */}
             <div
               style={{
                 position: "absolute",
@@ -54,22 +39,19 @@ export default function Main() {
             </div>
           </div>
         ) : (
-          
           <video
-            className="w-full"//mainvideo"
-            controls//={false}
+            controls={false}
             muted={true}
-            loop//={true}
-            autoPlay//={true}
+            loop={true}
+            autoPlay={true}
             playsInline
-            // src={project1_7}
-            // alt="project1_7"
-            // type="video/mp4"
           >
-            <source src={project1_7} type="video/mp4" />
+            <source
+              src="https://turtleneck.s3.ap-northeast-2.amazonaws.com/homepage_background.mp4"
+              type="video/mp4"
+            />
             Your Browser does not support the video tag.
           </video>
-          
         )}
       </div>
       <Footer />

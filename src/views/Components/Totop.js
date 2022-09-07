@@ -1,5 +1,5 @@
 import React, { useState, useEffect,  } from "react";
-import topIcon from "../../assets/images/etc/top.svg";
+import topIcon from "../../assets/images/etc/top.png";
 import "./Totop.css";
 export default function Totop() {
   const [scrolled, setScrolled] = useState(false);

@@ -24,12 +24,6 @@ export default function Menubar(props) {
   const [mobileSelected, setMobileSelected] = useState(null);
   const [isScroll, setIsScroll] = useState(false);
   const { theme, changeTheme } = useContext(ThemeContext);
-  // const [mode, setMode] = useState(theme);
-  const scrollOffset = (mTablet 
-    ? [-84, -(84+40), -84, -84, 0, 0] // screen < 768px
-    : [-(84+100), -(84+40), -184, -184, 0, 0]) // screen > 768px
-
-  // console.log(pathname === "/", ">pathname");
 
   const changeMode = () => changeTheme(theme === "light" ? "dark" : "light");
 
@@ -65,11 +59,6 @@ export default function Menubar(props) {
     return () => window.removeEventListener("scroll", onScroll);
   }, [isScroll]);
 
-  const scrollWithOffset = (el, yOffset = -90) => {
-    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-    window.scrollTo({ top: yCoordinate + yOffset, behavior: "smooth" });
-  };
-
   if (mDesktop) {
     return (
       <div className="mobileMenuWrapDiv">
@@ -101,11 +90,7 @@ export default function Menubar(props) {
 
             <div className="buttons">
               {/* Dark Mode Toggle */}
-              <DarkToggle
-                onClick={changeMode}
-                className="modediv"
-                mobile={mobile}
-              />
+              <DarkToggle onClick={changeMode} className="modediv" />
 
               <div className="mobileBtn">
                 <HamburgerSqueeze
@@ -124,9 +109,15 @@ export default function Menubar(props) {
           <div className={`mobileMenus ${isMActive ? "slider" : "slideroff"}`}>
             {MENU.title.map((menu, idx) => (
               <div className="mobileMenuDiv" key={idx}>
-                <Link
-                  smooth="true"
-                  to={MENU.link[idx]}
+                <NavLink
+                  //to={MENU.link[idx]}
+                  to={{
+                    pathname: MENU.linkpath[idx],
+                    hashId: MENU.hashId[idx],
+                    update: Math.random(),
+                  }}
+                  // smooth="true"
+                  // to={MENU.link[idx]}
                   onClick={(e) => {
                     mobilemenuclick(e, idx);
                   }}
@@ -148,7 +139,7 @@ export default function Menubar(props) {
                       </Icon>
                     )}
                   </div>
-                </Link>
+                </NavLink>
                 <ul
                   className={`mobileMenuul ${
                     mobileSelected === idx
@@ -158,15 +149,20 @@ export default function Menubar(props) {
                 >
                   {MENU.smallMenu[idx].title.map((smallMenu, i) => (
                     <li key={i}>
-                      <Link
+                      <NavLink
                         style={{
                           display: "block",
                           width: "100%",
                           height: "100%",
                         }}
-                        smooth="true"
-                        to={MENU.smallMenu[idx].link[i]}
-                        scroll={(el) => scrollWithOffset(el, scrollOffset[idx])}
+                        // smooth="true"
+                        to={{
+                          pathname: MENU.linkpath[idx],
+                          hashId: MENU.smallMenu[idx].link[i],
+                          update: Math.random(),
+                        }}
+                        // to={MENU.smallMenu[idx].link[i]}
+                        // scroll={(el) => scrollWithOffset(el, scrollOffset[idx])}
                         onClick={menuclick}
                       >
                         <span
@@ -176,7 +172,7 @@ export default function Menubar(props) {
                         >
                           {smallMenu}
                         </span>
-                      </Link>
+                      </NavLink>
                     </li>
                   ))}
                 </ul>
@@ -190,13 +186,20 @@ export default function Menubar(props) {
     return (
       <div
         className={`menuWrapDiv position-fixed w-full flex-col ${
-          isOver && "menuWrapOver"
-        } ${
-          theme === "dark" ? "menuBorderBottomDark" : "menuBorderBottomLight"
+          pathname !== "/"
+            ? theme === "dark"
+              ? "menuBorderBottomDark"
+              : "menuBorderBottomLight"
+            : "" // menu border 추가-> "menuBorderBottomLight"
         }`}
         style={{
-          backgroundColor: theme === "dark" ? "#282828" : "#ffffff",
-          color: theme === "dark" && "white",
+          backgroundColor:
+            pathname === "/"
+              ? "transparent"
+              : theme === "dark"
+              ? "#282828"
+              : "#ffffff",
+          color: theme === "dark" && "#ffffff",
         }}
         onMouseEnter={menuover}
         onMouseLeave={menuout}
@@ -205,7 +208,7 @@ export default function Menubar(props) {
           {/* <div className="menulogo"> */}
           <NavLink to={`${imsi}/`}>
             <div className="logoImgContainCenter">
-              {theme === "light" ? (
+              {theme === "light" || pathname === "/" ? (
                 <HeringsLogo
                   style={{
                     fill:
@@ -226,42 +229,39 @@ export default function Menubar(props) {
 
           {/* GNB 대메뉴 */}
           <div className="menusAfterLogo">
-          {pathname=== "/service/" ? console.log("imhere") : null}
             {MENU.title.map((menu, idx) => (
               <div className="menudiv" key={idx}>
-                <Link smooth="true" to={MENU.link[idx]} onClick={menuclick}>
+                <NavLink
+                  //to={MENU.link[idx]}
+                  to={{
+                    pathname: MENU.linkpath[idx],
+                    hashId: MENU.hashId[idx],
+                    update: Math.random(),
+                  }}
+                  onClick={menuclick}
+                >
                   <span
                     className={`menuText textF18 FontR ${
-                    //   props.slideIndex === 0 && pathname !== MENU.linkpath[idx]
-                    //     ? theme === "light"
-                    //       ? "tcb"
-                    //       : "tcw"
-                    //     : "tcb"
-                    // } ${isMActive && "tcb"} ${
                       pathname === MENU.linkpath[idx]
                         ? "menuTextActive"
-                        : theme === "light"
-                          ? "tcb"
-                          : "tcw"
+                        : theme === "light" || pathname === "/"
+                        ? "tcb"
+                        : "tcw"
                     }`}
                   >
                     {menu}
                   </span>
-                </Link>
+                </NavLink>
               </div>
             ))}
           </div>
 
           {/* Dark Mode Toggle */}
-          <DarkToggle
-            onClick={changeMode}
-            className="menudiv"
-            mobile={mobile}
-          />
+          <DarkToggle onClick={changeMode} className="menudiv" />
         </div>
 
         {/* 소메뉴 */}
-        <div
+        {/* <div
           className={`${theme === "light" ? "menuDetail" : "menuDetailDark"} ${
             isOver ? "part" : "partHide"
           }`}
@@ -296,7 +296,7 @@ export default function Menubar(props) {
                         onClick={menuclick}
                       >
                         <span
-                          className={`menuText FontL ${
+                          className={`menuText textF15 FontL ${
                             theme === "light" ? "tcg" : "tcw"
                           }`}
                         >
@@ -309,7 +309,7 @@ export default function Menubar(props) {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }

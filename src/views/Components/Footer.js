@@ -9,17 +9,24 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footerRowa  ">
-        <NavLink className="FontL textF12" to="/#NULL">
+        <NavLink className="FontL textF12" to="/privacypolicy/healiary/0">
           Privacy Policy
         </NavLink>
         <span className="slash FontL textF12">/</span>
-        <NavLink className="FontL textF12" to="/aboutus/#heringsteam">
+        <NavLink className="FontL textF12" to="/privacypolicy/healiary/1">
           Terms And Conditions
         </NavLink>
-        <span className="slash FontL textF12">/</span> 
-        <NavLink className="FontL textF12" to="/contactus">
+        {/* <span className="slash FontL textF12">/</span> */}
+        {/* <NavLink
+          className="FontL textF12"
+          to={{
+            pathname: `/contactus/`,
+            hashId: "contact",
+            update: Math.random(),
+          }}
+        >
           Contact us
-        </NavLink>
+        </NavLink> */}
       </div>
       <div className="footerRow">
         <div className="footerContent FontL textF12">

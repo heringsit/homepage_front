@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 // import { makeStyles, createStyles } from "@material-ui/core/styles";
 // import useMediaQuery from "@material-ui/core/useMediaQuery";
 
@@ -11,6 +11,8 @@ import "./News.css";
 import ContentsTitle from "../Components/ContentsTitle";
 import "./Sections/detail/DetailPage";
 import { MediaQueryContext, ThemeContext } from "../../context";
+import TabClick from "../common/TabClick";
+import useOnScreen from "../hooks/objectObserver";
 
 // const useStyles = makeStyles((theme) =>
 //   createStyles({
@@ -125,9 +127,9 @@ import { MediaQueryContext, ThemeContext } from "../../context";
 //   })
 // );
 
-export default function News({ match }) {
+export default function News(props, { match }) {
   // const matches = useMediaQuery("(max-width:600px)");
-  const { sTablet } = useContext(MediaQueryContext);
+  const { mTablet, sTablet } = useContext(MediaQueryContext);
   const { theme } = useContext(ThemeContext);
   // const [open, setOpen] = useState(false);
   // const [modalObj, setModalObj] = useState({});
@@ -145,25 +147,57 @@ export default function News({ match }) {
   //   setOpen(false);
   // };
   // const classes = useStyles();
-  
+  const scrollElem = Array.from(Array(2).keys());
+  const refs = useRef(scrollElem.map(() => React.createRef()));
+  const visibleArray = Array(2).fill(true);
+  visibleArray[0] = useOnScreen(refs.current[0]);
+  visibleArray[1] = useOnScreen(refs.current[1]);
+
+  // Scroll function
+  // update: TabClick function -> NavLink 에서 오는 random 숫자
+  // hashId: TabClick function -> NavLink 에서 오는 hashId 
+  // Tab/Menubar 안에서 NavLink 눌을때 마다 random number가 만들어 집니다.
+  // useEffect hook + random number 통해 click 을 track 합니다 
+  const executeScroll = () => {
+    const element = document.getElementById(props.location.hashId);
+    const headOffset= mTablet ? 84 : 184;
+    const elementPosition=element?.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - headOffset;
+    
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    })    
+  };
+
+  useEffect (() => {
+    executeScroll()  
+  }, [props.location.update])
+
   return (
     <div
       id="news" 
-      
       style={{
         backgroundColor: theme === "dark" && "#282828",
         color: theme === "dark" && "white",
       }}
     >
       <Menubar slideIndex={slideIndex} />
+      {!mTablet && <TabClick visibleArray={visibleArray} />}
       
-      
-      <div className="w-screen flex-col justify-between ">
+      <div className="flex-col justify-between ">
         <div className={`pb-200 ${theme === "dark" && "bg-black"} `} >
-          <ContentsTitle title={"News & IR"} />
+          <ContentsTitle title={"NEWS & IR"} />
           {/* 배너 */}
-          <NewsRelease matches={sTablet} />
-          <IRInformation matches={sTablet} />
+          <div id="newsrelease" ref={refs.current[0]}>
+            <NewsRelease matches={sTablet}  />
+          </div>
+          <div id="irinformation" ref={refs.current[1]}>
+            <IRInformation matches={sTablet} />
+          </div>
+          
+          
+          
           
         </div>
         <Totop />

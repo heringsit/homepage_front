@@ -33,6 +33,7 @@ const App = () => {
     setTheme(theme === "light" ? "dark" : "light");
     localStorage.setItem("theme", theme === "light" ? "dark" : "light");
   };
+
   // media query 사이즈 관리 & 수정이 쉽도록 context(global variable)로 설정
   const mobile = useMediaQuery("(min-width: 320px) and (max-width:600px)");
   const sTablet = useMediaQuery("(max-width:600px)");
@@ -40,7 +41,8 @@ const App = () => {
   const sDesktop = useMediaQuery("(max-width: 1024px)");
   const mDesktop = useMediaQuery("(max-width: 1260px)");
   const lDesktop = useMediaQuery("(max-width: 1920px)");
-  document.body.style.backgroundColor = theme === "dark" ? "#282828" : "#FFFFFF";
+  document.body.style.backgroundColor =
+    theme === "dark" ? "#282828" : "#FFFFFF";
 
   return (
     <BrowserRouter>
@@ -48,24 +50,26 @@ const App = () => {
         <MediaQueryContext.Provider
           value={{ mobile, sTablet, mTablet, sDesktop, mDesktop, lDesktop }}
         >
-          <Switch>
-            <Route exact path={`/`} component={Main} />
-            <Route path={`/aboutus/:submenu`} component={Aboutus} />
-            <Route path={`/aboutus`} component={Aboutus} />
-            <Route path={`/service/:submenu`} component={Service} />
-            <Route path={`/service`} component={Service} />
-            <Route path={`/research`} component={Research} />
-            <Route path={`/cts`} component={Cts} />
-            {/* Career */}
-            <Route path={`/contactus/:submenu`} component={Contactus} />
-            <Route path={`/contactus`} component={Contactus} />
-            <Route path={`/news/:submenu/detail/:id`} component={DetailPage} />
-            <Route path={`/news/:submenu`} component={News} />
-            <Route path={`/news`} component={News} />
-            <Route path={`/ham`} component={Ham} />
-            <Route path="*" component={Aboutus} />
-            <Redirect exact froåm={`/`} to={"/aboutus"} />
-          </Switch>
+            <Switch>
+              <Route exact path={`/`} component={Main} />
+              <Route path={`/aboutus/:submenu`} component={Aboutus} />
+              <Route path={`/aboutus`} component={Aboutus} />
+              <Route path={`/service/:submenu`} component={Service} />
+              <Route path={`/service`} component={Service} />
+              <Route path={`/research`} component={Research} />
+              <Route path={`/cts`} component={Cts} />
+              {/* Career */}
+              <Route path={`/contactus/:submenu`} component={Contactus} />
+              <Route path={`/contactus`} component={Contactus} />
+              <Route path={`/news/:submenu/detail/:id`} component={DetailPage} />
+              <Route path={`/news/:submenu`} component={News} />
+              <Route path={`/news`} component={News} />
+              <Route path={`/privacypolicy/`} component={PrivacyPolicy} />
+              <Route path={`/privacypolicy/:submenu`} component={PrivacyPolicy} />
+              <Route path={`/ham`} component={Ham} />
+              <Route path="*" component={Aboutus} />
+              <Redirect exact froåm={`/`} to={"/aboutus"} />
+            </Switch>
         </MediaQueryContext.Provider>
       </ThemeContext.Provider>
     </BrowserRouter>

@@ -2,6 +2,8 @@ import React, {useContext} from "react";
 import { ThemeContext } from "../../context";
 import "../../index.css"
 const CommonCardFrame = (
+  // main(textStyle, ContentStyle) -> Main content 수정
+  // content(padding, style, 1,2,3) -> Content text and Content style 수정 
   {
     imageSrc, 
     imageAlt,     
@@ -9,6 +11,7 @@ const CommonCardFrame = (
     contentPadding = "ps-48", // ex: content padding
     flexStyle = "flex-row-reverse gap-64", // ex: "flex-row-reverse gap-64"
     mainTextStyle = "text-align-start textF18 FontL lineheight160",
+    headerStyle="tco2",
     subText1Style,
     subText2Style,
     mainContentStyle = "flex-col",
@@ -32,7 +35,7 @@ const CommonCardFrame = (
       }`}>
         <div>
           {/* m-reset -> margin reset; mb-8-> margin bottom */}
-          <p className={`tco2 ${subText1Style} m-reset`}>{subText1}</p>
+          <p className={`${headerStyle} ${subText1Style} m-reset`}>{subText1}</p>
           <p className={`${subText2Style} m-reset`}>{subText2}</p>
           <p className={`${mainTextStyle} m-reset`}>
             {content1}
