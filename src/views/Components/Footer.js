@@ -72,12 +72,12 @@ function Footer() {
           </a>
           <a 
           target="_blank"
-          href="https://www.facebook.com/heringsglobal">
+          href="https://www.youtube.com/channel/UC1LLVoPjPLmu3kjLqJCB_ZA">
             <img src={youtubesvg} alt="youtube"className="footersvg"/>
           </a>
           <a 
           target="_blank"
-          href="https://www.youtube.com/channel/UC1LLVoPjPLmu3kjLqJCB_ZA">
+          href="https://www.facebook.com/heringsglobal">
            <img src={facebooksvg} alt="facebook"className="footersvg"/>
           </a>
         </div>
