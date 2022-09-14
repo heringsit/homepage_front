@@ -57,7 +57,6 @@ const Ham = () => {
       fiveDays.push(moment().subtract(1, "d").format("MM/DD"));
       fiveDays.push(moment().format("MM/DD"));
     }
-    console.log("fiveDays > ", fiveDays);
     return fiveDays;
   };
 
@@ -127,7 +126,6 @@ const Ham = () => {
   }
   
   useEffect(() => {
-    console.log("aaaaa");
     if(window.localStorage.getItem("sabun")){    // 등록한 사번이 있으면, -> 출근부 보여줌
       setIsShowAttendanceBoard(true);
     }else{
@@ -138,7 +136,6 @@ const Ham = () => {
     setTodayIndex(moment().day());
 
     const getExceptionHandling = async () => {
-      console.log("ddddddddddddddd")
       const handlingInfo = {
         todayYoil: moment().day(),
         sabun: userName.sabun
@@ -378,7 +375,7 @@ const Ham = () => {
         } ></input>
           <button className="btn2" onClick={(ev) => {
             window.localStorage.setItem("sabun", sabun);
-            isShowAttendanceBoard(true);
+            setIsShowAttendanceBoard(true);
           }}>입력</button>
         </div>
 
