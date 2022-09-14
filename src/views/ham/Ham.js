@@ -172,7 +172,7 @@ const Ham = () => {
         setTimeGapArray([]);  // 초기화 
         let result = await axios.post(BACK_END_URL+"/main/workhistory",todayInfo);
         console.log("result >> ", result.data);
-        setUserName({name:result.data.weekHistory[0].name, sabun: window.localStorage.getItem("sabun")});
+        setUserName({name:result.data?.weekHistory[0]?.name, sabun: window.localStorage.getItem("sabun")});
         let wswc = [];
         let history = result.data.weekHistory;   
         for(let index = 0 ; index < history.length; index++){
