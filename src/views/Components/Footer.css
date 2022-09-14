@@ -40,6 +40,11 @@
   margin: 5px;
   color: #bebebe;
 }
+
+.footersvg{
+  width:40px;
+  height:40px
+}
 .footerRow > .footerContent:first-child {
   margin-left: 0;
 }
