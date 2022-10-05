@@ -636,7 +636,7 @@ const Ham = () => {
           <span role="img" className="fonts" aria-label="" aria-labelledby="">
             출퇴근 지킴이 🚙
           </span>
-          <img className="logo" alt="herings" src="img/herings_logo2.png" />
+          <img className="logo" alt="herings" src="img/herings_logo.png" />
         </div>
 
         <table className="tableTop">
@@ -712,25 +712,27 @@ const Ham = () => {
         </table>
         <div className="worktime">
           <span>{time}</span>
-          <div>
-            <button
-              className="btn3"
-              onClick={() => {
-                window.localStorage.removeItem("sabun", sabun);
-                setIsShowAttendanceBoard(false);
-              }}
-            >
-              로그아웃
-            </button>
-            <button
-              className="btn3"
-              onClick={() => {
-                window.location.replace("/ham");
-              }}
-            >
-              새로고침
-            </button>
-          </div>
+        </div>
+        <div>
+          <button
+            className="btn3"
+            onClick={() => {
+              window.location.replace("/ham");
+            }}
+          >
+            새로고침
+          </button>
+        </div>
+        <div className="mobile_blank">
+          <button
+            className="btn4"
+            onClick={() => {
+              window.localStorage.removeItem("sabun", sabun);
+              setIsShowAttendanceBoard(false);
+            }}
+          >
+            로그아웃
+          </button>
         </div>
       </div>
     );
@@ -740,6 +742,13 @@ const Ham = () => {
     return (
       <div className="center1">
         <div className="vacantLayout"></div>
+        <div>
+          <img
+            className="logo_login"
+            alt="herings"
+            src="img/herings_logo.png"
+          />
+        </div>
         <div>사번을 입력해주세요</div>
         <div className="flex1">
           <input

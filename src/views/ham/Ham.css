@@ -29,6 +29,12 @@
   width: 250px;
   padding-top: 10px;
 }
+.logo_login {
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 100px;
+}
 
 /* .record {
   position: absolute;
@@ -119,7 +125,18 @@
 }
 
 .btn3 {
+  position: absolute;
+  border-radius: 10px;
   font-family: "Cafe24Ssurround";
+}
+.btn4 {
+  position: absolute;
+  border-radius: 10px;
+  margin-left: 140px;
+  font-family: "Cafe24Ssurround";
+}
+.mobile_blank {
+  height: 100px;
 }
 
 .btnFont {
@@ -149,7 +166,7 @@
   height: 30px;
   border-width: 2px;
   border-radius: 5px;
-  margin-left: 7px;
+  margin-left: 8px;
   padding-left: 5px;
 }
 
@@ -191,14 +208,13 @@
     padding-top: 10px;
   }
   .worktime {
-    position: static;
     align-items: center;
     text-align: center;
     margin-left: 5%;
     font-size: 115%;
   }
 }
-@media all and (max-width: 1300px) {
+@media all and (max-width: 1490px) {
   .rowTimeStamp {
     width: 50px;
     height: 45px;
@@ -217,7 +233,7 @@
     font-family: "Cafe24Ssurround";
   }
   .logo {
-    margin-left: 15%;
+    margin-left: 9.5%;
     margin-right: auto;
     margin-bottom: -20px;
     height: 130px;
@@ -225,11 +241,69 @@
     padding-top: 10px;
   }
   .worktime {
-    position: static;
+    align-items: center;
+    text-align: center;
+    margin-right: 45%;
+    font-size: 115%;
+  }
+}
+@media all and (max-width: 1000px) {
+  .rowTimeStamp2 {
+    width: 50px;
+    height: 45px;
+    border: 1px solid;
+    border-color: sandybrown;
+    text-align: center;
+    color: red;
+    font-family: "Cafe24Ssurround";
+  }
+  .logo {
+    margin-left: 14%;
+    margin-right: auto;
+    margin-bottom: -20px;
+    height: 130px;
+    width: 250px;
+    padding-top: 10px;
+  }
+  .worktime {
     align-items: center;
     text-align: center;
     margin-left: auto;
+    margin-right: 10%;
+    font-size: 115%;
+  }
+}
+@media all and (max-width: 700px) {
+  .newsSquareButtonContain {
+    padding: 0;
+  }
+  .newsSquareButton {
+    width: 100%;
+    margin: 10px;
+    float: none;
+  }
+  .rowTimeStamp2 {
+    width: 50px;
+    height: 45px;
+    border: 1px solid;
+    border-color: sandybrown;
+    text-align: center;
+    color: red;
+    font-family: "Cafe24Ssurround";
+  }
+  .logo {
+    margin-left: 7%;
     margin-right: auto;
+    margin-bottom: -20px;
+    height: 130px;
+    width: 250px;
+    padding-top: 10px;
+  }
+  .worktime {
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: 1%;
     font-size: 115%;
   }
 }
@@ -252,7 +326,6 @@
     padding-top: 10px;
   }
   .worktime {
-    position: static;
     align-items: center;
     text-align: center;
     margin-left: auto;
@@ -289,7 +362,6 @@
     padding-top: 10px;
   }
   .worktime {
-    position: static;
     align-items: center;
     text-align: center;
     margin-left: auto;
@@ -325,7 +397,6 @@
     font-family: "Cafe24Ssurround";
   }
   .worktime {
-    position: static;
     align-items: center;
     text-align: center;
     font-size: 115%;
@@ -338,15 +409,41 @@
     width: 250px;
     padding-top: 10px;
   }
-}
-@media all and (max-width: 768px) {
-  .newsSquareButtonContain {
-    padding: 0;
+  .btn3 {
+    position: absolute;
+    border-radius: 10px;
+    font-family: "Cafe24Ssurround";
   }
-  .newsSquareButton {
-    width: 100%;
-    margin: 10px;
-    float: none;
+  .btn4 {
+    position: absolute;
+    border-radius: 10px;
+    margin-left: 140px;
+    font-family: "Cafe24Ssurround";
+  }
+  .mobile_blank {
+    height: 100px;
+  }
+  .flex1 {
+    width: 180px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+  }
+
+  .inputBox {
+    width: 100px;
+    height: 30px;
+    border-width: 2px;
+    border-radius: 5px;
+    margin-left: 11px;
+  }
+  .btn2 {
+    position: absolute;
+    font-size: 15px;
+    margin-top: auto;
+    width: 100px;
+    height: 30px;
+    font-family: "Cafe24Ssurround";
   }
 }
 
