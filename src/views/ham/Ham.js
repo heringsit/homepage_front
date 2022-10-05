@@ -71,12 +71,12 @@ const Ham = () => {
   const getCoreTimeViolationStamp = async (info) => {
     let result = await axios.post(
       BACK_END_URL + "/main/coretimeViolation",
-      info,
+      info
       // * 소속-이름 오늘날짜 violationType 가져옴
-      console.log(info, "info")
+      // console.log(info, "info")
     );
 
-    console.log("timeStamp >> ", result.data);
+    // console.log("timeStamp >> ", result.data);
     let returnData = "";
     // * result.data.ok가 True면 타임스탬프 가져옴 False면 "-" 출력
     if (result.data.ok) {
@@ -347,7 +347,7 @@ const Ham = () => {
 
   useEffect(() => {
     if (resettingRef.current) {
-      console.log("exceptionHandlingData useEffect!");
+      // console.log("exceptionHandlingData useEffect!");
       let todayInfo = {
         sabun: window.localStorage.getItem("sabun"),
         today: -1,
@@ -372,7 +372,7 @@ const Ham = () => {
           }
         });
 
-        console.log("result >> ", result.data);
+        // console.log("result >> ", result.data);
         setUserName({
           name: result.data?.weekHistory[0]?.name,
           sabun: window.localStorage.getItem("sabun"),
@@ -424,12 +424,12 @@ const Ham = () => {
             let filtered = exceptionHandlingData.filter((exhData) => {
               return exhData.workdate === workdate;
             });
-            console.log(" filtered >>> ", filtered);
+            // console.log(" filtered >>> ", filtered);
             // !
             if (filtered.length > 0) {
               filtered.forEach((each) => {
                 if (each.handlingException === "fd") {
-                  console.log(timeGap, "timeGap");
+                  // console.log(timeGap, "timeGap");
 
                   // ! 패밀리 데이
                   // * 1시 이후 출근, 12시 이전 퇴근(점심시간 해당 x)
@@ -449,17 +449,15 @@ const Ham = () => {
                   }
                   // * 기본
                   else if (timeGapArray[index] + 480 >= 0) {
-                    console.log(" timeGap before >> ", timeGap);
+                    // console.log(" timeGap before >> ", timeGap);
                     timeGap = timeGap + 120; //2시간
-                    console.log(" timeGap after >> ", timeGap);
+                    // console.log(" timeGap after >> ", timeGap);
                   }
                   // * 출근 후 1시간 미만일때(누적시간도 1시간 미만일때 1시간을 추가해서 더해줬으므로 여기서도 같게한다.)
                   else {
                     timeGap = timeGap + 180;
                   }
                 } else if (each.handlingException === "hoff") {
-                  console.log(timeGap, "timeGap");
-
                   // ! 반차
                   // * 1시 이후 출근, 12시 이전 퇴근(점심시간 해당 x)
                   if (
@@ -477,9 +475,7 @@ const Ham = () => {
                   }
                   // *  기본
                   else if (timeGapArray[index] + 480 >= 0) {
-                    console.log(" timeGap before >> ", timeGap);
                     timeGap = timeGap + 240; //4시간
-                    console.log(" timeGap after >> ", timeGap);
                   }
                   // * 출근 후 1시간 미만일때(누적시간도 1시간 미만일때 1시간을 추가해서 더해줬으므로 여기서도 같게한다.)
                   else {
@@ -566,14 +562,14 @@ const Ham = () => {
       BACK_END_URL + "/main/addExceptionHandling",
       exceptionHandling
     );
-    console.log("addExceptionHandling result >> ", addResult);
+    // console.log("addExceptionHandling result >> ", addResult);
 
     if (addResult.data.ok) {
       let getResult = await axios.post(
         BACK_END_URL + "/main/getExceptionHandling",
         { todayYoil: dayjs().day(), sabun: userName.sabun }
       );
-      console.log(" getResult >> ", getResult.data);
+      // console.log(" getResult >> ", getResult.data);
 
       let exYoil = getResult.data.exceptionList.map((each) => {
         return dayjs(each.workdate).day() - 1;
@@ -716,6 +712,25 @@ const Ham = () => {
         </table>
         <div className="worktime">
           <span>{time}</span>
+          <div>
+            <button
+              className="btn3"
+              onClick={() => {
+                window.localStorage.removeItem("sabun", sabun);
+                setIsShowAttendanceBoard(false);
+              }}
+            >
+              로그아웃
+            </button>
+            <button
+              className="btn3"
+              onClick={() => {
+                window.location.replace("/ham");
+              }}
+            >
+              새로고침
+            </button>
+          </div>
         </div>
       </div>
     );
@@ -731,16 +746,16 @@ const Ham = () => {
             type="text"
             className="inputBox"
             onChange={(ev) => {
-              console.log(" ev ", ev.target.value);
               setSabun(ev.target.value);
             }}
           ></input>
           <button
             className="btn2"
-            onClick={(ev) => {
+            onClick={() => {
               window.localStorage.setItem("sabun", sabun);
-              console.log(" ev ", ev.target.value);
               setIsShowAttendanceBoard(true);
+              // * 값을 가져오기 위한 자동 새로고침
+              window.location.replace("/ham");
             }}
           >
             입력
