@@ -5,7 +5,7 @@ import axios from "axios";
 // * moment는 개발 중단 및 번들 크기가 dayjs 보다 상대적으로 크기때문에 성능을 향상시킬 수 있는 dayjs로 교체함
 import dayjs from "dayjs";
 import "./Ham.css";
-import "react-toastify/dist/ReactToastify.css";
+import logo from "../../assets/images/ham/herings_logo.svg";
 
 const Ham = () => {
   const [todayIndex, setTodayIndex] = useState(-1);
@@ -637,7 +637,7 @@ const Ham = () => {
           <span role="img" className="fonts" aria-label="" aria-labelledby="">
             출퇴근 지킴이 🚙
           </span>
-          <img className="logo" alt="herings" src="img/herings_logo.png" />
+          <img src={logo} className="logo" alt="herings" />
         </div>
 
         <table className="tableTop">
@@ -744,11 +744,7 @@ const Ham = () => {
       <div className="center1">
         <div className="vacantLayout"></div>
         <div>
-          <img
-            className="logo_login"
-            alt="herings"
-            src="img/herings_logo.png"
-          />
+          <img className="logo_login" alt="herings" src={logo} />
         </div>
         <div>사번을 입력해주세요</div>
         <div className="flex1">
