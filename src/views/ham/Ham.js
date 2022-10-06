@@ -26,8 +26,8 @@ const Ham = () => {
   const [timeGapArray, setTimeGapArray] = useState([]);
   const resettingRef = useRef(false);
 
-  // const BACK_END_URL = "http://52.79.53.196:3400";
-  const BACK_END_URL = "https://ham.heringsglobal.com";
+  const BACK_END_URL = "http://52.79.53.196:3400";
+  // const BACK_END_URL = "https://ham.heringsglobal.com";
   // const BACK_END_URL = "http://localhost:3400";
 
   // * 날짜 나열
@@ -81,6 +81,7 @@ const Ham = () => {
     let returnData = "";
     // * result.data.ok가 True면 타임스탬프 가져옴 False면 "-" 출력
     if (result.data.ok) {
+      // console.log(result.data);
       returnData = transferPrettyTimeFormatted(
         getTimeOnly(result.data.timeStamp)
       );
@@ -120,6 +121,39 @@ const Ham = () => {
     } else {
       return ohDisplay + omDisplay;
     }
+
+    // return hDisplay + mDisplay + oDisplay + o2Display;
+  };
+  const HourToMinute2 = (d) => {
+    Number(d);
+
+    d *= 60;
+    // 시
+    const h = Math.floor(d / 3600);
+    // 분
+    const m = Math.floor((d % 3600) / 60);
+
+    // 시간 마이너스(-) 일때,
+    const o = Math.ceil(d / 3600);
+    const o2 = Math.ceil((d % 3600) / 60);
+
+    const hDisplay =
+      h >= 0 ? String(h).padStart(1, "0") + (h === 1 ? ":" : ":") : "";
+    const mDisplay =
+      m >= 0 ? String(m).padStart(1, "0") + (m === 1 ? "" : "") : "";
+
+    // 시간 마이너스(-) 일때,
+    const ohDisplay = o < 0 ? o + (o === 1 ? ":" : ":") : "-0:";
+    const omDisplay = String(
+      Math.abs(o2 < 0 ? o2 + (o2 === 1 ? "" : "") : "")
+    ).padStart(2, "0");
+
+    if (h >= 0 && m >= 0) {
+      return hDisplay + mDisplay;
+    } else {
+      return ohDisplay + omDisplay;
+    }
+
     // return hDisplay + mDisplay + oDisplay + o2Display;
   };
 
@@ -153,6 +187,7 @@ const Ham = () => {
 
         // * 퇴근시간
       } else if (gubun === "end") {
+        // console.log(endTime, "endtime");
         return (
           <td
             class="rowTimeStamp"
@@ -172,7 +207,18 @@ const Ham = () => {
             <span className="timeGapFont">
               {timeGapArray[index] > 0 || timeGapArray[index] + 480 >= 0
                 ? "+" + HourToMinute(timeGapArray[index] + 480)
-                : HourToMinute(timeGapArray[index] + 480)}
+                : // +
+                  // "\n" +HourToMinute2(timeGapArray[index])
+                  HourToMinute(timeGapArray[index] + 480)}
+              {timeGapArray[index] > 0 ? (
+                <span className="blue">
+                  {"\n +" + HourToMinute2(timeGapArray[index])}
+                </span>
+              ) : (
+                <span className="red">
+                  {"\n" + HourToMinute2(timeGapArray[index])}
+                </span>
+              )}
             </span>
           </td>
         );
@@ -591,6 +637,7 @@ const Ham = () => {
     let sum = 0;
     let time = 0;
 
+    // console.log(timeGapArray, "timegap");
     for (let index = 0; index < timeGapArray.length; index++) {
       // * 월요일엔 초과시간에 + 8시간을 40시간에서 뺀다.
       if (index === 0 && timeGapArray[0] + 480 < 0) {

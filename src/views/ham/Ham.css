@@ -175,6 +175,7 @@
 
 .timeGapFont {
   font-size: 14px;
+  white-space: pre-line;
   font-family: "Cafe24Ssurround";
 }
 
