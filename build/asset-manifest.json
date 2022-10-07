@@ -1,19 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.c1a69e58.chunk.css",
-    "main.js": "/static/js/main.6afe9f78.chunk.js",
-    "main.js.map": "/static/js/main.6afe9f78.chunk.js.map",
+    "main.css": "/static/css/main.13848d96.chunk.css",
+    "main.js": "/static/js/main.a821a62a.chunk.js",
+    "main.js.map": "/static/js/main.a821a62a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ca75be69.js",
     "runtime-main.js.map": "/static/js/runtime-main.ca75be69.js.map",
-    "static/css/2.cf58e3d1.chunk.css": "/static/css/2.cf58e3d1.chunk.css",
-    "static/js/2.a5cce8f3.chunk.js": "/static/js/2.a5cce8f3.chunk.js",
-    "static/js/2.a5cce8f3.chunk.js.map": "/static/js/2.a5cce8f3.chunk.js.map",
+    "static/js/2.c8a39ed3.chunk.js": "/static/js/2.c8a39ed3.chunk.js",
+    "static/js/2.c8a39ed3.chunk.js.map": "/static/js/2.c8a39ed3.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.f58806656b99326baf8ada00f0a2aef0.js": "/precache-manifest.f58806656b99326baf8ada00f0a2aef0.js",
+    "precache-manifest.5e381fe819352489389404f6f94ab409.js": "/precache-manifest.5e381fe819352489389404f6f94ab409.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/2.cf58e3d1.chunk.css.map": "/static/css/2.cf58e3d1.chunk.css.map",
-    "static/css/main.c1a69e58.chunk.css.map": "/static/css/main.c1a69e58.chunk.css.map",
-    "static/js/2.a5cce8f3.chunk.js.LICENSE.txt": "/static/js/2.a5cce8f3.chunk.js.LICENSE.txt",
+    "static/css/main.13848d96.chunk.css.map": "/static/css/main.13848d96.chunk.css.map",
+    "static/js/2.c8a39ed3.chunk.js.LICENSE.txt": "/static/js/2.c8a39ed3.chunk.js.LICENSE.txt",
     "static/media/01alpen_n.svg": "/static/media/01alpen_n.ed9cff42.svg",
     "static/media/01suh.png": "/static/media/01suh.1f5473cc.png",
     "static/media/02gsh.png": "/static/media/02gsh.8cca991a.png",
@@ -67,6 +65,7 @@
     "static/media/heringsLOGO_dark.42b84971.svg": "/static/media/heringsLOGO_dark.42b84971.svg",
     "static/media/heringsLOGO_mobile.svg": "/static/media/heringsLOGO_mobile.0975c114.svg",
     "static/media/heringsLOGO_white.svg": "/static/media/heringsLOGO_white.22a449e2.svg",
+    "static/media/herings_logo.svg": "/static/media/herings_logo.eb0e4c32.svg",
     "static/media/icon_dark_off.svg": "/static/media/icon_dark_off.32627784.svg",
     "static/media/icon_dark_on.svg": "/static/media/icon_dark_on.4297cd65.svg",
     "static/media/kakao.svg": "/static/media/kakao.e5399fc8.svg",
@@ -82,9 +81,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.ca75be69.js",
-    "static/css/2.cf58e3d1.chunk.css",
-    "static/js/2.a5cce8f3.chunk.js",
-    "static/css/main.c1a69e58.chunk.css",
-    "static/js/main.6afe9f78.chunk.js"
+    "static/js/2.c8a39ed3.chunk.js",
+    "static/css/main.13848d96.chunk.css",
+    "static/js/main.a821a62a.chunk.js"
   ]
 }
