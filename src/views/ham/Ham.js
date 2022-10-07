@@ -242,10 +242,9 @@ const Ham = () => {
     let sum = 0;
     for (let index = 0; index < timeGapArray.length; index++) {
       // !
-      if (
-        timeGapArray[index] === schedule &&
-        timeGapArray[index] !== schedule
-      ) {
+      if (timeGapArray[index] === schedule) {
+        //* 출근기록이 없으면 자동으로 8시간 누적
+        sum = 480 + sum;
         tArr.push(
           <td
             // * 근태예외처리 파트
@@ -254,6 +253,7 @@ const Ham = () => {
             bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
           >
             <span className="exceptionFont">근태 예외 처리 필요</span>
+            <span className="exceptionFont2">(+8:00 누적)</span>
           </td>
         );
       } else {
@@ -267,9 +267,11 @@ const Ham = () => {
               class="rowTimeStamp"
               bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
             >
-              <span className="timeGapFont">
+              <span className="exceptionFont">근태 예외 처리 필요</span>
+              <span className="exceptionFont2">(+8:00 임시 누적)</span>
+              {/* <span className="timeGapFont">
                 {sum > 0 ? "+" + HourToMinute(sum) : HourToMinute(sum)}
-              </span>
+              </span> */}
             </td>
           );
         } else if (index === 0 && timeGapArray[0] + 480 < 0) {
@@ -555,9 +557,13 @@ const Ham = () => {
   }, [exceptionHandlingData]);
 
   // * 근태 예외 처리 버튼들
+  // useEffect(() => {
+  //   getBtnUx();
+  //   console.log("wwwwwww");
+  //   console.log(exYoil, exType, "wwwwww");
+  // }, [timeGapArray]);
   const getBtnUx = (gubun) => {
     let ux = [];
-
     for (let i = 0; i < 5; i++) {
       ux.push(
         <td class="rowTimeStamp">
@@ -568,7 +574,17 @@ const Ham = () => {
             disabled={i > dayjs().day() - 1}
             onClick={(ev) => {
               hanldeAttendanceException(gubun, i);
+              // console.log(ev.target, "evevvev");
+              // console.log(exYoil, exType, "hanldeAttendanceException");
+              // console.log(
+              //   i,
+              //   exYoil.includes(i),
+              //   changeGubunToCode(gubun),
+              //   exType.includes(changeGubunToCode(gubun)),
+              //   "hanldeAttendanceException"
+              // );
             }}
+            // * 요일과 타입이 겹쳐서 같이 변하는거 같다.
           >
             {exYoil.includes(i) && exType.includes(changeGubunToCode(gubun))
               ? gubun + " 취소"
@@ -577,6 +593,7 @@ const Ham = () => {
         </td>
       );
     }
+
     return ux;
   };
 
@@ -626,7 +643,11 @@ const Ham = () => {
         return each.handlingException;
       });
 
+      // console.log(exYoil, "요일");
+      // console.log(exType, "exytpe");
+      // console.log(getResult.data.exceptionList, "Data");
       resettingRef.current = true;
+      // console.log(exYoil, exType, "exYoil exType");
       setExYoil(exYoil);
       setExType(exType);
       setExceptionHandlingData(getResult.data.exceptionList);
@@ -660,6 +681,7 @@ const Ham = () => {
         time = 2340 + index * 60 - sum;
       }
     }
+
     if (time >= 0) {
       setTime(
         <span role="img" aria-label="" className="fonts">
