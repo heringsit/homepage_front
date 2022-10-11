@@ -2,6 +2,13 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+.freemain {
+  text-align: center;
+  font-size: larger;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20%;
+}
 @font-face {
   font-family: "Cafe24Ssurround";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff")
@@ -395,6 +402,13 @@
 @media all and (max-width: 560px) {
 }
 @media all and (max-width: 481px) {
+  .freemain {
+    text-align: center;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50%;
+  }
   .rowTimeStamp {
     width: 50px;
     height: 45px;

@@ -140,7 +140,7 @@ const Ham = () => {
     const hDisplay =
       h >= 0 ? String(h).padStart(1, "0") + (h === 1 ? ":" : ":") : "";
     const mDisplay =
-      m >= 0 ? String(m).padStart(1, "0") + (m === 1 ? "" : "") : "";
+      m >= 0 ? String(m).padStart(2, "0") + (m === 1 ? "" : "") : "";
 
     // 시간 마이너스(-) 일때,
     const ohDisplay = o < 0 ? o + (o === 1 ? ":" : ":") : "-0:";
@@ -162,6 +162,7 @@ const Ham = () => {
     return workHistory.map((work, index) => {
       let startTime = workHistory[index].wstime;
       let endTime = workHistory[index].wctime;
+
       // * 출근시간
       if (gubun === "start") {
         // * 지각체크! 길이가 4이면 0:00 5이면 00:00 따라서 길이가 4이면 10시 전 5이면 10시 후가 된다.
@@ -174,7 +175,7 @@ const Ham = () => {
               {startTime}
             </td>
           );
-        } else {
+        } else if (gubun === "fd") {
           return (
             <td
               class="rowTimeStamp2"
@@ -243,6 +244,8 @@ const Ham = () => {
     for (let index = 0; index < timeGapArray.length; index++) {
       // !
       if (timeGapArray[index] === schedule) {
+        // * 버튼 클릭시 값이 1로 증가해서 0으로 고정
+        timeGapArray[index] = 0;
         //* 출근기록이 없으면 자동으로 8시간 누적
         sum = 480 + sum;
         tArr.push(
@@ -253,7 +256,7 @@ const Ham = () => {
             bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
           >
             <span className="exceptionFont">근태 예외 처리 필요</span>
-            <span className="exceptionFont2">(+8:00 누적)</span>
+            <span className="exceptionFont2">(+8:00 임시 누적)</span>
           </td>
         );
       } else {
@@ -583,11 +586,23 @@ const Ham = () => {
               //   exType.includes(changeGubunToCode(gubun)),
               //   "hanldeAttendanceException"
               // );
+              // console.log(exYoil.indexOf(i), "indexOf");
+              // console.log(
+              //   exType.indexOf(changeGubunToCode(gubun)),
+              //   "indexOfType"
+              // );
+
+              // console.log(i, "iiiiiii");
             }}
             // * 요일과 타입이 겹쳐서 같이 변하는거 같다.
           >
             {exYoil.includes(i) && exType.includes(changeGubunToCode(gubun))
-              ? gubun + " 취소"
+              ? // exType.indexOf(changeGubunToCode(gubun)) === exYoil.indexOf(i)
+                //   ? gubun + " 취소"
+                //   : exYoil.includes(i - 1) &&
+                //     exType.includes(changeGubunToCode(gubun)) &&
+                //     exType.indexOf(changeGubunToCode(gubun)) !== exYoil.indexOf(i)
+                gubun + "취소"
               : gubun}
           </button>
         </td>
@@ -646,8 +661,11 @@ const Ham = () => {
       // console.log(exYoil, "요일");
       // console.log(exType, "exytpe");
       // console.log(getResult.data.exceptionList, "Data");
-      resettingRef.current = true;
       // console.log(exYoil, exType, "exYoil exType");
+
+      // resettingRef.current = true;
+      // console.log(exYoil, exType, "exYoil exType222");
+      // console.log(todayIndex, "todayindex");
       setExYoil(exYoil);
       setExType(exType);
       setExceptionHandlingData(getResult.data.exceptionList);
@@ -827,10 +845,17 @@ const Ham = () => {
           <button
             className="btn2"
             onClick={() => {
-              window.localStorage.setItem("sabun", sabun);
-              setIsShowAttendanceBoard(true);
-              // * 값을 가져오기 위한 자동 새로고침
-              window.location.replace("/ham");
+              const onlySabun = /^HG[0-0]{2}\d{2}/i;
+              // console.log(sabun);
+              // console.log(onlySabun.test(sabun));
+              if (onlySabun.test(sabun) === true) {
+                window.localStorage.setItem("sabun", sabun);
+                setIsShowAttendanceBoard(true);
+                // * 값을 가져오기 위한 자동 새로고침
+                window.location.replace("/ham");
+              } else {
+                alert("사번을 올바르게 입력하여 주시기 바랍니다.");
+              }
             }}
           >
             입력
@@ -842,8 +867,10 @@ const Ham = () => {
 
   if (dayjs().day() === 0 || dayjs().day() === 6) {
     return (
-      <div className="main">
-        <div>오늘은 주말 입니다. 출퇴근부 따위는 보지 마세요.</div>
+      <div className="freemain">
+        <span role="img" aria-label="" aria-labelledby="">
+          🌈 오늘은 주말입니다. 출퇴근 부는 보지 마시고 편히 쉬세요 🌈
+        </span>
       </div>
     );
   } else {
