@@ -21,7 +21,7 @@ import PrivacyPolicy from "./views/Privacy/PrivacyPolicy";
 import Ham from "./views/ham/Ham";
 
 // export const imsi = process.env.PUBLIC_URL; // 운영계
-export const imsi = `http://52.79.53.196:9099`; // 운영계
+export const imsi = `https://back.heringsglobal.com`; // 운영계
 // export const imsi = `http://52.79.120.20:9099`; // 개발계
 // export const imsi = `http://localhost:9099`; // local
 

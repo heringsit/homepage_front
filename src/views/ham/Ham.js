@@ -163,6 +163,16 @@ const Ham = () => {
       let startTime = workHistory[index].wstime;
       let endTime = workHistory[index].wctime;
 
+      // console.log(startTime, endTime, "startTime, endTime");
+
+      // if (startTime === "8:15") {
+      //   // console.log(startTime.indexOf("15"));
+      //   console.log(startTime.slice(0, 1));
+      //   console.log(Number(startTime.slice(0, 1)));
+      //   console.log(Number(endTime.slice(0, 2)));
+      //   console.log(endTime.slice(0, 2));
+      // }
+
       // * 출근시간
       if (gubun === "start") {
         // * 지각체크! 길이가 4이면 0:00 5이면 00:00 따라서 길이가 4이면 10시 전 5이면 10시 후가 된다.
@@ -203,14 +213,21 @@ const Ham = () => {
           <td
             class="rowTimeStamp"
             // * 초과부분
+
             bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
           >
             <span className="timeGapFont">
+              {/* 1시 이후 출근, 12시 이전 퇴근(점심시간 해당 x) */}
+              {/* {Number(startTime.slice(0, 2)) >= 13 &&
+              Number(endTime.slice(0, 2)) <= 11
+                ? "+" + HourToMinute(timeGapArray[index] + 540)
+                : Number(startTime.slice(0, 2)) === 12
+                 ? 
+                  } */}
+
               {timeGapArray[index] > 0 || timeGapArray[index] + 480 >= 0
                 ? "+" + HourToMinute(timeGapArray[index] + 480)
-                : // +
-                  // "\n" +HourToMinute2(timeGapArray[index])
-                  HourToMinute(timeGapArray[index] + 480)}
+                : "+" + HourToMinute(timeGapArray[index] + 540)}
               {timeGapArray[index] > 0 ? (
                 <span className="blue">
                   {"\n +" + HourToMinute2(timeGapArray[index])}
@@ -484,9 +501,9 @@ const Ham = () => {
                   // console.log(timeGap, "timeGap");
 
                   // ! 패밀리 데이
-                  // * 1시 이후 출근, 12시 이전 퇴근(점심시간 해당 x)
+                  // * 오후 1시 이후 출근, 12시 이전 퇴근(점심시간 해당 x)
                   if (
-                    (timeGapArray[index] + 480 >= 0 && startHour === 1) ||
+                    (timeGapArray[index] + 480 >= 0 && startHour >= 13) ||
                     (timeGapArray[index] + 480 >= 0 && endHour <= 11)
                   ) {
                     timeGap = timeGap + 180;
@@ -845,7 +862,7 @@ const Ham = () => {
           <button
             className="btn2"
             onClick={() => {
-              const onlySabun = /^HG[0-0]{2}\d{2}/i;
+              const onlySabun = /^HG[0-0]{2}\d{2}$/i;
               // console.log(sabun);
               // console.log(onlySabun.test(sabun));
               if (onlySabun.test(sabun) === true) {
