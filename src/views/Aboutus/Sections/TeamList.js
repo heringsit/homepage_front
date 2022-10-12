@@ -7,16 +7,16 @@ import {
   Advisory_Board,
 } from "./HeringsTeamMember";
 
-// import TeamListArrowPrev from "../../../assets/images/etc/team_left.svg";
-//import TeamListArrowNext from "../../../assets/images/etc/team_right.svg";
 import { ReactComponent as TeamListArrowPrev } from "../../../assets/images/02about_herings_team/chevron_left.svg";
 import { ReactComponent as TeamListArrowNext } from "../../../assets/images/02about_herings_team/chevron_right.svg";
+// import TeamListArrowPrev from "../../../assets/images/etc/team_left.svg";
+//import TeamListArrowNext from "../../../assets/images/etc/team_right.svg";
 //import topSlideArrowPrev from "../../../assets/images/etc/chevron_left.svg";
 //import topSlideArrowNext from "../../../assets/images/etc/chevron_right.svg";
+// import CommonCardTitle from "../../common/CommonCardTitle";
 
 import "../Aboutus.css";
 import "../slick.css";
-import CommonCardTitle from "../../common/CommonCardTitle";
 
 function PrevArrow(props) {
   const { className, style, onClick, matches } = props;
@@ -100,9 +100,8 @@ export default function TeamList(props) {
                   className={`teamDivWrap ${index === 0 && "ml-0"}`}
                 >
                   <div
-                    className={` ${
-                      team.jobs === "None" ? "none" : "heringsTeamWrap m-reset"
-                    }`}
+                    className={` ${team.jobs === "None" ? "none" : "heringsTeamWrap m-reset"
+                      }`}
                     onClick={() => {
                       props.handleOpen(team);
                     }}
@@ -118,9 +117,8 @@ export default function TeamList(props) {
                     </div>
                     <div className="heringsTeamContentText">
                       <span
-                        className={`${mobile ? "FontR" : "FontB"} textF18 ${
-                          theme === "dark" ? "tcw" : "tcb"
-                        }`}
+                        className={`${mobile ? "FontR" : "FontB"} textF18 ${theme === "dark" ? "tcw" : "tcb"
+                          }`}
                       >
                         {team.name}
                       </span>

@@ -55,30 +55,34 @@ function Footer() {
           </div>
         </div>
         <div
-        style={{
-          display:"flex",
-          columnGap:"24px"
-        }}
+          style={{
+            display: "flex",
+            columnGap: "24px"
+          }}
         >
-          <a 
-          target="_blank"
-          href="https://blog.naver.com/prologue/PrologueList.naver?blogId=herings3546&categoryNo=1">
-            <img src={blogsvg} alt="blog" className="footersvg"/>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://blog.naver.com/healiary">
+            <img src={blogsvg} alt="blog" className="footersvg" />
           </a>
-          <a 
-          target="_blank"
-          href="https://pf.kakao.com/_xlPYExj">
-           <img src={kakaosvg} alt="kakao"className="footersvg"/>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://pf.kakao.com/_xlPYExj">
+            <img src={kakaosvg} alt="kakao" className="footersvg" />
           </a>
-          <a 
-          target="_blank"
-          href="https://www.youtube.com/channel/UC1LLVoPjPLmu3kjLqJCB_ZA">
-            <img src={youtubesvg} alt="youtube"className="footersvg"/>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.youtube.com/channel/UC1LLVoPjPLmu3kjLqJCB_ZA">
+            <img src={youtubesvg} alt="youtube" className="footersvg" />
           </a>
-          <a 
-          target="_blank"
-          href="https://www.facebook.com/heringsglobal">
-           <img src={facebooksvg} alt="facebook"className="footersvg"/>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.facebook.com/heringsglobal">
+            <img src={facebooksvg} alt="facebook" className="footersvg" />
           </a>
         </div>
       </div>
