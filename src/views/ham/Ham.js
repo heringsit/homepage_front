@@ -15,7 +15,7 @@ const Ham = () => {
   const [exceptionHandlingData, setExceptionHandlingData] = useState([]);
   const [days, setDays] = useState([]);
   const [workHistory, setWorkHistory] = useState([]);
-  const [schedule, setSchedule] = useState(0);
+  const [schedule, setSchedule] = useState(1);
 
   const [time, setTime] = useState("");
   const [isShowAttendanceBoard, setIsShowAttendanceBoard] = useState(false);
@@ -81,7 +81,6 @@ const Ham = () => {
     let returnData = "";
     // * result.data.ok가 True면 타임스탬프 가져옴 False면 "-" 출력
     if (result.data.ok) {
-      // console.log(result.data);
       returnData = transferPrettyTimeFormatted(
         getTimeOnly(result.data.timeStamp)
       );
@@ -94,7 +93,6 @@ const Ham = () => {
   // *  분을 시간형식으로 변환
   const HourToMinute = (d) => {
     Number(d);
-
     d *= 60;
     // 시
     const h = Math.floor(d / 3600);
@@ -156,22 +154,15 @@ const Ham = () => {
 
     // return hDisplay + mDisplay + oDisplay + o2Display;
   };
-
   // * 오늘날짜 해당 열 색으로 표현
   const getWeekHistoryUX = (gubun) => {
     return workHistory.map((work, index) => {
       let startTime = workHistory[index].wstime;
       let endTime = workHistory[index].wctime;
+      // const numberStart = startTime.split(":").map(Number);
+      const numberEnd = endTime.split(":").map(Number);
 
-      // console.log(startTime, endTime, "startTime, endTime");
-
-      // if (startTime === "8:15") {
-      //   // console.log(startTime.indexOf("15"));
-      //   console.log(startTime.slice(0, 1));
-      //   console.log(Number(startTime.slice(0, 1)));
-      //   console.log(Number(endTime.slice(0, 2)));
-      //   console.log(endTime.slice(0, 2));
-      // }
+      // console.log(startTime, "start ");
 
       // * 출근시간
       if (gubun === "start") {
@@ -209,6 +200,7 @@ const Ham = () => {
         );
         // *  휴일?
       } else if (gubun === "over" && startTime.length > 2) {
+        // console.log(timeGapArray[index], "timegap");
         return (
           <td
             class="rowTimeStamp"
@@ -217,18 +209,70 @@ const Ham = () => {
             bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
           >
             <span className="timeGapFont">
-              {/* 1시 이후 출근, 12시 이전 퇴근(점심시간 해당 x) */}
-              {/* {Number(startTime.slice(0, 2)) >= 13 &&
-              Number(endTime.slice(0, 2)) <= 11
+              {/* 11시30분 점심시간 전 (점심시간 제외 X) */}
+              {(numberEnd[0] === 11 && numberEnd[1] <= 30) || numberEnd[0] <= 10
+                ? HourToMinute(timeGapArray[index] + 540)
+                : //*11시30분 ~ 12시30분 (점심시간 만큼 근무시간에서 빼기)
+                numberEnd[0] === 11 && numberEnd[1] > 30
+                ? HourToMinute(timeGapArray[index] + 540 - (numberEnd[1] - 30))
+                : numberEnd[0] === 12 && numberEnd[1] <= 30
+                ? HourToMinute(timeGapArray[index] + 540 - (numberEnd[1] + 30))
+                : HourToMinute(timeGapArray[index] + 480)}
+              {/* {timeGapArray[index] > 0 || timeGapArray[index] + 480 >= 0
                 ? "+" + HourToMinute(timeGapArray[index] + 540)
-                : Number(startTime.slice(0, 2)) === 12
-                 ? 
-                  } */}
+                : "+" + HourToMinute(timeGapArray[index] + 540)} */}
 
-              {timeGapArray[index] > 0 || timeGapArray[index] + 480 >= 0
-                ? "+" + HourToMinute(timeGapArray[index] + 480)
-                : "+" + HourToMinute(timeGapArray[index] + 540)}
-              {timeGapArray[index] > 0 ? (
+              {/* 11시30분 점심시간 전 (점심시간 제외 X) */}
+              {(numberEnd[0] === 11 &&
+                numberEnd[1] <= 30 &&
+                timeGapArray[index] >= 0) ||
+              (numberEnd[0] <= 10 && timeGapArray[index] + 60 >= 0) ? (
+                <span className="blue">
+                  {"\n +" + HourToMinute2(timeGapArray[index] + 60)}
+                </span>
+              ) : (numberEnd[0] === 11 && numberEnd[1] <= 30) ||
+                numberEnd[0] <= 10 ? (
+                <span className="red">
+                  {"\n" + HourToMinute2(timeGapArray[index] + 60)}
+                </span>
+              ) : // *11시30분 ~ 12시30분 (점심시간 만큼 근무시간에서 빼기)
+              numberEnd[0] === 11 &&
+                numberEnd[1] > 30 &&
+                timeGapArray[index] >= 0 ? (
+                <span className="blue">
+                  {"\n" +
+                    HourToMinute2(
+                      timeGapArray[index] + 60 + (30 - numberEnd[1])
+                    )}
+                </span>
+              ) : numberEnd[0] === 11 && numberEnd[1] > 30 ? (
+                <span className="red">
+                  {"\n" +
+                    HourToMinute2(
+                      timeGapArray[index] + 60 + (30 - numberEnd[1])
+                    )}
+                </span>
+              ) : index === 0 &&
+                numberEnd[0] === 12 &&
+                numberEnd[1] <= 30 &&
+                timeGapArray[index] + 30 >= 0 ? (
+                <span className="blue">
+                  {"\n +" +
+                    HourToMinute2(timeGapArray[index] + 30 - numberEnd[1])}
+                </span>
+              ) : numberEnd[0] === 12 &&
+                numberEnd[1] <= 30 &&
+                timeGapArray[index] >= 0 ? (
+                <span className="blue">
+                  {"\n +" +
+                    HourToMinute2(timeGapArray[index] + 30 - numberEnd[1])}
+                </span>
+              ) : numberEnd[0] === 12 && numberEnd[1] <= 30 ? (
+                <span className="red">
+                  {"\n " +
+                    HourToMinute2(timeGapArray[index] + 30 - numberEnd[1])}
+                </span>
+              ) : timeGapArray[index] >= 0 ? (
                 <span className="blue">
                   {"\n +" + HourToMinute2(timeGapArray[index])}
                 </span>
@@ -237,6 +281,15 @@ const Ham = () => {
                   {"\n" + HourToMinute2(timeGapArray[index])}
                 </span>
               )}
+              {/* {timeGapArray[index] > 0 ? (
+                <span className="blue">
+                  {"\n +" + HourToMinute2(timeGapArray[index])}
+                </span>
+              ) : (
+                <span className="red">
+                  {"\n" + HourToMinute2(timeGapArray[index])}
+                </span>
+              )} */}
             </span>
           </td>
         );
@@ -253,12 +306,18 @@ const Ham = () => {
       }
     });
   };
-
+  useEffect(() => {});
   // * 누적(분) 파트
   const getAccTime = () => {
     let tArr = [];
     let sum = 0;
+    let sums = 0;
     for (let index = 0; index < timeGapArray.length; index++) {
+      let startTime = workHistory[index].wstime;
+      let endTime = workHistory[index].wctime;
+      // let numberStart = startTime.split(":").map(Number);
+      let numberEnd = endTime.split(":").map(Number);
+
       // !
       if (timeGapArray[index] === schedule) {
         // * 버튼 클릭시 값이 1로 증가해서 0으로 고정
@@ -270,7 +329,7 @@ const Ham = () => {
             // * 근태예외처리 파트
 
             class="rowTimeStamp"
-            bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
+            bㅂgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
           >
             <span className="exceptionFont">근태 예외 처리 필요</span>
             <span className="exceptionFont2">(+8:00 임시 누적)</span>
@@ -278,7 +337,7 @@ const Ham = () => {
         );
       } else {
         // ? 휴무 누적 예외처리
-        if (timeGapArray[index] === 0 || timeGapArray[index] === 1) {
+        if (timeGapArray[index] === 0 && startTime === "-") {
           // * 버튼 클릭시 값이 1로 증가해서 0으로 고정
           timeGapArray[index] = 0;
           sum = 480 + sum;
@@ -289,34 +348,107 @@ const Ham = () => {
             >
               <span className="exceptionFont">근태 예외 처리 필요</span>
               <span className="exceptionFont2">(+8:00 임시 누적)</span>
-              {/* <span className="timeGapFont">
-                {sum > 0 ? "+" + HourToMinute(sum) : HourToMinute(sum)}
-              </span> */}
             </td>
           );
-        } else if (index === 0 && timeGapArray[0] + 480 < 0) {
-          // * 총 누적시간(실제 근무시간 40시간을 기준으로)으로 나타내기 위해 sum에 8시간(480분)을 더해준다.
-          // * 월요일
-          sum = timeGapArray[0] + 540;
+        }
+        // else if (index === 0 && timeGapArray[0] + 480 < 0) {
+        //   // * 총 누적시간(실제 근무시간 40시간을 기준으로)으로 나타내기 위해 sum에 8시간(480분)을 더해준다.
+        //   // * 월요일
+        //   sum = timeGapArray[0] + 540;
+        //   sums = timeGapArray[index] + sums + 60;
+        //   tArr.push(
+        //     <td
+        //       class="rowTimeStamp"
+        //       bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
+        //     >
+        //       <span className="timeGapFont">
+        //         {sum > 0 ? HourToMinute(sum) : HourToMinute(sum)}
+        //         {sums >= 0 ? (
+        //           <span className="blue">{"\n +" + HourToMinute2(sums)}</span>
+        //         ) : (
+        //           <span className="red">{"\n" + HourToMinute2(sums)}</span>
+        //         )}
+        //       </span>
+        //     </td>
+        //   );
+        // } else if (index === 0 && timeGapArray[0] + 480 >= 0) {
+        //   sum = timeGapArray[0] + 480;
+        //   sums = timeGapArray[index] + sums;
+        //   tArr.push(
+        //     <td
+        //       class="rowTimeStamp"
+        //       bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
+        //     >
+        //       <span className="timeGapFont">
+        //         {sum > 0 ? HourToMinute(sum) : HourToMinute(sum)}
+        //         {sums >= 0 ? (
+        //           <span className="blue">{"\n +" + HourToMinute2(sums)}</span>
+        //         ) : (
+        //           <span className="red">{"\n" + HourToMinute2(sums)}</span>
+        //         )}
+        //       </span>
+        //     </td>
+        //   );
+        // }
+        // *  11시30분 점심시간 전 (점심시간 제외 X)
+        else if (
+          (numberEnd[0] === 11 && numberEnd[1] <= 30) ||
+          numberEnd[0] <= 10
+        ) {
+          sum = 540 + timeGapArray[index] + sum;
+          sums = timeGapArray[index] + sums + 60;
+
           tArr.push(
             <td
               class="rowTimeStamp"
               bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
             >
               <span className="timeGapFont">
-                {sum > 0 ? "+" + HourToMinute(sum) : HourToMinute(sum)}
+                {sum >= 0 ? HourToMinute(sum) : HourToMinute(sum)}
+                {sums >= 0 ? (
+                  <span className="blue">{"\n +" + HourToMinute2(sums)}</span>
+                ) : (
+                  <span className="red">{"\n" + HourToMinute2(sums)}</span>
+                )}
               </span>
             </td>
           );
-        } else if (index === 0 && timeGapArray[0] + 480 >= 0) {
-          sum = timeGapArray[0] + 480;
+        }
+        // * 11시30분 ~ 12시30분 (점심시간 만큼 근무시간에서 빼기)
+        else if (numberEnd[0] === 11 && numberEnd[1] > 30) {
+          sum = 540 + timeGapArray[index] + sum + (30 - numberEnd[1]);
+          sums = timeGapArray[index] + sums + 60 + (30 - numberEnd[1]);
+
           tArr.push(
             <td
               class="rowTimeStamp"
               bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
             >
               <span className="timeGapFont">
-                {sum > 0 ? "+" + HourToMinute(sum) : HourToMinute(sum)}
+                {sum > 0 ? HourToMinute(sum) : HourToMinute(sum)}
+                {sums >= 0 ? (
+                  <span className="blue">{"\n +" + HourToMinute2(sums)}</span>
+                ) : (
+                  <span className="red">{"\n" + HourToMinute2(sums)}</span>
+                )}
+              </span>
+            </td>
+          );
+        } else if (numberEnd[0] === 12 && numberEnd[1] <= 30) {
+          sum = 480 + timeGapArray[index] + sum + (30 - numberEnd[1]);
+          sums = timeGapArray[index] + sums + (30 - numberEnd[1]);
+          tArr.push(
+            <td
+              class="rowTimeStamp"
+              bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
+            >
+              <span className="timeGapFont">
+                {sum > 0 ? HourToMinute(sum) : HourToMinute(sum)}
+                {sums >= 0 ? (
+                  <span className="blue">{"\n +" + HourToMinute2(sums)}</span>
+                ) : (
+                  <span className="red">{"\n" + HourToMinute2(sums)}</span>
+                )}
               </span>
             </td>
           );
@@ -324,6 +456,7 @@ const Ham = () => {
           // * 총 누적시간(실제 근무시간 40시간을 기준으로)으로 나타내기 위해 sum에 8시간(480분)을 더해준다.
           if (timeGapArray[index] + 480 >= 0) {
             sum = 480 + timeGapArray[index] + sum;
+            sums = timeGapArray[index] + sums;
 
             tArr.push(
               <td
@@ -331,28 +464,33 @@ const Ham = () => {
                 bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
               >
                 <span className="timeGapFont">
-                  {/* {dayjs.duration(wc.diff(startTime)).asMinutes()} */}
-                  {sum >= 0 ? "+" + HourToMinute(sum) : HourToMinute(sum)}
-                </span>
-              </td>
-            );
-          } else {
-            // * 만약 근무시간이 1시간 미만인 상태에서는 60분이 안넘기 때문에  전 날 누적시간이
-            //* 17시 50분이라고 가정하고 오늘날 근무를 30분 한 상태라면 18시 20분이 되어야 맞지만 시간을 넘겨줄때 30분으로 넘겨주기 때문에
-            //* 17시 20분이 출력된다 따라서 60분 미만일때는 8시간(480분)이 아니라 9시간(540분)을 sum에 더해준다.
-            sum = 540 + sum + timeGapArray[index];
-
-            tArr.push(
-              <td
-                class="rowTimeStamp"
-                bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
-              >
-                <span className="timeGapFont">
-                  {sum >= 0 ? "+" + HourToMinute(sum) : HourToMinute(sum)}
+                  {sum >= 0 ? HourToMinute(sum) : HourToMinute(sum)}
+                  {sums >= 0 ? (
+                    <span className="blue">{"\n +" + HourToMinute2(sums)}</span>
+                  ) : (
+                    <span className="red">{"\n" + HourToMinute2(sums)}</span>
+                  )}
                 </span>
               </td>
             );
           }
+          // else {
+          //   // * 만약 근무시간이 1시간 미만인 상태에서는 60분이 안넘기 때문에  전 날 누적시간이
+          //   //* 17시 50분이라고 가정하고 오늘날 근무를 30분 한 상태라면 18시 20분이 되어야 맞지만 시간을 넘겨줄때 30분으로 넘겨주기 때문에
+          //   //* 17시 20분이 출력된다 따라서 60분 미만일때는 8시간(480분)이 아니라 9시간(540분)을 sum에 더해준다.
+          //   sum = 540 + sum + timeGapArray[index];
+
+          //   tArr.push(
+          //     <td
+          //       class="rowTimeStamp"
+          //       bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
+          //     >
+          //       <span className="timeGapFont">
+          //         {sum >= 0 ? "+" + HourToMinute(sum) : HourToMinute(sum)}
+          //       </span>
+          //     </td>
+          //   );
+          // }
         }
       }
     }
@@ -430,10 +568,10 @@ const Ham = () => {
           todayInfo
         );
 
-        // ! 여기서 스케줄타입
         // * 스케줄 타입 따라서 실행부분(스케줄타입이 휴일에도 0으로 넘어와서 wstime 시간 여부로 조건 사용함)
         result.data.weekHistory.forEach(function (weekHistory) {
-          if (weekHistory.wstime === "") {
+          // console.log(weekHistory.wstime, "wstime");
+          if (weekHistory.wstime === null) {
             weekHistory.scheduleType = 1;
             setSchedule(weekHistory.scheduleType);
           } else {
@@ -494,6 +632,7 @@ const Ham = () => {
               return exhData.workdate === workdate;
             });
             // console.log(" filtered >>> ", filtered);
+
             // !
             if (filtered.length > 0) {
               filtered.forEach((each) => {
@@ -501,65 +640,126 @@ const Ham = () => {
                   // console.log(timeGap, "timeGap");
 
                   // ! 패밀리 데이
-                  // * 오후 1시 이후 출근, 12시 이전 퇴근(점심시간 해당 x)
-                  if (
-                    (timeGapArray[index] + 480 >= 0 && startHour >= 13) ||
-                    (timeGapArray[index] + 480 >= 0 && endHour <= 11)
+                  // * 오후 1시 이후 출근 (점심시간 해당 x)
+                  // timeGap = timeGap + 120;
+
+                  if (startHour >= 13) {
+                    timeGap = timeGap + 180;
+                  } //* 11시30분~ 12시 사이 퇴근
+                  else if (endHour === 11 && endMinute > 30) {
+                    timeGap = timeGap + 120 + (endMinute - 30);
+                  }
+                  // * 12시대에 퇴근
+                  // * 12~12시30분
+                  else if (endHour === 12 && endMinute <= 30) {
+                    timeGap = timeGap + 150;
+                  } // * 12시30분~1시
+                  else if (
+                    (endHour === 12 && endMinute > 30) ||
+                    (endHour === 13 && endMinute === 0)
                   ) {
-                    timeGap = timeGap + 180;
+                    timeGap = timeGap + 120 - (endMinute - 60);
                   }
-                  // * 12시 이후 출근(점심시간 안에 출근)
-                  else if (timeGapArray[index] + 480 >= 0 && startHour === 12) {
-                    timeGap = timeGap + 120 - (60 - startMinute);
-                  }
-                  // * 12시대에 퇴근(보통처럼 점심시간 1시간을 다 빼는것이 아니라 12~1시 사이의 시간 만큼만 실근무시간에서 빼준다.)+(누적시간은 점심시간 1시간이 빠진 상태이기 때문에 2시간이 아닌 3시간 추가에서 12시부터 1시 사이에 시간 만큼만 빼준다.)
-                  else if (timeGapArray[index] + 480 >= 0 && endHour === 12) {
+
+                  // * 12시 대에 출근(12시~12시30분 까지)
+                  else if (
+                    startHour === 12 &&
+                    endHour < 13 &&
+                    endMinute <= 30
+                  ) {
+                    timeGap = timeGap + 120 + (endMinute - 30);
+                  } // * 12시 대에 출근 (12시30분~1시 까지)
+                  else if (startHour === 12 && endMinute > 30) {
                     timeGap = timeGap + 180 - endMinute;
+                  } else {
+                    timeGap = timeGap + 120;
                   }
-                  // * 기본
-                  else if (timeGapArray[index] + 480 >= 0) {
-                    // console.log(" timeGap before >> ", timeGap);
-                    timeGap = timeGap + 120; //2시간
-                    // console.log(" timeGap after >> ", timeGap);
-                  }
-                  // * 출근 후 1시간 미만일때(누적시간도 1시간 미만일때 1시간을 추가해서 더해줬으므로 여기서도 같게한다.)
-                  else {
-                    timeGap = timeGap + 180;
-                  }
+
+                  // // * 12시 이후 출근(점심시간 안에 출근)
+                  // else if (timeGapArray[index] + 480 >= 0 && startHour === 12) {
+                  //   timeGap = timeGap + 120 - (60 - startMinute);
+                  // }
+                  // // * 12시대에 퇴근(보통처럼 점심시간 1시간을 다 빼는것이 아니라 12~1시 사이의 시간 만큼만 실근무시간에서 빼준다.)+(누적시간은 점심시간 1시간이 빠진 상태이기 때문에 2시간이 아닌 3시간 추가에서 12시부터 1시 사이에 시간 만큼만 빼준다.)
+                  // else if (timeGapArray[index] + 480 >= 0 && endHour === 12) {
+                  //   timeGap = timeGap + 180 - endMinute;
+                  // }
+                  // // * 기본
+                  // else if (timeGapArray[index] + 480 >= 0) {
+                  //   // console.log(" timeGap before >> ", timeGap);
+                  //   timeGap = timeGap + 120; //2시간
+                  //   // console.log(" timeGap after >> ", timeGap);
+                  // }
+                  // // * 출근 후 1시간 미만일때(누적시간도 1시간 미만일때 1시간을 추가해서 더해줬으므로 여기서도 같게한다.)
+                  // else {
+                  //   timeGap = timeGap + 180;
+                  // }
                 } else if (each.handlingException === "hoff") {
                   // ! 반차
-                  // * 1시 이후 출근, 12시 이전 퇴근(점심시간 해당 x)
-                  if (
-                    (timeGapArray[index] + 480 >= 0 && startHour === 1) ||
-                    (timeGapArray[index] + 480 >= 0 && endHour <= 11)
+                  // * 오후 1시 이후 출근 (점심시간 해당 x)
+                  // timeGap = timeGap + 240;
+
+                  if (startHour >= 13) {
+                    timeGap = timeGap + 300;
+                  } //* 11시30분~ 12시 사이 퇴근
+                  else if (endHour === 11 && endMinute > 30) {
+                    timeGap = timeGap + 240 + (endMinute - 30);
+                  } // * 12시~1시 사이 퇴근
+                  // * 12~12시30분
+                  else if (endHour === 12 && endMinute <= 30) {
+                    timeGap = timeGap + 270;
+                  } // * 12시30분~1시
+                  else if (
+                    (endHour === 12 && endMinute > 30) ||
+                    (endHour === 13 && endMinute === 0)
                   ) {
-                    timeGap = timeGap + 300;
-                  } // * 12시 이후 출근(점심시간 안에 출근)
-                  else if (timeGapArray[index] + 480 >= 0 && startHour === 12) {
-                    timeGap = timeGap + 240 - (60 - startMinute);
+                    timeGap = timeGap + 240 - (endMinute - 60);
                   }
-                  // * 12시대에 퇴근(보통처럼 점심시간 1시간을 다 빼는것이 아니라 12~1시 사이의 시간 만큼만 실근무시간에서 빼준다.)+(누적시간은 점심시간 1시간이 빠진 상태이기 때문에 2시간이 아닌 3시간 추가에서 12시부터 1시 사이에 시간 만큼만 빼준다.)
-                  else if (timeGapArray[index] + 480 >= 0 && endHour === 12) {
+                  // * 12시 대에 출근(12시~12시30분 까지)
+                  else if (
+                    startHour === 12 &&
+                    endHour < 13 &&
+                    endMinute <= 30
+                  ) {
+                    timeGap = timeGap + 240 + (endMinute - 30);
+                  } // * 12시 대에 출근 (12시30분~1시 까지)
+                  else if (startHour === 12 && endMinute > 30) {
                     timeGap = timeGap + 300 - endMinute;
+                  } else {
+                    timeGap = timeGap + 240;
                   }
-                  // *  기본
-                  else if (timeGapArray[index] + 480 >= 0) {
-                    timeGap = timeGap + 240; //4시간
-                  }
-                  // * 출근 후 1시간 미만일때(누적시간도 1시간 미만일때 1시간을 추가해서 더해줬으므로 여기서도 같게한다.)
-                  else {
-                    timeGap = timeGap + 300;
-                  }
+                  // * 1시 이후 출근, 12시 이전 퇴근(점심시간 해당 x)
+                  // if (
+                  //   (timeGapArray[index] + 480 >= 0 && startHour === 1) ||
+                  //   (timeGapArray[index] + 480 >= 0 && endHour <= 11)
+                  // ) {
+                  //   timeGap = timeGap + 300;
+                  // } // * 12시 이후 출근(점심시간 안에 출근)
+                  // else if (timeGapArray[index] + 480 >= 0 && startHour === 12) {
+                  //   timeGap = timeGap + 240 - (60 - startMinute);
+                  // }
+                  // // * 12시대에 퇴근(보통처럼 점심시간 1시간을 다 빼는것이 아니라 12~1시 사이의 시간 만큼만 실근무시간에서 빼준다.)+(누적시간은 점심시간 1시간이 빠진 상태이기 때문에 2시간이 아닌 3시간 추가에서 12시부터 1시 사이에 시간 만큼만 빼준다.)
+                  // else if (timeGapArray[index] + 480 >= 0 && endHour === 12) {
+                  //   timeGap = timeGap + 300 - endMinute;
+                  // }
+                  // // *  기본
+                  // else if (timeGapArray[index] + 480 >= 0) {
+                  //   timeGap = timeGap + 240; //4시간
+                  // }
+                  // // * 출근 후 1시간 미만일때(누적시간도 1시간 미만일때 1시간을 추가해서 더해줬으므로 여기서도 같게한다.)
+                  // else {
+                  //   timeGap = timeGap + 300;
+                  // }
                 } else if (each.handlingException === "off") {
                   // ! 연차
                   // todo 연차 기존 540(9시간) 에서 480(8시간)으로 수정함
-                  if (timeGapArray[index] + 480 >= 0) {
-                    timeGap = timeGap + 480; //8시간
-                  }
+                  timeGap = timeGap + 480;
+                  // if (timeGapArray[index] + 480 >= 0) {
+                  //   timeGap = timeGap + 480; //8시간
+                  // }
                   // * 출근 후 1시간 미만일때(누적시간도 1시간 미만일때 1시간을 추가해서 더해줬으므로 여기서도 같게한다.)
-                  else {
-                    timeGap = timeGap + 540;
-                  }
+                  // else {
+                  //   timeGap = timeGap + 540;
+                  // }
                 }
                 // else if (each.handlingException === "bt") {
                 //   // ! 출장, 외근
@@ -577,49 +777,32 @@ const Ham = () => {
   }, [exceptionHandlingData]);
 
   // * 근태 예외 처리 버튼들
-  // useEffect(() => {
-  //   getBtnUx();
-  //   console.log("wwwwwww");
-  //   console.log(exYoil, exType, "wwwwww");
-  // }, [timeGapArray]);
+
   const getBtnUx = (gubun) => {
     let ux = [];
+    // const box = [exYoil[0], exType[0]];
+
     for (let i = 0; i < 5; i++) {
       ux.push(
         <td class="rowTimeStamp">
           <button
             className="btn"
             id={i}
+            // value={exType}
             value={gubun}
             disabled={i > dayjs().day() - 1}
             onClick={(ev) => {
               hanldeAttendanceException(gubun, i);
+              // setBtnValue([ev.target.id]);
               // console.log(ev.target, "evevvev");
               // console.log(exYoil, exType, "hanldeAttendanceException");
-              // console.log(
-              //   i,
-              //   exYoil.includes(i),
-              //   changeGubunToCode(gubun),
-              //   exType.includes(changeGubunToCode(gubun)),
-              //   "hanldeAttendanceException"
-              // );
-              // console.log(exYoil.indexOf(i), "indexOf");
-              // console.log(
-              //   exType.indexOf(changeGubunToCode(gubun)),
-              //   "indexOfType"
-              // );
-
               // console.log(i, "iiiiiii");
+              // console.log(gubun, " gubun");
             }}
             // * 요일과 타입이 겹쳐서 같이 변하는거 같다.
           >
             {exYoil.includes(i) && exType.includes(changeGubunToCode(gubun))
-              ? // exType.indexOf(changeGubunToCode(gubun)) === exYoil.indexOf(i)
-                //   ? gubun + " 취소"
-                //   : exYoil.includes(i - 1) &&
-                //     exType.includes(changeGubunToCode(gubun)) &&
-                //     exType.indexOf(changeGubunToCode(gubun)) !== exYoil.indexOf(i)
-                gubun + "취소"
+              ? gubun + "취소"
               : gubun}
           </button>
         </td>
@@ -665,7 +848,6 @@ const Ham = () => {
         BACK_END_URL + "/main/getExceptionHandling",
         { todayYoil: dayjs().day(), sabun: userName.sabun }
       );
-      // console.log(" getResult >> ", getResult.data);
 
       let exYoil = getResult.data.exceptionList.map((each) => {
         return dayjs(each.workdate).day() - 1;
@@ -675,14 +857,11 @@ const Ham = () => {
         return each.handlingException;
       });
 
-      // console.log(exYoil, "요일");
-      // console.log(exType, "exytpe");
       // console.log(getResult.data.exceptionList, "Data");
       // console.log(exYoil, exType, "exYoil exType");
 
-      // resettingRef.current = true;
-      // console.log(exYoil, exType, "exYoil exType222");
-      // console.log(todayIndex, "todayindex");
+      resettingRef.current = true;
+
       setExYoil(exYoil);
       setExType(exType);
       setExceptionHandlingData(getResult.data.exceptionList);
@@ -694,27 +873,93 @@ const Ham = () => {
     let time = 0;
 
     // console.log(timeGapArray, "timegap");
+    // for (let index = 0; index < timeGapArray.length; index++) {
+    //   // * 월요일엔 초과시간에 + 8시간을 40시간에서 뺀다.
+    //   if (index === 0 && timeGapArray[0] + 480 < 0) {
+    //     sum = timeGapArray[0] + 540;
+    //     time = 2400 - sum;
+    //   } else if (index === 0 && timeGapArray[0] + 480 >= 0) {
+    //     sum = timeGapArray[0] + 480;
+    //     time = 2400 - sum;
+    //   } else if (timeGapArray[index] + 480 >= 0) {
+    //     // * 실제 시간은 9시간(540분)이기 때문에 540을 더해준다.
+    //     sum = sum + 540 + timeGapArray[index];
+    //     // * 화요일 부터는 60씩 즉 1시간씩 추가해가며 총 누적시간을 40시간에서 빼준다.
+    //     // * 40시간(2400분)에 하루마다 + 1시간(60분, 점심시간)
+    //     time = 2400 + index * 60 - sum;
+    //   } else {
+    //     // * 실제 시간은 9시간(540분)이기 때문에 540을 더해준다.
+    //     sum = sum + 540 + timeGapArray[index];
+    //     // * 화요일 부터는 60씩 즉 1시간씩 추가한다
+    //     // * 현재 근무시간이 1시간 미만일때는 누적시간에 1시간을 더해주고 있기때문에 여기서는 2400분이 아니라 2340분으로 계산해 값을 맞춰준다.
+    //     time = 2340 + index * 60 - sum;
+    //   }
+    // }
+
     for (let index = 0; index < timeGapArray.length; index++) {
-      // * 월요일엔 초과시간에 + 8시간을 40시간에서 뺀다.
-      if (index === 0 && timeGapArray[0] + 480 < 0) {
+      let startTime = workHistory[index].wstime;
+      let endTime = workHistory[index].wctime;
+      // let numberStart = startTime.split(":").map(Number);
+      let numberEnd = endTime.split(":").map(Number);
+      // * 월요일
+      if (index === 0 && numberEnd[0] === 11 && numberEnd[1] > 30) {
+        sum = timeGapArray[0] + 540 + (30 - numberEnd[1]);
+        time = 2400 - sum;
+      } //* 12시 30분 이하
+      else if (index === 0 && numberEnd[0] === 12 && numberEnd[1] <= 30) {
+        sum = timeGapArray[0] + 480 + (30 - numberEnd[1]);
+        time = 2400 - sum;
+      } else if (index === 0 && timeGapArray[0] + 480 < 0) {
         sum = timeGapArray[0] + 540;
         time = 2400 - sum;
       } else if (index === 0 && timeGapArray[0] + 480 >= 0) {
         sum = timeGapArray[0] + 480;
         time = 2400 - sum;
-      } else if (timeGapArray[index] + 480 >= 0) {
+      }
+      // * 화요일 부터는 60씩 즉 1시간씩 추가해가며 총 누적시간을 40시간에서 빼준다.
+      // *  11시30분 점심시간 전 (점심시간 제외 X)
+      else if (
+        numberEnd[0] <= 10 ||
+        (numberEnd[0] === 11 && numberEnd[1] <= 30)
+      ) {
         // * 실제 시간은 9시간(540분)이기 때문에 540을 더해준다.
         sum = sum + 540 + timeGapArray[index];
-        // * 화요일 부터는 60씩 즉 1시간씩 추가해가며 총 누적시간을 40시간에서 빼준다.
         // * 40시간(2400분)에 하루마다 + 1시간(60분, 점심시간)
-        time = 2400 + index * 60 - sum;
-      } else {
-        // * 실제 시간은 9시간(540분)이기 때문에 540을 더해준다.
-        sum = sum + 540 + timeGapArray[index];
-        // * 화요일 부터는 60씩 즉 1시간씩 추가한다
-        // * 현재 근무시간이 1시간 미만일때는 누적시간에 1시간을 더해주고 있기때문에 여기서는 2400분이 아니라 2340분으로 계산해 값을 맞춰준다.
         time = 2340 + index * 60 - sum;
       }
+      // * 11시30분 ~ 12시30분 (점심시간 만큼 근무시간에서 빼기)
+      else if (numberEnd[0] === 11 && numberEnd[1] > 30) {
+        sum = sum + 600 + timeGapArray[index] + (30 - numberEnd[1]);
+        time = 2400 + index * 60 - sum;
+      } //* 12시 30분 이하
+      else if (numberEnd[0] === 12 && numberEnd[1] <= 30) {
+        sum = sum + 540 + timeGapArray[index] + (30 - numberEnd[1]);
+        time = 2400 + index * 60 - sum;
+      }
+      // * 그 후
+      else {
+        sum = sum + 540 + timeGapArray[index];
+        time = 2400 + index * 60 - sum;
+      }
+      //  if (index === 0 && timeGapArray[0] + 480 < 0) {
+      //    sum = timeGapArray[0] + 540;
+      //    time = 2400 - sum;
+      //  } else if (index === 0 && timeGapArray[0] + 480 >= 0) {
+      //    sum = timeGapArray[0] + 480;
+      //    time = 2400 - sum;
+      //  } else if (timeGapArray[index] + 480 >= 0) {
+      //    // * 실제 시간은 9시간(540분)이기 때문에 540을 더해준다.
+      //    sum = sum + 540 + timeGapArray[index];
+      //    // * 화요일 부터는 60씩 즉 1시간씩 추가해가며 총 누적시간을 40시간에서 빼준다.
+      //    // * 40시간(2400분)에 하루마다 + 1시간(60분, 점심시간)
+      //    time = 2400 + index * 60 - sum;
+      //  } else {
+      //    // * 실제 시간은 9시간(540분)이기 때문에 540을 더해준다.
+      //    sum = sum + 540 + timeGapArray[index];
+      //    // * 화요일 부터는 60씩 즉 1시간씩 추가한다
+      //    // * 현재 근무시간이 1시간 미만일때는 누적시간에 1시간을 더해주고 있기때문에 여기서는 2400분이 아니라 2340분으로 계산해 값을 맞춰준다.
+      //    time = 2340 + index * 60 - sum;
+      //  }
     }
 
     if (time >= 0) {
@@ -722,7 +967,8 @@ const Ham = () => {
         <span role="img" aria-label="" className="fonts">
           ☕️ 총 근무시간이 <span className="blue">40시간</span> 중
           <span className="red"> {HourToMinute(time)}</span>
-          시간 남았습니다. <span className="rightgray">(점심시간 포함)</span>
+          시간 남았습니다.
+          {/* <span className="rightgray">(점심시간 포함)</span> */}
         </span>
       );
     } else {
@@ -807,8 +1053,9 @@ const Ham = () => {
               <span className="mr7">예외</span>
               <span className="mr7">처리</span>
             </td>
-            {getBtnUx("패밀리데이")}
           </tr>
+
+          <tr class="tableLong">{getBtnUx("패밀리데이")}</tr>
 
           <tr class="tableLong">{getBtnUx("반차")}</tr>
 
@@ -863,15 +1110,16 @@ const Ham = () => {
             className="btn2"
             onClick={() => {
               const onlySabun = /^HG[0-0]{2}\d{2}$/i;
-              // console.log(sabun);
-              // console.log(onlySabun.test(sabun));
+
               if (onlySabun.test(sabun) === true) {
                 window.localStorage.setItem("sabun", sabun);
                 setIsShowAttendanceBoard(true);
                 // * 값을 가져오기 위한 자동 새로고침
                 window.location.replace("/ham");
               } else {
-                alert("사번을 올바르게 입력하여 주시기 바랍니다.");
+                alert(
+                  "사번을 올바르게 입력하여 주시기 바랍니다.\n\nex)HG00** (대소문자 상관 없음)"
+                );
               }
             }}
           >
