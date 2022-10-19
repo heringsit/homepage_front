@@ -329,7 +329,7 @@ const Ham = () => {
             // * 근태예외처리 파트
 
             class="rowTimeStamp"
-            bㅂgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
+            bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
           >
             <span className="exceptionFont">근태 예외 처리 필요</span>
             <span className="exceptionFont2">(+8:00 임시 누적)</span>
