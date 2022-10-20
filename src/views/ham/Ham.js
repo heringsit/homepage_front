@@ -176,7 +176,7 @@ const Ham = () => {
               {startTime}
             </td>
           );
-        } else if (gubun === "fd") {
+        } else {
           return (
             <td
               class="rowTimeStamp2"
