@@ -661,16 +661,16 @@ const Ham = () => {
                     timeGap = timeGap + 120 - (endMinute - 60);
                   }
 
-                  // * 12시 대에 출근(12시~12시30분 까지)
+                  // * 12시 대에 출근(12시~12시30분 까지) - 테스트 필요
                   else if (
                     startHour === 12 &&
                     endHour < 13 &&
-                    endMinute <= 30
+                    startMinute <= 30
                   ) {
                     timeGap = timeGap + 120 + (endMinute - 30);
                   } // * 12시 대에 출근 (12시30분~1시 까지)
-                  else if (startHour === 12 && endMinute > 30) {
-                    timeGap = timeGap + 180 - endMinute;
+                  else if (startHour === 12 && startMinute > 30) {
+                    timeGap = timeGap + 180 - (60 - startMinute);
                   } else {
                     timeGap = timeGap + 120;
                   }
@@ -697,7 +697,6 @@ const Ham = () => {
                   // ! 반차
                   // * 오후 1시 이후 출근 (점심시간 해당 x)
                   // timeGap = timeGap + 240;
-
                   if (startHour >= 13) {
                     timeGap = timeGap + 300;
                   } //* 11시30분~ 12시 사이 퇴근
@@ -714,16 +713,16 @@ const Ham = () => {
                   ) {
                     timeGap = timeGap + 240 - (endMinute - 60);
                   }
-                  // * 12시 대에 출근(12시~12시30분 까지)
+                  // * 12시 대에 출근(12시~12시30분 까지)- 테스트 필요
                   else if (
                     startHour === 12 &&
                     endHour < 13 &&
-                    endMinute <= 30
+                    startMinute <= 30
                   ) {
                     timeGap = timeGap + 240 + (endMinute - 30);
                   } // * 12시 대에 출근 (12시30분~1시 까지)
-                  else if (startHour === 12 && endMinute > 30) {
-                    timeGap = timeGap + 300 - endMinute;
+                  else if (startHour === 12 && startMinute > 30) {
+                    timeGap = timeGap + 300 - (60 - startMinute);
                   } else {
                     timeGap = timeGap + 240;
                   }
