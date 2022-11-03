@@ -306,7 +306,6 @@ const Ham = () => {
       }
     });
   };
-  useEffect(() => {});
   // * 누적(분) 파트
   const getAccTime = () => {
     let tArr = [];
@@ -827,7 +826,6 @@ const Ham = () => {
     return code;
   };
 
-  // * ???????????
   const hanldeAttendanceException = async (gubun, index) => {
     const exceptionHandling = {
       workdate: workHistory[index]?.workdate,
@@ -859,7 +857,7 @@ const Ham = () => {
       // console.log(getResult.data.exceptionList, "Data");
       // console.log(exYoil, exType, "exYoil exType");
 
-      resettingRef.current = true;
+      // resettingRef.current = true;
 
       setExYoil(exYoil);
       setExType(exType);
@@ -937,7 +935,7 @@ const Ham = () => {
       }
       // * 그 후
       else {
-        sum = sum + 540 + timeGapArray[index];
+        sum = sum + 520 + timeGapArray[index];
         time = 2400 + index * 60 - sum;
       }
       //  if (index === 0 && timeGapArray[0] + 480 < 0) {
