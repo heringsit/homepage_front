@@ -935,8 +935,8 @@ const Ham = () => {
       }
       // * 그 후
       else {
-        sum = sum + 520 + timeGapArray[index];
-        time = 2400 + index * 60 - sum;
+        sum = sum + 540 + timeGapArray[index];
+        time = 2460 + index * 60 - sum;
       }
       //  if (index === 0 && timeGapArray[0] + 480 < 0) {
       //    sum = timeGapArray[0] + 540;
