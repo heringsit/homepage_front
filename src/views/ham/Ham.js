@@ -163,14 +163,14 @@ const Ham = () => {
       const numberEnd = endTime.split(":").map(Number);
 
       // console.log(startTime, "start ");
-
+      // console.log(timeGapArray[index], "time");
       // * 출근시간
       if (gubun === "start") {
         // * 지각체크! 길이가 4이면 0:00 5이면 00:00 따라서 길이가 4이면 10시 전 5이면 10시 후가 된다.
         if (startTime.length <= 4) {
           return (
             <td
-              class="rowTimeStamp"
+              className="rowTimeStamp"
               bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
             >
               {startTime}
@@ -179,7 +179,7 @@ const Ham = () => {
         } else {
           return (
             <td
-              class="rowTimeStamp2"
+              className="rowTimeStamp2"
               bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
             >
               {startTime}
@@ -192,7 +192,7 @@ const Ham = () => {
         // console.log(endTime, "endtime");
         return (
           <td
-            class="rowTimeStamp"
+            className="rowTimeStamp"
             bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
           >
             {endTime}
@@ -203,7 +203,7 @@ const Ham = () => {
         // console.log(timeGapArray[index], "timegap");
         return (
           <td
-            class="rowTimeStamp"
+            className="rowTimeStamp"
             // * 초과부분
 
             bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
@@ -255,7 +255,7 @@ const Ham = () => {
               ) : index === 0 &&
                 numberEnd[0] === 12 &&
                 numberEnd[1] <= 30 &&
-                timeGapArray[index] + 30 >= 0 ? (
+                timeGapArray[index] >= 0 ? (
                 <span className="blue">
                   {"\n +" +
                     HourToMinute2(timeGapArray[index] + 30 - numberEnd[1])}
@@ -297,7 +297,7 @@ const Ham = () => {
         return (
           // * 기록없는 초과부분
           <td
-            class="rowTimeStamp"
+            className="rowTimeStamp"
             bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
           >
             -
@@ -327,7 +327,7 @@ const Ham = () => {
           <td
             // * 근태예외처리 파트
 
-            class="rowTimeStamp"
+            className="rowTimeStamp"
             bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
           >
             <span className="exceptionFont">근태 예외 처리 필요</span>
@@ -342,7 +342,7 @@ const Ham = () => {
           sum = 480 + sum;
           tArr.push(
             <td
-              class="rowTimeStamp"
+              className="rowTimeStamp"
               bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
             >
               <span className="exceptionFont">근태 예외 처리 필요</span>
@@ -399,7 +399,7 @@ const Ham = () => {
 
           tArr.push(
             <td
-              class="rowTimeStamp"
+              className="rowTimeStamp"
               bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
             >
               <span className="timeGapFont">
@@ -420,7 +420,7 @@ const Ham = () => {
 
           tArr.push(
             <td
-              class="rowTimeStamp"
+              className="rowTimeStamp"
               bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
             >
               <span className="timeGapFont">
@@ -438,7 +438,7 @@ const Ham = () => {
           sums = timeGapArray[index] + sums + (30 - numberEnd[1]);
           tArr.push(
             <td
-              class="rowTimeStamp"
+              className="rowTimeStamp"
               bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
             >
               <span className="timeGapFont">
@@ -459,7 +459,7 @@ const Ham = () => {
 
             tArr.push(
               <td
-                class="rowTimeStamp"
+                className="rowTimeStamp"
                 bgcolor={todayIndex === index + 1 ? "#ffcc99" : ""}
               >
                 <span className="timeGapFont">
@@ -782,7 +782,7 @@ const Ham = () => {
 
     for (let i = 0; i < 5; i++) {
       ux.push(
-        <td class="rowTimeStamp">
+        <td className="rowTimeStamp">
           <button
             className="btn"
             id={i}
@@ -898,8 +898,6 @@ const Ham = () => {
       let endTime = workHistory[index].wctime;
       let numberStart = startTime.split(":").map(Number);
       let numberEnd = endTime.split(":").map(Number);
-      console.log(numberStart, "!!");
-      console.log(numberEnd, "!!");
 
       // * 월요일
       if (index === 0 && numberEnd[0] === 11 && numberEnd[1] > 30) {
@@ -916,7 +914,7 @@ const Ham = () => {
         sum = timeGapArray[0] + 480;
         time = 2400 - sum;
       } else if (index === 0 && timeGapArray[0] + 480 >= 0) {
-        sum = timeGapArray[0] + 540;
+        sum = timeGapArray[0] + 480;
         time = 2400 - sum;
       }
       // * 화요일 부터는 60씩 즉 1시간씩 추가해가며 총 누적시간을 40시간에서 빼준다.
@@ -994,75 +992,105 @@ const Ham = () => {
         </div>
 
         <table className="tableTop">
-          <tr class="tableLong">
-            <td class="tableRowNoBorder">날짜</td>
-            <td class="tableRow" bgcolor={todayIndex === 1 ? "#ffcc99" : ""}>
+          <tr className="tableLong">
+            <td className="tableRowNoBorder">날짜</td>
+            <td
+              className="tableRow"
+              bgcolor={todayIndex === 1 ? "#ffcc99" : ""}
+            >
               {days[0]}
             </td>
-            <td class="tableRow" bgcolor={todayIndex === 2 ? "#ffcc99" : ""}>
+            <td
+              className="tableRow"
+              bgcolor={todayIndex === 2 ? "#ffcc99" : ""}
+            >
               {days[1]}
             </td>
-            <td class="tableRow" bgcolor={todayIndex === 3 ? "#ffcc99" : ""}>
+            <td
+              className="tableRow"
+              bgcolor={todayIndex === 3 ? "#ffcc99" : ""}
+            >
               {days[2]}
             </td>
-            <td class="tableRow" bgcolor={todayIndex === 4 ? "#ffcc99" : ""}>
+            <td
+              className="tableRow"
+              bgcolor={todayIndex === 4 ? "#ffcc99" : ""}
+            >
               {days[3]}
             </td>
-            <td class="tableRow" bgcolor={todayIndex === 5 ? "#ffcc99" : ""}>
+            <td
+              className="tableRow"
+              bgcolor={todayIndex === 5 ? "#ffcc99" : ""}
+            >
               {days[4]}
             </td>
           </tr>
-          <tr class="tableLong">
-            <td class="tableRowNoBorder">요일</td>
-            <td class="tableRow" bgcolor={todayIndex === 1 ? "#ffcc99" : ""}>
+          <tr className="tableLong">
+            <td className="tableRowNoBorder">요일</td>
+            <td
+              className="tableRow"
+              bgcolor={todayIndex === 1 ? "#ffcc99" : ""}
+            >
               월
             </td>
-            <td class="tableRow" bgcolor={todayIndex === 2 ? "#ffcc99" : ""}>
+            <td
+              className="tableRow"
+              bgcolor={todayIndex === 2 ? "#ffcc99" : ""}
+            >
               화
             </td>
-            <td class="tableRow" bgcolor={todayIndex === 3 ? "#ffcc99" : ""}>
+            <td
+              className="tableRow"
+              bgcolor={todayIndex === 3 ? "#ffcc99" : ""}
+            >
               수
             </td>
-            <td class="tableRow" bgcolor={todayIndex === 4 ? "#ffcc99" : ""}>
+            <td
+              className="tableRow"
+              bgcolor={todayIndex === 4 ? "#ffcc99" : ""}
+            >
               목
             </td>
-            <td class="tableRow" bgcolor={todayIndex === 5 ? "#ffcc99" : ""}>
+            <td
+              className="tableRow"
+              bgcolor={todayIndex === 5 ? "#ffcc99" : ""}
+            >
               금
             </td>
           </tr>
-          <tr class="tableLong">
-            <td class="tableRowNoBorder">출근</td>
+          <tr className="tableLong">
+            <td className="tableRowNoBorder">출근</td>
             {getWeekHistoryUX("start")}
           </tr>
-          <tr class="tableLong">
-            <td class="tableRowNoBorder">퇴근</td>
+          <tr className="tableLong">
+            <td className="tableRowNoBorder">퇴근</td>
             {getWeekHistoryUX("end")}
           </tr>
-          <tr class="tableLong">
-            <td class="tableRowNoBorder">
+          <tr className="tableLong">
+            <td className="tableRowNoBorder">
               당일<span className="minuteFont">(분)</span>
             </td>
             {getWeekHistoryUX("over")}
           </tr>
-          <tr class="tableLong">
-            <td class="tableRowNoBorder">
+          <tr className="tableLong">
+            <td className="tableRowNoBorder">
               누적<span className="minuteFont">(분)</span>
             </td>
             {getAccTime()}
           </tr>
-          <tr class="tableLong">
-            <td class="tableRowNoBorder" rowSpan={4}>
+          <tr className="tableLong">
+            <td className="tableRowNoBorder" rowSpan={4}>
               <span className="mr7">근태</span>
               <span className="mr7">예외</span>
               <span className="mr7">처리</span>
             </td>
           </tr>
 
-          <tr class="tableLong">{getBtnUx("패밀리데이")}</tr>
+          <tr className="tableLong">{getBtnUx("패밀리데이")}</tr>
 
-          <tr class="tableLong">{getBtnUx("반차")}</tr>
+          <tr className="tableLong">{getBtnUx("반차")}</tr>
 
-          <tr class="tableLong">{getBtnUx("연차")}</tr>
+          <tr className="tableLong">{getBtnUx("연차")}</tr>
           {/* <tr class="tableLong">{getBtnUx("외근 /출장")}</tr> */}
         </table>
         <div className="worktime">
