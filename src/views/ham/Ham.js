@@ -896,8 +896,11 @@ const Ham = () => {
     for (let index = 0; index < timeGapArray.length; index++) {
       let startTime = workHistory[index].wstime;
       let endTime = workHistory[index].wctime;
-      // let numberStart = startTime.split(":").map(Number);
+      let numberStart = startTime.split(":").map(Number);
       let numberEnd = endTime.split(":").map(Number);
+      console.log(numberStart, "!!");
+      console.log(numberEnd, "!!");
+
       // * 월요일
       if (index === 0 && numberEnd[0] === 11 && numberEnd[1] > 30) {
         sum = timeGapArray[0] + 540 + (30 - numberEnd[1]);
@@ -908,6 +911,9 @@ const Ham = () => {
         time = 2400 - sum;
       } else if (index === 0 && timeGapArray[0] + 480 < 0) {
         sum = timeGapArray[0] + 540;
+        time = 2400 - sum;
+      } else if (index === 0 && numberStart[1] === undefined) {
+        sum = timeGapArray[0] + 480;
         time = 2400 - sum;
       } else if (index === 0 && timeGapArray[0] + 480 >= 0) {
         sum = timeGapArray[0] + 540;
