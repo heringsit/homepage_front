@@ -937,10 +937,10 @@ const Ham = () => {
         sum = sum + 540 + timeGapArray[index] + (30 - numberEnd[1]);
         time = 2400 + index * 60 - sum;
       }
-      // * 그 후
+      // * 그 외
       else {
         sum = sum + 540 + timeGapArray[index];
-        time = 2460 + index * 60 - sum;
+        time = 2400 + index * 60 - sum;
       }
       //  if (index === 0 && timeGapArray[0] + 480 < 0) {
       //    sum = timeGapArray[0] + 540;

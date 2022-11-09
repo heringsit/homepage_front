@@ -100,8 +100,9 @@ export default function TeamList(props) {
                   className={`teamDivWrap ${index === 0 && "ml-0"}`}
                 >
                   <div
-                    className={` ${team.jobs === "None" ? "none" : "heringsTeamWrap m-reset"
-                      }`}
+                    className={` ${
+                      team.jobs === "None" ? "none" : "heringsTeamWrap m-reset"
+                    }`}
                     onClick={() => {
                       props.handleOpen(team);
                     }}
@@ -117,8 +118,9 @@ export default function TeamList(props) {
                     </div>
                     <div className="heringsTeamContentText">
                       <span
-                        className={`${mobile ? "FontR" : "FontB"} textF18 ${theme === "dark" ? "tcw" : "tcb"
-                          }`}
+                        className={`${mobile ? "FontR" : "FontB"} textF18 ${
+                          theme === "dark" ? "tcw" : "tcb"
+                        }`}
                       >
                         {team.name}
                       </span>

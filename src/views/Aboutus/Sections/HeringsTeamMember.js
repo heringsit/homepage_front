@@ -67,15 +67,15 @@ export const Executive_Leadership = [
     detail:
       "Kyounghoon Park is a medical doctor with preventive medicine specialty. He majored in pharmacoepidemiology and performed various big data analysis and medical research. He is interested in establishing evidence-based clinical preventive medicine.  He graduated from the School of Medicine at Pusan National University and trained resident course in the Department of Preventive Medicine at Seoul National University. He also achieved a Ph D in medicine from Seoul National University.",
   },
-  {
-    name: "Seongae Ahn RN",
-    jobs: `CTM`,
-    // positions: "CTM",
-    background: icon1_4,
-    modalimg: icon1_5,
-    detail:
-      "Seongae Ahn is a registered nurse. She graduated from the School of Nursing at Hallym University. She has about 15 years of clinical trial experience in various therapeutic areas. She is interested in Digital Therapeutics for enhancing quality of life of patients. Prior to her career in clinical trial, she worked at university hospital as a Nurse.",
-  },
+  // {
+  //   name: "Seongae Ahn RN",
+  //   jobs: `CTM`,
+  //   // positions: "CTM",
+  //   background: icon1_4,
+  //   modalimg: icon1_5,
+  //   detail:
+  //     "Seongae Ahn is a registered nurse. She graduated from the School of Nursing at Hallym University. She has about 15 years of clinical trial experience in various therapeutic areas. She is interested in Digital Therapeutics for enhancing quality of life of patients. Prior to her career in clinical trial, she worked at university hospital as a Nurse.",
+  // },
 ];
 
 export const Research_Leadership = [
