@@ -914,7 +914,7 @@ const Ham = () => {
         sum = timeGapArray[0] + 480;
         time = 2400 - sum;
       } else if (index === 0 && timeGapArray[0] + 480 >= 0) {
-        sum = timeGapArray[0] + 480;
+        sum = timeGapArray[0] + 540;
         time = 2400 - sum;
       }
       // * 화요일 부터는 60씩 즉 1시간씩 추가해가며 총 누적시간을 40시간에서 빼준다.
