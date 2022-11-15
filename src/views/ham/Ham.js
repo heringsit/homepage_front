@@ -926,7 +926,7 @@ const Ham = () => {
         // * 실제 시간은 9시간(540분)이기 때문에 540을 더해준다.
         sum = sum + 540 + timeGapArray[index];
         // * 40시간(2400분)에 하루마다 + 1시간(60분, 점심시간)
-        time = 2340 + index * 60 - sum;
+        time = 2400 + index * 60 - sum;
       }
       // * 11시30분 ~ 12시30분 (점심시간 만큼 근무시간에서 빼기)
       else if (numberEnd[0] === 11 && numberEnd[1] > 30) {
