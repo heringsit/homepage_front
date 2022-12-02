@@ -898,6 +898,8 @@ const Ham = () => {
       let endTime = workHistory[index].wctime;
       let numberStart = startTime.split(":").map(Number);
       let numberEnd = endTime.split(":").map(Number);
+      // console.log(workHistory[index], "!!");
+      // console.log(workHistory[index - 1].wctime, "@@");
 
       // * 월요일
       if (index === 0 && numberEnd[0] === 11 && numberEnd[1] > 30) {
@@ -907,40 +909,126 @@ const Ham = () => {
       else if (index === 0 && numberEnd[0] === 12 && numberEnd[1] <= 30) {
         sum = timeGapArray[0] + 480 + (30 - numberEnd[1]);
         time = 2400 - sum;
-      } else if (index === 0 && timeGapArray[0] + 480 < 0) {
+      }
+      // * 당일 근무시간 1시간 미만
+      else if (index === 0 && timeGapArray[0] + 480 < 0) {
         sum = timeGapArray[0] + 540;
         time = 2400 - sum;
       } else if (index === 0 && numberStart[1] === undefined) {
         sum = timeGapArray[0] + 480;
         time = 2400 - sum;
       } else if (index === 0 && timeGapArray[0] + 480 >= 0) {
-        sum = timeGapArray[0] + 540;
+        sum = timeGapArray[0] + 480;
         time = 2400 - sum;
       }
       // * 화요일 부터는 60씩 즉 1시간씩 추가해가며 총 누적시간을 40시간에서 빼준다.
       // *  11시30분 점심시간 전 (점심시간 제외 X)
+      // * 당일 근무시간 0분일때  (출근 직후)
       else if (
-        numberEnd[0] <= 10 ||
-        (numberEnd[0] === 11 && numberEnd[1] <= 30)
+        (numberEnd[0] <= 10 && timeGapArray[index] === -540) ||
+        (numberEnd[0] === 11 &&
+          numberEnd[1] <= 30 &&
+          timeGapArray[index] === -540)
+      ) {
+        // * 실제 시간은 9시간(540분)이기 때문에 540을 더해준다.
+        // todo 수정 필요?
+        sum = sum + 540 + timeGapArray[index];
+        // * 40시간(2400분)에 하루마다 + 1시간(60분, 점심시간)
+        time = 2400 - sum;
+      }
+      // * 당일 근무시간 1시간 미만
+      // * 화요일 근무시간 1시간 미만
+      else if (
+        (todayIndex === 2 &&
+          numberEnd[0] <= 10 &&
+          timeGapArray[index] + 480 < 0) ||
+        (todayIndex === 2 &&
+          numberEnd[0] === 11 &&
+          numberEnd[1] <= 30 &&
+          timeGapArray[index] + 480 < 0)
+      ) {
+        sum = sum + 540 + timeGapArray[index];
+        time = 2400 - sum;
+      } else if (
+        (todayIndex === 3 &&
+          numberEnd[0] <= 10 &&
+          timeGapArray[index] + 480 < 0) ||
+        (todayIndex === 3 &&
+          numberEnd[0] === 11 &&
+          numberEnd[1] <= 30 &&
+          timeGapArray[index] + 480 < 0)
+      ) {
+        sum = sum + 540 + timeGapArray[index];
+        time = 2400 - sum;
+      } else if (
+        (todayIndex === 4 &&
+          numberEnd[0] <= 10 &&
+          timeGapArray[index] + 480 < 0) ||
+        (todayIndex === 4 &&
+          numberEnd[0] === 11 &&
+          numberEnd[1] <= 30 &&
+          timeGapArray[index] + 480 < 0)
+      ) {
+        sum = sum + 540 + timeGapArray[index];
+        time = 2400 - sum;
+      } else if (
+        (numberEnd[0] <= 10 && timeGapArray[index] + 480 < 0) ||
+        (numberEnd[0] === 11 &&
+          numberEnd[1] <= 30 &&
+          timeGapArray[index] + 480 < 0)
+      ) {
+        // * 금요일엔 480이 정상
+        sum = sum + 540 + timeGapArray[index];
+        // * 40시간(2400분)에 하루마다 + 1시간(60분, 점심시간)
+        time = 2400 - sum;
+      } else if (
+        (numberEnd[0] <= 10 &&
+          timeGapArray[index] + 480 >= 0 &&
+          timeGapArray[index - 1] === 0) ||
+        (numberEnd[0] === 11 &&
+          numberEnd[1] <= 30 &&
+          timeGapArray[index] + 480 >= 0 &&
+          timeGapArray[index - 1] === 0)
+      ) {
+        // * 실제 시간은 9시간(540분)이기 때문에 540을 더해준다.
+        sum = sum + 480 + timeGapArray[index];
+        // * 40시간(2400분)에 하루마다 + 1시간(60분, 점심시간)
+        time = 2460 - sum;
+      } else if (
+        (numberEnd[0] <= 10 && timeGapArray[index] + 480 >= 0) ||
+        (numberEnd[0] === 11 &&
+          numberEnd[1] <= 30 &&
+          timeGapArray[index] + 480 >= 0)
       ) {
         // * 실제 시간은 9시간(540분)이기 때문에 540을 더해준다.
         sum = sum + 540 + timeGapArray[index];
         // * 40시간(2400분)에 하루마다 + 1시간(60분, 점심시간)
-        time = 2400 + index * 60 - sum;
+        time = 2400 - sum;
       }
       // * 11시30분 ~ 12시30분 (점심시간 만큼 근무시간에서 빼기)
       else if (numberEnd[0] === 11 && numberEnd[1] > 30) {
-        sum = sum + 600 + timeGapArray[index] + (30 - numberEnd[1]);
-        time = 2400 + index * 60 - sum;
+        sum = sum + 480 + timeGapArray[index] + (30 - numberEnd[1]);
+        time = 2400 - sum;
       } //* 12시 30분 이하
       else if (numberEnd[0] === 12 && numberEnd[1] <= 30) {
-        sum = sum + 540 + timeGapArray[index] + (30 - numberEnd[1]);
-        time = 2400 + index * 60 - sum;
+        sum = sum + 480 + timeGapArray[index] + (30 - numberEnd[1]);
+        time = 2400 - sum;
       }
       // * 그 외
-      else {
+      else if (numberStart[1] === undefined) {
+        sum = sum + 480 + timeGapArray[index];
+        time = 2400 - sum;
+      } else if (timeGapArray[index - 1] === 0) {
         sum = sum + 540 + timeGapArray[index];
         time = 2400 + index * 60 - sum;
+      } // * 오후 1시 이후
+      // else if (numberEnd[0] >= 22) {
+      //   sum = sum + 480 + timeGapArray[index];
+      //   time = 2340 + index * 30 - sum;
+      // }
+      else {
+        sum = sum + 480 + timeGapArray[index];
+        time = 2400 - sum;
       }
       //  if (index === 0 && timeGapArray[0] + 480 < 0) {
       //    sum = timeGapArray[0] + 540;

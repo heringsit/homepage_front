@@ -400,8 +400,8 @@
     font-size: 115%;
   }
 }
-@media all and (max-width: 560px) {
-}
+/* @media all and (max-width: 560px) {
+} */
 @media all and (max-width: 481px) {
   .freemain {
     text-align: center;
