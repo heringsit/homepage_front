@@ -639,9 +639,12 @@ const Ham = () => {
                   // console.log(timeGap, "timeGap");
 
                   // ! 패밀리 데이
+                  // // * 근무시간 1시간 미만(월요일)
+                  // if (index === 0 && timeGapArray[0] + 480 < 0) {
+                  //   timeGap = timeGap + 180;
+                  // }
                   // * 오후 1시 이후 출근 (점심시간 해당 x)
                   // timeGap = timeGap + 120;
-
                   if (startHour >= 13) {
                     timeGap = timeGap + 180;
                   } //* 11시30분~ 12시 사이 퇴근
@@ -660,7 +663,7 @@ const Ham = () => {
                     timeGap = timeGap + 120 - (endMinute - 60);
                   }
 
-                  // * 12시 대에 출근(12시~12시30분 까지) - 테스트 필요
+                  // * 12시 대에 출근(12시~12시30분 까지)
                   else if (
                     startHour === 12 &&
                     endHour < 13 &&
@@ -694,6 +697,10 @@ const Ham = () => {
                   // }
                 } else if (each.handlingException === "hoff") {
                   // ! 반차
+                  // // * 근무시간 1시간 미만(월요일)
+                  // if (index === 0 && timeGapArray[0] + 480 < 0) {
+                  //   timeGap = timeGap + 180;
+                  // }
                   // * 오후 1시 이후 출근 (점심시간 해당 x)
                   // timeGap = timeGap + 240;
                   if (startHour >= 13) {
@@ -912,13 +919,15 @@ const Ham = () => {
       }
       // * 당일 근무시간 1시간 미만
       else if (index === 0 && timeGapArray[0] + 480 < 0) {
-        sum = timeGapArray[0] + 540;
+        sum = 540 + timeGapArray[0];
         time = 2400 - sum;
       } else if (index === 0 && numberStart[1] === undefined) {
         sum = timeGapArray[0] + 480;
         time = 2400 - sum;
-      } else if (index === 0 && timeGapArray[0] + 480 >= 0) {
-        sum = timeGapArray[0] + 480;
+      }
+      // * 1시간 이상
+      else if (index === 0 && timeGapArray[0] + 480 >= 0) {
+        sum = timeGapArray[0] + 540;
         time = 2400 - sum;
       }
       // * 화요일 부터는 60씩 즉 1시간씩 추가해가며 총 누적시간을 40시간에서 빼준다.
@@ -981,7 +990,9 @@ const Ham = () => {
         sum = sum + 540 + timeGapArray[index];
         // * 40시간(2400분)에 하루마다 + 1시간(60분, 점심시간)
         time = 2400 - sum;
-      } else if (
+      }
+      // * 해당 조건일때 시간은 정상 출력되나 근태 예외 처리 버튼 클릭시 계산 오류
+      else if (
         (numberEnd[0] <= 10 &&
           timeGapArray[index] + 480 >= 0 &&
           timeGapArray[index - 1] === 0) ||
