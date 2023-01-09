@@ -12,6 +12,7 @@ const Ham = () => {
   const [sabun, setSabun] = useState("");
   const [exYoil, setExYoil] = useState([]);
   const [exType, setExType] = useState([]);
+  // const [gubunId, setGubunId] = useState(0);
   const [exceptionHandlingData, setExceptionHandlingData] = useState([]);
   const [days, setDays] = useState([]);
   const [workHistory, setWorkHistory] = useState([]);
@@ -785,7 +786,6 @@ const Ham = () => {
 
   const getBtnUx = (gubun) => {
     let ux = [];
-    // const box = [exYoil[0], exType[0]];
 
     for (let i = 0; i < 5; i++) {
       ux.push(
@@ -798,24 +798,86 @@ const Ham = () => {
             disabled={i > dayjs().day() - 1}
             onClick={(ev) => {
               hanldeAttendanceException(gubun, i);
-              // setBtnValue([ev.target.id]);
-              // console.log(ev.target, "evevvev");
-              // console.log(exYoil, exType, "hanldeAttendanceException");
-              // console.log(i, "iiiiiii");
-              // console.log(gubun, " gubun");
             }}
             // * 요일과 타입이 겹쳐서 같이 변하는거 같다.
           >
-            {exYoil.includes(i) && exType.includes(changeGubunToCode(gubun))
-              ? gubun + "취소"
-              : gubun}
+            {
+              // Number(gubunId) === ids &&
+              exYoil.includes(i) && exType.includes(changeGubunToCode(gubun))
+                ? gubun + "취소"
+                : gubun
+            }
           </button>
         </td>
       );
     }
-
     return ux;
   };
+  // useEffect(() => {
+  //   setGubunId(gubunId);
+  //   console.log(gubunId, "test~!");
+  // }, [gubunId]);
+
+  // const getBtnUx2 = (gubun, gubunid) => {
+  //   let ux = [];
+
+  //   for (let i = 0; i < 5; i++) {
+  //     let ids = gubunid + i;
+  //     ux.push(
+  //       <td className="rowTimeStamp">
+  //         <button
+  //           className="btn"
+  //           id={ids}
+  //           // value={exType}
+  //           value={gubun}
+  //           disabled={i > dayjs().day() - 1}
+  //           onClick={(ev) => {
+  //             setGubunId(ev.target.id);
+  //             hanldeAttendanceException(gubun, i);
+  //           }}
+  //           // * 요일과 타입이 겹쳐서 같이 변하는거 같다.
+  //         >
+  //           {Number(gubunId) === ids &&
+  //           exYoil.includes(i) &&
+  //           exType.includes(changeGubunToCode(gubun))
+  //             ? gubun + "취소"
+  //             : gubun}
+  //         </button>
+  //       </td>
+  //     );
+  //   }
+  //   return ux;
+  // };
+  // const getBtnUx3 = (gubun, gubunid) => {
+  //   let ux = [];
+
+  //   for (let i = 0; i < 5; i++) {
+  //     let ids = gubunid + i;
+  //     ux.push(
+  //       <td className="rowTimeStamp">
+  //         <button
+  //           className="btn"
+  //           id={ids}
+  //           // value={exType}
+  //           value={gubun}
+  //           disabled={i > dayjs().day() - 1}
+  //           onClick={(ev) => {
+  //             setGubunId(ev.target.id);
+  //             hanldeAttendanceException(gubun, i);
+  //           }}
+  //           // * 요일과 타입이 겹쳐서 같이 변하는거 같다.
+  //         >
+  //           {Number(gubunId) === ids &&
+  //           exYoil.includes(i) &&
+  //           exType.includes(changeGubunToCode(gubun))
+  //             ? gubun + "취소"
+  //             : gubun}
+  //         </button>
+  //       </td>
+  //     );
+  //   }
+  //   return ux;
+  // };
 
   // * 근태 예외 처리 버튼들
   const changeGubunToCode = (gubun) => {
@@ -868,6 +930,7 @@ const Ham = () => {
 
       setExYoil(exYoil);
       setExType(exType);
+
       setExceptionHandlingData(getResult.data.exceptionList);
     }
   };
@@ -875,30 +938,6 @@ const Ham = () => {
   useEffect(() => {
     let sum = 0;
     let time = 0;
-
-    // console.log(timeGapArray, "timegap");
-    // for (let index = 0; index < timeGapArray.length; index++) {
-    //   // * 월요일엔 초과시간에 + 8시간을 40시간에서 뺀다.
-    //   if (index === 0 && timeGapArray[0] + 480 < 0) {
-    //     sum = timeGapArray[0] + 540;
-    //     time = 2400 - sum;
-    //   } else if (index === 0 && timeGapArray[0] + 480 >= 0) {
-    //     sum = timeGapArray[0] + 480;
-    //     time = 2400 - sum;
-    //   } else if (timeGapArray[index] + 480 >= 0) {
-    //     // * 실제 시간은 9시간(540분)이기 때문에 540을 더해준다.
-    //     sum = sum + 540 + timeGapArray[index];
-    //     // * 화요일 부터는 60씩 즉 1시간씩 추가해가며 총 누적시간을 40시간에서 빼준다.
-    //     // * 40시간(2400분)에 하루마다 + 1시간(60분, 점심시간)
-    //     time = 2400 + index * 60 - sum;
-    //   } else {
-    //     // * 실제 시간은 9시간(540분)이기 때문에 540을 더해준다.
-    //     sum = sum + 540 + timeGapArray[index];
-    //     // * 화요일 부터는 60씩 즉 1시간씩 추가한다
-    //     // * 현재 근무시간이 1시간 미만일때는 누적시간에 1시간을 더해주고 있기때문에 여기서는 2400분이 아니라 2340분으로 계산해 값을 맞춰준다.
-    //     time = 2340 + index * 60 - sum;
-    //   }
-    // }
 
     for (let index = 0; index < timeGapArray.length; index++) {
       let startTime = workHistory[index].wstime;
@@ -909,6 +948,7 @@ const Ham = () => {
       // console.log(workHistory[index - 1].wctime, "@@");
 
       // * 월요일
+      // * 11시 30분 이후
       if (index === 0 && numberEnd[0] === 11 && numberEnd[1] > 30) {
         sum = timeGapArray[0] + 540 + (30 - numberEnd[1]);
         time = 2400 - sum;
@@ -925,9 +965,17 @@ const Ham = () => {
         sum = timeGapArray[0] + 480;
         time = 2400 - sum;
       }
-      // * 1시간 이상
-      else if (index === 0 && timeGapArray[0] + 480 >= 0) {
+      // * 근무시간 1시간 초과 및 11시30분 전
+      else if (
+        (index === 0 && numberEnd[0] <= 11) ||
+        (index === 0 && numberEnd[0] === 11 && numberEnd[1] <= 30)
+      ) {
         sum = timeGapArray[0] + 540;
+        time = 2400 - sum;
+      }
+      // * 점심 이후
+      else if (index === 0 && timeGapArray[0] + 480 >= 0) {
+        sum = timeGapArray[0] + 480;
         time = 2400 - sum;
       }
       // * 화요일 부터는 60씩 즉 1시간씩 추가해가며 총 누적시간을 40시간에서 빼준다.
@@ -940,7 +988,6 @@ const Ham = () => {
           timeGapArray[index] === -540)
       ) {
         // * 실제 시간은 9시간(540분)이기 때문에 540을 더해준다.
-        // todo 수정 필요?
         sum = sum + 540 + timeGapArray[index];
         // * 40시간(2400분)에 하루마다 + 1시간(60분, 점심시간)
         time = 2400 - sum;
@@ -990,9 +1037,7 @@ const Ham = () => {
         sum = sum + 540 + timeGapArray[index];
         // * 40시간(2400분)에 하루마다 + 1시간(60분, 점심시간)
         time = 2400 - sum;
-      }
-      // * 해당 조건일때 시간은 정상 출력되나 근태 예외 처리 버튼 클릭시 계산 오류
-      else if (
+      } else if (
         (numberEnd[0] <= 10 &&
           timeGapArray[index] + 480 >= 0 &&
           timeGapArray[index - 1] === 0) ||
