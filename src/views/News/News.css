@@ -21,6 +21,15 @@
   */
   padding: 1% 0;
 }
+.ql-align-center {
+  text-align: center;
+}
+.ql-align-justify {
+  text-align: justify;
+}
+.ql-align-right {
+  text-align: right;
+}
 .listCnt {
   padding: 35px 0;
   display: flex;

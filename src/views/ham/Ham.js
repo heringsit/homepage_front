@@ -30,7 +30,6 @@ const Ham = () => {
   // const BACK_END_URL = "http://52.79.53.196:3400";
   const BACK_END_URL = "https://ham.heringsglobal.com";
   // const BACK_END_URL = "http://localhost:3400";
-
   // * 날짜 나열
   const get5days = () => {
     let fiveDays = [];
