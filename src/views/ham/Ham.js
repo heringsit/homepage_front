@@ -945,7 +945,6 @@ const Ham = () => {
       let numberEnd = endTime.split(":").map(Number);
       // console.log(workHistory[index], "!!");
       // console.log(workHistory[index - 1].wctime, "@@");
-
       // * 월요일
       // * 11시 30분 이후
       if (index === 0 && numberEnd[0] === 11 && numberEnd[1] > 30) {
@@ -977,6 +976,11 @@ const Ham = () => {
         sum = timeGapArray[0] + 480;
         time = 2400 - sum;
       }
+      // else if (timeGapArray[index] === 0) {
+      //   sum = sum + 480 + timeGapArray[index];
+      //   time = 2400 - sum;
+      //   console.log(sum);
+      // }
       // * 화요일 부터는 60씩 즉 1시간씩 추가해가며 총 누적시간을 40시간에서 빼준다.
       // *  11시30분 점심시간 전 (점심시간 제외 X)
       // * 당일 근무시간 0분일때  (출근 직후)
@@ -1107,6 +1111,7 @@ const Ham = () => {
     }
 
     if (time >= 0) {
+      console.log(time);
       setTime(
         <span role="img" aria-label="" className="fonts">
           ☕️ 총 근무시간이 <span className="blue">40시간</span> 중
