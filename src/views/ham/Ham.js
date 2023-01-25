@@ -1077,6 +1077,12 @@ const Ham = () => {
       else if (numberStart[1] === undefined) {
         sum = sum + 480 + timeGapArray[index];
         time = 2400 - sum;
+      } else if (
+        timeGapArray[index - 1] === 0 &&
+        timeGapArray[index - 2] === 0
+      ) {
+        sum = sum + 540 + timeGapArray[index];
+        time = 2400 + index * 30 - sum;
       } else if (timeGapArray[index - 1] === 0) {
         sum = sum + 540 + timeGapArray[index];
         time = 2400 + index * 60 - sum;
@@ -1121,6 +1127,8 @@ const Ham = () => {
         </span>
       );
     } else {
+      console.log(time, "time2");
+
       setTime(
         <span role="img" className="fonts" aria-label="">
           🍀 근무시간이 남아있지 않아요 🍀
