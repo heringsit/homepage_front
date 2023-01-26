@@ -952,7 +952,7 @@ const Ham = () => {
         time = 2400 - sum;
       } //* 12시 30분 이하
       else if (index === 0 && numberEnd[0] === 12 && numberEnd[1] <= 30) {
-        sum = timeGapArray[0] + 480 + (30 - numberEnd[1]);
+        sum = timeGapArray[0] + 540 + (30 - numberEnd[1]);
         time = 2400 - sum;
       }
       // * 당일 근무시간 1시간 미만
@@ -1022,21 +1022,6 @@ const Ham = () => {
       } else if (
         (todayIndex === 4 &&
           numberEnd[0] <= 10 &&
-          timeGapArray[index] + 480 < 0 &&
-          timeGapArray[index - 2] === 0 &&
-          timeGapArray[index - 3] === 0) ||
-        (todayIndex === 4 &&
-          numberEnd[0] === 11 &&
-          numberEnd[1] <= 30 &&
-          timeGapArray[index] + 480 < 0 &&
-          timeGapArray[index - 2] === 0 &&
-          timeGapArray[index - 3] === 0)
-      ) {
-        sum = sum + 480 + timeGapArray[index];
-        time = 2400 - sum;
-      } else if (
-        (todayIndex === 4 &&
-          numberEnd[0] <= 10 &&
           timeGapArray[index] + 480 < 0) ||
         (todayIndex === 4 &&
           numberEnd[0] === 11 &&
@@ -1055,37 +1040,9 @@ const Ham = () => {
         sum = sum + 540 + timeGapArray[index];
         // * 40시간(2400분)에 하루마다 + 1시간(60분, 점심시간)
         time = 2400 - sum;
-      } else if (
-        (numberEnd[0] <= 10 &&
-          timeGapArray[index] + 480 >= 0 &&
-          timeGapArray[index - 1] === 0) ||
-        (numberEnd[0] === 11 &&
-          numberEnd[1] <= 30 &&
-          timeGapArray[index] + 480 >= 0 &&
-          timeGapArray[index - 1] === 0)
-      ) {
-        // * 실제 시간은 9시간(540분)이기 때문에 540을 더해준다.
-        sum = sum + 480 + timeGapArray[index];
-        // * 40시간(2400분)에 하루마다 + 1시간(60분, 점심시간)
-        time = 2460 - sum;
       }
       // * 점심시간 전
       else if (
-        (numberEnd[0] <= 10 &&
-          timeGapArray[index] + 480 >= 0 &&
-          timeGapArray[index - 2] === 0 &&
-          timeGapArray[index - 3] === 0) ||
-        (numberEnd[0] === 11 &&
-          numberEnd[1] <= 30 &&
-          timeGapArray[index] + 480 >= 0 &&
-          timeGapArray[index - 2] === 0 &&
-          timeGapArray[index - 3] === 0)
-      ) {
-        // * 실제 시간은 9시간(540분)이기 때문에 540을 더해준다.
-        sum = sum + 480 + timeGapArray[index];
-        // * 40시간(2400분)에 하루마다 + 1시간(60분, 점심시간)
-        time = 2400 - sum;
-      } else if (
         (numberEnd[0] <= 10 && timeGapArray[index] + 480 >= 0) ||
         (numberEnd[0] === 11 &&
           numberEnd[1] <= 30 &&
@@ -1146,6 +1103,20 @@ const Ham = () => {
       //    // * 현재 근무시간이 1시간 미만일때는 누적시간에 1시간을 더해주고 있기때문에 여기서는 2400분이 아니라 2340분으로 계산해 값을 맞춰준다.
       //    time = 2340 + index * 60 - sum;
       //  }
+      // * 휴무가 포함된 주에는 근무시간 계산이 더 추가 되므로 마지막에 수정해준다.
+      time =
+        (timeGapArray[index - 1] === 0 &&
+          timeGapArray[index - 2] === 0 &&
+          timeGapArray[index - 3] === 0) ||
+        (timeGapArray[index - 2] === 0 &&
+          timeGapArray[index - 3] === 0 &&
+          timeGapArray[index - 4] === 0)
+          ? time
+          : (timeGapArray[index - 1] === 0 && timeGapArray[index - 2] === 0) ||
+            (timeGapArray[index - 2] === 0 && timeGapArray[index - 3] === 0) ||
+            (timeGapArray[index - 3] === 0 && timeGapArray[index - 4] === 0)
+          ? (time += 60)
+          : time;
     }
 
     if (time >= 0) {
