@@ -1022,6 +1022,21 @@ const Ham = () => {
       } else if (
         (todayIndex === 4 &&
           numberEnd[0] <= 10 &&
+          timeGapArray[index] + 480 < 0 &&
+          timeGapArray[index - 2] === 0 &&
+          timeGapArray[index - 3] === 0) ||
+        (todayIndex === 4 &&
+          numberEnd[0] === 11 &&
+          numberEnd[1] <= 30 &&
+          timeGapArray[index] + 480 < 0 &&
+          timeGapArray[index - 2] === 0 &&
+          timeGapArray[index - 3] === 0)
+      ) {
+        sum = sum + 480 + timeGapArray[index];
+        time = 2400 - sum;
+      } else if (
+        (todayIndex === 4 &&
+          numberEnd[0] <= 10 &&
           timeGapArray[index] + 480 < 0) ||
         (todayIndex === 4 &&
           numberEnd[0] === 11 &&
@@ -1053,6 +1068,23 @@ const Ham = () => {
         sum = sum + 480 + timeGapArray[index];
         // * 40시간(2400분)에 하루마다 + 1시간(60분, 점심시간)
         time = 2460 - sum;
+      }
+      // * 점심시간 전
+      else if (
+        (numberEnd[0] <= 10 &&
+          timeGapArray[index] + 480 >= 0 &&
+          timeGapArray[index - 2] === 0 &&
+          timeGapArray[index - 3] === 0) ||
+        (numberEnd[0] === 11 &&
+          numberEnd[1] <= 30 &&
+          timeGapArray[index] + 480 >= 0 &&
+          timeGapArray[index - 2] === 0 &&
+          timeGapArray[index - 3] === 0)
+      ) {
+        // * 실제 시간은 9시간(540분)이기 때문에 540을 더해준다.
+        sum = sum + 480 + timeGapArray[index];
+        // * 40시간(2400분)에 하루마다 + 1시간(60분, 점심시간)
+        time = 2400 - sum;
       } else if (
         (numberEnd[0] <= 10 && timeGapArray[index] + 480 >= 0) ||
         (numberEnd[0] === 11 &&
@@ -1117,7 +1149,6 @@ const Ham = () => {
     }
 
     if (time >= 0) {
-      console.log(time);
       setTime(
         <span role="img" aria-label="" className="fonts">
           ☕️ 총 근무시간이 <span className="blue">40시간</span> 중
@@ -1127,8 +1158,6 @@ const Ham = () => {
         </span>
       );
     } else {
-      console.log(time, "time2");
-
       setTime(
         <span role="img" className="fonts" aria-label="">
           🍀 근무시간이 남아있지 않아요 🍀
