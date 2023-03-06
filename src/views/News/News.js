@@ -5,6 +5,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
 import Footer from "../Components/Footer";
+import IntellectualProperty from "../News/Sections/IntellectualProperty";
 import IRInformation from "../News/Sections/IRInformation";
 import NewsRelease from "./Sections/NewsRelease";
 import "./News.css";
@@ -147,11 +148,12 @@ export default function News(props, { match }) {
   //   setOpen(false);
   // };
   // const classes = useStyles();
-  const scrollElem = Array.from(Array(2).keys());
+  const scrollElem = Array.from(Array(3).keys());
   const refs = useRef(scrollElem.map(() => React.createRef()));
-  const visibleArray = Array(2).fill(true);
+  const visibleArray = Array(3).fill(true);
   visibleArray[0] = useOnScreen(refs.current[0]);
   visibleArray[1] = useOnScreen(refs.current[1]);
+  visibleArray[2] = useOnScreen(refs.current[2]);
 
   // Scroll function
   // update: TabClick function -> NavLink 에서 오는 random 숫자
@@ -187,13 +189,16 @@ export default function News(props, { match }) {
 
       <div className="flex-col justify-between ">
         <div className={`pb-200 ${theme === "dark" && "bg-black"} `}>
-          <ContentsTitle title={"NEWS & IR"} />
+          <ContentsTitle title={"NEWS & IR & IP"} />
           {/* 배너 */}
           <div id="newsrelease" ref={refs.current[0]}>
             <NewsRelease matches={sTablet} />
           </div>
           <div id="irinformation" ref={refs.current[1]}>
             <IRInformation matches={sTablet} />
+          </div>
+          <div id="intellectualproperty" ref={refs.current[2]}>
+            <IntellectualProperty matches={sTablet} />
           </div>
         </div>
         <Totop />

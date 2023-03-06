@@ -1,7 +1,14 @@
 const imsi = process.env.PUBLIC_URL;
 // 메뉴 텍스트
 export const MENU = {
-  title: ["ABOUT US", "SERVICE", "RESEARCH", "CTS", "NEWS & IR", "CONTACT US"],
+  title: [
+    "ABOUT US",
+    "SERVICE",
+    "RESEARCH",
+    "CTS",
+    "NEWS & IR & IP",
+    "CONTACT US",
+  ],
   link: [
     `${imsi}/aboutus/`,
     `${imsi}/service/`,
@@ -18,32 +25,18 @@ export const MENU = {
     `/news/`,
     `/contactus/`,
   ],
-  hashId: [
-    "aboutus",
-    "service",
-    "research",
-    "cts",
-    "news",
-    "contactus"
-  ],
+  hashId: ["aboutus", "service", "research", "cts", "news", "contactus"],
   smallMenu: [
     {
       title: ["WHO WE ARE", "HERINGS TEAM", "PARTNERS & INVESTORS"],
-      link: [
-        `whoweare`,
-        `heringsteam`,
-        `researchpartners`,
-      ],
+      link: [`whoweare`, `heringsteam`, `researchpartners`],
     },
     {
       title: [
         "DIGITAL HEALTHCARE SERVICE PLATFORM",
         "TELE-HEALTHCARE SERVICE PLATFORM",
       ],
-      link: [
-        `digitalcareservice`,
-        `telehealthcareservice`,
-      ],
+      link: [`digitalcareservice`, `telehealthcareservice`],
     },
     {
       title: [
@@ -71,15 +64,11 @@ export const MENU = {
         "DATA MANAGEMENT",
         "STATISTICAL ANALYSIS",
       ],
-      link: [
-        `clinicaltrialdesign`,
-        `datamanagement`,
-        `statisticalanalysis`,
-      ],
+      link: [`clinicaltrialdesign`, `datamanagement`, `statisticalanalysis`],
     },
     {
-      title: ["NEWS RELEASE", "IR INFORMATION"],
-      link: [`newsrelease`, `irinformation`],
+      title: ["NEWS RELEASE", "IR INFORMATION", "INTELLECTUAL PROPERTY"],
+      link: [`newsrelease`, `irinformation`, "intellectualproperty"],
     },
     {
       title: ["CAREER", "CONTACT US"],
