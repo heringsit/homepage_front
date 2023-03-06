@@ -46,35 +46,30 @@ export default function Cts(props) {
   // update: TabClick function -> NavLink 에서 오는 random 숫자
   // hashId: TabClick function -> NavLink 에서 오는 hashId
   // Tab/Menubar 안에서 NavLink 눌을때 마다 random number가 만들어 집니다.
-  // useEffect hook + random number 통해 click 을 track 합니다  
+  // useEffect hook + random number 통해 click 을 track 합니다
   const executeScroll = () => {
     const element = document.getElementById(props.location.hashId);
-    const headOffset= mTablet ? 84 : 184;
-    const elementPosition=element?.getBoundingClientRect().top;
+    const headOffset = mTablet ? 84 : 184;
+    const elementPosition = element?.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.scrollY - headOffset;
-    
+
     window.scrollTo({
       top: offsetPosition,
       behavior: "smooth",
-    })    
+    });
   };
 
-  useEffect (() => {
-    executeScroll()  
-  }, [props.location.update])
+  useEffect(() => {
+    executeScroll();
+  }, [props.location.update]);
 
   // CommonCardTitle, CommonCardFrame component 들이 쓰입니다
   return (
-    <div
-      id="cts"
-      style={{ backgroundColor: theme === "dark" && "#282828" }}
-    >
+    <div id="cts" style={{ backgroundColor: theme === "dark" && "#282828" }}>
       <Menubar slideIndex={0} />
-      {!mTablet && (
-        <TabClick visibleArray={visibleArray} isScroll={isScroll} />
-      )}
+      {!mTablet && <TabClick visibleArray={visibleArray} isScroll={isScroll} />}
 
-      <div >
+      <div>
         <ContentsTitle matches={matches} title="CLINICAL TRIAL SERVICE" />
         <div className="flex-col justify-between ">
           <div className="pb-200 contentsmargin">
@@ -83,8 +78,15 @@ export default function Cts(props) {
                 <ClinicalTrialServiceTitle />
               </div>
               {/* Clinical Trial Service */}
-              <div className="pt-64" id="clinicaltrialdesign" ref={refs.current[0]} >
-                <CommonCardTitle title="CLINICAL TRIAL DESIGN" fontSize="textF28" />
+              <div
+                className="pt-64"
+                id="clinicaltrialdesign"
+                ref={refs.current[0]}
+              >
+                <CommonCardTitle
+                  title="CLINICAL TRIAL DESIGN"
+                  fontSize="textF28"
+                />
                 <CommonCardFrame
                   imageSrc={cts_image1}
                   imageAlt="clinical trial design"
@@ -97,7 +99,10 @@ export default function Cts(props) {
               {/* Data Management */}
               <div className="contents-top-padding"></div>
               <div className="pt-64" id="datamanagement" ref={refs.current[1]}>
-                <CommonCardTitle title={"DATA MANAGEMENT"} fontSize={"textF28 "} />
+                <CommonCardTitle
+                  title={"DATA MANAGEMENT"}
+                  fontSize={"textF28 "}
+                />
                 <CommonCardFrame
                   imageSrc={cts_image2}
                   imageAlt="data management"
@@ -109,8 +114,15 @@ export default function Cts(props) {
               </div>
               {/* Statistical Analysis */}
               <div className="contents-top-padding "></div>
-              <div className="pt-64 pb-600 " id="statisticalanalysis" ref={refs.current[2]}>
-                <CommonCardTitle title={"STATISTICAL ANALYSIS"} fontSize={"textF28 "} />
+              <div
+                className="pt-64 pb-600 "
+                id="statisticalanalysis"
+                ref={refs.current[2]}
+              >
+                <CommonCardTitle
+                  title={"STATISTICAL ANALYSIS"}
+                  fontSize={"textF28 "}
+                />
                 <CommonCardFrame
                   imageSrc={cts_image3}
                   imageAlt="statistical analysis"
@@ -125,7 +137,6 @@ export default function Cts(props) {
           <Totop />
           <Footer />
         </div>
-        
       </div>
     </div>
   );

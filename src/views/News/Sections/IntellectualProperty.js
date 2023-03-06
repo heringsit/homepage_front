@@ -322,7 +322,7 @@ export default function NewsRelease() {
                 <div className="careerModalTitle">
                   <div className="careerModalTitleSection">
                     <span className="FontNB textF26" style={{ marginLeft: 45 }}>
-                      IR
+                      IP
                     </span>
                   </div>
                   <IconClose
