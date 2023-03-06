@@ -212,7 +212,7 @@ export default function NewsRelease() {
     <div>
       {" "}
       {/*id="content" className="content">*/}
-      <div className="SectionDivNews">
+      <div className="SectionDivNewsIp">
         {/* <div className="SectionDivNT ">
           <div className="titleDiv">
               <span className="textT22 FontEB">IR Information</span>

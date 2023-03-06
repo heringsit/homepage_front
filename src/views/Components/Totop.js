@@ -1,4 +1,4 @@
-import React, { useState, useEffect,  } from "react";
+import React, { useState, useEffect } from "react";
 import topIcon from "../../assets/images/etc/top.png";
 import "./Totop.css";
 export default function Totop() {
@@ -15,7 +15,7 @@ export default function Totop() {
   return (
     <div
       className={`bottom-totop`}
-      style={{ display: scrolled ? "block" : "none"}}
+      style={{ display: scrolled ? "block" : "none" }}
       onClick={() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }}
