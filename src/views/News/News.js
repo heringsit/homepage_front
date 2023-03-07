@@ -189,7 +189,7 @@ export default function News(props, { match }) {
 
       <div className="flex-col justify-between ">
         <div className={`pb-200 ${theme === "dark" && "bg-black"} `}>
-          <ContentsTitle title={"NEWS & IR & IP"} />
+          <ContentsTitle title={"NEWS"} />
           {/* 배너 */}
           <div id="newsrelease" ref={refs.current[0]}>
             <NewsRelease matches={sTablet} />

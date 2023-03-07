@@ -1,14 +1,7 @@
 const imsi = process.env.PUBLIC_URL;
 // 메뉴 텍스트
 export const MENU = {
-  title: [
-    "ABOUT US",
-    "SERVICE",
-    "RESEARCH",
-    "CTS",
-    "NEWS & IR & IP",
-    "CONTACT US",
-  ],
+  title: ["ABOUT US", "SERVICE", "RESEARCH", "CTS", "NEWS", "CONTACT US"],
   link: [
     `${imsi}/aboutus/`,
     `${imsi}/service/`,
