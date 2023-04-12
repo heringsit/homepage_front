@@ -786,25 +786,39 @@ const Ham = () => {
   const getBtnUx = (gubun) => {
     let ux = [];
 
+    // exceptionHandlingData에서 현재 gubun에 해당하는 항목만 필터링해서 exResult 배열에 할당합니다.
+    const exResult = exceptionHandlingData.filter(
+      (item) => item.handlingException === changeGubunToCode(gubun)
+    );
+
+    // exResult에서 각 항목의 요일을 계산하여 exYoil 배열에 할당합니다.
+    const exYoil = exResult.map((item) => dayjs(item.workdate).day() - 1);
+
+    // exResult에서 각 항목의 처리 유형을 가져와서 exType 배열에 할당합니다.
+    const exType = exResult.map((item) => item.handlingException);
+
+    // 5일간의 근태 예외 처리 버튼을 생성합니다.
     for (let i = 0; i < 5; i++) {
       ux.push(
         <td className="rowTimeStamp">
           <button
             className="btn"
-            id={i}
-            // value={exType}
+            id={gubun + i} // 버튼의 id 속성에 gubun과 i를 합친 값을 할당합니다.
             value={gubun}
+            // 현재 요일보다 뒤의 요일에는 버튼을 비활성화합니다.
             disabled={i > dayjs().day() - 1}
             onClick={(ev) => {
+              // hanldeAttendanceException 함수에 gubun과 i를 인자로 전달합니다.
               hanldeAttendanceException(gubun, i);
             }}
-            // * 요일과 타입이 겹쳐서 같이 변하는거 같다.
           >
             {
-              // Number(gubunId) === ids &&
+              // exYoil에 i(현재 요일)이 포함되어 있고, exType이 gubun에 해당하는 처리 유형을 포함하면
+              // "취소" 버튼을 표시합니다.
               exYoil.includes(i) && exType.includes(changeGubunToCode(gubun))
                 ? gubun + "취소"
-                : gubun
+                : // 그렇지 않으면 gubun 버튼을 표시합니다.
+                  gubun
             }
           </button>
         </td>
@@ -812,65 +826,29 @@ const Ham = () => {
     }
     return ux;
   };
-  // useEffect(() => {
-  //   setGubunId(gubunId);
-  //   console.log(gubunId, "test~!");
-  // }, [gubunId]);
 
-  // const getBtnUx2 = (gubun, gubunid) => {
+  // const getBtnUx = (gubun) => {
   //   let ux = [];
 
   //   for (let i = 0; i < 5; i++) {
-  //     let ids = gubunid + i;
+  //     const isDisabled = i > dayjs().day() - 1;
+  //     const exYoilIndex = exYoil.indexOf(i);
+  //     const exTypeIndex = exType.indexOf(changeGubunToCode(gubun));
+  //     const isCanceled =
+  //       exYoilIndex !== -1 && exTypeIndex !== -1 && exYoilIndex === exTypeIndex;
+
   //     ux.push(
   //       <td className="rowTimeStamp">
   //         <button
   //           className="btn"
-  //           id={ids}
-  //           // value={exType}
+  //           id={i}
   //           value={gubun}
-  //           disabled={i > dayjs().day() - 1}
+  //           disabled={isDisabled}
   //           onClick={(ev) => {
-  //             setGubunId(ev.target.id);
   //             hanldeAttendanceException(gubun, i);
   //           }}
-  //           // * 요일과 타입이 겹쳐서 같이 변하는거 같다.
   //         >
-  //           {Number(gubunId) === ids &&
-  //           exYoil.includes(i) &&
-  //           exType.includes(changeGubunToCode(gubun))
-  //             ? gubun + "취소"
-  //             : gubun}
-  //         </button>
-  //       </td>
-  //     );
-  //   }
-  //   return ux;
-  // };
-  // const getBtnUx3 = (gubun, gubunid) => {
-  //   let ux = [];
-
-  //   for (let i = 0; i < 5; i++) {
-  //     let ids = gubunid + i;
-  //     ux.push(
-  //       <td className="rowTimeStamp">
-  //         <button
-  //           className="btn"
-  //           id={ids}
-  //           // value={exType}
-  //           value={gubun}
-  //           disabled={i > dayjs().day() - 1}
-  //           onClick={(ev) => {
-  //             setGubunId(ev.target.id);
-  //             hanldeAttendanceException(gubun, i);
-  //           }}
-  //           // * 요일과 타입이 겹쳐서 같이 변하는거 같다.
-  //         >
-  //           {Number(gubunId) === ids &&
-  //           exYoil.includes(i) &&
-  //           exType.includes(changeGubunToCode(gubun))
-  //             ? gubun + "취소"
-  //             : gubun}
+  //           {isCanceled ? `${gubun} 취소` : gubun}
   //         </button>
   //       </td>
   //     );
@@ -924,8 +902,6 @@ const Ham = () => {
 
       // console.log(getResult.data.exceptionList, "Data");
       // console.log(exYoil, exType, "exYoil exType");
-
-      // resettingRef.current = true;
 
       setExYoil(exYoil);
       setExType(exType);
