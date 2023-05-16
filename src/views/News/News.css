@@ -94,6 +94,24 @@
   width: 19%;
 }
 
+.BoardTypeBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: right;
+  gap: 20px;
+  /* justify-content: space-between; */
+}
+.boardButton:hover {
+  background-color: lightgray; /* 마우스를 올렸을 때 배경 색상입니다 */
+  border-color: lightgray;
+}
+
+.boardButton:active {
+  background-color: darkgray; /* 클릭했을 때 배경 색상입니다 */
+  border-color: darkgray;
+}
+
 .newsContainListHeader {
   display: flex;
   flex-direction: row;

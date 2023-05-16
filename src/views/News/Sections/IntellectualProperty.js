@@ -93,6 +93,7 @@ export default function NewsRelease() {
   };
   // const [, setCountList] = useState([]);
   const [listData, setListData] = useState([]);
+  const [boardType, setBoardType] = useState("PATENT");
 
   const getdata = (tab) => {
     // let today = new Date();
@@ -112,6 +113,11 @@ export default function NewsRelease() {
         },
       })
       .then((response) => {
+        // const boardDataType = response.data.board_data.filter(
+        //   (arr, index) =>
+        //     response.data.board_data[index].type === "PATENT" && arr
+        // );
+        // console.log(boardDataType, "boardDataType");
         setListData(response.data.board_data);
         setIsDataReady(true);
         setPaginginfo(response.data.paginginfo);
@@ -220,11 +226,30 @@ export default function NewsRelease() {
           </div>
         </div> */}
         <CommonCardTitle
-          title={"Intellectual Property"}
+          title={`Intellectual Property (${boardType})`}
           fontStyle={"FontEB"}
           fontSize={"textF22"}
         />
-
+        <div className="BoardTypeBtn">
+          <button
+            className="boardButton"
+            onClick={() => setBoardType("PATENT")}
+          >
+            PATENT
+          </button>
+          <button
+            className="boardButton"
+            onClick={() => setBoardType("COPYRIGHT")}
+          >
+            COPYRIGHT
+          </button>
+          <button
+            className="boardButton"
+            onClick={() => setBoardType("PUBLICATION")}
+          >
+            PUBLICATION
+          </button>
+        </div>
         <div className="newsContainList">
           <div
             className={`newsContainListHeader FontNL ${
@@ -241,50 +266,61 @@ export default function NewsRelease() {
               등록일
             </div>
           </div>
+
           <div className="nodatasWrap">
-            {listData.map((data, index) => {
-              return (
-                <div key={index} className="careerListRow FontNR">
-                  <div className="newsContainListCol ncol1 newsListTitle">
-                    <div
-                      onClick={(e) => {
-                        handleOpen(data, checkDate(data.regiDate, "E"));
-                      }}
-                    >
-                      <div className={`textF20 ${fontColor} FontNB`}>
-                        {data.title}
+            {listData
+              .filter((list) =>
+                boardType === "PATENT"
+                  ? list.type === "PATENT"
+                  : boardType === "COPYRIGHT"
+                  ? list.type === "COPYRIGHT"
+                  : boardType === "PUBLICATION"
+                  ? list.type === "PUBLICATION"
+                  : listData
+              )
+              .map((data, index) => {
+                return (
+                  <div key={index} className="careerListRow FontNR">
+                    <div className="newsContainListCol ncol1 newsListTitle">
+                      <div
+                        onClick={(e) => {
+                          handleOpen(data, checkDate(data.regiDate, "E"));
+                        }}
+                      >
+                        <div className={`textF20 ${fontColor} FontNB`}>
+                          {data.title}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div
-                    className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}
-                  >
                     <div
-                      style={{
-                        border: "solid 1px",
-                        width: 204,
-                        height: 34,
-                        paddingTop: 4,
-                      }}
-                      onClick={() => onDownLoad(data.img)}
+                      className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}
                     >
-                      다운로드{" "}
-                      <img
-                        alt="img"
-                        src={downLoad}
-                        className={theme === "dark" ? "invert" : ""}
-                        style={{ width: 15, height: 15, marginLeft: 8 }}
-                      />
+                      <div
+                        style={{
+                          border: "solid 1px",
+                          width: 204,
+                          height: 34,
+                          paddingTop: 4,
+                        }}
+                        onClick={() => onDownLoad(data.img)}
+                      >
+                        다운로드{" "}
+                        <img
+                          alt="img"
+                          src={downLoad}
+                          className={theme === "dark" ? "invert" : ""}
+                          style={{ width: 15, height: 15, marginLeft: 8 }}
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}
+                    >
+                      {moment(data.reg_datetime).format("YYYY-MM-DD")}
                     </div>
                   </div>
-                  <div
-                    className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}
-                  >
-                    {moment(data.reg_datetime).format("YYYY-MM-DD")}
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
 
             {/* <div className="nodatasWrap">
               <div className="nodatas FontB">등록된 게시물이 없습니다!</div>

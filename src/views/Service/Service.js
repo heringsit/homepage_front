@@ -5,7 +5,7 @@ import "./Service.css";
 import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
 import Footer from "../Components/Footer";
-/* Pictures */ 
+/* Pictures */
 import healiary_application from "../../assets/images/07service/healiary_application.svg";
 import ostomy_application from "../../assets/images/07service/ostomy_application.svg";
 import { MediaQueryContext, ThemeContext } from "../../context";
@@ -42,24 +42,24 @@ export default function Service(props) {
 
   // Scroll function
   // update: TabClick function -> NavLink 에서 오는 random 숫자
-  // hashId: TabClick function -> NavLink 에서 오는 hashId 
+  // hashId: TabClick function -> NavLink 에서 오는 hashId
   // Tab/Menubar 안에서 NavLink 눌을때 마다 random number가 만들어 집니다.
-  // useEffect hook + random number 통해 click 을 track 합니다 
+  // useEffect hook + random number 통해 click 을 track 합니다
   const executeScroll = () => {
     const element = document.getElementById(props.location.hashId);
-    const headOffset= mTablet ? 124 : 224;
-    const elementPosition=element?.getBoundingClientRect().top;
+    const headOffset = mTablet ? 124 : 224;
+    const elementPosition = element?.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.scrollY - headOffset;
-    
+
     window.scrollTo({
       top: offsetPosition,
       behavior: "smooth",
-    })    
+    });
   };
 
-  useEffect (() => {
-    executeScroll()  
-  }, [props.location.update])
+  useEffect(() => {
+    executeScroll();
+  }, [props.location.update]);
 
   // CommonCardTitle, CommonCardFrame component 들이 쓰입니다
   return (
@@ -128,6 +128,7 @@ export default function Service(props) {
                   />
                 </div>
                 <CommonCardFrame
+                  // 아래 이미지 주소 다음과 같음 저기서 이미지파일 교체해주면 됨 /assets/images/07service/healiary_application.svg
                   imageSrc={healiary_application}
                   imageAlt="healiary application"
                   subText1="Application"
