@@ -98,10 +98,23 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  text-align: right;
+  text-align: left;
   gap: 20px;
   /* justify-content: space-between; */
 }
+
+.boardButton {
+  font-family: "Roboto700", sans-serif;
+  color: black;
+  /* color: white; */
+  height: 50px;
+}
+.boardButton-Dark {
+  font-family: "Roboto700", sans-serif;
+  color: white;
+  height: 50px;
+}
+
 .boardButton:hover {
   background-color: lightgray; /* 마우스를 올렸을 때 배경 색상입니다 */
   border-color: lightgray;

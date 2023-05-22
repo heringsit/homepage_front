@@ -226,25 +226,26 @@ export default function NewsRelease() {
           </div>
         </div> */}
         <CommonCardTitle
-          title={`Intellectual Property (${boardType})`}
+          // title={`Intellectual Property (${boardType})`}
+          title={"Intellectual Property"}
           fontStyle={"FontEB"}
           fontSize={"textF22"}
         />
         <div className="BoardTypeBtn">
           <button
-            className="boardButton"
+            className={theme === "dark" ? "boardButton-Dark" : "boardButton"}
             onClick={() => setBoardType("PATENT")}
           >
             PATENT
           </button>
           <button
-            className="boardButton"
+            className={theme === "dark" ? "boardButton-Dark" : "boardButton"}
             onClick={() => setBoardType("COPYRIGHT")}
           >
             COPYRIGHT
           </button>
           <button
-            className="boardButton"
+            className={theme === "dark" ? "boardButton-Dark" : "boardButton"}
             onClick={() => setBoardType("PUBLICATION")}
           >
             PUBLICATION
