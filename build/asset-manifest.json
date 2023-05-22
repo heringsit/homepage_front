@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.11b3d48c.chunk.css",
-    "main.js": "/static/js/main.a789b917.chunk.js",
-    "main.js.map": "/static/js/main.a789b917.chunk.js.map",
+    "main.css": "/static/css/main.96979705.chunk.css",
+    "main.js": "/static/js/main.3cadc016.chunk.js",
+    "main.js.map": "/static/js/main.3cadc016.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ca75be69.js",
     "runtime-main.js.map": "/static/js/runtime-main.ca75be69.js.map",
     "static/js/2.f915367e.chunk.js": "/static/js/2.f915367e.chunk.js",
     "static/js/2.f915367e.chunk.js.map": "/static/js/2.f915367e.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.3f4a2c18ff978863c9c070c3a12ee529.js": "/precache-manifest.3f4a2c18ff978863c9c070c3a12ee529.js",
+    "precache-manifest.2d760135a137965e5a1827449c42d288.js": "/precache-manifest.2d760135a137965e5a1827449c42d288.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.11b3d48c.chunk.css.map": "/static/css/main.11b3d48c.chunk.css.map",
+    "static/css/main.96979705.chunk.css.map": "/static/css/main.96979705.chunk.css.map",
     "static/js/2.f915367e.chunk.js.LICENSE.txt": "/static/js/2.f915367e.chunk.js.LICENSE.txt",
     "static/media/01alpen_n.svg": "/static/media/01alpen_n.ed9cff42.svg",
     "static/media/01suh.png": "/static/media/01suh.1f5473cc.png",
@@ -57,7 +57,7 @@
     "static/media/cts_image1.png": "/static/media/cts_image1.32beeb96.png",
     "static/media/cts_image2.png": "/static/media/cts_image2.b84f3776.png",
     "static/media/cts_image3.png": "/static/media/cts_image3.58d38113.png",
-    "static/media/drug_adverse_events.png": "/static/media/drug_adverse_events.edfae11b.png",
+    "static/media/drug_adverse_events.png": "/static/media/drug_adverse_events.7268c3d8.png",
     "static/media/facebook.svg": "/static/media/facebook.d7a8b7e8.svg",
     "static/media/healiary_application.svg": "/static/media/healiary_application.2d44ef67.svg",
     "static/media/heringsLOGO.8e7d5ba1.svg": "/static/media/heringsLOGO.8e7d5ba1.svg",
@@ -82,7 +82,7 @@
   "entrypoints": [
     "static/js/runtime-main.ca75be69.js",
     "static/js/2.f915367e.chunk.js",
-    "static/css/main.11b3d48c.chunk.css",
-    "static/js/main.a789b917.chunk.js"
+    "static/css/main.96979705.chunk.css",
+    "static/js/main.3cadc016.chunk.js"
   ]
 }

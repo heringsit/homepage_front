@@ -58,24 +58,24 @@ export default function Research(props) {
 
   // Scroll function
   // update: TabClick function -> NavLink 에서 오는 random 숫자
-  // hashId: TabClick function -> NavLink 에서 오는 hashId 
+  // hashId: TabClick function -> NavLink 에서 오는 hashId
   // Tab/Menubar 안에서 NavLink 눌을때 마다 random number가 만들어 집니다.
-  // useEffect hook + random number 통해 click 을 track 합니다 
+  // useEffect hook + random number 통해 click 을 track 합니다
   const executeScroll = () => {
     const element = document.getElementById(props.location.hashId);
-    const headOffset= mTablet ? 84 : 184;
-    const elementPosition=element?.getBoundingClientRect().top;
+    const headOffset = mTablet ? 84 : 184;
+    const elementPosition = element?.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.scrollY - headOffset;
-    
+
     window.scrollTo({
       top: offsetPosition,
       behavior: "smooth",
-    })    
+    });
   };
 
-  useEffect (() => {
-    executeScroll()  
-  }, [props.location.update])
+  useEffect(() => {
+    executeScroll();
+  }, [props.location.update]);
 
   // CommonCardTitle, CommonCardFrame component 들이 쓰입니다
   return (
@@ -222,6 +222,7 @@ export default function Research(props) {
               <CommonCardFrame
                 imageSrc={drugadverseevents}
                 imageAlt="SODA"
+                imageFit="image-fit-w50"
                 content1="Platform that can be immediately reported as a national
                 drug adverse event reporting system when drug adverse
                 events occur. This work was supported by the Bio Industry
@@ -234,7 +235,7 @@ export default function Research(props) {
                 // subText2Style="textF24 FontEB mb-8"
                 contentPadding="drugadverse-padding"
                 mainTextStyle="text-align-start textF18 FontL lineheight160"
-                headerStyle={theme==="dark" ? "tcw" : "tcb"}
+                headerStyle={theme === "dark" ? "tcw" : "tcb"}
               />
             </div>
           </div>
