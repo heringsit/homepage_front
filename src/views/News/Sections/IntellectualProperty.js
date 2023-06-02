@@ -119,7 +119,6 @@ export default function NewsRelease() {
         //     response.data.board_data[index].type === "PATENT" && arr
         // );
         // console.log(boardDataType, "boardDataType");
-        console.log(response, "response");
         setListData(response.data.board_data);
         setIsDataReady(true);
         setPaginginfo(response.data.paginginfo);
@@ -148,7 +147,6 @@ export default function NewsRelease() {
   };
   const page = (e, page, boardType) => {
     e.preventDefault();
-    console.log("여기 오냐");
 
     axios
       .get(`${imsi}/api/boardList`, {
@@ -159,8 +157,6 @@ export default function NewsRelease() {
         },
       })
       .then((response) => {
-        console.log(response, "response");
-
         setPaginginfo(response.data.paginginfo);
         setIsDataReady(true);
         setListData(response.data.board_data);
