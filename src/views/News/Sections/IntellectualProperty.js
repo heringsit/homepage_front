@@ -11,7 +11,7 @@ import { ReactComponent as IconClose } from "../../../assets/images/05career/clo
 import { saveAs } from "file-saver";
 import { imsi } from "../../..";
 import search from "../../../assets/images/etc/search.png";
-import downLoad from "../../../assets/images/etc/download.png";
+// import downLoad from "../../../assets/images/etc/download.png";
 import CommonCardTitle from "../../common/CommonCardTitle";
 import { ThemeContext } from "../../../context";
 
@@ -94,7 +94,7 @@ export default function NewsRelease() {
   // const [, setCountList] = useState([]);
   const [listData, setListData] = useState([]);
   const [boardType, setBoardType] = useState("PATENT");
-
+  // let boardType = "PATENT";
   const getdata = (tab) => {
     // let today = new Date();
     // let selectedTab = tab !== undefined ? tab : careerTab;
@@ -110,6 +110,7 @@ export default function NewsRelease() {
         params: {
           type: "IP",
           page: 1,
+          typeDetail: "PATENT",
         },
       })
       .then((response) => {
@@ -118,6 +119,7 @@ export default function NewsRelease() {
         //     response.data.board_data[index].type === "PATENT" && arr
         // );
         // console.log(boardDataType, "boardDataType");
+        console.log(response, "response");
         setListData(response.data.board_data);
         setIsDataReady(true);
         setPaginginfo(response.data.paginginfo);
@@ -126,6 +128,7 @@ export default function NewsRelease() {
         console.log(error);
       });
   };
+  // const filteredData = listData.filter((list) => list.type === boardType); // 한번 필터 후 페이지네이션 적용 하려함
 
   const handleOpen = (obj, isEnd) => {
     if (JSON.stringify({}) !== obj) {
@@ -143,17 +146,21 @@ export default function NewsRelease() {
     const blob = await downloadResult.blob();
     saveAs(blob, "file");
   };
-  const page = (e, page) => {
+  const page = (e, page, boardType) => {
     e.preventDefault();
+    console.log("여기 오냐");
 
     axios
       .get(`${imsi}/api/boardList`, {
         params: {
           type: "IP",
           page: parseInt(page),
+          typeDetail: boardType,
         },
       })
       .then((response) => {
+        console.log(response, "response");
+
         setPaginginfo(response.data.paginginfo);
         setIsDataReady(true);
         setListData(response.data.board_data);
@@ -211,7 +218,9 @@ export default function NewsRelease() {
       </ul>
     );
   };
+
   useEffect(getdata, []);
+
   const { theme } = useContext(ThemeContext);
   const fontColor = theme === "dark" ? "tcw" : "tcb";
   return (
@@ -234,19 +243,31 @@ export default function NewsRelease() {
         <div className="BoardTypeBtn">
           <button
             className={theme === "dark" ? "boardButton-Dark" : "boardButton"}
-            onClick={() => setBoardType("PATENT")}
+            onClick={(e) => {
+              setBoardType("PATENT");
+              // boardType = "PATENT";
+              page(e, "1", "PATENT");
+            }}
           >
             PATENT
           </button>
           <button
             className={theme === "dark" ? "boardButton-Dark" : "boardButton"}
-            onClick={() => setBoardType("COPYRIGHT")}
+            onClick={(e) => {
+              setBoardType("COPYRIGHT");
+              // boardType = "PATENT";
+              page(e, "1", "COPYRIGHT");
+            }}
           >
             COPYRIGHT
           </button>
           <button
             className={theme === "dark" ? "boardButton-Dark" : "boardButton"}
-            onClick={() => setBoardType("PUBLICATION")}
+            onClick={(e) => {
+              setBoardType("PUBLICATION");
+              // boardType = "PUBLICATION";
+              page(e, "1", "PUBLICATION");
+            }}
           >
             PUBLICATION
           </button>
@@ -257,75 +278,260 @@ export default function NewsRelease() {
               theme === "dark" ? "border-w" : "border-b"
             }`}
           >
-            <div className="newsContainListHeaderCol ncol1 textF16 korFonts">
-              제목
-            </div>
-            <div className="newsContainListHeaderCol ncol3 textF16 korFonts">
-              첨부파일
-            </div>
-            <div className="newsContainListHeaderCol ncol2 textF16 korFonts">
-              등록일
-            </div>
+            {boardType === "PATENT" ? (
+              <>
+                <div className="newsContainListHeaderCol ncol3 textF16 korFonts">
+                  구분
+                </div>
+                <div className="newsContainListHeaderCol ncol1 textF16 korFonts">
+                  명칭
+                </div>
+                <div className="newsContainListHeaderCol ncol2 textF16 korFonts">
+                  출원인
+                </div>
+                <div className="newsContainListHeaderCol ncol2 textF16 korFonts">
+                  출원번호
+                </div>
+                <div className="newsContainListHeaderCol ncol2 textF16 korFonts">
+                  출원일
+                </div>
+                <div className="newsContainListHeaderCol ncol2 textF16 korFonts">
+                  등록번호
+                </div>
+                <div className="newsContainListHeaderCol ncol2 textF16 korFonts">
+                  등록일
+                </div>
+              </>
+            ) : boardType === "COPYRIGHT" ? (
+              <>
+                <div className="newsContainListHeaderCol ncol3 textF16 korFonts">
+                  구분
+                </div>
+                <div className="newsContainListHeaderCol ncol1 textF16 korFonts">
+                  명칭
+                </div>
+                <div className="newsContainListHeaderCol ncol4 textF16 korFonts">
+                  등록일
+                </div>
+                <div className="newsContainListHeaderCol ncol2 textF16 korFonts">
+                  등록번호
+                </div>
+              </>
+            ) : boardType === "PUBLICATION" ? (
+              <>
+                <div className="newsContainListHeaderCol ncol3 textF16 korFonts">
+                  구분
+                </div>
+                <div className="newsContainListHeaderCol ncol1 textF16 korFonts">
+                  제목
+                </div>
+                <div className="newsContainListHeaderCol ncol2 textF16 korFonts">
+                  저널
+                </div>
+                <div className="newsContainListHeaderCol ncol2 textF16 korFonts">
+                  발간호수
+                </div>
+              </>
+            ) : null}
           </div>
 
           <div className="nodatasWrap">
             {listData
-              .filter((list) =>
-                boardType === "PATENT"
-                  ? list.type === "PATENT"
-                  : boardType === "COPYRIGHT"
-                  ? list.type === "COPYRIGHT"
-                  : boardType === "PUBLICATION"
-                  ? list.type === "PUBLICATION"
-                  : listData
-              )
+              // .filter((list) =>
+              //   boardType === "PATENT"
+              //     ? list.type === "PATENT"
+              //     : boardType === "COPYRIGHT"
+              //     ? list.type === "COPYRIGHT"
+              //     : boardType === "PUBLICATION"
+              //     ? list.type === "PUBLICATION"
+              //     : listData
+              // )
+
               .map((data, index) => {
+                // text.slice(text.indexOf("구분") + 4, text.indexOf("</p>"));
                 return (
                   <div key={index} className="careerListRow FontNR">
-                    <div className="newsContainListCol ncol1 newsListTitle">
-                      <div
-                        onClick={(e) => {
-                          handleOpen(data, checkDate(data.regiDate, "E"));
-                        }}
-                      >
-                        <div className={`textF20 ${fontColor} FontNB`}>
-                          {data.title}
+                    {boardType === "PATENT" ? (
+                      <>
+                        <div className="newsContainListCol ncol5 newsListTitle">
+                          <div className={`${fontColor} FontNB ncol2 textF16`}>
+                            {data.content.slice(
+                              data.content.indexOf("구분") + 4,
+                              data.content.indexOf("</p>")
+                            )}
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                    <div
-                      className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}
-                    >
-                      <div
-                        style={{
-                          border: "solid 1px",
-                          width: 204,
-                          height: 34,
-                          paddingTop: 4,
-                        }}
-                        onClick={() => onDownLoad(data.img)}
-                      >
-                        다운로드{" "}
-                        <img
-                          alt="img"
-                          src={downLoad}
-                          className={theme === "dark" ? "invert" : ""}
-                          style={{ width: 15, height: 15, marginLeft: 8 }}
-                        />
-                      </div>
-                    </div>
-                    <div
-                      className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}
-                    >
-                      {moment(data.reg_datetime).format("YYYY-MM-DD")}
-                    </div>
+                        <div className="newsContainListCol ncol1 newsListTitle">
+                          <div
+                            onClick={(e) => {
+                              handleOpen(data, checkDate(data.regiDate, "E"));
+                            }}
+                          >
+                            <div className={`textF20 ${fontColor} FontNB`}>
+                              {data.title}
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}
+                        >
+                          {/* var index = filteredData[0].indexOf("출원인");
+                            var nextPTagIndex = filteredData[0].indexOf("</p>", index + 1); */}
+
+                          {data.content.slice(
+                            data.content.indexOf("출원인") + 5,
+                            data.content.indexOf(
+                              "</p>",
+                              data.content.indexOf("출원인") + 1
+                            )
+                          )}
+                        </div>
+                        <div
+                          className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}
+                        >
+                          {data.content.slice(
+                            data.content.indexOf("출원번호") + 6,
+                            data.content.indexOf(
+                              "</p>",
+                              data.content.indexOf("출원번호") + 1
+                            )
+                          )}
+                        </div>
+                        <div
+                          className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}
+                        >
+                          {data.content.slice(
+                            data.content.indexOf("출원일") + 5,
+                            data.content.indexOf(
+                              "</p>",
+                              data.content.indexOf("출원일") + 1
+                            )
+                          )}
+                        </div>
+                        <div
+                          className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}
+                        >
+                          {data.content.slice(
+                            data.content.indexOf("등록번호") + 6,
+                            data.content.indexOf(
+                              "</p>",
+                              data.content.indexOf("등록번호") + 1
+                            )
+                          )}
+                        </div>
+
+                        <div
+                          className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}
+                        >
+                          {/* {moment(data.reg_datetime).format("YYYY-MM-DD")} */}
+                          {data.content.slice(
+                            data.content.indexOf("등록일") + 5,
+                            data.content.indexOf(
+                              "</p>",
+                              data.content.indexOf("등록일") + 1
+                            )
+                          )}
+                        </div>
+                      </>
+                    ) : boardType === "COPYRIGHT" ? (
+                      <>
+                        <div className="newsContainListCol ncol5 newsListTitle">
+                          <div className={`${fontColor} FontNB ncol5 textF16`}>
+                            {data.content.slice(
+                              data.content.indexOf("구분") + 4,
+                              data.content.indexOf("</p>")
+                            )}
+                          </div>
+                        </div>
+                        <div className="newsContainListCol ncol1 newsListTitle">
+                          <div
+                            onClick={(e) => {
+                              handleOpen(data, checkDate(data.regiDate, "E"));
+                            }}
+                          >
+                            <div className={`textF20 ${fontColor} FontNB`}>
+                              {data.title}
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}
+                        >
+                          {data.content.slice(
+                            data.content.indexOf("등록일") + 5,
+                            data.content.indexOf(
+                              "</p>",
+                              data.content.indexOf("등록일") + 1
+                            )
+                          )}
+                        </div>
+
+                        <div
+                          className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}
+                        >
+                          {/* {moment(data.reg_datetime).format("YYYY-MM-DD")} */}
+                          {data.content.slice(
+                            data.content.indexOf("등록번호") + 6,
+                            data.content.indexOf(
+                              "</p>",
+                              data.content.indexOf("등록번호") + 1
+                            )
+                          )}
+                        </div>
+                      </>
+                    ) : boardType === "PUBLICATION" ? (
+                      <>
+                        <div className="newsContainListCol ncol5 newsListTitle">
+                          <div className={`${fontColor} FontNB ncol2 textF16`}>
+                            {data.content.slice(
+                              data.content.indexOf("구분") + 4,
+                              data.content.indexOf("</p>")
+                            )}
+                          </div>
+                        </div>
+                        <div className="newsContainListCol ncol1 newsListTitle">
+                          <div
+                            onClick={(e) => {
+                              handleOpen(data, checkDate(data.regiDate, "E"));
+                            }}
+                          >
+                            <div className={`textF20 ${fontColor} FontNB`}>
+                              {data.title}
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}
+                        >
+                          {data.content.slice(
+                            data.content.indexOf("저널") + 5,
+                            data.content.indexOf(
+                              "</p>",
+                              data.content.indexOf("저널") + 1
+                            )
+                          )}
+                        </div>
+
+                        <div
+                          className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}
+                        >
+                          {data.content.slice(
+                            data.content.indexOf("발간호수") + 6,
+                            data.content.indexOf(
+                              "</p>",
+                              data.content.indexOf("발간호수") + 1
+                            )
+                          )}
+                        </div>
+                      </>
+                    ) : null}
                   </div>
                 );
               })}
-
             {/* <div className="nodatasWrap">
               <div className="nodatas FontB">등록된 게시물이 없습니다!</div>
             </div> */}
+
             {paginginfo.totalPage > 1 ? (
               <div
                 className="pagingDiv"
@@ -334,6 +540,15 @@ export default function NewsRelease() {
                 {pageingFn(paginginfo)}
               </div>
             ) : (
+              // listData && filteredData.length > 1 ? (
+              //   <div
+              //     className="pagingDiv"
+              //     // onClick={(e) => loadMore(e)}
+              //   >
+              //     {pageingFn(filteredData)}
+              //   </div>
+              // )
+
               <div></div>
             )}
           </div>

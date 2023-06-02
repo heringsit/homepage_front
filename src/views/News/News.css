@@ -65,7 +65,7 @@
 }
 
 .ncol1 {
-  width: 197%;
+  width: 150%;
 }
 .ncol2 {
   width: 43%;
@@ -75,6 +75,9 @@
 }
 .ncol4 {
   width: 40%;
+}
+.ncol5 {
+  width: 56%;
 }
 
 .ccol1 {

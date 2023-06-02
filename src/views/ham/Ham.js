@@ -786,18 +786,18 @@ const Ham = () => {
   const getBtnUx = (gubun) => {
     let ux = [];
 
-    // exceptionHandlingData에서 현재 gubun에 해당하는 항목만 필터링해서 exResult 배열에 할당합니다.
+    // * exceptionHandlingData에서 현재 gubun에 해당하는 항목만 필터링해서 exResult 배열에 할당합니다.
     const exResult = exceptionHandlingData.filter(
       (item) => item.handlingException === changeGubunToCode(gubun)
     );
 
-    // exResult에서 각 항목의 요일을 계산하여 exYoil 배열에 할당합니다.
+    //  * exResult에서 각 항목의 요일을 계산하여 exYoil 배열에 할당합니다.
     const exYoil = exResult.map((item) => dayjs(item.workdate).day() - 1);
 
-    // exResult에서 각 항목의 처리 유형을 가져와서 exType 배열에 할당합니다.
+    // * exResult에서 각 항목의 처리 유형을 가져와서 exType 배열에 할당합니다.
     const exType = exResult.map((item) => item.handlingException);
 
-    // 5일간의 근태 예외 처리 버튼을 생성합니다.
+    // * 5일간의 근태 예외 처리 버튼을 생성합니다.
     for (let i = 0; i < 5; i++) {
       ux.push(
         <td className="rowTimeStamp">
