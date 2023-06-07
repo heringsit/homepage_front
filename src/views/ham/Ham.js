@@ -559,6 +559,8 @@ const Ham = () => {
         today: -1,
         yoil: dayjs().day(),
       };
+      // if (!todayInfo.sabun) return;
+
       // * 한주간 출퇴근 기록을 가져온다.
       const getWeekHistory = async () => {
         setTimeGapArray([]); // 초기화
@@ -566,17 +568,22 @@ const Ham = () => {
           BACK_END_URL + "/main/workhistory",
           todayInfo
         );
-
         // * 스케줄 타입 따라서 실행부분(스케줄타입이 휴일에도 0으로 넘어와서 wstime 시간 여부로 조건 사용함)
-        result.data.weekHistory.forEach(function (weekHistory) {
-          // console.log(weekHistory.wstime, "wstime");
-          if (weekHistory.wstime === null) {
-            weekHistory.scheduleType = 1;
-            setSchedule(weekHistory.scheduleType);
-          } else {
-            weekHistory.scheduleType = 0;
-          }
-        });
+        if (result.data.weekHistory === undefined) {
+          alert("사번이 존재하지 않습니다.");
+          window.localStorage.removeItem("sabun", sabun);
+          return setIsShowAttendanceBoard(false);
+        } else {
+          result.data.weekHistory.forEach(function (weekHistory) {
+            // console.log(weekHistory.wstime, "wstime");
+            if (weekHistory.wstime === null) {
+              weekHistory.scheduleType = 1;
+              setSchedule(weekHistory.scheduleType);
+            } else {
+              weekHistory.scheduleType = 0;
+            }
+          });
+        }
 
         // console.log("result >> ", result.data);
         setUserName({
@@ -1080,19 +1087,19 @@ const Ham = () => {
       //    time = 2340 + index * 60 - sum;
       //  }
       // * 휴일이 포함된 주에는 근무시간 계산이 더 추가 되므로 마지막에 수정해준다.
-      time =
-        (timeGapArray[index - 1] === 0 &&
-          timeGapArray[index - 2] === 0 &&
-          timeGapArray[index - 3] === 0) ||
-        (timeGapArray[index - 2] === 0 &&
-          timeGapArray[index - 3] === 0 &&
-          timeGapArray[index - 4] === 0)
-          ? time
-          : (timeGapArray[index - 1] === 0 && timeGapArray[index - 2] === 0) ||
-            (timeGapArray[index - 2] === 0 && timeGapArray[index - 3] === 0) ||
-            (timeGapArray[index - 3] === 0 && timeGapArray[index - 4] === 0)
-          ? (time += 60)
-          : time;
+      // time =
+      //   (timeGapArray[index - 1] === 0 &&
+      //     timeGapArray[index - 2] === 0 &&
+      //     timeGapArray[index - 3] === 0) ||
+      //   (timeGapArray[index - 2] === 0 &&
+      //     timeGapArray[index - 3] === 0 &&
+      //     timeGapArray[index - 4] === 0)
+      //     ? time
+      //     : (timeGapArray[index - 1] === 0 && timeGapArray[index - 2] === 0) ||
+      //       (timeGapArray[index - 2] === 0 && timeGapArray[index - 3] === 0) ||
+      //       (timeGapArray[index - 3] === 0 && timeGapArray[index - 4] === 0)
+      //     ? time
+      //     : time;
     }
 
     if (time >= 0) {
@@ -1272,7 +1279,7 @@ const Ham = () => {
           <button
             className="btn2"
             onClick={() => {
-              const onlySabun = /^HG[0-0]{2}\d{2}$/i;
+              const onlySabun = /^HG[0-1]{2}\d{2}$/i;
 
               if (onlySabun.test(sabun) === true) {
                 window.localStorage.setItem("sabun", sabun);
