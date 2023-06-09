@@ -350,14 +350,16 @@ export default function NewsRelease() {
                     {boardType === "PATENT" ? (
                       <>
                         <div className="newsContainListCol ncol5 newsListTitle">
-                          <div className={`${fontColor} FontNB ncol2 textF16`}>
+                          <div
+                            className={`${fontColor} FontNB textCenter ncol2 textF16`}
+                          >
                             {data.content.slice(
                               data.content.indexOf("구분") + 4,
                               data.content.indexOf("</p>")
                             )}
                           </div>
                         </div>
-                        <div className="newsContainListCol ncol1 newsListTitle">
+                        <div className="newsContainListCol  ncol1 newsListTitle">
                           <div
                             onClick={(e) => {
                               handleOpen(data, checkDate(data.regiDate, "E"));
@@ -369,7 +371,7 @@ export default function NewsRelease() {
                           </div>
                         </div>
                         <div
-                          className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}
+                          className={`newsContainListCol ${fontColor} FontNB  ncol2 textF16`}
                         >
                           {/* var index = filteredData[0].indexOf("출원인");
                             var nextPTagIndex = filteredData[0].indexOf("</p>", index + 1); */}
@@ -431,8 +433,10 @@ export default function NewsRelease() {
                       </>
                     ) : boardType === "COPYRIGHT" ? (
                       <>
-                        <div className="newsContainListCol ncol5 newsListTitle">
-                          <div className={`${fontColor} FontNB ncol5 textF16`}>
+                        <div className="newsContainListCol ncol6 newsListTitle">
+                          <div
+                            className={`${fontColor} FontNB textCenter textF16`}
+                          >
                             {data.content.slice(
                               data.content.indexOf("구분") + 4,
                               data.content.indexOf("</p>")
@@ -477,8 +481,10 @@ export default function NewsRelease() {
                       </>
                     ) : boardType === "PUBLICATION" ? (
                       <>
-                        <div className="newsContainListCol ncol5 newsListTitle">
-                          <div className={`${fontColor} FontNB ncol2 textF16`}>
+                        <div className="newsContainListCol ncol6 newsListTitle">
+                          <div
+                            className={`${fontColor} FontNB textCenter ncol7 textF16`}
+                          >
                             {data.content.slice(
                               data.content.indexOf("구분") + 4,
                               data.content.indexOf("</p>")
@@ -617,7 +623,7 @@ export default function NewsRelease() {
                         <div className="readContentsRow ">
                           <div
                             className="tbContentsB FontNB textF16"
-                            style={{ color: "#fd8d27" }}
+                            style={{ color: "#fc8900" }}
                           >
                             등록일
                           </div>

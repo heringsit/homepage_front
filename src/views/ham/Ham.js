@@ -1288,7 +1288,7 @@ const Ham = () => {
                 window.location.replace("/ham");
               } else {
                 alert(
-                  "사번을 올바르게 입력하여 주시기 바랍니다.\n\nex)HG00** (대소문자 상관 없음)"
+                  "사번을 올바르게 입력하여 주시기 바랍니다.\n\nex)HG**** (대소문자 상관 없음)"
                 );
               }
             }}

@@ -65,11 +65,12 @@
 }
 
 .ncol1 {
-  width: 150%;
+  width: 140%;
 }
 .ncol2 {
   width: 43%;
 }
+
 .ncol3 {
   width: 48%;
 }
@@ -77,7 +78,13 @@
   width: 40%;
 }
 .ncol5 {
-  width: 56%;
+  width: 40%;
+}
+.ncol6 {
+  width: 49%;
+}
+.ncol7 {
+  width: 60%;
 }
 
 .ccol1 {
@@ -106,14 +113,32 @@
   /* justify-content: space-between; */
 }
 
+.textCenter {
+  text-align: center;
+  margin-left: 37px;
+}
+
 .boardButton {
   font-family: "Roboto700", sans-serif;
   color: black;
+
+  /* background-color: #f37f31; */
+  /* background-color: #fc9900; */
+
+  /* border-color: #f37f31; */
+  /* background-color: #fc9000; */
+
+  background-color: #fc8900;
+  border-color: #fc8900;
+
   /* color: white; */
   height: 50px;
 }
 .boardButton-Dark {
   font-family: "Roboto700", sans-serif;
+  background-color: #fc8900;
+  border-color: #fc8900;
+
   color: white;
   height: 50px;
 }
@@ -162,6 +187,12 @@
   padding-right: 8px;
   text-align: center;
 }
+/* .newsContainListColIP {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-right: 40px;
+  text-align: center;
+} */
 
 .contentContainListCol {
   display: flex;
