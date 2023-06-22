@@ -7,6 +7,9 @@ import icon1_2 from "../../../assets/images/02about_herings_team/new200527/1_2so
 //import icon1_3 from "../../../assets/images/02about_herings_team/new200527/1_3lee.png";
 import icon1_4 from "../../../assets/images/02about_herings_team/new200527/1_4park.jpg";
 import icon1_5 from "../../../assets/images/02about_herings_team/new200527/1_5an.png";
+
+import icon1_6 from "../../../assets/images/02about_herings_team/new230622/1_4kee.png";
+
 import icon2_1 from "../../../assets/images/02about_herings_team/new200527/2_1yang.png";
 import icon2_2 from "../../../assets/images/02about_herings_team/new200527/2_2kim.png";
 import icon2_3 from "../../../assets/images/02about_herings_team/new200527/2_3hong.png";
@@ -76,6 +79,15 @@ export const Executive_Leadership = [
   //   detail:
   //     "Seongae Ahn is a registered nurse. She graduated from the School of Nursing at Hallym University. She has about 15 years of clinical trial experience in various therapeutic areas. She is interested in Digital Therapeutics for enhancing quality of life of patients. Prior to her career in clinical trial, she worked at university hospital as a Nurse.",
   // },
+  {
+    name: "Minsuk Kee",
+    jobs: "CFO",
+    // positions: "CSO -> CMO",
+    background: icon1_6,
+    modalimg: icon1_6,
+    detail:
+      "Minsuk is an accomplished Corporate Risk Management and Contract Risk Compliance expert with over 15 years of experience in global consultancy and audit firms. Formerly affiliated with Deloitte and EY, Minsuk's expertise lies in Corporate Risk, K-SOX Consulting, and Auditing. Notably, he spearheaded a successful startup merger with a KOSDAQ-listed company, demonstrating his astute business acumen. Holding a degree in Economics from Korea University and studying Intellectual Property Law at Korea University School of Law, Minsuk possesses a profound understanding of complex legal landscapes. Furthermore, his extensive financial knowledge, analytical prowess, and strategic planning acumen make him an invaluable asset in driving the company's growth and financial success as CFO.",
+  },
 ];
 
 export const Research_Leadership = [

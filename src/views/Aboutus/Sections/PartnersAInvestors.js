@@ -16,6 +16,7 @@ import i_logo_02 from "../../../assets/images/02about_investors/02korea_n.svg";
 import i_logo_03 from "../../../assets/images/02about_investors/03venture_n.svg";
 import i_logo_04 from "../../../assets/images/02about_investors/04cap_n.svg";
 import i_logo_05 from "../../../assets/images/02about_investors/05coree.png";
+import i_logo_06 from "../../../assets/images/02about_investors/06kakaotalk.png";
 import { ThemeContext } from "../../../context";
 // import CommonCardTitle from "../../common/CommonCardTitle";
 
@@ -27,7 +28,9 @@ export default function PartnersAInvestors(props) {
       <div className="pt-48" />
       {/* {!props.matches && <CommonCardTitle title="PARTNERS & INVESTORS" fontSize="textF28" />} */}
       <div className="aboutustitle">
-        <p className={`mt-0 textF20 FontCB ${theme === "dark" ? "tcw" : "tcb"}`}>
+        <p
+          className={`mt-0 textF20 FontCB ${theme === "dark" ? "tcw" : "tcb"}`}
+        >
           PARTNERS & INVESTORS
         </p>
         <div
@@ -113,6 +116,9 @@ export default function PartnersAInvestors(props) {
             </div>
             <div className="inventors__image__container">
               <img src={i_logo_01} alt="alpen" />
+            </div>
+            <div className="inventors__image__container">
+              <img src={i_logo_06} alt="kakaotalk" />
             </div>
           </div>
         </div>
