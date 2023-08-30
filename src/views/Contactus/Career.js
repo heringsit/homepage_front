@@ -390,7 +390,7 @@ export default function Career({ match }) {
               theme === "dark"
                 ? "careerContainListHeaderD"
                 : "careerContainListHeader"
-            } FontNL flex-row`}
+            } FontNL flex-row text-align-center h-10 application `}
           >
             <div
               className={`${
@@ -419,7 +419,7 @@ export default function Career({ match }) {
             >
               <span className="textF16 FontNR">채용 분야</span>
             </div>
-            <div className="col4 korFonts text-align-center mtb-10">
+            <div className="col4 korFonts  ">
               <span className="textF16 FontNR">상태</span>
             </div>
           </div>

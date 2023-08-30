@@ -403,6 +403,11 @@
 .w-max {
   width: max-content;
 }
+
+.h-10 {
+  height: 50px;
+}
+
 .h-max {
   height: max-content;
 }

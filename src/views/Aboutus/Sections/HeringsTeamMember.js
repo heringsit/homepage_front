@@ -82,7 +82,6 @@ export const Executive_Leadership = [
   {
     name: "Minsuk Kee",
     jobs: "CFO",
-    // positions: "CSO -> CMO",
     background: icon1_6,
     modalimg: icon1_6,
     detail:

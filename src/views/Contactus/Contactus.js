@@ -179,25 +179,25 @@ export default function ContactUs(props) {
 
   // Scroll function
   // update: TabClick function -> NavLink 에서 오는 random 숫자
-  // hashId: TabClick function -> NavLink 에서 오는 hashId 
+  // hashId: TabClick function -> NavLink 에서 오는 hashId
   // Tab/Menubar 안에서 NavLink 눌을때 마다 random number가 만들어 집니다.
-  // useEffect hook + random number 통해 click 을 track 합니다 
+  // useEffect hook + random number 통해 click 을 track 합니다
   const executeScroll = () => {
     const element = document.getElementById(props.location.hashId);
-    const headOffset= mTablet ? 84 : 184;
-    const elementPosition=element?.getBoundingClientRect().top;
+    const headOffset = mTablet ? 84 : 184;
+    const elementPosition = element?.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.scrollY - headOffset;
-    
+
     window.scrollTo({
       top: offsetPosition,
       behavior: "smooth",
-    })    
+    });
   };
 
-  useEffect (() => {
-    executeScroll()  
-  }, [props.location.update])
-  
+  useEffect(() => {
+    executeScroll();
+  }, [props.location.update]);
+
   return (
     <div
       id="contactus"
@@ -207,7 +207,7 @@ export default function ContactUs(props) {
       }}
     >
       <Menubar slideIndex={0} />
-      
+
       {!mTablet && <TabClick visibleArray={visibleArray} />}
 
       <ContentsTitle matches={matches} title={"CONTACT US"} />
