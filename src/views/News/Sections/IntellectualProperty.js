@@ -215,6 +215,34 @@ export default function NewsRelease() {
     );
   };
 
+  const registrationDate = listData.sort((a, b) => {
+    const getRegistrationDate = (data) => {
+      const dateStr = data.content.slice(
+        data.content.indexOf("등록일") + 5,
+        data.content.indexOf("</p>", data.content.indexOf("등록일") + 1)
+      );
+      // 날짜 형식을 YYYY-MM-DD로 변경하여 Date 객체를 생성합니다.
+      return dateStr.trim() === ""
+        ? null
+        : new Date(dateStr.split(".").join("-"));
+    };
+
+    const aDate = getRegistrationDate(a);
+    const bDate = getRegistrationDate(b);
+
+    // "등록일"이 공백인 경우 처리
+    if (aDate === null && bDate === null) {
+      return 0; // 둘 다 공백이면 순서 유지
+    } else if (aDate === null) {
+      return 1; // a만 공백이면 a를 뒤로
+    } else if (bDate === null) {
+      return -1; // b만 공백이면 b를 뒤로
+    }
+
+    // 내림차순 정렬을 위해 b에서 a를 뺍니다.
+    return bDate - aDate;
+  });
+
   useEffect(getdata, []);
 
   const { theme } = useContext(ThemeContext);
@@ -332,7 +360,7 @@ export default function NewsRelease() {
           </div>
 
           <div className="nodatasWrap">
-            {listData
+            {registrationDate
               // .filter((list) =>
               //   boardType === "PATENT"
               //     ? list.type === "PATENT"
@@ -342,9 +370,9 @@ export default function NewsRelease() {
               //     ? list.type === "PUBLICATION"
               //     : listData
               // )
-
               .map((data, index) => {
                 // text.slice(text.indexOf("구분") + 4, text.indexOf("</p>"));
+
                 return (
                   <div key={index} className="careerListRow FontNR">
                     {boardType === "PATENT" ? (
