@@ -81,11 +81,11 @@ export const Executive_Leadership = [
   // },
   {
     name: "Minsuk Kee",
-    jobs: "CFO",
+    jobs: "COO",
     background: icon1_6,
     modalimg: icon1_6,
     detail:
-      "Minsuk is an accomplished Corporate Risk Management and Contract Risk Compliance expert with over 15 years of experience in global consultancy and audit firms. Formerly affiliated with Deloitte and EY, Minsuk's expertise lies in Corporate Risk, K-SOX Consulting, and Auditing. Notably, he spearheaded a successful startup merger with a KOSDAQ-listed company, demonstrating his astute business acumen. Holding a degree in Economics from Korea University and studying Intellectual Property Law at Korea University School of Law, Minsuk possesses a profound understanding of complex legal landscapes. Furthermore, his extensive financial knowledge, analytical prowess, and strategic planning acumen make him an invaluable asset in driving the company's growth and financial success as CFO.",
+      "Minsuk is an accomplished Corporate Risk Management and Contract Risk Compliance expert with over 15 years of experience in global consultancy and audit firms. Formerly affiliated with Deloitte and EY, Minsuk's expertise lies in Corporate Risk, K-SOX Consulting, and Auditing. Notably, he spearheaded a successful startup merger with a KOSDAQ-listed company, demonstrating his astute business acumen. Holding a degree in Economics from Korea University and studying Intellectual Property Law at Korea University School of Law, Minsuk possesses a profound understanding of complex legal landscapes. Furthermore, his extensive financial knowledge, analytical prowess, and strategic planning acumen make him an invaluable asset in driving the company's growth and success as COO.",
   },
 ];
 
