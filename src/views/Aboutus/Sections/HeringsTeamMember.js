@@ -61,15 +61,15 @@ export const Executive_Leadership = [
   //   detail:
   //     "Taejin Ahn is a professor at Handong Global University School of Life Science. Prior to his academic career, he was a technical researcher at Samsung Advanced Institute of Technology and a principal engineer in IVD Sales at Samsung Electronics Health and Medical Equipment. His main interests of research focus on Bioinformatics, Personalized Medicine, and Smart Healthcare.\n\nHe holds a BS from Handong Global University, an MA from Pohang University of Science and Technology, and a Ph.D in bioinformatics from Seoul National University.",
   // },
-  {
-    name: "Kyounghoon Park, MD, Ph.D",
-    jobs: "CMO",
-    // positions: "CSO -> CMO",
-    background: icon1_4,
-    modalimg: icon1_4,
-    detail:
-      "Kyounghoon Park is a medical doctor with preventive medicine specialty. He majored in pharmacoepidemiology and performed various big data analysis and medical research. He is interested in establishing evidence-based clinical preventive medicine.  He graduated from the School of Medicine at Pusan National University and trained resident course in the Department of Preventive Medicine at Seoul National University. He also achieved a Ph D in medicine from Seoul National University.",
-  },
+  // {
+  //   name: "Kyounghoon Park, MD, Ph.D",
+  //   jobs: "CMO",
+  //   // positions: "CSO -> CMO",
+  //   background: icon1_4,
+  //   modalimg: icon1_4,
+  //   detail:
+  //     "Kyounghoon Park is a medical doctor with preventive medicine specialty. He majored in pharmacoepidemiology and performed various big data analysis and medical research. He is interested in establishing evidence-based clinical preventive medicine.  He graduated from the School of Medicine at Pusan National University and trained resident course in the Department of Preventive Medicine at Seoul National University. He also achieved a Ph D in medicine from Seoul National University.",
+  // },
   // {
   //   name: "Seongae Ahn RN",
   //   jobs: `CTM`,
