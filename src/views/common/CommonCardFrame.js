@@ -21,9 +21,16 @@ const CommonCardFrame = (
     content3,
     subText1,
     subText2,
+    menu,
+    btntext,
+    landingURL,
   }
 ) => {
   const { theme } = useContext(ThemeContext);
+
+  const moveLanding = (URL) => {
+    window.open(URL);
+  };
   return (
     <div className={`${contentStyle} ${flexStyle} ${contentPadding}`}>
       <img
@@ -38,10 +45,24 @@ const CommonCardFrame = (
       >
         <div>
           {/* m-reset -> margin reset; mb-8-> margin bottom */}
-          <p className={`${headerStyle} ${subText1Style} m-reset`}>
-            {subText1}
-          </p>
-          <p className={`${subText2Style} m-reset`}>{subText2}</p>
+          <div className="movecontainer">
+            <div>
+              <p className={`${headerStyle} ${subText1Style} m-reset`}>
+                {subText1}
+              </p>
+
+              <p className={`${subText2Style} m-reset`}>{subText2}</p>
+            </div>
+            {menu === "SERVICE" ? (
+              <div
+                className="movebtn movetext"
+                onClick={() => moveLanding(landingURL)}
+              >
+                {btntext}
+              </div>
+            ) : null}
+          </div>
+
           <p className={`${mainTextStyle} m-reset`}>{content1}</p>
         </div>
         <div>

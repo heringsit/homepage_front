@@ -144,10 +144,13 @@ export default function Service(props) {
                   contentPadding=""
                   subText1Style="textT18 FontB mb-4"
                   subText2Style="textF24 FontEB  mb-8"
+                  menu="SERVICE"
+                  btntext="Go to healiary"
+                  landingURL="https://app.healiary.com"
                 />
               </div>
 
-              {/* OSTOMY */}
+              {/* OSTO CARE */}
               <div
                 className="text-align-center flex-col gap-24"
                 id="telehealthcareservice"
@@ -171,7 +174,7 @@ export default function Service(props) {
                   imageSrc={ostomy_application}
                   imageAlt="ostomy application"
                   subText1="Application"
-                  subText2="OSTOMY CARE"
+                  subText2="OSTO CARE"
                   content1={
                     "Home Health Care Service Platform for Ostomy patients."
                   }
@@ -183,6 +186,9 @@ export default function Service(props) {
                   contentPadding=""
                   subText1Style="textF18 FontB mb-4"
                   subText2Style="textF24 FontEB  mb-8"
+                  menu="SERVICE"
+                  btntext="Go to osto care"
+                  landingURL="https://www.ostocare.co.kr/"
                 />
               </div>
             </div>

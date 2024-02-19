@@ -666,3 +666,28 @@ body {
   height: 0px;
   transition: all 1s linear;
 }
+
+.movecontainer {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center; /* 수직 정렬을 가운데로 설정합니다. */
+}
+
+.movebtn {
+  width: auto;
+  background: #f37f31;
+  border-radius: 68px;
+  width: 213px;
+  height: 50px;
+}
+.movetext {
+  text-align: center;
+  padding-top: 11px;
+  font-size: 24px;
+  font-style: normal;
+  font-family: "Roboto";
+  font-weight: 700;
+  line-height: normal;
+  color: #fff;
+}
