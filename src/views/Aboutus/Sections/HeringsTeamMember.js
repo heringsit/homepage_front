@@ -35,13 +35,13 @@ export const Executive_Leadership = [
       "Byung-Ho Nam, Ph.D, is the CEO and founder of HERINGS. Byungho has more than 20 years of experience in clinical research especially for oncology and cardiology. Previously, Byungho was a professor at the National Cancer Center (NCC), Korea. He also served as the director of Clinical Research Coordination Center at the NCC for organizing and supporting nation-wide public funded clinical trials. He led many clinical research projects where he not only developed cancer risk prediction models including pancreatic cancer, but also designed several landmark cancer clinical trials. Prior to the NCC, He was a professor at the Boston University and a leading biostatistician at the Framingham Heart Study.\n\nByung-Ho received his Ph.D in Biostatistics from Boston University. He studied at the University of Michigan for his MS in Applied Statistics and received a BA at the Seoul National University majoring French with minor in Business Administration.",
   },
   {
-    name: "Yooin Song, MBA",
+    name: "Yooin Song, Ph.D, MBA",
     jobs: "Vice President",
     // positions: "COO -> Vice President",
     background: icon1_2,
     modalimg: icon1_2,
     detail:
-      "Yooin Song is the Vice President of HERINGS. He is a business expert at life science and bio-industry, working over for 15 years. Previously Song was a private equity fund manager, mainly invested in biotech and life science companies. Also, he was a strategic consultant at Deloitte Consulting for Life Science and Healthcare division.\n\nMr. Song is a Ph.D Candidate in Business Administration from HUFS, and he studied at the IE business school in Madrid, Spain for his MBA degree. He also received BA degree at occidental linguistics department in HUFS.",
+      "Yooin Song is the Vice President of HERINGS. He is a business expert at life science and bio-industry, working over for 15 years. Previously Song was a private equity fund manager, mainly invested in biotech and life science companies. Also, he was a strategic consultant at Deloitte Consulting for Life Science and Healthcare division.\n\nMr. Song received Ph.D degree in Business Administration from HUFS, and he studied at the IE business school in Madrid, Spain for his MBA degree. He also received BA degree at occidental linguistics department in HUFS.",
   },
   // {
   //   name: "Jaeho Lee",
