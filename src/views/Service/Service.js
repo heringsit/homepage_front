@@ -146,7 +146,7 @@ export default function Service(props) {
                   subText2Style="textF24 FontEB  mb-8"
                   menu="SERVICE"
                   btntext="Go to healiary"
-                  landingURL="https://app.healiary.com"
+                  landingURL="https://www.healiary.com"
                 />
               </div>
 
