@@ -671,23 +671,31 @@ body {
   display: flex;
   flex-direction: row;
   gap: 24px;
+  margin-bottom: 10px;
   align-items: center; /* 수직 정렬을 가운데로 설정합니다. */
+  height: 50px;
 }
 
 .movebtn {
   width: auto;
   background: #f37f31;
   border-radius: 68px;
-  width: 213px;
-  height: 50px;
+  width: 40%;
 }
 .movetext {
   text-align: center;
   padding-top: 11px;
+  padding-bottom: 11px;
   font-size: 24px;
   font-style: normal;
   font-family: "Roboto";
   font-weight: 700;
   line-height: normal;
   color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+  .movetext {
+    font-size: 18px;
+  }
 }
