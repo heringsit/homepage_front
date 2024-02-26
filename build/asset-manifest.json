@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.9ae49810.chunk.css",
-    "main.js": "/static/js/main.f214ff43.chunk.js",
-    "main.js.map": "/static/js/main.f214ff43.chunk.js.map",
+    "main.css": "/static/css/main.a870ea0c.chunk.css",
+    "main.js": "/static/js/main.f0666e50.chunk.js",
+    "main.js.map": "/static/js/main.f0666e50.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ca75be69.js",
     "runtime-main.js.map": "/static/js/runtime-main.ca75be69.js.map",
     "static/js/2.e7f131e7.chunk.js": "/static/js/2.e7f131e7.chunk.js",
     "static/js/2.e7f131e7.chunk.js.map": "/static/js/2.e7f131e7.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.72eb0fd67a85970e201d6178baf191b8.js": "/precache-manifest.72eb0fd67a85970e201d6178baf191b8.js",
+    "precache-manifest.f2576c4f5fb69feb95dc2f120b29cab1.js": "/precache-manifest.f2576c4f5fb69feb95dc2f120b29cab1.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.9ae49810.chunk.css.map": "/static/css/main.9ae49810.chunk.css.map",
+    "static/css/main.a870ea0c.chunk.css.map": "/static/css/main.a870ea0c.chunk.css.map",
     "static/js/2.e7f131e7.chunk.js.LICENSE.txt": "/static/js/2.e7f131e7.chunk.js.LICENSE.txt",
     "static/media/01alpen_n.svg": "/static/media/01alpen_n.ed9cff42.svg",
     "static/media/01suh.png": "/static/media/01suh.1f5473cc.png",
@@ -60,7 +60,6 @@
     "static/media/cts_image2.png": "/static/media/cts_image2.b84f3776.png",
     "static/media/cts_image3.png": "/static/media/cts_image3.58d38113.png",
     "static/media/drug_adverse_events.png": "/static/media/drug_adverse_events.7268c3d8.png",
-    "static/media/facebook.svg": "/static/media/facebook.d7a8b7e8.svg",
     "static/media/healiary_application.svg": "/static/media/healiary_application.bef67ea2.svg",
     "static/media/heringsLOGO.8e7d5ba1.svg": "/static/media/heringsLOGO.8e7d5ba1.svg",
     "static/media/heringsLOGO_black.svg": "/static/media/heringsLOGO_black.5e815145.svg",
@@ -70,8 +69,9 @@
     "static/media/herings_logo.svg": "/static/media/herings_logo.eb0e4c32.svg",
     "static/media/icon_dark_off.svg": "/static/media/icon_dark_off.32627784.svg",
     "static/media/icon_dark_on.svg": "/static/media/icon_dark_on.4297cd65.svg",
+    "static/media/instagramsvg.svg": "/static/media/instagramsvg.73552a2f.svg",
     "static/media/kakao.svg": "/static/media/kakao.e5399fc8.svg",
-    "static/media/Main.css": "/static/media/mainimage.8d49a445.png",
+    "static/media/Main.css": "/static/media/mainimage2.40947995.png",
     "static/media/nutrition.png": "/static/media/nutrition.77efe2c3.png",
     "static/media/ostomy_application.svg": "/static/media/ostomy_application.a6db8d53.svg",
     "static/media/research_1.png": "/static/media/research_1.322eb6a3.png",
@@ -84,7 +84,7 @@
   "entrypoints": [
     "static/js/runtime-main.ca75be69.js",
     "static/js/2.e7f131e7.chunk.js",
-    "static/css/main.9ae49810.chunk.css",
-    "static/js/main.f214ff43.chunk.js"
+    "static/css/main.a870ea0c.chunk.css",
+    "static/js/main.f0666e50.chunk.js"
   ]
 }
