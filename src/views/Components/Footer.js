@@ -2,10 +2,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 // import { MediaQueryContext } from "../../context";
-import blogsvg from "../../assets/images/etc/blog.svg"
-import kakaosvg from "../../assets/images/etc/kakao.svg"
-import youtubesvg from "../../assets/images/etc/youtube.svg"
-import facebooksvg from "../../assets/images/etc/facebook.svg"
+import blogsvg from "../../assets/images/etc/blog.svg";
+import kakaosvg from "../../assets/images/etc/kakao.svg";
+import youtubesvg from "../../assets/images/etc/youtube.svg";
+import instagramsvg from "../../assets/images/etc/instagramsvg.svg";
+// import facebooksvg from "../../assets/images/etc/facebook.svg"
 import "./Footer.css";
 function Footer() {
   // const matches = useMediaQuery("(max-width:480px)");
@@ -51,38 +52,42 @@ function Footer() {
               <span className="tco FontL textF12">R.</span>
               Corporate registration number 516-87-00127
             </div>
-
           </div>
         </div>
         <div
           style={{
             display: "flex",
-            columnGap: "24px"
+            columnGap: "24px",
           }}
         >
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://blog.naver.com/healiary">
+            href="https://blog.naver.com/healiary"
+          >
             <img src={blogsvg} alt="blog" className="footersvg" />
           </a>
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://pf.kakao.com/_xlPYExj">
+            href="https://pf.kakao.com/_xlPYExj"
+          >
             <img src={kakaosvg} alt="kakao" className="footersvg" />
           </a>
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.youtube.com/channel/UC1LLVoPjPLmu3kjLqJCB_ZA">
+            href="https://www.youtube.com/@healiary"
+            // href="https://www.youtube.com/channel/UC1LLVoPjPLmu3kjLqJCB_ZA"
+          >
             <img src={youtubesvg} alt="youtube" className="footersvg" />
           </a>
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.facebook.com/heringsglobal">
-            <img src={facebooksvg} alt="facebook" className="footersvg" />
+            href="https://www.instagram.com/healiary_official/"
+          >
+            <img src={instagramsvg} alt="instagram" className="footersvg" />
           </a>
         </div>
       </div>
