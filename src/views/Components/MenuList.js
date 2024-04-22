@@ -1,9 +1,19 @@
 const imsi = process.env.PUBLIC_URL;
 // 메뉴 텍스트
 export const MENU = {
-  title: ["ABOUT US", "SERVICE", "RESEARCH", "CTS", "NEWS", "CONTACT US"],
+  title: [
+    "ABOUT US",
+    "RPM SOLUTION",
+    "SERVICE",
+    "RESEARCH",
+    "CTS",
+    "NEWS",
+    "CONTACT US",
+  ],
   link: [
     `${imsi}/aboutus/`,
+    `${imsi}/rpmsolution/`,
+
     `${imsi}/service/`,
     `${imsi}/research/`,
     `${imsi}/cts/`,
@@ -12,13 +22,22 @@ export const MENU = {
   ],
   linkpath: [
     `/aboutus/`,
+    `/rpmsolution/`,
     `/service/`,
     `/research/`,
     `/cts/`,
     `/news/`,
     `/contactus/`,
   ],
-  hashId: ["aboutus", "service", "research", "cts", "news", "contactus"],
+  hashId: [
+    "aboutus",
+    "rpmsolution",
+    "service",
+    "research",
+    "cts",
+    "news",
+    "contactus",
+  ],
   smallMenu: [
     {
       title: ["WHO WE ARE", "HERINGS TEAM", "PARTNERS & INVESTORS"],

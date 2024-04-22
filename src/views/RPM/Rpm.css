@@ -1,0 +1,247 @@
+.rpm-main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding-top: 35px;
+}
+
+.rpm-container1 {
+  background-image: url("../../assets/images/03rpm/rpm_img1.svg");
+  height: 562px;
+  top: 4rem;
+}
+
+.rpm-section1-text-layout {
+  display: flex;
+  flex-direction: column;
+  padding: 168px 360px;
+  gap: 20px;
+}
+
+.rpm-section1-maintext {
+  color: #fff;
+  font-family: "Roboto600";
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.rpm-section1-subtext {
+  color: #fff;
+  font-family: "Roboto300";
+  font-size: 24px;
+  font-weight: 300;
+  line-height: normal;
+  font-style: normal;
+}
+
+.rpm-container2 {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  padding: 186px 300px;
+  align-items: center;
+  justify-content: center;
+}
+
+.rpm-section2-maintext {
+  color: #000;
+  font-family: "Roboto600";
+  font-size: 30px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0px;
+  margin-bottom: 24px;
+}
+
+.rpm-section2-subtext {
+  color: #424242;
+  font-family: "Pretendard500";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+.rpm-container3 {
+  background-color: #ecf6ff;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  padding: 100px 300px;
+  align-items: center;
+  justify-content: center;
+  gap: 46px;
+}
+
+.rpm-section3-text-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0px;
+}
+
+.rpm-section3-maintext {
+  color: #000;
+  font-family: "Roboto500";
+  font-size: 30px;
+  font-weight: 600;
+  line-height: normal;
+  font-style: normal;
+  margin: 0px;
+}
+
+.rpm-section3-subtext {
+  color: #424242;
+  font-family: "Pretendard";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 36px;
+  font-style: normal;
+  letter-spacing: -0.4px;
+}
+
+/* 기본 컨테이너 스타일 */
+.rpm-section3-group-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 각 행에 2개의 컬럼을 생성합니다. */
+  gap: 12px; /* 그룹박스 사이의 간격을 설정합니다. */
+}
+
+.rpm-section3-group-box {
+  display: flex;
+  padding: 30px 18px;
+  flex-direction: column;
+  gap: 36px;
+  align-items: flex-start;
+  border-radius: 25px;
+  margin-top: 8px;
+}
+
+/* 홀수 그룹의 스타일 */
+.rpm-section3-group-box:nth-child(1),
+.rpm-section3-group-box:nth-child(4) {
+  background-color: #365bbb;
+}
+
+/* 짝수 그룹의 스타일 */
+.rpm-section3-group-box:nth-child(2),
+.rpm-section3-group-box:nth-child(3) {
+  background-color: #f6a429;
+}
+
+.rpm-section3-box-text {
+  color: #fff;
+  font-family: "Roboto500";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  margin: 0px;
+}
+
+.rpm-section3-box-subtext {
+  color: #fff;
+  font-family: "Roboto400";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: -0.32px;
+}
+
+.rpm-section4-layout-bg {
+  background-image: url("../../assets/images/03rpm/rpm_background.svg");
+  /* height: 100vw; */
+  /* background-size: contain; */
+  background-position: center;
+  background-repeat: no-repeat; /* 이미지가 반복되지 않도록 설정 */
+  width: 100%; /* 부모 요소의 전체 너비를 차지하도록 설정 */
+  text-align: center;
+  padding: 160px 15vw;
+}
+
+.rpm-section4-maintext {
+  color: #000;
+  font-family: "Roboto500";
+  font-size: 40px;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0px;
+}
+
+.rpm-section4-subtext {
+  color: #424242;
+  font-family: "Roboto400";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+  font-style: normal;
+  margin: 0px;
+}
+
+.rpm-service-container {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  flex-shrink: 0;
+}
+
+/* 홀수 그룹의 스타일 */
+.rpm-service-container:nth-child(odd) {
+  flex-direction: row;
+  text-align: left;
+}
+
+/* 짝수 그룹의 스타일 */
+.rpm-service-container:nth-child(even) {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.rpm-service-text-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.rpm-service-btn {
+  display: flex;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 52px;
+  background-color: #417fff;
+  width: 15vw;
+}
+
+.rpm-service-btn-text {
+  color: #fff;
+  text-align: center;
+  font-family: "Roboto700";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%;
+  text-transform: uppercase;
+}
+
+.rpm-container5 {
+  display: flex;
+  flex-direction: column;
+  /* padding: 185px 360px 276px 360px; */
+  align-items: center;
+  justify-content: center;
+}
+
+.rpm-section5-text-layout {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}

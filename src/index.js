@@ -5,6 +5,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
 import Aboutus from "./views/Aboutus/Aboutus";
+import RpmSolution from "./views/RPM/RpmSolution";
 import Service from "./views/Service/Service";
 import Research from "./views/Research/Research";
 import Cts from "./views/CTS/Cts";
@@ -56,6 +57,8 @@ const App = () => {
             <Route exact path={`/`} component={Main} />
             <Route path={`/aboutus/:submenu`} component={Aboutus} />
             <Route path={`/aboutus`} component={Aboutus} />
+            <Route path={`/rpmsolution/:submenu`} component={RpmSolution} />
+            <Route path={`/rpmsolution`} component={RpmSolution} />
             <Route path={`/service/:submenu`} component={Service} />
             <Route path={`/service`} component={Service} />
             <Route path={`/research`} component={Research} />
