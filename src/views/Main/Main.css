@@ -1,29 +1,37 @@
 .main-container {
   height: 100vh;
+  /* display: flex; */
+  flex-direction: column;
+  padding-top: 80px;
 }
-.main-container video {
+/* .main-container video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
+} */
 .maintext {
   color: #414141;
-  font-size: 48px;
+  font-size: clamp(1rem, 2.8vw, 2.8rem);
+  /* font-size: 48px; */
   text-align: left;
   font-weight: 600;
-  line-height: 65px;
-  position: absolute;
+  line-height: 3.64vw;
+  /* line-height: 65px; */
+  /* position: absolute; */
+  padding-top: 12vw;
+  padding-left: 21vw;
   z-index: 2;
-  top: 38%;
-  left: 33%;
-  transform: translate(-50%, -10%);
+  /* top: 38%;
+  left: 35%; */
+  /* transform: translate(-50%, -10%); */
 }
 .maintext2 {
   color: #2c2c2c;
-  font-size: 24px;
+  font-size: clamp(1rem, 1.34vw, 2rem);
+  /* font-size: 24px; */
   font-family: "Roboto400";
   text-align: center;
   font-weight: 400;
@@ -33,7 +41,8 @@
 .maintext3 {
   color: #ff903c;
   font-family: "Roboto500";
-  font-size: 30px;
+  font-size: clamp(1rem, 1.675vw, 2rem);
+  /* font-size: 30px; */
   font-weight: 600;
   line-height: 109%;
 }
@@ -41,7 +50,8 @@
 .maintext4 {
   color: #000;
   font-family: "Roboto500";
-  font-size: 30px;
+  font-size: clamp(1rem, 1.675vw, 2rem);
+  /* font-size: 30px; */
   font-weight: 500;
 }
 /* .mainimagetext {
@@ -57,23 +67,24 @@
   text-align: center;
   justify-content: center;
   background-image: url("../../assets/images/00main/main1.png");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat; /* 이미지가 반복되지 않도록 설정 */
-  background-position: right;
-  width: 100%; /* 부모 요소의 전체 너비를 차지하도록 설정 */
-  height: 735px; /* 화면의 전체 높이를 차지하도록 설정 */
-  top: 4rem;
+  /* width: 100%; */
+  height: 38.5vw;
+  /* top: 4rem; */
 }
 
 .mainlayout2 {
   background-color: #fffbec;
-  position: relative;
+  /* position: relative; */
   display: flex;
   flex-direction: column;
-  padding: 80px 200px;
+  padding: 4.45vw 11.15vw;
+  /* padding: 80px 200px; */
   text-align: center;
   justify-content: center;
-  gap: 48px;
+  gap: 2.65vw;
+  /* gap: 48px; */
   width: 100%; /* 부모 요소의 전체 너비를 차지하도록 설정 */
   /* height: 735px;  */
 }
@@ -81,19 +92,23 @@
 .mainlayout3 {
   position: relative;
   display: flex;
-  height: 1920px;
-  padding: 138px 310px;
+  /* height: 1920px; */
+  padding: 7.7vw 17.3vw;
+  /* padding: 138px 310px; */
   flex-direction: column;
   align-items: flex-start;
-  gap: 180px;
+  gap: 10vw;
+  /* gap: 180px; */
 }
 
 .mainlayout4 {
   display: flex;
-  /* height: 1920px; */
-  padding: 0px 50px;
+  padding: 0px 2.8vw;
+  /* padding: 0px 50px; */
   position: absolute;
-  bottom: 110px;
+  top: 90vw;
+  /* bottom: 4.5vw; */
+  /* bottom: 110px; */
   flex-direction: row;
   justify-content: space-between;
   gap: 0px;
@@ -101,28 +116,42 @@
 
 .mainlayoutImage {
   background-image: url("../../assets/images/00main/main2.svg");
-  height: 110vw;
-  /* background-size: contain; */
-  background-position: right;
+  /* height: clamp(120vw, 120vw, 150vw); */
+  height: 120vw;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat; /* 이미지가 반복되지 않도록 설정 */
-  width: 100%; /* 부모 요소의 전체 너비를 차지하도록 설정 */
 }
+
+/* @media (max-width: 1100px) {
+  .mainlayoutImage {
+    height: 135vw;
+  }
+} */
+/* @media (max-width: 1000px) {
+  .mainlayoutImage {
+    height: 100vw;
+  }
+} */
 
 .mainsublayout {
   display: flex;
-  padding: 10px;
+  padding-left: 6.38vw;
+  padding-right: 6.38vw;
+  /* padding-left: 150px; */
+  /* padding-right: 150px; */
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
 .mainsublayout2 {
-  display: flex;
-  padding: 10px;
+  /* display: flex; */
+  /* padding: 10px; */
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  gap: 10px;
+  /* gap: 10px; */
 }
 
 .mainsublayout3 {
@@ -130,14 +159,16 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  gap: 34px;
+  gap: 1.9vw;
+  /* gap: 34px; */
 }
 
 .mainsub3 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 45px;
+  gap: 2.5vw;
+  /* gap: 45px; */
 }
 .mainsub3_1 {
   display: flex;
@@ -150,15 +181,27 @@
 .mainsub3_2 {
   display: flex;
   /* position: absolute; */
-  /* bottom: 110px; */
+  /* bottom: 210px; */
+  padding-bottom: 5vw;
+  /* padding-bottom: 100px; */
   flex-direction: column;
   /* align-items: flex-start; */
-  gap: 24px;
+  gap: 1.35vw;
+  /* gap: 24px; */
+}
+
+.sublayout {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.65vw;
+  gap: 5px;
+  /* margin-top: 30px; */
 }
 
 .subImage {
   display: flex;
   /* padding: ; */
+  width: 25.35vw;
   border-radius: 27px;
   justify-content: center;
   align-items: center;
@@ -170,25 +213,31 @@
 .subTitle {
   color: #212121;
   font-family: "Roboto";
-  font-size: 22px;
+  font-size: clamp(0.8rem, 1.23vw, 2rem);
+  /* font-size: 22px; */
   font-weight: 600;
+  margin: 0px;
 }
 
 .subContent {
   white-space: pre-wrap;
+  /* padding: 0px 0vw; */
   color: #7d7c7c;
   text-align: center;
   font-family: "Roboto";
-  font-size: 20px;
+  font-size: clamp(0.8rem, 1.12vw, 2rem);
+  /* font-size: 20px; */
   font-weight: 400;
   line-height: 26px;
   letter-spacing: -0.4px;
+  margin: 0px;
 }
 
 .subContent2 {
   color: #424242;
   font-family: "Roboto500";
-  font-size: 20px;
+  font-size: clamp(1rem, 1.115vw, 2rem);
+  /* font-size: 20px; */
   font-weight: 500;
   line-height: 38px;
 }
@@ -196,7 +245,8 @@
 .subContent3 {
   color: #424242;
   font-family: "Roboto500";
-  font-size: 24px;
+  font-size: clamp(1rem, 1.34vw, 2rem);
+  /* font-size: 24px; */
   font-weight: 500;
   line-height: 36px;
 }
@@ -204,7 +254,8 @@
 .moveButton {
   display: flex;
   width: 15vw;
-  padding: 16px 32px;
+  padding: 0.88vw 1vw;
+  /* padding: 16px 32px; */
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -213,7 +264,8 @@
   color: #fff;
   text-align: center;
   font-family: "Roboto";
-  font-size: 20px;
+  font-size: clamp(0.8rem, 1.115vw, 2rem);
+  /* font-size: 20px; */
   font-weight: 700;
   line-height: 160%;
   text-transform: uppercase;
@@ -228,12 +280,12 @@
   position: relative;
   width: 40vw; /* 전체 너비를 설정, 마름모 크기에 따라 조정 필요 */
   height: 11.1vw; /* 전체 높이를 설정, 마름모 크기에 따라 조정 필요 */
-  margin-top: 8vw;
+  margin-top: 11.7vw;
 }
 
 .diamond {
   background-color: #ffffff;
-  position: absolute; /* 상대적 위치 조정을 위해 absolute 사용 */
+  position: absolute;
   text-align: center;
   border-radius: 15px;
   padding: 0px 20px;
@@ -274,7 +326,8 @@
   font-family: "Roboto500";
   line-height: 160%;
   text-transform: uppercase;
-  padding-top: 50px;
+  padding-top: 2.75vw;
+  /* padding-top: 50px; */
 }
 .diamond-text2 {
   color: #000;

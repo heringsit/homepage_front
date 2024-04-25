@@ -44,6 +44,14 @@ export const MENU = {
       link: [`whoweare`, `heringsteam`, `researchpartners`],
     },
     {
+      title: ["RPM solution"],
+      link: [`rpmsolution`],
+    },
+    {
+      title: ["WHO WE ARE", "HERINGS TEAM", "PARTNERS & INVESTORS"],
+      link: [`whoweare`, `heringsteam`, `researchpartners`],
+    },
+    {
       title: [
         "DIGITAL HEALTHCARE SERVICE PLATFORM",
         "TELE-HEALTHCARE SERVICE PLATFORM",

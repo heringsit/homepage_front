@@ -5,10 +5,10 @@ import Totop from "../Components/Totop";
 import "./Main.css";
 import "../../index.css";
 import { MediaQueryContext } from "../../context";
-import main_sub1 from "../../assets/images/00main/main-sub1.png";
-import main_sub2 from "../../assets/images/00main/main-sub2.png";
-import main_sub3 from "../../assets/images/00main/main-sub3.png";
-import main_sub4 from "../../assets/images/00main/main-sub4.png";
+import main_sub1 from "../../assets/images/00main/main-sub1.svg";
+import main_sub2 from "../../assets/images/00main/main-sub2.svg";
+import main_sub3 from "../../assets/images/00main/main-sub3.svg";
+import main_sub4 from "../../assets/images/00main/main-sub4.svg";
 import main_sub5 from "../../assets/images/00main/main-sub5.svg";
 import main_sub6 from "../../assets/images/00main/main-sub6.svg";
 
@@ -20,23 +20,23 @@ export default function Main() {
     {
       imgUrl: main_sub1,
       title: "Patient care",
-      content: `Providing services for\npatient health management`,
+      content: `Providing services for patient health management`,
     },
     {
       imgUrl: main_sub2,
       title: "Patient monitoring",
       content:
-        "Medical staff monitors the\npatient's condition and\nprovides feedback",
+        "Medical staff monitors the patient's condition and provides feedback",
     },
     {
       imgUrl: main_sub3,
       title: "Data research",
-      content: "Clinical research progress\nthrough monitoring data",
+      content: "Clinical research progress through monitoring data",
     },
     {
       imgUrl: main_sub4,
       title: "Constant development",
-      content: "Developing a system\nfor both patients and\nmedical staff",
+      content: "Developing a system for both patients and medical staff",
     },
   ];
 
@@ -93,7 +93,7 @@ export default function Main() {
                     <span
                       style={{
                         color: "#F68C29",
-                        fontSize: "28px",
+                        fontSize: "clamp(1rem, 1.55vw, 2rem)",
                         fontWeight: "700",
                         textTransform: "uppercase",
                       }}
@@ -115,10 +115,13 @@ export default function Main() {
                       <img
                         src={item.imgUrl}
                         alt="subImage"
-                        style={{ height: "150px", weight: "150px" }}
+                        style={{ height: "8vw", weight: "8vw" }}
+                        // style={{ height: "150px", weight: "150px" }}
                       />
-                      <p className="subTitle">{item.title}</p>
-                      <p className="subContent">{item.content}</p>
+                      <div className="sublayout">
+                        <p className="subTitle">{item.title}</p>
+                        <p className="subContent">{item.content}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -134,16 +137,12 @@ export default function Main() {
                       </p>
                       <p className="subContent2">
                         Remote patient monitoring (RPM) allows doctors
-                        tomonitor, report, and
-                        <br /> analyze a patient's acute or chronic conditions
-                        while the patient is away
-                        <br /> from the hospital or clinic. Herings uses
-                        RPM-based services to enable
-                        <br /> doctors and patients to overcome distance
-                        barriers and provide
-                        <br />
-                        therapeutic action in a short period of time in any
-                        location.
+                        tomonitor, report, and analyze a patient's acute or
+                        chronic conditions while the patient is away from the
+                        hospital or clinic. Herings uses RPM-based services to
+                        enable doctors and patients to overcome distance
+                        barriers and provide therapeutic action in a short
+                        period of time in any location.
                       </p>
                     </div>
                     <div className="moveButton">GO TO RPM SOLUTION</div>
@@ -160,7 +159,10 @@ export default function Main() {
                         We always introduce Herings with new news.
                       </p>
                     </div>
-                    <div className="moveButton itemRight">
+                    <div
+                      className="moveButton itemRight"
+                      style={{ textAlign: "center" }}
+                    >
                       GO TO News Release
                     </div>
                   </div>
