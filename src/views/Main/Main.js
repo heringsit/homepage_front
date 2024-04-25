@@ -220,8 +220,8 @@ export default function Main() {
             </>
           )
         }
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }

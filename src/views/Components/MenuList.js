@@ -4,6 +4,7 @@ export const MENU = {
   title: [
     "ABOUT US",
     "RPM SOLUTION",
+    "IR INFORMATION",
     "SERVICE",
     "RESEARCH",
     "CTS",
@@ -13,6 +14,7 @@ export const MENU = {
   link: [
     `${imsi}/aboutus/`,
     `${imsi}/rpmsolution/`,
+    `${imsi}/irinformation/`,
 
     `${imsi}/service/`,
     `${imsi}/research/`,
@@ -23,6 +25,7 @@ export const MENU = {
   linkpath: [
     `/aboutus/`,
     `/rpmsolution/`,
+    `/irinformation/`,
     `/service/`,
     `/research/`,
     `/cts/`,
@@ -32,6 +35,7 @@ export const MENU = {
   hashId: [
     "aboutus",
     "rpmsolution",
+    "irinformation",
     "service",
     "research",
     "cts",
@@ -46,6 +50,10 @@ export const MENU = {
     {
       title: ["RPM solution"],
       link: [`rpmsolution`],
+    },
+    {
+      title: ["IR INFORMATION"],
+      link: [`irinformation`],
     },
     {
       title: ["WHO WE ARE", "HERINGS TEAM", "PARTNERS & INVESTORS"],

@@ -1,7 +1,7 @@
 .rpm-main-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   padding-top: 80px;
 }
 
@@ -21,7 +21,7 @@
 
 .rpm-section1-maintext {
   color: #fff;
-  font-family: "Roboto600";
+  font-family: "Roboto500";
   font-size: clamp(2rem, 3vw, 3rem);
   /* font-size: 48px; */
   font-weight: 600;

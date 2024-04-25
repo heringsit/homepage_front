@@ -6,6 +6,8 @@ import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
 import Aboutus from "./views/Aboutus/Aboutus";
 import RpmSolution from "./views/RPM/RpmSolution";
+import IRinformation from "./views/IR/IRinformation";
+
 import Service from "./views/Service/Service";
 import Research from "./views/Research/Research";
 import Cts from "./views/CTS/Cts";
@@ -59,6 +61,8 @@ const App = () => {
             <Route path={`/aboutus`} component={Aboutus} />
             <Route path={`/rpmsolution/:submenu`} component={RpmSolution} />
             <Route path={`/rpmsolution`} component={RpmSolution} />
+            <Route path={`/irinformation/:submenu`} component={IRinformation} />
+            <Route path={`/irinformation`} component={IRinformation} />
             <Route path={`/service/:submenu`} component={Service} />
             <Route path={`/service`} component={Service} />
             <Route path={`/research`} component={Research} />
