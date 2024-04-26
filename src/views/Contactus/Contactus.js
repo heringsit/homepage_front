@@ -60,7 +60,9 @@ export default function ContactUs(props) {
       return (
         <div className="contactSquareButton">
           <span
-            className="ContactButtonLink FontR"
+            className="ContactButtonLink FontB"
+            style={{ fontSize: "1.044vw" }}
+            // style={{ fontSize: "20px" }}
             onClick={(e) => submitData(e)}
           >
             SEND MESSAGE
@@ -71,7 +73,9 @@ export default function ContactUs(props) {
       return (
         <div className="contactSquareButtonDisable">
           <span
-            className="ContactButtonLink FontR"
+            className="ContactButtonLink FontB"
+            style={{ fontSize: "1.044vw" }}
+            // style={{ fontSize: "20px" }}
             onClick={(e) => checkData(e)}
           >
             SEND MESSAGE
@@ -174,8 +178,8 @@ export default function ContactUs(props) {
   const scrollElem = Array.from(Array(2).keys());
   const refs = useRef(scrollElem.map(() => React.createRef()));
   const visibleArray = Array(2).fill(true);
-  visibleArray[0] = useOnScreen(refs.current[0]);
-  visibleArray[1] = useOnScreen(refs.current[1]);
+  // visibleArray[0] = useOnScreen(refs.current[0]);
+  // visibleArray[1] = useOnScreen(refs.current[1]);
 
   // Scroll function
   // update: TabClick function -> NavLink 에서 오는 random 숫자
@@ -208,22 +212,34 @@ export default function ContactUs(props) {
     >
       <Menubar slideIndex={0} />
 
-      {!mTablet && <TabClick visibleArray={visibleArray} />}
+      {/* {!mTablet && <TabClick visibleArray={visibleArray} />} */}
 
-      <ContentsTitle matches={matches} title={"CONTACT US"} />
+      {/* <ContentsTitle matches={matches} title={"CONTACT US"} />
       <div id="career" ref={refs.current[0]}>
         <Career matches={matches} />
-      </div>
+      </div> */}
 
-      <div className="SectionDiv" id="contact" ref={refs.current[1]}>
-        {/* <div className="titleDiv">
+      <div id="contact">
+        <div className="contact_container">
+          <div className="contact_section1">
+            <div className="contact_text_section1">
+              <p className="ir_maintext1">
+                Want to learn <br /> more about our services?
+              </p>
+              <span className="ir_subtext1">
+                Please get in touch, We'd love to hear from you!
+              </span>
+            </div>
+          </div>
+          {/* <div className="titleDiv">
           <div className="textT22 FontEB">
             <span>CONTACT</span>
           </div>
           <hr></hr>
         </div> */}
-        <CommonCardTitle title="CONTACT" />
-        <div className="subTitleDiv">
+          {/* 구간 나뉨 */}
+          <div className="contact_section2">
+            {/* <div className="subTitleDiv">
           <div
             className={`contactusSubTitle FontL textF22 ${
               theme === "dark" ? "tcw" : "tcg4"
@@ -235,20 +251,9 @@ export default function ContactUs(props) {
             Please get in touch,{" "}
             <span className="FontL tco">we'd love to hear from you!</span>
           </div>
-        </div>
-        <div className="contactusContentsDiv">
-          <div className="contractusMapWrap">
-            <div className="contractusMap">
-              <iframe
-                title="maps"
-                className="maps"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.0098946623134!2d127.03767551516597!3d37.50768477980899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3f7e3020f01%3A0x1277a3bb7d2a84c8!2z7ISc7Jq47Yq567OE7IucIOqwleuCqOq1rCDsl63sgrzrj5kg7Ja47KO866GcIDU2MA!5e0!3m2!1sko!2skr!4v1570788489588!5m2!1sko!2skr"
-                frameBorder="0"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-          <div className="squareDiv tcw">
+        </div> */}
+            <div className="contactusContentsDiv">
+              {/* <div className="squareDiv tcw">
             <div className="textF20 FontL">
               <span className="textF40 FontB">OFFICE</span> 14th Floor, 560,
               Eonju-ro, Gangnam-gu, Seoul, Republic of Korea
@@ -258,58 +263,92 @@ export default function ContactUs(props) {
               <span className="tcgreen3 FontB">TEL</span>+82.02.6949.3516
               <span className="tcgreen3 FontB">FAX</span>+82.02.6949.3517
             </div>
-          </div>
-          <div className="contactusInputDiv">
-            <form
-              method="POST"
-              className="contactusInputForm "
-              id="contactDatas"
-            >
-              <input
-                type="text"
-                onChange={onChange}
-                placeholder="Name"
-                name="cName"
-                className={`${inputClassNameHelper(
-                  isEnteredNameValid()
-                )} FontR textF14`}
-              />
-              <input
-                type="text"
-                onChange={onChange}
-                placeholder="Email"
-                name="cEmail"
-                className={`${inputClassNameHelper(
-                  isEnteredEmailValid()
-                )} FontR textF14`}
-              />
-              <input
-                type="text"
-                onChange={onChange}
-                placeholder="Phone"
-                name="cPhone"
-                className={`${inputClassNameHelper(
-                  isEnteredPhoneValid()
-                )} FontR textF14`}
-              />
-              <textarea
-                type="textarea"
-                placeholder="Message"
-                onChange={onChange}
-                style={{
-                  height: "123px",
-                  resize: "none",
-                  overflow: "auto",
-                }}
-                name="cMessage"
-                className={`FontR textF14 ${inputClassNameHelper(
-                  isEnteredMessageValid()
-                )}`}
-              />
-              <div className="contactSquareButtonContain">
-                {renderSubmitBtn()}
+          </div> */}
+              <div className="contactusInputDiv">
+                {/* <CommonCardTitle title="CONTACT" /> */}
+                <p className="card_titleLeft">CONTACT</p>
+                <form
+                  method="POST"
+                  className="contactusInputForm "
+                  id="contactDatas"
+                >
+                  <div className="contactusInputNamePhoneLayout">
+                    <input
+                      type="text"
+                      onChange={onChange}
+                      placeholder="Name"
+                      name="cName"
+                      className={`${inputClassNameHelper(
+                        isEnteredNameValid()
+                      )} FontR textF14 contactusInputNamePhone`}
+                    />
+                    <input
+                      type="text"
+                      onChange={onChange}
+                      placeholder="Phone"
+                      name="cPhone"
+                      className={`${inputClassNameHelper(
+                        isEnteredPhoneValid()
+                      )} FontR textF14 contactusInputNamePhone`}
+                    />
+                  </div>
+                  <input
+                    type="text"
+                    onChange={onChange}
+                    placeholder="Email"
+                    name="cEmail"
+                    className={`${inputClassNameHelper(
+                      isEnteredEmailValid()
+                    )} FontR textF14`}
+                  />
+
+                  <textarea
+                    type="textarea"
+                    placeholder="Message"
+                    onChange={onChange}
+                    style={{
+                      height: "123px",
+                      resize: "none",
+                      overflow: "auto",
+                    }}
+                    name="cMessage"
+                    className={`FontR textF14 ${inputClassNameHelper(
+                      isEnteredMessageValid()
+                    )}`}
+                  />
+                  <div className="contactSquareButtonContain">
+                    {renderSubmitBtn()}
+                  </div>
+                </form>
               </div>
-            </form>
+              <div className="contractusMapWrap">
+                {/* <CommonCardTitle title="OFFICE" /> */}
+                <p className="card_titleLeft">OFFICE</p>
+
+                <div className="contractusMap">
+                  <iframe
+                    title="maps"
+                    className="maps"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.0098946623134!2d127.03767551516597!3d37.50768477980899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca3f7e3020f01%3A0x1277a3bb7d2a84c8!2z7ISc7Jq47Yq567OE7IucIOqwleuCqOq1rCDsl63sgrzrj5kg7Ja47KO866GcIDU2MA!5e0!3m2!1sko!2skr!4v1570788489588!5m2!1sko!2skr"
+                    frameBorder="0"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <div style={{ paddingTop: "2.5vw" }}>
+                  {/* <div style={{ paddingTop: "48px" }}> */}
+                  <span className="ir_subtext1" style={{ color: "#000000" }}>
+                    14th Floor, 560, Eonju-ro, Gangnam-gu,
+                    <br /> Seoul, Republic of Korea
+                  </span>
+                  <p className="contact_sub_text">
+                    <span style={{ color: "#008F8F" }}>TEL</span>{" "}
+                    +82.02.6949.3516 <br />
+                    <span style={{ color: "#008F8F" }}>FAX</span>{" "}
+                    +82.02.6949.3517
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

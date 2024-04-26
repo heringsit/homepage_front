@@ -408,6 +408,15 @@ body {
 
 /*card 공통*/
 /* COMMON CARD TITLE */
+.card_titleLeft {
+  color: #282828;
+  font-family: "Roboto500";
+  font-size: 2.23vw;
+  font-weight: 600;
+  line-height: normal;
+  text-align: left;
+}
+
 .card_titleDiv {
   display: flex;
   width: 100%;

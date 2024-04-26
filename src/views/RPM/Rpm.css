@@ -6,23 +6,28 @@
 }
 
 .rpm-container1 {
-  background-image: url("../../assets/images/03rpm/rpm_img1.svg");
-  height: 562px;
-  top: 4rem;
+  background-image: url("../../assets/images/03rpm/RPM_Header_img.png");
+  height: 31.4vw;
+  /* height: 562px; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* top: 4rem; */
 }
 
 .rpm-section1-text-layout {
   display: flex;
   flex-direction: column;
-  padding: 168px 20.1vw;
+  padding: 9.4vw 20.1vw;
+  /* padding: 168px 20.1vw; */
   /* padding: 168px 360px; */
-  gap: 20px;
+  gap: 1.1vw;
+  /* gap: 20px; */
 }
 
 .rpm-section1-maintext {
   color: #fff;
   font-family: "Roboto500";
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: clamp(1.5rem, 3vw, 3rem);
   /* font-size: 48px; */
   font-weight: 600;
   line-height: 120%;
@@ -31,7 +36,7 @@
 .rpm-section1-subtext {
   color: #fff;
   font-family: "Roboto300";
-  font-size: clamp(1rem, 1.34vw, 3rem);
+  font-size: clamp(0.9rem, 1.34vw, 3rem);
   /* font-size: 24px; */
   font-weight: 300;
   line-height: normal;
