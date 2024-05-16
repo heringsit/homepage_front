@@ -1,15 +1,211 @@
 /****************Carrer[s]******************/
+
+.news-main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 80px;
+}
+
+.news-section1 {
+  background-image: url("../../assets/images/04IR/IR_Header_img.jpg");
+  height: 31.4vw;
+  /* height: 562px; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* top: 4rem; */
+}
+
+.news-section2 {
+  background-image: url("../../assets/images/10newsir/news_bg.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.website-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-direction: row;
+  gap: 36px;
+  flex-wrap: wrap;
+}
+
+.website-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 21vw;
+  min-width: 230px;
+  height: 370px;
+  padding-bottom: 20px;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.website-card-img {
+  /* display: flex; */
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 200px;
+}
+.website-card-noimg {
+  background: #e1e1e1;
+  width: 100%;
+  height: 200px;
+}
+
+.website-card-text-layout {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 0px 20px;
+  gap: 10px;
+}
+
+.website-card-date-text {
+  color: #747474;
+  font-family: "Pretendard400";
+  font-size: clamp(0.8rem, 0.895vw, 1.5rem);
+  /* font-size: 16px; */
+  font-weight: 400;
+  line-height: normal;
+}
+
+.website-card-title-text {
+  color: #393939;
+  font-family: "Pretendard600";
+  /* font-size: clamp(0.8rem, 0.895vw, 1.5rem); */
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 27px;
+  letter-spacing: -0.17px;
+  text-overflow: ellipsis; /* 내용이 숨겨지면 말줄임표 표시 */
+  height: 50px; /* 최대 폭을 지정하여 레이아웃 범위를 벗어나지 않도록 함 */
+}
+
+.website-card-bottom-text {
+  color: #f68c29;
+  font-family: "Pretendard400";
+  font-size: clamp(0.8rem, 0.895vw, 1.5rem);
+  font-weight: 600;
+  line-height: normal;
+  position: absolute; /* 텍스트를 절대 위치로 설정 */
+  bottom: 0; /* 하단에 위치 */
+  right: 0; /* 우측에 위치 */
+  margin: 20px; /* 우측과 하단의 여백 설정 */
+}
+
+.modal-header {
+  /* display: flex; */
+  background: linear-gradient(90deg, #ee9d00 0%, #fedc2b 100%);
+  height: clamp(13rem, 14.75vw, 16rem);
+  /* height: 264px; */
+  width: 100%;
+  position: relative;
+  /* align-items: center;
+  justify-content: center; */
+  /* text-align: center; */
+}
+
+.modal-header-text {
+  color: #3c3c3c;
+  font-family: "Pretendard";
+  width: 95%;
+  font-size: clamp(2rem, 2.23vw, 3rem);
+  font-weight: 700;
+  line-height: 138%;
+  letter-spacing: 0.4px;
+  padding: 2.4vw 20.1vw;
+}
+
+.modal-body-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  text-align: left;
+  padding: 40px 30vw;
+  /* padding: 40px 250px; */
+}
+
+.modal-date {
+  position: absolute;
+  right: 20vw;
+  /* right: 360px; */
+  bottom: 15px;
+}
+
+.modal-img {
+  display: flex;
+  object-fit: contain;
+  object-position: center;
+  width: clamp(20rem, 35.5vw, 40rem);
+  height: clamp(20rem, 35.5vw, 40rem);
+  /* width: 510px; */
+  /* height: 510px; */
+}
+
+.modal-bottom {
+  width: 100%;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: left;
+  padding-top: 30px;
+}
+
+.modal-back-btn {
+  display: inline-flex;
+  padding: 14px 32px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 52px;
+  background: #434343;
+}
+
+/* LoadingIndicator.css */
+.loaderPost {
+  border: 10px solid #f3f3f3; /* 라이트 그레이 색상의 배경 */
+  border-top: 10px solid #ff6b00;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  animation: spin 2s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
 /* 화면 사이즈, 테이블 사이즈도 포함 */
 .SectionDivNews {
   width: 100%;
   height: 100%;
-  padding: 110px 15%;
+  padding: 5.59vw 20.1vw;
+  /* padding: 100px 360px; */
 }
 
 .SectionDivNewsIp {
   width: 100%;
   height: 100%;
-  padding: 215px 10%;
+  padding: 5.59vw 15%;
 }
 
 .careerWrap {

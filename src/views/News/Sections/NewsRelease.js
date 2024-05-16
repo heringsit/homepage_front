@@ -2,18 +2,19 @@ import React, { useState, useEffect, useContext } from "react";
 import "../News.css";
 import axios from "axios";
 import moment from "moment";
-// import parse from "html-react-parser";
+import parse from "html-react-parser";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
-// import useMediaQuery from "@material-ui/core/useMediaQuery";
-// import Modal from "@material-ui/core/Modal";
-// import Backdrop from "@material-ui/core/Backdrop";
-// import Fade from "@material-ui/core/Fade";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
 import { ReactComponent as IconClose } from "../../../assets/images/05career/close.svg";
 import { saveAs } from "file-saver";
 import { imsi } from "../../..";
-// import search from "../../../assets/images/etc/search.png";
+import search from "../../../assets/images/etc/search.png";
 import CommonCardTitle from "../../common/CommonCardTitle";
 import { ThemeContext } from "../../../context";
+import BannerSlider from "../BannerSlider";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -71,12 +72,13 @@ const useStyles = makeStyles((theme) =>
 );
 
 export default function NewsRelease({ match }) {
-  // const matches = useMediaQuery("(max-width:600px)");
+  const matches = useMediaQuery("(max-width:600px)");
   const [, setIsDataReady] = useState(false);
   const [paginginfo, setPaginginfo] = useState([]);
-  // const classes = useStyles();
+  const classes = useStyles();
+
   const [modalObj, setModalObj] = useState({});
-  // const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const checkDate = (endDate, type) => {
     let today = moment(new Date(), "YYYY-MM-DD");
     let end = moment(endDate, "YYYY-MM-DD");
@@ -115,6 +117,8 @@ export default function NewsRelease({ match }) {
       })
       .then((response) => {
         //
+        console.log(response.data, "response data News111");
+
         setCountList([
           response.data.boardCnt[0].cnt,
           response.data.boardCnt[0].newcnt,
@@ -136,6 +140,7 @@ export default function NewsRelease({ match }) {
         setListData(response.data.board_data);
         setIsDataReady(true);
         setPaginginfo(response.data.paginginfo);
+        console.log(response.data, "response data News222");
       })
       .catch(function (error) {
         console.log(error);
@@ -145,7 +150,7 @@ export default function NewsRelease({ match }) {
   const handleOpen = async (obj) => {
     if (JSON.stringify({}) !== obj) {
       setModalObj(obj);
-      // setOpen(true);
+      setOpen(true);
     }
   };
   const openWindowWithLink = () => {
@@ -158,9 +163,9 @@ export default function NewsRelease({ match }) {
     openWindowWithLink();
   }, [modalObj]);
 
-  // const handleClose = () => {
-  //   setOpen(false);
-  // };
+  const handleClose = () => {
+    setOpen(false);
+  };
   const page = (e, page) => {
     e.preventDefault();
 
@@ -175,6 +180,7 @@ export default function NewsRelease({ match }) {
         setPaginginfo(response.data.paginginfo);
         setIsDataReady(true);
         setListData(response.data.board_data);
+        console.log(response.data, "response data News333");
       })
       .catch(function (error) {
         console.log(error);
@@ -244,9 +250,9 @@ export default function NewsRelease({ match }) {
       {/*id="content" className="content">*/}
       <div className="SectionDivNews">
         <CommonCardTitle
-          title={"News Release"}
-          fontStyle={"FontEB"}
-          fontSize={"textF22"}
+          title={"NEWS RELEASE"}
+          fontStyle={"FontCB"}
+          fontSize={"textF40"}
         />
 
         {/* <div className="SectionDivNT ">
@@ -255,208 +261,157 @@ export default function NewsRelease({ match }) {
             <hr></hr>
           </div>
         </div> */}
-        <div className="newsContainList">
-          <div
-            className={`newsContainListHeader FontNL ${
-              theme === "dark" ? "border-w" : "border-b"
-            }`}
-          >
-            <div className="newsContainListHeaderCol ncol1 textF16 FontNL">
-              제목
-            </div>
-            <div className="newsContainListHeaderCol ncol2 textF16 FontNL">
-              등록일
-            </div>
-          </div>
-          <div className="nodatasWrap">
-            {listData.map((data, index) => {
-              return (
-                <div key={index} className="careerListRow FontNR">
-                  <div className="newsContainListCol ncol1 newsListTitle">
-                    <div
-                      // onClick={(e) => {
-                      //   handleOpen(data, checkDate(data.regiDate, "E"));
-                      // }}
-                      // modalObj?.link &&
-                      //   window.open(`${modalObj.link}`, "_blank")
-                      onClick={(e) => handleOpen(data)}
-                    >
-                      <div className={`textF20 ${fontColor} FontNB`}>
-                        {data.title}
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}
-                  >
-                    {moment(data.reg_datetime).format("YYYY-MM-DD")}
-                  </div>
-                </div>
-              );
-            })}
-
-            {/* <div className="nodatasWrap">
-              <div className="nodatas FontB">등록된 게시물이 없습니다!</div>
-            </div> */}
-            {paginginfo.totalPage > 1 ? (
-              <div
-                className="pagingDiv"
-                // onClick={(e) => loadMore(e)}
-              >
-                {pageingFn(paginginfo)}
-              </div>
-            ) : (
-              <div></div>
-            )}
-          </div>
+        <div style={{ padding: "110px 0px" }}>
+          <BannerSlider />
         </div>
       </div>
     </div>
   );
 }
 
-// eslint-disable-next-line no-lone-blocks
 {
-  /* <Modal
-  aria-labelledby="transition-modal-title"
-  aria-describedby="transition-modal-description"
-  className={classes.modal}
-  open={open}
-  onClose={handleClose}
-  closeAfterTransition
-  disableScrollLock={true}
-  BackdropComponent={Backdrop}
-  BackdropProps={{
-    timeout: 500,
-  }}
->
-  <Fade in={open}>
-    <div className={classes.paper}>
-      {modalObj !== JSON.stringify({}) ? (
-        <div className={classes.modalContent}>
-          <div className="careerModalTitle">
-            <div className="careerModalTitleSection">
-              <span className="FontNB textF26" style={{ marginLeft: 45 }}>
-                NEWS
-              </span>
-            </div>
-            <IconClose
-              onClick={handleClose}
-              className="careerModalIconSection"
-            />
-          </div>
-
-          <div className="careerModalContent" style={{ paddingTop: 10 }}>
-            <div
-              className="FontB textF18"
-              style={{
-                textAlign: "center",
-                paddingBottom: 30,
-                paddingTop: 20,
-              }}
-            >
-              {modalObj.title}
-            </div>
-
-            <div className="filecol">
-              <div className="readContentsNewsCategoryWrap borderBottom  borderTop">
-                <div className="readContentsNewsCategory">
-                  {modalObj?.img && (
-                    <div className="readContentsRow ">
-                      <div
-                        className="tbContentsB FontNB textF16"
-                        style={{ color: "#fd8d27" }}
-                      >
-                        첨부파일
-                      </div>
-                      <div
-                        className="tbContents tcb FontNR textF16"
-                        style={{ cursor: "pointer", color: "#666666" }}
-                        onClick={() => onDownLoad(modalObj.img)}
-                      >
-                        {modalObj.img}
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                <div>
-                  <div className="readContentsRow ">
-                    <div
-                      className="tbContentsB FontNB textF16"
-                      style={{ color: "#fd8d27" }}
-                    >
-                      등록일
-                    </div>
-                    <div
-                      className="tbContents tcb FontNR textF16 "
-                      style={{ color: "#666666" }}
-                    >
-                      {moment(modalObj.reg_datetime).format("YYYY-MM-DD")}
-                    </div>
-                  </div>
-                  <div className="readContentsRow ">
-                    <div className="tbContents tcb FontNR textF16 ">
-                      {modalObj.recruitment}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="readContentsTableButtonTd">
-                      <div className="readContentsTableButton FontNR textF16">
-                        {modalObj.closing_date}
-                      </div>
-                    </div> 
-            </div>
-            <div className="careerContents FontNR textF16 borderBottom">
-              {(() => {
-                if (modalObj.content !== undefined && modalObj.content !== "") {
-                  return parse(modalObj.content);
-                }
-              })()}
-            </div>
-            {modalObj?.link && (
-              <div
-                className="tbContents tcb FontNR textF24 "
-                style={{ textAlign: "center" }}
-              >
-                <button
-                  style={{
-                    cursor: "pointer",
-                    padding: 10,
-                    background: "none",
-                    border: "none",
-                    color: "black",
-                    fontSize: 17,
-                    overflowWrap: "break-word",
-                    wordBreak: "break-word",
-                  }}
-                  onClick={() => window.open(`${modalObj.link}`, "_blank")}
-                >
-                  <img
-                    alt="img"
-                    src={search}
-                    style={{ marginRight: 9, marginBottom: -4 }}
-                  />
-                  ${modalObj.link}
-                   &nbsp;자세히 보기 
-                </button>
-              </div>
-            )}
-            <div className="careerModalBottom">
-              <div className="careerModalClose  textF16" onClick={handleClose}>
-                <span className="newsButtonLink FontR" onClick={handleClose}>
-                  Close
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      ) : (
-        <div> no info</div>
-      )}
-    </div>
-  </Fade>
-      </Modal> */
+  // <Modal
+  //   aria-labelledby="transition-modal-title"
+  //   aria-describedby="transition-modal-description"
+  //   className={classes.modal}
+  //   open={open}
+  //   onClose={handleClose}
+  //   closeAfterTransition
+  //   disableScrollLock={true}
+  //   BackdropComponent={Backdrop}
+  //   BackdropProps={{
+  //     timeout: 500,
+  //   }}
+  // >
+  //   <Fade in={open}>
+  //     <div className={classes.paper}>
+  //       {modalObj !== JSON.stringify({}) ? (
+  //         <div className={classes.modalContent}>
+  //           <div className="careerModalTitle">
+  //             <div className="careerModalTitleSection">
+  //               <span className="FontNB textF26" style={{ marginLeft: 45 }}>
+  //                 NEWS
+  //               </span>
+  //             </div>
+  //             <IconClose
+  //               onClick={handleClose}
+  //               className="careerModalIconSection"
+  //             />
+  //           </div>
+  //           <div className="careerModalContent" style={{ paddingTop: 10 }}>
+  //             <div
+  //               className="FontB textF18"
+  //               style={{
+  //                 textAlign: "center",
+  //                 paddingBottom: 30,
+  //                 paddingTop: 20,
+  //               }}
+  //             >
+  //               {modalObj.title}
+  //             </div>
+  //             <div className="filecol">
+  //               <div className="readContentsNewsCategoryWrap borderBottom  borderTop">
+  //                 <div className="readContentsNewsCategory">
+  //                   {modalObj?.img && (
+  //                     <div className="readContentsRow ">
+  //                       <div
+  //                         className="tbContentsB FontNB textF16"
+  //                         style={{ color: "#fd8d27" }}
+  //                       >
+  //                         첨부파일
+  //                       </div>
+  //                       <div
+  //                         className="tbContents tcb FontNR textF16"
+  //                         style={{ cursor: "pointer", color: "#666666" }}
+  //                         onClick={() => onDownLoad(modalObj.img)}
+  //                       >
+  //                         {modalObj.img}
+  //                       </div>
+  //                     </div>
+  //                   )}
+  //                 </div>
+  //                 <div>
+  //                   <div className="readContentsRow ">
+  //                     <div
+  //                       className="tbContentsB FontNB textF16"
+  //                       style={{ color: "#fd8d27" }}
+  //                     >
+  //                       등록일
+  //                     </div>
+  //                     <div
+  //                       className="tbContents tcb FontNR textF16 "
+  //                       style={{ color: "#666666" }}
+  //                     >
+  //                       {moment(modalObj.reg_datetime).format("YYYY-MM-DD")}
+  //                     </div>
+  //                   </div>
+  //                   <div className="readContentsRow ">
+  //                     <div className="tbContents tcb FontNR textF16 ">
+  //                       {modalObj.recruitment}
+  //                     </div>
+  //                   </div>
+  //                 </div>
+  //               </div>
+  //               <div className="readContentsTableButtonTd">
+  //                 <div className="readContentsTableButton FontNR textF16">
+  //                   {modalObj.closing_date}
+  //                 </div>
+  //               </div>
+  //             </div>
+  //             <div className="careerContents FontNR textF16 borderBottom">
+  //               {(() => {
+  //                 if (
+  //                   modalObj.content !== undefined &&
+  //                   modalObj.content !== ""
+  //                 ) {
+  //                   return parse(modalObj.content);
+  //                 }
+  //               })()}
+  //             </div>
+  //             {modalObj?.link && (
+  //               <div
+  //                 className="tbContents tcb FontNR textF24 "
+  //                 style={{ textAlign: "center" }}
+  //               >
+  //                 <button
+  //                   style={{
+  //                     cursor: "pointer",
+  //                     padding: 10,
+  //                     background: "none",
+  //                     border: "none",
+  //                     color: "black",
+  //                     fontSize: 17,
+  //                     overflowWrap: "break-word",
+  //                     wordBreak: "break-word",
+  //                   }}
+  //                   onClick={() => window.open(`${modalObj.link}`, "_blank")}
+  //                 >
+  //                   <img
+  //                     alt="img"
+  //                     src={search}
+  //                     style={{ marginRight: 9, marginBottom: -4 }}
+  //                   />
+  //                   ${modalObj.link}
+  //                   &nbsp;자세히 보기
+  //                 </button>
+  //               </div>
+  //             )}
+  //             <div className="careerModalBottom">
+  //               <div
+  //                 className="careerModalClose  textF16"
+  //                 onClick={handleClose}
+  //               >
+  //                 <span className="newsButtonLink FontR" onClick={handleClose}>
+  //                   Close
+  //                 </span>
+  //               </div>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       ) : (
+  //         <div> no info</div>
+  //       )}
+  //     </div>
+  //   </Fade>
+  // </Modal>;
 }

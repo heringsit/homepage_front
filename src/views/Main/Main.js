@@ -11,6 +11,7 @@ import main_sub3 from "../../assets/images/00main/main-sub3.svg";
 import main_sub4 from "../../assets/images/00main/main-sub4.svg";
 import main_sub5 from "../../assets/images/00main/main-sub5.svg";
 import main_sub6 from "../../assets/images/00main/main-sub6.svg";
+import main2 from "../../assets/images/00main/main2.png";
 
 export default function Main() {
   // mTablet (768px)
@@ -75,41 +76,47 @@ export default function Main() {
               <div className="mainlayout">
                 <div className="maintext ">
                   <p>
-                    Do you want <br />
-                    <span style={{ color: "#F88001" }}>
-                      convenient health care?
-                    </span>
+                    <span style={{ color: "#F88001" }}>HERINGS</span> is a
                     <br />
-                    HERINGS creates services <br />
-                    that everyone wants
+                    personalized healthcare service
+                    <br /> platform company based on
+                    <br />{" "}
+                    <span style={{ color: "#F88001" }}>
+                      Remote Patient Monitoring solutions
+                    </span>
                   </p>
                 </div>
               </div>
               <div className="mainlayout2">
+                <img
+                  src={main2}
+                  alt="main2"
+                  className="mainsublayout2"
+                  // style={{ height: "8vw", weight: "8vw" }}
+                  // style={{ height: "454px", weight: "300px" }}
+                />
                 <div>
-                  <h1>WE ARE</h1>
                   <p className="maintext2 ">
-                    provides services based on
-                    <span
+                    <p
                       style={{
                         color: "#F68C29",
-                        fontSize: "clamp(1rem, 1.55vw, 2rem)",
+                        fontSize: "clamp(1rem, 1.65vw, 2rem)",
                         fontWeight: "700",
                         textTransform: "uppercase",
                       }}
                     >
                       {" "}
-                      remote patient monitoring
-                    </span>{" "}
-                    services.
-                    <br /> We are conducting research to increase access to
-                    professional medical services
-                    <br /> for patients and medical staff and improve treatment
-                    outcomes.
+                      Remote Patient Monitoring solutions
+                    </p>
+                    Every individual patient deserves heartful attention
+                    <br /> and personal care no matter where they are <br />
+                    HERINGS connects patients and medical professionals
+                    <br /> for more convenient and  immediate care through
+                    <br /> its Remote Patient Monitoring solutions
                   </p>
                 </div>
 
-                <div className="mainsublayout">
+                {/* <div className="mainsublayout">
                   {subItems.map((item, i) => (
                     <div key={i} className="mainsublayout2">
                       <img
@@ -124,7 +131,7 @@ export default function Main() {
                       </div>
                     </div>
                   ))}
-                </div>
+                </div> */}
               </div>
               <div className="mainlayoutImage mainlayout3">
                 <div className="mainsublayout3">

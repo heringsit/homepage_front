@@ -70,7 +70,8 @@ const App = () => {
             {/* Career */}
             <Route path={`/contactus/:submenu`} component={Contactus} />
             <Route path={`/contactus`} component={Contactus} />
-            <Route path={`/news/:submenu/detail/:id`} component={DetailPage} />
+            {/* <Route path={`/news/:submenu/detail/:id`} component={DeBtailPage} /> */}
+
             <Route path={`/news/:submenu`} component={News} />
             <Route path={`/news`} component={News} />
             <Route path={`/privacypolicy/`} component={PrivacyPolicy} />

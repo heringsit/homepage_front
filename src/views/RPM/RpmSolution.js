@@ -55,54 +55,65 @@ const RpmSolution = () => {
       imgUrl: serviceimg1,
       title: "OSTO CARE",
       content:
-        "OstoCare is a platform developed to facilitate\n non-face-to-face management of ostomy\n patients by ostomy staff.",
+        "OstoCare is a gateway solution platform for\n patients with Ostomy facilitating remote\n ostomy care management.",
       btnText: "GO TO OSTO CARE",
+      btnLink: "https://www.ostocare.co.kr/",
     },
     {
       imgUrl: serviceimg2,
       title: "ATTI",
       content:
-        "ATTI closely monitors the side effects that frequently occur in lung cancer patients and provides patients with appropriate ways to deal with the side effects.",
+        "ATTI is a  real time monitoring solution for\n cancer patients with chemo-therapy. \n ATTI closely monitors side effects that \n frequently occur during the treatment\n and provides patients with appropriate\n ways to handle the situations.",
     },
     {
       imgUrl: serviceimg3,
       title: "HEALIARY",
       content:
-        "Healiary is a service that allows cancer patients to monitor their own health management. Cancer patients can easily manage their health with various functions.",
+        "HELIARY is a comprehensive solution for cancer patients providing various daily life guidance including nutrition, symptom management, medication, exercise and help the patients to monitor their own health status and manage them.",
       btnText: "GO TO HEALIARY",
+      btnLink: "https://www.healiary.com/",
     },
   ];
 
   const rpmItems = [
     {
       imgUrl: nutrition,
-      title: "nutrition",
-    },
-    {
-      imgUrl: riskPrediction,
-      title: "risk Prediction",
+      title: "NUTRITION",
     },
     {
       imgUrl: drugAdherence,
-      title: "drug Adherence",
-    },
-    {
-      imgUrl: aiDeepLearning,
-      title: "ai Deep Learning",
+      title: "DRUG ADHERENCE",
     },
     {
       imgUrl: drugAdverse,
-      title: "drug Adverse",
+      title: "DRUG ADVERSE",
+    },
+    {
+      imgUrl: riskPrediction,
+      title: "RISK PREDICTION",
     },
     {
       imgUrl: CGM,
-      title: "CGM",
+      title: "Continuous\n Glucose Monitoring",
     },
     {
-      imgUrl: HDT101,
-      title: "HDT-101",
+      imgUrl: aiDeepLearning,
+      title: "AI DEEP LEARNING",
     },
+
+    // {
+    //   imgUrl: HDT101,
+    //   title: "HDT-101",
+    // },
   ];
+  function formatTitle(title) {
+    return title.split("\n").map((line, index) => (
+      <span key={index}>
+        {line}
+        {index < title.split("\n").length - 1 && <br />}
+      </span>
+    ));
+  }
 
   return (
     <div id="rpmsolution">
@@ -115,8 +126,8 @@ const RpmSolution = () => {
               The new leader in <br /> Remote Patient Monitoring <br />
             </span>
             <span className="rpm-section1-subtext ">
-              HERINGS provides convenient services
-              <br /> based on remote patient monitoring
+              HERINGS leads the way where future patient care
+              <br /> should follow through our RPM solutions
             </span>
           </div>
         </div>
@@ -153,14 +164,11 @@ const RpmSolution = () => {
               onitoring?
             </p>
             <span className="rpm-section2-subtext">
-              Remote patient monitoring (RPM) allows doctors to monitor, report,
-              and analyze a patient's acute or chronic conditions while the
-              patient is away from the hospital or clinic. Conveniently allows
-              doctors to review personal health and medical data from a location
-              separate from the patient, from anywhere. Herings uses RPM-based
-              services to enable doctors and patients to overcome distance
-              barriers and provide therapeutic action in a short period of time
-              in any location.
+              RPM  is a solution for medical care teams to evaluate patients’
+              health conditions either chronic or acute and provide necessary
+              care in a near real time and continuously monitor. RPM  is  a fast
+              and convenient  gateway solution for patients at any location to
+              be connected to medical staffs and get appropriate care.
             </span>
           </div>
           <img src={rpm_img2} alt="rpmImage2" className="rpmImage" />
@@ -237,7 +245,10 @@ const RpmSolution = () => {
                     <p className="rpm-section3-maintext">{item.title}</p>
                     <span className="rpm-section4-subtext">{item.content}</span>
                     {item.btnText ? (
-                      <div className="rpm-service-btn rpm-service-btn-text ">
+                      <div
+                        className="rpm-service-btn rpm-service-btn-text "
+                        onClick={() => (window.location.href = item.btnLink)}
+                      >
                         {item.btnText}
                       </div>
                     ) : (
@@ -266,7 +277,9 @@ const RpmSolution = () => {
                     style={{ backgroundImage: `url(${item.imgUrl})` }}
                   >
                     {/* <img src={item.imgUrl} alt="rpmimg"></img> */}
-                    <p className="rpm-section5-item-text ">{item.title}</p>
+                    <p className="rpm-section5-item-text">
+                      {formatTitle(item.title)}
+                    </p>
                   </div>
                 ))}
               </div>

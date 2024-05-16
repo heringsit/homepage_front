@@ -26,22 +26,22 @@ import icon3_8 from "../../../assets/images/02about_herings_team/new220707/3_7Ka
 
 export const Executive_Leadership = [
   {
-    name: "Byung-Ho Nam, Ph.D, MBA",
+    name: "Byung-Ho Nam, Ph.D., MBA",
     jobs: "CEO & FOUNDER",
     // positions: "CEO & FOUNDER",
     background: icon1_1,
     modalimg: icon1_1,
     detail:
-      "Byung-Ho Nam, Ph.D, is the CEO and founder of HERINGS. Byungho has more than 20 years of experience in clinical research especially for oncology and cardiology. Previously, Byungho was a professor at the National Cancer Center (NCC), Korea. He also served as the director of Clinical Research Coordination Center at the NCC for organizing and supporting nation-wide public funded clinical trials. He led many clinical research projects where he not only developed cancer risk prediction models including pancreatic cancer, but also designed several landmark cancer clinical trials. Prior to the NCC, He was a professor at the Boston University and a leading biostatistician at the Framingham Heart Study.\n\nByung-Ho received his Ph.D in Biostatistics from Boston University. He studied at the University of Michigan for his MS in Applied Statistics and received a BA at the Seoul National University majoring French with minor in Business Administration.",
+      "Byung-Ho Nam, Ph.D., is the CEO and founder of HERINGS. Byungho has more than 20 years of experience in clinical research especially for oncology and cardiology. Previously, Byungho was a professor at the National Cancer Center (NCC), Korea. He also served as the director of Clinical Research Coordination Center at the NCC for organizing and supporting nation-wide public funded clinical trials. He led many clinical research projects where he not only developed cancer risk prediction models including pancreatic cancer, but also designed several landmark cancer clinical trials. Prior to the NCC, He was a professor at the Boston University and a leading biostatistician at the Framingham Heart Study.\n\nByung-Ho received his Ph.D. in Biostatistics from Boston University. He studied at the University of Michigan for his MS in Applied Statistics and received a BA at the Seoul National University majoring French with minor in Business Administration.",
   },
   {
-    name: "Yooin Song, Ph.D, MBA",
+    name: "Yooin Song, Ph.D., MBA",
     jobs: "Vice President",
     // positions: "COO -> Vice President",
     background: icon1_2,
     modalimg: icon1_2,
     detail:
-      "Yooin Song is the Vice President of HERINGS. He is a business expert at life science and bio-industry, working over for 15 years. Previously Song was a private equity fund manager, mainly invested in biotech and life science companies. Also, he was a strategic consultant at Deloitte Consulting for Life Science and Healthcare division.\n\nMr. Song received Ph.D degree in Business Administration from HUFS, and he studied at the IE business school in Madrid, Spain for his MBA degree. He also received BA degree at occidental linguistics department in HUFS.",
+      "Yooin Song is the Vice President of HERINGS. He is a business expert at life science and bio-industry, working over for 15 years. Previously Song was a private equity fund manager, mainly invested in biotech and life science companies. Also, he was a strategic consultant at Deloitte Consulting for Life Science and Healthcare division.\n\nMr. Song received Ph.D. degree in Business Administration from HUFS, and he studied at the IE business school in Madrid, Spain for his MBA degree. He also received BA degree at occidental linguistics department in HUFS.",
   },
   // {
   //   name: "Jaeho Lee",
@@ -79,28 +79,28 @@ export const Executive_Leadership = [
   //   detail:
   //     "Seongae Ahn is a registered nurse. She graduated from the School of Nursing at Hallym University. She has about 15 years of clinical trial experience in various therapeutic areas. She is interested in Digital Therapeutics for enhancing quality of life of patients. Prior to her career in clinical trial, she worked at university hospital as a Nurse.",
   // },
-  {
-    name: "Minsuk Kee",
-    jobs: "COO",
-    background: icon1_6,
-    modalimg: icon1_6,
-    detail:
-      "Minsuk is an accomplished Corporate Risk Management and Contract Risk Compliance expert with over 15 years of experience in global consultancy and audit firms. Formerly affiliated with Deloitte and EY, Minsuk's expertise lies in Corporate Risk, K-SOX Consulting, and Auditing. Notably, he spearheaded a successful startup merger with a KOSDAQ-listed company, demonstrating his astute business acumen. Holding a degree in Economics from Korea University and studying Intellectual Property Law at Korea University School of Law, Minsuk possesses a profound understanding of complex legal landscapes. Furthermore, his extensive financial knowledge, analytical prowess, and strategic planning acumen make him an invaluable asset in driving the company's growth and success as COO.",
-  },
+  // {
+  //   name: "Minsuk Kee",
+  //   jobs: "COO",
+  //   background: icon1_6,
+  //   modalimg: icon1_6,
+  //   detail:
+  //     "Minsuk is an accomplished Corporate Risk Management and Contract Risk Compliance expert with over 15 years of experience in global consultancy and audit firms. Formerly affiliated with Deloitte and EY, Minsuk's expertise lies in Corporate Risk, K-SOX Consulting, and Auditing. Notably, he spearheaded a successful startup merger with a KOSDAQ-listed company, demonstrating his astute business acumen. Holding a degree in Economics from Korea University and studying Intellectual Property Law at Korea University School of Law, Minsuk possesses a profound understanding of complex legal landscapes. Furthermore, his extensive financial knowledge, analytical prowess, and strategic planning acumen make him an invaluable asset in driving the company's growth and success as COO.",
+  // },
 ];
 
 export const Research_Leadership = [
   {
-    name: "Han-Kwang Yang, MD, Ph.D",
+    name: "Han-Kwang Yang, MD, Ph.D.",
     // jobs: "MD, Ph.D",
     // positions: "Collaborating Leader",
     background: icon2_1,
     modalimg: icon2_1,
     detail:
-      "Hankwang Yang is the Chief of the Gastric Cancer Center Department and Gastrointestinal Surgery Department of Seoul National University Hospital.\nWhile being a professor of Gastrointestinal surgery at Seoul National University Hospital, MD Ph.D. Yang also has become editor of the Journal of Gastric Cancer since 2009.\n\nHe holds an MD and a Ph.D from Seoul National University College of Medicine.",
+      "Hankwang Yang is the Chief of the Gastric Cancer Center Department and Gastrointestinal Surgery Department of Seoul National University Hospital.\nWhile being a professor of Gastrointestinal surgery at Seoul National University Hospital, MD Ph.D. Yang also has become editor of the Journal of Gastric Cancer since 2009.\n\nHe holds an MD and a Ph.D. from Seoul National University College of Medicine.",
   },
   {
-    name: "Myung-Ju Ahn, MD, Ph.D",
+    name: "Myung-Ju Ahn, MD, Ph.D.",
     // jobs: "MD Ph.D",
     // positions: "Collaborating Leader",
     background: icon2_5,
@@ -109,14 +109,24 @@ export const Research_Leadership = [
       "Myungju Ahn is Professor of Hemato-Oncology at the Department of Medicine, Sungkyunkwan University School of Medicine, Seoul. She is a member of numerous research associations and societies, including the ISLAC, AACR, and ASCO and is currently Chief of the Executive Committee and Chairperson of Lung Cancer Disease Committee of the KCSG. She is the current president of the KSMO and was chairperson of the multidisciplinary Immuno-oncology Study Group (2017–2018). She is a board member for the KCA, KSMO and KALC, and is on the editorial board of Journal of Thoracic Oncology. Prof Ahn received her medical and doctoral degrees from Hanyang University College of Medicine, Seoul and completed her residency training at Hanyang University Hospital. ",
   },
   {
-    name: "Charmgil Hong, Ph.D",
+    name: "Charmgil Hong, Ph.D.",
     // jobs: "Ph.D",
     // positions: "Collaborating Leader",
     background: icon2_3,
     modalimg: icon2_3,
     detail:
-      "Charmgil Hong is an assistant professor in the School of Computer Science and Electrical Engineering at Handong Global University.\nPrior to his professor career, he was a part of a research team with the University of Pittsburgh and UPMC, involved in the development of technologies and systems for analyzing electronic health records, predicting diagnostics, and detecting potential medical mistakes.\nHis main interests of research focus on Machine Learning, Artificial Intelligence, Outlier Detection, and their applications.\nHe holds a Ph.D in computer science from the University of Pittsburgh.",
+      "Charmgil Hong is an assistant professor in the School of Computer Science and Electrical Engineering at Handong Global University.\nPrior to his professor career, he was a part of a research team with the University of Pittsburgh and UPMC, involved in the development of technologies and systems for analyzing electronic health records, predicting diagnostics, and detecting potential medical mistakes.\nHis main interests of research focus on Machine Learning, Artificial Intelligence, Outlier Detection, and their applications.\nHe holds a Ph.D. in computer science from the University of Pittsburgh.",
   },
+  {
+    name: "Jaehoon Kim, MD, Ph.D.",
+    // jobs: "MD, Ph.D",
+    // positions: "Collaborating Leader",
+    background: icon2_2,
+    modalimg: icon2_2,
+    detail:
+      "Jaehoon Kim is the Gynecologic Cancer Clinic's team leader at Yonsei University and Head of the Department of Obstetrics and Gynecology at Gangnam Severance Hospital, Yonsei University. MD Ph.D. Kim also has been appointed as Secretary-General of the Korean Gynecologic Oncology Group.\n\nHe holds an MD and a Ph.D from the Catholic University of Korea School of Medicine. He also studied the latest technology related to gynecologic oncology at Brigham and Women's Hospital, affiliated with Harvard University.",
+  },
+
   // ,
   // {
   //   name: "Jae-Hoon Kim",
@@ -149,23 +159,15 @@ export const Advisory_Board = [
   //   detail:
   //     "Han-Kwang Yang is the Chief of the Gastric Cancer Center Department and Gastrointestinal Surgery Department of Seoul National University Hospital.\nWhile being a professor of Gastrointestinal surgery at Seoul National University Hospital, MD Ph.D Yang also has become editor of the Journal of Gastric Cancer since 2009.\n\nHe holds an MD and a Ph.D from Seoul National University College of Medicine."
   // },
+
   {
-    name: "Jaehoon Kim, MD, Ph.D",
-    // jobs: "MD, Ph.D",
-    // positions: "Collaborating Leader",
-    background: icon2_2,
-    modalimg: icon2_2,
-    detail:
-      "Jaehoon Kim is the Gynecologic Cancer Clinic's team leader at Yonsei University and Head of the Department of Obstetrics and Gynecology at Gangnam Severance Hospital, Yonsei University. MD Ph.D Kim also has been appointed as Secretary-General of the Korean Gynecologic Oncology Group.\n\nHe holds an MD and a Ph.D from the Catholic University of Korea School of Medicine. He also studied the latest technology related to gynecologic oncology at Brigham and Women's Hospital, affiliated with Harvard University.",
-  },
-  {
-    name: "Young Suk Park, MD, Ph.D",
+    name: "Young Suk Park, MD, Ph.D.",
     // jobs: "MD, Ph.D",
     positions: "",
     background: icon3_1,
     modalimg: icon3_1,
     detail:
-      "Youngsuk Park is a professor of the Department of Hematology and Oncology at Samsung Medical Center. While he was Head of Clinical Trial Center of Samsung Medical Center, MD Ph.D Park also led the Department of Hematology and Oncology.\n\nHe holds an MD from Seoul National University College of Medicine and a Ph.D from Korea University College of Medicine. He studied as Clinical Fellow at Fred Hutchinson Cancer Research Center and worked as Consultant at University of Pittsburgh, National Surgical Adjuvant Breast and Bowel Project.\n",
+      "Youngsuk Park is a professor of the Department of Hematology and Oncology at Samsung Medical Center. While he was Head of Clinical Trial Center of Samsung Medical Center, MD Ph.D. Park also led the Department of Hematology and Oncology.\n\nHe holds an MD from Seoul National University College of Medicine and a Ph.D. from Korea University College of Medicine. He studied as Clinical Fellow at Fred Hutchinson Cancer Research Center and worked as Consultant at University of Pittsburgh, National Surgical Adjuvant Breast and Bowel Project.\n",
   },
   // {
   //   name: "Dae-Cheol Kim",
@@ -177,13 +179,13 @@ export const Advisory_Board = [
   //     "Dae-Cheol Kim is a professor in the Pathology Department of Dong-A University College of Medicine. Being the first official to be nominated through a national recommendation system, MD Ph.D Kim worked as Head of Biopharmaceuticals and Herbal Medicine Bureau of Ministry of Food and Drug Safety, Korea.\n\nHe holds an MD and a Ph.D from Dong-A University College of Medicine. He also studied as an exchange professor at Queen Mary's University Hospital."
   // },
   {
-    name: "Jae Won Lee, Ph.D",
+    name: "Jae Won Lee, Ph.D.",
     // jobs: "Ph.D",
     positions: "",
     background: icon3_3,
     modalimg: icon3_3,
     detail:
-      "JaeWon Lee is a professor at the Department of Statistics at Korea University and vice president of the Korean Society of Health Informatics and Statistics. Ph.D Lee also participates in the Central Pharmacological Review Committee of the Korea Food and Drug Administration and the Korea University Academic Research Association.\n\nGraduating from Seoul National University, he holds a Ph.D in Statistics from the University of Wisconsin.",
+      "JaeWon Lee is a professor at the Department of Statistics at Korea University and vice president of the Korean Society of Health Informatics and Statistics. Ph.D. Lee also participates in the Central Pharmacological Review Committee of the Korea Food and Drug Administration and the Korea University Academic Research Association.\n\nGraduating from Seoul National University, he holds a Ph.D. in Statistics from the University of Wisconsin.",
   },
   // {
   //   name: "Jin-Suk Kim",
@@ -195,13 +197,13 @@ export const Advisory_Board = [
   //     "Jin-Suk Kim is a professor of the Computer Science Department at the University of Seoul since 1999. His main interests of research focus on distributed computing. Prior to his academic career, he was associated with the Laboratory for Computer Science, Massachusetts Institute of Technology, as Postdoc Fellow.\n\nProfessor Kim received a BA, MS, and Ph.D in Computer Science at KAIST in 1990, 1992, and 1997.",
   // },
   {
-    name: "Yongdai Kim, Ph.D",
+    name: "Yongdai Kim, Ph.D.",
     // jobs: "Ph.D",
     positions: "",
     background: icon3_4,
     modalimg: icon3_4,
     detail:
-      "Yongdai Kim is a professor of the Department of Statistics at Seoul National University since 2004. Prior to his academic career at Seoul National University, he worked as an assistant professor at Ewha Woman's University and Hankuk University of Foreign Studies and researched in the National Institutes of Health, USA.\n\nHe holds a BS and MS from Seoul National University and holds his Ph.D in Statistics at Ohio State University.",
+      "Yongdai Kim is a professor of the Department of Statistics at Seoul National University since 2004. Prior to his academic career at Seoul National University, he worked as an assistant professor at Ewha Woman's University and Hankuk University of Foreign Studies and researched in the National Institutes of Health, USA.\n\nHe holds a BS and MS from Seoul National University and holds his Ph.D. in Statistics at Ohio State University.",
   },
   // {
   //   name: "Soo-Yong Shin",
@@ -213,7 +215,7 @@ export const Advisory_Board = [
   //     "Soo-Yong Shin is a professor in the Department of Samsung Advanced Institute for Health Sciences and Technology at Sungkyunkwan University. His main research interest is how to handle biomedical data themselves. Prior to his career at Sungkyunkwan University, he worked in the field of Bioinformatics at Kyung Hee University, Asan Medical Center, and Samsung SDS as an assistant professor and a researcher.\n\nProfessor Shin received a BS, MS, and Ph.D in computer engineering at Seoul National University in 1998, 2000, and 2005.",
   // },
   {
-    name: "John Crowley, Ph.D",
+    name: "John Crowley, Ph.D.",
     // jobs: "Ph.D",
     positions: "",
     background: icon3_6,
@@ -231,7 +233,7 @@ export const Advisory_Board = [
       "Kyu-Jin Choi is a chief lawyer and Patent Attorney at CnP law firm. He also serves as an expert on the appointment of a Central Pharmacological Review Committee of the Korea Food and Drug Administration and a legal advisor of the Pharmaceutical Society of Korea. He is also a member of the Ethics committee in the Korean Society of Medical Informatics and a professor at CHA university.\n\nHe received a BS in Pharmaceutical Sciences at Seoul National University and a BA in Business Administration at Seoul National Open University. He also received MS in the Intellectual Property Law at Korea University School of Law.",
   },
   {
-    name: "Daehee Kang, MD, Ph.D",
+    name: "Daehee Kang, MD, Ph.D.",
     // jobs: "Lawyer, Pharmacist",
     positions: "",
     background: icon3_8,

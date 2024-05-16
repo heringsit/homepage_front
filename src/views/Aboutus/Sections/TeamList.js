@@ -17,6 +17,7 @@ import { ReactComponent as TeamListArrowNext } from "../../../assets/images/02ab
 
 import "../Aboutus.css";
 import "../slick.css";
+import CommonCardTitle from "../../common/CommonCardTitle";
 
 function PrevArrow(props) {
   const { className, style, onClick, matches } = props;
@@ -67,28 +68,31 @@ export default function TeamList(props) {
   const HERINGS_TEAM_LIST = [
     Executive_Leadership,
     Research_Leadership,
-    Advisory_Board,
+    // Advisory_Board,
   ];
   const ListTitle = [
     "EXECUTIVE_LEADERSHIP",
     "RESEARCH_LEADERSHIP",
-    "ADVISORY_BOARD",
+    // "ADVISORY_BOARD",
   ];
   return (
-    <div className="aboutuscontents bg-gray ">
-      <div className="pt-48" />
+    <div className="aboutuscontents  ">
+      {/* <div className="pt-10" /> */}
       {/* <CommonCardTitle title="HERINGS TEAM" fontSize="textF28" tc={0} /> */}{" "}
       <div className="aboutustitle">
-        <p className="mt-0 textF20 FontCB tcb">HERINGS TEAM</p>
-        <div className="aboutusline"></div>
+        <CommonCardTitle
+          title={"HERINGS TEAM"}
+          fontStyle={"FontCB"}
+          fontSize={"textF40"}
+        />
       </div>
       {HERINGS_TEAM_LIST.map((LIST, idx) => (
         <div className="TeamListWrap" key={idx}>
           <div className="Subtitle">
-            <span className="FontB tcb textF24">
+            <span className="FontB tco3 textF28">
               {ListTitle[idx].split("_")[0]}
             </span>
-            <span className="FontR tcb textF24">
+            <span className="FontR tcb textF28">
               {ListTitle[idx].split("_")[1]}
             </span>
           </div>

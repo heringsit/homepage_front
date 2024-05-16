@@ -239,7 +239,8 @@
 
   /* font-size: 24px; */
   font-weight: 400;
-  line-height: normal;
+  line-height: 36px;
+  letter-spacing: -0.24px;
   font-style: normal;
   margin: 0px;
 }
@@ -331,7 +332,7 @@
 
 .rpm-section5-rpmItems-layout {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 각 행에 4개의 컬럼을 생성 */
+  grid-template-columns: repeat(3, 1fr); /* 각 행에 4개의 컬럼을 생성 */
   padding: 10px 0px;
   justify-content: center;
   gap: 2.25vw;
@@ -348,7 +349,7 @@
 
 .rpm-section5-rpmItem {
   display: flex;
-  background-size: contain;
+  /* background-size: contain; */
   background-repeat: no-repeat;
   /* height: 100px; */
   height: 5.6vw;
@@ -361,11 +362,10 @@
 
 .rpm-section5-item-text {
   color: #fff;
-  font-family: "Roboto500";
-  font-style: normal;
+  font-family: "Roboto";
+  /* font-style: normal; */
   font-size: 1.34vw;
   /* font-size: 24px; */
   font-weight: 600;
   line-height: normal;
-  text-transform: uppercase;
 }
