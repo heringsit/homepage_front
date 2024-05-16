@@ -1,7 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import "../Aboutus/slick.css";
 
 import bannerImg1 from "../../assets/images/10newsir/news_banner_img1_boston.png";
@@ -17,6 +16,7 @@ function BannerSlider() {
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true, // 슬라이드 이동	시 마우스 호버하면 슬라이더 멈추게 설정
+    arrows: false, // 좌우 화살표 사용 여부 (false로 설정하여 비활성화)
   };
 
   return (

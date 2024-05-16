@@ -3,6 +3,8 @@ import "react-app-polyfill/stable";
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import Aboutus from "./views/Aboutus/Aboutus";
 import RpmSolution from "./views/RPM/RpmSolution";

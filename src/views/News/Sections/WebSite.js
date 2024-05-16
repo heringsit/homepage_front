@@ -259,6 +259,8 @@ export default function WebSite({ match }) {
   //     fetchImageUrls();
   //   }
   // }, [listData]);
+
+  // 카드 썸네일 이미지
   useEffect(() => {
     const fetchImageUrls = async () => {
       setIsLoading(true); // 이미지 로딩 시작
