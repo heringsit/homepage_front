@@ -1,6 +1,7 @@
 html {
   scroll-behavior: smooth;
 }
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 /* @font-face {
   font-family: "NanumSquareL";
   font-style: normal;
@@ -232,6 +233,9 @@ html {
 .tco2 {
   color: #f37f31;
 }
+.tco3 {
+  color: #f68c29;
+}
 .tcg {
   color: #666666;
 }
@@ -407,6 +411,15 @@ body {
 
 /*card 공통*/
 /* COMMON CARD TITLE */
+.card_titleLeft {
+  color: #282828;
+  font-family: "Roboto500";
+  font-size: 2.23vw;
+  font-weight: 600;
+  line-height: normal;
+  text-align: left;
+}
+
 .card_titleDiv {
   display: flex;
   width: 100%;

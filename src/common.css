@@ -7,6 +7,11 @@
   pb# -> content bottom padding + #px
 
 */
+
+/* p {
+  margin: 0;
+} */
+
 /* padding */
 .p-20 {
   padding: 20px;

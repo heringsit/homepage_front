@@ -72,12 +72,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+  /* width: 5vw; */
   width: 182.6px;
 }
+.menudiv :hover {
+  text-decoration: none;
+}
+
 .menudiv a {
   color: #000000;
   text-decoration: none;
 }
+
 .menuDetail {
   width: 100%;
   border-top: 1px solid #f1f1f1;
@@ -145,18 +152,22 @@
 }
 .menuText {
   font-size: 15px;
+  text-decoration: none;
 }
 .mobileMenuRow:hover .menuText {
   color: #e78510;
+  text-decoration: none;
 }
 
 .menuText:hover {
   color: #e78510;
   font-weight: 700;
+  text-decoration: none;
 }
 .menuTextActive {
   color: #e78510;
   font-weight: 700;
+  text-decoration: none;
 }
 
 .mobilemenusactive {

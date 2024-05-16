@@ -11,7 +11,7 @@ import { ReactComponent as IconClose } from "../../../assets/images/05career/clo
 import { saveAs } from "file-saver";
 import { imsi } from "../../..";
 import search from "../../../assets/images/etc/search.png";
-// import downLoad from "../../../assets/images/etc/download.png";
+// import downLoad from "../../../assets/images/etc/download.svg";
 import CommonCardTitle from "../../common/CommonCardTitle";
 import { ThemeContext } from "../../../context";
 

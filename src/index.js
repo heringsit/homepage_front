@@ -5,6 +5,9 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
 import Aboutus from "./views/Aboutus/Aboutus";
+import RpmSolution from "./views/RPM/RpmSolution";
+import IRinformation from "./views/IR/IRinformation";
+
 import Service from "./views/Service/Service";
 import Research from "./views/Research/Research";
 import Cts from "./views/CTS/Cts";
@@ -56,6 +59,10 @@ const App = () => {
             <Route exact path={`/`} component={Main} />
             <Route path={`/aboutus/:submenu`} component={Aboutus} />
             <Route path={`/aboutus`} component={Aboutus} />
+            <Route path={`/rpmsolution/:submenu`} component={RpmSolution} />
+            <Route path={`/rpmsolution`} component={RpmSolution} />
+            <Route path={`/irinformation/:submenu`} component={IRinformation} />
+            <Route path={`/irinformation`} component={IRinformation} />
             <Route path={`/service/:submenu`} component={Service} />
             <Route path={`/service`} component={Service} />
             <Route path={`/research`} component={Research} />
@@ -63,7 +70,8 @@ const App = () => {
             {/* Career */}
             <Route path={`/contactus/:submenu`} component={Contactus} />
             <Route path={`/contactus`} component={Contactus} />
-            <Route path={`/news/:submenu/detail/:id`} component={DetailPage} />
+            {/* <Route path={`/news/:submenu/detail/:id`} component={DeBtailPage} /> */}
+
             <Route path={`/news/:submenu`} component={News} />
             <Route path={`/news`} component={News} />
             <Route path={`/privacypolicy/`} component={PrivacyPolicy} />

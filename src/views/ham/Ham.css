@@ -657,7 +657,7 @@ article aside a {
 
 /* Forms */
 
-button:disabled,
+/* button:disabled,
 input:disabled {
   background: var(--color-bg-secondary);
   border-color: var(--color-bg-secondary);
@@ -683,7 +683,7 @@ form {
 form header {
   margin: 1.5rem 0;
   padding: 1.5rem 0;
-}
+} */
 
 input,
 label,

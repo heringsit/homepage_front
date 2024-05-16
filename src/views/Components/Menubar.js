@@ -90,7 +90,7 @@ export default function Menubar(props) {
 
             <div className="buttons">
               {/* Dark Mode Toggle */}
-              <DarkToggle onClick={changeMode} className="modediv" />
+              {/* <DarkToggle onClick={changeMode} className="modediv" /> */}
 
               <div className="mobileBtn">
                 <HamburgerSqueeze
@@ -195,7 +195,7 @@ export default function Menubar(props) {
         style={{
           backgroundColor:
             pathname === "/"
-              ? "transparent"
+              ? "#ffffff"
               : theme === "dark"
               ? "#282828"
               : "#ffffff",
@@ -257,7 +257,7 @@ export default function Menubar(props) {
           </div>
 
           {/* Dark Mode Toggle */}
-          <DarkToggle onClick={changeMode} className="menudiv" />
+          {/* <DarkToggle onClick={changeMode} className="menudiv" /> */}
         </div>
 
         {/* 소메뉴 */}

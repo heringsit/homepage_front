@@ -18,7 +18,7 @@ import i_logo_04 from "../../../assets/images/02about_investors/04cap_n.svg";
 import i_logo_05 from "../../../assets/images/02about_investors/05coree.png";
 import i_logo_06 from "../../../assets/images/02about_investors/06kakaotalk.png";
 import { ThemeContext } from "../../../context";
-// import CommonCardTitle from "../../common/CommonCardTitle";
+import CommonCardTitle from "../../common/CommonCardTitle";
 
 export default function PartnersAInvestors(props) {
   const { theme } = useContext(ThemeContext);
@@ -28,27 +28,31 @@ export default function PartnersAInvestors(props) {
       <div className="pt-48" />
       {/* {!props.matches && <CommonCardTitle title="PARTNERS & INVESTORS" fontSize="textF28" />} */}
       <div className="aboutustitle">
-        <p
-          className={`mt-0 textF20 FontCB ${theme === "dark" ? "tcw" : "tcb"}`}
-        >
-          PARTNERS & INVESTORS
-        </p>
-        <div
+        <CommonCardTitle
+          title={"PARTNERS & INVESTORS"}
+          fontStyle={"FontCB"}
+          fontSize={"textF40"}
+        />
+        {/* <div
           className={`${theme === "dark" ? "aboutuslineDark" : "aboutusline"}`}
-        ></div>
+        ></div> */}
       </div>
       <div className="SectionDivTailContent">
         <div className="researchWrap">
           {props.matches ? (
             <div className="Subtitle">
-              <div className="textF24 FontEB">
-                <span>RESEARCH PARTNERS</span>
+              <div className="textF28 FontEB">
+                <span>
+                  <span style={{ color: "#F68C29" }}>RESEARCH</span> PARTNERS
+                </span>
               </div>
               <hr></hr>
             </div>
           ) : (
-            <div className="textF24 Subtitle">
-              <span className="FontB">RESEARCH</span>
+            <div className="textF28 Subtitle">
+              <span className="FontB" style={{ color: "#F68C29" }}>
+                RESEARCH
+              </span>
               <span className="FontR">PARTNERS</span>
             </div>
           )}

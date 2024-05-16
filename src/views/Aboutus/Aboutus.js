@@ -235,12 +235,12 @@ export default function Aboutus(props) {
   };
 
   // Scroll Tracker: ref로 page location tracking
-  const scrollElem = Array.from(Array(3).keys());
+  const scrollElem = Array.from(Array(2).keys());
   const refs = useRef(scrollElem.map(() => React.createRef()));
-  const visibleArray = Array(3).fill(true);
-  visibleArray[0] = useOnScreen(refs.current[0]);
-  visibleArray[1] = useOnScreen(refs.current[1]);
-  visibleArray[2] = useOnScreen(refs.current[2]);
+  const visibleArray = Array(2).fill(true);
+  // visibleArray[0] = useOnScreen(refs.current[0]);
+  visibleArray[1] = useOnScreen(refs.current[0]);
+  visibleArray[2] = useOnScreen(refs.current[1]);
 
   // console.log(visibleArray, ">>visibleArray")
 
@@ -278,23 +278,35 @@ export default function Aboutus(props) {
 
       {/* {openerModalNoti()} */}
       {modalObj && openInitialNotice()}
-      {!mTablet && <TabClick visibleArray={visibleArray} isScroll={isScroll} />}
-      <div className="flex-col justify-between">
-        <div className="flex-col">
-          <div id="whoweare" ref={refs.current[0]}>
-            <Whoweare />
+      <div className="about-main-container">
+        {/* {!mTablet && <TabClick visibleArray={visibleArray} isScroll={isScroll} />} */}
+        <div className="flex-col justify-between">
+          <div className="about-section1">
+            <div className="ir_text_section1">
+              <p className="ir_maintext1">Meet the HERINGS team!</p>
+              <span className="ir_subtext1">
+                Take convenience to the next level
+                <br /> with remote patient monitoring services
+                <br /> provided by Herrings
+              </span>
+            </div>
           </div>
-          <div id="heringsteam" ref={refs.current[1]}>
-            <TeamList handleOpen={handleOpen} />
-          </div>
-          <div id="researchpartners" ref={refs.current[2]}>
-            <PAI />
-          </div>
+          <div className="about-section2">
+            {/* <div id="whoweare" ref={refs.current[0]}>
+              <Whoweare />
+            </div> */}
+            <div id="heringsteam" ref={refs.current[0]}>
+              <TeamList handleOpen={handleOpen} />
+            </div>
+            <div id="researchpartners" ref={refs.current[1]}>
+              <PAI />
+            </div>
 
-          {/* <QM matches={matches} /> */}
+            {/* <QM matches={matches} /> */}
+          </div>
+          <Totop />
+          <Footer />
         </div>
-        <Totop />
-        <Footer />
       </div>
       <AboutUsModal open={open} handleClose={handleClose} modalObj={modalObj} />
     </div>

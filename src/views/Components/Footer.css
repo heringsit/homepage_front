@@ -3,16 +3,14 @@
   min-height: 100%;
 }
 .footer {
-  display: flex;
-  padding: 33px 10%;
+  /* display: flex; */
+  padding: 23px 10%;
   flex-direction: column;
   justify-content: center;
   clear: both;
   background-color: #222;
   position: relative;
-  bottom: 0;
-  left: 0;
-  z-index: 5;
+
   width: 100%;
 }
 .footerRowa {
@@ -41,9 +39,9 @@
   color: #bebebe;
 }
 
-.footersvg{
-  width:40px;
-  height:40px
+.footersvg {
+  width: 40px;
+  height: 40px;
 }
 .footerRow > .footerContent:first-child {
   margin-left: 0;
@@ -51,7 +49,6 @@
 .footerRow > .footerContent:last-child {
   margin-right: 0;
 }
-
 
 @media screen and (max-width: 600px) {
   .footerRow {
