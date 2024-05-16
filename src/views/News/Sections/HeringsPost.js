@@ -8,7 +8,7 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 // import { ReactComponent as IconClose } from "../../../assets/images/05career/close.svg";
-import { saveAs } from "file-saver";
+// import { saveAs } from "file-saver";
 import { imsi } from "../../..";
 // import search from "../../../assets/images/etc/search.png";
 // import downLoad from "../../../assets/images/etc/download.svg";

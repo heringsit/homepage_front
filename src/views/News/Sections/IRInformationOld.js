@@ -70,7 +70,7 @@ const useStyles = makeStyles((theme) =>
   })
 );
 
-export default function NewsRelease() {
+export default function NewsReleaseOld() {
   const [, setIsDataReady] = useState(false);
   const [paginginfo, setPaginginfo] = useState([]);
   const classes = useStyles();

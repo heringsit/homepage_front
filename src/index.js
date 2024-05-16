@@ -16,7 +16,7 @@ import News from "./views/News/News";
 import Contactus from "./views/Contactus/Contactus";
 import "./index.css";
 import "./common.css";
-import DetailPage from "./views/News/Sections/detail/DetailPage";
+// import DetailPage from "./views/News/Sections/detail/DetailPage";
 import Main from "./views/Main/Main";
 import { MediaQueryContext, ThemeContext } from "./context";
 import { useMediaQuery } from "@material-ui/core";

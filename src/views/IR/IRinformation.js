@@ -4,6 +4,7 @@ import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
 import "./IR.css";
 import "../../index.css";
+import "../Contactus/Career.css";
 import axios from "axios";
 import moment from "moment";
 import parse from "html-react-parser";
