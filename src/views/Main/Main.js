@@ -1,5 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Footer from "../Components/Footer";
+import { useHistory } from "react-router-dom";
+
 import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
 import "./Main.css";
@@ -13,9 +15,27 @@ import main_sub5 from "../../assets/images/00main/main-sub5.svg";
 import main_sub6 from "../../assets/images/00main/main-sub6.svg";
 import main2 from "../../assets/images/00main/main2.png";
 
-export default function Main() {
+export default function Main(props) {
+  const history = useHistory();
+
   // mTablet (768px)
   const { mTablet } = useContext(MediaQueryContext);
+
+  const executeScroll = () => {
+    const element = document.getElementById(props.location.hashId);
+    const headOffset = mTablet ? 84 : 184;
+    const elementPosition = element?.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - headOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    executeScroll();
+  }, [props.location.update]);
 
   const subItems = [
     {
@@ -152,7 +172,12 @@ export default function Main() {
                         period of time in any location.
                       </p>
                     </div>
-                    <div className="moveButton">GO TO RPM SOLUTION</div>
+                    <div
+                      className="moveButton"
+                      onClick={() => history.push("/rpmsolution")}
+                    >
+                      GO TO RPM SOLUTION
+                    </div>
                   </div>
                 </div>
                 <div className="mainsublayout3 itemRight">
@@ -169,6 +194,7 @@ export default function Main() {
                     <div
                       className="moveButton itemRight"
                       style={{ textAlign: "center" }}
+                      onClick={() => history.push("/news")}
                     >
                       GO TO News Release
                     </div>
@@ -186,7 +212,12 @@ export default function Main() {
                         <br /> platform appropriate for them.
                       </p>
                     </div>
-                    <div className="moveButton">CONTACT US</div>
+                    <div
+                      className="moveButton"
+                      onClick={() => history.push("/contactus")}
+                    >
+                      CONTACT US
+                    </div>
                   </div>
                   <div className="diamonds">
                     <div className="diamond">

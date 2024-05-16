@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) =>
   })
 );
 
-const IRinformation = () => {
+const IRinformation = (props) => {
   // mTablet (768px)
   const { mTablet } = useContext(MediaQueryContext);
   const [, setIsDataReady] = useState(false);
@@ -100,6 +100,22 @@ const IRinformation = () => {
   };
   // const [, setCountList] = useState([]);
   const [listData, setListData] = useState([]);
+
+  const executeScroll = () => {
+    const element = document.getElementById(props.location.hashId);
+    const headOffset = mTablet ? 84 : 184;
+    const elementPosition = element?.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - headOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    executeScroll();
+  }, [props.location.update]);
 
   const getdata = (tab) => {
     // let today = new Date();

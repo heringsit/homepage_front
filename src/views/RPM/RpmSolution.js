@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 
 import Footer from "../Components/Footer";
 import Menubar from "../Components/Menubar";
@@ -22,9 +22,25 @@ import drugAdverse from "../../assets/images/03rpm/drug_adverse_card.svg";
 import CGM from "../../assets/images/03rpm/cgm_card.svg";
 import HDT101 from "../../assets/images/03rpm/hdt_101_card.svg";
 
-const RpmSolution = () => {
+const RpmSolution = (props) => {
   // mTablet (768px)
   const { mTablet } = useContext(MediaQueryContext);
+
+  const executeScroll = () => {
+    const element = document.getElementById(props.location.hashId);
+    const headOffset = mTablet ? 84 : 184;
+    const elementPosition = element?.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.scrollY - headOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    executeScroll();
+  }, [props.location.update]);
 
   const boxItems = [
     {

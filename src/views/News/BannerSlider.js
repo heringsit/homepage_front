@@ -17,10 +17,6 @@ function BannerSlider() {
     autoplay: true,
     autoplaySpeed: 3000,
     pauseOnHover: true, // 슬라이드 이동	시 마우스 호버하면 슬라이더 멈추게 설정
-
-    // nextArrow: <NextArrow />,
-    // prevArrow: <PrevArrow />,
-    // arrows: true,
   };
 
   return (
