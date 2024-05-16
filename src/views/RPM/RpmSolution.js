@@ -20,7 +20,7 @@ import drugAdherence from "../../assets/images/03rpm/drug_card.svg";
 import aiDeepLearning from "../../assets/images/03rpm/ai_deep_learning_card.svg";
 import drugAdverse from "../../assets/images/03rpm/drug_adverse_card.svg";
 import CGM from "../../assets/images/03rpm/cgm_card.svg";
-import HDT101 from "../../assets/images/03rpm/hdt_101_card.svg";
+// import HDT101 from "../../assets/images/03rpm/hdt_101_card.svg";
 
 const RpmSolution = (props) => {
   // mTablet (768px)

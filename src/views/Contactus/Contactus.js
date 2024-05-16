@@ -4,16 +4,10 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 //import iconClose from "../../assets/images/02about_herings_team/window-close.svg";
 import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
-import ContentsTitle from "../Components/ContentsTitle";
 import Footer from "../Components/Footer";
-import Career from "./Career";
 
 import "./Contactus.css";
-import CommonCardTitle from "../common/CommonCardTitle";
 import { ThemeContext, MediaQueryContext } from "../../context";
-import useOnScreen from "../hooks/objectObserver";
-import TabClick from "../common/TabClick";
-import { useHistory } from "react-router-dom";
 
 export default function ContactUs(props) {
   //const imsi = process.env.PUBLIC_URL;

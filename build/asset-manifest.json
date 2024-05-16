@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.e857ff1b.chunk.css",
-    "main.js": "/static/js/main.b3eadc10.chunk.js",
-    "main.js.map": "/static/js/main.b3eadc10.chunk.js.map",
+    "main.css": "/static/css/main.4bff0662.chunk.css",
+    "main.js": "/static/js/main.d7ae07ad.chunk.js",
+    "main.js.map": "/static/js/main.d7ae07ad.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ca75be69.js",
     "runtime-main.js.map": "/static/js/runtime-main.ca75be69.js.map",
     "static/css/2.86f942c7.chunk.css": "/static/css/2.86f942c7.chunk.css",
-    "static/js/2.57f1ca7e.chunk.js": "/static/js/2.57f1ca7e.chunk.js",
-    "static/js/2.57f1ca7e.chunk.js.map": "/static/js/2.57f1ca7e.chunk.js.map",
+    "static/js/2.dfc387d6.chunk.js": "/static/js/2.dfc387d6.chunk.js",
+    "static/js/2.dfc387d6.chunk.js.map": "/static/js/2.dfc387d6.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.0730f96731e940a48dd5480e4f20d4d8.js": "/precache-manifest.0730f96731e940a48dd5480e4f20d4d8.js",
+    "precache-manifest.702aab9eddf7fe60f3eaee53af2c8e7f.js": "/precache-manifest.702aab9eddf7fe60f3eaee53af2c8e7f.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.86f942c7.chunk.css.map": "/static/css/2.86f942c7.chunk.css.map",
-    "static/css/main.e857ff1b.chunk.css.map": "/static/css/main.e857ff1b.chunk.css.map",
-    "static/js/2.57f1ca7e.chunk.js.LICENSE.txt": "/static/js/2.57f1ca7e.chunk.js.LICENSE.txt",
+    "static/css/main.4bff0662.chunk.css.map": "/static/css/main.4bff0662.chunk.css.map",
+    "static/js/2.dfc387d6.chunk.js.LICENSE.txt": "/static/js/2.dfc387d6.chunk.js.LICENSE.txt",
     "static/media/01alpen_n.svg": "/static/media/01alpen_n.ed9cff42.svg",
     "static/media/01suh.png": "/static/media/01suh.1f5473cc.png",
     "static/media/02gsh.png": "/static/media/02gsh.8cca991a.png",
@@ -76,7 +76,6 @@
     "static/media/drug_adverse_card.svg": "/static/media/drug_adverse_card.7014a2b6.svg",
     "static/media/drug_adverse_events.png": "/static/media/drug_adverse_events.7268c3d8.png",
     "static/media/drug_card.svg": "/static/media/drug_card.30b0ccf6.svg",
-    "static/media/hdt_101_card.svg": "/static/media/hdt_101_card.e6f54606.svg",
     "static/media/healiary_application.svg": "/static/media/healiary_application.bef67ea2.svg",
     "static/media/heringsLOGO.8e7d5ba1.svg": "/static/media/heringsLOGO.8e7d5ba1.svg",
     "static/media/heringsLOGO_black.svg": "/static/media/heringsLOGO_black.5e815145.svg",
@@ -117,8 +116,8 @@
   "entrypoints": [
     "static/js/runtime-main.ca75be69.js",
     "static/css/2.86f942c7.chunk.css",
-    "static/js/2.57f1ca7e.chunk.js",
-    "static/css/main.e857ff1b.chunk.css",
-    "static/js/main.b3eadc10.chunk.js"
+    "static/js/2.dfc387d6.chunk.js",
+    "static/css/main.4bff0662.chunk.css",
+    "static/js/main.d7ae07ad.chunk.js"
   ]
 }

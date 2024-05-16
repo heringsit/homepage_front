@@ -5,16 +5,12 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import Menubar from "../Components/Menubar";
 import Totop from "../Components/Totop";
 import Footer from "../Components/Footer";
-import IntellectualProperty from "../News/Sections/IntellectualProperty";
-import IRInformation from "../News/Sections/IRInformation";
 import HeringsPost from "./Sections/HeringsPost";
 import WebSite from "./Sections/WebSite";
 import NewsRelease from "./Sections/NewsRelease";
 import "./News.css";
-import ContentsTitle from "../Components/ContentsTitle";
 import "./Sections/detail/DetailPage";
 import { MediaQueryContext, ThemeContext } from "../../context";
-import TabClick from "../common/TabClick";
 import useOnScreen from "../hooks/objectObserver";
 
 export default function News(props, { match }) {
