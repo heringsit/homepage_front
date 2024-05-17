@@ -236,61 +236,61 @@ export default function WebSite({ match }) {
   };
 
   // 카드 썸네일 이미지
-  // useEffect(() => {
-  //   const fetchImageUrls = async () => {
-  //     const urls = await Promise.all(
-  //       listData.map(async (item) => {
-  //         if (item.img) {
-  //           try {
-  //             const downloadResult = await fetch(`${imsi}/upimg/${item.img}`);
-
-  //             return downloadResult.url;
-  //           } catch (error) {
-  //             console.error("Image fetch failed", error);
-  //             return ""; // 에러 발생 시 빈 문자열 반환
-  //           }
-  //         }
-  //       })
-  //     );
-  //     setImgUrls(urls);
-  //   };
-
-  //   if (listData) {
-  //     fetchImageUrls();
-  //   }
-  // }, [listData]);
-
-  // 카드 썸네일 이미지
   useEffect(() => {
     const fetchImageUrls = async () => {
-      setIsLoading(true); // 이미지 로딩 시작
-
       const urls = await Promise.all(
         listData.map(async (item) => {
-          if (item.img && !loadedUrls[item.img]) {
-            // 아직 로드되지 않은 이미지만 처리
+          if (item.img) {
             try {
               const downloadResult = await fetch(`${imsi}/upimg/${item.img}`);
-              const finalUrl = downloadResult.url;
-              setLoadedUrls((prev) => ({ ...prev, [item.img]: finalUrl })); // 로드된 이미지 URL 저장
-              return finalUrl;
+
+              return downloadResult.url;
             } catch (error) {
               console.error("Image fetch failed", error);
               return ""; // 에러 발생 시 빈 문자열 반환
             }
-          } else {
-            return loadedUrls[item.img] || ""; // 이미 로드된 이미지는 즉시 반환
           }
         })
       );
       setImgUrls(urls);
-      setIsLoading(false); // 이미지 로딩 완료
     };
 
     if (listData) {
       fetchImageUrls();
     }
-  }, [listData, loadedUrls]);
+  }, [listData]);
+
+  // 카드 썸네일 이미지
+  // useEffect(() => {
+  //   const fetchImageUrls = async () => {
+  //     setIsLoading(true); // 이미지 로딩 시작
+
+  //     const urls = await Promise.all(
+  //       listData.map(async (item) => {
+  //         if (item.img && !loadedUrls[item.img]) {
+  //           // 아직 로드되지 않은 이미지만 처리
+  //           try {
+  //             const downloadResult = await fetch(`${imsi}/upimg/${item.img}`);
+  //             const finalUrl = downloadResult.url;
+  //             setLoadedUrls((prev) => ({ ...prev, [item.img]: finalUrl })); // 로드된 이미지 URL 저장
+  //             return finalUrl;
+  //           } catch (error) {
+  //             console.error("Image fetch failed", error);
+  //             return ""; // 에러 발생 시 빈 문자열 반환
+  //           }
+  //         } else {
+  //           return loadedUrls[item.img] || ""; // 이미 로드된 이미지는 즉시 반환
+  //         }
+  //       })
+  //     );
+  //     setImgUrls(urls);
+  //     setIsLoading(false); // 이미지 로딩 완료
+  //   };
+
+  //   if (listData) {
+  //     fetchImageUrls();
+  //   }
+  // }, [listData, loadedUrls]);
 
   useEffect(getdata, []);
   //   console.log(listData, "listData");

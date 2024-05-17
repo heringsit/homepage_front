@@ -160,17 +160,10 @@ export default function HeringsPost() {
     const fetchImageUrls = async () => {
       const urls = await Promise.all(
         listData.map(async (item) => {
-          // 이미 로딩된 이미지는 다시 로드 x
-          if (loadedUrls[item.img]) {
-            return loadedUrls[item.img];
-          }
           try {
             const downloadResult = await fetch(`${imsi}/upimg/${item.img}`);
-            const finalUrl = downloadResult.url;
 
-            // 로딩된 이미지 URL 저장
-            setLoadedUrls((prev) => ({ ...prev, [item.img]: finalUrl }));
-            return finalUrl;
+            return downloadResult.url;
           } catch (error) {
             console.error("Image fetch failed", error);
             return ""; // 에러 발생 시 빈 문자열 반환
@@ -178,13 +171,41 @@ export default function HeringsPost() {
         })
       );
       setImgUrls(urls);
-      setIsLoading(false); // 이미지 로딩 완료
     };
 
     if (listData) {
       fetchImageUrls();
     }
-  }, [listData, loadedUrls]);
+  }, [listData]);
+  // useEffect(() => {
+  //   const fetchImageUrls = async () => {
+  //     const urls = await Promise.all(
+  //       listData.map(async (item) => {
+  //         // 이미 로딩된 이미지는 다시 로드 x
+  //         if (loadedUrls[item.img]) {
+  //           return loadedUrls[item.img];
+  //         }
+  //         try {
+  //           const downloadResult = await fetch(`${imsi}/upimg/${item.img}`);
+  //           const finalUrl = downloadResult.url;
+
+  //           // 로딩된 이미지 URL 저장
+  //           setLoadedUrls((prev) => ({ ...prev, [item.img]: finalUrl }));
+  //           return finalUrl;
+  //         } catch (error) {
+  //           console.error("Image fetch failed", error);
+  //           return ""; // 에러 발생 시 빈 문자열 반환
+  //         }
+  //       })
+  //     );
+  //     setImgUrls(urls);
+  //     setIsLoading(false); // 이미지 로딩 완료
+  //   };
+
+  //   if (listData) {
+  //     fetchImageUrls();
+  //   }
+  // }, [listData, loadedUrls]);
 
   // 모달 이미지
   useEffect(() => {
