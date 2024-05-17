@@ -2,19 +2,12 @@ import React, { useState, useEffect, useContext } from "react";
 import "../News.css";
 import axios from "axios";
 import moment from "moment";
-import parse from "html-react-parser";
 import { makeStyles, createStyles } from "@material-ui/core/styles";
-import Modal from "@material-ui/core/Modal";
-import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
-// import { ReactComponent as IconClose } from "../../../assets/images/05career/close.svg";
-// import { saveAs } from "file-saver";
 import { imsi } from "../../..";
-// import search from "../../../assets/images/etc/search.png";
-// import downLoad from "../../../assets/images/etc/download.svg";
-// import CommonCardTitle from "../../common/CommonCardTitle";
 import { ThemeContext } from "../../../context";
 import noimg from "../../../assets/images/10newsir/noImg.png";
+// import NewsDetail from "../NewsDetail";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -87,6 +80,7 @@ const useStyles = makeStyles((theme) =>
   })
 );
 export default function HeringsPost() {
+  const history = useHistory();
   const [, setIsDataReady] = useState(false);
   const [paginginfo, setPaginginfo] = useState([]);
   const classes = useStyles();
@@ -162,27 +156,6 @@ export default function HeringsPost() {
   // };
 
   // 카드 썸네일 이미지
-  // useEffect(() => {
-  //   const fetchImageUrls = async () => {
-  //     const urls = await Promise.all(
-  //       listData.map(async (item) => {
-  //         try {
-  //           const downloadResult = await fetch(`${imsi}/upimg/${item.img}`);
-
-  //           return downloadResult.url;
-  //         } catch (error) {
-  //           console.error("Image fetch failed", error);
-  //           return ""; // 에러 발생 시 빈 문자열 반환
-  //         }
-  //       })
-  //     );
-  //     setImgUrls(urls);
-  //   };
-
-  //   if (listData) {
-  //     fetchImageUrls();
-  //   }
-  // }, [listData]);
   useEffect(() => {
     const fetchImageUrls = async () => {
       const urls = await Promise.all(
@@ -191,7 +164,6 @@ export default function HeringsPost() {
           if (loadedUrls[item.img]) {
             return loadedUrls[item.img];
           }
-
           try {
             const downloadResult = await fetch(`${imsi}/upimg/${item.img}`);
             const finalUrl = downloadResult.url;
@@ -221,6 +193,17 @@ export default function HeringsPost() {
         const downloadResult = await fetch(`${imsi}/upimg/${modalObj.img}`);
         // 성공시, 이미지 URL을 상태에 저장
         setModalImg(downloadResult.url);
+        // newsDetail로 페이지 이동
+        if (Object.keys(modalObj).length !== 0 && modalImg !== "") {
+          history.push({
+            pathname: `/news/${modalObj.no}`,
+            state: {
+              open: true,
+              modalObj: modalObj,
+              modalImg: downloadResult.url,
+            },
+          });
+        }
       } catch (error) {
         console.log(error, "이미지 로딩 중 에러 발생");
         // 에러 처리
@@ -308,9 +291,11 @@ export default function HeringsPost() {
   };
 
   useEffect(getdata, []);
+
   const { theme } = useContext(ThemeContext);
   const fontColor = theme === "dark" ? "tcw" : "tcb";
-
+  // console.log(listData, "listData");
+  // console.log(modalObj, "modalObj");
   return (
     <div>
       <div className="SectionDivNewsIp">
@@ -322,7 +307,7 @@ export default function HeringsPost() {
             {listData.map((data, index) => {
               return (
                 <div
-                  key={index}
+                  key={data.no}
                   className="website-card"
                   style={{
                     backgroundColor: theme === "dark" ? "#000" : "#FFF",
@@ -352,6 +337,7 @@ export default function HeringsPost() {
                     />
                   )}
                   {/* <img src={onCardImg(data.img)} /> */}
+
                   <div className="website-card-text-layout">
                     <div className={`website-card-date-text ${fontColor}`}>
                       {moment(data.reg_datetime).format("YYYY-MM-DD")}
@@ -368,168 +354,12 @@ export default function HeringsPost() {
           </div>
         )}
       </div>
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        className={classes.modal}
+      {/* <NewsDetail
         open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        disableScrollLock={true}
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-          style: { backgroundColor: "transparent" }, // 뒷배경을 투명하게 설정 - 어두움 방지
-        }}
-      >
-        <Fade in={open}>
-          <div className={classes.paper}>
-            {modalObj !== JSON.stringify({}) ? (
-              <div className={classes.modalContent}>
-                <div className="modal-header">
-                  <p
-                    className="modal-header-text"
-                    style={{
-                      fontSize:
-                        modalObj.title?.length > 120
-                          ? "clamp(1.2rem, 1.7vw, 2rem)"
-                          : undefined,
-                    }}
-                  >
-                    {modalObj.title}
-                  </p>
-                  <span className="modal-date">
-                    {moment(modalObj.reg_datetime).format("YYYY.MM.DD")}
-                  </span>
-                </div>
-                {/* <IconClose
-                    onClick={handleClose}
-                    className="careerModalIconSection"
-                  /> */}
-                <div className="modal-body-container ">
-                  <img
-                    src={modalImg ? modalImg : null}
-                    alt="news-img"
-                    className="modal-img"
-                  />
-                  <div className="">
-                    {(() => {
-                      if (
-                        modalObj.content !== undefined &&
-                        modalObj.content !== ""
-                      ) {
-                        return parse(modalObj.content);
-                      }
-                    })()}
-                  </div>
-
-                  <div className="modal-bottom">
-                    <div className="modal-back-btn" onClick={handleClose}>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="32"
-                        height="32"
-                        viewBox="0 0 32 32"
-                        fill="none"
-                      >
-                        <path
-                          d="M22.6678 14.6663H12.5478L16.9478 10.2796C17.1989 10.0285 17.34 9.688 17.34 9.33293C17.34 8.97786 17.1989 8.63733 16.9478 8.38626C16.6968 8.13519 16.3562 7.99414 16.0012 7.99414C15.6461 7.99414 15.3056 8.13519 15.0545 8.38626L8.38783 15.0529C8.26644 15.1797 8.17129 15.3293 8.10783 15.4929C7.97447 15.8175 7.97447 16.1816 8.10783 16.5063C8.17129 16.6699 8.26644 16.8195 8.38783 16.9463L15.0545 23.6129C15.1784 23.7379 15.3259 23.8371 15.4884 23.9048C15.6509 23.9725 15.8251 24.0073 16.0012 24.0073C16.1772 24.0073 16.3515 23.9725 16.5139 23.9048C16.6764 23.8371 16.8239 23.7379 16.9478 23.6129C17.0728 23.489 17.172 23.3415 17.2397 23.179C17.3074 23.0166 17.3422 22.8423 17.3422 22.6663C17.3422 22.4902 17.3074 22.316 17.2397 22.1535C17.172 21.991 17.0728 21.8435 16.9478 21.7196L12.5478 17.3329H22.6678C23.0215 17.3329 23.3606 17.1925 23.6106 16.9424C23.8607 16.6924 24.0012 16.3532 24.0012 15.9996C24.0012 15.646 23.8607 15.3068 23.6106 15.0568C23.3606 14.8067 23.0215 14.6663 22.6678 14.6663Z"
-                          fill="white"
-                        />
-                      </svg>
-                      <span
-                        className="newsButtonLink FontR"
-                        onClick={handleClose}
-                      >
-                        목록으로 돌아가기
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <div> no info</div>
-            )}
-          </div>
-        </Fade>
-      </Modal>
+        handleClose={() => handleClose()}
+        modalObj={modalObj}
+        modalImg={modalImg}
+      /> */}
     </div>
   );
 }
-
-// <div className="newsContainList">
-//   <div
-//     className={`newsContainListHeader FontNL ${
-//       theme === "dark" ? "border-w" : "border-b"
-//     }`}
-//   >
-//     <div className="newsContainListHeaderCol ncol1 textF16 korFonts">
-//       제목
-//     </div>
-//     <div className="newsContainListHeaderCol ncol3 textF16 korFonts">
-//       첨부파일
-//     </div>
-//     <div className="newsContainListHeaderCol ncol2 textF16 korFonts">
-//       등록일
-//     </div>
-//   </div>
-//   <div className="nodatasWrap">
-//     {listData.map((data, index) => {
-//       return (
-//         <div key={index} className="careerListRow FontNR">
-//           <div className="newsContainListCol ncol1 newsListTitle">
-//             <div
-//               onClick={(e) => {
-//                 handleOpen(data, checkDate(data.regiDate, "E"));
-//               }}
-//             >
-//               <div className={`textF20 ${fontColor} FontNB`}>
-//                 {data.title}
-//               </div>
-//             </div>
-//           </div>
-//           <div
-//             className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}
-//           >
-//             <div
-//               style={{
-//                 border: "solid 1px",
-//                 width: 204,
-//                 height: 34,
-//                 paddingTop: 4,
-//               }}
-//               onClick={() => onDownLoad(data.img)}
-//             >
-//               다운로드{" "}
-//               <img
-//                 alt="img"
-//                 src={downLoad}
-//                 className={theme === "dark" ? "invert" : ""}
-//                 style={{ width: 15, height: 15, marginLeft: 8 }}
-//               />
-//             </div>
-//           </div>
-//           <div
-//             className={`newsContainListCol ${fontColor} FontNB ncol2 textF16`}
-//           >
-//             {moment(data.reg_datetime).format("YYYY-MM-DD")}
-//           </div>
-//         </div>
-//       );
-//     })}
-
-//     {/* <div className="nodatasWrap">
-//       <div className="nodatas FontB">등록된 게시물이 없습니다!</div>
-//     </div> */}
-//     {paginginfo.totalPage > 1 ? (
-//       <div
-//         className="pagingDiv"
-//         // onClick={(e) => loadMore(e)}
-//       >
-//         {pageingFn(paginginfo)}
-//       </div>
-//     ) : (
-//       <div></div>
-//     )}
-//   </div>
-// </div>;

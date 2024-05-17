@@ -15,6 +15,8 @@ import Research from "./views/Research/Research";
 import Cts from "./views/CTS/Cts";
 // import Career from "./views/Contactus/Career"; // 경로 수정
 import News from "./views/News/News";
+import NewsDetail from "./views/News/NewsDetail";
+
 import Contactus from "./views/Contactus/Contactus";
 import "./index.css";
 import "./common.css";
@@ -74,13 +76,15 @@ const App = () => {
             <Route path={`/contactus`} component={Contactus} />
             {/* <Route path={`/news/:submenu/detail/:id`} component={DeBtailPage} /> */}
 
-            <Route path={`/news/:submenu`} component={News} />
-            <Route path={`/news`} component={News} />
+            {/* <Route path={`/news/:submenu`} component={News} /> */}
+            <Route exact path={`/news`} component={News} />
+            <Route path={`/news/:id`} component={NewsDetail} />
+
             <Route path={`/privacypolicy/`} component={PrivacyPolicy} />
             <Route path={`/privacypolicy/:submenu`} component={PrivacyPolicy} />
             <Route path={`/ham`} component={Ham} />
             <Route path="*" component={Aboutus} />
-            <Redirect exact froåm={`/`} to={"/aboutus"} />
+            <Redirect exact from={`/`} to={"/aboutus"} />
           </Switch>
         </MediaQueryContext.Provider>
       </ThemeContext.Provider>

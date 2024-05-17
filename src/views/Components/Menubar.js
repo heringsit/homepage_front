@@ -26,7 +26,6 @@ export default function Menubar(props) {
   const { theme, changeTheme } = useContext(ThemeContext);
 
   const changeMode = () => changeTheme(theme === "light" ? "dark" : "light");
-
   const mobilemenuclick = (e, val) => {
     e.preventDefault();
     val === mobileSelected ? setMobileSelected(null) : setMobileSelected(val);
@@ -242,7 +241,9 @@ export default function Menubar(props) {
                 >
                   <span
                     className={`menuText textF18 FontR ${
-                      pathname === MENU.linkpath[idx]
+                      pathname === MENU.linkpath[idx] ||
+                      (/^\/news\/\d+$/.test(pathname) &&
+                        MENU.linkpath[idx] === "/news/")
                         ? "menuTextActive"
                         : theme === "light" || pathname === "/"
                         ? "tcb"
