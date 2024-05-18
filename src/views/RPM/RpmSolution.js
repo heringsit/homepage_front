@@ -192,7 +192,7 @@ const RpmSolution = (props) => {
         <div className="rpm-container3">
           <div className="rpm-section3-group-container ">
             {boxItems.map((item) => (
-              <div className="rpm-section3-group-box ">
+              <div className="rpm-section3-group-box">
                 <img src={item.imgUrl} alt="boximg" className="rpm-boxicon" />
                 <div className="rpm-section3-boxtext-layout">
                   <p className="rpm-section3-box-text">{item.title}</p>

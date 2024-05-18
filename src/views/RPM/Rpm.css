@@ -148,7 +148,7 @@
   height: 16.35vw;
   width: 17vw;
   flex-direction: column;
-  gap: clamp(0rem, 2vw, 3rem);
+  gap: clamp(1rem, 2vw, 3rem);
   /* gap: 2vw; */
   /* gap: 36px; */
   align-items: flex-start;
