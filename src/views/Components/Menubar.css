@@ -61,20 +61,21 @@
   height: 36px;
 }
 .menusAfterLogo {
-  width: 60%;
+  width: 55%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 .menudiv {
   text-align: center;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: space-between; */
   text-decoration: none;
   /* width: 5vw; */
-  width: 182.6px;
+  /* width: 182.6px; */
 }
 .menudiv :hover {
   text-decoration: none;
