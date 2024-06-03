@@ -74,7 +74,7 @@ export default function News(props, { match }) {
       <div className="news-main-container">
         <div className="news-section1">
           <div className="ir_text_section1">
-            <p className="ir_maintext1">NewsAbout HERINGS</p>
+            <p className="ir_maintext1">News about HERINGS</p>
             <span className="ir_subtext1">
               Find out more about HERINGS
               <br /> There will be more news to come!

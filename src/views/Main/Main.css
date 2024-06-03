@@ -142,7 +142,7 @@
 }
 
 .mainsublayout2 {
-  width: clamp(33rem, 38vw, 40rem);
+  width: clamp(18rem, 38vw, 40rem);
   /* width: 680px; */
 }
 

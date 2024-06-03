@@ -79,7 +79,7 @@ const RpmSolution = (props) => {
       imgUrl: serviceimg2,
       title: "ATTI",
       content:
-        "ATTI is a  real time monitoring solution for\n cancer patients with chemo-therapy. \n ATTI closely monitors side effects that \n frequently occur during the treatment\n and provides patients with appropriate\n ways to handle the situations.",
+        "ATTI is a real time monitoring solution for\n cancer patients with chemo-therapy. \n ATTI closely monitors side effects that \n frequently occur during the treatment\n and provides patients with appropriate\n ways to handle the situations.",
     },
     {
       imgUrl: serviceimg3,
@@ -180,11 +180,11 @@ const RpmSolution = (props) => {
               onitoring?
             </p>
             <span className="rpm-section2-subtext">
-              RPM  is a solution for medical care teams to evaluate patients’
+              RPM is a solution for medical care teams to evaluate patients’
               health conditions either chronic or acute and provide necessary
-              care in a near real time and continuously monitor. RPM  is  a fast
-              and convenient  gateway solution for patients at any location to
-              be connected to medical staffs and get appropriate care.
+              care in a near real time and continuously monitor. RPM is a fast
+              and convenient gateway solution for patients at any location to be
+              connected to medical staffs and get appropriate care.
             </span>
           </div>
           <img src={rpm_img2} alt="rpmImage2" className="rpmImage" />
@@ -293,9 +293,9 @@ const RpmSolution = (props) => {
                     style={{ backgroundImage: `url(${item.imgUrl})` }}
                   >
                     {/* <img src={item.imgUrl} alt="rpmimg"></img> */}
-                    <p className="rpm-section5-item-text">
+                    {/* <p className="rpm-section5-item-text">
                       {formatTitle(item.title)}
-                    </p>
+                    </p> */}
                   </div>
                 ))}
               </div>

@@ -42,11 +42,11 @@ function Footer() {
             </div>
             <div className="footerContent FontL textF12">
               <span className="tco FontL textF12">TEL.</span>
-              +82.02.6949.3516
+              +82.2.6949.3516
             </div>
             <div className="footerContent FontL textF12">
               <span className="tco FontL textF12">FAX.</span>
-              +82.02.6949.3517
+              +82.2.6949.3517
             </div>
             <div className="footerContent FontL textF12">
               <span className="tco FontL textF12">R.</span>

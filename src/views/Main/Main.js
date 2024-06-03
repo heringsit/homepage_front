@@ -206,10 +206,9 @@ export default function Main(props) {
                 <div>
                   <p className="maintext4">OUR MISSION</p>
                   <p className="subContent3">
-                    Our mission is to identify the limitations of
-                    <br /> medical care in line with a rapidly developing
-                    <br /> society and implement a telemedicine
-                    <br /> platform appropriate for them.
+                    We aim to be the best companion to cancer
+                    <br /> patients through their long journey to
+                    <br /> overcome the disease.
                   </p>
                 </div>
                 <div
