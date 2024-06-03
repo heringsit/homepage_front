@@ -311,7 +311,9 @@ export default function HeringsPost() {
     );
   };
 
-  useEffect(getdata, []);
+  useEffect(() => {
+    getdata();
+  }, []);
 
   const { theme } = useContext(ThemeContext);
   const fontColor = theme === "dark" ? "tcw" : "tcb";

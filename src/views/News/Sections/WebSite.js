@@ -292,7 +292,9 @@ export default function WebSite({ match }) {
   //   }
   // }, [listData, loadedUrls]);
 
-  useEffect(getdata, []);
+  useEffect(() => {
+    getdata();
+  }, []);
   //   console.log(listData, "listData");
 
   const { theme } = useContext(ThemeContext);
