@@ -62,7 +62,7 @@ export default function Main(props) {
   ];
 
   return (
-    <div id="main">
+    <div id="main" style={{ height: "100%" }}>
       <Menubar slideIndex={0} />
       <Totop />
       <div className="main-container">
@@ -235,6 +235,7 @@ export default function Main(props) {
                     <br /> clinical implication
                   </p>
                 </div>
+
                 <div className="diamond">
                   <p className="diamond-text">DEVELOP</p>
                   <p className="diamond-text2">
