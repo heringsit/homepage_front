@@ -90,15 +90,15 @@ export const Executive_Leadership = [
 ];
 
 export const Research_Leadership = [
-  {
-    name: "Han-Kwang Yang, MD, Ph.D.",
-    // jobs: "MD, Ph.D",
-    // positions: "Collaborating Leader",
-    background: icon2_1,
-    modalimg: icon2_1,
-    detail:
-      "Hankwang Yang is the Chief of the Gastric Cancer Center Department and Gastrointestinal Surgery Department of Seoul National University Hospital.\nWhile being a professor of Gastrointestinal surgery at Seoul National University Hospital, MD Ph.D. Yang also has become editor of the Journal of Gastric Cancer since 2009.\n\nHe holds an MD and a Ph.D. from Seoul National University College of Medicine.",
-  },
+  // {
+  //   name: "Han-Kwang Yang, MD, Ph.D.",
+  //   // jobs: "MD, Ph.D",
+  //   // positions: "Collaborating Leader",
+  //   background: icon2_1,
+  //   modalimg: icon2_1,
+  //   detail:
+  //     "Hankwang Yang is the Chief of the Gastric Cancer Center Department and Gastrointestinal Surgery Department of Seoul National University Hospital.\nWhile being a professor of Gastrointestinal surgery at Seoul National University Hospital, MD Ph.D. Yang also has become editor of the Journal of Gastric Cancer since 2009.\n\nHe holds an MD and a Ph.D. from Seoul National University College of Medicine.",
+  // },
   {
     name: "Myung-Ju Ahn, MD, Ph.D.",
     // jobs: "MD Ph.D",
